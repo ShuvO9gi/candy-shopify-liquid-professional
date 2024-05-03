@@ -1,0 +1,9 @@
+{%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+<img 
+  class="{{ class }} lazyload"
+  data-src="{{ img_url }}"
+  data-widths="[360, 540, 700, 1024]"
+  data-sizes="auto"
+  alt="{{ image.alt }}"
+  {{ data }}
+>

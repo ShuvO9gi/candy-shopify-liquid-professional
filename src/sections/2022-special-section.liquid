@@ -1,0 +1,92 @@
+<div class="section-container">
+	<div class="page-container banner_3">
+		<div class="row">
+			<div class="col-6">
+				<div class="row">
+					<div class="col-4 leftRadius " style="background-image: url('/{{ section.settings.image_1 | image_url }}');background-size: cover;"></div>
+					<div class="col-8 x">
+						<div class="greenUSPbox rightRadiusMobile">
+							<div class="greenUSPboxTextPadding">
+								<div class="headline type-style-p-small-bold">
+								  {{ section.settings.headline_1 }}
+								</div>
+								<div class="content type-style-p-regular">
+									{{ section.settings.content_1 }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 margin-mobile">
+				<div class="row">
+					<div class="col-4 leftRadiusMobile" style="background-image: url('{{ section.settings.image_2 | image_url }}');background-size: cover;"></div>
+					
+					<div class="col-8">
+						<div class="greenUSPbox rightRadius">
+							<div class="greenUSPboxTextPadding">
+								<div class="headline type-style-p-small-bold">
+								  {{ section.settings.headline_2 }}
+								</div>
+								<div class="content type-style-p-regular">
+									{{ section.settings.content_2 }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+  {
+  	"name": "2022 - Special section",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "headline_1",
+          "label": "Overskrift - første"
+      },
+      {
+          "type": "text",
+          "id": "content_1",
+          "label": "Tekst - første"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Billede"
+      },
+	  {
+          "type": "text",
+          "id": "headline_2",
+          "label": "Overskrift - anden"
+      },
+      {
+          "type": "text",
+          "id": "content_2",
+          "label": "Tekst - anden"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Billede - anden"
+      }      
+	],
+    "presets": [
+      {
+        "name": "2022 - Special section"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

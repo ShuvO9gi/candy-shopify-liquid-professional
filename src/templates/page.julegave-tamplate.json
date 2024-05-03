@@ -1,0 +1,254 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1643527456edccbab0": {
+      "type": "b2b-landing-top",
+      "blocks": {
+        "1643527456333ab9a9-0": {
+          "type": "collection",
+          "settings": {
+            "headline": "Forkæl en du holder af med en Slikgave",
+            "content": "Send en velsmagende gave og få din personlige hilsen skrevet personligt og sendt gratis med."
+          }
+        },
+        "155c3788-4d0f-4743-8324-a1149f3a53b4": {
+          "type": "collection",
+          "settings": {
+            "headline": "Slikgaver til fest, fødselsdag, \"Bare fordi\" og meget mere.",
+            "content": "Gaven alle kan lide, og som bringer smil på læberne."
+          }
+        },
+        "0a4bd21b-77d9-46e5-8ab7-9e4c40cfbcea": {
+          "type": "collection",
+          "settings": {
+            "headline": "Giv et gavekort",
+            "content": "Er det svært at vælge? Så lad os sende et gavekort til dem du ønsker."
+          }
+        }
+      },
+      "block_order": [
+        "1643527456333ab9a9-0",
+        "155c3788-4d0f-4743-8324-a1149f3a53b4",
+        "0a4bd21b-77d9-46e5-8ab7-9e4c40cfbcea"
+      ],
+      "disabled": true,
+      "settings": {
+        "topHeadline": "Forkæl en du holder af",
+        "headline": "<p><strong>Slikgaver til alle<\/strong><\/p>",
+        "content": "<p>Uanset om du skal bruge <strong>en festlig Champagneflaske <\/strong>med personligt klistermærke,<strong> slikposer<\/strong>, eller vores fine <strong>Hjerteæske<\/strong>, så kig her.<\/p>",
+        "content-small": "",
+        "button-text": "Se Hjerteæske",
+        "button-url": "shopify:\/\/products\/kopi-af-mors-dag-hjerteaeske-med-bland-selv-slik",
+        "image": "shopify:\/\/shop_images\/slikdaase.png"
+      }
+    },
+    "1643527667b6903490": {
+      "type": "b2b-landing-call-to-actions",
+      "blocks": {
+        "a0785ed3-80c9-404e-b921-218e59b97b72": {
+          "type": "collection",
+          "settings": {
+            "mageLeft": true,
+            "smallSection": true,
+            "fullWidth": false,
+            "topHeadline": "Fyldt med lækkert bland selv slik",
+            "headline": "<p>Festlig Champagneflaske<\/p>",
+            "content": "<p>Giv en anderledes og velsmagende gave til en du holder af. <strong>Wuhuu du er den bedste<\/strong>, Tak for indsatsen, eller en af vores andre 10 forskellige klistermærker gør champagneflasken <strong>personlig til dig<\/strong> og giver helt sikkert et smil på læben.<\/p>",
+            "content-small": "",
+            "button-text": "køb champagneflaske her",
+            "buttonUrl": "shopify:\/\/products\/champagneflaske",
+            "image": "shopify:\/\/shop_images\/Valentinesgave_med_slik.png"
+          }
+        },
+        "5a649a9c-4453-4bf0-81f0-756c5f48360b": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "mageLeft": true,
+            "smallSection": true,
+            "fullWidth": false,
+            "topHeadline": "Nemt og lækkert",
+            "headline": "<p>Færdigblandet slikpose<\/p>",
+            "content": "<p>Vi har pakket for dig, så de bare skal deles ud. Nemmere bliver det ikke.<br\/>Vi har <strong>udvalgt nogle af vores favoritter<\/strong> blandt vores bland selv slik og pakket dem for dig i fine slikposer, perfekt til fx <strong>fødselsdag og fest.<\/strong><\/p>",
+            "content-small": "",
+            "button-text": "Bestil slikposer her",
+            "buttonUrl": "",
+            "image": "shopify:\/\/shop_images\/Image_from_iOS_14__clipped_rev_4.png"
+          }
+        },
+        "bc9ec26d-51d0-4687-b173-77b453b61ea6": {
+          "type": "collection",
+          "settings": {
+            "mageLeft": false,
+            "smallSection": false,
+            "fullWidth": false,
+            "topHeadline": "Sødeste gave der vil glæde alle",
+            "headline": "<p>Hjerteæske propfyldt med lækkert frisk slik<\/p>",
+            "content": "<p><strong>Forkæl en du holder af<\/strong> med vores flotte Hjerteæske. Enten med dit <strong>eget slikmix eller vores favoritmix<\/strong>, som sikre at der er noget til enhver sliksmag.<\/p>",
+            "content-small": "",
+            "button-text": "Køb Hjerteæsken her",
+            "buttonUrl": "shopify:\/\/products\/hjertekasse-med-bland-selv-slik",
+            "image": "shopify:\/\/shop_images\/slikdaase.png"
+          }
+        }
+      },
+      "block_order": [
+        "a0785ed3-80c9-404e-b921-218e59b97b72",
+        "5a649a9c-4453-4bf0-81f0-756c5f48360b",
+        "bc9ec26d-51d0-4687-b173-77b453b61ea6"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1662904099a7f7b3c1": {
+      "type": "2022-textLeftRight",
+      "blocks": {
+        "a8171c46-c319-4bd8-aa37-fd2fd8e73825": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Hjerteæske med Bland Selv Slik",
+            "headline": "Årets mandelgave",
+            "content": "<p>Vi har blandet nogle af favoritterne ned i en flot hjerteæske. Denne gave bliver ALLE glade for at modtage.<\/p>",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/arets-mandelgave-1",
+            "image": "shopify:\/\/shop_images\/landing-page-img_hjerteaeske.png"
+          }
+        },
+        "835b850a-cc1d-4489-9c94-232b12d00d42": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Champagneflasker",
+            "headline": "Med forskellige labels",
+            "content": "<p>Dette er den perfekte gave som kan bruges i alle anledninger. Du kan selv vælge hvilket label der skal på flasken <\/p>",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/champagneflaske",
+            "image": "shopify:\/\/shop_images\/landing-page-img_3Flasker.png"
+          }
+        },
+        "1ca7ee01-59ec-42b9-b566-e078a29d1c46": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Bestem selv mixet",
+            "headline": "Brug vores app",
+            "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
+            "button_text": "Installer vores app her",
+            "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
+            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg"
+          }
+        },
+        "952a8235-5979-47a1-a0cd-2e0800ad4893": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Giv et gavekort",
+            "headline": "Gør alle glade",
+            "content": "<p>Giv en sjov og lækker oplevelse som gavekort. Se vores gavekort <\/p>",
+            "button_text": "Køb gavekort",
+            "button_destination": "shopify:\/\/products\/slikekspressen-gavekort",
+            "image": "shopify:\/\/shop_images\/landing-page-img_gavekort_e34b5302-f394-4453-977e-1e17cf62be25.png"
+          }
+        },
+        "545c08b6-5e65-4688-b4be-475b5f75c78f": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "small-headline": "Firma og erhvervsgaver",
+            "headline": "Vi tilpasser løsninger til jeres behov",
+            "content": "<p>Tag kontakt til os og lad os komme med et bud til at løse jeres virksomhedsbehov. Vores erhvervs afdeling sidder klar til at skræddersy den bedste og billigste løsning<\/p>",
+            "button_text": "Skriv til os her",
+            "button_destination": "shopify:\/\/pages\/kontakt-os",
+            "image": "shopify:\/\/shop_images\/landing-page-img_kurv_m_slik.png"
+          }
+        }
+      },
+      "block_order": [
+        "a8171c46-c319-4bd8-aa37-fd2fd8e73825",
+        "835b850a-cc1d-4489-9c94-232b12d00d42",
+        "1ca7ee01-59ec-42b9-b566-e078a29d1c46",
+        "952a8235-5979-47a1-a0cd-2e0800ad4893",
+        "545c08b6-5e65-4688-b4be-475b5f75c78f"
+      ],
+      "settings": {
+        "page_header": "Advents, mandel- og julegaveidéer"
+      }
+    },
+    "166290812500d3fec5": {
+      "type": "2022-3col-section",
+      "blocks": {
+        "1662908125db64622c-0": {
+          "type": "collection",
+          "settings": {
+            "headline": "Hjerteæsken",
+            "content": "Her kan du se og købe vores flotte hjerteæske fyldt med bland selv slik.",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/hjertekasse-med-bland-selv-slik"
+          }
+        },
+        "25139766-cacf-4baf-a37d-e733e32e15ee": {
+          "type": "collection",
+          "settings": {
+            "headline": "Champagneflaskerne",
+            "content": "Du kan selv vælge label til denne flotte flaske fyldt med Bland Selv Slik",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/champagneflaske"
+          }
+        },
+        "d64ab648-5f26-4df2-b647-341c224da781": {
+          "type": "collection",
+          "settings": {
+            "headline": "Kontakt os",
+            "content": "Vi sidder klar til at hjælpe dig med det du mangler. Skriv til os igennem Messenger, så hjælper vi dig hurtigt",
+            "button_text": "Skriv på Messenger",
+            "button_destination": "https:\/\/m.me\/101797448678348?ref=w15199615"
+          }
+        }
+      },
+      "block_order": [
+        "1662908125db64622c-0",
+        "25139766-cacf-4baf-a37d-e733e32e15ee",
+        "d64ab648-5f26-4df2-b647-341c224da781"
+      ],
+      "disabled": true,
+      "settings": {
+        "showBackground": true,
+        "bigPadding": true,
+        "block_height": 190
+      }
+    },
+    "166291565275d9be4d": {
+      "type": "2022-fullCol",
+      "settings": {
+        "small-headline": "Andre julegaver",
+        "headline": "Har du behov for andre ting, så lad os hjælpe dig",
+        "content": "<p>Vi sidder klar til at hjælpe dig med lige den løsning der passer til dit behov<br\/><br\/>Tag kontakt til os og så hjælper vi dig videre<\/p>",
+        "button_text": "Kontakt os",
+        "button_destination": "shopify:\/\/pages\/kontakt-os",
+        "image": "shopify:\/\/shop_images\/slikkurv_6ec94a02-b13b-4c82-8789-5dc58d1a7d2c.png"
+      }
+    },
+    "1662910935ad22b671": {
+      "type": "2022-socialLinks",
+      "settings": {
+        "headline_social": "Følg SlikEkspressen:",
+        "headline_newsletter": "Nyhedsbrev",
+        "content_newsletter": "Hold dig opdateret om rabatter, nye produkter.",
+        "button_text_newsletter": "Tilmeld",
+        "button_destination_newsletter": "https:\/\/m.me\/101797448678348?ref=w15249610"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1643527456edccbab0",
+    "1643527667b6903490",
+    "1662904099a7f7b3c1",
+    "166290812500d3fec5",
+    "166291565275d9be4d",
+    "1662910935ad22b671"
+  ]
+}

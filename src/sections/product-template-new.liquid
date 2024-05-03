@@ -1,0 +1,147 @@
+<style>
+  @media only screen and (min-width: 767px){
+      .productImage-img{
+    min-height: 450px;
+    object-fit: cover;
+  }
+  .champSlider .productImage {
+    width: 50% !important;
+}
+  }
+  @media only screen and (max-width: 767px){
+    .champSlider .topContentProduct{
+     display: flex !important;
+      flex-direction: column;
+      max-width: 100%;
+    }
+  .champSlider .productContent {
+    padding-left: 0 !important;
+    width: 100% !important;
+}
+  .champSlider .productImage {
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+    .champSlider .product-detail .product{
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: stretch;
+    justify-content: space-between !important;
+    max-width: 50%;
+    }
+  .champSlider .product-detail .submit-wrapper {
+    margin-left: 0 !important;
+}
+  }
+</style>
+{%- assign current_variant = product.selected_or_first_available_variant %}
+<div class="section-container champSlider">
+  <div class="page-container" >
+    <div class="topContentProduct flex" style="margin-top: 4rem;">
+      <div class="productImage" >
+        <img class="productImage-img" src="{{ product | image_url: width: 600 }}">
+      </div>
+      <div class="productContent">
+        <h1 class="productContentHeadline type-style-h2-bold">
+	        {{ product.title }}
+        </h1>
+        <div class="productPriceContent">
+          <span class="productPrice type-style-h2-bold">
+            {{ product.price | money }}.
+          </span>
+          <span class="priceText text-grey type-style-p-small-regular">
+            Inkl. moms. Fragt bliver tilføjet ved betaling.
+          </span>
+        </div>
+
+        {%- render 'product-form-new',
+          section_id: section_id,
+          product: product,
+          current_variant: current_variant
+        -%}
+
+        <div class="productDescription type-style-p-regular">
+          {{ product.description }}
+        </div>
+
+        {% if product.metafields.mix.contents_label != blank %}
+          <div class="productLabel">
+            {{ product.metafields.mix.contents_label }}
+          </div>
+        {% endif%}
+
+        {% assign hasBox = false %}
+    
+        {% capture productBoxesHTML %}
+
+          {% assign productMixs = product.metafields.my_fields %}
+
+          {% for mix in productMixs %}
+            {% assign thekey = mix[0] %}
+            {% assign thevalue = mix[1] %}
+      
+            {% comment %}reference : https://shopify.dev/api/liquid/objects/metafield#metafield-type{% endcomment %}
+      
+            {% if thevalue.type == 'product_reference' %}
+
+              {% assign hasBox = true %}
+              {% if thevalue.value != blank %}   
+                <a href="{{thevalue.value.handle}}" target="_blank">        
+                  <div class="productPartMix">
+                    <div class="productPartMixImage">
+                      {% if thevalue.value != blank %}
+                        <img src="{{ thevalue.value | image_url: width: 150 }}">    
+                      {% endif%}
+                    </div>
+                    <div class="productPartMixContent">
+                      <div class="productPartMixTitle type-style-card-h">
+                          {{ thevalue.value.title }}
+                      </div>
+                      <div class="productPartMixVendor type-style-card-h-subhead">
+                        {{ thevalue.value.vendor }}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              {% endif%}
+              {% comment %} https://shopify.dev/api/liquid/objects/product {% endcomment %}
+            {% endif %}
+          {% endfor %}
+          <div class="clear"></div>
+        {% endcapture%}
+    
+        {% if hasBox == true %}
+        <div class="productBoxContent">
+          <div class="productBoxContentHeadline type-style-h3-bold">Blandingen består af:-</div>
+            {{ productBoxesHTML }}
+          </div>
+        {% endif %}
+        {% comment %}
+            {{ product.metafields.my_fields.productMix_12 }}
+          
+            {% assign recommended_product_1 =  product.metafields.my_fields.productMix_12.value %}
+          {{ recommended_product_1.title }}
+
+          <img src="{{ recommended_product_1 | image_url: width: 300 }}">
+        {% endcomment %}
+
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

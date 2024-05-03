@@ -1,0 +1,129 @@
+{% if section.settings.showBackground == true %}
+  {% assign classSection = 'backgroundWallpaper' %}
+  {% assign threeColRegularTextClass = 'type-style-p-regular' %}
+  {% assign threeColHeadingTextClass = 'type-style-h3-bold' %}
+{% else %}
+  {% assign classSection = 'backgroundDarkPurple' %}
+  {% assign threeColRegularTextClass = 'type-style-usp-p' %}
+  {% assign threeColHeadingTextClass = 'type-style-usp-h' %}
+{% endif %}
+  
+{% if section.settings.bigPadding == true %}
+  {% assign classSectionPadding = 'three-col-section-bigPadding' %}  
+{% else %}
+  {% assign classSectionPadding = 'three-col-section-smallPadding' %}  
+{% endif %}
+
+<style>
+  .blockHeight{
+    height: {{ section.settings.block_height }}px;
+  }
+  @media only screen and (max-width: 1129px) and (min-width: 768px) {
+    .blockHeight{
+      height: unset;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .blockHeight{
+      height: unset;
+    }
+  }
+</style>
+
+<div class="section-container  {{ classSection }} {{ classSectionPadding }}">
+	<div class="page-container">
+      <div class="row fullWidth_col">
+        {%- for block in section.blocks -%}
+      	<div class="col-4 ">
+            <div class="blockHeight">
+              <h3 class="three-col-heading {{ threeColHeadingTextClass }}">
+                {{ block.settings.headline }}
+              </h3>
+              <div class="three-col-content {{ threeColRegularTextClass }}">
+                {{ block.settings.content }}
+              </div>
+            </div>
+            {% if  block.settings.button_text != blank %}
+              <a href="{{ block.settings.button_destination }}">
+      			<div class="orangeButton type-style-button-text mobileBig mobileMargin20">
+      				{{ block.settings.button_text }}
+  				</div>
+  			</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "2022 - 3 col section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "showBackground",
+        "label": "Vis baggrund"
+      },
+      {
+        "type": "checkbox",
+        "id": "bigPadding",
+        "label": "Stor padding"
+      },
+      {
+        "type": "range",
+        "id": "block_height",
+        "min": 100,
+        "max": 240,
+        "step": 10,
+        "unit": "px",
+        "label": "Block height",
+        "default": 100
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+		  {
+            "type": "text",
+			"id": "headline",
+            "label": "Overskrift"
+          },
+          {
+            "type": "text",
+			"id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Tekst på knap"
+          },
+          {
+            "type": "url",
+            "id": "button_destination",
+            "label": "Side link"
+          }
+        ]
+      }
+  	],
+    "presets": [
+      {
+        "name": "2022 - 3 col section",
+        "blocks": [	  
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

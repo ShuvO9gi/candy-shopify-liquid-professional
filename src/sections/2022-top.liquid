@@ -1,0 +1,92 @@
+<div class="section-container backgroundWallpaper">
+    <div class="page-container">
+		<div class="row topBanner">
+			<div class="col-10" >
+				<div class="topbannerContent" style="z-index: 100">
+					<h1 class="type-style-h1-regular">
+                      {{ section.settings.headline }}
+                    </h1>
+				</div>
+				<a href="{{ section.settings.button_destination }}" class="normalLink" style="position: relative;">
+					<div class="orangeButton type-style-button-text">
+						{{ section.settings.button_text }}
+					</div>
+				</a>
+				<div class="topImage">
+					<img src="/{{ section.settings.image | image_url }}" style="max-width:100%">
+				</div>
+			</div>
+			<div class="col-2">
+              {%- for block in section.blocks -%}
+                <div class="topBullet">
+                  <div class="headline type-style-usp-h">{{ block.settings.headline }}</div>
+                  <div class="content type-style-usp-p">{{ block.settings.content }}</div>
+                </div>
+              {%- endfor -%}
+			</div>
+		</div>
+	</div>
+</div>
+{% schema %}
+  {
+  	"name": "2022 - top",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  {
+          "type": "richtext",
+          "id": "headline",
+          "label": "Overskrift"
+      },
+      {
+          "type": "text",
+          "id": "button_text",
+          "label": "Tekst på knap"
+      },
+      {
+          "type": "url",
+          "id": "button_destination",
+          "label": "Side link"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Billede"
+      }
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+          {
+            "type": "text",
+			"id": "headline",
+            "label": "Overskrift"
+          },
+		  {
+            "type": "text",
+			"id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+  	],
+    "presets": [
+      {
+        "name": "2022 - top",
+        "blocks": [	  
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

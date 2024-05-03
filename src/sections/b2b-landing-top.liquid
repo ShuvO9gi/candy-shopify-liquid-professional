@@ -1,0 +1,137 @@
+<script>
+ var w = window.innerWidth;
+</script>
+<div class="page-width_" style="background: #481964;">
+	<div class="topContent">	
+      <div class="top-right-content">
+        <div>
+          <div class="topRightHeadline" >
+            {{ section.settings.topHeadline }}
+          </div>	
+          <h1 class="h1-header">
+            {{ section.settings.headline }}
+          </h1>
+		  <div class="topRightContent">
+            {{ section.settings.content }}
+          </div>
+          <div class="smallRightContent">
+            {{ section.settings.content-small }}
+          </div>
+          <div class="contentRightButton">
+            <a href="{{ section.settings.button-url }}" class="btn extraBtn">
+	            {{ section.settings.button-text }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="top-middle-content" >
+		{%- assign sectionImage = section.settings.image -%}
+		{%- render 'image', image: sectionImage, class: 'sectionImage' -%}
+      </div>
+	  <div class="top-left-content">
+    	{%- for block in section.blocks -%}
+			<div class="forMobile">
+              <div class="bulletHeadline">
+				{{ block.settings.headline }}
+	      	  </div>
+
+			 <div class="bulletContent">
+				{{ block.settings.content }}
+			 </div>
+				
+            {% comment %}	  
+              {% if forloop.last == true %}
+                <div class="bulletContentLast">
+                  {{ block.settings.content }}
+                </div>              
+              {% else %}
+              
+              {% endif %}
+              {% endcomment %}
+			</div>
+      	{%- endfor -%}
+      </div>
+      <div class="clear"></div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+  	"name": "Sektion - top (B2B)",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "topHeadline",
+          "label": "Top sub-overskrift"
+      },	  
+      {
+          "type": "richtext",
+          "id": "headline",
+          "label": "Overskrift"
+      },
+	  {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+      },
+	  {
+          "type": "richtext",
+          "id": "content-small",
+          "label": "Content - lille"
+      },
+	  {
+          "type": "text",
+          "id": "button-text",
+          "label": "Knap tekst"
+      },
+	  {
+          "type": "url",
+          "id": "button-url",
+          "label": "Knap url"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Billede"
+      }
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+          {
+            "type": "text",
+			"id": "headline",
+            "label": "Overskrift"
+          },
+		  {
+            "type": "text",
+			"id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+  	],
+    "presets": [
+      {
+        "name": "B2B Landing Top",
+        "blocks": [	  
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,1979 @@
+<style>
+  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper{
+    overflow: scroll !important;
+  }
+  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul{
+    overflow: scroll;
+    max-height: 250px;
+    overflow-x: hidden;
+  }
+  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper::-webkit-scrollbar {
+    display: none;
+}
+   
+  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul::-webkit-scrollbar {
+  width: 12px;               
+}
+
+  .pickNmix_rowAllproducts .candyItems .candyBox{
+    display: none;
+  }
+  .pickNmix_rowAllproducts .candyItems .candyBox:nth-child(-n+20) {
+    display: block;
+}
+  .pickNmix_rowFirst20 .candyItems .candyBox:nth-child(-n+20) {
+    display: block !important;
+}
+#shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul::-webkit-scrollbar-thumb {
+  background-color: #ffad05;    
+  border-radius: 20px;      
+  border: 3px solid #f2f0f2;  
+}
+
+  
+.filterScroll{
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.filterScroll::-webkit-scrollbar {
+  display: none;
+}
+  .filterScroll::-webkit-scrollbar {
+  width: 0px;               
+}
+.filterScroll::-webkit-scrollbar-thumb {
+  background-color: #f2f0f2;     
+  border: 0 !important;  
+}
+
+
+  <!-- modal search -->
+.show-cus_modalfirst{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -75px;
+  background: #3c83e7;
+  color: #fff;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+#filter-search-icon5 {
+    display: flex;
+    align-items: center;
+    margin-right: 26px;
+}
+  #filter-search-icon5 svg{
+    padding: 4px;
+  }
+.type-style-button-text {
+    font-size: 16px !important;
+}
+
+.close-cus_modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 30px;
+    background: #ffad05;
+    color: #000000;
+    border-radius: 4px;
+    padding: 2px;
+    font-weight: 600;
+    border: 0;
+    margin: 4px;
+}
+
+
+.cus_modal {
+  position: fixed;
+  bottom: -98px;
+  width: 100%;
+  padding: 20px 0;
+  justify-content: center;
+  left: 0;
+  background: #00000059;
+  z-index: 11;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  transform: translateY(45px);
+  display: flex;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cus_modal-active {
+  opacity: 1;
+  transform: translateY(0);
+  display: flex;
+  bottom: 96px;
+}
+ .cus_modal .filter-list{
+    width: 50%;
+  }
+  .bland-selv-slik__sticky {
+    z-index: 111;
+    bottom: 0 !important;
+  }
+
+  /* filter button in sticky bar */
+   #filter_icon-sticky .filters{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+  }
+  #filter_icon-sticky .filter-category{
+    padding: 0 15px;
+    margin-top: 10px;
+    background-color: transparent !important;
+    display: block !important;
+}
+  #filter_icon-sticky .filter-category span{
+    background-color: var(--brandOrange);
+    border-radius: 50%;
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  #filter_icon-sticky .filter-category:hover span{
+    background-color: #8f93a770 !important;
+  }
+  #filter-iconAllProdBtn5 svg rect{
+    fill: transparent !important;
+  }
+  #filter-iconAllProdBtn5 svg path{
+    stroke: #000 !important;
+  }
+  #filter-iconAllProdBtn5 svg circle{
+    stroke: #000 !important;
+  }
+  #filter_icon-sticky .filter-category svg{
+    fill: var(--brandWhite);
+    width: 15px;
+    height: 15px;
+   }
+   #bland-selv-slik-online-slikekspressen .filter-holder{
+     visibility: hidden;
+   }
+  .filter-list_search_mb{
+    display: none;
+  }
+.bland-selv-slik__sticky .is--hidden{
+  display: block !important;
+}
+  #filter_icon-sticky .filter-category svg line{
+    stroke: #fff !important;
+  }
+  
+  #filter_icon-sticky .filter-category svg circle{
+    fill: #fff !important;
+  }
+  section.bland-selv-slik__sticky.fixed.left-0.transform.transition-transform.duration-300.ease-out.z-50.w-full.translate-y-full {
+    --tw-translate-y: unset !important;
+}
+
+  
+/* gift product select */
+  .giftproduct{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 30px 0;
+  }
+  .giftproduct-card_img {
+        width: 300px;
+        height: 300px;
+        background: #FFF1D4;
+        padding: 20px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin: 10px 0;
+        transition: 0.3s ease-in-out;
+    }
+
+    .giftproduct-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #6E4695;
+        height: 50px;
+        line-height: 20px;
+    }
+
+    .giftproduct-weight {
+        font-size: 16px;
+        color: #6E4695;
+        margin-bottom: 6px;
+    }
+
+    .giftproduct-price {
+        font-size: 16px;
+        color: #EE62A0;
+        font-weight: 600;
+    }
+    .giftproduct_price{
+        font-size: 16px;
+        color: #EE62A0;
+        font-weight: 600;
+    }
+  #page1{
+    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  }
+   #pickNmix_row{
+     display: none;
+     transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+     overflow: hidden;
+     padding-top: 150px;
+   }
+  .nextPagesticky{
+    padding: 20px 0;
+  }
+  .nextPageBtn{
+    background: #C7F0BD;
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 12px 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0.8;
+    align-items: center;
+  }
+  .giftprodselectedbody .nextPageBtn{
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+  .nextPageBtnImg{
+    rotate: 180deg;
+  }
+  .nextPageBtn3{
+    background: #C7F0BD;
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 12px 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  .msgcarselected .nextPageBtn3{
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+  .nextPage2Btn{
+    background: #C7F0BD;
+    max-width: fit-content;
+    padding: 12px 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  .candy-over .nextPage2Btn{
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+  .prevPageBtn{
+    background: #fff;
+    max-width: fit-content;
+    padding:  18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .prevPage2Btn{
+    background: #fff;
+    max-width: fit-content;
+    padding:  18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .nextPageBtn:hover{
+    background: #fff;
+  }
+  .nextPage2Btn:hover{
+    background: #fff;
+  }
+  .prevPageBtn:hover{
+    background: #C7F0BD;
+  }
+  .page2Btn{
+    display: flex;
+    flex-direction: column;
+  }
+  .page2Btn-inside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .cus_giftflow .page2Btn{
+    display: none;
+    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  }
+  .cus_giftflowpage2 .nextPageBtn{
+    display: none;
+  }
+  .stickytop{
+    background-color: #9C6EAA;
+    position: fixed;
+    top: 126px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: #fff;
+    z-index: 9999999;
+  }
+  .stickytop-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1130px;
+    margin: 0 auto;
+  }
+  .addcandytitle{
+    color: #fff;
+    font-size: 32px;
+  }
+  .addcandytitle1 {
+    color: #000;
+    font-size: 32px;
+    margin-top: 30px;
+    font-weight: 600;
+}
+  .addcandybar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .autofillbtn{
+    background: #d3b5d1;
+    padding: 0px 40px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #filter-iconAllProdBtn5{
+    background: #D3B5D1;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  #filter-iconAllProdBtn5:hover {
+    background: #8f93a770;
+}
+  .barColoseBagButton{
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    width: auto !important;
+  }
+  .rightSideBar {
+    justify-content: center !important;
+}
+  .giftproduct-card{
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  .giftprodselected .giftproduct-card_img {
+    background: #6E4695 !important;
+}
+  .candy-over .candyBoxBuyButton{
+    background-color: #dfe3e8 !important;
+    pointer-events: none;
+  }
+  .candy-over .candyBox .candyBoxImage img{
+    pointer-events: none;
+  }
+  .candy-over .candyBox .candyBoxImage{
+    pointer-events: none;
+  }
+  .candy-over [data-qty-plus] {
+    pointer-events: none;
+    opacity: 0.3;
+}
+  #targeycandyweight{
+    display: none;
+  }
+  .drawer_locked .stickytop{
+    z-index: 11 !important;
+  }
+  #removeautofillbtn{
+    display: none;
+  }
+.page3{
+  display: none;
+}
+  .page3Btn{
+    display: none;
+    flex-direction: column;
+  }
+  .page3Btn-inside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .giftprodselectedbody .sa-upsell-offer{
+    overflow: hidden;
+  }
+  .nextPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+ .progress {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  height: 5px;
+  max-width: 200px;
+}
+  .page3Btn .progress {
+    max-width: 150px !important;
+}
+  .progressbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .progressbartop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0;
+    color: #fff;
+    width: 100%;
+}
+.progresstargetcandy{
+  max-width: 100% !important;
+}
+ .progress::-webkit-progress-bar {
+  background-color: #D3B5D1;
+}
+ .progresstargetcandy::-webkit-progress-bar {
+  background-color: #FFAD05 !important;
+}
+ .progress::-webkit-progress-bar,
+.progress-section .progress::-webkit-progress-value {
+  border-radius: 10px;
+}
+ .progress::-moz-progress-bar {
+  border-radius: 10px;
+}
+ .progresstop::-webkit-progress-bar,
+.progress-section .progresstop::-webkit-progress-value {
+  border-radius: 10px;
+}
+ .progresstop::-moz-progress-bar {
+  border-radius: 10px;
+}
+ .progresstargetcandy::-webkit-progress-value {
+  background: #fff;
+  border-radius: 10px;
+}
+ .progress1::-webkit-progress-value {
+  background: #fff;
+  border-radius: 10px;
+}
+ .progress2::-webkit-progress-value {
+  background: #fff;
+  border-radius: 10px;
+}
+ .progress3::-webkit-progress-value {
+  background: #fff;
+  border-radius: 10px;
+}
+ 
+    .drawer_content_product_item_delete_shopAdjust{
+      z-index: 1111;
+      position: absolute;
+      right: 0;
+    }
+    .drawer_content_product_item_title_shopAdjust{
+          overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    }
+    .bland-selv-slik__name-prompt{
+      opacity: 0 !important;
+    }
+    .drawer_content_product_item_shopAdjust{
+      padding: 0 0 16px !important;
+    }
+    .candy-over #autofillbtn{
+      pointer-events: none;
+    }
+    .stepmsgcard-upsell-wrapper .sub-label-detail{
+      display: none;
+    }
+    .giftprodselectedbody .candyBox {
+    max-width: 283px;
+    }
+    #gift .gift-item_editbtnhide .drawer_content_product_item_delete_shopAdjust {
+        transform: unset !important;
+    }
+    #gift .logo__menu__item svg{
+          transform: translate(0px, -43px);
+    }
+    #page1 [data-id="47068579856715"]{
+      display: none;
+    }
+    [data-product-item-id="47473245585739"]{
+      opacity: 0;
+    }
+    [data-product-item-id="47473208525131"]{
+      opacity: 0;
+    }
+@media only screen and (max-width: 1300px){
+   #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul{
+   max-height: 116px !important;
+  }
+    }
+  @media only screen and (max-width: 767px){
+    .filter-list_search_mb{
+    display: block !important;
+  }
+    .cus_modal-active {
+      bottom: 80px !important;
+      z-index: 1111 !important;
+    }
+    .cus_modal .filter-list {
+    width: 65% !important;
+}
+    .max767 {
+    display: flex !important;
+    background: #acddd6;
+    padding: 2px 10px;
+    border-radius: 0 10px 0 0;
+}
+    #filter-iconAllProdBtn2 svg rect{
+      fill: #acddd6 !important;
+    }
+    #filter-iconAllProdBtn2 svg path{
+      stroke: #000 !important;
+    }
+    #filter-iconAllProdBtn2 svg circle{
+      stroke: #000 !important;
+    }
+    .giftproduct {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 20px !important;
+    gap: 5px;
+}
+.giftproduct-title {
+    font-size: 14px !important;
+    line-height: 20px;
+    height: 40px !important;
+}
+.giftproduct-card_img {
+    width: 100% !important;
+    height: 137px !important;
+    padding: 0px !important;
+} 
+[data-sticky-filter-btn]{
+  display: none !important;
+}
+.cus_stickybar{
+  padding: 10px 0;
+}
+.cus_stickybarmob{
+  display: none;
+}
+.progress {
+    max-width: 100px !important;
+}
+.progresstargetcandy {
+    max-width: 60% !important;
+}
+.autofillbtn {
+    padding: 0px 10px 6px !important;
+    font-size: 14px;
+    max-width: 100%;
+    text-align: center;
+}
+.addcandybar {
+    gap: 10px !important;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.progressbartop {
+    justify-content: left !important;
+}
+.stickytop-inner{
+  flex-direction: column;
+    align-items: flex-start;
+}
+#filter-search-icon5{
+  right: 20px;
+    position: absolute;
+}
+#filter-search-icon5 svg {
+    max-width: 30px;
+    max-height: 30px;
+}
+.addcandytitle {
+    font-size: 22px !important;
+}
+.addcandytitle1 {
+    font-size: 26px !important;
+    margin-top: 20px !important;
+    padding: 0 20px 20px;
+}
+.page3{
+    padding: 0 20px;
+}
+.giftprodselectedbody .stepmsgcard-upsell-item {
+    padding: 20px !important;
+    gap: 10px;
+}
+#shopify-section-double-collections{
+    padding-top: 50px;
+}
+.giftprodselectedbody  #shopify-section-header .page-container{
+   background: #fff;
+}
+.stickytop {
+    top: 76px !important;
+}
+.addcandybarPara{
+   font-size: 14px;
+}
+#pickNmix_row {
+    padding-top: 130px !important;
+}
+  }
+
+  body{
+  height: 100vh !important;
+  }
+</style>
+{%- assign class = 'bland-selv-slik' -%}
+{%- assign s = section.settings -%}
+{%- assign paginateBy = s.paginate -%}
+{%- assign delivery_text = 'bland_selv.speech_bubbles.delivery' | t -%}
+{%- assign price_limit_text = 'bland_selv.speech_bubbles.price_limit' | t -%}
+
+  {% paginate collection.products by paginateBy %}
+
+  {%- capture config -%}
+    {
+    "handle": "{{ collection.handle }}",
+    "totalProducts": {{ collection.all_products_count }},
+    "paginate": {{ paginateBy | json }},
+    "currentPage": {{ paginate.current_page | json }},
+    "priceLimit": {{ s.price_limit | json }},
+    "itemWidth": {{ s.width_item | json }},
+    "plusIcon": "{{ 'plus.png' | asset_url }}",
+    "minusIcon": "{{ 'minus.png' | asset_url }}"
+    }
+  {%- endcapture -%}
+
+  <div>{% for product in collection.products %}<p class="allproductlist" style="display: none;">{{ product.title }}-{{ product.price }}</p>{% endfor %}</div>
+
+  <div
+    class="{{ class }}"
+    data-config='{{ config }}'
+    data-component="speechBubble">
+    <section class="{{ class }}__products">
+      <div class="section-container candySection">
+        <div class="page-container">
+          <div
+            class="filter----product filter fixed top-0  left-0 transform -translate-x-full  transition-transform duration-300 ease-in-out h-full pt-6 lg:pt-10  bg-white shadow-custom z-20"
+            data-filter-drawer
+            data-component="filterSidebar">
+            <div></div>
+            <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold" data-filter-close>
+              <span class="close-cus_filter">{%- render 'icon' with 'close-dark' -%}</span>
+            </div>
+            
+            <div></div>
+            <div class="filterScroll">
+              <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold">
+                <span>{{ 'bland_selv.general.filter_title' | t }}</span>
+              </div>
+
+              <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto">
+                {%- assign filter_cat_arr = blank -%}
+
+                {%- for b in section.blocks -%}
+                  {%- case b.type -%}
+                    {%- when 'filter_type' -%}
+                    {%- assign bs = b.settings -%}
+                    {%- assign filter_cat_arr = filter_cat_arr | append: bs.category | append: ',' -%}
+                  {%- endcase -%}
+                {%- endfor -%}
+
+                {%- assign filter_cat_arr = filter_cat_arr | split: ',' | uniq -%}
+
+                <ul>
+                  {%- for cat in filter_cat_arr -%}
+                    <li class="mb-3 last:mb-0">
+                      <div class="rounded-md shadow-filterItem">
+                        <div class="filter__item__toggle flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md cursor-pointer" data-filter-toggle>
+                          <span class="type-style-p-small-bold">{{ cat | capitalize }}</span>
+                          <span class="flex items-center justify-center w-5 h-5 transition-transform duration-200 ease-in-out" data-filter-icon>{%- render 'icon' with 'chevron-down' -%}</span>
+                        </div>
+
+                        <div class="filter__item__wrapper transition-maxHeight duration-300 ease-in-out overflow-hidden" data-filter-wrapper>
+                          <ul class="">
+                            {%- for b in section.blocks -%}
+                              {%- case b.type -%}
+                                {%- when 'filter_type' -%}
+                                {%- assign bs = b.settings -%}
+                                {%- assign filter_cat = bs.category -%}
+                                {%- assign filter_name = bs.filter_name -%}
+                                {%- assign filter_id = bs.filter_id -%}
+                                {%- assign filter_type = bs.type -%}
+
+                                {%- if filter_cat == cat -%}
+                                  <li
+                                    class="filter__item flex items-center justify-between px-3 py-[10px] first:pt-5 last:pb-5 cursor-pointer"
+                                    data-filter-item
+                                    data-filter-type="{{ filter_type }}"
+                                    data-filter-id="{{ filter_id }}">
+                                    <p class="transition-color duration-100 ease-out type-style-p-small-regular">{{ filter_name }}</p>
+                                    <div class="filter__item__dot w-2 h-2 ml-5 border-2 border-orange rounded-full transition-color duration-100 ease-out"></div>
+                                  </li>
+                                {%- endif -%}
+                              {%- endcase -%}
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+            <!-- /filter-list -->
+          </div>
+
+         <!-- gift product select -->
+            <div class="row" id="page1">
+            <h2 class="addcandytitle1">{{section.settings.step1_title}}</h2>
+              <div class="col-12 giftproduct">
+                {% for product in collections.GiftflowStep1.products %}  
+                  <div class="giftproduct-card" onclick="giftprodclick(this);" data-id="{{ product.variants.first.id }}">
+                      <h2 class="giftproduct-title">{{ product.title }}</h2>
+                      <img class="giftproduct-card_img" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
+                      <p class="giftproduct-weight">{{ product.variants.first.weight }}g Bland Selv Slik</p>
+                      <p class="giftproduct_price"><span class="giftproduct-price" id="giftproduct_price">{{ product.price | money_without_currency }}</span> kr</p>
+                  </div>
+                  {% endfor %}  
+              </div>
+            </div>
+      <div class="row pickNmix_row pickNmix_rowAllproducts page2" id="pickNmix_row">
+          <div class="w-full stickytop">
+             <div class="stickytop-inner">
+                <h2 class="addcandytitle">{{section.settings.step2_title}}</h2>
+                <div class="addcandybar">
+                   <p class="addcandybarPara">{{section.settings.step2_targetfirsttext}} <span id="targeycandyweight" data-gram-elem></span> <span id="targeycandyweightvisible" ></span>{{section.settings.step2_targetlasttext}}</p>
+                   <p class="progressbartop"><progress class="progress progresstargetcandy" max="100" value="33"></progress><span></span> </p>
+                   <a class="autofillbtn" id="autofillbtn" onclick="autofillbtn();">{{section.settings.step2_randombtntext}}</a>
+                  <a class="autofillbtn" id="removeautofillbtn" onclick="removeautofillbtn();">{{section.settings.step2_removebtntext}}</a>
+                </div>
+                <div id="filter-search-icon5" class="show-cus_modalfirst " aria-haspopup="true"><span id="filter-iconAllProdBtn5">{%- render 'icon' with 'search-light' -%}</span></div>
+             </div>
+          </div>
+            <div class="col-12">
+
+              {%- comment -%}
+              <ul class="{{ class }}__products-wrapper flex flex-wrap -mt-8 -ml-2" data-product-list>
+              {%- for product in collection.products -%}
+
+              Products are loaded with javascript 
+              /js/custom/blandSelvSlik.js
+
+              {%- endfor -%}
+              </ul>
+              {%- endcomment -%}
+              <div class="candyItems " data-product-list></div>
+
+            </div>
+
+
+
+          </div>
+          <div class="page3">
+               {% render 'giftflow_message-card' %}
+            </div>
+        <!-- modal search -->
+            <div class="mask-cus_modal" role="dialog"></div>
+              <div class="cus_modal" role="alert">
+
+     <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto">
+              <input placeholder="Søg efter slik her" type="text" id="filter-search" class="flex px-3 py-[10px] border border-filterBorder rounded-md"></input>
+            </div>
+                <button class="close-cus_modal" id="close-cus_modal" role="button">X</button>
+              </div>
+        <!-- end modal search -->
+    
+          <div class="row">
+            <div class="col-12">
+              <div class="flex justify-center load-more-holder">
+                <button  data-load-more>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card__info fixed top-0 left-0 w-full h-screen flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 ease-out z-100" data-info-modal>
+        <div class="overlay relative max-w-[90%] rounded-md">
+          <div class="product-card__info__inner relative max-w-xl max-h-[75vh] !rounded-md bg-white text-xs sm:text-base shadow-custom">
+            <div class="product-card__info__header flex items-center justify-between px-4 py-2 bg-lightPink rounded-t-md">
+              <div class="flex items-center justify-center">
+                <img
+                  class="block w-12 h-12 mr-4 md:mr-7"
+                  src=""
+                  alt=""
+                  data-info-modal-image>
+                <span class="max-w-[80%] text-purple font-bold" data-info-modal-title></span>
+              </div>
+              <span class="cursor-pointer" data-close-info>{%- render 'icon' with 'close' -%}</span>
+            </div>
+
+            <div class="product-card__info__wrapper max-h-[60vh] p-4 text-purple overflow-auto" data-info-modal-description>{%- comment -%}
+              Info content is inserted via js
+              {%- endcomment -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="{{ class }}__sticky fixed left-0 transform transition-transform duration-300 ease-out z-50 w-full" data-sticky-bar>
+      <div class="{{ class }}__sticky__filter-button flex justify-start" data-sticky-filter-btn>
+        <div class="max767">
+          <button class="buttonCorners flex items-center justify-center w-full h-[46px] font-bold text-2xs uppercase rounded-md" data-filter-button>
+            <span class="mr-[6px]">{%- render 'icon' with 'filter' -%}</span>
+          </button>
+          <div id="filter-search-icon2" class="show-cus_modal2 " aria-haspopup="true"><span id="filter-iconAllProdBtn2">{%- render 'icon' with 'search-light' -%}</span></div>
+        </div>
+      </div>
+      <div style="background-color: var(--brandDarkPurple);">
+        <div class="page-container" id="cus_sticky-total-btn" data-sticky-total-btn>
+          <div class="row">
+           
+          <div class="col-12 cus_stickybar" >
+              <div class="bottomBar valignMiddle">
+                <div class="leftSideBar" style="visibility: hidden; position: absolute;">
+                  <div class="barGramText type-style-p-small-regular">
+                    {{ 'bland_selv.general.grams' | t }}
+                    <span data-gram-elem></span>.
+                  </div>
+                  <div class="barPriceText type-style-p-bold">
+                    <span>
+                      {{ 'bland_selv.general.price' | t }}
+                    </span>
+                    <span data-total-price-elem></span>.
+                  </div>
+                </div>
+                
+              <div class="rightSideBar" style="width: 100%;">
+              {%- comment -%}<button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>{%- endcomment -%}
+                <div class="nextPage">
+                  <div class="progressbar"><progress class="progress progress1" max="100" value="33"></progress><span></span>Trin 1 af 3</div>
+                  <div class="nextPageBtn" onclick="nextPage();">{{section.settings.step1btn_title}} <span><img class="nextPageBtnImg" src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"></span></div>
+                </div>
+             
+                <div class="page2Btn">
+                  <div class="progressbar"><progress class="progress progress2" max="100" value="66"></progress><span></span>Trin 2 af 3</div>
+                  <div class="page2Btn-inside">
+                     <div class="prevPageBtn" onclick="prevPage();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                     <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn"  onclick="nextPage2();" >{{section.settings.step2_nextbtntext}}</button>
+                  </div> 
+                </div>
+    
+                <div class="page3Btn">
+                  <div class="progressbar"><progress class="progress progress3" max="100" value="100"></progress><span></span>Trin 3 af 3</div>
+                  <div class="page3Btn-inside">
+                    <div class="prevPage2Btn" onclick="prevPage2();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                    <button class=" type-style-button-text cursor-pointer nextPageBtn3" id="LeftbarColoseBagButton" onclick="nextPage3();" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+                  </div>
+                </div>
+              </div>
+    
+            <div class="col-12 hideOnDesktop cus_stickybarmob">
+              <div class="bottomBar valignMiddle">
+                <div class="flex" style="width: 100%;
+                      display: flex;
+                      flex-direction: row;
+                      flex-wrap: nowrap;
+                      align-content: center;
+                      justify-content: space-between;
+                      align-items: center;">
+                  <div class="barGramText type-style-p-small-regular">
+                    <span>{{ 'bland_selv.general.grams' | t }}</span>
+                    <span data-gram-elem-mobile></span>.
+                  </div>
+                  <div class="barPriceText type-style-p-bold">
+                    <span>
+                      {{ 'bland_selv.general.price' | t }}
+                    </span>
+                    <span data-total-price-elem-mobile></span>.
+                  </div>
+                </div>
+                <div class="flex" style="width: 100%;">
+                  <button class="barSeeBagButton cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
+                  <button
+                    class="barColoseBagButton cursor-pointer"
+                    disabled
+                    data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+                </div>
+              </div>
+            </div> 
+    
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  {%- comment -%}
+  Visual bag
+  {%- endcomment -%}<div
+    class="{{ class }}__visual-bag fixed top-0 left-0 w-full h-full pointer-events-none z-[46]"
+    data-component="visualBag"
+    data-visual-bag-wrapper>
+    <div class="page-width relative h-full">
+      <div id="visual-bag__close_cus" class="{{ class }}__visual-bag__inner absolute right-0 sm:right-[17px] md:right-[40px] left-0 sm:left-[unset] bottom-[80px] sm:bottom-[80px] max-h-[55vh] lg:max-h-[50vh] max-w-full sm:min-w-[500px] rounded-tl-md rounded-tr-md bg-white transition-transform ease-out duration-300 transform translate-y-[200%] shadow-subtle" data-visual-bag-inner>
+        <div class="relative pb-10">
+          <div class="flex items-center justify-between px-[35px] py-[15px] rounded-tl-md rounded-tr-md popup-header">
+            <p class="font-body font-bold text-[30px] leading-[1] type-style-card-h">{{ 'bland_selv.general.your_bag' | t }}</p>
+
+            <div id="visual-bag__close_cusBtn" class="{{ class }}__visual-bag__close flex items-center cursor-pointer" data-close-visual-bag>
+              <span class="mr-[10px] font-heading font-bold text-sm type-style-card-h">{{ 'bland_selv.general.hide' | t }}</span>
+              {%- render 'icon' with 'close-dark' -%}
+            </div>
+          </div>
+
+          <ul id="visual-bag__close_cusList" class="{{ class }}__visual-bag__list h-[45vh] lg:h-[43vh] pt-4 pb-[70px] lg:pb-3 px-[15px] overflow-auto" data-visual-bag></ul>
+          <div class="custom-scrollbar" data-custom-scrollbar></div>'
+        </div>
+      </div>
+    </div>
+    <!-- /page-width -->
+  </div>
+
+  {%- comment -%}
+  Name prompt modal
+  {%- endcomment -%}{%- comment -%}
+  <div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
+  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+  <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
+  {%- render 'icon' with 'close' -%}
+  </div>
+  <p class="mb-3 font-body font-semibold text-2xl">{{ 'bland_selv.name_prompt.write_name' | t }}</p>
+  <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
+  <button class="btn" type="button" onclick="addPushEvent()" data-final-submit>
+  {{ 'bland_selv.name_prompt.submit' | t }}
+  </button>
+  </div>
+  </div>
+  {%- endcomment -%}<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
+    <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
+        {%- render 'icon' with 'close' -%}
+      </div>
+
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center type-style-h3-bold">{{ 'bland_selv.name_prompt.write_name' | t }}</h3>
+        <p class="mb-3 text-center type-style-p-regular">{{ 'bland_selv.name_prompt.write_description' | t }}</p>
+      </div>
+     <input
+    class="mb-5"
+    type="hidden"
+    placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}"
+    data-name-prompt-input value=""
+     id="name-input">
+      <button
+        class="btn type-style-button-text"
+        type="button"
+        onclick="addPushEvent()"
+        data-final-submit>
+        {{ 'bland_selv.name_prompt.submit' | t }}
+      </button>
+
+      <p class="text-center type-style-p-small-regular">
+        <a
+          data-name-prompt-skip
+          class="underline underline-offset-1"
+          href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a>
+      </p>
+
+
+    </div>
+  </div>
+
+  {%- comment -%}
+  Re Name prompt modal
+  {%- endcomment -%}<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-ask-rename-prompt>
+    <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div
+        class="{{ class }}__name-prompt__close absolute"
+        data-ask-rename-prompt-close
+        style="display: none;">
+        {%- render 'icon' with 'close' -%}
+      </div>
+
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center type-style-h3-bold" data-ask-rename-headline>{{ "bland_selv.rename_prompt.title" | t | strip_html }}</h3>
+        <p class="mb-3 text-center type-style-p-regular" data-ask-rename-description>{{ "bland_selv.rename_prompt.description" | t | strip_html }}</p>
+      </div>
+
+      <div class="btn-groups mt-3">
+        <button
+          class="btn type-style-button-text"
+          type="button"
+          data-ask-rename-submit>{{ "bland_selv.rename_prompt.accept" | t | strip_html }}</button>
+
+        <button
+          class="btn type-style-button-text"
+          type="button" onclick="addrename();"
+          data-ask-rename-decline>
+          {{ 'bland_selv.rename_prompt.decline' | t | strip_html }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%}
+  Success modal
+  {%- endcomment -%}<div class="{{ class }}__success-modal fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-success-modal>
+    <div class="{{ class }}__success-modal__inner relative p-9 rounded-md bg-white shadow-custom">
+      <p class="max-w-xs mb-1 font-body font-semibold text-2xl">{{ 'bland_selv.general.success' | t }}</p>
+      <p class="mb-5 font-body">Din pose er nu lagt i kurven</p>
+      <div class="flex-button items-center justify-center">
+        <a
+          data-component="cleanPose"
+          href="/cart"
+          class="btn bg-purple btn-full-width mx-0 type-style-button-text"
+          id="go-to-cart"
+          >{{ 'bland_selv.general.go_to_cart' | t }}</a>
+      </div>
+    </div>
+  </div>
+
+{% endpaginate %}
+
+<script>
+document.getElementById('nextPage2Btn').addEventListener('click', async function() {
+
+    var lis = document.querySelectorAll('.mb-4[data-bag-item]'); // Selecting all list items with the specified class and data attribute
+    var result = []; // Array to store the results
+    var giftVarIds = [];
+  await fetch(
+        `/collections/GiftflowStep1?page=0&view=data`
+      ).then(res => res.clone().json().then(data => {
+        if (data && data.length){
+          for(const gift of data){
+            if(gift.tags && gift.tags.find(t => t == "standardMix")) continue;
+            giftVarIds.push(...gift.variants.map(v=> v.id))
+          }
+        }
+      }));
+    lis.forEach(function(li) {
+        var titleElement = li.querySelector('.drawer_2_content_product_name_shopAdjust');
+        var qtyId = li.querySelector('.drawer_2_content_product_shopAdjust').getAttribute('data-qty-id'); // Selecting the data-qty-id attribute
+        var amountElement = li.querySelector('#customDataAmount'); // Selecting the amount element
+        var weightElement = li.querySelector('#customDataWeight'); // Selecting the weight element
+      
+        if ( qtyId && !giftVarIds.find(vid => vid == qtyId) && titleElement && weightElement && amountElement) {
+            var title = titleElement.textContent.trim();
+            var weight = parseInt(weightElement.textContent.trim());
+            var amount = parseInt(amountElement.textContent.trim());
+            result.push({"name": title, "id": parseInt(qtyId), "weight": parseInt(weight), "quantity": amount}); // Pushing the formatted data into the result array
+        }
+        
+    });
+
+    var formattedItems = JSON.stringify({"Gift_LineItems": result}); // Convert the array of objects to JSON string with the key "Gift_LineItems"
+    var inputField = document.getElementById('name-input');
+    var inputField2 = document.getElementById('CartNoteDrawer2');
+    var title = $('.giftprodselected .giftproduct-title').text();
+    inputField.value = title + " " + inputField.value;
+    inputField2.value = formattedItems; // Assigning JSON string to the input field
+
+    fetch(`${window.location.origin}/cart.js`)
+        .then(res => res.clone().json().then(data => {
+            var cart = {
+                total_price: data.total_price / 100,
+                $value: data.total_price / 100,
+                total_discount: data.total_discount,
+                original_total_price: data.original_total_price / 100,
+                items: data.items
+            }
+            const selectedValueCounts = data.items.filter(item => item.product_type === "app_gift_package" && item.product_title === title);
+            const finalCount = selectedValueCounts.length? (selectedValueCounts.length +1):'';
+
+            inputField.value =  inputField.value + " " + finalCount;
+            inputField.setAttribute('value', inputField.value);
+
+            inputField2.setAttribute('value', inputField2.value);
+        }))
+});
+
+</script>
+<script>
+  var jq = document.createElement('script');
+jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+jq.onload = function() {
+  jQuery.noConflict();
+  jQuery(document).ready(function($) {
+
+      // step1 gift selection
+      var weightText = $('.giftprodselected .giftproduct-weight').text();
+      var weightAmount = parseFloat(weightText);
+      var candyWeightText = $('#targeycandyweight').text();
+      function extractWeightAmount() {
+          var weightText = $('.giftprodselected .giftproduct-weight').text();
+          var weightAmount = parseFloat(weightText);
+          $('#targeycandyweightvisible').text(weightAmount);
+        }
+      var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
+      function giftprodclick(element) {
+          $('#autofillbtn').addClass(dynamicClassName);
+      }
+
+        extractWeightAmount();
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if ($(mutation.target).hasClass('giftprodselected')) {
+              extractWeightAmount();
+            }
+          });
+        });
+        var targetNode = document.body;
+        var config = { attributes: true, subtree: true };
+        observer.observe(targetNode, config);
+
+    // step2 candy selection
+ function updateCandyWeight() {
+    var weightText = $('.giftprodselected .giftproduct-weight').text();
+    var weightAmount = parseFloat(weightText);
+    var candyWeightText = $('#targeycandyweight').text();
+    var candyWeightValue = parseInt(candyWeightText, 10);
+
+    // Calculate percentage completion
+    var percentage = (candyWeightValue / weightAmount) * 100;
+
+    // Update progress bar value and max attributes
+    $('.progresstargetcandy').attr('value', percentage);
+    $('.progresstargetcandy').attr('max', 100);
+    // Extract the number from the text using regular expression
+    var candyWeightNumber = candyWeightText.match(/\d+/);
+
+    // Check if candyWeightNumber is not null before conversion
+    var candyWeightValue = candyWeightNumber ? parseInt(candyWeightNumber, 10) : 0;
+
+    // Subtract candyWeightValue from weightAmount
+    var newWeightAmount = Math.max(0, weightAmount - candyWeightValue);
+
+    // Update the content of targeycandyweightvisible with the new amount
+    $('#targeycandyweightvisible').text(newWeightAmount);
+
+    // Check if candyWeightValue is over weightAmount and add a class to the body tag
+    if (candyWeightValue >= weightAmount) {
+        $('body').addClass('candy-over');
+    } else {
+        $('body').removeClass('candy-over');
+    }
+}
+
+
+
+// Initial call to set the variable when the page loads
+updateCandyWeight();
+
+// Event listener for changes in the candy weight input field
+$('#candyWeightInput').on('input', function() {
+    // Update candy weight variable when the input changes
+    updateCandyWeight();
+});
+
+// Use MutationObserver to watch for changes in the target element
+var observer = new MutationObserver(function(mutations) {
+    // Update candy weight variable when the target element changes
+    updateCandyWeight();
+});
+
+// Define the target node (the element to be observed)
+var targetNode = document.getElementById('targeycandyweight');
+
+// Define the type of mutations to observe
+var config = { childList: true, subtree: true };
+
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
+    });
+};
+
+document.body.appendChild(jq);
+</script>
+
+                 
+<!--search filter-->
+<script>
+
+   <!-- click search icon and show all the products -->
+        function handleFilterSearchIconClick() {
+        var pickNmixRowElement = document.getElementById('pickNmix_row');
+
+        if (pickNmixRowElement) {
+            pickNmixRowElement.classList.remove('pickNmix_rowAllproducts');
+        }
+    }
+
+
+          var filterSearchIconElement4 = document.getElementById('close-cus_modal');
+    if (filterSearchIconElement4) {
+        filterSearchIconElement4.addEventListener('click', handleFilterSearchIconClick);
+    }
+
+  
+    var filterSearchIconElement5 = document.getElementById('filter-iconAllProdBtn5');
+    if (filterSearchIconElement5) {
+        filterSearchIconElement5.addEventListener('click', handleFilterSearchIconClick);
+    }
+
+var filterSearchIconElement2 = document.getElementById('filter-iconAllProdBtn2');
+    if (filterSearchIconElement2) {
+        filterSearchIconElement2.addEventListener('click', handleFilterSearchIconClick);
+    }
+var filterSearchIconElement3 = document.getElementById('filter-iconAllProdBtn3');
+    if (filterSearchIconElement3) {
+        filterSearchIconElement3.addEventListener('click', handleFilterSearchIconClick);
+    }
+
+  
+function handleCandyItems() {
+  var itemsPerPage = 30;
+  var currentPage = 3;
+  var allowPagination = true;
+
+  function showMoreItems() {
+    var from = currentPage * itemsPerPage;
+    var to = from + itemsPerPage;
+
+    $('.candyItems .candyBox').slice(from, to).fadeIn();
+    currentPage++;
+  }
+
+  function loadInitialItems() {
+    showMoreItems();
+    allowPagination = true;
+  }
+
+  window.onload = function() {
+    setTimeout(function() {
+      loadInitialItems();
+
+      var event = new MouseEvent('mousemove', {
+        bubbles: true,
+        cancelable: true,
+        clientX: window.innerWidth / 2,
+        clientY: window.innerHeight / 2
+      });
+      document.dispatchEvent(event);
+    }, 1000);
+  };
+
+  $(window).scroll(function() {
+    if (allowPagination) {
+      var scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
+
+      if (scrollPercent > 80) {
+        showMoreItems();
+      }
+    }
+  });
+
+  $("#filter-search").on("input", function() {
+    allowPagination = false;
+  });
+
+ // Add event listener for closing the modal
+  $(".close-cus_modal").on("click", function() {
+    allowPagination = true;
+    loadInitialItems();
+    $("#filter-search").val("");
+    $("#pickNmix_row").addClass("pickNmix_rowFirst20");
+  });
+
+   $("#filter-iconAllProdBtn5").on("click", function() {
+    $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
+  });
+$("#filter-iconAllProdBtn2").on("click", function() {
+    $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
+  });
+
+}
+
+var jq = document.createElement('script');
+jq.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+jq.onload = function() {
+  $(document).ready(function() {
+    handleCandyItems();
+
+  });
+};
+
+document.body.appendChild(jq);
+
+if (window.history.replaceState) {
+  window.history.replaceState(null, null, window.location.pathname);
+}
+
+<!-- giftflow page1,page2 hide show -->
+    function nextPage() {
+      $('#pickNmix_row').slideDown();
+      $("#pickNmix_row").css('display', 'flex');
+      $("#page1").css('display', 'none');
+      $("main").removeClass('cus_giftflow');
+      $("main").addClass('cus_giftflowpage2');
+      $('[data-remove]').click();
+      $(".page2Btn").css('display', 'flex');
+      $(".nextPage").css('display', 'none');
+      $("#autofillbtn").css("display", "block");
+      $("#removeautofillbtn").css("display", "none");
+      $('body').removeClass('candy-over');
+      $('#handleRadioClick').removeClass('selected');
+      $('#removeordernote').removeClass('selected');
+      $('#ordernote').removeClass('ordernote');
+      $('#CartNoteDrawer').val('');
+      $("body").removeClass('msgcarselected');
+      $('.progresstargetcandy').attr('value', 0);
+
+      var weightText = $('.giftprodselected .giftproduct-weight').text();
+      var weightAmount = parseFloat(weightText);
+      var candyWeightText = $('#targeycandyweight').text();
+      var candyWeightNumber = candyWeightText.match(/\d+/);
+      var candyWeightValue = parseInt(candyWeightNumber, 10);
+      candyWeightVariable = candyWeightValue;
+      var dataIdValue = $('.giftproduct-card').data('id');
+      //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
+      //$('#autofillbtn').attr('onclick', dynamicClassName + '();');
+      var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
+      $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
+
+      window[dynamicClassnextPage2] = function() {
+        $('.page3').slideDown();
+        $("#pickNmix_row").css('display', 'none');
+        $(".page3").css('display', 'block');
+        $("main").removeClass('cus_giftflowpage2');
+        $(".page3Btn").css('display', 'flex');
+        $(".page2Btn").css('display', 'none');
+        $(".nextPage").css('display', 'none');
+        $('[data-submit-button]').text('LÆG I KURV');
+        var dataId = $('.autofillbtn').data('id');
+          var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
+          if (candyButton.length > 0) {
+              candyButton.click();
+          } else {
+              console.error("Button not found with data-id:", dataId);
+          }
+        }
+
+        $('.giftproduct-card').each(function() {
+            var dataId = $(this).data('id');
+            $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
+        });
+
+    }
+       <!-- Or click here to fill with random candy -->
+        
+          function autofillbtn() {
+          $("#autofillbtn").css("display", "none");
+          $("#removeautofillbtn").css("display", "block");
+          $('body').addClass('candy-over');
+
+          var dataId = $('.autofillbtn').data('id');
+          var candyButton1 = $('[data-add-to-bag][data-id="' + dataId + '"]');
+          var candyButton2 = $('[data-add-to-bag][data-id="47068579856715"]');
+           if (candyButton1.length > 0 && candyButton2.length > 0) {
+              candyButton1.click();
+              candyButton2.click();
+          } else {
+              console.error("Button not found with data-id:", dataId);
+          }
+
+    }
+
+   //function nextPage2_400() {
+    //$('.page3').slideDown();
+    //$("#pickNmix_row").css('display', 'none');
+    //$(".page3").css('display', 'block');
+    //$("main").removeClass('cus_giftflowpage2');
+    //$(".page3Btn").css('display', 'flex');
+    //$(".page2Btn").css('display', 'none');
+    //$(".nextPage").css('display', 'none');
+    //$('[data-id="47496972796235"]').click();
+    //}
+
+    function prevPage() {
+      $('#page1').slideDown();
+      $("main").addClass('cus_giftflow');
+      $("main").removeClass('cus_giftflowpage2');
+      $("#pickNmix_row").css('display', 'none');
+      $("#page1").css('display', 'block');
+      $("#autofillbtn").css("display", "block");
+      $("#removeautofillbtn").css("display", "none");
+      $(".page2Btn").css('display', 'none');
+      $(".nextPage").css('display', 'flex');
+      $('#autofillbtn').removeAttr('data-id');
+      $('[data-remove]').each(function() {
+        var qtyId = $(this).attr('data-qty-id');
+        var dataId = $('.autofillbtn').data('id');
+        if (qtyId = dataId ) {
+            $(this).click();
+        }
+    });
+    }
+  function prevPage2() {
+      $('#pickNmix_row').slideDown();
+      $("main").addClass('cus_giftflowpage2');
+      $("#pickNmix_row").css('display', 'flex');
+      $(".page2Btn").css('display', 'flex');
+      $(".page3Btn").css('display', 'none');
+      $(".page3").css('display', 'none');
+    }
+
+  function nextPage3() {
+    $('[data-remove]').each(function() {
+        var qtyId = $(this).attr('data-qty-id');
+        var dataId = $('.autofillbtn').data('id');
+        if (qtyId != dataId && qtyId != "47473208525131" && qtyId != "47473245585739") {
+            $(this).click();
+        }
+    });
+    setTimeout(function() {
+        $('[data-final-submit]').click();
+    }, 100);
+    setTimeout(function() {
+    $("#page1").css('display', 'block');
+    $(".page3").css('display', 'none');
+    $(".nextPage").css('display', 'flex');
+    $(".page3Btn").css('display', 'none');
+    }, 500);
+}
+
+
+  <!-- gift product click -->
+     function giftprodclick(element) {
+        $('.giftproduct-card').removeClass("giftprodselected");
+        $(element).addClass("giftprodselected");
+        $(body).addClass("giftprodselectedbody");
+        var dataIdValue = $(element).data('id');
+         $('#nextPage2Btn').each(function() {
+        var existingDataId = $(this).data('id');
+        if (existingDataId) {
+            $(this).data('id', dataIdValue); // Update data-id attribute
+        } else {
+            $(this).attr('data-id', dataIdValue); // Add data-id attribute
+        }
+    });
+    $('#autofillbtn').each(function() {
+        var existingDataId = $(this).data('id');
+        if (existingDataId) {
+            $(this).data('id', dataIdValue); // Update data-id attribute
+        } else {
+            $(this).attr('data-id', dataIdValue); // Add data-id attribute
+        }
+    });
+    }
+
+ 
+
+//  function giftprodselectedbody_400() {
+//    $('[data-id="47496972796235"]').click();
+//    $("#autofillbtn").css("display", "none");
+//    $("#removeautofillbtn").css("display", "block");
+//    $('body').addClass('candy-over');
+//  }
+    function removeautofillbtn() {
+    $("#autofillbtn").css("display", "block");
+    $("#removeautofillbtn").css("display", "none");
+    $('body').removeClass('candy-over');
+    $('[data-remove]').each(function() {
+        var qtyId = $(this).attr('data-qty-id');
+        var dataId = $('.autofillbtn').data('id');
+        if (qtyId = dataId) {
+            $(this).click();
+        }
+    });
+    
+  }
+
+
+     <!-- overlay -->
+        function checkListAndUpdateButton() {
+        var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
+          var cusdrawerElement = document.querySelector('html');
+
+        if (ulElement && ulElement.querySelectorAll('li').length === 0) {
+          cusdrawerElement.classList.remove('drawer_locked3');
+
+          var buttoncloseElement = document.getElementById('visual-bag__close_cusBtn'); // Replace 'yourButtonId' with the actual ID of your button
+         if (buttoncloseElement) {
+            buttoncloseElement.click(); 
+         }
+        } else {
+            btnElement.classList.remove('is--hidden');
+        }
+    }
+
+    checkListAndUpdateButton();
+    var observer = new MutationObserver(function () {
+        checkListAndUpdateButton();
+    });
+    var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
+    var config = { childList: true, subtree: true };
+    observer.observe(targetNode, config);
+
+
+<!--remove sticky button when no products into the bag-->
+  function checkListAndUpdateButton() {
+        var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
+        var btnElement = document.getElementById('cus_sticky-total-btn');
+
+        if (ulElement && ulElement.querySelectorAll('li').length === 0) {
+            btnElement.classList.add('is--hidden');
+          document.getElementById("LeftbarColoseBagButton").innerHTML = "DIN POSE ER TOM";
+        } else {
+            btnElement.classList.remove('is--hidden');
+        }
+    }
+
+    checkListAndUpdateButton();
+    var observer = new MutationObserver(function () {
+        checkListAndUpdateButton();
+    });
+    var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
+    var config = { childList: true, subtree: true };
+    observer.observe(targetNode, config);
+  
+<!-- modal search -->
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const showBtn5 = document.querySelector(".show-cus_modalfirst");
+    const showBtn2 = document.querySelector(".show-cus_modal2");
+    const maskModal = document.querySelector(".mask-cus_modal");
+    const cus_modal = document.querySelector(".cus_modal");
+    const closeBtn = document.querySelector(".close-cus_modal");
+
+    function openModal() {
+      maskModal.classList.add("active");
+      cus_modal.classList.add("cus_modal-active");
+    }
+
+    function closeModal() {
+      maskModal.classList.remove("active");
+      cus_modal.classList.remove("cus_modal-active");
+    }
+
+    showBtn5.addEventListener("click", openModal);
+    showBtn2.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    maskModal.addEventListener("click", closeModal);
+
+    document.addEventListener("keyup", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+  });
+
+<!-- end modal search -->
+
+
+
+  <!-- search -->
+const input = document.getElementById('filter-search');
+
+input.addEventListener('keyup', () => {
+  const filter = input.value.toUpperCase();
+  const ulp = document.querySelector('.candyItems'); // Changed querySelectorAll to querySelector
+  const lip = ulp.querySelectorAll('.candyBox');
+
+  for (let i = 0; i < lip.length; i++) {
+    const ap = lip[i].querySelector('.candyBoxName'); // Changed querySelectorAll to querySelector
+    const textValue = ap.textContent || ap.innerText;
+    const textUpperCase = textValue.toUpperCase();
+    if (textUpperCase.includes(filter)) {
+      lip[i].style.display = ''; // Show the candy box
+    } else {
+      lip[i].style.display = 'none'; // Hide the candy box
+    }
+  }
+});
+
+
+<!-- search result disappear issue -->
+    // Get the input element
+    var filterInput = document.getElementById('filter-search');
+
+    // Get all candy boxes
+    var candyBoxes = document.querySelectorAll('.candybox');
+
+    // Add input event listener
+    filterInput.addEventListener('input', function() {
+      // Get the user input value
+      var filterValue = filterInput.value.toLowerCase();
+
+      // Loop through each candy box
+      candyBoxes.forEach(function(candyBox) {
+        // Check if the candy box text contains the filter value
+        if (candyBox.textContent.toLowerCase().includes(filterValue)) {
+          // If it does, set display to "block"
+          candyBox.style.display = 'block';
+        } else {
+          // If it doesn't, hide the candy box
+          candyBox.style.display = 'none';
+        }
+      });
+    });
+
+
+  //add to cart overlay effect
+
+  var jq = document.createElement('script');
+    jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+    jq.onload = function() {
+
+      $('#go-to-cart').click(function(){
+            $('#bland-selv-slik-online-slikekspressen').addClass('drawer_locked3');
+        });
+
+      $("#go-to-cart").click(function() {
+           $(".cart-link").click();
+        
+        //when user click on go-to-cart id,remove disable from [data-submit-cart] element
+              setTimeout(function() {
+                $('[data-submit-cart]').prop('disabled', false);
+            }, 500); 
+        
+            });
+      
+      $('[data-drawer-back]').click(function(){
+            setTimeout(function() {
+                $('[data-submit-cart]').prop('disabled', false);
+            }, 1000); 
+        });
+      
+    };
+    document.head.appendChild(jq);
+</script>
+
+<!--//GTM dataLayer add_to_cart event-->
+<script>
+  function addPushEvent() {
+    
+    fetch(`${window.location.origin}/cart.js`)
+      .then(res => res.clone().json().then(data => {
+        var cart = {
+          total_price: data.total_price/100,
+          $value: data.total_price/100,
+          total_discount: data.total_discount,
+          original_total_price: data.original_total_price/100,
+          items: data.items
+        }
+        _learnq.push(['track', 'Added to Cart', cart]);
+      }))
+    
+    setTimeout(() => {
+      var idsStrArray = [];
+      var a = document.querySelectorAll('div.product-card__qty-wrapper.is--visible');
+      for (var j in a) 
+        if (a.hasOwnProperty(j)) {
+          idsStrArray.push(a[j].getAttribute('data-qty-id'));
+        }
+      
+
+
+
+      var idsNumArray = idsStrArray.map(Number);
+      var cartContents = fetch(window.Shopify.routes.root + 'cart.js').then(response => response.json()).then(data => {
+        var contents = [];
+        var lineproducts = data.items;
+        idsNumArray.forEach(item => {
+          for (let i = 0; i < lineproducts.length; i++) {
+            if (item == lineproducts[i]['id']) {
+              contents.push({
+                'item_name': lineproducts[i]['title'],
+                'item_id': lineproducts[i]['product_id'],
+                'item_sku': lineproducts[i]['sku'],
+                'item_variant': lineproducts[i]['variant_id'],
+                'price': lineproducts[i]['price'] / 100,
+                'item_brand': lineproducts[i]['vendor'],
+                'item_category': lineproducts[i]['product_type'],
+                'item_image': lineproducts[i]['image'],
+                'quantity': lineproducts[i]['quantity']
+              });
+            }
+          }
+        });
+        dataLayer.push({ecommerce: null});
+        dataLayer.push({
+          'event': 'add_to_cart_stape',
+          'ecommerce': {
+            'currency': data.currency,
+            'items': contents
+          }
+        });
+      });
+    }, "500")
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("go-to-cart").addEventListener("click", function () {
+      let url = new URL(window.location.href);
+      if(url.searchParams.has("select-product")) {
+        url.searchParams.delete("select-product");
+        history.replaceState(null, "", url.toString());
+      }
+    });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Bland-selv-slik settings",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Paginate products",
+        "info": "How many products to show per page"
+      },
+      {
+        "type": "range",
+        "id": "paginate",
+        "label": "Paginate",
+        "min": 8,
+        "max": 600,   
+        "step": 8,   
+        "default": 240
+      },
+      {
+        "type": "header",
+        "content": "Price limit",
+        "info": "The limit in kilogram to when the user can close the bag"
+      }, {
+        "type": "number",
+        "id": "price_limit",
+        "label": "Price limit",
+        "default": 129
+      }, {
+        "type": "number",
+        "id": "width_item",
+        "label": "Item Width",
+        "default": 275
+      }, 
+      {
+        "type": "radio",
+        "id": "autoload",
+        "label": "Pagination Type",
+        "default": "button",
+        "options": [
+          {
+            "value": "button",
+            "label": "By Click Button"
+          }, {
+            "value": "automaticly",
+            "label": "Autoload by cursor"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Step 1 Content"
+      },
+      {
+        "type": "text",
+        "label": "Step 1 title",
+        "id": "step1_title",
+        "default": "Select Product"
+      },
+      {
+        "type": "text",
+        "label": "Step 1 button title",
+        "id": "step1btn_title",
+        "default": "NEXT - SELECT CANDY"
+      },
+      {
+        "type": "header",
+        "content": "Step 2 Content"
+      },
+      {
+        "type": "text",
+        "label": "Step 2 title",
+        "id": "step2_title",
+        "default": "Add Candy"
+      },
+      {
+        "type": "text",
+        "label": "Step 2 target line first text",
+        "id": "step2_targetfirsttext",
+        "default": "Mix"
+      },
+      {
+        "type": "text",
+        "label": "Step 2 target line last text",
+        "id": "step2_targetlasttext",
+        "default": "g. more candy in the gift"
+      },
+      {
+        "type": "text",
+        "label": "Step 2 random button text",
+        "id": "step2_randombtntext",
+        "default": "Or click here to fill with random candy"
+      },
+      {
+        "type": "text",
+        "label": "Step 2 remove button text",
+        "id": "step2_removebtntext",
+        "default": "Remove standard silk mix"
+      },
+      {
+        "type": "text",
+        "label": "Step 2 next button text",
+        "id": "step2_nextbtntext",
+        "default": "NEXT - ADD CARD"
+      },
+      {
+        "type": "header",
+        "content": "Step 3 Content"
+      },
+      {
+        "type": "text",
+        "label": "Step 3 no hand written text",
+        "id": "step3_nohandwrittentext",
+        "default": "Don't include a hand written card"
+      },
+      {
+        "type": "text",
+        "label": "Step 3 no hand written text price",
+        "id": "step3_nohandwrittenprice",
+        "default": "Free"
+      },
+      {
+        "type": "text",
+        "label": "Step 3 hand written text",
+        "id": "step3_handwrittentext",
+        "default": "Include a hand written card"
+      },
+      {
+        "type": "text",
+        "label": "Step 3 textarea label",
+        "id": "msgoncardtext",
+        "default": "Message on card"
+      },
+      {
+        "type": "image_picker",
+        "label": "Message on card image",
+        "id": "messageoncard"
+      }
+      
+    ],
+    "blocks": [
+      {
+        "name": "Filter type",
+        "type": "filter_type",
+        "settings": [
+          {
+            "type": "select",
+            "id": "category",
+            "label": "Filter category",
+            "options": [
+              {
+                "value": "kategori",
+                "label": "Kategori"
+              }, {
+                "value": "indhold",
+                "label": "Indhold"
+              }, {
+                "value": "favoritter",
+                "label": "Favoritter"
+              }
+            ]
+          }, 
+          {
+            "type": "select",
+            "id": "type",
+            "label": "Type or Tag",
+            "options": [
+              {
+                "value": "type",
+                "label": "Type"
+              }, {
+                "value": "tags",
+                "label": "Tags"
+              }
+            ]
+          }, 
+          {
+            "type": "text",
+            "id": "filter_id",
+            "label": "Filter id",
+            "info": "Exact name as type or whole tag, eg. 'type_sukkerfri'"
+          }, {
+            "type": "text",
+            "id": "filter_name",
+            "label": "Filter name"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

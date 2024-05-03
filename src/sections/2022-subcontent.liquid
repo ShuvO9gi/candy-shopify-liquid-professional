@@ -1,0 +1,44 @@
+<div class="section-container">
+	<div class="page-container">
+      <div class="row">
+        <div class="col-1 ">&nbsp;</div>
+      	<div class="col-10 ">
+          <div class="subContent"> 
+            <h2 class="subContent-headline">{{ section.settings.headline }}</h2>
+            <div class="subContent-content type-style-p-regular">
+              {{ section.settings.content }}
+            </div>
+          </div>
+        </div>
+        <div class="col-1 ">&nbsp;</div>
+      </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "2022 - content section",
+    "settings": [
+        {
+        	"type": "text",
+        	"id": "headline",
+        	"label": "Overskrift"
+        },
+        {
+        	"type": "richtext",
+        	"id": "content",
+        	"label": "Content"
+        }
+    ],
+    "presets": [
+      {
+        "name": "2022 - content section"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

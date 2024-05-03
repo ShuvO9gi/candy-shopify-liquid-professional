@@ -1,0 +1,152 @@
+{%- assign class = 'collection-new' -%}
+{%- assign s = section.settings -%}
+{%- assign paginateBy = s.paginate -%}
+
+{% paginate collection.products by paginateBy %}
+
+{%- capture config -%}
+  {
+    "handle": "{{ collection.handle }}",
+    "totalProducts": {{ collection.all_products_count }},
+    "paginate": {{ paginateBy | json }},
+    "currentPage": {{ paginate.current_page | json }}
+  }
+{%- endcapture -%}
+
+<div class="{{ class }} pt-6 pb-10 sm:pb-12" data-config='{{ config }}'>
+  <div class="bland-selv-slik--title mb-10 text-purple text-[24px] sm:text-[36px] font-normal text-center">
+    {%- if s.title != blank -%}
+      {{ s.title }}
+    {%- else -%}
+      {{ collection.title }}
+    {%- endif -%}
+  </div>
+
+  <section class="{{ class }}__products">
+    <div class="page-width">
+      <div class="flex items-start">
+        <div class="filter fixed top-0 left-0 h-full bg-white shadow-custom md:top-28 sm:z-0 sm:w-1/5 sm:self-start sm:sticky sm:top-40" data-filter-drawer data-component="customScrollbar">
+          <button class="bg-white flex items-center justify-center rounded-full w-8 h-8 absolute right-5 top-7 z-10 shadow-custom sm:hidden" data-filter-close>
+            <span class="text-pink">
+              {%- render 'icon' with 'close' -%}
+            </span>
+          </button>
+
+          <div class="custom-scrollbar" data-custom-scrollbar></div>
+
+          <ul class="filter-list px-5 pt-24 pb-12 sm:pb-0" data-filter-list>
+            {%- for b in section.blocks -%}
+              {%- case b.type -%}
+                {%- when 'filter_type' -%}
+                  {%- assign bs = b.settings -%}
+                  {%- assign filter_image = bs.filter_image | img_url: '80x' -%}
+                  {%- assign filter_name = bs.filter_name -%}
+                  {%- assign filter_id = bs.filter_id -%}
+                  {%- assign filter_type = bs.type -%}
+
+                  <li class="filter__item flex items-center justify-between py-2 px-4 rounded-md bg-white shadow-custom cursor-pointer transition-transform hover:shadow-customHover hover:transform hover:-translate-y-1" data-filter-item data-filter-type="{{ filter_type }}" data-filter-id="{{ filter_id }}">
+                    <div class="flex items-center">
+                      <div class="rounded-full overflow-hidden w-10 h-10 mr-3">
+                        <img class="w-full h-full" src="{{ filter_image }}" alt="{{ filter_name }}">
+                      </div>
+                      <p class="font-body font-bold">{{ filter_name }}</p>
+                    </div>
+
+                    <div class="filter__item--check flex items-center justify-center rounded-full w-5 h-5">
+                      {%- render 'icon' with 'check' -%}
+                    </div>
+                  </li>
+              {%- endcase -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      
+        <div class="items sm:w-4/5">
+          <button class="btn mb-8 sm:hidden" data-filter-button>Filter</button>
+
+          <ul class="flex flex-wrap -mt-5 -ml-5" data-product-list>
+              {%- for product in collection.products -%}
+              {%- comment -%}
+              <li class="w-1/4 bg-white p-4">{{ product.title }}</li>
+              {%- endcomment -%}
+              {%- endfor -%}
+          </ul>
+
+          <div class="flex justify-center">
+            <button class="load-more btn mt-12 sm:mt-10" data-load-more>
+              <span>{{ 'bland_selv.general.load_more' | t }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Collection settings",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Paginate products",
+        "info": "How many products to show per page"
+      },
+      {
+        "type": "range",
+        "id": "paginate",
+        "label": "Paginate",
+        "min": 8,
+        "max": 40,
+        "step": 4,
+        "default": 24
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Filter type",
+        "type": "filter_type",
+        "settings": [
+          {
+            "type": "select",
+            "id": "type",
+            "label": "Type or Tag",
+            "options": [
+              {
+                "value": "type",
+                "label": "Type"
+              },
+              {
+                "value": "tags",
+                "label": "Tags"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "filter_id",
+            "label": "Filter id",
+            "info": "Exact name as type or whole tag, eg. 'type_sukkerfri'"
+          },
+          {
+            "type": "image_picker",
+            "id": "filter_image",
+            "label": "Filter image"
+          },
+          {
+            "type": "text",
+            "id": "filter_name",
+            "label": "Filter name"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

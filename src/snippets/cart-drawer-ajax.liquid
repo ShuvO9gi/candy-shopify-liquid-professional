@@ -1,0 +1,514 @@
+{{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+<script id="sl-CartTemplate-items" type="text/template">
+	{% raw %}
+	{% if items.size > 0 %}
+		<div>
+			{% for item in items %}
+				<div data-line-items data-bag="{{bag_id}}" data-quantity="{{item.quantity}}" data-line="{{item.key}}" class="drawer_2_content_product_shopAdjust {% if item.properties._is_gift == 'true' %}giftitembtnhide{%endif%}">
+					<div class="floatLeft drawer_2_content_product_delete_shopAdjust">
+						<button type="button" data-remove-cart-line data-bag="{{bag_id}}">
+							<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.5 4.69231H15.5M6.33714 7.15385V14.5385M9.76571 7.15385V14.5385M2.85714 4.69231H13.1429V16C13.1429 16.5523 12.6951 17 12.1429 17H3.85714C3.30486 17 2.85714 16.5523 2.85714 16V4.69231ZM10.7017 4.69231V2C10.7017 1.44772 10.254 1 9.70171 1H5.98743C5.43514 1 4.98743 1.44772 4.98743 2V4.69231H10.7017Z" stroke="#323232" stroke-width="1.5"/>
+							</svg>
+						</button>
+					</div>		
+					<div class="floatLeft drawer_2_content_product_image_shopAdjust">
+						<img width="52px" src="{{ item.image | img_url: '100x' }}" alt="{{ item.Name }}">
+					</div>		
+					<div class="floatLeft drawer_2_content_product_content_shopAdjust">
+						<div class="drawer_2_content_product_name_shopAdjust type-style-card-desc-bold">	
+							{{item.title}}
+						</div>
+						<div class="drawer_2_content_product_weight_shopAdjust type-style-tiny-text">	
+							<span class="font-color-pink"><span data-cart-amount-elem>{{item.quantity | times: item.properties['Amount']}}</span> stk.</span> 
+							<span class="font-color-purple-dark" ><span data-cart-qty-elem>{{item.quantity | times: item.grams}}</span> g</span>
+						</div>
+					</div>
+					<div class="floatRight drawer_2_content_product_plusOne_shopAdjust" data-cart-qty-plus data-bag="{{bag_id}}">
+                    	<div class="drawer_2_content_product_plus">
+                    		<span>+</span>
+  						</div>
+                    </div>
+					<div class="floatRight drawer_2_content_product_minusOne_shopAdjust" data-cart-qty-minus data-bag="{{bag_id}}">
+                    	<div class="drawer_2_content_product_minus">
+					  		<span>-</span>					
+  						</div>
+  					</div>
+					<div class="drawer_clear_shopAdjust"></div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}	
+	{% endraw %}
+</script>
+
+<script id="sl-CartTemplate" type="text/template">
+    {% raw %}
+        {% if cart.item_count > 0 %}
+          <form id="form-drawer-cart" action="/cart"method="post">
+			<div class="drawer_content_products_shopAdjust">
+				<cart-items>
+					{%- for item in cart.products -%}
+						<div class="drawer_content_product_item_shopAdjust">			
+							<div class="drawer_product_item_image_shopAdjust">
+								{% if item.items.size <= 1 %}
+										<img width="52px" src="{{ item.image | img_url: '100x' }}" alt="{{ item.Name }}">
+									{% elsif item.items.size > 1 %}
+										<img width="52px" src="{{ item.items[1].image | img_url: '100x' }}" alt="{{ item.Name }}">
+									{% endif %}
+							</div>
+							<div class="drawer_product_item_content_shopAdjust">				
+								<div class="drawer_product_item_content_top_shopAdjust">
+									<div class="drawer_content_product_item_title_shopAdjust type-style-p-small-bold">			
+										{% if item.items.size > 0 %}
+											{{ item.Name }}{% if item._is_gift == 'true' %} {% else %}'s pose{% endif %}
+										{% else %}
+											{{item.title }}
+										{% endif %}
+									</div>
+									<div class="drawer_content_product_item_price_shopAdjust type-style-p-small-bold">
+										<span data-total-line-price>{{item.price | money : cart.currency }}.</span>
+									</div>	
+		
+									<div class="drawer_clear_shopAdjust"></div>
+								</div>
+								<div class="drawer_product_item_content_bottom_shopAdjust">		
+									{% if item.items.size > 0 %}
+										<div class="drawer_content_product_item_edit_button_shopAdjust_" {% if item._is_gift == 'true' %}onclick="hidesecdrawerbtn()"{% else %}onclick="showsecdrawerbtn()"{% endif %} data-edit-cart-btn data-id="{{item.ID}}">
+											<div class="drawer_content_product_item_edit_button_shopAdjust type-style-button-text-small">			
+												<div class="drawer_product_item_button_editicon_shopAdjust">
+													<img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/icon-edit.svg?v=1646648082">
+													{% comment %}
+													<svg enable-background="new 0 0 45 45" height="20px" id="Layer_1" version="1.1" viewBox="0 0 45 45" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><rect fill="#ffffff" height="23" transform="matrix(-0.7071 -0.7072 0.7072 -0.7071 38.2666 48.6029)" width="11" x="23.7" y="4.875"></rect><path d="M44.087,3.686l-2.494-2.494c-1.377-1.377-3.61-1.377-4.987,0L34.856,2.94l7.778,7.778l1.749-1.749   C45.761,7.593,45.465,5.063,44.087,3.686z" fill="#fff"></path><polygon fill="#ffffff" points="16,22.229 16,30 23.246,30  "></polygon><path d="M29,40H5V16h12.555l5-5H3.5C1.843,11,0,11.843,0,13.5v28C0,43.156,1.843,45,3.5,45h28   c1.656,0,2.5-1.844,2.5-3.5V23.596l-5,5V40z" fill="#ffffff"></path></g></svg>
+													{% endcomment %}
+													</div><span class="edit-items">se og rediger</span>
+											</div>
+										</div>
+										{% else %}
+											<div class="quantity-elements">
+												<div class="quantity-data">
+													<span data-cartItem-quantity="{{item.quantity}}" class="">{{ item.quantity }} stk.</span>
+												</div>
+												{% if item.properties.name != blank %}
+													{% comment %}
+													DO NOT add/update qty 
+													{% endcomment %}
+													<div class="quantity-adjustment"></div>
+												{% else %}
+												<div class="quantity-adjustment">
+													<div class="floatLeft drawer_2_content_product_minusOne_shopAdjust" data-cartItem-qty-minus data-key="{{item.key}}">
+														<div class="drawer_2_content_product_minus">
+															<span>-</span> 				
+														</div>
+													</div>
+													<div class="floatLeft drawer_2_content_product_plusOne_shopAdjust" data-cartItem-qty-plus data-key="{{item.key}}">
+														<div class="drawer_2_content_product_plus">
+															<span>+</span>
+														</div>
+													</div>
+												</div> 
+												{% endif %}
+												<div class="quantity-remove">
+													<quantity-input class="drawer-item-quantity_shopAdjust hidden">
+														<div class="form-field form-field--qty-input">
+															<input min="0" type="number" id="product-quantity-input" class="form-field-input form-field-number form-field-filled quantity__input-sl" value="{{ item.quantity }}" name="updates[]" type="text" pattern="\d*" aria-label="Antal" data-quantity-input="" data-index="{{ item.index | plus: 1 }}">
+														</div>
+													</quantity-input>
+													<cart-remove-button data-remove-cart-btn id="Remove-{{ forloop.index | plus: 1 }}" data-prop="{{ item.ID }}" class="drawer_content_product_item_delete_shopAdjust" style="position: relative; top: 5px;">			
+														<a class="button button--tertiary" aria-label="Remove {{item.title}}">
+															<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M0.5 4.69231H15.5M6.33714 7.15385V14.5385M9.76571 7.15385V14.5385M2.85714 4.69231H13.1429V16C13.1429 16.5523 12.6951 17 12.1429 17H3.85714C3.30486 17 2.85714 16.5523 2.85714 16V4.69231ZM10.7017 4.69231V2C10.7017 1.44772 10.254 1 9.70171 1H5.98743C5.43514 1 4.98743 1.44772 4.98743 2V4.69231H10.7017Z" stroke="#323232" stroke-width="1.5"/>
+                                                            </svg>
+														</a>
+													</cart-remove-button>
+												</div>
+											</div>
+										{% endif %}
+									{% if item.items.size > 0 %}
+										<quantity-input class="drawer-item-quantity_shopAdjust hidden">
+											<div class="form-field form-field--qty-input">
+												<input min="0" type="number" id="product-quantity-input" class="form-field-input form-field-number form-field-filled quantity__input-sl" value="{{ item.quantity }}" name="updates[]" type="text" pattern="\d*" aria-label="Antal" data-quantity-input="" data-index="{{ item.index | plus: 1 }}">
+											</div>
+										</quantity-input>
+										<cart-remove-button data-remove-cart-btn id="Remove-{{ forloop.index | plus: 1 }}" data-prop="{{ item.ID }}" class="drawer_content_product_item_delete_shopAdjust">			
+											<a class="button button--tertiary" aria-label="Remove {{item.title}}">
+												<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0.5 4.69231H15.5M6.33714 7.15385V14.5385M9.76571 7.15385V14.5385M2.85714 4.69231H13.1429V16C13.1429 16.5523 12.6951 17 12.1429 17H3.85714C3.30486 17 2.85714 16.5523 2.85714 16V4.69231ZM10.7017 4.69231V2C10.7017 1.44772 10.254 1 9.70171 1H5.98743C5.43514 1 4.98743 1.44772 4.98743 2V4.69231H10.7017Z" stroke="#323232" stroke-width="1.5"/>
+                                                </svg>
+											</a>
+										</cart-remove-button>
+									{% endif %}
+									<div class="drawer_clear_shopAdjust"></div>
+								</div>
+							</div>
+							<div class="drawer_clear_shopAdjust"></div>
+						</div>
+					{%- endfor -%}
+
+				</cart-items>
+			</div>
+          </form>
+          
+      {% else %} 
+          <div class="empty">
+              <p>Din kurv er tom.</p>
+          </div>
+      {% endif %}
+    {% endraw %}
+  </script>
+
+<div data-component="drawer" data-drawer-id="sidebar-cart" data-drawer-direction="right" id="drawer-cart" class="drawerContainer_shopAdjust drawer-close" >
+    <div class="drawer-cart-inner---upsell" data-drawer-cart--upsell style="display: none;">
+		<div class="drawer_header_shopAdjust">
+			<div class="drawer_headline_shopAdjust type-style-card-h">
+				Din indkøbskurv  
+			</div>
+			<div id="data-drawer-closeBtnNew"   aria-label="close cart" class="drawer_close_shopAdjust type-style-card-h">
+				Skjul
+			</div>	
+			<div id="data-drawer-closeBtnNew"  data-drawer-close aria-label="close cart" class="drawer_close_icon_shopAdjust">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="12.0108" height="2.0018" rx="1.0009" transform="matrix(0.707741 0.706472 -0.707741 0.706472 1.49951 0.00012207)" fill="#323232"/>
+                    <rect width="12.0108" height="2.0018" rx="1.0009" transform="matrix(-0.707741 0.706472 -0.707741 -0.706472 10 1.41418)" fill="#323232"/>
+                </svg>
+            </div>
+			<div class="drawer_clear_shopAdjust"></div>
+		</div>
+		{% unless collection.title == "Gift" %}
+			<div class="drawer_content_shopAdjust--upsell twb-overflow-y-auto">
+				{% render 'sa-cart-cross' %}
+			</div>
+		{% endunless %}
+		<div class="mg-top-up"></div>
+		<div class="sticky-footer drawer_footer_shopAdjust---upsell">
+			<div class="drawer_padding-10---bg-white">
+				<div class="drawer_footer_headline_shopAdjust" style="display: none;">
+					Din ordre
+				</div>
+				<div class="drawer_footer_prices_shopAdjust custom-totals">
+					<div class="drawer_footer_subtotal_shopAdjust shopadjust-flex-display type-style-p-small-regular">
+						<div class="drawer_footer_price_subtotal_shopAdjust drawer_price_text_shopAdjust">
+							Subtotal
+						</div>
+						<div class="drawer_price_amount_shopAdjust drawer_footer_price_subtotal_amount_shopAdjust">
+							<span class="slidecart-original-total"><span class="sl-cart-original-total" data-original-total-price--upsell>{{ cart.original_total_price  | money }}</span>.</span>
+						</div>
+						<div class="drawer_clear_shopAdjust"></div>	
+					</div>
+					<div class="drawer_footer_delivery_shopAdjust shopadjust-flex-display type-style-p-small-regular">
+						<div class="drawer_price_text_shopAdjust drawer_footer_price_delivery_shopAdjust">
+							Fragt (fra-pris)
+						</div>
+						<div class="drawer_price_amount_shopAdjust drawer_footer_price_delivery_amount_shopAdjust">
+							<span class="slidecart-shipping-amount"><span class="sl-cart-total-shipping"  data-original-total-shipping--upsell>{{ '0'  | money }}</span>.</span>
+						</div>
+						<div class="drawer_clear_shopAdjust"></div>	
+					</div>
+					<div class="drawer_footer_discount_shopAdjust" style="display: none;">	
+						<div class="drawer_price_text_shopAdjust drawer_footer_price_discount_shopAdjust">
+							
+						</div>
+						<div class="drawer_price_amount_shopAdjust drawer_footer_price_discount_amount_shopAdjust">
+			
+						</div>
+						<div class="drawer_clear_shopAdjust"></div>
+					</div>
+					<div class="drawer_footer_total_shopAdjust shopadjust-flex-display type-style-h3-bold">		
+						<div class="drawer_price_text_shopAdjust drawer_footer_price_total_shopAdjust">
+							Total
+						</div>
+						<div class="drawer_price_amount_shopAdjust drawer_footer_price_total_amount_shopAdjust">
+							<strong class="slidecart-subtotal"><span class="sl-cart-total-final color-primary" data-original-total-grand-total--upsell>{{ cart.total_price | money }}</span>.</strong>
+						</div>
+						<div class="drawer_clear_shopAdjust"></div>	
+					</div>		
+                </div>
+				<div class="drawer_footer_shopAdjust---upsell--actions">
+					<button data-step="0" data-drawer-back class="goBack">
+						<img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage">
+					</button>
+					<button data-drawer-upsell class="button drawer_footer_checkout_button_shopAdjust type-style-button-text" data-component="upsellButton">
+						<span class="class-icon">
+							<span class="btn-text">VIDERE</span>
+							<span class="class-icon--svg"></span>
+						</span>
+					</button>
+				</div>
+			</div>	
+		</div>
+		
+	</div>
+	<div class="drawer-cart-inner">
+		  <div class="drawer_header_shopAdjust type-style-card-h">
+			<div class="drawer_headline_shopAdjust">
+				Din indkøbskurv  
+			</div>
+			<div  data-drawer-close aria-label="close cart" class="drawer_close_shopAdjust">
+				Skjul
+			</div>	
+			<div  data-drawer-close aria-label="close cart" class="drawer_close_icon_shopAdjust">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="12.0108" height="2.0018" rx="1.0009" transform="matrix(0.707741 0.706472 -0.707741 0.706472 1.49951 0.00012207)" fill="#323232"/>
+                    <rect width="12.0108" height="2.0018" rx="1.0009" transform="matrix(-0.707741 0.706472 -0.707741 -0.706472 10 1.41418)" fill="#323232"/>
+                </svg>
+			</div>
+			<div class="drawer_clear_shopAdjust"></div>
+		</div>
+
+
+  		<div class="drawer_content_shopAdjust shopadjust-overflow-scroll--y">
+    		<div class="drawer_content_header_shopAdjust type-style-h3-bold">
+          		Dine slikposer 
+          	</div>	
+       	 	<div id="sl-cartjs-items"></div> 
+			
+			{%- if section.settings.show_cart_note -%}
+				<cart-note class="cart__note field--shopAdjust">
+					<label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+					<textarea class="text-area--shopAdjust" name="note" id="Cart-note" placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
+				</cart-note>
+			{%- endif -%}
+        	<div class="mg-top-up"></div>
+        	<div class="box-mobile" style="display:none;">
+			<div class="drawer_content_newBag_shopAdjust type-style-button-text" date-create-bag>
+				Bland endnu en pose
+			</div>
+			<div class="drawer_content_newBag_text_shopAdjust type-style-p-small-bold">
+				eller fyld mere i en af poserne ovenfor
+			</div>
+		</div>
+  		</div>
+        <div class="sticky-footer drawer_footer_shopAdjust type-style-p-small-regular">
+			<div class="secondary-bg drawerPadding">
+				<div class="drawer_content_newBag_shopAdjust type-style-button-text" date-create-bag>
+					Bland endnu en pose
+				</div>
+				<div class="drawer_content_newBag_text_shopAdjust type-style-p-small-bold">
+					eller fyld mere i en af poserne ovenfor
+				</div>
+			</div>
+            <div class="announcements drawer_info_shopAdjust type-style-footer-text-regular is--hidden" data-countdown>
+				<div class="text-center">Køb for <span data-countdown-amount><strong>{{countdown}}</strong></span>. mere (ex. fragt) for at nå mindstebeløb</div>
+			</div>
+            {% if customer %}
+            {%  else  %}
+				{% comment %}
+                <div class="drawer_footer_logoBottom">
+                    <a href="/account/login" type="button" class="drawer_button_shopAdjust_primary no-customer">Log ind</a>
+                    <a onClick="ShopAdjust.empty_cart();" href="javascript:void(0);" type="button" class="drawer_button_shopAdjust_secondary shopAdjust-empty-cart">Empty Cart</a>
+                </div>
+				{% endcomment %}
+            {% endif %}
+            <div class="drawer_padding-10">
+                <div class="drawer_footer_headline_shopAdjust" style="display: none;">
+					Din ordre
+				</div>
+                <div class="drawer_footer_prices_shopAdjust custom-totals">
+                    <div class="drawer_footer_subtotal_shopAdjust shopadjust-flex-display">
+                        <div class="drawer_footer_price_subtotal_shopAdjust drawer_price_text_shopAdjust">
+                            Subtotal
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_subtotal_amount_shopAdjust">
+                            <span class="slidecart-original-total"><span class="sl-cart-original-total" data-original-total-price>{{ cart.original_total_price  | money }}</span>.</span>
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>	
+                    </div>
+                    <div class="drawer_footer_delivery_shopAdjust shopadjust-flex-display">
+                        <div class="drawer_price_text_shopAdjust drawer_footer_price_delivery_shopAdjust">
+                            Fragt (fra-pris)
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_delivery_amount_shopAdjust">
+                            <span class="slidecart-shipping-amount"><span class="sl-cart-total-shipping"  data-original-total-shipping>{{ '0'  | money }}</span>.</span>
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>	
+                    </div>
+                    <div class="drawer_footer_discount_shopAdjust" style="display: none;">	
+                        <div class="drawer_price_text_shopAdjust drawer_footer_price_discount_shopAdjust">
+                            
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_discount_amount_shopAdjust">
+            
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>
+                    </div>
+                    <div class="drawer_footer_total_shopAdjust shopadjust-flex-display type-style-h3-bold">		
+                        <div class="drawer_price_text_shopAdjust drawer_footer_price_total_shopAdjust">
+                            Total
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_total_amount_shopAdjust">
+                            <strong class="slidecart-subtotal"><span class="sl-cart-total-final color-primary" data-original-total-grand-total>{{ cart.total_price | money }}</span>.</strong>
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>	
+                    </div>	
+                    <div class="drawer_footer_price_text_shopAdjust is--hidden" data-minimum-purchase-alert hidden>
+						<p>Minimumsordren er {{settings.purchase_limit | money}}. Bland lidt mere :-)</p>
+					</div>	
+                </div>
+
+                <div class="drawer_footer_buy_buttons_shopAdjust">
+                    {% if show_voucher == true %}
+                        <button name="voucher-button" class="button button--secondary full">Get a voucher?</button>
+                    {% endif %}
+                    {% if template == 'cart' %} 
+                        <form id="slidecart-checkout-form" action="/cart" method="post"> 
+                            <p>{{shop.name}}</p>
+                            <button data-submit-cart disabled name="checkout" onclick="pushDlEventCheckout()" class="button drawer_footer_checkout_button_shopAdjust type-style-button-text">Gå til kurv</button>
+                        </form>
+                    {% else %}
+                        {% if checkout_label == "cart" %}
+                            <a class="button full button--primary  withIcon" data-href="/cart" href="/cart"> Gå til kurv. </a>
+                        {% else %}
+                            <form id="slidecart-checkout-form" action="/cart" method="post">
+                                <button data-submit-cart disabled name="checkout" onclick="pushDlEventCheckout()"  class="button drawer_footer_checkout_button_shopAdjust type-style-button-text"> 
+									<span class="class-icon">
+										<span>Gå til betaling</span>
+										<span class="class-icon--svg"></span>
+									</span>
+								</button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                </div>	
+            </div>
+        </div>
+ 
+    </div>
+    
+    <div class="drawer-cart-outer drawerContainer_2_shopAdjust" data-drawer-items> 
+        <div class="drawerContainer_2_shopAdjust---list relative" data-drawer-items-scroll>
+            <div data-drawer-second-close>
+                <div class="drawer_2_header_shopAdjust type-style-card-h">
+					<div class="drawer_2_close_shopAdjust">
+						Tilbage til kurv
+					</div>	
+					<div class="drawer_2_close_icon_shopAdjust">
+						<svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="7.00321" height="2.0018" rx="1.0009" transform="matrix(0.707741 0.706472 -0.707741 0.706472 1.49951 0.00012207)" fill="#323232"/>
+                            <rect width="7.00646" height="2.0018" rx="1.0009" transform="matrix(-0.707741 0.706472 -0.707741 -0.706472 6.45825 4.94958)" fill="#323232"/>
+                        </svg>
+					</div>
+				</div>
+            </div> 
+
+			<div class="drawer_2_content_shopAdjust"> 
+				<div class="drawer_2_content_header_shopAdjust type-style-h3-bold">
+					<span data-bag-name>{{bagname}}</span><span class="dataBagnamepostfix">'s pose<span>
+				</div>	
+				<div class="drawer_2_content_text_shopAdjust type-style-p-small-regular">
+					Der er for <span data-line-item-price class="subtotal">{{subtotal}}</span>. i posen
+				</div>
+				<div class="drawer_2_content_button_shopAdjust type-style-button-text-small" data-restore-bag data-id="{{bag_id}}">
+					tilføj mere slik
+				</div>
+			</div>
+
+            <div class="drawer_2_content_products_shopAdjust" >
+				<div id="sub-products" class="shopadjust-overflow-scroll"></div>
+				<div class="drawer_2_content_button_right" style="display: none;">
+					<div class="drawer_2_content_button_shopAdjust type-style-button-text-small" data-restore-bag data-id="{{bag_id}}">
+						tilføj mere slik
+					</div>
+				</div>
+			</div>
+
+        </div>
+    </div>
+</div>
+<div class="drawer_overlay"></div>
+<script>
+    function hidesecdrawerbtn() {
+        $(".drawer_2_content_shopAdjust").addClass("hidden_hidesecdrawerbtn");
+    }
+    function showsecdrawerbtn() {
+        $(".drawer_2_content_shopAdjust").removeClass("hidden_hidesecdrawerbtn");
+    }
+  //begin checkout for non Shopify+
+      function pushDlEventCheckout() {
+          var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
+          .then(response => response.json())
+          .then(data => {
+              var lineproducts = data.items;
+              var contents = [];
+              for (let i = 0; i < lineproducts.length; i++) {
+                  contents.push({
+                      'item_name': lineproducts[i]['title'],
+                      'item_id': lineproducts[i]['product_id'],
+                      'item_sku': lineproducts[i]['sku'],
+                      'item_variant': lineproducts[i]['variant_id'],
+                      'price': lineproducts[i]['price'] / 100,
+                      'item_brand': lineproducts[i]['vendor'],
+                      'item_category': lineproducts[i]['product_type'],
+                      'item_image': lineproducts[i]['image'],
+                      'quantity': lineproducts[i]['quantity']
+                  });
+              }
+              dataLayer.push({ ecommerce: null });
+              dataLayer.push({
+                  'event': 'begin_checkout_stape',
+                  {%  if customer %}
+                  'CustomerEmail' : '{{ customer.email }}',
+                  'CustomerFirstName' : '{{ customer.first_name }}',
+                  'CustomerLastName' : '{{ customer.last_name }}',
+                  'CustomerId': '{{ customer.id | remove: "'" }}',
+                  {%  endif %}
+                  'ecommerce': {
+                      'cart_quantity': data.item_count,
+                      'cart_total': data.total_price/100,
+                      'currency': data.currency,
+                      'items': contents
+                  }
+              });
+          });
+      }  
+</script>
+<script>
+// second cart drawer minus button issue
+var jq = document.createElement('script');
+jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+jq.onload = function() {
+
+	
+
+    // Add a click event handler to elements with class "drawer_2_header_shopAdjust"
+    $('.drawer_2_header_shopAdjust').click(function(){
+        $('#drawer-cart').removeClass('second-opened');
+    });
+    $('.drawer_close_icon_shopAdjust').click(function(){
+        $('#drawer-cart').removeClass('opened');
+		$('#drawer-cart').removeClass('atcEngopened');
+    });
+
+    $('.top-cart-link').click(function(){
+        $('html').addClass('drawer_locked2');
+    });
+    $('.drawer_close_icon_shopAdjust').click(function(){
+        $('html').removeClass('drawer_locked2');
+    });
+    $('.drawer_2_content_product_minus').click(function(){
+        $('html').addClass('drawer_locked');
+    });
+
+    // in cart, click "Bland endnu en pose" button, and close drawer
+    $('.cusCart_bland-selv-slik-online-slikekspressen').click(function(){
+        $('.drawer_close_shopAdjust').click();
+        $('#drawer-cart').removeClass('opened');
+        $('html').removeClass('drawer_locked2');
+    });
+
+    // mixing page overlay
+    $('.barSeeBagButton ').click(function(){
+        $('html').addClass('drawer_locked3');
+    });
+
+    $("#go-to-cart").click(function() {
+        $(".cart-link").click();
+    });
+
+    $('.bland-selv-slik__visual-bag__close ').click(function(){ 
+        $('html').removeClass('drawer_locked3');
+    });
+
+};
+document.head.appendChild(jq);
+
+</script>

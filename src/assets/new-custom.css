@@ -1,0 +1,59 @@
+.block-flex {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-detail{ 
+	margin: 1em 0 1.5em 0;
+	max-width: 500px;
+}
+
+.product.block-flex > div {
+    width: 100%;
+}
+
+.product-detail select[class^="variant__input"]{
+	font-family: Amsi Pro Normal;
+	border-radius: 12px !important;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 12px;
+  	border: 1px solid #5D2E8E;
+	font-size: 20px;
+}
+
+
+.product.block-flex > div:first-child { padding: 0px 10px; margin-right: 20px; }
+
+
+/*** theme.css **/
+.product-single__variants {
+    display: none;
+}
+
+.hidden-label {
+    clip: rect(0,0,0,0);
+    overflow: hidden;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+}
+
+.border-orange {
+    border-color: #fdac2b;
+}
+
+
+
+/* css for global.js html */
+.shopAdjust_btnMain{
+  display: flex;
+  flex-direction: column;
+}
+.shopAdjust_btn{
+  display: flex;
+}

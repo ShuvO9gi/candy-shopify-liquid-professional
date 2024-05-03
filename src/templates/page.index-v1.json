@@ -1,0 +1,166 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "9ab939ce-1547-45a7-93c7-91764ddfffda": {
+      "type": "2022-top",
+      "blocks": {
+        "template--19566501265739__9ab939ce-1547-45a7-93c7-91764ddfffda-collection-1": {
+          "type": "collection",
+          "settings": {
+            "headline": "Danmarks hyggeligste app",
+            "content": "Bestil med vores sjove app, som gemmer dine slik favoritter"
+          }
+        },
+        "6845b60e-43a9-43d0-a71a-fb72d5e43ff5": {
+          "type": "collection",
+          "settings": {
+            "headline": "Kæmpe udvalg",
+            "content": "Vi har op imod 450 forskellige slags slik"
+          }
+        },
+        "7b102996-82ac-4f1f-8187-789165eff726": {
+          "type": "collection",
+          "settings": {
+            "headline": "Frisk og hygiejnisk",
+            "content": "Helt frisk slik direkte fra fabrikken"
+          }
+        }
+      },
+      "block_order": [
+        "template--19566501265739__9ab939ce-1547-45a7-93c7-91764ddfffda-collection-1",
+        "6845b60e-43a9-43d0-a71a-fb72d5e43ff5",
+        "7b102996-82ac-4f1f-8187-789165eff726"
+      ],
+      "settings": {
+        "headline": "<p>Kæmpe udvalg af <strong>Bland Selv Slik<\/strong> bragt direkte til jer – med ekspresfart.<\/p>",
+        "button_text": "Bestil her",
+        "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+        "image": "shopify:\/\/shop_images\/topImage.png"
+      }
+    },
+    "bf8baa59-aff1-4178-8cdc-8baf26913ff1": {
+      "type": "2022-number-bullets",
+      "blocks": {
+        "template--19566501265739__bf8baa59-aff1-4178-8cdc-8baf26913ff1-collection-1": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Vælg Bland Selv Slik og sortér <br\/>i vores mange kategorier.<\/p>"
+          }
+        },
+        "69308f75-c274-4c5f-9952-d5c0587dc163": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Klik på de produkter, du <br\/>ønsker i posen og justér <br\/>mængde.<\/p>"
+          }
+        },
+        "238b13af-1a80-43b8-8dfc-fc16d2b8984e": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Læg i kurven, luk posen og <br\/>tilføj en ny pose – eller afslut <br\/>køb.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19566501265739__bf8baa59-aff1-4178-8cdc-8baf26913ff1-collection-1",
+        "69308f75-c274-4c5f-9952-d5c0587dc163",
+        "238b13af-1a80-43b8-8dfc-fc16d2b8984e"
+      ],
+      "settings": {
+        "headline": "<p><strong>Bland Selv Slik:<\/strong> Så simpelt er det.<\/p>",
+        "button_text": "Bestil her",
+        "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+        "image": "shopify:\/\/shop_images\/home_bag.jpg"
+      }
+    },
+    "6fc4c331-8c9f-4018-9212-60dd82e0773c": {
+      "type": "2022-special-section",
+      "settings": {
+        "headline_1": "Mangler du inspiration?",
+        "content_1": "Vi arbejder på færdigblandede bøtter med alle jeres favoritter – kommer snart!",
+        "image_1": "shopify:\/\/shop_images\/SlikImg_2x_81815ef7-b991-47ed-a0cb-97c5a20cc0e9.jpg",
+        "headline_2": "Bestil inden kl. 14:00",
+        "content_2": "Vi afsender alle hverdage med GLS og DAO. De fleste ordrer bliver leveret dagen efter",
+        "image_2": "shopify:\/\/shop_images\/Image_2x_32fedffa-8759-4dff-9bd4-9d5edf582540.jpg"
+      }
+    },
+    "9cb55d9b-68f8-4258-b46c-b35de8871419": {
+      "type": "2022-logos",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/toms-svg0_1.png",
+        "image_2": "shopify:\/\/shop_images\/cloetta-2009_1.png",
+        "image_3": "shopify:\/\/shop_images\/haribo-svg0_cropped_1.png",
+        "image_4": "shopify:\/\/shop_images\/fazer_svg0_1.png",
+        "image_5": "shopify:\/\/shop_images\/Carletti-logo_1.png",
+        "image_6": "shopify:\/\/shop_images\/nestle-svg0-cropped_1.png"
+      }
+    },
+    "c5ecaab4-0d68-4eef-8ff5-bd18a98ae701": {
+      "type": "2022-bullets-with-backgroundcolor",
+      "blocks": {
+        "template--19566501265739__c5ecaab4-0d68-4eef-8ff5-bd18a98ae701-collection-1": {
+          "type": "collection",
+          "settings": {
+            "content": "Lækre slikbøtter af genanvendelig pap"
+          }
+        },
+        "b75053dc-0402-4ec6-a60c-07c92222bf30": {
+          "type": "collection",
+          "settings": {
+            "content": "Slikposer med genluksfunktion"
+          }
+        }
+      },
+      "block_order": [
+        "template--19566501265739__c5ecaab4-0d68-4eef-8ff5-bd18a98ae701-collection-1",
+        "b75053dc-0402-4ec6-a60c-07c92222bf30"
+      ],
+      "settings": {
+        "headline": "Vælg selv din emballage",
+        "content": "Du kan vælge imellem:",
+        "button_text": "Køb her",
+        "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+        "image": "shopify:\/\/shop_images\/img-big-3.png"
+      }
+    },
+    "73a7e6fd-861d-4b79-9a26-0591451de59c": {
+      "type": "2022-bigImage",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bg-image-1.jpg",
+        "button_destination": "shopify:\/\/pages\/app-til-bland-selv"
+      }
+    },
+    "f999267e-cd29-477a-be77-42ce2dbdfc55": {
+      "type": "2022-socialLinks",
+      "settings": {
+        "headline_social": "Følg Slikekspressen:",
+        "headline_newsletter": "Nyhedsbrev",
+        "content_newsletter": "Hold dig opdateret om rabatter, nye produkter – og godt humør.",
+        "button_text_newsletter": "Tilmeld",
+        "button_destination_newsletter": "https:\/\/m.me\/101797448678348?ref=w15249610"
+      }
+    },
+    "76032aec-008f-42c5-a5be-f3968f3042ac": {
+      "type": "2022-blandSelvLink",
+      "settings": {
+        "button_text": "Køb bland selv slik",
+        "button_destination": "shopify:\/\/collections\/bland-selv-slik"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9ab939ce-1547-45a7-93c7-91764ddfffda",
+    "bf8baa59-aff1-4178-8cdc-8baf26913ff1",
+    "6fc4c331-8c9f-4018-9212-60dd82e0773c",
+    "9cb55d9b-68f8-4258-b46c-b35de8871419",
+    "c5ecaab4-0d68-4eef-8ff5-bd18a98ae701",
+    "73a7e6fd-861d-4b79-9a26-0591451de59c",
+    "f999267e-cd29-477a-be77-42ce2dbdfc55",
+    "76032aec-008f-42c5-a5be-f3968f3042ac"
+  ]
+}

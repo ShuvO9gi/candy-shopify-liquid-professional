@@ -1,0 +1,415 @@
+.drawer-cart-inner[hide=true]{
+    display: none  !important;
+}
+
+.drawer-cart-inner---upsell[opened=true]{
+    display: block !important;
+}
+
+.sa-bold {
+    font-weight: 700;
+}
+
+.sa-padding-10 {
+    padding: 10px;
+}
+
+.sa-button-primary {
+    background: #491966;
+    width: 100%;
+    height: 32px;
+    display: block;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 6px 0 9px;
+}
+
+.sa-button-pink{
+    background: #FF94C3;
+    width: 100%;
+    height: 32px;
+    display: block;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 6px 0 9px;
+}
+
+.sa-upsell-offer .shopadjust-overflow-scroll--y{
+    margin-right: -15px !important;
+    padding-right: 10px  !important;
+}
+
+
+.sa-upsell-offer__detail {
+    font-family: "Amsi Pro Normal", sans-serif;
+    margin: 10px 25px;
+    h4 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 125%;
+        letter-spacing: 0.01em;
+        color: #F280B2;
+        text-transform: none;
+        font-family: "Amsi Pro Normal", sans-serif;
+    }
+
+    .sa-upsell-detail___item {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
+        margin: 15px 0;
+        border: 1px solid #F5EBF0;
+        border-radius: 10px;
+        padding: 0;
+
+        .label--radio{
+            color: #491966;
+            > span {
+                display: block;
+            }
+        }
+
+        .sa-detail___item---radio-button {
+            padding: 10px 10px 0;
+            border-bottom: 1px solid #F5EBF0;
+        }
+
+        &:hover, &.selected {
+            border: 1px solid #f280b2 !important;
+        }
+
+        .sa-qty-wrapper {
+            display: none;
+            margin-top: 10px
+        }
+
+        .sa-button-primary{
+            display: block;
+        }
+
+
+        &.selected {
+            .sa-button-primary{
+                display: none  !important;
+            }
+
+            .sa-qty-wrapper {
+                display: block  !important;
+            }
+        }
+    }
+
+    .sa-detail___item---detail:after {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 1px;
+        background: #f5ebf0;
+        content: "";
+        height: 100%;
+        @media (max-width: 480px) {
+            left: 52%;
+        }
+    }
+
+    .sa-detail___item---detail {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        color: #491966;
+        position: relative;
+        > div {
+            width: 50%;
+        }
+
+        .sa-box-actions {
+            .sa-rte {
+                font-size: 12px;
+                margin-bottom: 10px
+            }
+        }
+
+        .sa-box-image {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 170px;
+        }
+
+        .sa-box-actions ul {
+            list-style: none;
+            font-size: 11px;
+            line-height: 12.54px;
+            font-weight: 400;
+            padding: 0 5px;
+            margin-bottom: 20px;
+        }
+
+        .sa-box-actions  {
+            .sa-qty-wrapper--js {
+                position: relative;
+            }
+
+            .product-card__qty-wrapper button span {
+                top: 0px !important;
+            }
+
+            .product-card__qty-wrapper button {
+                width: 24px;
+                height: 24px;
+            }
+
+            .product-card__qty-wrapper {
+                height: 32px;
+            }
+
+            .sa-text-12{
+                font-size: 14px !important;
+            }
+
+        }
+    }
+
+
+}
+.sa-upsell-offer {
+    font-family: "Amsi Pro Normal", sans-serif;
+    margin: 10px 25px;
+    h4 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 125%;
+        letter-spacing: 0.01em;
+        color: #F280B2;
+        text-transform: none;
+    }
+
+    > p {
+        color: #491966;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+    }
+
+    .sa-upsell-items {
+        border: 1px solid #F5EBF0;
+        margin: 20px 0;
+        padding: 0px;
+        border-radius: 10px;
+    }
+
+    .sa-upsell-item{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        border-bottom: 1px solid #f5ebf0;
+        padding: 15px 10px;
+        cursor: pointer;
+        &:hover, &.selected {
+            border-top: 1px solid #F280B2;
+            border-left: 1px solid #F280B2;
+            border-right: 1px solid #F280B2;
+            border-bottom: 1px solid #F280B2;
+        }
+
+        &.first-item, &:first-child {
+            &:hover {
+               border-top-left-radius: 10px; 
+               border-top-right-radius: 10px; 
+            }
+
+            &.selected{
+                border-top-left-radius: 10px; 
+                border-top-right-radius: 10px; 
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+            &:hover {
+                border-bottom: 1px solid #F280B2;
+                border-bottom-left-radius: 10px; 
+                border-bottom-right-radius: 10px; 
+            }
+
+            &.selected {
+                border-bottom: 1px solid #F280B2;
+                border-bottom-left-radius: 10px; 
+                border-bottom-right-radius: 10px; 
+            }
+        }
+
+        .sa-box-label{
+            font-style: normal;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0.01em;
+            color: #491966;
+            width: 10em;
+            overflow: hidden;
+
+            label {
+                font-weight: 700;
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .sub-label{
+                font-weight: 400;
+                display: block;
+            }
+
+            .sub-label-detail{
+                font-weight: 400;
+                display: block;
+                font-size: 11px;
+            }
+        }
+
+        .sa-box-button {
+            position: relative;
+            top: 5px;
+        }
+
+        .sa-box-image{
+            max-width: 125px;
+        } 
+    }
+}
+
+.sa-radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.sa-radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.sa-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border: 1px solid #f280b2;
+    border-radius: 50%;
+
+    &:after {
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f280b2;
+    }
+}
+
+
+.sa-radio-container:hover input ~ .sa-checkmark {
+    background-color: #ffffff;
+}
+
+
+.sa-radio-container input:checked ~ .sa-checkmark {
+    background-color: #ffffff;
+}
+
+.sa-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.sa-radio-container input:checked ~ .sa-checkmark:after {
+    display: block;
+}
+
+
+#drawer-cart .drawer_footer_shopAdjust---upsell {
+    z-index: 5000;
+    bottom: 0;
+    width: 100%;
+    color: #491966;
+    font-size: 17px;
+    position: absolute;
+
+    .drawer_footer_shopAdjust---upsell--actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+        
+        .goBack{
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 12px;
+            height: 45px;
+            margin-right: 10px;
+            width: 50px;
+            border: 1px solid #ff94c3; 
+        }
+
+        .sa-button-pink{
+            height: 45px;
+            border-radius: 12px;
+            color: #380C52;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+    
+}
+
+.drawer_padding-10---bg-white{
+    background-color: #FAF2F6;
+    padding: 13px 25px 10px;
+}
+
+.sa-upsell-offer__detail, .sa-upsell-offer{
+    display: none;
+}
+
+.sa-upsell-offer__detail[opened=true]{
+    display: block;
+}
+
+.sa-upsell-offer[opened=true]{
+    display: block;
+}
+
+.sa-cross_sell-wrapper{
+    padding-right: 10px;
+}

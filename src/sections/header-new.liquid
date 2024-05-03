@@ -1,0 +1,244 @@
+{%- assign class = 'header-new' -%}
+{%- assign s = section.settings -%}
+{%- assign show_countdown = s.show_countdown -%}
+
+{%- assign navMenu = linklists[s.navigation] -%}
+
+<header class="{{ class }} relative w-full" style="background-color: {{ s.header_background }};" data-header data-limit-hrs={{ s.limitHrs }} data-component="header">
+  <div class="{{ class }}__topbar" style="background-color:{{ s.topbar_background }}; height: 49px;" data-topbar>
+    <div class="page-widt">
+      <div class="{{ class }}__inner py-1 text-center">
+        {% assign today_day = 'now' | date: '%a' %}
+        {% assign time_hour = 'now' | date: '%H' %}
+
+        <div class="{{ class }}__topbar__text font-body" style="color:{{ s.topbar_color }};">
+ {% comment %}                
+          <span>Vi holder lukket i påsken og sender først slik afsted tirsdag d. 19. april </span>
+		  
+{% endcomment %}   
+          {% if today_day == 'Fri' %}
+              {% if time_hour > '15' %}
+                  Vi sender slik igen på mandag..
+              {% else %}
+                <span>{{ 'header.topbar.order_before' | t }}</span>
+                <span id="time" style="color:{{ s.topbar_color_accent }};" data-time></span>
+              {% endif %}		
+          {% elsif today_day == 'Sat' %}
+	          Vi sender slik igen på mandag
+          {% elsif today_day == 'Sun' %}
+			{% if time_hour > '15' %}
+                <span>{{ 'header.topbar.order_before' | t }}</span>
+                <span id="time" style="color:{{ s.topbar_color_accent }};" data-time></span>
+            {% else %}
+          		Vi sender slik igen imorgen
+          	{% endif %}			
+          {% else %}
+            {%- if show_countdown -%}
+				<span>{{ 'header.topbar.order_before' | t }}</span>
+                <span id="time" style="color:{{ s.topbar_color_accent }};" data-time></span>                
+            {%- endif -%}
+          {% endif %}
+          <span>{{ 'header.topbar.send_today' | t }}</span>
+ 
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- assign navPadding = s.logo1_width | minus: 40 -%}
+
+  <nav class="navigation" style="padding:0 {{ navPadding }}px; height: 76px;" data-nav>
+    <ul class="flex flex-wrap items-center justify-center">
+      {%- for link in navMenu.links -%}
+        <li class="py-4 mx-5 2xl:mx-10" {% if link.url == '/cart' %} data-add-cart {% endif %}>
+          <a href="{{ link.url }}" class="relative navigation__link font-body font-bold whitespace-nowrap {% if link.url == '/cart' %}cart-link{% endif %}" style="color:{{ s.navigation_links_color }};">
+            {{ link.title }}
+
+            {% if link.url == '/cart' %} 
+              <span class="cart__icon__style" data-cart-count="{{ cart.item_count }}">
+                {%- render 'icon', icon: 'cart' -%}
+              </span>
+            {% endif %}
+          </a>        
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+
+  {%- if s.logo1 != blank -%}
+    <a href="/" class="logo1 block absolute top-0 left-0 z-10">
+      {{ s.logo1 | file_url | img_tag }}
+    </a>
+    <style>
+      .header-new .logo1 {
+        width:{{ s.logo1_width }}px;
+      }
+      @media screen and (max-width: 1070px) {
+        .header-new .logo1 {
+          width:{{ s.logo1_width_mobile }}px;
+        }
+      }
+    </style>
+  {%- endif -%}
+
+  {%- if s.logo2 != blank -%}
+    <div class="logo2 block absolute top-0 right-0 z-10">
+      {{ s.logo2 | file_url | img_tag }}
+    </div>
+  {%- endif -%}
+  <style>
+    .header-new .logo2 {
+      width:{{ s.logo2_width }}px;
+    }
+    @media screen and (max-width: 1070px) {
+      .header-new .logo2 {
+        display: none;
+      }
+    }
+  </style>
+
+  {%- comment -%} Mobile menu icon {%- endcomment -%}
+  <div class="mobile-menu__icon flex items-center justify-center absolute h-full top-0 right-0 cursor-pointer" style="background-color:{{ s.mobile_menu_icon_color }};" data-mobile-menu-open>
+    <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-white">
+      {%- render 'icon' with 'menu' -%}
+    </span>
+  </div>
+
+  <div class="lg:hidden absolute top-full right-0  rounded-bl-lg" data-floating-cart style="background-color: #42175C;">
+    <div class="relative">
+      <a href="/cart">
+        <div class="pt-4 px-2 pb-2 flex justify-center text-purple">
+          {%- render 'icon' with 'cart' -%}
+        </div>
+
+        <div 
+          class="!absolute top-0 right-1"  
+          style="--colorBtnPrimary: #FFA250; --colorBtnPrimaryText: #ffffff;"
+          data-cart-count="0">
+        </div>
+      </a>
+    </div>
+  </div>
+</header>
+
+{%- comment -%} Mobile menu {%- endcomment -%}
+{%- render 'mobile-menu', menu: navMenu -%}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Topbar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_countdown",
+        "label": "Show countdown",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "limitHrs",
+        "label": "Time limit to delivery",
+        "info": "If it is 18:00, then just type 18",
+        "default": 18
+      },
+      {
+        "type": "color",
+        "id": "topbar_background",
+        "label": "Topbar background",
+        "default": "#511C70"
+      },
+      {
+        "type": "color",
+        "id": "topbar_color",
+        "label": "Topbar text color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "topbar_color_accent",
+        "label": "Topbar text color accent",
+        "default": "#FFDA3E"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "label": "Navigation background color",
+        "default": "#42155E"
+      },
+      {
+        "type": "link_list",
+        "id": "navigation",
+        "label": "Navigation menu"
+      },
+      {
+        "type": "color",
+        "id": "navigation_links_color",
+        "label": "Navigation links color",
+        "default": "#FFA250"
+      },
+      {
+        "type": "header",
+        "content": "Logos"
+      },
+      {
+        "type": "text",
+        "id": "logo1",
+        "label": "Logo 1"
+      },
+      {
+        "type": "range",
+        "id": "logo1_width",
+        "label": "Logo 1 width",
+        "unit": "px",
+        "min": 100,
+        "max": 500,
+        "step": 5,
+        "default": 210
+      },
+      {
+        "type": "range",
+        "id": "logo1_width_mobile",
+        "label": "Logo 1 width mobile",
+        "unit": "px",
+        "min": 100,
+        "max": 500,
+        "step": 5,
+        "default": 175
+      },
+      {
+        "type": "text",
+        "id": "logo2",
+        "label": "Logo 2"
+      },
+      {
+        "type": "range",
+        "id": "logo2_width",
+        "label": "Logo 2 width",
+        "unit": "px",
+        "min": 100,
+        "max": 500,
+        "step": 5,
+        "default": 140
+      },
+      {
+        "type": "header",
+        "content": "Mobile menu"
+      },
+      {
+        "type": "color",
+        "id": "mobile_menu_icon_color",
+        "label": "Icon color",
+        "default": "#622287"
+      }
+    ]
+  }
+{% endschema %}

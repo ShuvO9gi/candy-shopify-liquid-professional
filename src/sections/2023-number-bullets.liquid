@@ -1,0 +1,114 @@
+<div class="section-container">
+  <div class="page-container twb-mt-8">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="twb-mb-8 type-style-h2-regular">
+          {{ section.settings.headline }}
+        </h2>
+      </div>
+    </div>
+    <div class="twb-mb-0 md:twb-mb-8 twb-w-full twb-flex twb-flex-col md:twb-flex-row">
+      <div class="twb-w-full md:twb-w-1/2">
+        {% assign listNumber = 1 %}
+
+        {%- for block in section.blocks -%}
+          <div class="twb-w-full twb-flex twb-items-center twb-my-4 md:twb-my-8">
+            <div class="twb-w-16 md:twb-w-24 twb-mr-6 md:twb-mr-12">
+              <div class="twb-text-white twb-bg-dark-purple twb-py-4 twb-rounded-xl twb-flex twb-justify-center twb-items-center">
+                <div class="type-style-h1-regular">
+                  {{ listNumber }}
+                </div>
+              </div>
+            </div>
+            <div class="twb-w-60 md:twb-w-80 twb-flex">
+              <div class="type-style-usp-p">
+                {{ block.settings.content }}
+              </div>
+            </div>
+          </div>
+          {% assign listNumber = listNumber | plus: 1 %}
+        {%- endfor -%}
+        <div class="row hideOnMobile twb-mt-16">
+          <div class="col-3"></div>
+          <div class="col-9">
+            <a href="{{ section.settings.button_destination }}" class="normalLink" style="position: relative;">
+              <div class="orangeButton type-style-button-text">
+                {{ section.settings.button_text }}
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row hideOnDesktop twb-my-8">
+          <div class="col-12" style="text-align: center;">
+            <a href="{{ section.settings.button_destination }}" class="normalLink" style="position: relative;">
+              <div class="orangeButtonBigMobile type-style-button-text">
+                {{ section.settings.button_text }}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="twb-w-full md:twb-w-1/2 bigImage">
+        {{ section.settings.image | image_url: width: 500, height: 500 | image_tag }}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "2023 - tal liste",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "headline",
+      "label": "Overskrift"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Tekst på knap"
+    },
+    {
+      "type": "url",
+      "id": "button_destination",
+      "label": "Side link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Billede"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Bullets",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "2023 - tal liste",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

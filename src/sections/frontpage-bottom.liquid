@@ -1,0 +1,207 @@
+{%- assign class = 'frontpage__bottom' -%}
+{%- assign s = section.settings -%}
+
+<div class="{{ class }} pt-20" style="background-color: {{ s.background_color }};">
+  <div class="page-width">
+    <div class="relative">
+      {%- comment -%} Title {%- endcomment -%}
+      {%- if s.title != blank -%}
+        <h2 class="{{ class }}__title relative mb-3 font-body font-bold z-10" style="color: {{ s.title_color }};">
+          {{ s.title }}
+        </h2>
+      {%- endif -%}
+
+      {%- comment -%} Subtitle {%- endcomment -%}
+      {%- if s.subtitle != blank -%}
+        <p class="{{ class }}__subtitle relative font-body z-10" style="color: {{ s.subtitle_color }};">
+          {{ s.subtitle }}
+        </p>
+      {%- endif -%}
+
+      {%- comment -%} Bullets {%- endcomment -%}
+      {%- for b in section.blocks -%}
+        {%- assign bs = b.settings -%}
+        <div class="flex relative items-center{% if forloop.first %} mt-10{% else %} mt-5{% endif %} z-10">
+          <div class="{{ class }}__bullets__circle flex items-center justify-center mr-3 rounded-full bg-yellow">
+            {%- render 'icon' with 'check' -%}
+          </div>
+
+          <div>
+            <p class="{{ class }}__bullets__text font-body text-white">{{ bs.bullet }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+
+      {%- comment -%} CTA {%- endcomment -%}
+      {%- if s.url != blank -%}
+        <div class="relative mt-14 z-10">
+          <a href="{{ s.url }}" class="btn w-full sm:w-auto">
+            {{ s.url_text }}
+          </a>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Right image {%- endcomment -%}
+      <div class="{{ class }}__bullets-image relative lg:absolute">
+        {%- render 'image', image: s.bullets_image -%}
+      </div>
+    </div>    
+  </div>
+
+  {%- comment -%} Images {%- endcomment -%}
+  <div class="{{ class }}__bullets__images flex relative items-center justify-between mt-20">
+    <div class="image-w-bg relative z-10">
+      {%- render 'image', image: s.image_w_bg -%}
+    </div>
+
+    <div class="image-w-bg candy-image relative z-10">
+      {%- render 'image', image: s.image_candy -%}
+    </div>
+
+    <div class="{{ class }}__bullets-shape">
+      {{ s.bullets_shape | file_url | img_tag }}
+    </div>
+  </div>
+
+  {%- comment -%} Video reviews {%- endcomment -%}
+  <section id="vi_reviews" class="{{ class }}__video-reviews relative z-10" style="background-color: {{ s.video_reviews_bg }};">
+    <div class="page-width">
+      <div class="{{ class }}__video-reviews__inner text-center">
+        {%- if s.video_reviews_title != blank -%}
+          <p class="{{ class }}__video-reviews__title text-white mb-10 pt-12 lg:pt-0 transform-none lg:transform lg:-translate-y-12 font-body font-bold">{{ s.video_reviews_title }}</p>
+        {%- endif -%}
+
+        {%- if s.video_grid != blank -%}
+          <div class="{{ class }}__videos">
+            {{ s.video_grid }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Frontpage sustainability",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Frontpage top background color",
+        "default": "#481964"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title color",
+        "default": "#FFDA3E"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "color",
+        "id": "subtitle_color",
+        "label": "Subtitle color",
+        "default": "#FFF"
+      },
+      {
+        "type": "header",
+        "content": "Bullets image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bullets_image",
+        "label": "Bullets image"
+      },
+      {
+        "type": "header",
+        "content": "CTA"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "CTA url"
+      },
+      {
+        "type": "text",
+        "id": "url_text",
+        "label": "CTA text"
+      },
+      {
+        "type": "header",
+        "content": "Image section"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_w_bg",
+        "label": "Image w background"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_candy",
+        "label": "Image candy"
+      },
+      {
+        "type": "text",
+        "id": "bullets_shape",
+        "label": "Bullets shape"
+      },
+      {
+        "type": "header",
+        "content": "Video reviews"
+      },
+      {
+        "type": "color",
+        "id": "video_reviews_bg",
+        "label": "Video reviews backgrouond",
+        "default": "#571076"
+      },
+      {
+        "type": "text",
+        "id": "video_reviews_title",
+        "label": "Title"
+      },
+      {
+        "type": "html",
+        "id": "video_grid",
+        "label": "Videos"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Bullet",
+        "type": "bullet",
+        "settings": [
+          {
+            "type": "text",
+            "id": "bullet",
+            "label": "Bullet text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Frontpage",
+        "name": "Frontpage bottom"
+      }
+    ]
+  }
+{% endschema %}

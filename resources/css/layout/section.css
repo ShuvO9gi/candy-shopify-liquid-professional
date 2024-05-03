@@ -1,0 +1,11 @@
+@layer components {
+  .section {
+    @apply py-6 lg:py-14;
+
+    & + & {
+      @apply pt-0;
+    }
+    
+  }
+  
+}

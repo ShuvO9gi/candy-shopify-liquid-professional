@@ -1,0 +1,75 @@
+<div class="section-container backgroundWallpaper">
+	<div class="page-container">
+      <div class="row three-col-section-bigPadding">
+      	<div class="col-6 ">
+          <div class="contact-form">
+            <h1 class="contact-form-headline type-style-h1-bold">{{ section.settings.h1-headline }}</h1>
+        		<div class="contact-form-content type-style-p-regular">
+  		  		{{ section.settings.content }}
+            	</div>  
+  			<a href="{{ section.settings.buttonUrl }}" target="_blank">
+                <div class="orangeButton type-style-button-text mobileBig" style="margin-bottom: 30px;">
+                  {{ section.settings.buttonText }}  
+                </div>
+                
+  			</a>
+  			<div class="contact-form-content type-style-p-regular" >
+  				{{ section.settings.subcontent }}
+            </div>
+          </div>
+        </div>
+        <div class="col-6 ">
+          {%- render 'page-block-contact-form', block: block -%}
+        </div>
+      </div>
+    </div>
+</div>
+{% schema %} 
+  {
+    "name": "Kontakt os",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "h1-headline",
+          "label": "Overskrift (H1)"
+      },
+	  {
+          "type": "richtext",
+          "id": "content",
+          "label": "Tekst"
+      },
+	  {
+      	  "type": "text",
+		  "id": "buttonText",
+		  "label": "Knap tekst"
+      },
+	  {
+      	  "type": "url",
+	      "id": "buttonUrl",
+ 		  "label": "Knap url"
+      },
+	  {
+          "type": "richtext",
+          "id": "subcontent",
+          "label": "Sub tekst"
+      },
+      {
+          "type": "image_picker",
+          "id": "top-image",
+          "label": "Billede"
+      }
+  	],
+    "presets": [
+      {
+        "name": "Kontakt os"
+     
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

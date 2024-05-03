@@ -1,0 +1,287 @@
+{%- if settings.cart_type == 'drawer' -%}
+  <script id="sl-CartTemplate" type="text/template">
+    {% raw %}
+        {% if cart.item_count > 0 %}
+          <form id="form-drawer-cart" action="/cart"method="post">
+          <cart-items>
+            <div class="drawer_content_products_shopAdjust">
+            {%- for item in cart.items -%}
+                <div class="drawer_content_product_item_shopAdjust item" id="CartItem-{{ forloop.index }}" data-line="{{ forloop.index }}" data-line-item-id="{{ item.id }}" data-variant-id="{{ item.id }}" data-line-item-key="{{ item.key }}">			
+                    <div class="drawer_product_item_image_shopAdjust">
+                        {% if item.image %}
+                        <a href="{{ item.url }}">
+                            <img class="cart-item__image"
+                                src="{{ item.image | img_url: '52x' }}"
+                                alt="{{ item.image.alt | escape }}"
+                                loading="lazy"
+                                width="52"
+                                height="{{ 100 | divided_by: item.image.aspect_ratio | ceil }}"
+                                >
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="drawer_product_item_content_shopAdjust">				
+                        <div class="drawer_product_item_content_top_shopAdjust">
+                            <div class="drawer_content_product_item_title_shopAdjust">			
+                              <a href="{{ item.url }}">{{ item.title }}..</a>
+                            </div>
+                            <span data-item-variant="{{item.id}}" class="sl--btn-cart-item---sidebar" data-line="{{ forloop.index }}" data-key="{{item.key}}"></span>
+                              
+                            <div class="drawer_clear_shopAdjust"></div>
+                        </div>
+                        <div class="drawer_product_item_content_bottom_shopAdjust">
+                            {% comment %}
+                            <div class="drawer_content_product_item_edit_button_shopAdjust">			
+                                <div class="drawer_product_item_button_editicon_shopAdjust">
+                                    <svg enable-background="new 0 0 45 45" height="20px" id="Layer_1" version="1.1" viewBox="0 0 45 45" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><rect fill="#ffffff" height="23" transform="matrix(-0.7071 -0.7072 0.7072 -0.7071 38.2666 48.6029)" width="11" x="23.7" y="4.875"></rect><path d="M44.087,3.686l-2.494-2.494c-1.377-1.377-3.61-1.377-4.987,0L34.856,2.94l7.778,7.778l1.749-1.749   C45.761,7.593,45.465,5.063,44.087,3.686z" fill="#fff"></path><polygon fill="#ffffff" points="16,22.229 16,30 23.246,30  "></polygon><path d="M29,40H5V16h12.555l5-5H3.5C1.843,11,0,11.843,0,13.5v28C0,43.156,1.843,45,3.5,45h28   c1.656,0,2.5-1.844,2.5-3.5V23.596l-5,5V40z" fill="#ffffff"></path></g></svg>
+                                </div>
+                                se og rediger
+                            </div>
+                            {% endcomment %}
+                            <quantity-input class="drawer-item-quantity_shopAdjust">
+                                <div class="form-field form-field--qty-input visible">
+                                    <input min="0" type="number" id="product-quantity-input" class="form-field-input form-field-number form-field-filled quantity__input-sl" value="{{ item.quantity }}" name="updates[]" type="text" pattern="\d*" aria-label="Antal" data-quantity-input="" data-index="{{ item.index | plus: 1 }}">
+                                </div>
+                            </quantity-input>
+                            <cart-remove-button id="Remove-{{ forloop.index | plus: 1 }}" data-index="{{ forloop.index | plus: 1 }}" class="drawer_content_product_item_delete_shopAdjust">			
+                                <a href="/cart/change?id={{item.key}}&amp;quantity=0" class="button button--tertiary" aria-label="Remove {{item.title}}">
+                                    <svg width="6" height="6"viewBox="0 0 10 10">
+                                        <path fill="#070202" d="M9.677 8.118a1.102 1.102 0 11-1.559 1.56L5 6.558 1.882 9.677a1.102 1.102 0 11-1.56-1.559L3.442 5 .323 1.882A1.102 1.102 0 111.882.322L5 3.442 8.118.323a1.102 1.102 0 111.56 1.559L6.558 5l3.118 3.118z" fill="#A1A1A1" fill-rule="nonzero"></path>
+                                    </svg>
+                                    {% comment %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                    width="20" height="22"
+                                    viewBox="0 0 512 512"
+                                    style="fill: #9954c2;"><path d="M 220 20 C 214.477 20 210 24.478 210 30 L 210 60 L 100 60 C 94.477 60 90 64.478 90 70 L 90 120 C 90 125.522 94.477 130 100 130 L 120 130 L 120 456 C 120 474.748 135.252 490 154 490 L 366 490 C 384.748 490 400 474.748 400 456 L 400 130 L 420 130 C 425.522 130 430 125.522 430 120 L 430 70 C 430 64.478 425.522 60 420 60 L 310 60 L 310 30 C 310 24.478 305.522 20 300 20 L 220 20 z M 230 40 L 290 40 L 290 60 L 230 60 L 230 40 z M 110 80 L 410 80 L 410 110 L 110 110 L 110 80 z M 140 130 L 380 130 L 380 456 C 380 463.72 373.72 470 366 470 L 154 470 C 146.28 470 140 463.72 140 456 L 140 130 z M 200 190 C 194.477 190 190 194.478 190 200 L 190 400 C 190 405.522 194.477 410 200 410 C 205.523 410 210 405.522 210 400 L 210 200 C 210 194.478 205.523 190 200 190 z M 260 190 C 254.477 190 250 194.478 250 200 L 250 400 C 250 405.522 254.477 410 260 410 C 265.522 410 270 405.522 270 400 L 270 200 C 270 194.478 265.522 190 260 190 z M 320 190 C 314.478 190 310 194.478 310 200 L 310 400 C 310 405.522 314.478 410 320 410 C 325.522 410 330 405.522 330 400 L 330 200 C 330 194.478 325.522 190 320 190 z"></path></svg>
+                                    {% endcomment %}
+                                </a>
+                            </cart-remove-button>
+                            <div class="drawer_content_product_item_price_shopAdjust">			
+                                {%- if item.original_line_price != item.final_line_price -%}
+                                    <span class="price strike-through" style="opacity: 0.7; text-decoration: line-through;">{{item.original_line_price | divided_by: 100 | money_native: currency }}</span>
+                                    <div data-item-variant="{{item.id}}" data-key="{{item.key}}"  data-line="{{ forloop.index }}" class="sl--cart-item-line--price---sidebar">{{ item.line_price | divided_by: 100 | money_native: currency }}</div>
+                                {%- else -%}
+                                    <div data-item-variant="{{item.id}}" data-key="{{item.key}}"  data-line="{{ forloop.index }}" class="sl--cart-item-line--price---sidebar">{{ item.line_price | divided_by: 100 | money_native: currency }}</div>
+                                {%- endif -%}
+                            </div>	
+                            <div class="drawer_clear_shopAdjust"></div>
+                        </div>
+                    </div>
+                    <div class="drawer_clear_shopAdjust"></div>
+                </div>
+            {%- endfor -%}	
+            </div>	
+          </cart-items>
+          </form>
+          
+      {% else %} 
+          <div class="empty">
+              <p>Din kurv er tom.</p>
+          </div>
+      {% endif %}
+    {% endraw %}
+  </script>
+
+  <div id="drawer-modal">
+    <header class="header">
+      <h2></h2>
+      <button class="close-modal">
+        <svg width="10" viewBox="0 0 10 10">
+          <path d="M9.677 8.118a1.102 1.102 0 11-1.559 1.56L5 6.558 1.882 9.677a1.102 1.102 0 11-1.56-1.559L3.442 5 .323 1.882A1.102 1.102 0 111.882.322L5 3.442 8.118.323a1.102 1.102 0 111.56 1.559L6.558 5l3.118 3.118z" fill="#A1A1A1" fill-rule="nonzero"></path>
+        </svg>
+      </button>
+    </header>
+    <div class="drawer-modal-inner">
+        <div class="container-items">
+          <div class="recomended-items">
+            <div class="sl-special-offer-v2" data-cid=""></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  <div id="drawer-cart" class="drawerContainer_shopAdjust" data-pushbar-id="sidebar-cart" data-pushbar-direction="right">
+    <div class="drawer-cart-inner shopadjust-overflow-scroll">
+        <div class="drawer_header_shopAdjust">
+    <div class="drawer_headline_shopAdjust">
+      Din indkøbskurv  
+            <span class="shopAdjust-progress shopAdjust-hidden">
+                <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#000">
+                    <g fill="none" fill-rule="evenodd">
+                        <g transform="translate(1 1)" stroke-width="2">
+                            <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                            <path d="M36 18c0-9.94-8.06-18-18-18">
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    from="0 18 18"
+                                    to="360 18 18"
+                                    dur="1s"
+                                    repeatCount="indefinite"/>
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+    </div>
+        <div data-pushbar-close aria-label="close cart">	
+            <div class="drawer_close_icon_shopAdjust drawer_close_icon_shopAdjust1">
+                <div class="icon-svg">
+                    <svg width="10" viewBox="0 0 10 10">
+                        <path d="M9.677 8.118a1.102 1.102 0 11-1.559 1.56L5 6.558 1.882 9.677a1.102 1.102 0 11-1.56-1.559L3.442 5 .323 1.882A1.102 1.102 0 111.882.322L5 3.442 8.118.323a1.102 1.102 0 111.56 1.559L6.558 5l3.118 3.118z" fill="#A1A1A1" fill-rule="nonzero"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    
+    <div class="drawer_clear_shopAdjust"></div>
+  </div>
+
+    {%- render 'shopadjust-ads' -%}
+
+  <div class="drawer_content_shopAdjust">
+    <div class="drawer_content_header_shopAdjust">
+      
+    </div>	
+        <div id="sl-cartjs-items"></div>
+        {% comment %}
+    <div class="drawer_content_newBag_shopAdjust">
+      Bland endnu en pose
+    </div>
+    <div class="drawer_content_newBag_text_shopAdjust">
+      eller fyld mere i en af poserne ovenfor
+    </div>
+        {% endcomment %}
+
+        {% assign cart_configs = shop.metafields.sl_cart_config.cart_config.value  %}                       
+        {% assign show_voucher = false %}
+        {% assign checkout_label = "cart" %}
+        {% assign cart_sidebar = false %}
+        {% for _cart in cart_configs %}
+            {% assign key = _cart[0] | strip %}
+            {% assign value = _cart[1] | strip %}
+            {%if key == "usesidecart" and value == "yes" %}
+                {% assign cart_sidebar = true %}
+            {% endif %}
+            {%if key == "usesidecart_button" %}
+                {% assign checkout_label = value %}
+            {% endif %}
+            {%if key == "show_voucher" %}
+                {% assign show_voucher = true  %}
+            {% endif %}
+        {% endfor %}
+        {% if show_voucher == true %}
+            <div class="voucher-input-box discount-box" style="display: none;">
+                <div class="voucher-message"></div>
+                    <form class="discount-box-form">
+                        <label for="voucher">Discount code</label>
+                        <input name="attributes[voucher]" type="text" value="{{ cart.attributes.voucher }}" placeholder="Discount code">
+                        <button class="button-shopAdjust button--primary" name="applyCoupon" type="submit">Apply</button>
+                    </form>
+                <div class="voucher-codes"></div>
+            </div>
+        {% endif %}
+        <div class="mg-top-up"></div>
+  </div>
+        <div class="sticky-footer drawer_footer_shopAdjust">
+            {% if customer %}
+            {%  else  %}
+                <div class="drawer_footer_logoBottom">
+                    <a href="/account/login" type="button" class="drawer_button_shopAdjust_primary no-customer">Log ind</a>
+                    <a onClick="ShopAdjust.empty_cart();" href="javascript:void(0);" type="button" class="drawer_button_shopAdjust_secondary shopAdjust-empty-cart">Empty Cart</a>
+                </div>
+            {% endif %}
+            <div class="drawer_padding-10">
+                <div class="drawer_footer_headline_shopAdjust"></div>
+                <div class="drawer_footer_prices_shopAdjust custom-totals">
+                    <div class="drawer_footer_subtotal_shopAdjust shopadjust-flex-display shpoadjust-mobile--hidden">
+                        <div class="drawer_footer_price_subtotal_shopAdjust drawer_price_text_shopAdjust">
+                            Subtotal
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_subtotal_amount_shopAdjust">
+                            <span class="slidecart-original-total"><span class="sl-cart-original-total">{{ cart.original_total_price  | money }}</span></span>
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>	
+                    </div>
+                    <div class="drawer_footer_delivery_shopAdjust shopadjust-flex-display shpoadjust-mobile--hidden">
+                        <div class="drawer_price_text_shopAdjust drawer_footer_price_delivery_shopAdjust">
+                            Fragt (fra-pris)
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_delivery_amount_shopAdjust">
+                            <span class="slidecart-discount-amount"><span class="sl-cart-total-discount">{{ cart.total_discount  | money }}</span></span>
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>	
+                    </div>
+                    <div class="drawer_footer_discount_shopAdjust" style="display: none;">	
+                        <div class="drawer_price_text_shopAdjust drawer_footer_price_discount_shopAdjust">
+                            
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_discount_amount_shopAdjust">
+            
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>
+                    </div>
+                    <div class="drawer_footer_total_shopAdjust shopadjust-flex-display">		
+                        <div class="drawer_price_text_shopAdjust drawer_footer_price_total_shopAdjust">
+                            Total
+                        </div>
+                        <div class="drawer_price_amount_shopAdjust drawer_footer_price_total_amount_shopAdjust">
+                            <strong class="slidecart-subtotal"><span class="sl-cart-total-final color-primary">{{ cart.total_price | money }}</span></strong>
+                        </div>
+                        <div class="drawer_clear_shopAdjust"></div>	
+                    </div>	
+                    <div class="drawer_footer_price_text_shopAdjust"></div>	
+                    
+                    
+                </div>
+
+                <div class="drawer_footer_buy_button_shopAdjust">
+                    {% if show_voucher == true %}
+                        <button name="voucher-button" class="button button--secondary full">Get a voucher?</button>
+                    {% endif %}
+                    {% if template == 'cart' %} 
+                        <form id="slidecart-checkout-form" action="/cart" method="post">
+                            <p>{{shop.name}}</p>
+                            <button name="checkout" class="button button--primary full">Go to cart</button>
+                        </form>
+                    {% else %}
+                        {% if checkout_label == "cart" %}
+                            <a class="button full button--primary  withIcon" data-href="/cart" href="/cart"> Go to cart. </a>
+                        {% else %}
+                            <form id="slidecart-checkout-form" action="/cart" method="post">
+                                <button name="checkout" class="button button--primary  full"> Checkout </button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                </div>	
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="drawer-cart-outer drawerContainer_2_shopAdjust">
+        <div class="drawerContainer_2_shopAdjust---list">
+            <div data-pushbar-second-close>
+                <div class="drawer_2_header_shopAdjust">
+                    <div class="drawer_2_close_shopAdjust">
+                        Skjul
+                    </div>	
+                    <div class="drawer_2_close_icon_shopAdjust drawer_close_icon_shopAdjust">
+                        <div class="icon-svg">
+                            <svg width="10" viewBox="0 0 10 10">
+                                <path d="M9.677 8.118a1.102 1.102 0 11-1.559 1.56L5 6.558 1.882 9.677a1.102 1.102 0 11-1.56-1.559L3.442 5 .323 1.882A1.102 1.102 0 111.882.322L5 3.442 8.118.323a1.102 1.102 0 111.56 1.559L6.558 5l3.118 3.118z" fill="#A1A1A1" fill-rule="nonzero"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recomended-items">
+              <div class="sl-special-offer drawer_2_content_products_shopAdjust" data-cid=""></div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    
+{%- endif -%}

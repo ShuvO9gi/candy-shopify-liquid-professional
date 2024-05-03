@@ -1,0 +1,25 @@
+<div class="section-container">
+	<div class="page-container">
+      <div class="row">
+        <div class="col-1 ">&nbsp;</div>
+      	<div class="col-10 ">
+          <div class="subContent"> 
+            <h2 class="subContent-headline">{{ page.title }}</h2>
+            <div class="subContent-content type-style-p-regular">
+              {{ page.content }}
+            </div>
+          </div>
+        </div>
+        <div class="col-1 ">&nbsp;</div>
+      </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Page Default",
+  "tag": "section",
+  "class": "spaced-section"
+}
+{% endschema %} 

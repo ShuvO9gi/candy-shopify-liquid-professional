@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1650875098dddba9c1": {
+      "type": "contact-block",
+      "settings": {
+        "h1-headline": "Kontakt os",
+        "content": "<p><strong>Vi sidder klar til at hjælpe<\/strong><\/p><p>På dette link kan du få svar og hjælp igennem Facebook Messenger<\/p>",
+        "buttonText": "Link til support chat",
+        "buttonUrl": "https:\/\/m.me\/101797448678348?ref=w15199615",
+        "subcontent": "<p>Hvis du ikke har Messenger kan du bruge kontakt formularen her nedenfor<\/p>",
+        "top-image": "shopify:\/\/shop_images\/IMG.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1650875098dddba9c1"
+  ]
+}

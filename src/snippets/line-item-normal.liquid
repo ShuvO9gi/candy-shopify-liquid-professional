@@ -1,0 +1,26 @@
+<div class="flex justify-between items-start relative">
+  <div class="flex flex-col sm:flex-row">
+    <img class="self-start border-2 border-solid border-purple border-opacity-50 rounded-lg mr-0 sm:mr-5 mb-5 sm:mb-0 w-40 sm:w-48" src="{{ item.image | img_url: '200x' }}" alt="{{ item.title }}">
+
+    <div class="flex flex-col items-start justify-center">
+      <p class="text-xl font-semibold text-purple">{{ item.title }}</p>
+
+      <div class="qty flex mt-4">
+        <div class="flex items-center justify-center w-8 h-8 mr-2 bg-opacityPurple text-purple rounded-md font-bold cursor-pointer" data-normal-item-qty-minus>-</div>
+
+        <div class="flex items-center justify-center h-8 mr-2 px-2 bg-opacityPurple text-purple rounded-md text-xs font-bold">
+          <span data-normal-item-qty-elem>{{ item.quantity }}</span>
+          <span class="ml-1">stk</span>
+        </div>
+
+        <div class="flex items-center justify-center w-8 h-8 bg-opacityPurple text-purple rounded-md font-bold cursor-pointer" data-normal-item-qty-plus>+</div>
+      </div>
+
+      {%- render 'line-item-remove-button' with data: 'remove-normal', id: item.id -%}
+    </div>
+  </div>
+
+  <div class="price flex flex-col justify-center mt-14">
+    <p class="whitespace-nowrap" data-normal-item-price>{{ item.final_line_price | money }}</p>
+  </div>
+</div>

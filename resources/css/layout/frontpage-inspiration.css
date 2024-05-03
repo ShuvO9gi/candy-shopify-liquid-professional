@@ -1,0 +1,22 @@
+.frontpage__inspiration {
+  margin-top: -1px;
+
+  .title {
+    @media screen and (max-width: 640px) {
+      font-size: 14px;
+    }
+  }
+
+  &__text-wrapper {
+    a {
+      text-decoration: underline;
+    }
+
+    p,
+    a {
+      @media screen and (max-width: 640px) {
+        font-size: 14px;
+      }
+    }
+  }
+}

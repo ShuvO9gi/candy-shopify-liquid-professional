@@ -1,0 +1,83 @@
+<div class="theReviews">
+  <div class="topContent">
+    <div class="starsHeadline">
+		{{ section.settings.headline }}
+	</div>
+    {%- for block in section.blocks -%}
+		<div class="bulletReviews">
+    	  <div class="bulletReviewHeadline">
+              {{ block.settings.headline }}
+          </div>
+          <div class="bulletReviewStars">
+            {% assign numberOfStars = block.settings.stars %}
+            {% for counter in (1..numberOfStars) %}
+                <!-- the stuff to be done followed by an increase in the 'counter' variable -->
+                <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/Star_1.png?v=1637433584" style="float: left;">
+            {% endfor %}
+            <div class="clear"></div>
+          </div>
+          <div class="bulletReviewname">
+              {{ block.settings.name }}
+          </div>
+    	</div>
+    {%- endfor -%}
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% schema %}
+  {
+  	"name": "Sektion - stjerner (B2B)",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+      {
+          "type": "text",
+          "id": "headline",
+          "label": "Overskrift"
+      }
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+          {
+            "type": "text",
+			"id": "headline",
+            "label": "Overskrift"
+          },
+		  {
+            "type": "number",
+			"id": "stars",
+            "label": "Antal stjerner"
+          },
+		  {
+            "type": "text",
+			"id": "name",
+            "label": "Navn"
+          }
+        ]
+      }
+  	],
+    "presets": [
+      {
+        "name": "B2B Landing Stars",
+        "blocks": [	  
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ],
+    "templates": [
+      "page"
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

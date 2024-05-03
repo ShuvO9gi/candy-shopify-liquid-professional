@@ -1,0 +1,208 @@
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+@media (max-width: 1195px) {
+    .barPriceText, .barGramText {
+        font-size: 14px !important;
+        line-height: 19px !important;
+    }
+
+        
+    .bottomBar {
+        height: 80px !important;
+    }
+
+}
+
+.candyHeadline {
+    @media (max-width: 767px) {
+        margin-top: 50px!important;
+        margin-left: 20px !important;
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 75px!important;
+        margin-left: 10px !important;
+        margin-bottom: 40px !important; 
+    }
+}
+
+.filter----product.-translate-x-full {
+    @media (min-width: 768px) {
+        
+    }
+}
+
+@media (max-width: 767px) {
+    .min767 {
+        display: none;
+    }
+
+    .max767{
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .min767 {
+        display: block;
+    }
+
+    .max767{
+        display: none;
+    }
+}
+
+@media (max-width: 1129px) and (min-width: 768px) {
+    .candySection .page-container{
+        width: 720px !important;
+    }
+
+
+    .candyBox {
+        width: 212px !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+
+        padding-bottom: 50px !important;
+        margin-bottom: 10px !important;
+        height: 275px !important;
+    }
+
+    .candyBoxBuySection-clicked, .candyBoxBuySection{
+        width: 212px !important;
+    }
+
+    .candyBoxBuyButton{
+        width: 100% !important;
+    }
+    
+    .candySizesAmount, .candySizesWeigth{
+        font-size: 12px;
+    }
+
+    .candyBoxBuyButtonClicked {
+        height: 45px;
+        border-radius: 40px;
+        background: #fff;
+        margin-top: 10px;
+        display: flex !important;
+        align-content: center !important;
+        padding-top: 0px;
+        float: none !important;
+    }
+
+    .buttonMinusPlus{
+        float: none !important;
+    }
+
+    .candyBoxName{
+        max-height: 25px;
+        overflow-y: hidden;
+    }
+}
+
+.filter----product.-translate-x-full {
+    z-index: -1;
+}
+
+section.bland-selv-slik__sticky__left {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    padding-top: 10vh;
+    padding-left: 10px;
+    display: none;
+    z-index: 5;
+    @media (min-width: 768px) {
+        display: block;
+    }
+
+    .filters-fixed {
+        position: fixed;
+        top: 20vh;
+        left: 15px;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+
+        div {
+            margin-top: 10px;
+        }
+
+        svg {
+            fill: var(--brandWhite);
+            width: 15px; 
+            height: 15px;
+        }
+
+        svg.Icon.Icon--filter line , svg.Icon.Icon--filter circle{
+            stroke: var(--brandWhite);
+            fill: var(--brandWhite);
+        }
+    }
+
+    .rounded{
+        background-color: var(--brandOrange);
+        border-radius: 50%;
+        display: flex;
+        width: 30px;
+        height: 30px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+/*
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
+
+.font-regular {
+    font-weight: 100;
+}
+
+.bag-candyBoxBuyButtonClicked.candyBoxBuyButtonClicked {
+    background: #faf2f6;
+    .candySizes {
+        padding-top: 15px;
+        .candySizesAmount {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            width: 125px;
+            padding-top: 10px;
+        }
+    }
+}
+
+[data-bag-item] .bag-item-left {
+    width: 40%;
+    @media (max-width: 480px) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .row.custom---flex-col-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

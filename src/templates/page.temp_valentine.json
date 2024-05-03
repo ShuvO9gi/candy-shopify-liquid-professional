@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sec_valentine_HcGxc7": {
+      "type": "sec_valentine",
+      "blocks": {
+        "title_jC9CQ6": {
+          "type": "title",
+          "settings": {
+            "title": "<p><strong>Eksklusiv Valentins Konkurrence!<\/strong><\/p>",
+            "titlesize": 32,
+            "titleColor": "#ffffff",
+            "titleAlign": "center",
+            "paddingtop": 6,
+            "paddingbottom": 10
+          }
+        },
+        "text_UhWAQN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Deltag i<strong>Valentinskonkurrencen<\/strong>og bliv den heldige vinder af den vildeste valentinspakke fyldt med lækkerier. <br\/><\/p><p><strong>Præmien indeholder:2 biografbilletter* <\/strong><\/p><p><strong>En Valentins Hjerteæske fyldt med slik <\/strong><\/p><p><strong>En Champagneflaske fyldt med slik<\/strong><\/p><p><strong>En meter Lakridspiber<\/strong>* Gavekort til Nordisk Film Biografer.<\/p><p>Du deltager i konkurrencen ved at svare rigtigt på spørgsmålet nedenfor.Vinderen trækkes d. 29. februar 2024 og får direkte besked via mail.<\/p>",
+            "textsize": 16,
+            "textColor": "#ffffff",
+            "textAlign": "center",
+            "paddingtop": 6,
+            "paddingbottom": 4
+          }
+        },
+        "title_aPpPM3": {
+          "type": "title",
+          "settings": {
+            "title": "<p><strong>Hvilken er vores mest populære valentinsgave?<\/strong><\/p>",
+            "titlesize": 28,
+            "titleColor": "#ffffff",
+            "titleAlign": "center",
+            "paddingtop": 6,
+            "paddingbottom": 6
+          }
+        },
+        "liquid_7Ar9Q4": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"klaviyo-form-UNaAxW\"><\/div>"
+          }
+        },
+        "text_8nTMxh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Deltagelse i Konkurrencen er ikke købsbetinget. <\/p><p>Som deltager accepterer du samtidig at modtage vores nyhedsbrev med gode tilbud og kampagner fra os. Du kan til enhver tid framelde dig. <\/p>",
+            "textsize": 12,
+            "textColor": "#ffffff",
+            "textAlign": "center",
+            "paddingtop": 10,
+            "paddingbottom": 4
+          }
+        },
+        "title_KJaFGc": {
+          "type": "title",
+          "settings": {
+            "title": "<p>vc bcbvxcbc<\/p>",
+            "titlesize": 28,
+            "titleColor": "#fff",
+            "titleAlign": "center",
+            "paddingtop": 22,
+            "paddingbottom": 26
+          }
+        }
+      },
+      "block_order": [
+        "title_jC9CQ6",
+        "text_UhWAQN",
+        "title_aPpPM3",
+        "liquid_7Ar9Q4",
+        "text_8nTMxh",
+        "title_KJaFGc"
+      ],
+      "settings": {
+        "featured_product": "mors-dags-tilbud",
+        "addcusimg": true,
+        "cusimg": "shopify:\/\/shop_images\/Hjertebland_selv_slik_2.png",
+        "leftimage": "shopify:\/\/shop_images\/purple.png",
+        "rightimage": "shopify:\/\/shop_images\/Valentins_bg_03.png",
+        "usebgcolor": false,
+        "rightsidecolor": "#ffffff",
+        "addklaviyoform": true,
+        "custom_liquid": "<div class=\"klaviyo-form-UNaAxW\"><\/div>",
+        "rightside_product": "",
+        "showprodDescription": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sec_valentine_HcGxc7"
+  ]
+}

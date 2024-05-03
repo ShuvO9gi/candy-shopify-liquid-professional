@@ -1,0 +1,85 @@
+{%- assign current_variant = product.selected_or_first_available_variant %}
+<div class="section-container">
+  <div class="page-container" >
+    <div class="topContentProduct flex" style="margin-top: 4rem;">
+      <div class="productImage" >
+        <img src="{{ product | image_url: width: 600 }}">
+      </div>
+      <div class="productContent">
+        <h1 class="productContentHeadline type-style-h2-bold">
+	        {{ product.title }}
+        </h1>
+        <div class="productPriceContent">
+          <span class="productPrice type-style-h2-bold">
+            {{ product.price | money }}.
+          </span>
+          <span class="priceText text-grey type-style-p-small-regular">
+            Inkl. moms. Fragt bliver tilføjet ved betaling.
+          </span>
+        </div>
+        <div class="productDescription type-style-p-regular">
+          {{ product.description }}
+        </div>
+    
+
+        {% if product.metafields.mix.contents_label != blank %}
+          <div class="productLabel">
+            {{ product.metafields.mix.contents_label }}
+          </div>
+        {% endif%}
+      
+    
+        {%- render 'product-form-new',
+          section_id: section_id,
+          product: product,
+          current_variant: current_variant
+        -%}
+      </div>
+    </div>
+    {% assign hasBox = false %}
+    {% capture productBoxesHTML %}
+      {% assign productMixs = product.metafields.custom.allProductMixs.value %}
+      {% for mix in productMixs %}
+        {% assign hasBox = true %}
+        {% if mix != blank %}   
+          <a href="{{ mix.url }}" target="_blank">        
+            <div class="productPartMix">
+              <div class="productPartMixImage">
+                <img src="{{ mix | image_url: width: 150 }}">    
+              </div>
+              <div class="productPartMixContent">
+                <div class="productPartMixTitle type-style-card-h">
+                    {{ mix.title }}
+                </div>
+                <div class="productPartMixVendor type-style-card-h-subhead">
+                  {{ mix.vendor }}
+                </div>
+              </div>
+            </div>
+          </a>
+        {% endif%}
+      {% endfor %}
+      <div class="clear"></div>
+    {% endcapture%}
+    {% if hasBox == true %}
+      <div class="productBoxContent buffetProductMix">
+        <div class="productBoxContentHeadline type-style-h3-bold">Du kan vælge imellem disse produkter:</div>
+        {{ productBoxesHTML }}
+      </div>
+    {% endif %}
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

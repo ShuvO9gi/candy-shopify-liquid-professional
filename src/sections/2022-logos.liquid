@@ -1,0 +1,83 @@
+<div class="section-container backgroundColorLogos">
+    <div class="page-container">
+        <div class="row valignMiddle twb-mt-8 md:twb-mt-16">
+            <div class="col-6 twb-mb-4">
+                <div class="row valignMiddle">		
+                    <div class="col-2 mobileLeft">
+                        <img src="/{{ section.settings.image_1 | image_url }}">
+                    </div>
+                    <div class="col-2 mobileCenter">
+                        <img src="/{{ section.settings.image_2 | image_url }}">
+                    </div>
+                    <div class="col-2 textAlignCenter mobileRight">
+                        <img src="/{{ section.settings.image_3 | image_url }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mobilePadding">
+                <div class="row valignMiddle">		
+                    <div class="col-2 textAlignCenter mobileLeft" >
+                        <img src="/{{ section.settings.image_4 | image_url }}">
+                    </div>
+                    <div class="col-2 textAlignRight mobileCenter">
+                        <img src="/{{ section.settings.image_5 | image_url }}">
+                    </div>
+                    <div class="col-2 textAlignRight mobileRight">
+                        <img src="/{{ section.settings.image_6 | image_url }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row valignMiddle" ></div>
+    </div>
+</div>
+{% schema %}
+{
+"name": "2022 - logos",
+"tag": "section",
+"class": "shopadjust-top",
+"settings": [
+{
+  "type": "image_picker",
+  "id": "image_1",
+  "label": "Logo 1"
+},
+{
+  "type": "image_picker",
+  "id": "image_2",
+  "label": "Logo 2"
+},
+{
+  "type": "image_picker",
+  "id": "image_3",
+  "label": "Logo 3"
+},
+{
+  "type": "image_picker",
+  "id": "image_4",
+  "label": "Logo 4"
+},
+{
+  "type": "image_picker",
+  "id": "image_5",
+  "label": "Logo 5"
+},
+{
+  "type": "image_picker",
+  "id": "image_6",
+  "label": "Logo 6"
+}
+],
+"presets": [
+{
+"name": "2022 - logos"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

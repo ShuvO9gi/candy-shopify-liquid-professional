@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sec_valentine_HcGxc7": {
+      "type": "sec_valentine",
+      "settings": {
+        "featured_product": "1-kilo-blandet-slik-2",
+        "leftimage": "shopify:\/\/shop_images\/Background_Left.png",
+        "rightimage": "shopify:\/\/shop_images\/Background_right.png",
+        "addklaviyoform": true,
+        "custom_liquid": "<div class=\"klaviyo-form-TCfyrW\"><\/div>",
+        "rightside_product": "",
+        "showprodDescription": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sec_valentine_HcGxc7"
+  ]
+}

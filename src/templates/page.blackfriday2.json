@@ -1,0 +1,131 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1662904099a7f7b3c1": {
+      "type": "2022-textLeftRight",
+      "blocks": {
+        "1ca7ee01-59ec-42b9-b566-e078a29d1c46": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Sort tilbud til dig kun i dag!",
+            "headline": "BLACK FRIDAY!",
+            "content": "<p>Hele dagen i dag får du GRATIS fragt og en masse gode slikrabatter! <br\/><br\/>Klik ind, bestil og læn dig tilbage. Så er der slik og hygge på vej til dig! <br\/><br\/>OBS! Tilbuddene gælder KUN i dag så skynd dig! <\/p>",
+            "button_text": "Bland nu!",
+            "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
+            "image": "shopify:\/\/shop_images\/Post_BF_generel_A.png"
+          }
+        },
+        "545c08b6-5e65-4688-b4be-475b5f75c78f": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "small-headline": "Gælder alle dage",
+            "headline": "Fra nu af og til black friday",
+            "content": "<p>Du kan også benytte dig af dette tilbud, som faktisk gælder helt til d. 24. november<\/p>",
+            "button_text": "Tryk her for at blande",
+            "button_destination": "shopify:\/\/pages\/kontakt-os",
+            "image": "shopify:\/\/shop_images\/Post_2-dags-A1.png"
+          }
+        },
+        "a8171c46-c319-4bd8-aa37-fd2fd8e73825": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "small-headline": "Husk også at.....",
+            "headline": "Fantastisk fudge",
+            "content": "<p>Lorem ipsum......<\/p>",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/hjertekasse-med-bland-selv-slik",
+            "image": "shopify:\/\/shop_images\/Post_2-dags-F2.png"
+          }
+        }
+      },
+      "block_order": [
+        "1ca7ee01-59ec-42b9-b566-e078a29d1c46",
+        "545c08b6-5e65-4688-b4be-475b5f75c78f",
+        "a8171c46-c319-4bd8-aa37-fd2fd8e73825"
+      ],
+      "settings": {
+        "page_header": "SlikEkspressens Black Friday tilbud"
+      }
+    },
+    "166290812500d3fec5": {
+      "type": "2022-3col-section",
+      "blocks": {
+        "1662908125db64622c-0": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "headline": "Hjerteæsken",
+            "content": "Her kan du se og købe vores flotte hjerteæske fyldt med bland selv slik.",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/hjertekasse-med-bland-selv-slik"
+          }
+        },
+        "25139766-cacf-4baf-a37d-e733e32e15ee": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "headline": "Champagneflaskerne",
+            "content": "Du kan selv vælge label til denne flotte flaske fyldt med Bland Selv Slik",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/champagneflaske"
+          }
+        },
+        "d64ab648-5f26-4df2-b647-341c224da781": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "headline": "Kontakt os",
+            "content": "Vi sidder klar til at hjælpe dig med det du mangler. Skriv til os igennem Messenger, så hjælper vi dig hurtigt",
+            "button_text": "Skriv på Messenger",
+            "button_destination": "https:\/\/m.me\/101797448678348?ref=w15199615"
+          }
+        }
+      },
+      "block_order": [
+        "1662908125db64622c-0",
+        "25139766-cacf-4baf-a37d-e733e32e15ee",
+        "d64ab648-5f26-4df2-b647-341c224da781"
+      ],
+      "settings": {
+        "showBackground": true,
+        "bigPadding": true,
+        "block_height": 190
+      }
+    },
+    "166291565275d9be4d": {
+      "type": "2022-fullCol",
+      "settings": {
+        "small-headline": "Jeres samarbejdspartner",
+        "headline": "Kontakt os for en snak om jeres skræddersyede løsninger",
+        "content": "<p>SlikEkspressen sender hver måned tilpassede slikløsninger til mange virksomheder.<br\/><br\/>Hver løsninger bliver tilpasset til vikrsomhedens behov alt efter om slikket er til ansatte, kunder, familier, børn.<\/p><p>Vi ringer gerne til dig og rådgiver dig til den bedste løsning. Du skal blot bruge kontakt funktionen nedenfor og angive at du ønsker at blive ringet op<\/p>",
+        "button_text": "Kontakt os",
+        "button_destination": "shopify:\/\/pages\/kontakt-os",
+        "image": "shopify:\/\/shop_images\/slikkurv_6ec94a02-b13b-4c82-8789-5dc58d1a7d2c.png"
+      }
+    },
+    "1662910935ad22b671": {
+      "type": "2022-socialLinks",
+      "settings": {
+        "headline_social": "Følg SlikEkspressen:",
+        "headline_newsletter": "Nyhedsbrev",
+        "content_newsletter": "Hold dig opdateret om rabatter, nye produkter.",
+        "button_text_newsletter": "Tilmeld",
+        "button_destination_newsletter": "https:\/\/m.me\/101797448678348?ref=w15249610"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662904099a7f7b3c1",
+    "166290812500d3fec5",
+    "166291565275d9be4d",
+    "1662910935ad22b671"
+  ]
+}

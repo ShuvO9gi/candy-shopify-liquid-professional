@@ -1,0 +1,237 @@
+{
+  "sections": {
+    "app": {
+      "type": "2022-app-section",
+      "disabled": true,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "headline": "Mors Dag Slik Gaver",
+        "small-headline": "Forkæl en mor på hendes dag!",
+        "content": "<p>Trænger din mor til forkælelse og værdsættelse? Så har vi gjort det super nemt for dig!<br\/><br\/>Bestil enten via hjemmesiden, eller vores smarte app, hvor i selv kan vælge hvilke slik varianter der skal i gaverne<\/p><p>Hent app´en her:<\/p>",
+        "button_1_text": "App store",
+        "button_1_destination": "https:\/\/apps.apple.com\/us\/app\/slikekspressen-bland-selv-slik\/id1607462953",
+        "button_2_text": "google play",
+        "button_2_destination": "https:\/\/play.google.com\/store\/apps\/details?id=dk.blandselvslik.slikekspressen",
+        "image": "shopify:\/\/shop_images\/landing-page-hero-img_mors-dag_ea447628-dff6-47f9-958f-b74037caba03.png"
+      }
+    },
+    "3-col-1": {
+      "type": "2022-3col-section",
+      "blocks": {
+        "col-1": {
+          "type": "collection",
+          "settings": {
+            "headline": "Bestem selv slikket",
+            "content": "Bestil nemt via vores smarte app og bestem selv, hvilke slik varianter din mor skal have",
+            "button_text": "",
+            "button_destination": ""
+          }
+        },
+        "col-2": {
+          "type": "collection",
+          "settings": {
+            "headline": "Mere end bare slik",
+            "content": "Vores gaver er mere end bare bland selv slik.. Det er en oplevelse der ikke glemmes.",
+            "button_text": "",
+            "button_destination": ""
+          }
+        },
+        "col-3": {
+          "type": "collection",
+          "settings": {
+            "headline": "Forsendelse",
+            "content": "Bestil enten via hjemmesiden eller appen, og indtast din mors adresse. Nemt ikke?",
+            "button_text": "",
+            "button_destination": ""
+          }
+        }
+      },
+      "block_order": [
+        "col-1",
+        "col-2",
+        "col-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "showBackground": false,
+        "bigPadding": false,
+        "block_height": 100
+      }
+    },
+    "2023_homepage_usp_wqcxwQ": {
+      "type": "2023-homepage-usp",
+      "settings": {
+      }
+    },
+    "left-right": {
+      "type": "2022-textLeftRight",
+      "blocks": {
+        "block-3": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Den sødeste Mors Dag Slik Gave",
+            "headline": "Hjerteæske med bland selv slik",
+            "content": "<p><\/p><p>Elsker din mor slik? - Så er dette den perfekte gave! <br\/><br\/>Mors dag er en vigtig dag, at værdsætte og forkæle ens mor. Derfor har vi gjort det super nemt og enkelt for dig, at bestille en hjerteæske med de mest populærere slik varianter.<\/p><p>En gave som vil blive husket. &lt;3<\/p>",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/mors-dags-tilbud",
+            "image": "shopify:\/\/shop_images\/hjerteaeske-x2.jpg"
+          }
+        },
+        "block-4": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Mors Dag Champagneflaske",
+            "headline": "Verdens bedste mor",
+            "content": "<p><\/p><p>Elsker din mor slik og champagne? Så er dette den perfekte gave!<\/p><p>Vi har sammensat de mest populærere slik varianter og sat dem sammen i en champagneflaske med teksten \"Verdens Bedste Mor\" samt en personlig skrevet hilsen.<\/p><p>Mor vil elske dig forevigt og altid &lt;3 <\/p><p><\/p>",
+            "button_text": "Køb her",
+            "button_destination": "shopify:\/\/products\/champagneflaske",
+            "image": "shopify:\/\/shop_images\/Champ_mors-dag.png"
+          }
+        },
+        "block-6": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Mors Dag Gavekort",
+            "headline": "Lad din mor selv bestemme",
+            "content": "<p><\/p><p>Ved du slet ikke, hvad din mor ville fortrække og ønsker at give hende et gavekort med en personlig skrevet hilsen?<\/p><p>Så har vi naturligvis gjort det ligeså nemt som resten af vores søde sager. <\/p>",
+            "button_text": "Køb gavekort",
+            "button_destination": "shopify:\/\/products\/slikekspressen-gavekort",
+            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg"
+          }
+        },
+        "block-1": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Send en gave til en der fortjener det",
+            "headline": "Brug vores app",
+            "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
+            "button_text": "Installer vores app her",
+            "button_destination": "https:\\\/\\\/candyexpressb2c.page.link\\\/welcome",
+            "image": "shopify:\/\/shop_images\/Design_uden_navn_33.png"
+          }
+        },
+        "block-2": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "small-headline": "Firma og erhvervsgaver",
+            "headline": "Vi tilpasser løsninger til jeres behov",
+            "content": "<p>Tag kontakt til os og lad os komme med et bud til at løse jeres virksomhedsbehov. Vores erhvervs afdeling sidder klar til at skræddersy den bedste og billigste løsning<\/p>",
+            "button_text": "Skriv til os her",
+            "button_destination": "shopify:\/\/pages\/kontakt-os",
+            "image": "shopify:\/\/shop_images\/Design_uden_navn_34.png"
+          }
+        },
+        "block-5": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "small-headline": "Det kan du lige blande på",
+            "headline": "Lav dit eget miks",
+            "content": "<p>Fra vores bland selv slik side kan du blande lige det miks du gerne vil give som gave<\/p>",
+            "button_text": "Start med at blande her",
+            "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+            "image": "shopify:\/\/shop_images\/Design_uden_navn_35.png"
+          }
+        }
+      },
+      "block_order": [
+        "block-3",
+        "block-4",
+        "block-6",
+        "block-1",
+        "block-2",
+        "block-5"
+      ],
+      "settings": {
+        "page_header": ""
+      }
+    },
+    "full-col": {
+      "type": "2022-fullCol",
+      "disabled": true,
+      "settings": {
+        "small-headline": "Jeres samarbejdspartner",
+        "headline": "Kontakt os for en snak om jeres skræddersyede løsninger",
+        "content": "<p>SlikEkspressen sender hver måned tilpassede slikløsninger til en række forskellige virksomheder.<br\/><br\/>Hver løsning bliver tilpasset til virksomhedens behov alt efter om slikket er til ansatte, kunder, familier eller børn.<\/p><p>Vi ringer gerne til dig og rådgiver dig til den bedste løsning. Du skal blot bruge kontakt-funktionen nedenfor og angive at du ønsker at blive ringet op<\/p>",
+        "button_text": "Kontakt os",
+        "button_destination": "shopify:\/\/pages\/kontakt-os",
+        "image": "shopify:\/\/shop_images\/slikkurv_6ec94a02-b13b-4c82-8789-5dc58d1a7d2c.png"
+      }
+    },
+    "3-col-2": {
+      "type": "2022-3col-section",
+      "blocks": {
+        "col-1": {
+          "type": "collection",
+          "settings": {
+            "headline": "Lorem ipsum dolor sit amet",
+            "content": "Aliquam blandit, ante ut tincidunt pellentesque, nibh elit elementum tellus, at posuere turpis leo quis magna. Fusce nibh massa, cursus convallis mauris nec, rhoncus tempus diam.",
+            "button_text": "",
+            "button_destination": ""
+          }
+        },
+        "col-2": {
+          "type": "collection",
+          "settings": {
+            "headline": "Vestibulum tellus purus",
+            "content": "Nulla facilisi. Nullam quis mi pulvinar neque egestas luctus. Cras vel cursus velit. Mauris varius ultrices ex in eleifend. Aliquam molestie massa risus, placerat venenatis leo pharetra sit amet.",
+            "button_text": "",
+            "button_destination": ""
+          }
+        },
+        "col-3": {
+          "type": "collection",
+          "settings": {
+            "headline": "Curabitur viverra faucibus orci quis laoreet",
+            "content": "Vestibulum facilisis ante nisl, vitae gravida mi ornare sed. Sed quis nibh ut neque mattis eleifend. In porta urna id leo venenatis malesuada.",
+            "button_text": "Kontakt os",
+            "button_destination": "shopify:\/\/pages\/kontakt-os"
+          }
+        }
+      },
+      "block_order": [
+        "col-1",
+        "col-2",
+        "col-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "showBackground": true,
+        "bigPadding": true,
+        "block_height": 240
+      }
+    },
+    "social-links": {
+      "type": "2022-socialLinks",
+      "disabled": true,
+      "settings": {
+        "headline_social": "Følg SlikEkspressen:",
+        "headline_newsletter": "Nyhedsbrev",
+        "content_newsletter": "Hold dig opdateret om rabatter, nye produkter.",
+        "button_text_newsletter": "Tilmeld",
+        "button_destination_newsletter": "https:\/\/m.me\/101797448678348?ref=w15249610"
+      }
+    },
+    "static-content": {
+      "type": "2022-subcontent",
+      "disabled": true,
+      "settings": {
+        "headline": "Bland-selv app fra SlikEkspressen!",
+        "content": "<p><strong>Vi er meget stolte af at have lavet en super sjov og nem app<br\/><\/strong><\/p><p><\/p><p>🍬 <strong>Bland Selv Slik app´en<\/strong><\/p><p>En nem app som hvor du altid har hele vores sortiment lige i lommen på din telefon.<br\/><br\/>🍬 <strong>Gem hele familiens slikmix<\/strong><\/p><p>Du kan invitere dine familie medlemmer til at blande slik fra deres egen telefon og i kan gemme jeres favoritmiks så det er nemt for jer at bestille lige det slik i hver især bedst kan lide<\/p><p><br\/>🍬 <strong>Børnene kan mikse selv<\/strong><\/p><p>Du kan invitere dine børn i app´en og give dem et beløb de må købe slik for.<br\/>Når du har sendt invitationen kan dit barn installere vores app og mikse slik fra sin egen telefon. Det er vildt sjovt for børnene at kigge igennem vores store sortiment.<br\/><br\/>🍬 <strong>Danmarks største Bland Selv Slik sortiment<br\/><br\/><\/strong>Vi har igennem de sidste 12 måneder bygget vores sortiment af bland selv slik større og større, så vi nu har 400 produkter af det danskerne bedst kan lide, så du vil altid kunne finde præcis dit ynglingsslik<\/p><p><\/p><p>🍭<strong>Helt frisk slik<br\/><\/strong>Det slik vi sender ud til dig kommer direkte fra fabrikken af og er derfor med garanti helt frisk. Det er blødt og velsmagende slik.<br\/><\/p><p>🍭 <strong>Afsendes med fragtmand hver dag<\/strong><br\/>Vi afsender vores slik hver dag kl 14:00, og du kan vælge imellem DAO eller GLS, som din fragtmand.<br\/>I de fleste tilfælde leverer fragtmanden dagen efter, men i nogen tilfælde kan der godt gå et par dage<\/p><p><br\/>🍭<strong>Bland Selv Slik abonnement <\/strong>I gennem vores app får du også muligheden for at opsætte et abonnement til din familie, så kan i hver uge eller måned få en levering fra os som hvert familie medlem kan blande i fra gang til gang<\/p><p><br\/>🍭<strong>Inviter din partner, ven eller kollega<\/strong><br\/>Vores app kan også bruges på arbejdspladsen hvis i en gang om måneden vil have noget hyggeligt at slutte ugen af med<\/p><p><br\/>🍭<strong>Slik levering i hele landet<br\/><\/strong>Vi kan levere til alle de områder af Danmark som GLS og DAO leverer til. Så du kan bestille til hele landet<br\/><br\/>🍭<strong>Bland slik som gave<\/strong><\/p><p>Vi arbejder på at lave en lække gave sektion, hvor du kan sende bland selv slik som gave. <a href=\"https:\/\/www.slikekspressen.dk\/pages\/slikgaver\" title=\"Slik gaver\">Ind til videre kan du læse mere her<\/a><\/p>"
+      }
+    }
+  },
+  "order": [
+    "app",
+    "3-col-1",
+    "2023_homepage_usp_wqcxwQ",
+    "left-right",
+    "full-col",
+    "3-col-2",
+    "social-links",
+    "static-content"
+  ]
+}

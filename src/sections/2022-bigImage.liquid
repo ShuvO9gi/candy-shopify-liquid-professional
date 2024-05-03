@@ -1,0 +1,65 @@
+<div
+  class="section-container appDdvertising section-phone-w-app"
+  style="background-image:url('{{ section.settings.image | image_url }}');margin-top:24px;margin-bottom:24px;"
+>
+  <img
+    src="{{ 'Phone.png' | asset_url }}"
+    loading="lazy"
+    sizes="100vw"
+    srcset="{{ 'Phone-p-500.png' | asset_url }} 500w, {{ 'Phone-p-800.png' | asset_url }} 800w, {{ 'Phone.png' | asset_url }} 888w"
+    alt=""
+    class="img-phone"
+  >
+
+  <div class="absolute-container">
+    <div class="app-screen-content-wrapper">
+      <div class="app-screen-texts-wrapper">
+        <img src="{{ 'Logo-w-stroke_for-dark-bg.svg' | asset_url }}" loading="lazy" alt="" class="app-screen-logo">
+        <h2 class="h2-app-screen type-style-h2-bold">
+          <a href="#" class="app-screen-link">
+            Køb Slik i<br>
+            app’en
+          </a>
+        </h2>
+        <img src="{{ 'karamel.svg' | asset_url }}" loading="lazy" alt="" class="app-screen-icon-img">
+        <div class="text-style-app-screen-text type-style-h-subhead">
+          Børnene blander selv<br>
+          Nem genbestilling<br>
+          Kæmpe udvalg!
+        </div>
+      </div>
+      <a href="{{ section.settings.button_destination }}" class="app-screen-button type-style-button-text">Prøv app’en</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "2022 - Big image",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Billede"
+    },
+    {
+      "type": "url",
+      "id": "button_destination",
+      "label": "Side link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "2022 - Big image"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

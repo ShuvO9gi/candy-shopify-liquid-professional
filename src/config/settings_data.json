@@ -1,0 +1,4478 @@
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_body_text": "#323232",
+    "color_price": "#323232",
+    "color_savings_text": "#C20000",
+    "color_borders": "#e8e8e1",
+    "color_button": "#ff94c3",
+    "color_button_text": "#481864",
+    "color_cart_dot": "#ed8a33",
+    "color_small_image_bg": "#ffffff",
+    "color_large_image_bg": "#0f0f0f",
+    "color_header": "#f6f3f7",
+    "color_header_text": "#323232",
+    "color_announcement": "#481864",
+    "color_announcement_text": "#ffffff",
+    "color_footer": "#ffffff",
+    "color_footer_text": "#323232",
+    "color_drawer_background": "#ffffff",
+    "color_drawer_text": "#323232",
+    "color_drawer_border": "#e8e8e1",
+    "color_drawer_button": "#111111",
+    "color_drawer_button_text": "#ffffff",
+    "color_modal_overlays": "#e6e6e6",
+    "color_image_overlay": "#000000",
+    "color_image_overlay_text_shadow": 20,
+    "type_header_font_family": "tiemann_n4",
+    "type_header_spacing": "0",
+    "type_header_base_size": 38,
+    "type_header_line_height": 1,
+    "type_header_capitalize": false,
+    "type_headers_align_text": true,
+    "type_base_font_family": "futura_n4",
+    "type_base_spacing": "25",
+    "type_base_size": 16,
+    "type_base_line_height": 1.6,
+    "type_body_align_text": true,
+    "type_navigation_style": "body",
+    "type_navigation_size": 16,
+    "type_navigation_capitalize": false,
+    "type_product_style": "body",
+    "type_collection_font": "body",
+    "type_collection_size": 18,
+    "button_style": "round-slight",
+    "icon_weight": "4px",
+    "icon_linecaps": "round",
+    "vendor_enable": true,
+    "quick_shop_enable": true,
+    "quick_shop_text": "Quick view",
+    "product_grid_image_size": "natural",
+    "product_hover_image": true,
+    "sku_enable": false,
+    "quantity_enable": false,
+    "variant_labels_enable": false,
+    "variant_type": "button",
+    "enable_payment_button": false,
+    "inventory_enable": true,
+    "surface_pickup_enable": false,
+    "product_zoom_enable": false,
+    "product_color_swatches": true,
+    "collection_color_swatches": true,
+    "product_content_1": "leveringsbetingelser",
+    "product_contact": false,
+    "collection_grid_style": "overlaid-box",
+    "collection_grid_shape": "square",
+    "collection_grid_image": "product",
+    "collection_grid_text_align": "center",
+    "collection_grid_tint": "#000000",
+    "collection_grid_opacity": 10,
+    "collection_grid_gutter": true,
+    "cart_type": "drawer",
+    "purchase_limit": 0,
+    "cart_icon": "bag-minimal",
+    "cart_additional_buttons": false,
+    "cart_notes_enable": false,
+    "cart_terms_conditions_enable": true,
+    "cart_terms_conditions_link": "shopify:\/\/pages\/handelsbetingelser",
+    "shipping_price": 4900,
+    "free_shipping_limit": 34900,
+    "social_facebook_link": "https:\/\/www.facebook.com\/SlikEkspressen-101797448678348",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/slikekspressen\/",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@slikekspressen?",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCJuUQxMvwC8Nk_lfFuVVLkA",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "favicon": "shopify:\/\/shop_images\/Favicon3.png",
+    "search_enable": false,
+    "show_breadcrumbs": false,
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_accent_color": "#111111",
+    "checkout_button_color": "#111111",
+    "checkout_error_color": "#ff6d6d",
+    "breadcrumb": false,
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1524770014057": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Mask_Group.png",
+              "desktop_logo_width": 140,
+              "mobile_logo_width": 110
+            }
+          },
+          "1524770292306": {
+            "type": "announcement",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "1524770014057",
+          "1524770292306"
+        ],
+        "settings": {
+          "text": "Hassle-free returns",
+          "link_text": "30-day postage paid returns",
+          "link": "",
+          "order_before": "Vi sender dit slik om",
+          "weekendtext": "<p>Vi sender slik på mandag<\/p>",
+          "holidaytext": "",
+          "show_countdown": true,
+          "limitHrs": 14,
+          "main_menu_link_list": "main-menu",
+          "logo": "shopify:\/\/shop_images\/Logo_1.png",
+          "desktop_logo_width": 220,
+          "mobile_logo_width": 100,
+          "mobile_menu_background": "shopify:\/\/shop_images\/mobile_menu_background_1.svg"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "113a6195-4f7f-4b39-beb1-9638f582f430": {
+            "type": "column",
+            "settings": {
+              "nav_title": "Shop",
+              "nav_menu": "footer_shop",
+              "text": ""
+            }
+          },
+          "dfb63aae-44d6-4bef-9c26-92994a5664bf": {
+            "type": "column",
+            "settings": {
+              "nav_title": "Praktisk",
+              "nav_menu": "footer_praktisk_temp",
+              "text": ""
+            }
+          },
+          "8def200f-8e18-4321-973d-1ae66e472dba": {
+            "type": "column",
+            "settings": {
+              "nav_title": "Links",
+              "nav_menu": "footer_links",
+              "text": ""
+            }
+          },
+          "30065fbc-f1ee-4497-aa7c-d430035326f2": {
+            "type": "column",
+            "settings": {
+              "nav_title": "Kontakt",
+              "nav_menu": "",
+              "text": "<p>SlikEkspressen ApS<\/p><p>Vallensbækvej 18D<\/p><p>2605 Brøndby<br\/><a href=\"https:\/\/m.me\/101797448678348?ref=w15199615\" target=\"_blank\" title=\"Klik for at få support\">Klik for Support<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "113a6195-4f7f-4b39-beb1-9638f582f430",
+          "dfb63aae-44d6-4bef-9c26-92994a5664bf",
+          "8def200f-8e18-4321-973d-1ae66e472dba",
+          "30065fbc-f1ee-4497-aa7c-d430035326f2"
+        ],
+        "settings": {
+          "logo_svg": "footer_logo.svg",
+          "logo_width": 145,
+          "logo_width_mobile": 130,
+          "to_top": "to-top.svg"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "description_position": "top",
+          "subcollection_style": "above",
+          "subcollections_per_row": 5,
+          "enable_collection_count": true,
+          "per_row": 4,
+          "rows_per_page": 7,
+          "mobile_flush_grid": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "description_style": "default",
+          "social_enable": false,
+          "image_position": "left",
+          "image_size": "small",
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "partial",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "blog_show_tags": true,
+          "blog_show_date": true,
+          "blog_show_comments": true,
+          "blog_show_author": false,
+          "social_sharing_blog": true
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "blog_show_tag_filter": true,
+          "blog_show_rss": false,
+          "blog_show_tags": true,
+          "blog_show_date": true,
+          "blog_show_comments": true,
+          "blog_show_author": false,
+          "blog_image_size": "wide"
+        }
+      },
+      "product-sections-template": {
+        "type": "product-sections-template",
+        "blocks": {
+          "sections-1592408474529": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "right"
+            }
+          },
+          "sections-1592410313636": {
+            "type": "background-image-text",
+            "settings": {
+              "subtitle": "Why choose us?",
+              "title": "Explain your brand philosophy",
+              "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "image": "",
+              "alignment": "center",
+              "layout": "right",
+              "height": 650,
+              "parallax": true
+            }
+          },
+          "sections-1592408476245": {
+            "type": "testimonials",
+            "settings": {
+              "title": "Testimonials",
+              "align_text": "center",
+              "round_images": false,
+              "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+              "image_1": "",
+              "author_1": "Author's name",
+              "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+              "image_2": "",
+              "author_2": "Author's name"
+            }
+          },
+          "sections-1592410272428": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "Two line\ntitle image",
+              "title_size": 80,
+              "subheading": "And optional subtext",
+              "link": "",
+              "link_text": "Optional button",
+              "link_2": "",
+              "link_text_2": "",
+              "color_accent": "#ffffff",
+              "text_align": "vertical-center horizontal-center",
+              "image": "",
+              "focal_point": "center center",
+              "section_height": "650px",
+              "mobile_height": "auto"
+            }
+          },
+          "sections-1592410318615": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "left"
+            }
+          }
+        },
+        "block_order": [
+          "sections-1592410313636",
+          "sections-1592408476245",
+          "sections-1592408474529",
+          "sections-1592410318615",
+          "sections-1592410272428"
+        ],
+        "settings": {
+        }
+      },
+      "product-story-sections": {
+        "type": "product-story-sections",
+        "settings": {
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "mode": "disabled",
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+          "close_text": "No thanks",
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "button_link": "",
+          "enable_button": false
+        }
+      },
+      "footer-promotions": {
+        "type": "footer-promotions",
+        "settings": {
+          "hide_homepage": true,
+          "image_size": "wide"
+        }
+      },
+      "bland-selv-slik-template": {
+        "type": "bland-selv-slik-template",
+        "blocks": {
+          "f63ae2e9-0184-4bc1-8349-f282abbff97a": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "Paaske",
+              "filter_name": "Påskeslik"
+            }
+          },
+          "56fc78db-7910-42ca-8765-c0f55cdbed65": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "new",
+              "filter_name": "Nyheder"
+            }
+          },
+          "544a2fc1-5d61-46c0-92b8-9fba75cbbe6f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "winegum",
+              "filter_name": "Vingummi"
+            }
+          },
+          "5cc5cf40-fa7a-4e43-a749-79bd87ad743a": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licorice",
+              "filter_name": "Lakrids"
+            }
+          },
+          "4b04c7b8-4339-457f-b9a5-9168cc57c91f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foam",
+              "filter_name": "Skum"
+            }
+          },
+          "420e1f43-c98e-4fd2-bdb7-62c3a6af6e14": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "caramel",
+              "filter_name": "Karamel"
+            }
+          },
+          "efd3365a-17b4-4481-9847-7b42cc54139f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sour",
+              "filter_name": "Surt slik"
+            }
+          },
+          "d9b868ba-a249-47af-b2e4-67dc40bd842e": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "chocolate",
+              "filter_name": "Chokolade"
+            }
+          },
+          "d358b947-08d9-4538-9ae3-1e34156f9140": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "sugarfree",
+              "filter_name": "Sukkerfrit"
+            }
+          },
+          "445f5ffd-feac-4987-8541-edcf22731ffe": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Palmeoliefri",
+              "filter_name": "Fri for Palmeolie"
+            }
+          },
+          "aadfd691-367b-4cd6-9913-9d049432ac28": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Naturlige farver",
+              "filter_name": "Fri for kunstig farvestoffer"
+            }
+          },
+          "b558cfa9-4b03-4448-b245-864872519a3b": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Naturlig smag",
+              "filter_name": "Fri for kunstige smagstoffer"
+            }
+          },
+          "3438ea7c-f7be-4607-8cf9-420f4c0bb4ee": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Vegansk slik",
+              "filter_name": "Vegansk slik"
+            }
+          },
+          "483ffba3-04d6-4b30-be2d-1752bbdff785": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "kids",
+              "filter_name": "Mest til børn"
+            }
+          },
+          "68eec806-1cee-4b46-a8ba-29571d6c124c": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "Voksne",
+              "filter_name": "Mest til voksne"
+            }
+          },
+          "42fb738c-a227-4393-aa7a-3162919bd7ea": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "candy",
+              "filter_name": "Bolsjer"
+            }
+          },
+          "b2a4ca7b-cd74-445e-be3f-98f91d14a09c": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Gelatinefri",
+              "filter_name": "Gelatinefrit"
+            }
+          },
+          "b37ce17a-e5f9-48eb-b003-fe4c6aee42a9": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "wrapped",
+              "filter_name": "Indpakket slik"
+            }
+          },
+          "83dc2251-536a-4095-ab56-026880981fd3": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sticks",
+              "filter_name": "Stænger"
+            }
+          },
+          "6904530a-0d3f-427e-aa6e-3cfe6044022f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "pastil",
+              "filter_name": "Pastiller"
+            }
+          }
+        },
+        "block_order": [
+          "f63ae2e9-0184-4bc1-8349-f282abbff97a",
+          "56fc78db-7910-42ca-8765-c0f55cdbed65",
+          "544a2fc1-5d61-46c0-92b8-9fba75cbbe6f",
+          "5cc5cf40-fa7a-4e43-a749-79bd87ad743a",
+          "4b04c7b8-4339-457f-b9a5-9168cc57c91f",
+          "420e1f43-c98e-4fd2-bdb7-62c3a6af6e14",
+          "efd3365a-17b4-4481-9847-7b42cc54139f",
+          "d9b868ba-a249-47af-b2e4-67dc40bd842e",
+          "d358b947-08d9-4538-9ae3-1e34156f9140",
+          "445f5ffd-feac-4987-8541-edcf22731ffe",
+          "aadfd691-367b-4cd6-9913-9d049432ac28",
+          "b558cfa9-4b03-4448-b245-864872519a3b",
+          "3438ea7c-f7be-4607-8cf9-420f4c0bb4ee",
+          "483ffba3-04d6-4b30-be2d-1752bbdff785",
+          "68eec806-1cee-4b46-a8ba-29571d6c124c",
+          "42fb738c-a227-4393-aa7a-3162919bd7ea",
+          "b2a4ca7b-cd74-445e-be3f-98f91d14a09c",
+          "b37ce17a-e5f9-48eb-b003-fe4c6aee42a9",
+          "83dc2251-536a-4095-ab56-026880981fd3",
+          "6904530a-0d3f-427e-aa6e-3cfe6044022f"
+        ],
+        "settings": {
+          "title": "<p><strong>Bland i dag <\/strong>— <br\/>Få det bragt med ekspresfart.<\/p>",
+          "paginate": 24,
+          "price_limit": 25,
+          "autoload": "automaticly"
+        }
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "blocks": {
+          "f63abff3-51f4-4ae8-a9b4-aedfad8d3835": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/contact-page-img.png",
+              "image_width": 500,
+              "subtitle": "Hvis du ikke har Messenger kan du bruge kontakt formularen her nedenfor",
+              "title": "Vi sidder klar til at hjælpe",
+              "text": "<p>På dette link kan du få svar og hjælp igennem Facebook Messenger<\/p>",
+              "button_label": "Link til support chat",
+              "button_link": "https:\/\/m.me\/101797448678348?ref=w15199615",
+              "layout": "down"
+            }
+          },
+          "page-contact-template-0": {
+            "type": "contact-form",
+            "settings": {
+              "title": "",
+              "show_phone": false,
+              "narrow_column": true
+            }
+          }
+        },
+        "block_order": [
+          "f63abff3-51f4-4ae8-a9b4-aedfad8d3835",
+          "page-contact-template-0"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true,
+          "overlaid_header": true
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "purchase_limit": 129,
+          "coll": "shopify:\/\/collections\/bland-selv-slik",
+          "coll_cta_text": "BLAND EN POSE MERE",
+          "candy_bag_image": "shopify:\/\/shop_images\/slik-boette_clipped_rev_1.png"
+        }
+      },
+      "collection-template-new": {
+        "type": "collection-template-new",
+        "blocks": {
+          "97e53356-5092-4f0e-8ad8-3e036104f4c7": {
+            "type": "filter_type",
+            "settings": {
+              "type": "tags",
+              "filter_id": "voksne",
+              "filter_image": "shopify:\/\/shop_images\/12_adolescents.png",
+              "filter_name": "Mest til voksne"
+            }
+          },
+          "9227bf1b-f20e-47c6-b1e3-c827c0ecd35e": {
+            "type": "filter_type",
+            "settings": {
+              "type": "tags",
+              "filter_id": "børn",
+              "filter_image": "shopify:\/\/shop_images\/child-icon-png-13.png",
+              "filter_name": "Mest til børn"
+            }
+          }
+        },
+        "block_order": [
+          "97e53356-5092-4f0e-8ad8-3e036104f4c7",
+          "9227bf1b-f20e-47c6-b1e3-c827c0ecd35e"
+        ],
+        "settings": {
+          "title": "",
+          "paginate": 24
+        }
+      },
+      "header-new": {
+        "type": "header-new",
+        "settings": {
+          "show_countdown": true,
+          "limitHrs": 14,
+          "topbar_background": "#c8efbf",
+          "topbar_color": "#481864",
+          "topbar_color_accent": "#000000",
+          "header_background": "#ffffff",
+          "navigation": "main-menu",
+          "navigation_links_color": "#000000",
+          "logo1": "logo1.svg",
+          "logo1_width": 260,
+          "logo1_width_mobile": 110,
+          "logo2": "candy-king-logo.svg",
+          "logo2_width": 175,
+          "mobile_menu_icon_color": "#622287"
+        }
+      },
+      "page-b2b-landing": {
+        "type": "page-b2b-landing",
+        "settings": {
+          "topHeadline": "Den søde juletid",
+          "headline": "<p>Årstiden for <strong>firmajulagaver<\/strong><\/p>",
+          "content": "<p>Vi hjælper jer med at gøre firmajulegaven ekstra sød, så den matcher den søde jule tid.<\/p>",
+          "content-small": "<p>Send os blot en excel-fil med adresser, så sørger vi for en gave, der er lidt udover det sædvanlige<\/p>",
+          "button-text": "Kontakt os",
+          "button-url": ""
+        }
+      },
+      "b2b-landing-top": {
+        "type": "b2b-landing-top",
+        "blocks": {
+          "51176ae6-8d80-4288-8ff2-f177d368f8f5": {
+            "type": "collection",
+            "settings": {
+              "headline": "Slik på kontoret",
+              "content": "Vi sender i praktiske bøtter, som i kan tage frem  når det passer"
+            }
+          },
+          "5e5af3b8-7a9b-4716-a7d4-b054c90d66aa": {
+            "type": "collection",
+            "settings": {
+              "headline": "Til events",
+              "content": "Vi pakker fra 10 kroners poser og opefter"
+            }
+          },
+          "ebbc85a4-2e3b-4b50-809d-63ef20b4b8ec": {
+            "type": "collection",
+            "settings": {
+              "headline": "Giv gavekort",
+              "content": "Vi sender et gavekort til dine ansatte, så de selv kan blande slik når de har lyst"
+            }
+          }
+        },
+        "block_order": [
+          "51176ae6-8d80-4288-8ff2-f177d368f8f5",
+          "5e5af3b8-7a9b-4716-a7d4-b054c90d66aa",
+          "ebbc85a4-2e3b-4b50-809d-63ef20b4b8ec"
+        ],
+        "settings": {
+          "topHeadline": "Er du en virksomhed?",
+          "headline": "<p>Vi hjælper med <\/p><p><strong>Gaveideer<\/strong><\/p>",
+          "content": "<p>Se alle mulighederne på denne side for hvordan du kan sende gaver til kunder eller ansatte<\/p>",
+          "content-small": "<p>Vi sender også direkte hjem til dine ansatte eller til jeres kontor<\/p>",
+          "button-text": "Kontakt os",
+          "button-url": "shopify:\/\/pages\/kontakt-os",
+          "image": "shopify:\/\/shop_images\/IMG.png"
+        }
+      },
+      "b2b-landing-section-1": {
+        "type": "b2b-landing-section-1",
+        "settings": {
+          "topHeadline": "Årets firmajulegave",
+          "headline": "<p>Champagneflasker med besked på etiketten.<\/p>",
+          "content": "<p>Giv en anderledes gave til dine ansatte, som de kan nye med deres familer en hyggelige aften. Champagneflasken med Bland Slev Slik er sjov og kan bruges til mange formål.<\/p>",
+          "button-text": "Bestil her",
+          "button-url": ""
+        }
+      },
+      "b2b-landing-stars": {
+        "type": "b2b-landing-stars",
+        "blocks": {
+          "35e62e6d-ffc0-46c1-ba17-b1bbf93139f5": {
+            "type": "collection",
+            "settings": {
+              "headline": "Super lækkert og frisk slik",
+              "stars": 5,
+              "name": "Frede W"
+            }
+          },
+          "a82d78cc-c2d3-4362-933b-8d6a3c21bb5d": {
+            "type": "collection",
+            "settings": {
+              "headline": "Super kundeservice",
+              "stars": 5,
+              "name": "Trine Larsen"
+            }
+          },
+          "54690884-18dd-49fe-b707-939f6e6f7939": {
+            "type": "collection",
+            "settings": {
+              "headline": "Godt og lækkert slik",
+              "stars": 5,
+              "name": "Bertram Sandholm"
+            }
+          }
+        },
+        "block_order": [
+          "35e62e6d-ffc0-46c1-ba17-b1bbf93139f5",
+          "a82d78cc-c2d3-4362-933b-8d6a3c21bb5d",
+          "54690884-18dd-49fe-b707-939f6e6f7939"
+        ],
+        "settings": {
+          "headline": "Stjerneregn"
+        }
+      },
+      "b2b-landing-section-2": {
+        "type": "b2b-landing-section-2",
+        "settings": {
+        }
+      },
+      "b2b-landing-section-3": {
+        "type": "b2b-landing-section-3",
+        "settings": {
+        }
+      },
+      "b2b-landing-call-to-actions": {
+        "type": "b2b-landing-call-to-actions",
+        "blocks": {
+          "6778bd85-153f-41cc-8f6c-98652701ada9": {
+            "type": "collection",
+            "settings": {
+              "mageLeft": true,
+              "smallSection": true,
+              "fullWidth": false,
+              "topHeadline": "Årets Firmagave",
+              "headline": "<p>Champagneflasker <br\/><strong>med besked på etiketten<\/strong>. <\/p>",
+              "content": "<p>Giv en anderledes gave til dine ansatte, som de kan nyde med deres familier en <strong>hyggelig aften<\/strong>. Champagneflasken med Bland Selv Slik er sjov og kan bruges til mange formål.<\/p>",
+              "content-small": "",
+              "button-text": "Bestil her",
+              "buttonUrl": "shopify:\/\/products\/champagneflaske",
+              "image": "shopify:\/\/shop_images\/flasker_1f5200f0-1ebd-4f11-9f80-e5a3c0a5fc0d.png"
+            }
+          },
+          "3ba57510-ca9b-4266-9990-19e9744e82e5": {
+            "type": "collection",
+            "settings": {
+              "mageLeft": false,
+              "smallSection": true,
+              "fullWidth": false,
+              "topHeadline": "Personlige hilsner",
+              "headline": "<p>Skræddersyede labels<br\/><strong>med jeres egne budskaber<\/strong><\/p>",
+              "content": "<p>Vi laver mange <strong>skræddersyede løsninger<\/strong> med slik. <\/p><p><br\/>Tag kontakt til os hvis du skal have hjælp til anderledes firmagaver som ALLE vil elske.<br\/><\/p>",
+              "content-small": "",
+              "button-text": "Kontakt os",
+              "buttonUrl": "shopify:\/\/pages\/kontakt-os",
+              "image": "shopify:\/\/shop_images\/IMG.png"
+            }
+          },
+          "3cacbfea-bcd8-46dc-afa0-ac222b203df4": {
+            "type": "collection",
+            "settings": {
+              "mageLeft": true,
+              "smallSection": true,
+              "fullWidth": false,
+              "topHeadline": "Store ordrer",
+              "headline": "<p>Vi pakker slikposer <br\/><strong>fra 10 kr. og opefter<\/strong><\/p>",
+              "content": "<p>Hvis du har behov som er relateret til børneevents eller andre <strong>arrangementer<\/strong> hvor du gerne vil bruge slikposer, så tag kontakt til os.<\/p>",
+              "content-small": "",
+              "button-text": "Kontakt os",
+              "buttonUrl": "shopify:\/\/pages\/kontakt-os",
+              "image": "shopify:\/\/shop_images\/pose_3b7db14d-601e-4566-ad36-c80e3c87ce60.png"
+            }
+          },
+          "dfc39e8c-e110-463c-b3be-d9796286084d": {
+            "type": "collection",
+            "settings": {
+              "mageLeft": false,
+              "smallSection": true,
+              "fullWidth": false,
+              "topHeadline": "Firmakurve med slik",
+              "headline": "<p>Pakning <strong>og distribution<\/strong><\/p>",
+              "content": "<p>Vi står gerne for logistik, hvis du ønsker at sende alle dine firmakunder en kurv med diverse slik<br\/><\/p>",
+              "content-small": "",
+              "button-text": "Kontakt os",
+              "buttonUrl": "shopify:\/\/pages\/kontakt-os",
+              "image": "shopify:\/\/shop_images\/kurv.png"
+            }
+          },
+          "ed7ac1fa-d569-4165-a919-58a73a9c93d2": {
+            "type": "collection",
+            "settings": {
+              "mageLeft": true,
+              "smallSection": false,
+              "fullWidth": true,
+              "topHeadline": "Jeres B2B samarbejdspartner",
+              "headline": "<p>Kontakt os for en snak om jeres <strong>skræddersyede løsninger<\/strong><\/p>",
+              "content": "<p>I kan kontakte  vores erhvervsafdeling ved at skrive en email til <strong>team@slikekspressen.dk<\/strong><br\/><br\/>Eller ring direkte til 30 96 09 49, hvis du har spørgsmål<br\/><br\/><\/p>",
+              "content-small": "",
+              "button-text": "",
+              "buttonUrl": "",
+              "image": "shopify:\/\/shop_images\/guySmile.png"
+            }
+          }
+        },
+        "block_order": [
+          "6778bd85-153f-41cc-8f6c-98652701ada9",
+          "3ba57510-ca9b-4266-9990-19e9744e82e5",
+          "3cacbfea-bcd8-46dc-afa0-ac222b203df4",
+          "dfc39e8c-e110-463c-b3be-d9796286084d",
+          "ed7ac1fa-d569-4165-a919-58a73a9c93d2"
+        ],
+        "settings": {
+        }
+      },
+      "product-template-new": {
+        "type": "product-template-new",
+        "settings": {
+        }
+      },
+      "2022-bland-selv-slik-template": {
+        "type": "2022-bland-selv-slik-template",
+        "blocks": {
+          "3564f054-3d16-4455-843e-d54a297e3872": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "selected",
+              "filter_name": "Tilbud"
+            }
+          },
+          "a23080b3-5031-4c55-8d96-14b05741cc44": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "new",
+              "filter_name": "Nyheder"
+            }
+          },
+          "7d5dfa89-72fa-49ea-99cc-4b17114b5e93": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "easter",
+              "filter_name": "Påske"
+            }
+          },
+          "a502789e-369d-4ac0-b696-ea51ce599825": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "christmas",
+              "filter_name": "Jul"
+            }
+          },
+          "849ebd41-237b-45cc-b1d3-5dbcee425534": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "winegum",
+              "filter_name": "Vingummi"
+            }
+          },
+          "e6a2331e-01c1-45f9-8195-300dca35fbe5": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licorice",
+              "filter_name": "Lakrids"
+            }
+          },
+          "b4849386-4e08-433c-9905-5080863480cb": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "chocolate",
+              "filter_name": "Chokolade"
+            }
+          },
+          "d2c6ed5c-bc53-44df-b437-c48e32782941": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "caramel",
+              "filter_name": "Karamel"
+            }
+          },
+          "11c8d274-7e56-453c-8a58-0da175af04db": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foam",
+              "filter_name": "Skum"
+            }
+          },
+          "1f6eb9fc-232a-4b9b-9544-9e07e3aa3653": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licoricemix",
+              "filter_name": "Lakrids Kombi"
+            }
+          },
+          "74c83e4c-6163-4dfe-b6a3-00fe1e0e80f1": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foammix",
+              "filter_name": "Skum Kombi"
+            }
+          },
+          "b36a6f66-904d-4122-986b-c0dbd12e11da": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sour",
+              "filter_name": "Surt slik"
+            }
+          },
+          "cf76748a-3356-4042-8b6f-e241f31cf6ba": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "withsugar",
+              "filter_name": "Med sukker"
+            }
+          },
+          "cd933686-ff15-4be5-a1dc-8ea6cdb434f6": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "fudge",
+              "filter_name": "Fudge"
+            }
+          },
+          "f0810a42-1d18-4e85-82fe-4af373b6fb58": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sticks",
+              "filter_name": "Stænger"
+            }
+          },
+          "04e26a10-2c1a-47ac-8896-1e1e344f99a2": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "wrapped",
+              "filter_name": "Indpakket slik"
+            }
+          },
+          "d01d1f5c-b6a1-4b1f-8798-8f62c0cd3515": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "pastil",
+              "filter_name": "Pastiller"
+            }
+          },
+          "98a212a6-0533-4649-a6a9-78f0b923d8b1": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "lollipop",
+              "filter_name": "Slikkepinde"
+            }
+          },
+          "0c4e0f5e-8736-4d0e-ad4c-a5cf7302005e": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "candy",
+              "filter_name": "Bolsjer"
+            }
+          },
+          "3e6e0174-e73f-4f03-942a-b463645acc37": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "sugarfree",
+              "filter_name": "Sukkerfrit"
+            }
+          },
+          "cc85ec36-56a4-46b1-8dad-fb069a5d1b79": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Palmeoliefri",
+              "filter_name": "Fri for Palmeolie"
+            }
+          },
+          "35b20a81-676b-44dc-a7d7-b1d4b620a0a7": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "naturlige_farver",
+              "filter_name": "Fri for kunstige farvestoffer"
+            }
+          },
+          "5db62baa-fe00-486a-865b-6b5a8ed9c1fb": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "naturlig_smag",
+              "filter_name": "Fri for kunstige smagstoffer"
+            }
+          },
+          "filter_type_WyE4Xz": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "allergenfree",
+              "filter_name": "Fri for Gluten og andre allergener"
+            }
+          },
+          "186ab990-572f-4b51-b8d5-dfb5c790c4ff": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "vegan",
+              "filter_name": "Vegansk slik"
+            }
+          },
+          "d06bc26e-688d-4fa7-b49f-fddd1798a8c6": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "kids",
+              "filter_name": "Mest til børn"
+            }
+          },
+          "b53aec1a-aa15-4ccb-a891-c1f8ebfbbedb": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "adults",
+              "filter_name": "Mest til voksne"
+            }
+          },
+          "aaa47bc3-549c-4806-9909-025a91c7c697": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "gelatinfree",
+              "filter_name": "Gelatinefrit"
+            }
+          },
+          "2ba1279f-4bbb-4988-a67e-38639c555859": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "fudge",
+              "filter_name": "Fudge"
+            }
+          },
+          "65fdfd4b-fabe-4326-9cf6-540632106ef9": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "halloween",
+              "filter_name": "Halloween"
+            }
+          }
+        },
+        "block_order": [
+          "3564f054-3d16-4455-843e-d54a297e3872",
+          "a23080b3-5031-4c55-8d96-14b05741cc44",
+          "7d5dfa89-72fa-49ea-99cc-4b17114b5e93",
+          "a502789e-369d-4ac0-b696-ea51ce599825",
+          "849ebd41-237b-45cc-b1d3-5dbcee425534",
+          "e6a2331e-01c1-45f9-8195-300dca35fbe5",
+          "b4849386-4e08-433c-9905-5080863480cb",
+          "d2c6ed5c-bc53-44df-b437-c48e32782941",
+          "11c8d274-7e56-453c-8a58-0da175af04db",
+          "1f6eb9fc-232a-4b9b-9544-9e07e3aa3653",
+          "74c83e4c-6163-4dfe-b6a3-00fe1e0e80f1",
+          "b36a6f66-904d-4122-986b-c0dbd12e11da",
+          "cf76748a-3356-4042-8b6f-e241f31cf6ba",
+          "cd933686-ff15-4be5-a1dc-8ea6cdb434f6",
+          "f0810a42-1d18-4e85-82fe-4af373b6fb58",
+          "04e26a10-2c1a-47ac-8896-1e1e344f99a2",
+          "d01d1f5c-b6a1-4b1f-8798-8f62c0cd3515",
+          "98a212a6-0533-4649-a6a9-78f0b923d8b1",
+          "0c4e0f5e-8736-4d0e-ad4c-a5cf7302005e",
+          "3e6e0174-e73f-4f03-942a-b463645acc37",
+          "cc85ec36-56a4-46b1-8dad-fb069a5d1b79",
+          "35b20a81-676b-44dc-a7d7-b1d4b620a0a7",
+          "5db62baa-fe00-486a-865b-6b5a8ed9c1fb",
+          "filter_type_WyE4Xz",
+          "186ab990-572f-4b51-b8d5-dfb5c790c4ff",
+          "d06bc26e-688d-4fa7-b49f-fddd1798a8c6",
+          "b53aec1a-aa15-4ccb-a891-c1f8ebfbbedb",
+          "aaa47bc3-549c-4806-9909-025a91c7c697",
+          "2ba1279f-4bbb-4988-a67e-38639c555859",
+          "65fdfd4b-fabe-4326-9cf6-540632106ef9"
+        ],
+        "custom_css": [
+
+        ],
+        "settings": {
+          "title": "<p><strong>Bland i dag <\/strong>— Få det bragt med ekspresfart.<\/p>",
+          "paginate": 600,
+          "price_limit": 25,
+          "width_item": 275,
+          "autoload": "automaticly"
+        }
+      },
+      "16628039319fc373d3": {
+        "type": "2022-blandSelvLink",
+        "settings": {
+          "button_text": "Start det perfekte slikmix",
+          "button_destination": "shopify:\/\/collections\/bland-selv-slik"
+        }
+      },
+      "a5bbe61a-b751-4641-9586-f5734594be1b": {
+        "type": "2023-homepage-user-reviews",
+        "blocks": {
+          "ba87bea3-9b25-4c00-876c-9be4f52a865d": {
+            "type": "review",
+            "settings": {
+              "name": "Lene",
+              "review": "Det gav mig et lille smil på læben, at der var tegnet små, røde hjerter ved navneskiltet 😄❤️",
+              "rating": 5
+            }
+          },
+          "45b1edc4-72ee-4058-b5d5-fa3fb201f51e": {
+            "type": "review",
+            "settings": {
+              "name": "Maria",
+              "review": "Lækker slik, virkelig frisk og pakket i lækker pose",
+              "rating": 5
+            }
+          },
+          "bc73bb9a-8d1d-4514-9460-e8a94b1e8063": {
+            "type": "review",
+            "settings": {
+              "name": "Tina",
+              "review": "Hurtig levering og virkelig lækkert frisk slik 😊",
+              "rating": 5
+            }
+          },
+          "6faf6791-5914-4fc5-bde2-16fb00dd9105": {
+            "type": "review",
+            "settings": {
+              "name": "Rene Nikolajsen",
+              "review": "Hurtig ekspedition. Leveret under 24 timer efter det var bestilt...",
+              "rating": 5
+            }
+          },
+          "6515e58b-da43-4ad1-b6d4-b69896b7fe58": {
+            "type": "review",
+            "settings": {
+              "name": "Jeanne",
+              "review": "Super nemt at bestille i appen , hurtigt betjening , og dejligt frisk slik og et kæmpe udvalg 5 stjerner her fra ⭐️⭐️⭐️⭐️⭐️",
+              "rating": 5
+            }
+          },
+          "9d2120f6-d455-4ea7-a0fe-35d9c684bab4": {
+            "type": "review",
+            "settings": {
+              "name": "Lykke Bitsch",
+              "review": "Jeg er meget tilfreds med både slik, indpakning og levering. Det kan godt være at prisen er højere end bland selv slik i butikkerne, men hos Slikekspressen.dk ved jeg at hygiejnen er i orden, og udvalget er kæmpe stort.",
+              "rating": 5
+            }
+          },
+          "51fb666c-b4c7-40de-a164-9ae9e89761cf": {
+            "type": "review",
+            "settings": {
+              "name": "Maj",
+              "review": "I skuffer bare aldrig :)",
+              "rating": 5
+            }
+          },
+          "82a0b4bd-53ba-4c97-914c-4fcb28dc18ca": {
+            "type": "review",
+            "settings": {
+              "name": "Sandra",
+              "review": "Fantastisk service kan kun anbefale det til andre",
+              "rating": 5
+            }
+          },
+          "d357155d-7508-4ce4-9202-51df7ede06e9": {
+            "type": "review",
+            "settings": {
+              "name": "Jeppe",
+              "review": "Fantastisk levering, genial app",
+              "rating": 5
+            }
+          },
+          "813105f4-adc1-41ef-990a-b2fe947cade0": {
+            "type": "review",
+            "settings": {
+              "name": "Gitte",
+              "review": "Altid friskt lækkert og indbydende❤️❤️",
+              "rating": 5
+            }
+          },
+          "d3bfca54-8d3c-4942-a58c-51fa758af465": {
+            "type": "review",
+            "settings": {
+              "name": "Bettina",
+              "review": "Jeg er kommet for at blive🤗Ælsker alt fra den friske slik - Til de søde røde ❤ på indpakningen... Tak For Jer... Knus Fra Bettina❣️",
+              "rating": 5
+            }
+          },
+          "2be37e94-ce96-40ec-8b7b-fabf053f3f87": {
+            "type": "review",
+            "settings": {
+              "name": "Lene",
+              "review": "Elsker de små hjerter på slik poserne 😍",
+              "rating": 5
+            }
+          },
+          "861107b8-1014-4e51-9456-c1ed9f58535a": {
+            "type": "review",
+            "settings": {
+              "name": "Nanette",
+              "review": "Super ide. Jeg sendte en gave igennem appen. Modtageren blev meget glad.",
+              "rating": 5
+            }
+          }
+        },
+        "block_order": [
+          "ba87bea3-9b25-4c00-876c-9be4f52a865d",
+          "45b1edc4-72ee-4058-b5d5-fa3fb201f51e",
+          "bc73bb9a-8d1d-4514-9460-e8a94b1e8063",
+          "6faf6791-5914-4fc5-bde2-16fb00dd9105",
+          "6515e58b-da43-4ad1-b6d4-b69896b7fe58",
+          "9d2120f6-d455-4ea7-a0fe-35d9c684bab4",
+          "51fb666c-b4c7-40de-a164-9ae9e89761cf",
+          "82a0b4bd-53ba-4c97-914c-4fcb28dc18ca",
+          "d357155d-7508-4ce4-9202-51df7ede06e9",
+          "813105f4-adc1-41ef-990a-b2fe947cade0",
+          "d3bfca54-8d3c-4942-a58c-51fa758af465",
+          "2be37e94-ce96-40ec-8b7b-fabf053f3f87",
+          "861107b8-1014-4e51-9456-c1ed9f58535a"
+        ],
+        "settings": {
+          "title": "Vores kunder elsker os!"
+        }
+      },
+      "35323219-acc8-4e84-91c1-171ee1cf345a": {
+        "type": "2023-homepage-top",
+        "blocks": {
+          "35323219-acc8-4e84-91c1-171ee1cf345a-collection-1": {
+            "type": "collection",
+            "settings": {
+              "headline": "",
+              "content": ""
+            }
+          }
+        },
+        "block_order": [
+          "35323219-acc8-4e84-91c1-171ee1cf345a-collection-1"
+        ],
+        "custom_css": [
+          "h1 {text-align: center; color: Black;}"
+        ],
+        "settings": {
+          "bgimage": "shopify:\/\/shop_images\/Paske_02.png",
+          "checkbgimagelarge": true,
+          "bgimagelarge": "shopify:\/\/shop_images\/light2.png",
+          "headline": "<p>Klar til fejring?<br\/>Vi har den perfekte gaveidé!<br\/><br\/>En champagneflaske fyldt med lækkert slik.<br\/><\/p>",
+          "subheadline": "",
+          "order_before": "",
+          "weekendtext": "",
+          "holidaytext": "",
+          "button_text": "Køb her",
+          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
+          "image": "shopify:\/\/shop_images\/Konfirmation_Kampagne_670_530_280be448-6f0c-4248-aec8-9a57b4bd66ca.png"
+        }
+      },
+      "b49b16e9-60a4-43d9-a436-88b189708dc1": {
+        "type": "2023-homepage-app",
+        "settings": {
+          "headline": "<p>Vi har gjort Bland Selv Slik <br\/>til en leg med vores app<\/p>",
+          "content": "<p>Bliv en del af de mere end 10.000 brugere <\/p><p>og download appen i dag!<\/p>",
+          "button_text": "Hent Appen Nu",
+          "button_destination": "shopify:\/\/pages\/app-til-bland-selv",
+          "image": "shopify:\/\/shop_images\/smartmockups_lm09gnj4.png",
+          "play_store_destination": "https:\/\/play.google.com\/store\/apps\/details?id=dk.blandselvslik.slikekspressen",
+          "app_store_destination": "https:\/\/apps.apple.com\/us\/app\/slikekspressen-bland-selv-slik\/id1607462953"
+        }
+      },
+      "64bc48b7-26d1-40e6-bd84-9ffcaa12db5b": {
+        "type": "2023-homepage-newsletter",
+        "settings": {
+        }
+      },
+      "439ba202-119f-4640-928d-ea2e819b4154": {
+        "type": "2023-homepage-usp",
+        "settings": {
+        }
+      },
+      "5c9f7e04-0d80-4ab7-b38d-13d3a972e96a": {
+        "type": "2023-number-bullets",
+        "blocks": {
+          "5c9f7e04-0d80-4ab7-b38d-13d3a972e96a-collection-1": {
+            "type": "collection",
+            "settings": {
+              "content": "<p>Vælg Bland Selv Slik og sortér i vores mange kategorier.<\/p>"
+            }
+          },
+          "f73b43a9-d477-43d0-b8f3-ed4f550a2387": {
+            "type": "collection",
+            "settings": {
+              "content": "<p>Klik på de produkter, du ønsker i posen og justér mængde.<\/p>"
+            }
+          },
+          "8ca6a316-bd32-4b19-9ce6-ce556896ed56": {
+            "type": "collection",
+            "settings": {
+              "content": "<p>Læg i kurven, luk posen og tilføj en ny pose – eller afslut køb.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "5c9f7e04-0d80-4ab7-b38d-13d3a972e96a-collection-1",
+          "f73b43a9-d477-43d0-b8f3-ed4f550a2387",
+          "8ca6a316-bd32-4b19-9ce6-ce556896ed56"
+        ],
+        "settings": {
+          "headline": "<p><strong>Bland Selv Slik:<\/strong> Så simpelt er det.<\/p>",
+          "button_text": "Bestil her",
+          "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+          "image": "shopify:\/\/shop_images\/home_bag.jpg"
+        }
+      },
+      "63cf6648-7c60-4010-bade-6293a85cfa8f": {
+        "type": "2023-logos",
+        "settings": {
+          "title": "Vi går ikke på kompromis med kvalitet",
+          "image_1": "shopify:\/\/shop_images\/toms-svg0_1.png",
+          "image_2": "shopify:\/\/shop_images\/cloetta-2009_1.png",
+          "image_3": "shopify:\/\/shop_images\/haribo-svg0_cropped_1.png",
+          "image_4": "shopify:\/\/shop_images\/fazer_svg0_1.png",
+          "image_5": "shopify:\/\/shop_images\/Carletti-logo_1.png",
+          "image_6": "shopify:\/\/shop_images\/nestle-svg0-cropped_1.png"
+        }
+      },
+      "2022-Black-friday-mp-template": {
+        "type": "2022-Black-friday-mp-template",
+        "blocks": {
+          "e7a812f2-6e7e-4bcc-9500-a7755071a803": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "selected",
+              "filter_name": "Dagens tilbud"
+            }
+          },
+          "72624577-59ad-4650-a34b-7ecf9fd80445": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "new",
+              "filter_name": "Nyheder"
+            }
+          },
+          "af85f643-ca45-47ea-8217-6f17b841047d": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "christmas",
+              "filter_name": "Jul"
+            }
+          },
+          "c032f759-a226-4195-888f-409065ebec14": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "winegum",
+              "filter_name": "Vingummi"
+            }
+          },
+          "0265406f-8230-467a-80ef-4dddb0c2ea61": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licorice",
+              "filter_name": "Lakrids"
+            }
+          },
+          "a3eb7298-ce81-4fb6-b026-e067df1df2b7": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foam",
+              "filter_name": "Skum"
+            }
+          },
+          "04dd1c70-074b-45bd-8dee-71b15deef67c": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "caramel",
+              "filter_name": "Karamel"
+            }
+          },
+          "55d523b6-77f2-463b-9f81-5e8700cd0795": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sour",
+              "filter_name": "Surt slik"
+            }
+          },
+          "e95ad24c-21ff-474e-b7f8-032a7fa02d95": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "chocolate",
+              "filter_name": "Chokolade"
+            }
+          },
+          "59754a5f-16af-4315-9362-270aea9873fe": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "sugarfree",
+              "filter_name": "Sukkerfrit"
+            }
+          },
+          "3e6c3daf-f5e2-4e5a-b7fd-e21ffe2986f9": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Palmeoliefri",
+              "filter_name": "Fri for Palmeolie"
+            }
+          },
+          "dd40a00d-cd81-4cd7-ac41-9718cf7a702f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Naturlige farver",
+              "filter_name": "Fri for kunstig farvestoffer"
+            }
+          },
+          "ff5d12be-4a50-4681-8159-9f922e4b048f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Naturlig smag",
+              "filter_name": "Fri for kunstige smagstoffer"
+            }
+          },
+          "687daea6-313b-4a46-b39f-78f0efa59545": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "vegan",
+              "filter_name": "Vegansk slik"
+            }
+          },
+          "e2f16dea-ad44-4a69-9857-93ab90f74066": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "kids",
+              "filter_name": "Mest til børn"
+            }
+          },
+          "242cdc63-4528-441d-9061-c5d00f5df83f": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "Voksne",
+              "filter_name": "Mest til voksne"
+            }
+          },
+          "40cbfbb2-2444-4e29-b411-072c58fc1fcf": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "candy",
+              "filter_name": "Bolsjer"
+            }
+          },
+          "047a55d4-8d62-4250-a52b-cdede7067b79": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "wrapped",
+              "filter_name": "Indpakket slik"
+            }
+          },
+          "41befac3-18a0-49a9-b720-9e745ac01afb": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sticks",
+              "filter_name": "Stænger"
+            }
+          },
+          "2f81dd77-2e41-47c2-81df-c1b0c39fe1a6": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "pastil",
+              "filter_name": "Pastiller"
+            }
+          },
+          "5baee90c-4cbc-4412-a9f8-d23729761dd1": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licoricemix",
+              "filter_name": "Lakrids Kombi"
+            }
+          },
+          "f5d52390-b898-4b23-b835-c2a510ae5d36": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foammix",
+              "filter_name": "Skum Kombi"
+            }
+          },
+          "c1868b52-282e-48cd-9a39-88beaed65ec5": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "withsugar",
+              "filter_name": "Med sukker"
+            }
+          },
+          "c3f66340-a75d-4e0c-8b7a-cc08e1b13cdb": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "lollipop",
+              "filter_name": "Slikkepinde"
+            }
+          },
+          "c57cfdad-dbef-43a8-8262-be1944c0fbdd": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "fudge",
+              "filter_name": "Fudge"
+            }
+          }
+        },
+        "block_order": [
+          "e7a812f2-6e7e-4bcc-9500-a7755071a803",
+          "72624577-59ad-4650-a34b-7ecf9fd80445",
+          "af85f643-ca45-47ea-8217-6f17b841047d",
+          "c032f759-a226-4195-888f-409065ebec14",
+          "0265406f-8230-467a-80ef-4dddb0c2ea61",
+          "a3eb7298-ce81-4fb6-b026-e067df1df2b7",
+          "04dd1c70-074b-45bd-8dee-71b15deef67c",
+          "55d523b6-77f2-463b-9f81-5e8700cd0795",
+          "e95ad24c-21ff-474e-b7f8-032a7fa02d95",
+          "59754a5f-16af-4315-9362-270aea9873fe",
+          "3e6c3daf-f5e2-4e5a-b7fd-e21ffe2986f9",
+          "dd40a00d-cd81-4cd7-ac41-9718cf7a702f",
+          "ff5d12be-4a50-4681-8159-9f922e4b048f",
+          "687daea6-313b-4a46-b39f-78f0efa59545",
+          "e2f16dea-ad44-4a69-9857-93ab90f74066",
+          "242cdc63-4528-441d-9061-c5d00f5df83f",
+          "40cbfbb2-2444-4e29-b411-072c58fc1fcf",
+          "047a55d4-8d62-4250-a52b-cdede7067b79",
+          "41befac3-18a0-49a9-b720-9e745ac01afb",
+          "2f81dd77-2e41-47c2-81df-c1b0c39fe1a6",
+          "5baee90c-4cbc-4412-a9f8-d23729761dd1",
+          "f5d52390-b898-4b23-b835-c2a510ae5d36",
+          "c1868b52-282e-48cd-9a39-88beaed65ec5",
+          "c3f66340-a75d-4e0c-8b7a-cc08e1b13cdb",
+          "c57cfdad-dbef-43a8-8262-be1944c0fbdd"
+        ],
+        "settings": {
+          "title": "<p><strong>Black friday tilbud <\/strong>— Vi har ekstra gode tilbud <\/p>",
+          "title2": "Bland videre 👇👇👇 Her er alle de andre produkter du kan blande i din pose",
+          "paginate": 24,
+          "price_limit": 25,
+          "width_item": 275,
+          "autoload": "automaticly"
+        }
+      },
+      "champagneflaske_christmas": {
+        "type": "champagneflaske_christmas",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Design_uden_navn_21.png",
+          "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8083c7f227b4e95a8246d60dc0f585a.mp4"
+        }
+      },
+      "champ_christmas-prodSlider": {
+        "type": "champ_christmas-prodSlider",
+        "settings": {
+          "title": "Her kan du se andre sjove gaveidéer",
+          "text1": "Hvis du bestiller igennem vores app, kan du selv vælge det slik der kommer i",
+          "text2": "Finder du ikke, hvad du søger, er du mere en velkommen til at kontakte os.",
+          "products": "mandelgaver"
+        }
+      },
+      "9cb687c2-936b-4ee2-bbdc-e1648c03a43e": {
+        "type": "champ_christmas-prodSlider",
+        "settings": {
+          "title": "Mangler du en sød gave til en du har kær?",
+          "text1": "Vi har masser af gode gaveidéer, der går lige i hjertet.",
+          "text2": "Bestil nemt her eller find dem i vores app, hvor du også selv kan vælge, hvilket slik der skal i!",
+          "products": "mandelgaver"
+        }
+      },
+      "new_template_with_mixing": {
+        "type": "new_template_with_mixing",
+        "settings": {
+          "contents": "Indhold: 750 gram"
+        }
+      },
+      "pick_n_mix_temp1": {
+        "type": "pick_n_mix_temp1",
+        "settings": {
+          "featured_product": "anthon-berg-mini",
+          "collection_handle": "bland-selv-slik",
+          "title": "<p><strong>Her kan du blande videre  <\/strong>👇Bland dit perfekte slikmiks 👇<\/p>",
+          "title2": "",
+          "paginate": 400,
+          "price_limit": 25,
+          "width_item": 275,
+          "autoload": "automaticly",
+          "accordion_title": "Klik for slik info"
+        }
+      },
+      "test_champagneflaske_christmas": {
+        "type": "test_champagneflaske_christmas",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/christmas.png",
+          "video": ""
+        }
+      },
+      "2022-test_pickNmix-template": {
+        "type": "2022-test_pickNmix-template",
+        "blocks": {
+          "09f2262b-a716-40d7-8d52-00b00619b842": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "type",
+              "filter_id": "",
+              "filter_name": ""
+            }
+          },
+          "1b19495d-c6d5-4574-9865-e8547513d9f1": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "type",
+              "filter_id": "",
+              "filter_name": ""
+            }
+          }
+        },
+        "block_order": [
+          "09f2262b-a716-40d7-8d52-00b00619b842",
+          "1b19495d-c6d5-4574-9865-e8547513d9f1"
+        ],
+        "settings": {
+          "title": "",
+          "paginate": 24,
+          "price_limit": 25,
+          "width_item": 275,
+          "autoload": "automaticly"
+        }
+      },
+      "sec_404": {
+        "type": "sec_404",
+        "settings": {
+          "header": "<p>Vi fandt desværre ikke det slik du kom efter<\/p>",
+          "bodyText": "<p>Det slik som du er kommet efter ser ud til at være udsolgt!<\/p><p>Klik her nedenfor for at se mere end 400 andre produkter  👇🏻👇🏻👇🏻<\/p>",
+          "bUrl": "shopify:\/\/collections\/bland-selv-slik",
+          "bText": "Se vores 400 forskellige produkter 😋"
+        }
+      },
+      "newMixingTemp1": {
+        "type": "newMixingTemp1",
+        "blocks": {
+          "filter_type_Mktzgc": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "type",
+              "filter_id": "selected",
+              "filter_name": "Tilbud"
+            }
+          },
+          "filter_type_d8EJ9w": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "new",
+              "filter_name": "Nyheder"
+            }
+          },
+          "filter_type_f3KLtP": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "winegum",
+              "filter_name": "Vingummi"
+            }
+          },
+          "filter_type_QUCFKK": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licorice",
+              "filter_name": "Lakrids"
+            }
+          },
+          "filter_type_Hgnf88": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "chocolate",
+              "filter_name": "Chokolade"
+            }
+          },
+          "filter_type_t4QPXK": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "caramel",
+              "filter_name": "Karamel"
+            }
+          },
+          "filter_type_yGhMiP": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foam",
+              "filter_name": "Skum"
+            }
+          },
+          "filter_type_LYUzVd": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licoricemix",
+              "filter_name": "Lakrids Kombi"
+            }
+          },
+          "filter_type_Dzmi7w": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foammix",
+              "filter_name": "Skum Kombi"
+            }
+          },
+          "filter_type_PmDyhY": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sour",
+              "filter_name": "Surt slik"
+            }
+          },
+          "filter_type_84JJnr": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "withsugar",
+              "filter_name": "Med sukker"
+            }
+          },
+          "filter_type_a93799": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "fudge",
+              "filter_name": "Fudge"
+            }
+          },
+          "filter_type_iQ3FVB": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sticks",
+              "filter_name": "Stænger"
+            }
+          },
+          "filter_type_8dRakE": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "wrapped",
+              "filter_name": "Indpakket slik"
+            }
+          },
+          "filter_type_8tLUQ4": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "pastil",
+              "filter_name": "Pastiller"
+            }
+          },
+          "filter_type_kfgB68": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "lollipop",
+              "filter_name": "Slikkepinde"
+            }
+          },
+          "filter_type_BPqRcP": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "candy",
+              "filter_name": "Bolsjer"
+            }
+          },
+          "filter_type_RVPkhC": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "type",
+              "filter_id": "",
+              "filter_name": ""
+            }
+          },
+          "filter_type_xAnVXM": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "sugarfree",
+              "filter_name": "Sukkerfrit"
+            }
+          },
+          "filter_type_FdbUaU": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "type",
+              "filter_id": "Palmeoliefri",
+              "filter_name": "Fri for Palmeolie"
+            }
+          },
+          "filter_type_MgWiat": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "type",
+              "filter_id": "naturlige_farver",
+              "filter_name": ""
+            }
+          },
+          "filter_type_eAdGmf": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "naturlig_smag",
+              "filter_name": "Fri for kunstige smagstoffer"
+            }
+          },
+          "filter_type_8Jk3dA": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "vegan",
+              "filter_name": "Vegansk slik"
+            }
+          },
+          "filter_type_F3zJ8n": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "kids",
+              "filter_name": "Mest til børn"
+            }
+          },
+          "filter_type_CAG7GB": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "adults",
+              "filter_name": "Mest til voksne"
+            }
+          },
+          "filter_type_37RBin": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "gelatinfree",
+              "filter_name": "Gelatinefrit"
+            }
+          }
+        },
+        "block_order": [
+          "filter_type_Mktzgc",
+          "filter_type_d8EJ9w",
+          "filter_type_f3KLtP",
+          "filter_type_QUCFKK",
+          "filter_type_Hgnf88",
+          "filter_type_t4QPXK",
+          "filter_type_yGhMiP",
+          "filter_type_LYUzVd",
+          "filter_type_Dzmi7w",
+          "filter_type_PmDyhY",
+          "filter_type_84JJnr",
+          "filter_type_a93799",
+          "filter_type_iQ3FVB",
+          "filter_type_8dRakE",
+          "filter_type_8tLUQ4",
+          "filter_type_kfgB68",
+          "filter_type_BPqRcP",
+          "filter_type_RVPkhC",
+          "filter_type_xAnVXM",
+          "filter_type_FdbUaU",
+          "filter_type_MgWiat",
+          "filter_type_eAdGmf",
+          "filter_type_8Jk3dA",
+          "filter_type_F3zJ8n",
+          "filter_type_CAG7GB",
+          "filter_type_37RBin"
+        ],
+        "settings": {
+          "featured_product": "",
+          "collection_handle": "bland-selv-slik",
+          "title": "<p><strong>Bland i dag<\/strong>— Få det bragt med ekspresfart.<\/p>",
+          "title2": "",
+          "paginate": 400,
+          "price_limit": 25,
+          "width_item": 275,
+          "autoload": "automaticly",
+          "accordion_title": ""
+        }
+      },
+      "double-collections": {
+        "type": "double-collections",
+        "settings": {
+          "title": "",
+          "paginate": 600,
+          "price_limit": 0,
+          "width_item": 275,
+          "autoload": "automaticly",
+          "step1_title": "Vælg den gave du ønsker",
+          "step1btn_title": "NÆSTE - VÆLG SLIK",
+          "step2_title": "Bland slik 👇👇👇",
+          "step2_targetfirsttext": "Miks",
+          "step2_targetlasttext": "g. mere slik i gaven",
+          "step2_randombtntext": "....eller fyld resten op med favoritmiks",
+          "step2_removebtntext": "Fjern favoritmiks",
+          "step2_nextbtntext": "NÆSTE - TILFØJ KORT",
+          "step3_nohandwrittentext": "Intet kort",
+          "step3_nohandwrittenprice": "Gratis",
+          "step3_handwrittentext": "Håndskrevet kort",
+          "msgoncardtext": "Besked på kortet",
+          "messageoncard": "shopify:\/\/shop_images\/Positive_Quote_Minimal_Card_Instagram_Post2_1.png"
+        }
+      }
+    },
+    "content_for_index": [
+      "35323219-acc8-4e84-91c1-171ee1cf345a",
+      "439ba202-119f-4640-928d-ea2e819b4154",
+      "a5bbe61a-b751-4641-9586-f5734594be1b",
+      "5c9f7e04-0d80-4ab7-b38d-13d3a972e96a",
+      "9cb687c2-936b-4ee2-bbdc-e1648c03a43e",
+      "63cf6648-7c60-4010-bade-6293a85cfa8f",
+      "16628039319fc373d3",
+      "b49b16e9-60a4-43d9-a436-88b189708dc1",
+      "64bc48b7-26d1-40e6-bd84-9ffcaa12db5b"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "16278478101612877664": {
+        "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "6146500278089136509": {
+        "type": "shopify:\/\/apps\/bm-country-blocker-ip-blocker\/blocks\/boostmark-blocker\/bf9db4b9-be4b-45e1-8127-bbcc07d93e7e",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Modern": {
+      "breadcrumb": false,
+      "button_style": "square",
+      "cart_notes_enable": false,
+      "cart_terms_conditions_enable": false,
+      "cart_type": "drawer",
+      "checkout_accent_color": "#111111",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_button_color": "#111111",
+      "checkout_error_color": "#ff6d6d",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_sidebar_background_color": "#fafafa",
+      "collection_color_swatches": false,
+      "collection_grid_gutter": true,
+      "collection_grid_image": "product",
+      "collection_grid_opacity": 10,
+      "collection_grid_shape": "square",
+      "collection_grid_style": "overlaid-box",
+      "collection_grid_text_align": "center",
+      "collection_grid_tint": "#000000",
+      "color_announcement": "#0f0f0f",
+      "color_announcement_text": "#ffffff",
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#000000",
+      "color_borders": "#e8e8e1",
+      "color_button": "#111111",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#ff4f33",
+      "color_drawer_background": "#ffffff",
+      "color_drawer_border": "#e8e8e1",
+      "color_drawer_button": "#111111",
+      "color_drawer_button_text": "#ffffff",
+      "color_drawer_text": "#000000",
+      "color_footer": "#ffffff",
+      "color_footer_text": "#000000",
+      "color_header": "#ffffff",
+      "color_header_text": "#000000",
+      "color_image_overlay": "#000000",
+      "color_image_overlay_text_shadow": 20,
+      "color_large_image_bg": "#0f0f0f",
+      "color_modal_overlays": "#e6e6e6",
+      "color_price": "#1c1d1d",
+      "color_savings_text": "#C20000",
+      "color_small_image_bg": "#ffffff",
+      "icon_linecaps": "miter",
+      "icon_weight": "2px",
+      "inventory_enable": true,
+      "product_color_swatches": false,
+      "product_contact": false,
+      "product_grid_image_size": "natural",
+      "product_hover_image": false,
+      "quantity_enable": false,
+      "quick_shop_text": "Quick view",
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "sku_enable": false,
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_instagram_link": "https:\/\/instagram.com\/shopify",
+      "social_pinterest_link": "https:\/\/www.pinterest.com\/shopify",
+      "type_base_font_family": "futura_n4",
+      "type_base_line_height": 1.6,
+      "type_base_size": 16,
+      "type_base_spacing": "25",
+      "type_body_align_text": true,
+      "type_collection_font": "body",
+      "type_collection_size": 18,
+      "type_header_base_size": 38,
+      "type_header_capitalize": true,
+      "type_header_font_family": "tiemann_n4",
+      "type_header_line_height": 1,
+      "type_header_spacing": "0",
+      "type_headers_align_text": true,
+      "type_navigation_capitalize": true,
+      "type_navigation_size": 13,
+      "type_navigation_style": "body",
+      "type_product_style": "body",
+      "variant_type": "button",
+      "vendor_enable": false,
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1524770014057": {
+              "type": "logo",
+              "settings": {
+                "desktop_logo_width": 140,
+                "mobile_logo_width": 110
+              }
+            },
+            "1524770292306": {
+              "type": "announcement",
+              "settings": {
+              }
+            },
+            "1524770296206": {
+              "type": "announcement",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1524770014057",
+            "1524770292306",
+            "1524770296206"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "subcollection_style": "above",
+            "subcollections_per_row": 5,
+            "per_row": 4
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "social_enable": true,
+            "image_position": "left",
+            "image_size": "large"
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "social_sharing_blog": true
+          }
+        },
+        "1498163293234": {
+          "type": "featured-content",
+          "settings": {
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": false
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "blog_show_tag_filter": true,
+            "blog_show_rss": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "blog_image_size": "wide"
+          }
+        },
+        "1499789718857": {
+          "type": "featured-collections",
+          "blocks": {
+            "1499789718857-0": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1499789718857-1": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1499789718857-2": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1499789718857-3": {
+              "type": "collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1499789718857-0",
+            "1499789718857-1",
+            "1499789718857-2",
+            "1499789718857-3"
+          ],
+          "settings": {
+            "title": "Shop by category",
+            "divider": false,
+            "per_row": 4,
+            "enable_gutter": true
+          }
+        },
+        "1499790633921": {
+          "type": "background-image-text",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/all",
+            "focal_point": "80% 0",
+            "layout": "left",
+            "height": 750,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "product-sections-template": {
+          "type": "product-sections-template",
+          "blocks": {
+            "sections-1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "sections-1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "sections-1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "sections-1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "sections-1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "sections-1592410313636",
+            "sections-1592408476245",
+            "sections-1592408474529",
+            "sections-1592410318615",
+            "sections-1592410272428"
+          ],
+          "settings": {
+          }
+        },
+        "product-story-sections": {
+          "type": "product-story-sections",
+          "blocks": {
+            "1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1592410313636",
+            "1592408476245",
+            "1592408474529",
+            "1592410318615",
+            "1592410272428"
+          ],
+          "settings": {
+          }
+        },
+        "page-sections-template": {
+          "type": "page-sections-template",
+          "blocks": {
+            "page-image-hero": {
+              "type": "image-hero",
+              "settings": {
+              }
+            },
+            "page-rich-text": {
+              "type": "rich-text",
+              "settings": {
+                "align_text": "center",
+                "narrow_column": true,
+                "enlarge_text": true
+              }
+            },
+            "page-text-columns": {
+              "type": "text-columns",
+              "settings": {
+              }
+            },
+            "page-background-image-text": {
+              "type": "background-image-text",
+              "settings": {
+                "alignment": "center",
+                "layout": "right",
+                "height": 550
+              }
+            },
+            "page-featured-collection": {
+              "type": "featured-collection",
+              "settings": {
+                "title": "Featured collection",
+                "per_row": 4,
+                "rows": 1,
+                "view_all": true
+              }
+            }
+          },
+          "block_order": [
+            "page-image-hero",
+            "page-rich-text",
+            "page-text-columns",
+            "page-background-image-text",
+            "page-featured-collection"
+          ],
+          "settings": {
+            "page_title_enable": false,
+            "page_content_enable": false
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {
+          }
+        },
+        "1524769873765": {
+          "type": "slideshow",
+          "blocks": {
+            "1524769873765-0": {
+              "type": "image",
+              "settings": {
+                "title_size": 80,
+                "link": "shopify:\/\/collections\/all",
+                "link_text": "Shop this",
+                "link_2": "shopify:\/\/collections\/all",
+                "link_text_2": "Shop all",
+                "color_accent": "#000000",
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "top center"
+              }
+            },
+            "1524769873765-1": {
+              "type": "image",
+              "settings": {
+                "title_size": 80,
+                "link": "shopify:\/\/collections\/all",
+                "link_text": "Shop all",
+                "link_2": "shopify:\/\/collections\/all",
+                "link_text_2": "Shop all",
+                "color_accent": "#000000",
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "top center"
+              }
+            }
+          },
+          "block_order": [
+            "1524769873765-0",
+            "1524769873765-1"
+          ],
+          "settings": {
+            "section_height": "750px",
+            "mobile_height": "auto",
+            "parallax": true,
+            "style": "bars",
+            "autoplay": true,
+            "autoplay_speed": 7
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {
+            "enable": true,
+            "collection_image_enable": true,
+            "parallax": true
+          }
+        },
+        "collection-sidebar": {
+          "type": "collection-sidebar",
+          "blocks": {
+            "1524772785241": {
+              "type": "subcollections",
+              "settings": {
+              }
+            },
+            "1524772580942": {
+              "type": "tags_all",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1524772785241",
+            "1524772580942"
+          ],
+          "settings": {
+            "enable_sidebar": true,
+            "filter_style": "sidebar",
+            "tags_combine": false,
+            "enable_sort": true
+          }
+        },
+        "1525115199973": {
+          "type": "blog-posts",
+          "settings": {
+            "title": "From the journal",
+            "blog": "news",
+            "post_limit": 3,
+            "blog_show_tags": false,
+            "blog_show_date": true,
+            "blog_show_comments": false,
+            "blog_show_author": false,
+            "view_all": true,
+            "blog_image_size": "wide",
+            "divider": false
+          }
+        },
+        "1525118065355": {
+          "type": "map",
+          "settings": {
+          }
+        },
+        "1525295772132": {
+          "type": "featured-collection",
+          "settings": {
+            "per_row": 4,
+            "rows": 1,
+            "view_all": true,
+            "divider": false
+          }
+        },
+        "1525886124958": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525886482727": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "100",
+                "height": 720,
+                "text_size": 120,
+                "focal_point": "80% 50%",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1525886854810": {
+              "type": "sale_collection",
+              "settings": {
+                "width": "50",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1525911710924": {
+              "type": "sale_collection",
+              "settings": {
+                "width": "50",
+                "boxed": false,
+                "framed": true
+              }
+            }
+          },
+          "block_order": [
+            "1525886482727",
+            "1525886854810",
+            "1525911710924"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 20,
+            "space_above": false,
+            "space_below": false
+          }
+        },
+        "1525912530555": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525912530555-0": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "50",
+                "height": 800,
+                "text_size": 100,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1525912530555-1": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "50",
+                "height": 500,
+                "text_size": 100,
+                "text_align": "vertical-bottom horizontal-center",
+                "focal_point": "80% 50%",
+                "boxed": true,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1525912530555-0",
+            "1525912530555-1"
+          ],
+          "settings": {
+            "full_width": true,
+            "gutter_size": 20,
+            "space_above": false,
+            "space_below": false
+          }
+        },
+        "collection-promotions": {
+          "type": "collection-promotions",
+          "blocks": {
+            "1526403837307": {
+              "type": "banner",
+              "settings": {
+                "link": "shopify:\/\/collections\/all",
+                "label": "Shop now",
+                "color_tint": "#e95454",
+                "color_tint_opacity": 10,
+                "framed": false
+              }
+            },
+            "1526496043079": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "100",
+                "height": 500,
+                "text_size": 120,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": true
+              }
+            }
+          },
+          "block_order": [
+            "1526403837307",
+            "1526496043079"
+          ],
+          "settings": {
+            "gutter_size": 20
+          }
+        }
+      },
+      "content_for_index": [
+        "1524769873765",
+        "1498163293234",
+        "1525912530555",
+        "1499789718857",
+        "1525886124958",
+        "1525295772132",
+        "1499790633921",
+        "1525115199973",
+        "1525118065355"
+      ]
+    },
+    "Clean": {
+      "show_breadcrumbs": true,
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#000000",
+      "color_price": "#1c1d1d",
+      "color_savings_text": "#ff4e4e",
+      "color_borders": "#e8e8e1",
+      "color_button": "#111111",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#ff4f33",
+      "color_small_image_bg": "#e5e5e5",
+      "color_large_image_bg": "#0f0f0f",
+      "color_header": "#ffffff",
+      "color_header_text": "#000000",
+      "color_announcement": "#0f0f0f",
+      "color_announcement_text": "#ffffff",
+      "color_footer": "#ffffff",
+      "color_footer_text": "#000000",
+      "color_drawer_background": "#ffffff",
+      "color_drawer_text": "#000000",
+      "color_drawer_border": "#e8e8e1",
+      "color_drawer_button": "#111111",
+      "color_drawer_button_text": "#ffffff",
+      "color_modal_overlays": "#e6e6e6",
+      "color_image_overlay_opacity": 0,
+      "color_image_overlay_text_shadow": 24,
+      "type_header_font_family": "basic_commercial_n7",
+      "type_header_spacing": "25",
+      "type_header_base_size": 38,
+      "type_header_line_height": 1,
+      "type_header_capitalize": false,
+      "type_headers_align_text": false,
+      "type_base_font_family": "basic_commercial_n4",
+      "type_base_spacing": "25",
+      "type_base_size": 16,
+      "type_base_line_height": 1.6,
+      "type_body_align_text": false,
+      "type_navigation_style": "body",
+      "type_navigation_size": 18,
+      "type_navigation_capitalize": false,
+      "type_product_style": "heading",
+      "type_product_capitalize": false,
+      "type_collection_font": "body",
+      "type_collection_size": 24,
+      "button_style": "square",
+      "icon_weight": "4px",
+      "icon_linecaps": "miter",
+      "vendor_enable": false,
+      "sku_enable": false,
+      "quantity_enable": false,
+      "variant_type": "button",
+      "inventory_enable": false,
+      "quick_shop_text": "Quick view",
+      "product_grid_image_size": "square",
+      "product_hover_image": true,
+      "product_color_swatches": false,
+      "collection_color_swatches": false,
+      "product_contact": true,
+      "collection_grid_style": "overlaid",
+      "collection_grid_shape": "square",
+      "collection_grid_image": "collection",
+      "collection_grid_text_align": "center",
+      "collection_grid_tint": "#000000",
+      "collection_grid_opacity": 20,
+      "collection_grid_gutter": true,
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "cart_terms_conditions_enable": false,
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_instagram_link": "https:\/\/instagram.com\/shopify",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#f5f5f5",
+      "checkout_accent_color": "#682d2d",
+      "checkout_button_color": "#682d2d",
+      "checkout_error_color": "#ff6d6d",
+      "product_fixed_image_height": false,
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1520882467782": {
+              "type": "logo",
+              "settings": {
+                "logo": "",
+                "logo-inverted": "",
+                "desktop_logo_width": 200,
+                "mobile_logo_width": 140
+              }
+            },
+            "1521051841065": {
+              "type": "announcement",
+              "settings": {
+              }
+            },
+            "1520888647304": {
+              "type": "announcement",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1520882467782",
+            "1521051841065",
+            "1520888647304"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "description_position": "top",
+            "subcollection_style": "above",
+            "subcollections_per_row": 3,
+            "enable_collection_count": true,
+            "per_row": 4,
+            "rows_per_page": 7,
+            "mobile_flush_grid": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "description_style": "default",
+            "social_enable": true,
+            "image_position": "left",
+            "image_size": "large",
+            "thumbnail_position": "below",
+            "thumbnail_arrows": false,
+            "enable_video_looping": true,
+            "product_video_style": "muted"
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "image_hero": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "social_sharing_blog": true
+          }
+        },
+        "1498163293234": {
+          "type": "featured-content",
+          "settings": {
+            "title": "",
+            "text": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.<\/p>",
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": false
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "blog_show_tag_filter": true,
+            "blog_show_rss": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "blog_show_excerpt": false,
+            "blog_image_size": "wide"
+          }
+        },
+        "product-sections-template": {
+          "type": "product-sections-template",
+          "blocks": {
+            "sections-1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "sections-1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "sections-1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "sections-1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "sections-1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "sections-1592410313636",
+            "sections-1592408476245",
+            "sections-1592408474529",
+            "sections-1592410318615",
+            "sections-1592410272428"
+          ],
+          "settings": {
+          }
+        },
+        "product-story-sections": {
+          "type": "product-story-sections",
+          "blocks": {
+            "1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1592410313636",
+            "1592408476245",
+            "1592408474529",
+            "1592410318615",
+            "1592410272428"
+          ],
+          "settings": {
+          }
+        },
+        "page-sections-template": {
+          "type": "page-sections-template",
+          "blocks": {
+            "page-rich-text": {
+              "type": "rich-text",
+              "settings": {
+                "title": "Rich text block",
+                "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
+                "align_text": "center",
+                "narrow_column": true,
+                "enlarge_text": true
+              }
+            },
+            "page-text-columns": {
+              "type": "text-columns",
+              "settings": {
+                "title": "",
+                "align_text": "center",
+                "enable_image_1": true,
+                "image_1": "",
+                "image_width_1": 650,
+                "title_1": "Example title",
+                "text_1": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+                "button_label_1": "",
+                "button_link_1": "",
+                "enable_image_2": true,
+                "image_2": "",
+                "image_width_2": 650,
+                "title_2": "Example title",
+                "text_2": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+                "button_label_2": "",
+                "button_link_2": "",
+                "enable_image_3": true,
+                "image_3": "",
+                "image_width_3": 650,
+                "title_3": "Example title",
+                "text_3": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+                "button_label_3": "",
+                "button_link_3": ""
+              }
+            },
+            "page-background-image-text": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Impressive",
+                "title": "Large image with text box",
+                "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 550,
+                "parallax": true
+              }
+            },
+            "page-featured-collection": {
+              "type": "featured-collection",
+              "settings": {
+                "title": "Featured collection",
+                "collection": "",
+                "per_row": 4,
+                "rows": 1,
+                "mobile_scrollable": true,
+                "view_all": true
+              }
+            }
+          },
+          "block_order": [
+            "page-rich-text",
+            "page-text-columns",
+            "page-background-image-text",
+            "page-featured-collection"
+          ],
+          "settings": {
+            "page_title_enable": false,
+            "page_content_enable": false
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {
+            "mode": "disabled",
+            "popup_seconds": 5,
+            "popup_days": 30,
+            "popup_title": "Sign up and save",
+            "popup_image": "",
+            "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+            "close_text": "No thanks",
+            "enable_newsletter": true,
+            "button_label": "Optional button",
+            "button_link": "",
+            "enable_button": false
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {
+            "enable": true,
+            "collection_image_enable": true,
+            "parallax": true
+          }
+        },
+        "collection-sidebar": {
+          "type": "collection-sidebar",
+          "blocks": {
+            "1524772785241": {
+              "type": "subcollections",
+              "settings": {
+                "enable_subsubcollections": true,
+                "enable_count": false,
+                "collapsed": false
+              }
+            },
+            "1524772580942": {
+              "type": "tags_all",
+              "settings": {
+                "title": "Filter",
+                "collapsed": false
+              }
+            }
+          },
+          "block_order": [
+            "1524772785241",
+            "1524772580942"
+          ],
+          "settings": {
+            "enable_sidebar": true,
+            "filter_style": "sidebar",
+            "tags_combine": false,
+            "enable_sort": true
+          }
+        },
+        "1523298253705": {
+          "type": "slideshow",
+          "blocks": {
+            "1523298253705-0": {
+              "type": "image",
+              "settings": {
+                "top_subheading": "Optional headline",
+                "title": "Two line\ntitle slide.",
+                "title_size": 80,
+                "subheading": "",
+                "link": "",
+                "link_text": "Shop this",
+                "link_2": "",
+                "link_text_2": "Shop all",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-bottom horizontal-left",
+                "image": "",
+                "focal_point": "center center"
+              }
+            },
+            "1523298253705-1": {
+              "type": "image",
+              "settings": {
+                "top_subheading": "",
+                "title": "Two line\ntitle slide.",
+                "title_size": 80,
+                "subheading": "Optional descriptive text",
+                "link": "",
+                "link_text": "Shop this",
+                "link_2": "",
+                "link_text_2": "Shop all",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center"
+              }
+            }
+          },
+          "block_order": [
+            "1523298253705-0",
+            "1523298253705-1"
+          ],
+          "settings": {
+            "section_height": "100vh",
+            "mobile_height": "500px",
+            "parallax": true,
+            "style": "bars",
+            "autoplay": true,
+            "autoplay_speed": 7
+          }
+        },
+        "list-collections-template": {
+          "type": "list-collections-template",
+          "settings": {
+            "title_enable": true,
+            "display_type": "all",
+            "sort": "alphabetical",
+            "grid": "3"
+          }
+        },
+        "1524685456938": {
+          "type": "background-image-text",
+          "settings": {
+            "subtitle": "Impressive",
+            "title": "Large image with text box",
+            "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+            "button_label": "Shop this ⟶",
+            "button_link": "shopify:\/\/collections\/all",
+            "image": "",
+            "focal_point": "center",
+            "layout": "right",
+            "height": 650,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "1524685919990": {
+          "type": "featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "home_featured_products": "",
+            "per_row": 4,
+            "rows": 1,
+            "mobile_scrollable": true,
+            "view_all": true,
+            "divider": false
+          }
+        },
+        "1524685997883": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Join the club.",
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+            "color_background": "#000000",
+            "color_text": "#ffffff"
+          }
+        },
+        "1524686167862": {
+          "type": "featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "home_featured_products": "",
+            "per_row": 3,
+            "rows": 1,
+            "mobile_scrollable": true,
+            "view_all": true,
+            "divider": false
+          }
+        },
+        "1524686876171": {
+          "type": "featured-collections",
+          "blocks": {
+            "1524686876171-0": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1524686876171-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626135647": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626162332": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626173524": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            }
+          },
+          "block_order": [
+            "1524686876171-0",
+            "1524686876171-1",
+            "1588626135647",
+            "1588626162332",
+            "1588626173524"
+          ],
+          "settings": {
+            "title": "Collections",
+            "divider": false,
+            "per_row": 5,
+            "enable_gutter": true
+          }
+        },
+        "1525878145666": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525879359021": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Your promotion.",
+                "textarea": "",
+                "cta_text1": "Shop This",
+                "cta_link1": "shopify:\/\/collections\/all",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "33",
+                "height": 560,
+                "text_size": 115,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "80% 50%",
+                "color_accent": "#000000",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1588625715338": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Another promotion.",
+                "textarea": "",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "33",
+                "height": 500,
+                "text_size": 115,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "color_accent": "#000000",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1588625789930": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "A boxed promotion.",
+                "textarea": "Include smaller text.",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "33",
+                "height": 500,
+                "text_size": 100,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "center",
+                "color_accent": "#000000",
+                "boxed": true,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1525879359021",
+            "1588625715338",
+            "1588625789930"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 10,
+            "space_above": true,
+            "space_below": false
+          }
+        },
+        "1525881294487": {
+          "type": "promo-grid",
+          "blocks": {
+            "1588626352304": {
+              "type": "product",
+              "settings": {
+                "product": "",
+                "subheading": "Limited time",
+                "heading": "Announce your product",
+                "textarea": "Include the smaller details of your promotion in text below the title.",
+                "link_label": "Learn more",
+                "label": "New",
+                "enable_price": true,
+                "width": "50",
+                "text_size": 100,
+                "color_tint": "#000000",
+                "color_tint_opacity": 0,
+                "framed": false
+              }
+            },
+            "1588626372747": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "50",
+                "height": 300,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1588626352304",
+            "1588626372747"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 40,
+            "space_above": true,
+            "space_below": false
+          }
+        },
+        "1526493275292": {
+          "type": "promo-grid",
+          "blocks": {
+            "1588625972876": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Powerful flexibility.",
+                "textarea": "Include the smaller details of your promotion in text below the title.",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "50",
+                "height": 700,
+                "text_size": 115,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "center",
+                "color_accent": "#000000",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1588625975479": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Adaptive layouts",
+                "textarea": "Include the smaller details of your promotion in text below the title.",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "Shop All",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "50",
+                "height": 500,
+                "text_size": 100,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "color_accent": "rgba(0,0,0,0)",
+                "boxed": true,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1588625972876",
+            "1588625975479"
+          ],
+          "settings": {
+            "full_width": true,
+            "gutter_size": 20,
+            "space_above": true,
+            "space_below": false
+          }
+        },
+        "collection-promotions": {
+          "type": "collection-promotions",
+          "blocks": {
+            "1526501699095": {
+              "type": "banner",
+              "settings": {
+                "promo_collection": "",
+                "heading": "Summer Savings",
+                "text": "Add the details of your promotion",
+                "link": "shopify:\/\/collections\/all",
+                "label": "Shop now",
+                "image": "",
+                "color_tint": "#66a7d7",
+                "color_tint_opacity": 14,
+                "framed": false
+              }
+            },
+            "1588794963981": {
+              "type": "advanced",
+              "settings": {
+                "promo_collection": "",
+                "subheading": "",
+                "heading": "Free shipping over $100",
+                "textarea": "",
+                "cta_text1": "Learn more",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "100",
+                "height": 300,
+                "text_size": 100,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "center",
+                "color_accent": "#ffffff",
+                "boxed": false,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1526501699095",
+            "1588794963981"
+          ],
+          "settings": {
+            "gutter_size": 17
+          }
+        },
+        "footer-promotions": {
+          "type": "footer-promotions",
+          "blocks": {
+            "footer-promotions-0": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            },
+            "footer-promotions-1": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            },
+            "footer-promotions-2": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            }
+          },
+          "block_order": [
+            "footer-promotions-0",
+            "footer-promotions-1",
+            "footer-promotions-2"
+          ],
+          "settings": {
+            "hide_homepage": false,
+            "image_size": "wide"
+          }
+        },
+        "1588626192341": {
+          "type": "featured-collections",
+          "blocks": {
+            "1588626192341-0": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626192341-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626192341-2": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            }
+          },
+          "block_order": [
+            "1588626192341-0",
+            "1588626192341-1",
+            "1588626192341-2"
+          ],
+          "settings": {
+            "title": "More collections",
+            "divider": false,
+            "per_row": 3,
+            "enable_gutter": true
+          }
+        },
+        "1588626476600": {
+          "type": "featured-content",
+          "settings": {
+            "title": "Rich text",
+            "text": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.<\/p>",
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": true
+          }
+        },
+        "1588626523224": {
+          "type": "promo-grid",
+          "blocks": {
+            "1588626523224-0": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "33",
+                "height": 340,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            },
+            "1588626523224-1": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "33",
+                "height": 300,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            },
+            "1588626529491": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "33",
+                "height": 300,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1588626523224-0",
+            "1588626523224-1",
+            "1588626529491"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 5,
+            "space_above": false,
+            "space_below": true
+          }
+        }
+      },
+      "content_for_index": [
+        "1523298253705",
+        "1525878145666",
+        "1498163293234",
+        "1524685919990",
+        "1526493275292",
+        "1524686876171",
+        "1588626192341",
+        "1524685456938",
+        "1525881294487",
+        "1524686167862",
+        "1588626476600",
+        "1588626523224",
+        "1524685997883"
+      ]
+    },
+    "Bold": {
+      "color_body_bg": "#000000",
+      "color_body_text": "#ffffff",
+      "color_price": "#d1ba98",
+      "color_savings_text": "#b30000",
+      "color_borders": "#2b2a27",
+      "color_button": "#9f8561",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#b30000",
+      "color_small_image_bg": "#000000",
+      "color_large_image_bg": "#111111",
+      "color_header": "#000000",
+      "color_header_text": "#ffffff",
+      "color_announcement": "#cf2424",
+      "color_announcement_text": "#ffffff",
+      "color_footer": "#000000",
+      "color_footer_text": "#ffffff",
+      "color_drawer_background": "#000000",
+      "color_drawer_text": "#ffffff",
+      "color_drawer_border": "#2b2a27",
+      "color_drawer_button": "#9f8561",
+      "color_drawer_button_text": "#ffffff",
+      "color_modal_overlays": "#67635d",
+      "color_image_overlay": "#000000",
+      "color_image_overlay_opacity": 15,
+      "color_image_overlay_text_shadow": 30,
+      "type_header_font_family": "fjalla_one_n4",
+      "type_header_spacing": "150",
+      "type_header_base_size": 45,
+      "type_header_line_height": 1.2,
+      "type_header_capitalize": true,
+      "type_headers_align_text": true,
+      "type_base_font_family": "itc_conduit_n4",
+      "type_base_spacing": "50",
+      "type_base_size": 18,
+      "type_base_line_height": 1.4,
+      "type_body_align_text": true,
+      "type_navigation_style": "heading",
+      "type_navigation_size": 18,
+      "type_product_style": "heading",
+      "type_collection_font": "heading",
+      "type_collection_size": 23,
+      "button_style": "angled",
+      "icon_weight": "5px",
+      "icon_linecaps": "miter",
+      "vendor_enable": false,
+      "search_enable": false,
+      "sku_enable": false,
+      "quantity_enable": false,
+      "variant_type": "button",
+      "inventory_enable": false,
+      "product_save_amount": true,
+      "product_zoom_enable": false,
+      "quick_shop_enable": true,
+      "quick_shop_text": "Quick view",
+      "product_grid_image_size": "square",
+      "product_hover_image": false,
+      "product_color_swatches": false,
+      "collection_color_swatches": false,
+      "product_content_collapse_1": false,
+      "product_content_collapse_2": true,
+      "product_content_collapse_3": true,
+      "product_contact": false,
+      "enable_product_reviews": true,
+      "reviews_layout": "expandable",
+      "collection_grid_style": "overlaid-box",
+      "collection_grid_shape": "landscape",
+      "collection_grid_image": "collection",
+      "collection_grid_text_align": "bottom-center",
+      "collection_grid_tint": "#000000",
+      "collection_grid_opacity": 10,
+      "collection_grid_gutter": true,
+      "cart_type": "drawer",
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_youtube_link": "https:\/\/www.youtube.com\/user\/shopify",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#000000",
+      "checkout_input_background_color_mode": "transparent",
+      "checkout_sidebar_background_color": "#000000",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#ae9878",
+      "checkout_button_color": "#ae9878",
+      "checkout_error_color": "#ff6d6d",
+      "color_image_2": "#cf2424",
+      "color_image_2_opacity": 0,
+      "color_image_1": "#6d1414",
+      "color_image_1_opacity": 0,
+      "type_accent_style": "body",
+      "type_accent_bold": true,
+      "type_accent_capitalize": true,
+      "type_button_font": "heading",
+      "type_button_capitalize": false,
+      "type_header_accent_transform": true,
+      "type_base_accent_transform": true,
+      "collection_grid_font": "heading",
+      "color_image_bg": "#000000",
+      "breadcrumb": true,
+      "color_sale_tag": "#990000",
+      "color_input": "#ffffff",
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_call_to_action_color": "#a26b25",
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1524768779513": {
+              "type": "logo",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1524768779513"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "subcollection_style": "above",
+            "subcollections_per_row": 3,
+            "per_row": 5,
+            "mobile_flush_grid": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "social_enable": true,
+            "image_size": "large"
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "social_sharing_blog": true
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "blog_show_tag_filter": true,
+            "blog_show_rss": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "blog_image_size": "wide"
+          }
+        },
+        "1499790633921": {
+          "type": "background-image-text",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/all",
+            "focal_point": "center",
+            "layout": "right",
+            "height": 750,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "product-sections-template": {
+          "type": "product-sections-template",
+          "blocks": {
+            "sections-1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "sections-1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "sections-1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "sections-1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "sections-1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "sections-1592410313636",
+            "sections-1592408476245",
+            "sections-1592408474529",
+            "sections-1592410318615",
+            "sections-1592410272428"
+          ],
+          "settings": {
+          }
+        },
+        "product-story-sections": {
+          "type": "product-story-sections",
+          "blocks": {
+            "1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1592410313636",
+            "1592408476245",
+            "1592408474529",
+            "1592410318615",
+            "1592410272428"
+          ],
+          "settings": {
+          }
+        },
+        "page-sections-template": {
+          "type": "page-sections-template",
+          "blocks": {
+            "page-rich-text": {
+              "type": "rich-text",
+              "settings": {
+                "align_text": "center",
+                "narrow_column": true,
+                "enlarge_text": true
+              }
+            },
+            "page-text-columns": {
+              "type": "text-columns",
+              "settings": {
+              }
+            },
+            "page-background-image-text": {
+              "type": "background-image-text",
+              "settings": {
+                "alignment": "center",
+                "layout": "right",
+                "height": 550
+              }
+            },
+            "page-featured-collection": {
+              "type": "featured-collection",
+              "settings": {
+                "per_row": 4,
+                "rows": 1,
+                "view_all": true
+              }
+            }
+          },
+          "block_order": [
+            "page-rich-text",
+            "page-text-columns",
+            "page-background-image-text",
+            "page-featured-collection"
+          ],
+          "settings": {
+            "page_title_enable": false,
+            "page_content_enable": false
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {
+          }
+        },
+        "1524768368258": {
+          "type": "slideshow",
+          "blocks": {
+            "1524768368258-0": {
+              "type": "image",
+              "settings": {
+                "link": "shopify:\/\/collections\/all",
+                "link_text": "Shop all",
+                "text_align": "vertical-center horizontal-left",
+                "focal_point": "top center"
+              }
+            }
+          },
+          "block_order": [
+            "1524768368258-0"
+          ],
+          "settings": {
+            "section_height": "750px",
+            "mobile_height": "auto",
+            "parallax": true,
+            "style": "minimal",
+            "autoplay": true,
+            "autoplay_speed": 5
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {
+            "enable": true,
+            "collection_image_enable": false,
+            "parallax": false
+          }
+        },
+        "collection-sidebar": {
+          "type": "collection-sidebar",
+          "blocks": {
+            "1524772785241": {
+              "type": "subcollections",
+              "settings": {
+              }
+            },
+            "1524772580942": {
+              "type": "tags_all",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1524772785241",
+            "1524772580942"
+          ],
+          "settings": {
+            "enable_sidebar": true,
+            "filter_style": "sidebar",
+            "tags_combine": false,
+            "enable_sort": true
+          }
+        },
+        "1525290496166": {
+          "type": "featured-collections",
+          "blocks": {
+            "1525290496166-0": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1525290496166-2": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1525290496166-1": {
+              "type": "collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1525290496166-0",
+            "1525290496166-2",
+            "1525290496166-1"
+          ],
+          "settings": {
+            "divider": false,
+            "per_row": 3,
+            "enable_gutter": true
+          }
+        },
+        "1525969132569": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525969870126": {
+              "type": "product",
+              "settings": {
+                "link_label": "Shop now",
+                "label": "New",
+                "enable_price": true,
+                "width": "50",
+                "text_size": 100,
+                "color_tint": "#f8ebd4",
+                "color_tint_opacity": 0,
+                "framed": true
+              }
+            },
+            "1525969996422": {
+              "type": "product",
+              "settings": {
+                "link_label": "Shop now",
+                "label": "New",
+                "enable_price": true,
+                "width": "50",
+                "text_size": 100,
+                "color_tint": "#ff0000",
+                "color_tint_opacity": 0,
+                "framed": true
+              }
+            }
+          },
+          "block_order": [
+            "1525969870126",
+            "1525969996422"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 5,
+            "space_above": false,
+            "space_below": false
+          }
+        },
+        "1526048428302": {
+          "type": "featured-collection",
+          "settings": {
+            "per_row": 4,
+            "rows": 1,
+            "view_all": false,
+            "divider": false
+          }
+        },
+        "1526048519234": {
+          "type": "newsletter",
+          "settings": {
+            "color_background": "#171615",
+            "color_text": "#ffffff"
+          }
+        },
+        "1526048620689": {
+          "type": "blog-posts",
+          "settings": {
+            "title": "Our blog",
+            "blog": "news",
+            "post_limit": 3,
+            "blog_show_tags": false,
+            "blog_show_date": true,
+            "blog_show_comments": false,
+            "blog_show_author": false,
+            "view_all": true,
+            "blog_image_size": "wide",
+            "divider": false
+          }
+        },
+        "collection-promotions": {
+          "type": "collection-promotions",
+          "blocks": {
+            "1526501090474": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "50",
+                "height": 400,
+                "text_size": 120,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1526501130849": {
+              "type": "sale_collection",
+              "settings": {
+                "width": "50",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1526501360047": {
+              "type": "banner",
+              "settings": {
+                "label": "Shop 2017",
+                "color_tint": "#514f4b",
+                "color_tint_opacity": 20,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1526501090474",
+            "1526501130849",
+            "1526501360047"
+          ],
+          "settings": {
+            "gutter_size": 20
+          }
+        },
+        "1526480838446": {
+          "type": "background-image-text",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/all",
+            "focal_point": "center",
+            "layout": "left",
+            "height": 750,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "1526481284428": {
+          "type": "featured-content",
+          "settings": {
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": false
+          }
+        },
+        "1526481405629": {
+          "type": "promo-grid",
+          "blocks": {
+            "1526481405629-1": {
+              "type": "advanced",
+              "settings": {
+                "width": "100",
+                "height": 660,
+                "text_size": 120,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1526481405629-1"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 34,
+            "space_above": false,
+            "space_below": true
+          }
+        }
+      },
+      "content_for_index": [
+        "1524768368258",
+        "1526481284428",
+        "1525969132569",
+        "1525290496166",
+        "1526048428302",
+        "1526480838446",
+        "1499790633921",
+        "1526048519234",
+        "1526048620689",
+        "1526481405629"
+      ]
+    }
+  }
+}

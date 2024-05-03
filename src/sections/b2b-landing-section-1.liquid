@@ -1,0 +1,63 @@
+{% schema %}
+  {
+  	"name": "Sektion - nummer 1",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "topHeadline",
+          "label": "Top sub-overskrift"
+      },	  
+      {
+          "type": "richtext",
+          "id": "headline",
+          "label": "Overskrift"
+      },
+	  {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+      },
+	  {
+          "type": "text",
+          "id": "button-text",
+          "label": "Knap tekst"
+      },
+	  {
+          "type": "url",
+          "id": "button-url",
+          "label": "Knap url"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Knap url"
+      }
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+          {
+            "type": "text",
+			"id": "headline",
+            "label": "Overskrift"
+          },
+		  {
+            "type": "text",
+			"id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

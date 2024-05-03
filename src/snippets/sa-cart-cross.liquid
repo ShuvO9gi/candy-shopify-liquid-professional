@@ -1,0 +1,176 @@
+{% assign newArray = false %}
+{% assign zeroFill = '0000' %}
+{% assign zeroFillSize = zeroFill | size %}
+{% assign product_lists = collections.promotions-temp.products %} 
+{% for product in product_lists %}
+	{% assign indexCharSize = forloop.index0 | append:'' | size %}
+	{% assign toSlice = zeroFillSize | minus:indexCharSize %}
+	{% assign tmpZeroFill = zeroFill | slice:0,toSlice %}
+	{% assign newOrder = product.metafields.custom.packaging | default:'0' %}
+	{% assign matrix = tmpZeroFill | append:newOrder | append:'.'  | append:forloop.index0 %}
+	{% if newArray %}
+		{% assign tmpIndex = matrix | split:',' %}
+		{% assign newArray = newArray | concat:tmpIndex %}
+	{% else %}
+		{% assign newArray = matrix | split:',' %}
+	{% endif %}
+{% endfor %}
+
+{% assign newProductSort = newArray | sort %}
+{% assign poses = 0 %}
+
+{% if cart.item_count > 0 %}
+    {% for item in cart.items %}
+    {%- if item.properties['ID'] != blank -%}
+        {% assign poses = forloop.index | times: 1  %}
+    {%- endif -%}
+    {% endfor %}
+{% endif %}
+
+<div class="sa-upsell-offer" opened="true">
+    <h4 class="type-style-h3-bold">Vælg indpakning</h4>
+    <p class="type-style-p-small-bold">Hvordan skal vi pakke din ordre? </p>
+    <div class="sa-upsell-wrapper shopadjust-overflow-scroll--y">
+        <div class="sa-upsell-items">
+            {% assign is_first = false %}
+            {% for newProductSortItem in newProductSort %}
+                {% assign i = newProductSortItem | split:'.' | last | times:1 %}
+                {%- assign product = product_lists[i] -%}
+                {% assign selected = '' %}
+                {% assign checked = ''%}
+                {% if product.metafields.custom.packaging != blank %}
+                    <div data-component="upSell" class="sa-upsell-item {% if is_first == false %} first-item {% endif %} {{selected}}">
+                        <script type="application/json">
+                            {{product | json}}
+                        </script>
+                        
+                        <div class="sa-box-button">
+                            <label class="sa-radio-container">
+                                <input type="radio" {{checked}} name="packaging" value="{{product.id}}">
+                                <span class="sa-checkmark"></span>
+                            </label>
+                        </div>
+                            <div class="sa-box-label">
+                                <label class="type-style-card-desc-bold">{{product.title | truncate: 20}}</label>
+                                {% if product.price <= 0 %}
+                                    <span class="sub-label type-style-card-desc-regular">Ingen merpris</span>
+                                {% else %}
+                                    {% assign pkg_price = product.price | times: poses %}
+                                    <!-- <span class="sub-label type-style-card-desc-regular" data-pkg-price>{{pkg_price  | money | prepend: '+'}}. i alt</span>
+                                    <span class="sub-label-detail type-style-tiny-text">(5 kr. pr. blanding)</span>
+                                    --> 
+                                    <span class="sub-label type-style-card-desc-regular">(5 kr. pr. blanding)</span>
+                                    <span class="sub-label-detail type-style-tiny-text" data-pkg-price>{{pkg_price  | money | prepend: '+'}}. i alt</span>
+
+                                {% endif %}
+                            </div>
+                            <div class="sa-box-image">
+                                {% assign media = product.media.first %}
+                                {%- if media.media_type == 'image' -%}
+                                    <img
+                                        class="sa-image-product-thumbnail"
+                                        srcset="{%- if media.preview_image.width >= 550 -%}{{ media.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 1100 -%}{{ media.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 1445 -%}{{ media.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 1680 -%}{{ media.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 2048 -%}{{ media.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 2200 -%}{{ media.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 2890 -%}{{ media.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 4096 -%}{{ media.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                                                {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
+                                        sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                                        src="{{ media.preview_image | image_url: width: 1445 }}"
+                                        alt="{{ media.alt | escape }}"
+                                        loading="lazy"
+                                        width="94"
+                                        height="{{ 94 | divided_by: media.preview_image.aspect_ratio | ceil }}"
+                                        data-media-id="{{ media.id }}"
+                                        
+                                    >
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% assign is_first = true %}
+                    {% endif %}
+            {% endfor %}
+        </div> 
+    </div> 
+</div>
+
+<div class="sa-upsell-offer__detail" opened="false">
+    <h4 class="type-style-h3-bold">Gode tilbud netop nu</h4>
+    <div class="sa-cross_sell-wrapper">
+        <div class="sa-upsell-offer__detail__items">
+            {% for newProductSortItem in newProductSort %}
+                {% assign i = newProductSortItem | split:'.' | last | times:1 %}
+                {%- assign product = product_lists[i] -%}
+                {% if product.metafields.custom.cross_sell != blank %}
+                    <div data-component="upsellDetail" class="sa-upsell-detail___item">
+                        <script type="application/json">
+                            {{product | json}}
+                        </script>
+                        <div class="sa-detail___item---radio-button">
+                            <label data-button-sa-buy class="sa-radio-container">
+                                <span class="label--radio">
+                                    <span class="type-style-card-desc-bold">{{product.title}}</span>
+                                    <span class="type-style-card-desc-regular">{{product.price  | money_with_currency | prepend: '+'}}.</span>
+                                </span>
+                                <input type="checkbox" name="cross_sell" value="{{product.id}}">
+                                <span class="sa-checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="sa-detail___item---detail"> 
+                            <div class="sa-box-image sa-padding-10">
+                                {% assign media = product.media.first %}
+                                {%- if media.media_type == 'image' -%}
+                                    <img
+                                        class="sa-image-product-thumbnail"
+                                        srcset="{%- if media.preview_image.width >= 550 -%}{{ media.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 1100 -%}{{ media.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 1445 -%}{{ media.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 1680 -%}{{ media.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 2048 -%}{{ media.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 2200 -%}{{ media.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 2890 -%}{{ media.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                                                {%- if media.preview_image.width >= 4096 -%}{{ media.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                                                {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
+                                        sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                                        src="{{ media.preview_image | image_url: width: 1445 }}"
+                                        alt="{{ media.alt | escape }}"
+                                        loading="lazy"
+                                        width="100%"
+                                        height="{{ 125 | divided_by: media.preview_image.aspect_ratio | ceil }}"
+                                        data-media-id="{{ media.id }}"
+                                    
+                                    >
+                                {% endif %}
+                            </div>
+                            <div class="sa-box-actions sa-padding-10">
+                                {%- if product.description != blank -%}
+                                <div class="sa-rte">
+                                    {{ product.description }}
+                                </div>
+                                {%- endif -%}
+                                <button data-button-sa-buy class="sa-button-primary type-style-button-text-small">TILFØJ</button>
+                                
+                                <div class="sa-qty-wrapper">
+                                    <div class="sa-qty-wrapper--js jss-qty__wrapper product-card__qty-wrapper absolute top-0 left-0 w-full flex items-center bg-purple rounded-md is--visible" data-qty-wrapper="" data-qty-id="39739024703668">
+                                        <button class="bg-white rounded-md jss-qty__adjust--minus" data-qty-minus=""><span>-</span></button>
+                                        <div class="flex items-center justify-center flex-auto flex-col xl:flex-row text-[20px] sm:text-lg text-center sm:text-left font-bold font-heading tracking-wide uppercase rounded-md">
+                                            <span></span>
+                                            <span class="type-style-button-text-small"> 
+                                                <span data-key="" data-current-qty="0" class="js-qty__num_text mx-[3px]"> 1 </span>
+                                            </span>
+                                        </div>
+                                        <button class="bg-white rounded-md jss-qty__adjust--plus" data-qty-plus=""><span>+</span></button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

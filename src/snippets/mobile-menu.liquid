@@ -1,0 +1,81 @@
+{%- assign class = 'mobile-navigation' -%}
+
+
+<div class="{{ class }}" data-mobile-menu>
+  <div class="{{ class }}__wrapper" style="background-image: url({{ menu_background | image_url }}); background-size: cover;">
+    <div class="{{ class }}__holder">
+      <div class="mobile-menu-image-container">
+        {% comment %}
+          TODO: Enable this in the future
+          {{ logo | image_url: width: 300 | image_tag: width: logo_width, alt: "SlikEkspressen Logo" }}
+        {% endcomment %}
+        {%- render 'logo-mobile', width: '100', height: '60'-%}
+      </div>
+      <button class="{{ class }}__close" data-mobile-menu-close>
+        {%- render 'icon' with 'close' -%}
+      </button>
+    </div>
+    <nav class="{{ class }}__nav">
+      <ul class="{{ class }}__nav__list">
+        {%- for link in menu.links -%}
+          <li class="{{ class }}__nav__item">
+            {% if link.links == empty %}
+              <a href="{{ link.url }}" class="relative {{ class }}__nav__link">
+                <div class="relative flex">
+                  {% if link.url == '/cart' %}
+                    <div class="flex-justify-center cart-icon-holder mr-2">
+                      {%- render 'icon' with 'cart' -%}
+                    </div>
+                  {% endif %}
+                  <div class="text-center align-center w-full type-style-button-text">
+                    {{ link.title }}
+                  </div>
+                  {% if link.url == '/cart' %}
+                    <span {% if link.url == '/cart' %} data-cart-count="{{ cart.item_count }}"{% endif %}></span>
+                  {% endif %}
+                </div>
+                
+              </a>
+            {% else %}
+              <div class="flex-justify-right mobile-sublink-menu">
+                <a href="{{ link.url }}" class="relative {{ class }}__nav__link">
+                  <div class="text-center align-center w-full type-style-button-text">
+                    {{ link.title }}
+                  </div>
+                </a>
+                <span class="nav-down-arrow-mobile expand-btn collapsed">{%- render 'icon', icon: 'down-arrow-mobile' -%}</span>
+              </div>
+              <ul class="menu-list">
+                {% for sublink in link.links %}
+                  <li>
+                    <a href="{{ sublink.url }}" class="type-style-button-text">{{ sublink.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+const expandBtns = document.querySelectorAll('.mobile-navigation__nav__item .expand-btn');
+const menuLists = document.querySelectorAll('.mobile-navigation__nav__item .menu-list');  
+const navDownArrow = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.94824 3.94845C9.75298 3.75319 9.4364 3.75319 9.24114 3.94845L6.14765 7.04194L3.05397 3.94827C2.85871 3.753 2.54213 3.753 2.34687 3.94826L1.99331 4.30182C1.79805 4.49708 1.79805 4.81366 1.99331 5.00892L5.7925 8.80811C5.90186 8.91747 6.04928 8.96558 6.19212 8.95245C6.30554 8.94281 6.41631 8.8946 6.5031 8.8078L10.3018 5.00911C10.4971 4.81385 10.4971 4.49727 10.3018 4.302L9.94824 3.94845Z" fill="white"/></svg>'
+const navUpArrow = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.94824 8.05155C9.75298 8.24681 9.4364 8.24681 9.24114 8.05155L6.14765 4.95806L3.05397 8.05173C2.85871 8.247 2.54213 8.247 2.34687 8.05174L1.99331 7.69818C1.79805 7.50292 1.79805 7.18634 1.99331 6.99108L5.7925 3.19189C5.90186 3.08253 6.04928 3.03442 6.19212 3.04755C6.30554 3.05719 6.41631 3.1054 6.5031 3.1922L10.3018 6.99089C10.4971 7.18615 10.4971 7.50273 10.3018 7.698L9.94824 8.05155Z" fill="white"/></svg>'
+
+expandBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    if (menuLists[index].clientHeight) {
+      menuLists[index].style.height = 0;
+      btn.classList.add("collapsed");
+    } else {
+      var subMenuLists = menuLists[index].querySelectorAll('li');
+      menuLists[index].style.height = (subMenuLists[0].clientHeight * subMenuLists.length) + "px";
+      btn.classList.remove("collapsed");
+    }
+  });
+});
+</script>

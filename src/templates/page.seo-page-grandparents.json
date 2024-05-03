@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1649098429a773a41d": {
+      "type": "seo-landing",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1649098429a773a41d"
+  ]
+}

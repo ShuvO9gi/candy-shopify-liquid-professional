@@ -1,0 +1,115 @@
+<div class="section-container textLeftRight"">
+	<div class="page-container">
+      <div class="row">
+    	<div class="col-12 ">
+    		<h1 class="normalPage type-style-h1-bold">{{ section.settings.page_header }}</h1>
+		</div>
+      </div>
+      {% assign img = 'left' %}
+      
+      {%- for block in section.blocks -%}
+		{% if img == 'left' %}
+          {% assign rowExtra = 'rowReverseMobile' %}
+          {% assign colPaddingFirstRight = '' %}
+          {% assign colPaddingLastRight = 'textLeftRight-pageRight' %}
+          
+          {% assign img = 'right' %}
+      
+        {% else %}
+          {% assign rowExtra = 'rowReverse rowReverseMobile' %}
+          {% assign colPaddingFirstRight = 'textLeftRight-pageRight' %}
+          {% assign colPaddingLastRight = '' %}
+          
+          {% assign img = 'left' %}
+        {% endif %}
+
+        <div class="row {{ rowExtra }}">
+			<div class="col-6 ">
+				<div class="{{ colPaddingFirstRight }}">
+					<div class="textLeftRight-smallPageHeadline type-style-h-subhead">{{ block.settings.small-headline }}</div>
+					<div class="textLeftRight-Headline type-style-h2-bold">{{ block.settings.headline }}</div>
+					<div class="textLeftRight-pageText type-style-p-regular">
+    					{{ block.settings.content }}
+					</div>
+					<div>
+						<a href="{{ block.settings.button_destination }}">
+							<div class="orangeButton type-style-button-text mobileBig">
+								{{ block.settings.button_text }}
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="{{ colPaddingLastRight }}">
+					<img src="{{ block.settings.image | image_url }}" class="textLeftRight-img"/>
+				</div>
+			</div>
+		</div>
+      {% endfor %}
+	</div>
+</div>
+{% schema %}
+  {
+  	"name": "2022 - text left right",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+      {
+          "type": "text",
+          "id": "page_header",
+          "label": "Page header text"
+      }
+    ],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+        	{
+                "type": "text",
+                "id": "small-headline",
+                "label": "Overskrift (lille)"
+            },
+            {
+                "type": "text",
+                "id": "headline",
+                "label": "Overskrift"
+            },
+            {
+                "type": "richtext",
+                "id": "content",
+                "label": "Tekst"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Tekst på knap"
+            },
+            {
+                "type": "url",
+                "id": "button_destination",
+                "label": "Side link"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Billede"
+            }      
+        ]
+      }
+	],
+    "presets": [
+      {
+        "name": "2022 - text left right"
+      }
+    ]
+  }
+  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

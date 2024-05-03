@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1649098429a773a41d": {
+      "type": "seo-landing",
+      "blocks": {
+        "807275e2-d4b5-427f-81c6-731ca6a75c93": {
+          "type": "usp",
+          "settings": {
+            "usp-headline": "Dejlig arbejdesplads",
+            "usp-description": "<p>Fuldtidsstilling i Randers som daglig leder<\/p>"
+          }
+        },
+        "814e7855-eb74-4ce4-bffa-4ec8fbb768ff": {
+          "type": "usp",
+          "settings": {
+            "usp-headline": "Spændende rejse",
+            "usp-description": "<p>Vi er en virksomhed hvor det går stærkt og som har en vild rejse foran os<\/p>"
+          }
+        },
+        "b5351c09-9815-4155-a46c-30990bba002b": {
+          "type": "sections",
+          "settings": {
+            "headline": "SlikEkspressen søger daglig leder til pakkeholdet",
+            "content": "<p><br\/>De vigtigste arbejdsopgaver er:<\/p><p><\/p><p>• Ansvar for vagtplan <br\/>• Ansvar for rekruttering og oplæring af nye medarbejdere; de fleste er fra 15 til 22 år gamle<br\/>• Ansvar for procedurer <br\/>• Ansvar for motivation og trivsel blandt pakkerne; daglig hands-on ledelse<br\/>• Dagligt ansvar for at der bliver pakket effektivt og korrekt; du har lyst til at finde smartere måder at gøre tingene på<\/p><p><\/p><p>Vi søger en:<\/p><p>• Der har erfaring med ledelse af unge mennesker – gerne fra sport eller spejder <br\/>• Gerne erfaring med pakning og\/eller dagligvare-butikker<br\/>• Der elsker blandingen af praktisk arbejde og planlægning<br\/>• Godt kan lide at optimere process også ifht til at skabe en forretning<\/p><p><\/p><p>Hvem er du?<\/p><p>• Du er ansvarsbevidst – du tager selv ansvar og tager beslutninger <br\/>• Du er glad og positiv og dit gode humør smitter på andre – du har en klassisk ”can do attitude” <br\/>• Du elsker når der sker noget og når der er travlt <br\/>• Du har masser af energi<\/p><p><\/p><p>Vi tilbyder:<\/p><p>• Løn efter aftale<br\/>• Fedt arbejdsmiljø med plads til at gøre en forskel<br\/>• Du bliver en del af en vild vækstrejse i en stærk virksomhed<br\/>• Du er med til at udvikle fremtidens værktøj til digitale slikkøb<br\/>• ….og en gang imellem er der smagsprøver <\/p><p><\/p><p>Detaljer:<br\/>• Arbejdsplads: Kertemindevej 58, 8940 Randers<br\/>• Ansættelse: hurtigst muligt<br\/>• Send din ansøgning og CV til: team@slikekspressen.dk<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "807275e2-d4b5-427f-81c6-731ca6a75c93",
+        "814e7855-eb74-4ce4-bffa-4ec8fbb768ff",
+        "b5351c09-9815-4155-a46c-30990bba002b"
+      ],
+      "settings": {
+        "h1-headline": "Daglig leder til pakkeholdet",
+        "top-description": "<p>Vi søger en fuldtids teamleder til den daglig drift af Slikekspressen, som er en online bland-selv slikbutik i <br\/>hurtig vækst. Vi er super stolte af vores friske, lækre slik og af at vi er dygtige til at pakke lige det slik, som kunderne selv har valgt. <\/p>",
+        "top-image": "shopify:\/\/shop_images\/slikskaal.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1649098429a773a41d"
+  ]
+}

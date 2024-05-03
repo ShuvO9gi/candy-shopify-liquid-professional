@@ -1,0 +1,126 @@
+{%- case icon -%}
+  {%- when 'chevron-down' -%}
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 1L5 5L1 1" stroke="#6E4695" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  {%- when 'check' -%}
+    <svg
+      class="Icon Icon--check"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-check"
+    >
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  {%- when 'close' -%}
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.99988" y="3.41418" width="2" height="15" rx="0.5" transform="rotate(-45 1.99988 3.41418)" fill="white"/>
+      <rect width="2" height="15" rx="0.5" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 14.0209 3.41418)" fill="white"/>
+    </svg>
+  {%- when 'close-dark' -%}
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.9999" y="3.41431" width="2" height="15" rx="0.5" transform="rotate(-45 1.9999 3.41431)" fill="#323232"/>
+      <rect width="2" height="15" rx="0.5" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 14.0209 3.41431)" fill="#323232"/>
+    </svg>
+  {%- when 'trash' -%}
+    <svg
+      class="Icon Icon--trash"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#ED8A33"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-trash-2"
+    >
+      <polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line>
+    </svg>
+  {%- when 'menu' -%}
+    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.500001 2C0.223858 2 -9.78514e-09 1.77614 -2.18557e-08 1.5L-6.55671e-08 0.5C-7.76377e-08 0.223858 0.223858 -9.78513e-09 0.5 -2.18557e-08L20.5 -4.19246e-07C20.7761 -4.31317e-07 21 0.223857 21 0.499999L21 1.5C21 1.77614 20.7761 2 20.5 2L0.500001 2Z" fill="#323232"/>
+      <path d="M0.500001 9C0.223858 9 -9.78514e-09 8.77614 -2.18557e-08 8.5L-6.55671e-08 7.5C-7.76377e-08 7.22386 0.223858 7 0.5 7L20.5 7C20.7761 7 21 7.22386 21 7.5L21 8.5C21 8.77614 20.7761 9 20.5 9L0.500001 9Z" fill="#323232"/>
+      <path d="M0.500001 16C0.223858 16 -9.78514e-09 15.7761 -2.18557e-08 15.5L-6.55671e-08 14.5C-7.76377e-08 14.2239 0.223858 14 0.5 14L20.5 14C20.7761 14 21 14.2239 21 14.5L21 15.5C21 15.7761 20.7761 16 20.5 16L0.500001 16Z" fill="#323232"/>
+    </svg>
+  {%- when 'info' -%}
+    <svg
+      class="Icon Icon--info"
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="7.5" cy="7.5" r="6.5" fill="#FFEEB0" stroke="#FBD754" stroke-width="2"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M8 4H7V5H8V4ZM8 6H7V11H8V6Z" fill="black"/>
+    </svg>
+  {%- when 'filter' -%}
+    <svg
+      class="Icon Icon--filter"
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="0.5" y1="1.71429" x2="11.5" y2="1.71429" stroke="#5D2E8E" stroke-linecap="round"/> <line x1="0.5" y1="5.71429" x2="11.5" y2="5.71429" stroke="#5D2E8E" stroke-linecap="round"/> <line x1="0.5" y1="9.71429" x2="11.5" y2="9.71429" stroke="#5D2E8E" stroke-linecap="round"/> <circle cx="7.5" cy="1.71429" r="1.5" fill="#5D2E8E"/> <circle cx="3.5" cy="5.71429" r="1.5" fill="#5D2E8E"/> <circle cx="10.5" cy="9.71429" r="1.5" fill="#5D2E8E"/>
+    </svg>
+  {%- when 'cart' -%}
+    <svg
+      class="Icon Icon--cart cart-icons"
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path class="cart-icons" d="M5.1 13.6C4.165 13.6 3.4 14.365 3.4 15.3C3.4 16.235 4.165 17 5.1 17C6.035 17 6.8 16.235 6.8 15.3C6.8 14.365 6.035 13.6 5.1 13.6ZM0 0V1.7H1.7L4.76 8.16L3.57 10.2C3.485 10.455 3.4 10.795 3.4 11.05C3.4 11.985 4.165 12.75 5.1 12.75H15.3V11.05H5.44C5.355 11.05 5.27 10.965 5.27 10.88V10.795L6.035 9.34997H12.325C13.005 9.34997 13.515 9.00997 13.77 8.49997L16.83 2.975C17 2.805 17 2.72 17 2.55C17 2.04 16.66 1.7 16.15 1.7H3.57L2.805 0H0ZM13.6 13.6C12.665 13.6 11.9 14.365 11.9 15.3C11.9 16.235 12.665 17 13.6 17C14.535 17 15.3 16.235 15.3 15.3C15.3 14.365 14.535 13.6 13.6 13.6Z" />
+    </svg>
+  {%- when 'search' -%}
+    <svg
+      height="32px"
+      id="Layer_1"
+      style="enable-background:new 0 0 32 32;"
+      version="1.1"
+      viewBox="0 0 32 32"
+      width="32px"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g transform="translate(576 192)"><path d="M-544.88-165.121l-7.342-7.342c-1.095,1.701-2.541,3.148-4.242,4.242l7.343,7.342c1.172,1.172,3.071,1.172,4.241,0   C-543.707-162.048-543.707-163.947-544.88-165.121z"/><path d="M-552-180c0-6.627-5.373-12-12-12s-12,5.373-12,12s5.373,12,12,12S-552-173.373-552-180z M-564-171c-4.964,0-9-4.036-9-9   c0-4.963,4.036-9,9-9c4.963,0,9,4.037,9,9C-555-175.036-559.037-171-564-171z"/><path d="M-571-180h2c0-2.757,2.242-5,5-5v-2C-567.86-187-571-183.858-571-180z"/></g>
+    </svg>
+  {%- when 'search-light' -%}
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="42" height="42" rx="21" fill="#FFAD05"/><path d="M14.0204 28.5568L18.6241 23.9123" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="22.5" cy="19.5" r="5.5" stroke="white" stroke-width="2"/>
+    </svg>
+  {%- when 'down-arrow' -%}
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.94824 0.948511C8.75298 0.753249 8.4364 0.753249 8.24114 0.948511L5.14765 4.042L2.05397 0.948326C1.85871 0.753064 1.54213 0.753064 1.34687 0.948326L0.993314 1.30188C0.798052 1.49714 0.798052 1.81372 0.993314 2.00899L4.7925 5.80818C4.90186 5.91753 5.04928 5.96564 5.19212 5.95251C5.30554 5.94287 5.41631 5.89466 5.5031 5.80787L9.3018 2.00917C9.49706 1.81391 9.49706 1.49733 9.3018 1.30206L8.94824 0.948511Z" fill="#323232"/>
+    </svg>
+  {%- when 'down-arrow-mobile' -%}
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.94824 3.94845C9.75298 3.75319 9.4364 3.75319 9.24114 3.94845L6.14765 7.04194L3.05397 3.94827C2.85871 3.753 2.54213 3.753 2.34687 3.94826L1.99331 4.30182C1.79805 4.49708 1.79805 4.81366 1.99331 5.00892L5.7925 8.80811C5.90186 8.91747 6.04928 8.96558 6.19212 8.95245C6.30554 8.94281 6.41631 8.8946 6.5031 8.8078L10.3018 5.00911C10.4971 4.81385 10.4971 4.49727 10.3018 4.302L9.94824 3.94845Z" fill="white"/>
+    </svg>
+  {%- when 'star-filled' -%}
+    <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.2387 21.4992C18.0809 21.4999 17.9268 21.4507 17.7986 21.3586L11.77 16.988L5.74141 21.3586C5.61261 21.452 5.45744 21.5021 5.29834 21.5015C5.13923 21.5009 4.98443 21.4498 4.85631 21.3554C4.7282 21.2611 4.63341 21.1284 4.58565 20.9766C4.53789 20.8249 4.53963 20.6618 4.59063 20.5111L6.94188 13.5469L0.84813 9.368C0.716132 9.2776 0.616511 9.14729 0.563817 8.99625C0.511123 8.84519 0.50812 8.68123 0.555245 8.52834C0.60237 8.37544 0.697155 8.24162 0.82575 8.14643C0.95434 8.05124 1.11001 7.99967 1.27 7.99925H8.78781L11.0565 1.01722C11.1054 0.866475 11.2008 0.735085 11.329 0.641905C11.4571 0.548725 11.6115 0.498535 11.77 0.498535C11.9284 0.498535 12.0828 0.548725 12.211 0.641905C12.3392 0.735085 12.4345 0.866475 12.4834 1.01722L14.7522 8.00159H22.27C22.4302 8.0015 22.5862 8.05273 22.7152 8.14774C22.8441 8.24274 22.9393 8.37655 22.9867 8.52956C23.0342 8.68258 23.0313 8.84674 22.9787 8.99804C22.9261 9.14929 22.8264 9.2798 22.6942 9.3703L16.5981 13.5469L18.9479 20.5092C18.986 20.622 18.9967 20.7421 18.9792 20.8598C18.9617 20.9775 18.9164 21.0893 18.8471 21.186C18.7778 21.2827 18.6865 21.3616 18.5807 21.4161C18.4749 21.4705 18.3577 21.499 18.2387 21.4992Z" fill="#ED9F44"/>
+    </svg>
+  {%- when 'star-empty' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+      <path d="M23.4939 8.75049H15.4314L12.9939 1.25049L10.5564 8.75049H2.4939L9.05639 13.2505L6.52515 20.7505L12.9939 16.063L19.4626 20.7505L16.9314 13.2505L23.4939 8.75049Z" stroke="#ED9F44" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  {%- when 'star-half' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+      <path d="M23.4939 8.75049H15.4314L12.9939 1.25049L10.5564 8.75049H2.4939L9.05639 13.2505L6.52515 20.7505L12.9939 16.063L19.4626 20.7505L16.9314 13.2505L23.4939 8.75049Z" stroke="#ED9F44" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M12.9939 1.25049V16.063L6.52515 20.7505L9.05639 13.2505L2.4939 8.75049H10.5564L12.9939 1.25049Z" fill="#ED9F44"/>
+    </svg>
+{%- endcase -%}

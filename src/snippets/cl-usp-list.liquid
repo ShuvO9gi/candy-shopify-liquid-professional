@@ -1,0 +1,89 @@
+<style>
+  .usp-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: left;
+    margin: 0;
+    gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+    padding-top: 30px;
+  }
+
+  .usp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .usp .cl-headline {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .material-icons {
+    height: 55px;
+  }
+
+  /* Responsive font sizes */
+  @media (max-width: 768px) {
+    .usp-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .usp {
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .usp .cl-headline {
+      font-size: 16px;
+    }
+
+    .material-icons {
+      height: 50px;
+    }
+  }
+</style>
+
+<div class="usp-list">
+  <div class="usp">
+    <img class="material-icons" loading="lazy" src="{{ 'SlikEks_icon_transport.svg' | asset_url }}" alt="Truck Icon">
+    <div>
+      <p class="cl-headline">Gratis fragt</p>
+      <p class="twb-hidden md:twb-block">Køb for over 399 Kr. og få gratis fragt</p>
+      <p class="twb-block md:twb-hidden">Ved køb over 399 Kr.</p>
+    </div>
+  </div>
+  <div class="usp">
+    <img class="material-icons" loading="lazy" src="{{ 'SlikEks_icon_ur.svg' | asset_url }}" alt="timer">
+    <div>
+      <p class="cl-headline">Vi sender i dag</p>
+      <p class="twb-hidden md:twb-block">Bestil inden 14:00 (Alle hverdage)</p>
+      <p class="twb-block md:twb-hidden">Alle hverdage</p>
+    </div>
+  </div>
+  <div class="usp">
+    <img class="material-icons" loading="lazy" src="{{ 'SlikEks_icon_slik.svg' | asset_url }}" alt="candy">
+
+    <div>
+      <p class="cl-headline twb-hidden md:twb-block">Kæmpe udvalg</p>
+      <p class="cl-headline twb-block md:twb-hidden">+450 varianter</p>
+      <p class="twb-hidden md:twb-block">+450 varianter direkte fra fabrikken</p>
+      <p class="twb-block md:twb-hidden">Direkte fra fabrikken</p>
+    </div>
+  </div>
+  <div class="usp">
+    <img class="material-icons" loading="lazy" src="{{ 'SlikEks_icon_hygiejne.svg' | asset_url }}" alt="Soap">
+
+    <div>
+      <p class="cl-headline">100% hygiejnisk</p>
+      <p class="twb-hidden md:twb-block">Pakket med handsker og hårnet</p>
+      <p class="twb-block md:twb-hidden">Pakket med handsker</p>
+    </div>
+  </div>
+</div>

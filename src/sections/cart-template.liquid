@@ -1,0 +1,198 @@
+{%- assign s = section.settings -%}
+
+{%- assign link_to_collection = s.coll -%}
+{%- assign coll_cta_text = s.coll_cta_text -%}
+{%- assign cart_page_shipping_price = '00,00' -%}
+{%- assign shipping_price = settings.shipping_price | default: 4900 -%}
+{% comment %} {%- assign cart_total = cart.total_price | plus: shipping_price -%}{% endcomment %}
+{%- assign cart_total = cart.total_price -%}
+
+<div class="cart-page" data-component="cart" data-cart-total="{{ cart.total_price }}" data-purchase-limit="{{ s.purchase_limit | times: 100 }}">
+  <div class="page-width page-content">
+    <header class="cartMargin justify-between mb-10">
+      <div>
+	      <h1 class="cartHeadline text-5xl font-heading font-black">{{ 'cart.general.title' | t }}</h1>
+      </div>
+      {%- if cart.item_count > 0 -%}
+        <a href="{{ link_to_collection }}" class="btn btn--purple bg-purpleLight text-white">{{ coll_cta_text }}</a>
+      {%- endif -%}
+    </header>
+
+    <div data-cart-content>
+      {%- if cart.item_count > 0 -%}
+        <form action="/cart" method="POST" data-form>
+          <div class="flex flex-wrap">
+            <div class="cart-page__line-items bg-white rounded-md p-5 shadow-custom sm:p-9">
+              <ul data-line-item-list>
+                {%- for item in cart.items -%}
+                  {%- if item.properties['Name'] == blank -%}
+                    <li class="line-item" data-normal-item data-normal-item-key={{ item.key }} data-line-item-id="{{ item.id }}" data-normal-item-qty="{{ item.quantity }}">
+                      {%- render 'line-item-normal' with item: item -%}
+                    </li>
+                  {%- else -%}
+                    {%- assign properties = properties | append: item.properties['Name'] | append: ',' -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- assign new_properties = properties | split: ',' | uniq -%}
+
+                <ul class="candy-outer-list">
+                  {%- for prop in new_properties -%}
+                    <li class="line-item" data-candybag-item data-candybag-item-id="{{ prop }}">
+                      {%- render 'line-item-candy' with prop: prop, image: s.candy_bag_image -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </ul>
+            </div>
+
+            <div class="cart-page__overview self-start sm:sticky sm:top-40 bg-white rounded-md p-9 shadow-custom">
+              <p class="mb-3 text-2xl font-subheading font-semibold text-purple">{{ 'cart.general.overview' | t }}</p>
+
+              <div class="flex items-center justify-between mb-2">
+                <p class="font-body font-normal text-dark">{{ 'cart.general.subtotal' | t }}</p>
+                <p class="font-body font-normal text-dark" data-subtotal>{{ cart.total_price | money }}</p>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <p class="font-body font-normal text-dark">{{ 'cart.general.shipping' | t }}</p>
+                <p class="font-body font-normal text-dark" data-subtotal>{{ cart_page_shipping_price | money }}*</p>
+              </div>
+
+              <div class="flex items-center justify-between mb-8">
+                <p class="font-body font-bold text-dark">{{ 'cart.label.total' | t }}</p>
+                <p class="font-body font-bold text-dark" data-total>{{ cart_total | money }}</p>
+              </div>
+
+              <div class="terms flex mb-4">
+                <input type="checkbox" name="terms" id="terms" data-terms>
+                <label class="flex items-center m-0" for="terms">
+                  <div class="checkbox flex items-center justify-center w-3 h-3 mr-1 rounded-sm border-solid border border-dark">
+                    {%- render 'icon' with 'check' -%}
+                  </div>
+
+                  <span>{{ 'cart.terms.accept_html' | t }}</span>
+                </label>
+              </div>
+
+              <button class="btn w-full h-12" type="submit" onclick="pushDlEventCheckout()" name="checkout" data-checkout-button>{{ 'cart.general.checkout' | t }}</button>
+
+              <div class="flex items-center justify-between mb-8">
+                <p class="mt-3 text-[15px]">*{{ 'cart.general.shipping_at_checkout' | t }}</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      {%- else -%}
+        <div class="bg-white rounded-md p-9 shadow-custom">
+          <p>{{ 'cart.general.empty' | t }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="terms__modal flex items-center justify-center fixed top-0 left-0 w-full h-screen bg-modalBg z-50 is--hidden" data-terms-modal>
+    <div class="terms__modal__inner relative max p-9 rounded-md bg-white shadow-custom">
+      <p class="mb-3 text-4xl font-subheading font-semibold">{{ 'cart.terms.accept_title' | t }}</p>
+      <p class="mb-7">{{ 'cart.terms.accept_subtext' | t }}</p>
+
+      <div class="flex items-center justify-between">
+        <button class="btn w-full mr-3" data-terms-accept>{{ 'cart.terms.accept' | t }}</button>
+        <button class="btn btn--outline w-full ml-3" data-terms-decline>{{ 'cart.terms.decline' | t }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="terms__modal flex items-center justify-center fixed top-0 left-0 w-full h-screen bg-modalBg z-50 is--hidden" data-limit-modal>
+    <div class="terms__modal__inner relative max p-9 rounded-md bg-white shadow-custom">
+      <p class="mb-3 text-4xl font-subheading font-semibold">{{ 'cart.limit.title' | t }}</p>
+      <p class="mb-7">{{ 'cart.limit.subtext' | t }}</p>
+
+      <div class="flex items-center justify-between">
+        <button class="btn w-full" data-limit-close>{{ 'cart.limit.button_text' | t }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  //begin checkout for non Shopify+
+      function pushDlEventCheckout() {
+          var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
+          .then(response => response.json())
+          .then(data => {
+              var lineproducts = data.items;
+              var contents = [];
+              for (let i = 0; i < lineproducts.length; i++) {
+                  contents.push({
+                      'item_name': lineproducts[i]['title'],
+                      'item_id': lineproducts[i]['product_id'],
+                      'item_sku': lineproducts[i]['sku'],
+                      'item_variant': lineproducts[i]['variant_id'],
+                      'price': lineproducts[i]['price'] / 100,
+                      'item_brand': lineproducts[i]['vendor'],
+                      'item_category': lineproducts[i]['product_type'],
+                      'item_image': lineproducts[i]['image'],
+                      'quantity': lineproducts[i]['quantity']
+                  });
+              }
+              dataLayer.push({ ecommerce: null });
+              dataLayer.push({
+                  'event': 'begin_checkout_stape',
+                  {%  if customer %}
+                  'CustomerEmail' : '{{ customer.email }}',
+                  'CustomerFirstName' : '{{ customer.first_name }}',
+                  'CustomerLastName' : '{{ customer.last_name }}',
+                  'CustomerId': '{{ customer.id | remove: "'" }}',
+                  {%  endif %}
+                  'ecommerce': {
+                      'cart_quantity': data.item_count,
+                      'cart_total': data.total_price/100,
+                      'currency': data.currency,
+                      'items': contents
+                  }
+              });
+          });
+      }  
+</script>
+
+{% schema %}
+  {
+    "name": "Cart page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Minimum purchase limit"
+      },
+      {
+        "type": "number",
+        "id": "purchase_limit",
+        "label": "Purchase limit",
+        "default": 129
+      },
+      {
+        "type": "header",
+        "content": "Back to shop CTA"
+      },
+      {
+        "type": "url",
+        "id": "coll",
+        "label": "Choose what collection"
+      },
+      {
+        "type": "text",
+        "id": "coll_cta_text",
+        "label": "CTA text"
+      },
+      {
+        "type": "header",
+        "content": "Candy bag image"
+      },
+      {
+        "type": "image_picker",
+        "id": "candy_bag_image",
+        "label": "Candy bag image"
+      }
+    ]
+  }
+{% endschema %}

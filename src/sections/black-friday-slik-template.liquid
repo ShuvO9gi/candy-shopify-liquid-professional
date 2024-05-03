@@ -1,0 +1,440 @@
+{%- assign class = 'bland-selv-slik' -%}
+{%- assign s = section.settings -%}
+{%- assign paginateBy = s.paginate -%}
+{%- assign delivery_text = 'bland_selv.speech_bubbles.delivery' | t -%}
+{%- assign price_limit_text = 'bland_selv.speech_bubbles.price_limit' | t -%}
+
+{% paginate collection.products by paginateBy %}
+
+{%- capture config -%}
+  {
+    "handle": "{{ collection.handle }}",
+    "totalProducts": {{ collection.all_products_count }},
+    "paginate": {{ paginateBy | json }},
+    "currentPage": {{ paginate.current_page | json }},
+    "priceLimit": {{ s.price_limit | json }}
+  }
+{%- endcapture -%}
+   
+<div class="{{ class }}" data-config='{{ config }}' data-component="speechBubble">
+  <section class="{{ class }}__products">
+    <div class="page-width">
+      <div class="flex items-start">
+        <div class="filter fixed lg:sticky top-0 lg:top-28 lg:self-start left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out h-full min-w-[300px] lg:w-3/12 pt-10 lg:pt-[90px] bg-white shadow-custom z-100 lg:z-0" data-filter-drawer data-component="filterSidebar">
+          <div class="flex items-center justify-between mt-[10px] lg:mt-0 mb-4 px-5 lg:pl-[10px] lg:pr-0 text-purple font-bold text-base" data-filter-close>
+            <span>{{ 'bland_selv.general.filter_title' | t }}</span>
+            <span class="lg:hidden">{%- render 'icon' with 'close' -%}</span>
+          </div>
+
+          <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto">
+            {%- assign filter_cat_arr = blank -%}
+
+            {%- for b in section.blocks -%}
+              {%- case b.type -%}
+                {%- when 'filter_type' -%}
+                  {%- assign bs = b.settings -%}
+                  {%- assign filter_cat_arr = filter_cat_arr | append: bs.category | append: ',' -%}
+              {%- endcase -%}
+            {%- endfor -%}
+
+            {%- assign filter_cat_arr = filter_cat_arr | split: ',' | uniq -%}
+
+            <ul>
+              {%- for cat in filter_cat_arr -%}
+                <li class="mb-3 last:mb-0">
+                  <div class="rounded-md shadow-filterItem">
+                    <div class="filter__item__toggle flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md cursor-pointer" data-filter-toggle>
+                      <span class="text-pink text-sm font-semibold">{{ cat | capitalize }}</span>
+                      <span class="flex items-center justify-center w-5 h-5 transition-transform duration-200 ease-in-out" data-filter-icon>{%- render 'icon' with 'chevron-down' -%}</span>
+                    </div>
+
+                    <div class="filter__item__wrapper transition-maxHeight duration-300 ease-in-out overflow-hidden" data-filter-wrapper>
+                      <ul class="">
+                        {%- for b in section.blocks -%}
+                          {%- case b.type -%}
+                            {%- when 'filter_type' -%}
+                              {%- assign bs = b.settings -%}
+                              {%- assign filter_cat = bs.category -%}
+                              {%- assign filter_name = bs.filter_name -%}
+                              {%- assign filter_id = bs.filter_id -%}
+                              {%- assign filter_type = bs.type -%}
+
+                              {%- if filter_cat == cat -%}
+                                <li class="filter__item flex items-center justify-between px-3 py-[10px] first:pt-5 last:pb-5 cursor-pointer" data-filter-item data-filter-type="{{ filter_type }}" data-filter-id="{{ filter_id }}">
+                                  <p class="font-body font-semibold text-purple text-sm transition-color duration-100 ease-out">{{ filter_name }}</p>
+                                  <div class="filter__item__dot w-2 h-2 ml-5 border-2 border-pink rounded-full transition-color duration-100 ease-out"></div>
+                                </li>
+                              {%- endif -%}
+                          {%- endcase -%}
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div><!-- /filter-list -->
+        </div>
+      
+        <div class="items relative lg:w-9/12">
+          <svg xmlns="http://www.w3.org/2000/svg" id="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff849e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info visually-hidden"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+
+          <div class="{{ class }}__bubble absolute top-0 left-1/2 transform -translate-x-1/2">
+            {%- render 'speech-bubble', text: delivery_text, class: 'right' -%}
+          </div>
+
+          {%- if s.title != blank -%}
+            <div class="{{ class }}--title text-[24px] sm:text-[36px] font-normal mb-10 text-purple">{{ s.title }}</div>
+          {%- endif -%}
+
+          <ul class="{{ class }}__products-wrapper flex flex-wrap -mt-8 -ml-2" data-product-list>
+              {%- for product in collection.products -%}
+                {%- comment -%} 
+                  Products are loaded with javascript 
+                  /js/custom/blandSelvSlik.js
+                {%- endcomment -%}
+              {%- endfor -%}
+          </ul>
+
+          <div class="flex justify-center load-more-holder">
+            <button class="load-more btn mt-12 sm:mt-10" data-load-more>
+              <span>{{ 'bland_selv.general.load_more' | t }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card__info fixed top-0 left-0 w-full h-screen flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 ease-out z-100" data-info-modal>
+      <div class="overlay relative max-w-[90%] rounded-md">
+        <div class="product-card__info__inner relative max-w-xl max-h-[75vh] !rounded-md bg-white text-xs sm:text-base shadow-custom">
+          <div class="product-card__info__header flex items-center justify-between px-4 py-2 bg-lightPink rounded-t-md">
+            <div class="flex items-center justify-center">
+              <img class="block w-12 h-12 mr-4 md:mr-7" src="" alt="" data-info-modal-image>
+              <span class="max-w-[80%] text-purple font-bold" data-info-modal-title></span>
+            </div>
+            <span class="cursor-pointer" data-close-info>{%- render 'icon' with 'close' -%}</span>
+          </div>
+
+          <div class="product-card__info__wrapper max-h-[60vh] p-4 text-purple overflow-auto" data-info-modal-description>
+            {%- comment -%} Info content is inserted via js {%- endcomment -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} Sticky cart {%- endcomment -%}
+  <div class="{{ class }}__sticky fixed bottom-0 left-0 w-full sm:h-[80px] text-white transform transition-transform duration-300 ease-out z-50 translate-y-full" data-sticky-bar>
+    <div class="{{ class }}__sticky__filter-button flex justify-start sm:hidden" data-sticky-filter-btn>
+      <div class="">
+        <button class="buttonCorners flex items-center justify-center w-full h-[46px] bg-yellow text-purpleText font-bold text-2xs uppercase rounded-md" data-filter-button>
+          <span class="mr-[6px]">{%- render 'icon' with 'filter' -%}</span>
+          <span>{{ 'bland_selv.general.search_products_here' | t }}</span>
+        </button>
+      </div>
+    </div>
+
+    <div data-sticky-total-btn class="bagPurpleArea page-width bg-purple relative flex flex-col sm:flex-row items-start sm:items-center justify-center sm:justify-end lg:justify-between h-[110px] sm:h-full">
+      <button class="hidden sm:flex lg:hidden items-center justify-center absolute top-1/2 left-[17px] transform -translate-y-1/2 w-[180px] h-[46px] bg-yellow text-purpleText font-bold text-2xs uppercase rounded-md" data-filter-button>
+        <span class="mr-[6px]">{%- render 'icon' with 'filter' -%}</span>
+        <span>{{ 'bland_selv.general.search_products' | t }}</span>
+      </button>
+
+      <div class="bagPurpleAreaText {{ class }}__sticky__text-wrapper flex flex-row-reverse sm:flex-col items-end sm:items-start justify-between w-full sm:w-[unset] mb-2 sm:mb-0 sm:mr-2 price-flex">
+        
+        <div  class="space-gram"  style="">
+          <p class="text-xs textGram">{{ 'bland_selv.general.grams' | t }} <span class="font-semibold" data-gram-elem></span>.</p>			
+        </div>
+
+        <div class="space-price" style="">
+          <p class="priceBagCart whitespace-nowrap">{{ 'bland_selv.general.price' | t }} <span class="font-semibold" data-total-price-elem></span>.</p>	
+        </div>
+        
+        <div style="clear: both;height: 1px;width: 1px;"></div>        
+        {%- comment -%}
+        <div class="relative">
+          {%- comment -%} Desktop speech bubble {%- endcomment -%}
+          <div class="{{ class }}__bubble hidden lg:block absolute bottom-priceBubble left-1/2 opacity-0 transition-opacity" data-price-speech-bubble>
+            {%- render 'speech-bubble', text: price_limit_text, class: 'left' -%}
+          </div>
+
+          <p class="text-xs textGram">{{ 'bland_selv.general.grams' | t }} <span class="font-semibold" data-gram-elem></span></p>
+        </div>
+
+        <div class="relative leading-1">
+          {%- comment -%} Mobile speech bubble {%- endcomment -%}
+          <div class="{{ class }}__bubble block lg:hidden absolute bottom-priceBubble left-1/2 opacity-0 transition-opacity" data-price-speech-bubble>
+            {%- render 'speech-bubble', text: price_limit_text, class: 'left' -%}
+          </div>
+
+          <p class="priceBagCart whitespace-nowrap">{{ 'bland_selv.general.price' | t }} <span class="font-semibold" data-total-price-elem></span></p>
+        </div>
+        {%- endcomment -%}
+      </div>
+
+      <div class="{{ class }}__sticky__button-wrapper flex justify-between sm:justify-end w-full sm:w-[unset] pl-0 sm:pl-[10px]"> 
+        <button class="button_lookBag  {{ class }}__sticky--visual-toggle btn btn--outline !text-2xs sm:!text-xs sm:mr-5 hover:bg-white active:bg-white sm:active:bg-none active:border-pink sm:active:border-white !text-white md:hover:text-black md:hover:bg-white" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
+        <button class="button_closeBag {{ class }}__sticky--submit btn !text-2xs sm:!text-xs" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} Visual bag {%- endcomment -%}
+<div class="{{ class }}__visual-bag fixed top-0 left-0 w-full h-full pointer-events-none z-[46]" data-component="visualBag" data-visual-bag-wrapper>
+  <div class="page-width relative h-full">
+    <div class="{{ class }}__visual-bag__inner absolute right-0 sm:right-[17px] md:right-[40px] left-0 sm:left-[unset] bottom-[110px] sm:bottom-[80px] max-h-[55vh] lg:max-h-[50vh] max-w-full sm:min-w-[600px] rounded-tl-md rounded-tr-md bg-white transition-transform ease-out duration-300 transform translate-y-[200%] shadow-subtle" data-visual-bag-inner>
+      <div class="relative pb-10">
+        <div class="flex items-center justify-between px-[35px] py-[15px] bg-lightPink rounded-tl-md rounded-tr-md">
+          <p class="font-body font-bold text-[30px] leading-[1] text-purple">{{ 'bland_selv.general.your_bag' | t }}</p>
+
+          <div class="{{ class }}__visual-bag__close flex items-center cursor-pointer" data-close-visual-bag>
+            <span class="mr-[10px] font-heading font-bold text-sm text-purple">{{ 'bland_selv.general.hide' | t }}</span>
+            {%- render 'icon' with 'close' -%}
+          </div>
+        </div>
+
+        <ul class="{{ class }}__visual-bag__list h-[45vh] lg:h-[43vh] pt-3 pb-[70px] lg:pb-3 px-[30px] overflow-auto" data-visual-bag></ul>
+        <div class="custom-scrollbar" data-custom-scrollbar></div>'
+      </div>
+    </div>
+  </div><!-- /page-width -->
+</div>
+
+{%- comment -%} Name prompt modal {%- endcomment -%}
+{%- comment -%} 
+<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
+  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+    <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
+      {%- render 'icon' with 'close' -%}
+    </div>
+
+    <p class="mb-3 font-body font-semibold text-2xl">{{ 'bland_selv.name_prompt.write_name' | t }}</p>
+
+    <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
+
+    <button class="btn" type="button" onclick="addPushEvent()" data-final-submit>
+        {{ 'bland_selv.name_prompt.submit' | t }}
+    </button>
+  </div>
+</div>
+{%- endcomment -%}
+<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
+  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+    <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
+      {%- render 'icon' with 'close' -%}
+    </div>
+
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center heading font-bold">{{ 'bland_selv.name_prompt.write_name' | t }}</h3>
+        <p class="mb-3 text-center font-body font-semibold text-1xl">{{ 'bland_selv.name_prompt.write_description' | t }}</p>
+      </div>  
+      <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
+      <button class="btn type-style-button-text" type="button" onclick="addPushEvent()" data-final-submit>
+          {{ 'bland_selv.name_prompt.submit' | t }}
+      </button>
+
+      <p class="text-center">
+        <a data-name-prompt-skip class="underline underline-offset-1" href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a>
+      </p>
+    
+
+  </div>
+</div>
+
+{%- comment -%} Re Name prompt modal {%- endcomment -%}
+<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-ask-rename-prompt>
+  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+    <div class="{{ class }}__name-prompt__close absolute" data-ask-rename-prompt-close style="display: none;">
+      {%- render 'icon' with 'close' -%}
+    </div>
+    
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center heading font-bold" data-ask-rename-headline>{{"bland_selv.rename_prompt.title"| t | strip_html}}</h3>
+        <p class="mb-3 text-center font-body font-semibold text-1xl" data-ask-rename-description>{{"bland_selv.rename_prompt.description"| t | strip_html}}</p>
+      </div>  
+      
+      <div class="btn-groups">
+        <button class="btn" type="button" data-ask-rename-submit>{{"bland_selv.rename_prompt.accept"| t | strip_html}}</button>
+
+        <button class="btn btn--purple mt-3" type="button" data-ask-rename-decline>
+        {{ 'bland_selv.rename_prompt.decline' | t | strip_html  }}
+        </button>
+      </div>
+
+  </div>
+</div>
+
+{%- comment -%} Success modal {%- endcomment -%}
+<div class="{{ class }}__success-modal fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-success-modal>
+  <div class="{{ class }}__success-modal__inner relative p-9 rounded-md bg-white shadow-custom">
+    <p class="max-w-xs mb-1 font-body font-semibold text-2xl">{{ 'bland_selv.general.success' | t }}</p> 
+    <p class="mb-5 font-body">{{ 'bland_selv.general.what_now' | t }}</p>
+    <div class="flex-button items-center justify-center">
+      <a href="/collections/{{ collection.handle }}" class="btn btn-full-width mx-0 mb-2 type-style-button-text">{{ 'bland_selv.general.mix_again' | t }}</a>
+      <a href="/cart" class="btn bg-purple btn-full-width mx-0 type-style-button-text">{{ 'bland_selv.general.go_to_cart' | t }}</a>
+    </div>
+  </div>
+</div>
+
+{% endpaginate %}
+
+{% render 'bland-selv-snippet' %}
+
+<!--//GTM dataLayer add_to_cart event-->
+<script>
+ 
+  function addPushEvent(){
+    setTimeout(() => {
+      var idsStrArray = [];
+      var a = document.querySelectorAll('div.product-card__qty-wrapper.is--visible');
+      for (var j in a) if (a.hasOwnProperty(j)) {
+          idsStrArray.push(a[j].getAttribute('data-qty-id'));
+      }
+      var idsNumArray = idsStrArray.map(Number);
+
+      var cartContents = fetch(window.Shopify.routes.root + 'cart.js')
+      .then(response => response.json())
+      .then(data => {
+          var contents = [];
+          var lineproducts = data.items;
+          idsNumArray.forEach(item => {
+              for (let i = 0; i < lineproducts.length; i++) {
+                  if (item == lineproducts[i]['id']) {
+                      contents.push({
+                          'item_name': lineproducts[i]['title'],
+                          'item_id': lineproducts[i]['product_id'],
+                          'item_sku': lineproducts[i]['sku'],
+                          'item_variant': lineproducts[i]['variant_id'],
+                          'price': lineproducts[i]['price']/100,
+                          'item_brand': lineproducts[i]['vendor'],
+                          'item_category': lineproducts[i]['product_type'],
+                          'item_image': lineproducts[i]['image'],
+                          'quantity': lineproducts[i]['quantity']
+                      });
+                  }
+              }    
+          });
+          dataLayer.push({ ecommerce: null });
+          dataLayer.push({
+              'event': 'add_to_cart_stape',
+              'ecommerce': {
+                  'currency': data.currency,
+                  'items': contents
+              }
+          });
+      });
+    }, "500")
+  }
+
+</script>
+
+
+{% schema %}
+  {
+    "name": "Black-friday-mp",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Paginate products",
+        "info": "How many products to show per page"
+      },
+      {
+        "type": "range",
+        "id": "paginate",
+        "label": "Paginate",
+        "min": 8,
+        "max": 40,
+        "step": 4,
+        "default": 24
+      },
+      {
+        "type": "header",
+        "content": "Price limit",
+        "info": "The limit in kilogram to when the user can close the bag"
+      },
+      {
+        "type": "number",
+        "id": "price_limit",
+        "label": "Price limit",
+        "default": 129
+      },
+	{
+        "type": "radio",
+        "id": "autoload",
+        "label": "Pagination Type",
+        "default": "button",
+        "options": [
+            {
+              "value": "button",
+              "label": "By Click Button"
+            },
+            {
+              "value": "automaticly",
+              "label": "Autoload by cursor"
+            }
+          ]
+      } 
+    ],
+    "blocks": [
+      {
+        "name": "Filter type",
+        "type": "filter_type",
+        "settings": [
+          {
+            "type": "select",
+            "id": "category",
+            "label": "Filter category",
+            "options": [
+              {
+                "value": "kategori",
+                "label": "Kategori"
+              },
+              {
+                "value": "indhold",
+                "label": "Indhold"
+              },
+              {
+                "value": "favoritter",
+                "label": "Favoritter"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "type",
+            "label": "Type or Tag",
+            "options": [
+              {
+                "value": "type",
+                "label": "Type"
+              },
+              {
+                "value": "tags",
+                "label": "Tags"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "filter_id",
+            "label": "Filter id",
+            "info": "Exact name as type or whole tag, eg. 'type_sukkerfri'"
+          },
+          {
+            "type": "text",
+            "id": "filter_name",
+            "label": "Filter name"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

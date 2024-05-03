@@ -1,0 +1,140 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1649098429a773a41d": {
+      "type": "seo-landing",
+      "blocks": {
+        "85dc3381-d08d-40c3-ac61-a26fe2659cf0": {
+          "type": "buttons",
+          "settings": {
+            "buttonText": "APP store",
+            "buttonUrl": "https:\/\/apps.apple.com\/us\/app\/slikekspressen-bland-selv-slik\/id1607462953"
+          }
+        },
+        "ebcdba23-f27f-406d-966e-d2c782e49c66": {
+          "type": "buttons",
+          "settings": {
+            "buttonText": "Google play",
+            "buttonUrl": "https:\/\/play.google.com\/store\/apps\/details?id=dk.blandselvslik.slikekspressen"
+          }
+        },
+        "86fc010b-2724-4d6d-b7ea-5ded62e06840": {
+          "type": "usp",
+          "settings": {
+            "usp-headline": "Børnene blander selv",
+            "usp-description": "<p>Du bestemmer beløbet og så blander dine børn selv fra egen tlf.<\/p>"
+          }
+        },
+        "9522187c-6591-4dcd-9011-42eba3a3cb78": {
+          "type": "usp",
+          "settings": {
+            "usp-headline": "Kæmpe udvalg!",
+            "usp-description": "<p>Vi har mere end 400 forskelligt slags slik du kan vælge imellem.<\/p>"
+          }
+        },
+        "807275e2-d4b5-427f-81c6-731ca6a75c93": {
+          "type": "usp",
+          "settings": {
+            "usp-headline": "Nem at genbestille",
+            "usp-description": "<p>Du kan nemt genbestille en tidligere ordre med bland selv slik til familien<\/p>"
+          }
+        },
+        "b5351c09-9815-4155-a46c-30990bba002b": {
+          "type": "sections",
+          "settings": {
+            "headline": "Bland-selv app fra SlikEkspressen!",
+            "content": "<p><strong>Vi er meget stolte af at have lavet en super sjov og nem app<\/strong><\/p><p>🍬 <strong>Bland Selv Slik app´en<\/strong><\/p><p>En nem app som hvor du altid har hele vores sortiment lige i lommen på din telefon.<br\/><br\/>🍬 <strong>Gem hele familiens slikmix<\/strong><\/p><p><\/p><p>Du kan invitere dine familie medlemmer til at blande slik fra deres egen telefon og i kan gemme jeres favoritmiks så det er nemt for jer at bestille lige det slik i hver især bedst kan lide<\/p><p><br\/>🍬 <strong>Børnene kan mikse selv<\/strong><\/p><p>Du kan invitere dine børn i app´en og give dem et beløb de må købe slik for.<br\/>Når du har sendt invitationen kan dit barn installere vores app og mikse slik fra sin egen telefon. Det er vildt sjovt for børnene at kigge igennem vores store sortiment.<br\/><br\/>🍬 <strong>Danmarks største Bland Selv Slik sortiment<br\/><br\/><\/strong>Vi har igennem de sidste 12 måneder bygget vores sortiment af bland selv slik større og større, så vi nu har 400 produkter af det danskerne bedst kan lide, så du vil altid kunne finde præcis dit ynglingsslik<\/p><p><\/p><p>🍭<strong>Helt frisk slik<br\/><\/strong>Det slik vi sender ud til dig kommer direkte fra fabrikken af og er derfor med garanti helt frisk. Det er blødt og velsmagende slik.<br\/><\/p><p>🍭 <strong>Afsendes med fragtmand hver dag<\/strong><br\/>Vi afsender vores slik hver dag kl 14:00, og du kan vælge imellem DAO eller GLS, som din fragtmand. <br\/>I de fleste tilfælde leverer fragtmanden dagen efter, men i nogen tilfælde kan der godt gå et par dage<\/p><p><br\/>🍭<strong>Bland Selv Slik abonnement <\/strong>I gennem vores app får du også muligheden for at opsætte et abonnement til din familie, så kan i hver uge eller måned få en levering fra os som hvert familie medlem kan blande i fra gang til gang<\/p><p><br\/>🍭<strong>Inviter din partner, ven eller kollega<\/strong><br\/>Vores app kan også bruges på arbejdspladsen hvis i en gang om måneden vil have noget hyggeligt at slutte ugen af med<\/p><p><br\/>🍭<strong>Slik levering i hele landet<br\/><\/strong>Vi kan levere til alle de områder af Danmark som GLS og DAO leverer til. Så du kan bestille til hele landet<br\/><br\/>🍭<strong>Bland slik som gave<\/strong><\/p><p>Vi arbejder på at lave en lække gave sektion, hvor du kan sende bland selv slik som gave. <a href=\"https:\/\/www.slikekspressen.dk\/pages\/slikgaver\" title=\"Slik gaver\">Ind til videre kan du læse mere her<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "85dc3381-d08d-40c3-ac61-a26fe2659cf0",
+        "ebcdba23-f27f-406d-966e-d2c782e49c66",
+        "86fc010b-2724-4d6d-b7ea-5ded62e06840",
+        "9522187c-6591-4dcd-9011-42eba3a3cb78",
+        "807275e2-d4b5-427f-81c6-731ca6a75c93",
+        "b5351c09-9815-4155-a46c-30990bba002b"
+      ],
+      "disabled": true,
+      "settings": {
+        "h1-headline": "Bland selv slik app",
+        "top-description": "<p>Vi har lavet Danmarks hyggeligste app! <br\/><br\/>I vores app kan hele familie gemme deres favorit miks og børnene kan blande selv fra deres egen telefon<br\/><br\/>Hent app´en her:<\/p>",
+        "top-image": "shopify:\/\/shop_images\/Billede2.png"
+      }
+    },
+    "16629198585c61c54d": {
+      "type": "2022-app-section",
+      "settings": {
+        "headline": "Bland Selv Slik app",
+        "small-headline": "Vi har lavet Danmarks hyggeligste app!",
+        "content": "<p>I vores app kan hele familie gemme deres favorit miks og børnene kan blande selv fra deres egen telefon.<\/p><p>Hent app´en her:<\/p>",
+        "button_1_text": "App store",
+        "button_1_destination": "https:\/\/apps.apple.com\/us\/app\/slikekspressen-bland-selv-slik\/id1607462953",
+        "button_2_text": "google play",
+        "button_2_destination": "https:\/\/play.google.com\/store\/apps\/details?id=dk.blandselvslik.slikekspressen",
+        "image": "shopify:\/\/shop_images\/image_app_2.png"
+      }
+    },
+    "16629183648d0c707f": {
+      "type": "2022-3col-section",
+      "blocks": {
+        "16629183645627d8a8-0": {
+          "type": "collection",
+          "settings": {
+            "headline": "Børnene blander selv",
+            "content": "Du bestemmer beløbet og så blander dine børn selv fra egen tlf.",
+            "button_text": "",
+            "button_destination": ""
+          }
+        },
+        "11bf12db-b61d-4938-8e22-e9b8f658878a": {
+          "type": "collection",
+          "settings": {
+            "headline": "Kæmpe udvalg",
+            "content": "Vi har mere end 400 forskelligt slags slik du kan vælge imellem.",
+            "button_text": "",
+            "button_destination": ""
+          }
+        },
+        "736dd399-b932-433d-81dc-eddf20d59cec": {
+          "type": "collection",
+          "settings": {
+            "headline": "Nem at genbestille",
+            "content": "Du kan nemt genbestille en tidligere ordre med bland selv slik til familien",
+            "button_text": "",
+            "button_destination": ""
+          }
+        }
+      },
+      "block_order": [
+        "16629183645627d8a8-0",
+        "11bf12db-b61d-4938-8e22-e9b8f658878a",
+        "736dd399-b932-433d-81dc-eddf20d59cec"
+      ],
+      "settings": {
+        "showBackground": false,
+        "bigPadding": false,
+        "block_height": 100
+      }
+    },
+    "1662966151d81a13b6": {
+      "type": "2022-subcontent",
+      "settings": {
+        "headline": "Bland-selv app fra SlikEkspressen!",
+        "content": "<p><strong>Vi er meget stolte af at have lavet en super sjov og nem app<br\/><\/strong><\/p><p>  <\/p><p>🍬 <strong>Bland Selv Slik app´en<\/strong><\/p><p>En nem app som hvor du altid har hele vores sortiment lige i lommen på din telefon.<br\/><br\/>🍬 <strong>Gem hele familiens slikmix<\/strong><\/p><p>Du kan invitere dine familie medlemmer til at blande slik fra deres egen telefon og i kan gemme jeres favoritmiks så det er nemt for jer at bestille lige det slik i hver især bedst kan lide<\/p><p><br\/>🍬 <strong>Børnene kan mikse selv<\/strong><\/p><p>Du kan invitere dine børn i app´en og give dem et beløb de må købe slik for.<br\/>Når du har sendt invitationen kan dit barn installere vores app og mikse slik fra sin egen telefon. Det er vildt sjovt for børnene at kigge igennem vores store sortiment.<br\/><br\/>🍬 <strong>Danmarks største Bland Selv Slik sortiment<br\/><br\/><\/strong>Vi har igennem de sidste 12 måneder bygget vores sortiment af bland selv slik større og større, så vi nu har 400 produkter af det danskerne bedst kan lide, så du vil altid kunne finde præcis dit ynglingsslik<\/p><p><\/p><p>🍭<strong>Helt frisk slik<br\/><\/strong>Det slik vi sender ud til dig kommer direkte fra fabrikken af og er derfor med garanti helt frisk. Det er blødt og velsmagende slik.<br\/><\/p><p>🍭 <strong>Afsendes med fragtmand hver dag<\/strong><br\/>Vi afsender vores slik hver dag kl 14:00, og du kan vælge imellem DAO eller GLS, som din fragtmand.<br\/>I de fleste tilfælde leverer fragtmanden dagen efter, men i nogen tilfælde kan der godt gå et par dage<\/p><p><br\/>🍭<strong>Bland Selv Slik abonnement <\/strong>I gennem vores app får du også muligheden for at opsætte et abonnement til din familie, så kan i hver uge eller måned få en levering fra os som hvert familie medlem kan blande i fra gang til gang<\/p><p><br\/>🍭<strong>Inviter din partner, ven eller kollega<\/strong><br\/>Vores app kan også bruges på arbejdspladsen hvis i en gang om måneden vil have noget hyggeligt at slutte ugen af med<\/p><p><br\/>🍭<strong>Slik levering i hele landet<br\/><\/strong>Vi kan levere til alle de områder af Danmark som GLS og DAO leverer til. Så du kan bestille til hele landet<br\/><br\/>🍭<strong>Bland slik som gave<\/strong><\/p><p>Vi arbejder på at lave en lække gave sektion, hvor du kan sende bland selv slik som gave. <a href=\"https:\/\/www.slikekspressen.dk\/pages\/slikgaver\" title=\"Slik gaver\">Ind til videre kan du læse mere her<\/a><\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1649098429a773a41d",
+    "16629198585c61c54d",
+    "16629183648d0c707f",
+    "1662966151d81a13b6"
+  ]
+}

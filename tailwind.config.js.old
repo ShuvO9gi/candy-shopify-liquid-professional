@@ -1,0 +1,125 @@
+const tailwindForms = require('@tailwindcss/forms');
+
+module.exports = {
+  mode: 'jit',
+
+  purge: {
+    content: [
+      './resources/js/**/*.js',
+      './src/**/*.liquid',
+    ],
+  },
+
+  plugins: [
+    tailwindForms,
+  ],
+
+  theme: {
+    container: (theme) => ({
+      center: true,
+      padding: theme('spacing.2'),
+    }),
+
+    boxShadow: {
+      custom: '0 0 10px rgba(0, 0, 0, 0.1)',
+      customHover: '0 0 10px rgba(0, 0, 0, 0.3)',
+      subtle: '0 2px 20px rgba(0, 0, 0, 0.15)',
+      filterItem: '0 0 6px rgba(0, 0, 0, 0.07)',
+    },
+
+    colors: {
+      pink: '#FF94C3',
+      lightPink: '#FAF2F6', 
+      purple: '#371250',
+      purpleLight: '#8379FF',
+      purpleText: '#5D2E8E',
+      activeProductItem: '#A259CD',
+      borderPurple: 'rgba(72, 24, 100, .5)',
+      opacityPurple: 'rgba(72, 24, 100, .2)',
+      orange: '#ED8A33',
+      yellow: '#FFDA3E',
+      dark: '#323232',
+      black: '#000000',
+      white: '#ffffff',
+      modalBg: 'rgba(0,0,0,.3)',
+      grey: '#b5b5b5',
+      filterBorder: '#E4DDE8',
+      sky: "#999999"
+    },
+
+    fontFamily: {
+      heading: ['Amsi Pro Condensed', 'sans-serif'],
+      subheading: ['Amsi Pro Narrow', 'sans-serif'],
+      body: ['Amsi Pro Normal', 'sans-serif'],
+    },
+
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '769px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1025px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1281px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1441px',
+      // => @media (min-width: 1536px) { ... }
+    },
+
+    text: {
+        lg: '20px',
+    },
+    extend: {
+      width: {
+        tutPopup: '264px',
+      },
+
+      height: {
+        '180px': '180px',
+        '110px': '110px',
+        '46px': '46px',
+        '45vh': '45vh',
+        '70px': '70px',
+      },
+
+      spacing: {
+        filterBtn: 'calc(100% + 110px)',
+        priceBubble: 'calc(100% + 8px)',
+      },
+
+      fontSize: {
+        '2xs': '0.65rem',
+        'xs': '.70rem'
+      },
+
+      lineHeight: {
+        1: 1,
+      },
+
+      transition: {
+        maxHeight: 'max-height',
+      },
+
+      borderRadius: {
+        10: '10px',
+      },
+
+      transitionProperty: {
+        background: 'background',
+      },
+
+      zIndex: {
+        1: 1,
+        100: 100,
+      },
+
+      margin: {
+        '8rem': '0.8rem',
+      }
+    },
+  },
+};

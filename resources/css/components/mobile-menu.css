@@ -1,0 +1,5 @@
+.mobile-menu__icon {
+  @media screen and (min-width: 1071px) {
+    display: none;
+  }
+}

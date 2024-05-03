@@ -1,0 +1,78 @@
+<div class="section-container twb-bg-[#ffad0526] twb-my-16 twb-h-72 twb-flex twb-justify-center twb-items-center">
+  <div class="page-container">
+    <div class="row valignMiddle backgroundColorLogosHeights">
+      <div class="twb-flex twb-justify-center twb-items-center twb-w-full twb-my-4">
+        <h2 class="type-style-h2-bold twb-text-center">{{ section.settings.title }}</h2>
+      </div>
+      <div class="col-6 twb-my-4">
+        <div class="twb-flex twb-justify-around twb-items-center">
+          {{ section.settings.image_1 | image_url: width: 300 | image_tag: class: 'twb-w-16 md:twb-w-24' }}
+          {{ section.settings.image_2 | image_url: width: 300 | image_tag: class: 'twb-w-16 md:twb-w-24' }}
+          {{ section.settings.image_3 | image_url: width: 300 | image_tag: class: 'twb-w-16 md:twb-w-24' }}
+        </div>
+      </div>
+      <div class="col-6 mobilePadding twb-my-4">
+        <div class="twb-flex twb-justify-around twb-items-center">
+          {{ section.settings.image_4 | image_url: width: 300 | image_tag: class: 'twb-w-16 md:twb-w-24' }}
+          {{ section.settings.image_5 | image_url: width: 300 | image_tag: class: 'twb-w-16 md:twb-w-24' }}
+          {{ section.settings.image_6 | image_url: width: 300 | image_tag: class: 'twb-w-16 md:twb-w-24' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "2023 - logos",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Logo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Logo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Logo 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Logo 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Logo 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Logo 6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "2023 - logos"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

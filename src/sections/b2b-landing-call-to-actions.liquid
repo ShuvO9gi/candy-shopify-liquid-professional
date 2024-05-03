@@ -1,0 +1,165 @@
+<div style="background: #481964; padding-bottom: 40px;">
+{%- for block in section.blocks -%}
+	{% if block.settings.mageLeft == true %}
+		<div class="{% if block.settings.smallSection == true %} sectionSmall {% else %} sectionBig {% endif %} {% if block.settings.fullWidth == true %} fullWidth {% else %} normalWidth {% endif %}">
+          	<div class="call-to-action-imageLeft marginTopMobile" >
+				{%- assign sectionImage = block.settings.image -%}
+				{%- render 'image', image: sectionImage, class: 'sectionImage_2' -%}
+			</div>	
+			<div class="{% if block.settings.smallSection == true %}call-to-action-textRight sectionSmallPadding {% else %} call-to-action-textRightFloatRight sectionBigPadding {% endif %}">
+				<div class="topRightHeadline">
+					{{ block.settings.topHeadline }}
+				</div>
+				<h2 class="h1-header">
+                  {{ block.settings.headline | remove: "<p>" | remove: "</p>" }}
+				</h2>
+				<div class="topRightContent">
+				  {{ block.settings.content }}
+				</div>
+				<div class="smallRightContent">
+				  {{ block.settings.content-small }}
+				</div>
+              
+              	{% assign linkText = block.settings.button-text %}
+              
+				{% if linkText != "" %}
+                    <div class="contentRightButton">
+                        <a href="{{ block.settings.buttonUrl }}" class="btn extraBtn">
+                            {{ block.settings.button-text }}
+                        </a>
+                    </div>
+				{% endif %}
+			</div>
+			<div class="clear"></div>
+		</div>
+	{% else %}
+		<div class="{% if block.settings.smallSection == true %} sectionSmall {% else %} sectionBig {% endif %} {% if block.settings.fullWidth == true %} fullWidth {% else %} normalWidth {% endif %}">
+            <div class="call-to-action-imageRight showMobile">
+				{%- assign sectionImage = block.settings.image -%}
+				{%- render 'image', image: sectionImage, class: 'sectionImage_2' -%}
+			</div>
+          	<div class="call-to-action-textLeft {% if block.settings.smallSection == true %} sectionSmallPadding {% else %} sectionBigPadding {% endif %}">
+                  <div class="topRightHeadline">
+                      {{ block.settings.topHeadline }}
+                  </div>
+                  <h2 class="h1-header">
+					  {{ block.settings.headline | remove: "<p>" | remove: "</p>" }}
+                  </h2>
+                  <div class="topRightContent">
+                      {{ block.settings.content }}
+                  </div>
+                  <div class="smallRightContent">
+                      {{ block.settings.content-small }}
+                  </div>
+
+                  {% assign linkText = block.settings.button-text %}
+
+                  {% if linkText != "" %}
+                      <div class="contentRightButton">
+                          <a href="{{ block.settings.buttonUrl }}" class="btn extraBtn">
+                              {{ block.settings.button-text }}
+                          </a>
+                      </div>
+                  {% endif %}
+          	</div>
+			<div class="call-to-action-imageRight hideMobile">
+				{%- assign sectionImage = block.settings.image -%}
+				{%- render 'image', image: sectionImage, class: '' -%}
+			</div>	
+			<div class="clear"></div>
+		</div>
+	{% endif %}
+{%- endfor -%}
+</div>
+{% assign today_day = 'now' | date: '%a' %}
+{% assign time_hour = 'now' | date: '%H' %}
+
+{% if today_day == 'Fri' %}
+	{% if time_hour < '15' %}
+		Vi sender slik igen på søndag
+	{% endif %}	
+{% else %}
+
+
+{% endif %}
+
+{% schema %}
+  {
+  	"name": "Sektion - Actions (B2B)",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Call to action",
+        "settings": [
+          {
+              "type": "checkbox",
+              "id": "mageLeft",
+              "label": "billede til venste"
+          },
+		  {
+              "type": "checkbox",
+              "id": "smallSection",
+              "label": "Lille højde på sektion"
+          },
+		  {
+              "type": "checkbox",
+              "id": "fullWidth",
+              "label": "Hele breden af skærmen"
+          },
+		  {
+              "type": "text",
+              "id": "topHeadline",
+              "label": "Top sub-overskrift"
+          },	  
+          {
+              "type": "richtext",
+              "id": "headline",
+              "label": "Overskrift"
+          },
+          {
+              "type": "richtext",
+              "id": "content",
+              "label": "Content"
+          },
+          {
+              "type": "richtext",
+              "id": "content-small",
+              "label": "Content - lille"
+          },
+          {
+              "type": "text",
+              "id": "button-text",
+              "label": "Knap tekst"
+          },
+          {
+              "type": "url",
+              "id": "buttonUrl",
+              "label": "Knap url"
+          },
+          {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Knap url"
+          }
+
+        ]
+      }
+  	],
+	"presets": [
+      {
+        "name": "B2B Landing Call Action"
+      }
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

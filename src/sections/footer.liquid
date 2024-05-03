@@ -1,0 +1,159 @@
+{%- assign class = 'footer-new' -%}
+{%- assign s = section.settings -%}
+
+<footer class="{{ class }} footer__background__color py-12">
+  <div class="footer__width">
+    <div class="{{ class }}__inner flex items-center justify-between">
+      <div class="{{ class }}__logo-wrapper desktop" style="width:{{ s.logo_width }}px;">
+        {%- if s.logo_image != blank or s.logo_svg != blank -%}
+          <a href="/" class="{{ class }}__logo 2">
+            {%- if s.logo_image != blank -%}
+              {%- render 'image', image: s.logo_image -%}
+            {%- endif -%}
+
+            {%- if s.logo_svg != blank -%}
+              <img src="{{ s.logo_svg | file_url }}" alt="{{ shop.name }}">
+            {%- endif -%}
+            {% comment %}
+              <img src="//cdn.shopify.com/s/files/1/0555/3461/6756/files/slikeks-logo-2022.png?v=1664759876&amp;width=150" alt="Slik Ekspressen" srcset="//cdn.shopify.com/s/files/1/0555/3461/6756/files/slikeks-logo-2022.png?v=1664759876&amp;width=50 50w, //cdn.shopify.com/s/files/1/0555/3461/6756/files/slikeks-logo-2022.png?v=1664759876&amp;width=100 100w, //cdn.shopify.com/s/files/1/0555/3461/6756/files/slikeks-logo-2022.png?v=1664759876&amp;width=150 150w" class="header__heading-logo" width="150">
+            {% endcomment %}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="{{ class }}__nav-wrapper twb-grid twb-grid-cols-2 md:twb-grid-cols-4 twb-gap-4">
+        {%- for b in section.blocks -%}
+          {%- assign bs = b.settings -%}
+          <div class="twb-mt-4 mb-5 sm:mb-0{% unless forloop.last %} mr-0 sm:mr-5{% endunless %}">
+            {%- if bs.nav_title != blank -%}
+              <p class="{{ class }}__col--title type-style-footer-text-bold font-body font-bold mb-2">{{ bs.nav_title }}</p>
+            {%- endif -%}
+
+            {%- if bs.nav_menu != blank -%}
+              <ul class="{{ class }}__nav__list">
+                {%- for link in linklists[bs.nav_menu].links -%}
+                  <li class="{{ class }}__nav__item type-style-footer-text-regular">
+                    <a href="{{ link.url }}" class="{{ class }}__nav__link font-body">{{ link.title }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            {%- if bs.text != blank -%}
+              <div class="{{ class }}__col--text font-body type-style-footer-text-regular">
+                {{ bs.text }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="{{ class }}__icon-wrapper flex justify-between">
+        <div class="{{ class }}__logo-wrapper mobile" style="width:{{ s.logo_width_mobile }}px;">
+          {%- if s.logo_image != blank or s.logo_svg != blank -%}
+            <a href="/" class="{{ class }}__logo">
+              {%- if s.logo_image != blank -%}
+                {%- render 'image', image: s.logo_image -%}
+              {%- endif -%}
+  
+              {%- if s.logo_svg != blank -%}
+                <img src="{{ s.logo_svg | file_url }}" alt="{{ shop.name }}">
+              {%- endif -%}
+            </a>
+          {%- endif -%}
+        </div>
+
+        <div class="{{ class }}__to-top cursor-pointer">
+          <div class="{{ class }}__top-icon-wrapper" data-to-top>
+            <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/arrow_bottom.png?v=1664877849" alt="Til toppen">
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "logo_svg",
+        "label": "Logo svg",
+        "info": "Type the name of the file, fx logo.svg"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo width desktop",
+        "unit": "px",
+        "min": 50,
+        "max": 300,
+        "step": 5,
+        "default": 185
+      },
+      {
+        "type": "range",
+        "id": "logo_width_mobile",
+        "label": "Logo width mobile",
+        "unit": "px",
+        "min": 50,
+        "max": 300,
+        "step": 5,
+        "default": 160
+      },
+      {
+        "type": "header",
+        "content": "To top"
+      },
+      {
+        "type": "text",
+        "id": "to_top",
+        "label": "To top icon",
+        "info": "Type the name of the file, fx logo.svg"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Column",
+        "type": "column",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Navigation"
+          },
+          {
+            "type": "text",
+            "id": "nav_title",
+            "label": "Navigation title"
+          },
+          {
+            "type": "link_list",
+            "id": "nav_menu",
+            "label": "Navigation menu"
+          },
+          {
+            "type": "header",
+            "content": "Text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

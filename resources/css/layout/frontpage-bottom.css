@@ -1,0 +1,98 @@
+.frontpage__bottom {
+  &__title {
+    font-size: 36px;
+    @media (max-width: 640px) {
+      font-size: 26px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 25px;
+    @media (max-width: 640px) {
+      font-size: 17px;
+    }
+  }
+
+  &__bullets-image {
+    top: -50px;
+    right: 0;
+    width: 70%;
+    @media (max-width: 640px) {
+      margin-top: 40px;
+    }
+  }
+
+  &__bullets {
+    &__circle {
+      width: 37px;
+      height: 37px;
+      @media (max-width: 640px) {
+        width: 28px;
+      height: 28px;
+      }
+    }
+
+    &__text {
+      font-size: 25px;
+      @media (max-width: 640px) {
+        font-size: 17px;
+      }
+    }
+
+    &__images {
+      @media screen and (max-width: 900px) {
+        margin-top: 0;
+      }
+
+      .candy-image {
+        @media screen and (max-width: 768px) {
+          display: none;
+        }   
+      }
+    }
+  }
+
+  &__bullets-shape {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 640px) {
+      top: 60%;
+    }
+  }
+
+  &__bullets-image {
+    @media screen and (max-width: 800px) {
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .btn {
+    min-width: 250px;
+  }
+
+  &__video-reviews {
+    margin-top: 10%;
+    padding-bottom: 5%;
+    @media screen and (max-width: 800px) {
+      margin-top: -1px;
+    }
+    @media screen and (max-width: 640px) {
+      padding-bottom: 10%;
+    }
+
+    &__title {
+      font-size: 36px;
+      @media (max-width: 640px) {
+        font-size: 26px;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.frontpage__manufacturers {
+  &__inner {
+    padding: 95px 0;
+    @media (max-width: 768px) {
+      padding: 35px 0 31px 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -40px;
+    margin-left: -40px;
+
+    div {
+      display: flex;
+      align-items: center;
+      padding-top: 40px;
+      padding-left: 40px;
+
+      @media (max-width: 1070px) {
+        width: calc(100% / 3);
+        &:nth-child(3n) {
+          justify-content: flex-end;
+        }
+        &:nth-child(3n-1) {
+          justify-content: center;
+        }
+      }
+
+      img {
+        @media (max-width: 700px) {
+          max-width: 80px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{%- liquid
+  assign blockId = block.id
+  if product
+    assign blockId = block.id | append: product.id
+  endif
+-%}
+
+<div class="index-section">
+  <div class="page-width{% if block.settings.narrow_column %} page-width--narrow{% endif %}">
+    {%- if block.settings.title != blank -%}
+      <div class="section-header">
+        <h2 class="section-header__title">
+          {{ block.settings.title }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    <div class="form-vertical">
+      {%- assign form_id = 'contact-' | append: blockId -%}
+      {%- form 'contact', id: form_id -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="note note--success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {%- endif -%}
+
+        {{ form.errors | default_errors }}
+
+        <div class="grid-elem grid--small contact__element">
+          <div class="grid__item">
+            <label class="labelForm type-style-p-bold" for="ContactFormName-{{ blockId }}">{{ 'contact.form.name' | t }}</label><br>
+            <input type="text" id="ContactFormName-{{ blockId }}" class="input-full inputForm" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>
+
+          <div class="grid__item">
+            <label class="labelForm type-style-p-bold" for="ContactFormEmail-{{ blockId }}" style="color: #fff;">{{ 'contact.form.email' | t }}</label><br>
+            <input type="email" id="ContactFormEmail-{{ blockId }}" class="input-full inputForm" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          </div>
+        </div>
+
+        {%- if block.settings.show_phone -%}
+          <label class="labelForm type-style-p-bold" for="ContactFormPhone-{{ blockId }}" style="color: #fff;">{{ 'contact.form.phone' | t }}</label><br>
+          <input type="tel" id="ContactFormPhone-{{ blockId }}" class="input-full inputForm" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+        {%- endif -%}
+
+        <label class="labelForm type-style-p-bold" for="ContactFormMessage-{{ blockId }}" style="color: #fff;" class="contact__msg__label">{{ 'contact.form.message' | t }}</label><br>
+        <textarea rows="5" id="ContactFormMessage-{{ blockId }}" class="input-full inputForm" name="contact[body]">
+          {% if form.body %}
+            {{ form.body }}{% endif %}
+        </textarea>
+        <div class="row custom---flex-col-reverse">
+          <div class="col-6">
+            <div style="color: #FFFFFF;" class="type-style-p-small-regular">
+              {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+            </div>
+
+          </div>
+
+          <div class="col-6" style="text-align: right; ">
+            <button type="submit" class="orangeButton type-style-button-text mobileBig">
+              {{ 'contact.form.send' | t }}
+            </button>
+          </div>
+
+
+        </div>
+        <div></div>
+        {% comment %}
+          medium-up--one-half
+          Remove the following three lines of code to remove the note
+          about being protected by Google's reCAPTCHA service.
+          By removing it, the small reCAPTCHA widget will appear in the
+          bottom right corner of the page.
+        {% endcomment %}
+
+
+      {%- endform -%}
+    </div>
+  </div>
+</div>

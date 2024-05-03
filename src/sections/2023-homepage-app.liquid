@@ -1,0 +1,95 @@
+<div class="section-container textLeftRight">
+  <div class="page-container twb-my-16">
+    <div class="twb-flex twb-flex-row">
+      <div class="twb-w-1/2 twb-flex twb-flex-col twb-justify-center">
+        <div class="twb-flex twb-flex-row twb-mb-8">
+          <a href="{{ section.settings.play_store_destination }}" class="twb-w-2/5 twb-mr-4 twb-hidden md:twb-block">
+            <svg width="220" height="65" viewBox="0 0 226 67">
+              {%- render 'google-play-store' -%}
+            </svg>
+          </a>
+          <a
+            href="{{ section.settings.app_store_destination }}"
+            class="twb-w-2/5 twb-hidden md:twb-block"
+          >
+            <svg width="220" height="65" viewBox="0 0 202 68">
+              {%- render 'apple-app-store' -%}
+            </svg>
+          </a>
+          <a href="{{ section.settings.play_store_destination }}" class="twb-w-2/5 twb-mr-2 twb-block md:twb-hidden">
+            <svg width="90" height="25" viewBox="0 0 89 27">
+              {%- render 'google-play-store-mobile' -%}
+            </svg>
+          </a>
+          <a href="{{ section.settings.app_store_destination }}" class="twb-w-2/5 twb-block md:twb-hidden">
+            <svg width="90" height="25" viewBox="0 0 80 27">
+              {%- render 'apple-app-store-mobile' -%}
+            </svg>
+          </a>
+        </div>
+        <div class="twb-mb-4 type-style-h2-bold">{{ section.settings.headline }}</div>
+        <div class="twb-mb-8 type-style-p-regular twb-hidden md:twb-block">
+          {{ section.settings.content }}
+        </div>
+        <div>
+          <div class="type-style-button-text twb-rounded-3xl md:twb-rounded-4xl twb-text-center twb-text-white twb-bg-brand-orange twb-uppercase twb-p-1 md:twb-p-4 twb-w-2/3 md:twb-w-1/3">
+            <a href="{{ section.settings.button_destination }}">
+              {{ section.settings.button_text }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="twb-w-1/2 twb-flex twb-justify-center">
+        <div class="twb-flex twb-justify-end">
+          {{ section.settings.image | image_url: width: 800 | image_tag }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "2023 - homepage app",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "settings": [
+    { "type": "richtext", "id": "headline", "label": "Headline" },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_destination",
+      "label": "Button destination"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Billede"
+    },
+    {
+      "type": "url",
+      "id": "play_store_destination",
+      "label": "Google Play Store URL"
+    },
+    {
+      "type": "url",
+      "id": "app_store_destination",
+      "label": "Apple App Store URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "2023 - homepage app"
+    }
+  ]
+}
+{% endschema %}

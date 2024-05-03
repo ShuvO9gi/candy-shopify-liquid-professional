@@ -1,0 +1,39 @@
+.header-new {
+  z-index: 100;
+  .sticky--header & {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &__inner {
+    @media screen and (max-width: 1070px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 0 7px 0;
+    }
+  }
+
+  &__topbar {
+    &__text {
+      font-size: 17px;
+
+      @media screen and (max-width: 1070px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 200px;
+        margin: 0 auto;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .logo2 {
+    @media screen and (max-width: 1070px) {
+      top: 100%;
+    }
+  }
+}

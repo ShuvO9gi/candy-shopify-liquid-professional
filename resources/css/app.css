@@ -1,0 +1,38 @@
+/* Tailwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'keen-slider/keen-slider.min.css';
+
+/* Base */
+@import './base/base.css';
+
+/* Layout */
+@import './layout/header.css';
+@import './layout/frontpage-top.css';
+@import './layout/frontpage-inspiration.css';
+@import './layout/frontpage-manufacturers.css';
+@import './layout/frontpage-products-rows.css';
+@import './layout/frontpage-bottom.css';
+@import './layout/frontpage-social.css';
+@import './layout/frontpage-cta.css';
+@import './layout/footer.css';
+
+/* Components */  
+@import './components/buttons.css';
+@import './components/mobile-menu.css';
+@import './components/mobile-navigation.css';
+@import './components/navigation.css';
+@import './components/product-card.css';
+@import './components/cart-indicator.css';
+@import './components/speech-bubble.css';
+
+/* Pages */
+@import './pages/bland-selv-slik.css';
+@import './pages/cart.css'; 
+/*
+@import './components/drawer.css';
+@import './components/crosell.css';
+@import './custom/custom.css';
+*/

@@ -1,0 +1,41 @@
+{% comment %}
+  <ul class="twb-w-full twb-flex twb-flex-wrap twb-justify-center twb-my-4 twb-hidden md:twb-flex">
+    {% assign usp_items = '+450 varianter|usp_candy.svg,Dag-til-dag levering|usp_truck.svg,+26.347 kunder|usp_star.svg,100% hygiejnisk|usp_hygiene.svg'
+      | split: ','
+    %}
+
+    {% for usp in usp_items %}
+      {% assign usp_details = usp | split: '|' %}
+      <li class="twb-w-1/4 twb-flex twb-justify-center twb-items-center twb-flex-col">
+        <img
+          src="{{ usp_details[1] | asset_url }}"
+          width="300"
+          height="300"
+          loading="eager"
+          alt="USP item"
+          class="twb-h-full twb-w-12"
+        >
+        <div>
+          <p class="type-style-usp-h">{{ usp_details[0] }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endcomment %}
+
+<div class="twb-mt-4 twb-hidden md:twb-block twb-container twb-mx-auto">
+  {% render 'cl-usp-list' %}
+</div>
+
+{% schema %}
+{
+  "name": "2023 - homepage USPs",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "presets": [
+    {
+      "name": "2023 - homepage USPs"
+    }
+  ]
+}
+{% endschema %}

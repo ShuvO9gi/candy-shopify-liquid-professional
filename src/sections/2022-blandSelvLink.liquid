@@ -1,0 +1,44 @@
+<div class="section-container" style="background-color: var(--brandDarkPurple);">
+	<div class="page-container twb-hidden md:twb-block">
+		<div class="row">
+			<div class="col-12 linkSection">
+				<a href="{{ section.settings.button_destination }}">
+					<div class="normalButton whiteButton type-style-button-text">
+						{{ section.settings.button_text }}
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+  {
+  	"name": "2022 - Link section",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+      {
+          "type": "text",
+          "id": "button_text",
+          "label": "Tekst på knap"
+      },
+      {
+          "type": "url",
+          "id": "button_destination",
+          "label": "Side link"
+      }
+	],
+    "presets": [
+      {
+        "name": "2022 - Link section"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

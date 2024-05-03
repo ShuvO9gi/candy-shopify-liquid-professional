@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-intro",
+      "settings": {
+        "contents": "{{ product.metafields.mix.contents_label.value }}"
+      }
+    },
+    "contents": {
+      "type": "product-mix-contents",
+      "blocks": {
+        "example1": {
+          "type": "content-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Svampe.png",
+            "title": "Svampe",
+            "subtitle": "Fra Cloetta",
+            "popup_product": "malaco-skumsvampe-skum-med-jordbaersmag"
+          }
+        },
+        "d9afbc7d-f491-4cb8-82f6-57ded77c5167": {
+          "type": "content-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jordbaer_Drom.png",
+            "title": "Jordbær ",
+            "subtitle": "Fra Vidal",
+            "popup_product": "vidal-jordbaer-drom-slik-med-jordbaersmag"
+          }
+        }
+      },
+      "block_order": [
+        "example1",
+        "d9afbc7d-f491-4cb8-82f6-57ded77c5167"
+      ],
+      "settings": {
+        "title": "Blandingen består af:"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contents"
+  ]
+}

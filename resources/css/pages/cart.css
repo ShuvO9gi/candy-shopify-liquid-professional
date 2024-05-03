@@ -1,0 +1,127 @@
+.cart-page {
+  min-height: 700px;
+  background: rgba(72, 24, 100, .2);
+}
+@media scree and (max-width: 640px) {
+  .cart-page {
+    min-height: 400px;
+  }
+}
+
+.cart-page ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* header */
+.cart-page header {
+  width: 60%;
+}
+@media screen and (max-width: 768px) {
+  .cart-page header {
+    width: 100%;
+  }
+}
+.cart-page header a:hover {
+  background-color: #8379FF !important;
+}
+
+/* line-items */
+.cart-page__line-items {
+  width: 60%;
+  margin-right: 70px;
+}
+@media screen and (max-width: 1125px) {
+  .cart-page__line-items {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
+.cart-page .line-item {
+  padding: 20px 0;
+}
+.cart-page .line-item:not(:last-of-type) {
+  border-bottom: 1px solid rgba(72, 24, 100, .5);
+}
+.cart-page .line-item--icon .Icon {
+  width: 18px;
+  height: 18px;
+}
+@media screen and (max-width: 640px) {
+  .cart-page .line-item .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.cart-page .candy-list-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-in-out;
+}
+
+.cart-page .candy-list {
+  padding: 20px 50px 20px 20px;
+}
+@media screen and (max-width: 640px) {
+  .cart-page .candy-list {
+    padding: 20px 10px;
+  }
+}
+
+.cart-page__overview {
+  width: calc(40% - 70px);
+}
+@media screen and (max-width: 1125px) {
+  .cart-page__overview {
+    width: 100%;
+  }
+}
+
+/* Terms */
+.terms {
+  #terms {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0;
+    &:checked + label .checkbox {
+      background: #ff849e;
+      border-color: #ff849e;
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  svg {
+    opacity: 0;
+    color: #fff;
+  }
+
+  a {
+    margin-left: 5px;
+    font-weight: 700;
+  }
+
+  &__modal {
+    transition: background .3s ease-out;
+    &.is--hidden {
+      background: none;
+      pointer-events: none;
+    }
+
+    &__inner {
+      max-width: 85%;
+      opacity: 1;
+      transition: opacity .3s ease-out;
+      .is--hidden & {
+        opacity: 0;
+      }
+    }
+  }
+}

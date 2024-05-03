@@ -1,0 +1,72 @@
+.btn,.product-reviews .spr-button,.product-reviews .spr-summary-actions a,.rte .btn,.shopify-payment-button .shopify-payment-button__button--unbranded{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width:90px;
+  height: 30px;
+  padding:11px 20px;
+  background: var(--brandOrange);
+  color: var(--brandWhite);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height:1.42;
+  text-decoration:none;
+  text-align:center;
+  white-space:normal;
+  border:1px solid transparent;
+  -webkit-user-select:none;
+          user-select:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border-radius:64px;
+  transition:all 0.2s ease 0s;
+  transition-property: background, color;
+  cursor:pointer;
+  @media screen and (min-width: 1025px) {
+    &:hover {
+      /* background: #FFAED2 !important; */
+      background: #481864 !important;
+      color: #fff !important;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #323232;
+}
+.btn--outline:hover {
+  background: transparent !important;
+  color: #323232;
+}
+.btn--outline:hover:before,
+.btn--outline:hover:after {
+  background: transparent;
+}
+
+.btn--purple {
+  background: #9954C2 !important;
+  color: #fff !important;
+}
+
+.btn.disabled,.btn[disabled],.product-reviews .spr-button.disabled,.product-reviews .spr-button[disabled],.product-reviews .spr-summary-actions a.disabled,.product-reviews .spr-summary-actions a[disabled],.rte .btn.disabled,.rte .btn[disabled],.shopify-payment-button .shopify-payment-button__button--unbranded.disabled,.shopify-payment-button .shopify-payment-button__button--unbranded[disabled]{
+  cursor: not-allowed;
+}
+
+.text--light {
+  color: #fff !important;
+}
+
+.text--yellow {
+  color: #ffda3e !important;
+}
+
+.border--bottom {
+  border-bottom: 1px solid #ffda3e !important;
+}

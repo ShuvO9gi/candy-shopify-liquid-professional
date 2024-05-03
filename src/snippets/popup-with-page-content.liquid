@@ -1,0 +1,19 @@
+<div 
+  class="product-card__info fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50 hidden"
+  data-info-modal
+  data-id="{{ id }}"
+  data-component="simplePopup">
+
+  <div class="overlay max-w-[90%] rounded-b-md">
+    <div class="product-card__info__inner relative max-w-xl max-h-[80vh] rounded-md bg-white text-xs sm:text-base shadow-custom">
+      <div class="product-card__info__header flex items-center justify-between px-4 py-2 bg-lightPink rounded-t-md">
+        <span class="max-w-[80%] text-purple font-bold">{{ title }}</span>
+        <span class="cursor-pointer" data-trigger-popup="{{ id }}">{%- render 'icon' with 'close' -%}</span>
+      </div>
+
+      <div class="product-card__info__wrapper max-h-[70vh] p-4 text-purple overflow-auto">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>

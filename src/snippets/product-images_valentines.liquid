@@ -1,0 +1,51 @@
+{%- liquid
+  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+  assign first_3d_model = product.media | where: 'media_type', 'model' | first
+-%}
+
+{%- unless product.empty? -%}
+  <div
+    data-product-images
+    data-zoom="{{ settings.product_zoom_enable }}"
+    data-has-slideshow="{% if product.media.size > 1 %}true{% else %}false{% endif %}">
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
+
+      <div class="product__main-photos" data-aos data-product-single-media-group>
+        <div id="ProductPhotos-{{ section_id }}" class="product-slideshow">
+          {%- for media in product.media -%}
+            {%- render 'media',
+              section_id: section_id,
+              media: media,
+              featured_media: featured_media,
+              loopIndex0: forloop.index0,
+              loopIndex: forloop.index,
+              product_zoom_size: product_zoom_size,
+              product_image_size: product_image_size,
+              isModal: isModal,
+              video_looping: video_looping,
+              video_style: video_style
+            -%}
+            {% comment %} TODO: [CAND-924] Refactor the following break {% endcomment %}
+            {%- break -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" id="ModelJson-{{ section_id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{%- else -%}
+  <div class="product__photos product__photos-{{ section_id }}">
+    <div class="product__main-photos" style="width: 100%">
+      <div id="ProductPhotos-{{ section_id }}">
+        <div class="product-main-slide" data-index="{{ forloop.index0 }}">
+          <a href="#">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endunless -%}

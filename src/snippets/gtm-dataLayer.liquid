@@ -1,0 +1,123 @@
+<script>
+    window.addEventListener('load', function(){
+
+    
+    //view item
+    {% if template.name == "product" %}
+    dataLayer.push({ecommerce: null });
+    dataLayer.push({
+        event: 'view_item_stape',
+        {%  if customer %}
+        'CustomerEmail' : '{{ customer.email }}',
+        'CustomerFirstName' : '{{ customer.first_name }}',
+        'CustomerLastName' : '{{ customer.last_name }}',
+        'CustomerId': '{{ customer.id | remove: "'" }}',
+        {%  endif %}
+        'ecommerce': {
+            'currency': '{{ cart.currency.iso_code }}',
+            'items': [{
+                'item_name': {{ product.title | json }},
+                'item_id': '{{ product.id }}',
+                'item_sku': {{ product.selected_or_first_available_variant.sku | json }},
+                'item_brand': {{ product.vendor | json }},
+                'item_category': {{ product.type | json }},
+                'price': {{ product.selected_or_first_available_variant.price | money_without_currency | remove: "." | remove: "," | times: 0.01 }}
+            }]
+        }
+    });
+      
+    
+ 	//add to cart on page
+    document.querySelector('button[name="add"]').addEventListener('click', function(){
+        dataLayer.push({ ecommerce: null });
+        dataLayer.push({
+            event: 'add_to_cart_stape',
+            {%  if customer %}
+            'CustomerEmail' : '{{ customer.email }}',
+            'CustomerFirstName' : '{{ customer.first_name }}',
+            'CustomerLastName' : '{{ customer.last_name }}',
+            'CustomerId': '{{ customer.id | remove: "'" }}',
+            {%  endif %}
+            'ecommerce': {
+            'currency': '{{ cart.currency.iso_code }}',
+            'items': [{
+                    'item_name': {{ product.title | json }},
+                    'item_id': '{{ product.id }}',
+                    'item_sku': {{ product.selected_or_first_available_variant.sku | json }},
+                    'item_brand': {{ product.vendor | json }},
+                    'item_category': {{ product.type | json }},
+                    'price': {{ product.selected_or_first_available_variant.price | money_without_currency | remove: "," | times: 0.01 }}
+                }]
+        }
+        });
+    });
+
+    {% endif %}
+
+    //collectiom view
+    {% if template.name == "collection" %}
+    dataLayer.push({ecommerce: null });
+    dataLayer.push({
+        event: 'view_collection_stape',
+        {%  if customer %}
+        'CustomerEmail' : '{{ customer.email }}',
+        'CustomerFirstName' : '{{ customer.first_name }}',
+        'CustomerLastName' : '{{ customer.last_name }}',
+        'CustomerId': '{{ customer.id | remove: "'" }}',
+        {%  endif %}
+        'ecommerce': {
+            'currency': '{{ cart.currency.iso_code }}',
+            'item_list_name': '{{ collection.title }}',
+            'items': [
+            {% for product in collection.products %}
+                {% if forloop.index < 11 %}
+                    {
+                    'item_name': '{{ product.title }}',
+                    'item_id': '{{ product.id }}',
+                    'item_sku': '{{ product.sku }}',
+                    'price': {{ product.price | money_without_currency | replace:',','.' }},
+                    'item_brand': '{{shop.name}}',
+                    'item_variant': '{{product.selected_or_first_available_variant.id}}',
+                    'index': {{ forloop.index }}+12*({{current_page}}-1)
+                    },
+                {% endif %}
+            {% endfor %}
+           ]
+        }
+    });
+    {% endif %}
+
+    //view cart
+    {% if template.name == "cart" %}
+    dataLayer.push({ecommerce: null });
+    dataLayer.push({
+        event: 'view_cart_stape',
+        {%  if customer %}
+        'CustomerEmail' : '{{ customer.email }}',
+        'CustomerFirstName' : '{{ customer.first_name }}',
+        'CustomerLastName' : '{{ customer.last_name }}',
+        'CustomerId': '{{ customer.id | remove: "'" }}',
+        {%  endif %}
+        'ecommerce': {
+            'currency': '{{ cart.currency.iso_code }}',
+            'items': [
+            {% for line_item in cart.items %}
+              {
+              'item_name': '{{ line_item.product.title }}',
+              'item_id': '{{ line_item.product_id }}',
+              'item_sku': '{{line_item.sku }}',
+              'price': {{ line_item.final_price | times: 0.01 | json }},
+              'item_brand': '{{line_item.vendor }}',
+              'item_category': '{{ line_item.product.type  }}',
+              'item_variant': '{{line_item.variant_id }}'
+              },
+            {% endfor %}
+           ]
+        }
+    });
+
+    {% endif %}
+
+
+});
+</script>

@@ -1,0 +1,45 @@
+<div class="page-width page-content" id="mainPage404">
+  <div class="section-header section-header--404">
+    <h1 class="section-header__title">{{ section.settings.header }}</h1>
+    <div class="rte text-spacing main404">
+     <p>{{ section.settings.bodyText }}</p>
+     <a href="{{ section.settings.bUrl }}" class="normalLink " style="position: relative;">
+        <div class="orangeButton type-style-button-text">
+          {{ section.settings.bText }}
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "404 section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "Headings"
+      },
+      {
+        "type": "richtext",
+        "id": "bodyText",
+        "label": "Body text"
+      },
+      {
+        "type": "url",
+        "id": "bUrl",
+        "label": "Button Url"
+      },
+      {
+        "type": "text",
+        "id": "bText",
+        "label": "Button Text "
+      }
+    ],
+    "presets": [
+      {
+        "name": "404 section"
+      }
+    ]
+  }
+{% endschema %}

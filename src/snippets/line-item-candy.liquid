@@ -1,0 +1,48 @@
+<div class="flex justify-between items-start relative">
+  <div class="flex justify-between flex-col sm:flex-row">
+    <img class="productImage_cart self-start border-2 border-solid border-purple border-opacity-50 rounded-lg mr-0 sm:mr-5 mb-5 sm:mb-0 w-40 sm:w-24" src="{{ image | img_url: '200x' }}" alt="{{ item.title }}">
+
+    <div class="flex flex-col justify-center items-start">
+      <div class="flex items-center cursor-pointer" data-candy-list-toggle>
+        <p class="text-xl font-semibold text-purple">{{ prop }}'s pose</p> 
+        <span class="line-item--icon flex items-center justify-center w-6 h-6 ml-3 rounded-full shadow-custom transition-transform duration-200 ease-in-out" data-toggle-icon>{%- render 'icon' with 'chevron-down' -%}</span>
+      </div>
+
+      <div class="candy-list-wrapper" data-candy-list-wrapper>
+        <ul class="candy-list" data-list-item-identifier="{{ prop }}">
+          {%- for item in cart.items -%}
+            {%- if item.properties['Name'] == prop -%}
+              <li class="p-2 2xl:p-5 rounded-md shadow-custom mb-3" data-line-item data-line-item-price="{{ item.final_line_price }}" data-candy-item-id={{ item.id }} data-candy-item-key={{ item.key }} data-candy-item-prop="{{ prop }}" data-item-weight="{{ item.grams }}" data-item-quantity="{{ item.quantity }}">
+                <div class="flex items-center">
+                  <img class="w-16 2xl:w-28 mr-3" src="{{ item.image | img_url: '150x' }}" alt="{{ item.title }}">
+
+                  <div>
+                    <div class="font-body font-semibold">
+                      {{ item.title }}
+                    </div>
+
+                    <div class="qty flex mt-4">
+                      <div class="flex items-center justify-center w-8 h-8 mr-2 bg-opacityPurple text-purple rounded-md font-bold cursor-pointer" data-item-qty-minus>-</div>
+
+                      <div class="flex items-center justify-center h-8 mr-2 px-2 bg-opacityPurple text-purple rounded-md text-xs font-bold">
+                        <span data-item-qty-elem>{{ item.grams | times: item.quantity }}</span>g
+                      </div>
+
+                      <div class="flex items-center justify-center w-8 h-8 bg-opacityPurple text-purple rounded-md font-bold cursor-pointer" data-item-qty-plus>+</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      {%- render 'line-item-remove-button' with data: 'remove-candy', id: prop -%}
+    </div>
+  </div>
+
+  <div class="price flex flex-col justify-center mt-14">
+    <p class="whitespace-nowrap" data-total-line-price></p>
+  </div>
+</div>

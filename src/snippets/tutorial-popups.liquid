@@ -1,0 +1,48 @@
+<div class="tutorial-popup flex items-center justify-center fixed top-0 left-0 w-full h-screen bg-modalBg is--hidden" data-component="tutorialPopups">
+  <div class="tutorial-popup__slider-wrapper relative p-6 bg-white rounded-md shadow-custom mt-12 sm:mt-0">
+    <div class="tutorial-popup__inner">
+        <button class="close flex items-center justify-center w-10 h-10 rounded-full z-50 bg-pink shadow-custom" data-tutorial-close>
+          <span class="text-white">
+            {%- render 'icon' with 'close' -%}
+          </span>
+        </button>
+
+        <button class="arrow prev flex items-center justify-center w-10 h-10 rounded-full z-50 bg-pink shadow-custom disabled:opacity-30" disabled data-tutorial-prev>
+          <span class="transform rotate-90 text-white">
+            {%- render 'icon' with 'chevron-down' -%}
+          </span>
+        </button>
+
+        <button class="arrow next flex items-center justify-center w-10 h-10 rounded-full z-50 bg-pink shadow-custom disabled:opacity-30" data-tutorial-next>
+          <span class="transform -rotate-90 text-white">
+            {%- render 'icon' with 'chevron-down' -%}
+          </span>
+        </button>
+
+        <div class="gradient absolute bottom-0 left-0 w-full h-12 pointer-events-none z-10"></div>
+
+        <div class="flex overflow-hidden w-tutPopup" data-tutorial-slider>
+          {%- for b in section.blocks -%}
+            {%- case b.type -%}
+              {%- when 'tutorial' -%}
+                {%- assign bs = b.settings -%}
+                  <div class="w-tutPopup transition-transform ease-in-out duration-500" data-tutorial-slide data-slide-index="{{ forloop.index | minus: 1 }}">
+                    {%- if bs.tut_title != blank -%}
+                        <p class="title font-bold text-base">{{ bs.tut_title }}</p>
+                      {%- endif -%}
+
+                      {%- if bs.tut_image != blank -%}
+                        <img class="mt-5" src="{{ bs.tut_image | img_url: '800x' }}" alt="{{ bs.tut_title }}">
+                      {%- endif -%}
+
+                      {%- if bs.tut_text != blank -%}
+                        <div class="text max-w-sm mt-5 text-xs">{{ bs.tut_text }}</div>
+                      {%- endif -%}
+                  </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+
+      </div>
+  </div>
+</div>

@@ -1,0 +1,249 @@
+<style>
+  .message-on-card{
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    padding: 40px 0 0;
+  }
+  .message-on-card label{
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+  }
+  .message-on-card label span{
+    font-weight: 400 !important;
+  }
+  .message-on-card .cart-notes{
+    border-radius: 4px;
+    min-height: 80px;
+  }
+  .ordernote{
+    display: flex !important;
+  }
+  .message-on-card-img{
+    width: fit-content;
+    margin: 20px auto;
+  }
+  .giftprodselectedbody .stepmsgcard-upsell-items{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+  }
+  .stepmsgcard-upsell-wrapper{
+    padding: 50px 0;
+    overflow: hidden !important;
+  }
+  .stepmsgcard-radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  .giftprodselectedbody .stepmsgcard-upsell-item{
+    border-radius: 8px !important;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #6E46954D;
+    padding: 10px 40px;
+    cursor: pointer;
+    width: 100%;
+  }
+  #removeordernote{
+    max-height: 28px;
+  }
+  .stepmsgcard-upsell-item-right{
+    flex-direction: column;
+  }
+  .stepmsgcard-upsell-item-rightItem{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .giftprodselectedbody .stepmsgcard-upsell-item.selected{
+    border: 2px solid #ffad05 !important;
+  }
+  .giftprodselectedbody .selected .stepmsgcard-checkmark{
+    background: var(--brandDarkPurple) !important;
+  }
+   .giftprodselectedbody .sub-label-detail{
+    opacity: 0;
+  }
+  .stepmsgcard-box-label{
+    line-height: 0;
+  }
+.stepmsgcard-box-label label{
+    font-size: 21px;
+    cursor: pointer;
+    line-height: 0;
+}
+.giftprodselectedbody .stepmsgcard-box-image p {
+    font-weight: 700;
+    color: #FFAD05;
+    font-size: 20px;
+    text-wrap: nowrap;
+}
+.stepmsgcard-upsell-offer .stepmsgcard-upsell-item .stepmsgcard-box-image {
+    max-width: 125px;
+}
+.stepmsgcard-upsell-offer .stepmsgcard-upsell-item .stepmsgcard-box-label {
+    color: var(--brandBlack);
+    width: 10em;
+    overflow: hidden;
+}
+.stepmsgcard-radio-container input:checked~.stepmsgcard-checkmark:after {
+    display: block;
+}
+
+.stepmsgcard-radio-container input:checked~.stepmsgcard-checkmark {
+    background-color: var(--brandWhite);
+}
+
+.stepmsgcard-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: var(--brandWhite);
+    border: 1px solid var(--brandDarkPurple);
+    border-radius: 50%;
+}
+.stepmsgcard-radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.stepmsgcard-upsell-offer .stepmsgcard-upsell-item .stepmsgcard-box-button {
+    position: relative;
+    top: 5px;
+}
+.stepmsgcard-upsell-offer .stepmsgcard-upsell-item.selected {
+    border-top: 1px solid var(--brandOrange);
+    border-left: 1px solid var(--brandOrange);
+    border-right: 1px solid var(--brandOrange);
+    border-bottom: 1px solid var(--brandOrange);
+}
+
+.stepmsgcard-upsell-offer .stepmsgcard-upsell-items {
+    margin: 20px 0;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.stepmsgcard-upsell-offer .stepmsgcard-upsell-items {
+    margin: 20px 0;
+    padding: 0;
+    border-radius: 5px;
+}
+.step3title{
+  font-size: 36px;
+  padding-bottom: 30px;
+  font-weight: 700;
+}
+ @media only screen and (max-width: 767px){
+  .giftprodselectedbody .stepmsgcard-upsell-items {
+    flex-direction: column !important;
+}
+.stepmsgcard-box-label label {
+    font-size: 12px !important;
+}
+.giftprodselectedbody .stepmsgcard-box-image p {
+    font-size: 14px !important;
+}
+.giftprodselectedbody .stepmsgcard-upsell-item{
+    width: auto !important;
+}
+ }
+</style>
+<div class="stepmsgcard-upsell-wrapper shopadjust-overflow-scroll--y" style="min-height: calc(100% - 329px);">
+    <h2 class="step3title">Tilføj et kort</h2>
+    <div class="stepmsgcard-upsell-items">
+        <div  id="removeordernote" class="stepmsgcard-upsell-item first-item" onclick="removeordernote()">
+            <div class="stepmsgcard-box-button">
+                <label class="stepmsgcard-radio-container">
+                    <input id="no_card" type="radio" name="packaging" value="8777200107851">
+                    <span class="stepmsgcard-checkmark"></span>
+                </label>
+            </div>
+            <div class="stepmsgcard-box-label">
+                <label class="type-style-card-desc-bold">{{section.settings.step3_nohandwrittentext}}</label>
+            </div>
+            <div class="stepmsgcard-box-image"><p>{{section.settings.step3_nohandwrittenprice}}</p></div>
+        </div>
+
+        <div id="handleRadioClick" class="stepmsgcard-upsell-item stepmsgcard-upsell-item-right" onclick="handleRadioClick()">
+          <div class="stepmsgcard-upsell-item-rightItem">
+            <div class="stepmsgcard-box-button">
+                <label class="stepmsgcard-radio-container">
+                    <input id="yes_card" type="radio" name="packaging" value="8777181921611">
+                    <span class="stepmsgcard-checkmark"></span>
+                </label>
+            </div>
+            <div class="stepmsgcard-box-label">
+                <label class="type-style-card-desc-bold">{{section.settings.step3_handwrittentext}}</label>
+                    <span class="sub-label-detail type-style-tiny-text 1 " data-pkg-price="">+ 5,00 kr. i alt</span>
+            </div>
+            <div class="stepmsgcard-box-image"><p>25,00 kr</p></div>
+           </div> 
+           <div class="message-on-card" id="ordernote">
+              <label for="CartNoteDrawer">{{section.settings.msgoncardtext}} <span id="characterCount">0 af 100 tegn</span></label>
+              <textarea name="note" placeholder="Skriv den hilsen der skal på kortet" class="input-full cart-notes" id="CartNoteDrawer" required="" maxlength="100" oninput="updateCharacterCount(this)"></textarea>
+              <input class="mb-5" type="hidden" value="" id="CartNoteDrawer2">
+              <input class="mb-5" type="hidden" value="true" id="CartNoteDrawer3">
+        </div>
+          {% if section.settings.messageoncard != blank %}
+            <img class="message-on-card-img" src="{{ section.settings.messageoncard | image_url }}" alt="Message on Card">
+          {% endif %}
+        </div>              
+    </div>
+
+    
+</div>
+<script>
+    var jqmsg = document.createElement('script');
+    jqmsg.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+    jqmsg.onload = function() {
+      jQuery.noConflict();
+      jQuery(document).ready(function($) {
+        window.handleRadioClick = function() {
+          $('#ordernote').addClass('ordernote');
+          $('#yes_card').prop('checked', true);
+          $('#no_card').prop('checked', false);
+          $('#removeordernote').removeClass('selected'); 
+          $('#handleRadioClick').addClass('selected');
+          $('[data-id="47473208525131"]').click();
+          $("body").addClass('msgcarselected');
+          $('[data-qty-id="47473245585739"] [data-qty-minus]').click();
+        };
+        window.removeordernote = function() {
+          $('#ordernote').removeClass('ordernote');
+          $('#no_card').prop('checked', true);
+          $('#yes_card').prop('checked', false);
+          $('#handleRadioClick').removeClass('selected'); 
+          $('#removeordernote').addClass('selected');
+          $('[data-id="47473245585739"]').click();
+          $("body").addClass('msgcarselected');
+          $('[data-qty-id="47473208525131"] [data-qty-minus]').click();
+        };
+        
+        $('#CartNoteDrawer').on('input', function() {
+        var characterCount = $(this).val().length;
+        $('#characterCount').text(characterCount + ' of 100 characters');
+    });
+      });
+    };
+
+    document.body.appendChild(jqmsg);
+</script>

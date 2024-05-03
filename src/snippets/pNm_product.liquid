@@ -1,0 +1,208 @@
+<style>
+  #candyBoxBuyButtonTop{
+    color: var(--brandWhite);
+    display: inline-flex;
+    text-transform: uppercase;
+    background-color: var(--brandOrange);
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    display: flex !important;
+    width: 50%;
+  }
+  #candyBoxBuyButtonTop:hover {
+    background-color: var(--brandDarkPurple);
+}
+
+
+  /* description */
+  .specs .the-content {
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 10px 0 0 0;
+    width: 100%!important;
+}
+  .specs .the-content .descrip h5 {
+    margin: 10px 0 6px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+  .specs .the-content .descrip p {
+    font-size: 15px;
+    margin-top: 0;
+}
+  .specs .the-content .naerring h5 {
+    font-size: 18px;
+    margin: 10px 0 6px 0;
+    font-weight: 600;
+}
+  .specs .the-content .naerring table {
+    width: 100%;
+    font-size: 15px!important;
+}
+  .specs .the-content .naerring table tr td:nth-child(2) {
+    text-align: right;
+
+  }
+  .collapsible__content .descrip{
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .collapsible__content p{
+    font-size: 15px;
+  }
+   .collapsible__content .specs{
+      font-size: 15px;
+   }
+  .collapsible__content h5{
+    font-size: 18px;
+    margin: 10px 0 6px 0;
+    font-weight: 600;
+  }
+  .collapsible__content table{
+    width: 100%;
+  }
+  .collapsible__content tbody{
+    width: 100%;
+  }
+  .collapsible__content tr{
+    width: 100%;
+  }
+   .collapsible__content table tbody tr td:nth-child(2){
+      text-align: right;
+    }
+</style>
+ {%- liquid
+  assign pNm_product = all_products[section.settings.featured_product]
+  assign current_variant = product.selected_or_first_available_variant
+  assign candySizeWeight = product.metafields.custom.candysizesweight 
+  assign candysizesamount = product.metafields.custom.candysizesamount
+    
+  assign energy_kj = product.metafields.custom.energy_kj
+  assign energy_kcal = product.metafields.custom.energy_kcal  
+  assign fat = product.metafields.custom.fat
+  assign of_which_saturates = product.metafields.custom.of_which_saturates
+  assign carbohydrates = product.metafields.custom.carbohydrates
+  assign of_which_sugars = product.metafields.custom.of_which_sugars
+  assign protein = product.metafields.custom.protein
+  assign salt = product.metafields.custom.salt
+    
+-%}
+   
+<div class="relative twb-select-none j" >
+        <div class="pickNnix_top" data-item-inner="">
+          <div class="pickNnix_top_img" data-product-card-bubble="">
+            <div class="topcandyBoxImage cursor-pointer" data-add-to-bag-img="" data-id="{{ product.id }}" data-amount="{{ candysizesamount }}" data-price="{{ product.price }}" data-weight="{{ candySizeWeight }}" data-title="{{ product.title }}" data-image="{{ product.featured_image.src | img_url: 'master' }}">
+            <img
+              data-sizes="auto"
+              data-src="{{ product.featured_image.src | img_url: 'master' }}"
+              src="{{ product.featured_image.src | img_url: 'master' }}"
+              data-srcset="{{ product.featured_image.src | img_url: 'master' }}"
+              class="lazyautosizes lazyloaded"
+              data-image="{{ product.featured_image.src | img_url: 'master' }}"
+              style="width: 100%"
+              sizes="185px"
+              srcset="{{ product.featured_image.src | img_url: 'master' }}"> </div>
+          </div>
+  <div class="candyBoxContent">
+           <div class="candyBoxBuySection-clicked" data-qty-wrapper="" data-qty-id="{{ product.id }}">
+        <div class="candyBoxBuySectionContent">
+          <div class="candyBoxName type-style-card-h">{{ product.title }}</div>
+          <div class="v candyBoxBrand type-style-card-h-subhead">{{ product.price | money }}</div>
+          <div class="candyBoxBuyButtonClicked">
+            <div data-qty-minus="" class="buttonMinusPlus cursor-pointer">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="13" fill="#FFAD05"></rect><rect x="7" y="14" width="2" height="12" rx="0.5" transform="rotate(-90 7 14)" fill="white"></rect></svg>
+            </div>
+            <div class="candySizes" tracking-wide="">
+              <div class="candySizesAmount type-style-card-desc-bold hidden" data-amount-container="">Ca. <span data-amout-stick="" data-amount-elem="">{{ candysizesamount }}</span> stk.</div>
+              <div class="candySizesAmountBorder"></div>
+              <div class="candySizesWeigth type-style-card-desc-regular"><span class="mx-[3px]" data-qty-amount="" data-init-weight="{{ candySizeWeight }}" data-init-price="{{ product.price }}">{{ candySizeWeight }}</span> gram</div>
+            </div>
+            <div data-qty-plus="" class="buttonMinusPlus cursor-pointer">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="13" transform="matrix(-1 0 0 1 26 0)" fill="#FFAD05"></rect><rect x="12" y="7" width="2" height="12" rx="0.5" fill="white"></rect><rect x="7" y="14" width="2" height="12" rx="0.5" transform="rotate(-90 7 14)" fill="white"></rect></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class="candyBoxBuySection">
+            <div class="candyBoxBuySectionContent">
+              <div class="candyBoxName type-style-card-h">{{ product.title }}</div>
+              <div class="candyBoxBrand type-style-card-h-subhead">{{ product.price | money }}</div>
+              <a href="#" id="candyBoxBuyButtonTop" class=" type-style-button-text"
+                data-title="{{ product.title }}";"
+              >
+              PUT I POSE
+              </a>
+              <a href="#pickNmix_row" class="candyBoxBuyButton type-style-button-text" 
+                data-add-to-bag=""
+                data-id="{{ product.id }}"
+                data-amount="{{ candysizesamount }}" 
+                data-price="{{ product.price }}" 
+                data-weight="{{ candySizeWeight }}" 
+                data-title="{{ product.title }}"
+                data-image="{{ product.featured_image.src | img_url: 'master' }}" style="display: none !important;"
+              >
+              PUT I POSE
+              </a>
+              
+            </div>
+          </div>
+  <div class="collapsible">
+                  <button type="button" class="collapsible__button">{{ section.settings.accordion_title }}</button>
+            
+                  <div class="collapsible__content">
+                    <div class="specs w-full type-style-p-regular">
+                    {{ product.description }} 
+                     {% comment %}  <div class="the-content">
+            <div class="descrip">
+                        <h5>Indhold</h5>
+                        <p id="data-a">Ingredienser: Sukker, glukosesirup, kakosmær, SØDEMÆLKSPULVER, vegetabilske fedtstoffer (Palm, Shea), kokomasse, SKUMMETMÆLKSPILVER, VALLEPULVER (MÆLK), salt, emulgator (SOJALECITHIN), aromaer (bl.a. vamilin) MÆLKECHOKOLADE indeholde også andre vegetabilske fedtstoffer end kakaosmør. KAN INDEHOLDE HASSELNØDDER.  </p>
+                    </div>
+                    <div class="naerring">
+                        <h5>Næringsværdi <small>pr. 100g</small></h5>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><strong>Energi</strong></td>
+                                <td><span id="data-b">2022 KJ / 482</span> kcal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fedt</strong></td>
+                                <td><span id="data-c">23</span> g</td>
+                            </tr>
+                            <tr>
+                                <td>- Heraf mættet</td>
+                                <td><span id="data-d">14</span> g</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kulhydrat</strong></td>
+                                <td><span id="data-e">63</span> g</td>
+                            </tr>
+                            <tr>
+                                <td>- Heraf sukkerarter</td>
+                                <td><span id="data-f">48</span> g</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Protein</strong></td>
+                                <td><span id="data-g">4,1</span> g</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Salt</strong></td>
+                                <td><span id="data-h">0,43</span> g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+            
+        </div>{% endcomment %}
+                    </div>
+                  </div>
+                </div>
+
+        </div>
+      </div>
+  </div>

@@ -1,0 +1,30 @@
+{%- comment -%}
+{%- assign page_title = bs.hero_title | default: page.title -%}
+{%- assign hero_text = bs.hero_text -%}
+{%- assign hero_image_small = bs.hero_image_small | img_url: '600x' -%}
+{%- assign hero_image_bg = bs.hero_image_bg | img_url: '1920x' -%}
+
+<div class="{{ class }}__hero relative w-full">
+  <div class="page-width relative h-full z-10">
+    <div class="flex">
+      <div class="w-1/2 flex flex-col justify-center">
+        <h1 class="text-5xl">{{ page_title }}</h1>
+
+        {%- if hero_text != blank -%}
+          <div class="mt-5 max-w-md">{{ hero_text }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="w-1/2 flex flex-col items-center justify-center">
+        {%- if hero_image_small != blank -%}
+          <img src="{{ hero_image_small }}" alt="{{ page_title }}">
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- if hero_image_bg != blank -%}
+    <img class="absolute top-0 left-0 w-full h-full object-cover z-0" src="{{ hero_image_bg }}" alt="{{ page_title }}">
+  {%- endif -%}
+</div>
+{%- endcomment -%}

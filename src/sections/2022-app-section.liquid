@@ -1,0 +1,85 @@
+<div class="section-container backgroundWallpaper">
+	<div class="page-container">
+      <div class="row three-col-section-bigPadding">
+      	<div class="col-4 ">
+          <div class="app-section-image" style="text-align: center;"><img src="{{ section.settings.image | image_url}}" style="display: initial;"></div>
+        </div>
+        <div class="col-6">
+            <h1 class="app-section-headline type-style-h1-bold">{{ section.settings.headline }}</h1>  
+            <div class="app-section-small-headline type-style-p-bold">{{ section.settings.small-headline }}</div>  
+            <div class="app-section-content type-style-p-regular">{{ section.settings.content }}</div>  
+            <div class="app-section-buttons">
+              <a href="{{ section.settings.button_1_destination }}">
+                  <div class="orangeButton type-style-button-text mobileBig ">
+                    {{ section.settings.button_1_text }}
+      			</div>
+        	  </a>          
+              <a href="{{ section.settings.button_2_destination }}">
+                  <div class="orangeButton type-style-button-text mobileBig">
+                    {{ section.settings.button_2_text }}
+      			</div>
+      		  </a>          
+            </div>
+        </div>
+        <div class="col-2">&nbsp;</div>
+      </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "2022 - app section",
+    "settings": [
+        {
+        	"type": "text",
+        	"id": "headline",
+        	"label": "Overskrift"
+        },
+        {
+        	"type": "text",
+        	"id": "small-headline",
+        	"label": "Overskrift (lille)"
+        },
+        {
+        	"type": "richtext",
+        	"id": "content",
+        	"label": "Content"
+        },
+        {
+        	"type": "text",
+        	"id": "button_1_text",
+        	"label": "Tekst på knap"
+        },
+        {
+        	"type": "url",
+        	"id": "button_1_destination",
+        	"label": "Side link"
+        },
+        {
+        	"type": "text",
+        	"id": "button_2_text",
+        	"label": "Tekst på knap"
+        },
+        {
+        	"type": "url",
+        	"id": "button_2_destination",
+        	"label": "Side link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Billede"
+        }
+    ],
+    "presets": [
+      {
+        "name": "2022 - app section"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

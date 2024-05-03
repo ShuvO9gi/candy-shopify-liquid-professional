@@ -1,0 +1,96 @@
+<div class="section-container backgroundColorBrandGreen padding-bullet-box">
+	<div class="page-container">
+		<div class="row">
+			<div class="col-6">
+				<div class="bulletBox">
+					<h2 class="type-style-h2-bold">
+                      {{ section.settings.headline }}
+                    </h2>
+					<div class="bulletBoxContent type-style-h3-regular">
+                      {{ section.settings.content }}
+                    </div>
+                    {%- for block in section.blocks -%}
+                      <div class="valignMiddleBullets type-style-h3-regular">
+                        <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/listItem.png?v=1662557811" style="margin-right: 10px;" class="backgroundColorBrandGreenIcons">{{ block.settings.content }}
+                      </div>
+                    {% endfor %}
+					
+					<div class="marginTopBullet-box">
+						<a href="{{ section.settings.button_destination }}">
+							<div class="border-button type-style-button-text">
+								{{ section.settings.button_text }}
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+			<div class="col-6">
+				<img src="/{{ section.settings.image | image_url }}" style="max-width: 100%;  border-radius: 20px;">
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+  {
+  	"name": "2022 - liste - 1",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "headline",
+          "label": "Overskrift"
+      },
+      {
+          "type": "text",
+          "id": "content",
+          "label": "Tekst"
+      },
+      {
+          "type": "text",
+          "id": "button_text",
+          "label": "Tekst på knap"
+      },
+      {
+          "type": "url",
+          "id": "button_destination",
+          "label": "Side link"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Billede"
+      }
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+		  {
+            "type": "text",
+			"id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+  	],
+    "presets": [
+      {
+        "name": "2022 - liste - 1",
+        "blocks": [	  
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

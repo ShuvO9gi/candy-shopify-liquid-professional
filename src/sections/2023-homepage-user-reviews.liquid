@@ -1,0 +1,75 @@
+<div data-component="homepageUserReviews">
+  <section class="swiper" id="swiper-homepage-user-reviews">
+    <h2 class="swiper-header type-style-h2-bold twb-my-8 twb-text-center">{{ section.settings.title }}</h2>
+    <div class="swiper-wrapper twb-mb-12">
+      {% for block in section.blocks %}
+        {% if block.type == 'review' %}
+          <div class="swiper-slide twb-bg-white twb-p-4 twb-rounded-xl twb-shadow-xl twb-mx-4">
+            <h3 class="twb-text-lg twb-h-8 twb-font-bold twb-text-center twb-text-brand-black">{{ block.settings.name }}</h3>
+            <p class="twb-mt-2 twb-text-center twb-text-brand-black twb-line-clamp-6 hover:twb-line-clamp-none twb-min-h-36">
+              {{ block.settings.review }}
+            </p>
+            <div class="twb-my-4 twb-h-4 twb-flex twb-justify-center twb-items-center">
+              {% for _ in (1..block.settings.rating) %}
+                {% render 'icon' with 'star-filled' %}
+              {% endfor %}
+              {% for _ in (block.settings.rating..4) %}
+                {% render 'icon' with 'star-empty' %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "2023 - homepage reviews",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Homepage User Reviews"
+    }
+  ],
+  "presets": [
+    {
+      "name": "2023 - homepage reviews"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review",
+          "default": "Great product!"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "label": "Rating",
+          "default": 5
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,120 @@
+{% stylesheet %}
+.shopadjust-top-review .WidgetPlaceHolder {
+	height: auto !important;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.shopadjust-top-review .WidgetPlaceHolder a {
+	display: block;
+	margin-top: 10px;
+	color: #323232;
+	font-weight: 600;
+	text-decoration: underline; 
+}
+
+.shopadjust-top-review .boast-component h3 {
+	font-size: 1.3rem !important;
+	font-weight: 900 !important;
+	color: #323232 !important;
+}
+
+.shopadjust-top-review .boast-component .response-list-item__body {
+	flex-direction: column !important;
+	padding: 1.24rem 0 !important;
+}
+
+.shopadjust-top-review .boast-component .response-list-item__body .response-list-item__wrapper {
+	padding: 0 !important;
+}
+
+.shopadjust-top-review .boast-component .response-card__feedback {
+	color: #323232;
+}
+
+.shopadjust-top-review .boast-component .response-list-item__media {
+	margin-bottom: 1rem;
+	width: 100% !important;
+}
+
+.shopadjust-top-review .boast-component .response-list-item__preview {
+	width: 325px !important;
+	height: 185px !important;
+	border-radius: 8px;
+	overflow: hidden;
+} 
+
+.shopadjust-top-review .boast-component .response-list-item{
+	background-color: transparent;
+}
+
+.shopadjust-top-review .boast-component .response-list-item__name , .shopadjust-top-review .boast-component  .response-list-item__submitted-at {
+    color: #ff94c3;
+}
+
+{% endstylesheet %} 
+
+<div class="section-container">
+	<div class="page-container customerreview_1">
+		<div class="row">
+			<div class="col-6">
+				<img src="{{ section.settings.image | image_url }}" style="max-width:100%; border-radius: 20px;">
+			</div>
+			<div class="col-6 ">
+				<div class="customerreview_1_padding-right">
+					<h2 class="type-style-h2-bold">
+                      {{ section.settings.headline }}
+                    </h2>	
+					<div class="WidgetPlaceHolder">
+						{%- if section.settings.top_iv_widget != blank -%}
+							<div>
+								{{ section.settings.top_iv_widget }}
+							</div>
+						{%- endif -%}
+						<div class="review-shape">
+							{{ s.iv_review_shape | file_url | img_tag }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+  {
+  	"name": "2022 - kunde reviews - 1",
+  	"tag": "section",
+  	"class": "shopadjust-top-review",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "headline",
+          "label": "Overskrift"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Billede"
+      },
+	  {
+        "type": "html",
+        "id": "top_iv_widget",
+        "label": "Top vid review widget"
+      },
+	  {
+        "type": "text",
+        "id": "iv_review_shape",
+        "label": "Video review shape"
+      }
+	],
+    "presets": [
+      {
+        "name": "2022 - kunde reviews - 1"
+      }
+    ]
+  }
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,22 @@
+<ul class="twb-w-full twb-flex twb-justify-around twb-mb-8">
+  {% assign usp_items = '+450 varianter|SlikEks_icon_slik.svg,+26.347 kunder|SlikEks_icon_thumbs-up.svg,100% hygiejnisk|SlikEks_icon_hygiejne.svg'
+    | split: ','
+  %}
+
+  {% for usp in usp_items %}
+    {% assign usp_details = usp | split: '|' %}
+    <li class="twb-w-1/3 twb-flex twb-justify-center twb-items-center twb-flex-col">
+      <img
+        src="{{ usp_details[1] | asset_url }}"
+        width="300"
+        height="300"
+        loading="eager"
+        alt="USP item"
+        class="twb-h-full twb-w-8"
+      >
+      <div>
+        <p class="type-style-usp-h twb-text-white">{{ usp_details[0] }}</p>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+.frontpage__products-rows {
+  &__btn {
+    width: 441px !important;
+    height: 49px !important;
+    margin-top: 89px;
+    margin-bottom: 110px;
+  }
+}

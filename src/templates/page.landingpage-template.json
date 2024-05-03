@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1643527456edccbab0": {
+      "type": "b2b-landing-top",
+      "blocks": {
+        "1643527456333ab9a9-0": {
+          "type": "collection",
+          "settings": {
+            "headline": "Slik på kontoret",
+            "content": "Vi sender i praktiske bøtter, som i kan tage frem når det passer"
+          }
+        },
+        "155c3788-4d0f-4743-8324-a1149f3a53b4": {
+          "type": "collection",
+          "settings": {
+            "headline": "Til events",
+            "content": "Vi pakker fra 10 kroners poser og opefter"
+          }
+        },
+        "0a4bd21b-77d9-46e5-8ab7-9e4c40cfbcea": {
+          "type": "collection",
+          "settings": {
+            "headline": "Giv gavekort",
+            "content": "Vi sender et gavekort til dine ansatte, så de selv kan blande slik når de har lyst"
+          }
+        }
+      },
+      "block_order": [
+        "1643527456333ab9a9-0",
+        "155c3788-4d0f-4743-8324-a1149f3a53b4",
+        "0a4bd21b-77d9-46e5-8ab7-9e4c40cfbcea"
+      ],
+      "settings": {
+        "topHeadline": "Er du en virksomhed?",
+        "headline": "<p>Vi hjælper med <strong>gaveideer<\/strong><\/p>",
+        "content": "<p>Se alle mulighederne på denne side for hvordan du kan sende gaver til kunder eller ansatte<\/p>",
+        "content-small": "<p>Vi sender også direkte hjem til dine ansatte eller til jeres kontor<\/p>",
+        "button-text": "Kontakt os",
+        "button-url": "shopify:\/\/pages\/kontakt-os",
+        "image": "shopify:\/\/shop_images\/IMG.png"
+      }
+    },
+    "1643527667b6903490": {
+      "type": "b2b-landing-call-to-actions",
+      "blocks": {
+        "a0785ed3-80c9-404e-b921-218e59b97b72": {
+          "type": "collection",
+          "settings": {
+            "mageLeft": true,
+            "smallSection": true,
+            "fullWidth": false,
+            "topHeadline": "Årets Firmagave",
+            "headline": "<p>Champagneflasker <strong>med besked på etiketten<\/strong><\/p>",
+            "content": "<p>Giv en anderledes gave til dine ansatte, som de kan nyde med deres familier en <strong>hyggelig aften<\/strong>. Champagneflasken med Bland Selv Slik er sjov og kan bruges til mange formål.<\/p>",
+            "content-small": "",
+            "button-text": "",
+            "buttonUrl": "",
+            "image": "shopify:\/\/shop_images\/flasker_1f5200f0-1ebd-4f11-9f80-e5a3c0a5fc0d.png"
+          }
+        },
+        "bc9ec26d-51d0-4687-b173-77b453b61ea6": {
+          "type": "collection",
+          "settings": {
+            "mageLeft": false,
+            "smallSection": true,
+            "fullWidth": false,
+            "topHeadline": "Personlige hilsner",
+            "headline": "<p>Skræddersyede labels<strong>med jeres egne budskaber<\/strong><\/p>",
+            "content": "<p>Vi laver mange <strong>skræddersyede løsninger<\/strong> med slik. <\/p>",
+            "content-small": "<p>Tag kontakt til os hvis du skal have hjælp til anderledes firmagaver som ALLE vil elske.<\/p>",
+            "button-text": "Kontakt os",
+            "buttonUrl": "shopify:\/\/pages\/kontakt-os",
+            "image": "shopify:\/\/shop_images\/IMG.png"
+          }
+        }
+      },
+      "block_order": [
+        "a0785ed3-80c9-404e-b921-218e59b97b72",
+        "bc9ec26d-51d0-4687-b173-77b453b61ea6"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1643527456edccbab0",
+    "1643527667b6903490"
+  ]
+}

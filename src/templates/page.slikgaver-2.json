@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-page",
+      "settings": {
+      }
+    },
+    "1643269749394ad2ec": {
+      "type": "b2b-landing-call-to-actions",
+      "blocks": {
+        "6f2ed674-2157-4c94-9634-2960f24fdf97": {
+          "type": "collection",
+          "settings": {
+            "mageLeft": false,
+            "smallSection": false,
+            "fullWidth": false,
+            "topHeadline": "Mellem overskrift",
+            "headline": "<p>Overskrift<\/p>",
+            "content": "<p>Dette er tekst1<\/p>",
+            "content-small": "<p>Dette er tekst 2<\/p>",
+            "button-text": "Dette er knap tekst",
+            "buttonUrl": "",
+            "image": "shopify:\/\/shop_images\/kurv.png"
+          }
+        }
+      },
+      "block_order": [
+        "6f2ed674-2157-4c94-9634-2960f24fdf97"
+      ],
+      "settings": {
+      }
+    },
+    "16432700009ccaa642": {
+      "type": "b2b-landing-stars",
+      "blocks": {
+        "1643270000d2c4544d-0": {
+          "type": "collection",
+          "settings": {
+            "headline": "",
+            "name": ""
+          }
+        }
+      },
+      "block_order": [
+        "1643270000d2c4544d-0"
+      ],
+      "settings": {
+        "headline": "test"
+      }
+    },
+    "16432700242bd36835": {
+      "type": "b2b-landing-call-to-actions",
+      "blocks": {
+        "85578b86-fbd4-4f98-bebe-9474a4968899": {
+          "type": "collection",
+          "settings": {
+            "mageLeft": true,
+            "smallSection": false,
+            "fullWidth": false,
+            "topHeadline": "Mellem overskrift",
+            "headline": "<p>Overskrift<\/p>",
+            "content": "<p>Indholdstekst<\/p>",
+            "content-small": "<p>Indhold lille<\/p>",
+            "button-text": "her er knappen",
+            "buttonUrl": "",
+            "image": "shopify:\/\/shop_images\/IMG.png"
+          }
+        }
+      },
+      "block_order": [
+        "85578b86-fbd4-4f98-bebe-9474a4968899"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1643269749394ad2ec",
+    "16432700009ccaa642",
+    "16432700242bd36835"
+  ]
+}

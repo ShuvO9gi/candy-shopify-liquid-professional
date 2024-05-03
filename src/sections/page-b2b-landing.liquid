@@ -1,0 +1,64 @@
+{% schema %}
+  {
+  	"name": "Sektioner",
+  	"tag": "section",
+  	"class": "shopadjust-top",
+    "settings": [
+	  {
+          "type": "text",
+          "id": "topHeadline",
+          "label": "Top sub-overskrift"
+      },	  
+      {
+          "type": "richtext",
+          "id": "headline",
+          "label": "Overskrift"
+      },
+	  {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+      },
+	  {
+          "type": "richtext",
+          "id": "content-small",
+          "label": "Content - lille"
+      },
+	  {
+          "type": "text",
+          "id": "button-text",
+          "label": "Knap tekst"
+      },
+	  {
+          "type": "url",
+          "id": "button-url",
+          "label": "Knap url"
+      },
+	  {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Knap url"
+      }
+	],
+  	"blocks": [
+      {
+        "type": "collection",
+        "name": "Aktive collectioner",
+        "settings": [
+          {
+            "type": "collection",
+			"id": "collection_producent",
+            "label": "Yesy sir"
+          }
+        ]
+      }
+  	]
+    
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

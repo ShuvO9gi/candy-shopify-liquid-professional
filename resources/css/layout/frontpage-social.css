@@ -1,0 +1,36 @@
+.frontpage__social {
+  &__wrapper {
+    &:first-child {
+      @media screen and (max-width: 1024px) {
+        min-height: 10rem;
+      }
+    }
+  }
+
+  /* Social */
+  &__social-title {
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #FFF;
+    }
+  }
+
+  /* Newsletter */
+  &__newsletter-text {
+    p {
+      color: #481964;
+    }
+  }
+
+  &__newsletter-button {
+    max-width: 500px;
+    @media (max-width: 640px) {
+      max-width: 100%;
+    }
+  }
+}

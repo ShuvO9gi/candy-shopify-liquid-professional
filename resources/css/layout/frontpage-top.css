@@ -1,0 +1,312 @@
+.frontpage__top {
+  .page-width {
+    max-width: 1350px;
+    @media screen and (min-width: 1700px) {
+      max-width: 1640px;
+    }
+  }
+  
+  &__hero {
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
+
+    .left,
+    .right {
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
+    }
+
+    .right {
+      @media screen and (max-width: 1000px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    &--title {
+      p {
+        font-family: inherit;
+        font-size: 40px;
+        line-height: 48px;
+        @media screen and (max-width: 1000px) {
+          font-size: 26px;
+          line-height: 31px;
+        }
+      }
+    }
+
+    &--image {
+      margin-top: -18rem;
+      @media screen and (min-width: 1700px) {
+        width: 80% !important;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @media screen and (max-width: 1270px) {
+        margin-top: -14rem;
+      }
+      @media screen and (max-width: 1000px) {
+        margin-top: -9rem;
+      }
+      @media screen and (max-width: 640px) {
+        margin-top: -3rem;
+      }
+    }
+
+    &--usp {
+      width: 10rem;
+      @media screen and (min-width: 1001px) {
+        &:not(:first-child) {
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+      }
+      @media screen and (max-width: 1000px) {
+        width: unset;
+        margin-top: 30px;
+        padding: 0 16px;
+      }
+      @media screen and (max-width: 640px) {
+        &:not(.show-on-mobile) {
+          display: none;
+        }
+      }
+
+      .title {
+        font-size: 16px;
+        @media screen and (max-width: 640px) {
+          font-size: 12px;
+        }
+      }
+
+      .text {
+        @media screen and (max-width: 640px) {
+          font-size: 17px;
+        }
+      }
+
+      p {
+        color: inherit;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  &__image-video-wrapper {
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  &__shape-wrapper {
+    width: 45%;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    z-index: 5;
+    @media screen and (max-width: 1000px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /* Video review single */
+  &__iv-review-shape {
+    top: -150px;
+    width: 60%;
+    padding-top: 60%;
+    @media screen and (max-width: 900px) {
+      position: relative;
+      top: 0;
+      width: 100%;
+      padding-top: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .review-shape {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+
+  &__iv-review-wrapper {
+    top: 35%;
+    left: 25%;
+    @media screen and (max-width: 900px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 70px;
+      padding: 0 20px;
+    }
+
+    a {
+      display: block;
+      margin-top: 30px;
+      color: #FF94C3;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+
+  &__iv-review--title {
+    font-size: 36px;
+    @media screen and (max-width: 640px) {
+      font-size: 26px;
+    }
+  }
+
+  /* Custom widget styling */
+  .boast-component .response-list-item__body {
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+  .boast-component .response-list-item {
+    background-color: transparent !important;
+  }
+  .boast-component .response-list-item__media {
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+  }
+  .boast-component .response-list-item__preview {
+    width: 250px !important;
+    height: 160px !important;
+    @media screen and (max-width: 900px) {
+      width: 100% !important;
+      height: unset;
+      padding-top: 52.25%;
+    }
+  }
+  .response-list-item__wrapper {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  .response-list-item__headline {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .response-list-item__headline h1 {
+    color: inherit !important;
+  }
+  .response-list-item__headline h2 {
+    color: inherit !important;
+  }
+  .response-list-item__headline h3 {
+    color: inherit !important;
+  }
+  .response-list-item__headline h4 {
+    color: inherit !important;
+  }
+  .response-list-item__headline h5 {
+    color: inherit !important;
+  }
+  .response-list-item__headline h6 {
+    color: inherit !important;
+  }
+  .response-card__feedback {
+    color: #FFF;
+  }
+  .boast-component .response-list-item__name span {
+    font-family: 'Amsi Pro Normal';
+    color: #FFDA3E;
+  }
+  .boast-component .response-list-item__submitted-at {
+    font-family: 'Amsi Pro Normal';
+    color: #FFDA3E;
+  }
+
+  /* Bullets with image */
+  &__bullets {
+    &--number {
+      width: 100px;
+      height: 85px;
+      font-size: 36px;
+      @media screen and (max-width: 640px) {
+        width: 70px;
+        height: 60px;
+        font-size: 26px;
+      }
+    }
+
+    &--title {
+      font-size: 36px;
+      @media screen and (max-width: 640px) {
+        max-width: 250px;
+        font-size: 26px;
+      }
+    }
+
+    &--text {
+      @media screen and (max-width: 640px) {
+        margin-left: 20px;
+      }
+
+      p,
+      a {
+        @media screen and (max-width: 640px) {
+          font-size: 17px;
+        }
+      }
+    }
+
+    &--cta {
+      margin-left: 137px;
+      @media screen and (min-width: 641px) {
+        min-width: 400px !important;
+      }
+      @media screen and (max-width: 640px) {
+        min-width: unset;
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    .bullets-image {
+      @media screen and (max-width: 900px) {
+        position: relative;
+        top: 0;
+        margin-top: 3rem;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.image-w-bg {
+  width: 45%;
+  &.in--back {
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 640px) {
+    width: 85%;
+  }
+}
+
+.image-w-z {
+  &.in--back {
+    z-index: 1;
+  }
+}

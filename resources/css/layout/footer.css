@@ -1,0 +1,90 @@
+.footer-new {
+  &__inner {
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo-wrapper {
+    &.desktop {
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
+    }
+    &.mobile {
+      @media screen and (min-width: 1025px) {
+        display: none;
+      }
+    }
+  }
+
+  &__nav-wrapper {
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__icon-wrapper {
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      margin-top: 3rem;
+    }
+  }
+
+  &__nav-wrapper {
+    margin-top: -20px;
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__col {
+    width: 100%;
+    padding-top: 20px;
+
+    &--title{
+      font-size: 15px;
+      color: #643287;
+      line-height: 175%;
+    }
+
+    &--text{
+      p {
+        font-size: 15px;
+        color: #643287;
+        line-height: 175%;
+
+        a {
+          text-decoration: underline;
+          color: #643287;
+        }
+
+      }
+    }
+
+    @media screen and (min-width: 639px) {
+      width: calc(50% - 1.25rem);
+    }
+    @media screen and (min-width: 799px) {
+      width: 25%;
+    }
+  }
+
+  &__nav__list{
+    font-size: 15px;
+    color: #643287;
+    line-height: 175%;
+  }
+
+}
+
+.footer__width {
+  margin: 0 auto;
+  max-width: 1130px;
+
+  @media only screen and (max-width: 1024px){
+     padding: 0 40px 
+  }
+}
+

@@ -18,7 +18,8 @@ const imgUrlDefault = '//cdn.shopify.com/s/files/1/0555/3461/6756/files/slikeks-
 
 export default component((node, ctx) => {
   /**
-   * Toggle filter on mobile
+   * Toggle filter on mobile 
+   * test
    */
   const filterDrawer = document.querySelector('[data-filter-drawer]');
   const filterButtons = document.querySelectorAll('[data-filter-button]');

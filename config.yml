@@ -2,7 +2,6 @@ development:
   password: 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
   theme_id: 135419986146
   store: slikekspressen.myshopify.com
-  directory: src
   ignore_files:
     - config/settings_data.json
     - /(locales\/)[a-zA-Z]+(-[A-Z]+)?(.json)/
@@ -11,7 +10,5 @@ production:
   password: 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
   theme_id: 135419986146
   store: slikekspressen.myshopify.com
-  directory: src
   ignore_files:
-    - config/settings_data.json
     - /(locales\/)[a-zA-Z]+(-[A-Z]+)?(.json)/

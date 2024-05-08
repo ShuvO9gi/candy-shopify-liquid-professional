@@ -546,7 +546,10 @@
                         <script>
                           console.log("filter_cat", filter_cat);
                         </script>
-                        
+                        <div
+                          >
+                          {{ filter_id | capitalize }}
+                        </div>
                       {%- endif -%}
                     {%- endcase -%}
                   {%- endfor -%}

@@ -537,6 +537,7 @@
                     {%- case b.type -%}
                     {%- when 'filter_type' -%}
                       {%- assign bs = b.settings -%}
+                      {%- assign filter_cat = bs.category -%}
                       
                     {%- endcase -%}
                   {%- endfor -%}

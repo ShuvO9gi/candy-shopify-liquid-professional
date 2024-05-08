@@ -535,7 +535,9 @@
                       console.log("b", b);
                     </script>
                     {%- case b.type -%}
-                    
+                    {%- when 'filter_type' -%}
+                      {%- assign bs = b.settings -%}
+                      
                     {%- endcase -%}
                   {%- endfor -%}
                 </div>

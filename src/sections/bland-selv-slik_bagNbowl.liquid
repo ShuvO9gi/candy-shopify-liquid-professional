@@ -542,7 +542,12 @@
                       {%- assign filter_id = bs.filter_id -%}
                       {%- assign filter_type = bs.type -%}
   
-                      
+                      {%- if filter_cat == "kategori" -%}
+                        <script>
+                          console.log("filter_cat", filter_cat);
+                        </script>
+                        
+                      {%- endif -%}
                     {%- endcase -%}
                   {%- endfor -%}
                 </div>

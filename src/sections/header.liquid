@@ -78,7 +78,7 @@
       <div class="page-container">
         <div class="row">
           <div class="col-12">
-            <div class="flex">
+            <div class="flex topMenuMain">
               {%- if s.logo != blank -%}
                 <div class="logo__menu">
                   <div class="logo__menu__item">
@@ -115,7 +115,7 @@
                         </ul>
                       </div>
                     {% else %}
-                      <a href="{{ link.url }}" class="{% if link.url == '/cart' %}cart-link top-cart-link{% endif %}">
+                      <a href="{{ link.url }}">
                         <div
                           class="menuItem type-style-nav-link"
                           {% if link.url == '/cart' %}
@@ -124,15 +124,17 @@
                         >
                           {{ link.title }}
                         </div>
-                        {% if link.url == '/cart' %}
-                          <span data-cart-count="{{ cart.item_count }}">
-                            {%- render 'icon', icon: 'cart' -%}
-                          </span>
-                        {% endif %}
                       </a>
                     {% endif %}
                   {% endfor %}
                 </div>
+              </div>
+              <div class="cartIcon">
+                  <a href="/cart" class="cart-link top-cart-link">Kurv
+                      <span data-cart-count="{{ cart.item_count }}">
+                        {%- render 'icon', icon: 'cart' -%}
+                      </span>
+                  </a>
               </div>
             </div>
           </div>

@@ -121,7 +121,7 @@
     position: fixed;
     bottom: 0;
     z-index: 1000;
-    background-color: #fff;
+    background-color: #6E4695;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 0 !important;
     width: 100%;
@@ -137,7 +137,8 @@
     display: none !important;
 }
 .champagneflaske_christmas .sticky .product{
-    width: 300px;
+    width: 100%;
+    gap: 10px;
 }
  .champagneflaske_christmas .candyBoxBuyButton{
     padding: 11px 16px !important;
@@ -145,7 +146,11 @@
   .champagneflaske_christmas .sticky #AddToCartText-custom{
     font-size: 14px !important;
   }
-
+ 
+.champagneflaske_christmas .productLabel{
+    color: #fdac2b;
+    font-weight: 700;
+}
   /* For desktop screen */
   @media only screen and (min-width: 1024px) {
 
@@ -224,7 +229,7 @@
     padding-left: 30px;
 }
     .product-detail select[class^=variant__input] {
-    width: auto !important;
+    width: 87% !important;
 }
    .champagneflaske_christmas .productImage {
     margin: 20px 0 !important;
@@ -242,24 +247,31 @@
     .champagneflaske_christmas .productBoxContent {
     padding-bottom: 50px !important;
 }
-    .christmas_top_img {
+  .christmas_top_img {
     height: 100px;
     object-fit: cover;
 }
-    .champagneflaske_christmas .topContentProduct {
+  .champagneflaske_christmas .topContentProduct {
     width: 100% !important;
       margin-top: 0 !important;
 }
-    .champagneflaske_christmas .page-container {
+  .champagneflaske_christmas .page-container {
     padding-left: 30px !important;
     padding-right: 30px !important;
 }
-      .champagneflaske_christmas .productBoxContent-items{
+  .champagneflaske_christmas .productBoxContent-items{
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     text-align: center;
     justify-items: center;
   }
+  .champagneflaske_christmas .variant__input-custom option{
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  .product-detail select[class^=variant__input]{
+    font-size: 16px !important;
+    }
   }
 
 </style>
@@ -278,7 +290,7 @@
           {{ product.title }}
         </h1>
 <div class="productPriceContent">
-  <span class="productPrice type-style-h2-bold" id="productPrice"> {{ product.price | money }} </span>
+  <span class="productPrice type-style-h2-bold" id="productPrice">Fra {{ product.price | money }} </span>
   <span class="priceText text-grey type-style-p-small-regular">
     Inkl. moms. Fragt bliver tilføjet ved betaling.
   </span>
@@ -316,19 +328,19 @@
     </div>
     <div class="se_prod-description">
       <div class="video-with-text">
-      <div class="productDescription type-style-p-regular">
-        {{ product.description }}
-      </div>
-        
-            {% assign video_url = product.metafields.custom.video_url %}
-              <div class="video-se_content">
-                  <video src="{{ video_url }}" id="se_myVideo" class="se_video" autoplay loop muted playsinline></video>
-                  <button class="se_play-button" onclick="playPause()">
-                      <i class="fas fa-pause"></i>
-                  </button>
-              </div>
-
- </div>
+        <div class="productDescription type-style-p-regular">
+          {{ product.description }}
+        </div>
+          {% if section.settings.addvideo %}
+           {% assign video_url = product.metafields.custom.video_url %}
+            <div class="video-se_content">
+                <video src="{{ video_url }}" id="se_myVideo" class="se_video" autoplay loop muted playsinline></video>
+                <button class="se_play-button" onclick="playPause()">
+                    <i class="fas fa-pause"></i>
+                </button>
+            </div>
+          {% endif %}
+       </div>
       {% if product.metafields.mix.contents_label != blank %}
         <div class="productLabel">
           {{ product.metafields.mix.contents_label }}
@@ -435,16 +447,21 @@
   "tag": "section",
   "class": "shopadjust-top",
   "settings": [
-    {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image top"
-        },
-    {
-          "type": "text",
-          "id": "video",
-          "label": "Video URL"
-        }
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image top"
+      },
+      {
+        "type": "checkbox",
+        "id": "addvideo",
+        "label": "Add video"
+      },
+      {
+        "type": "text",
+        "id": "video",
+        "label": "Video URL"
+      }
   ],
   "presets": [
     {

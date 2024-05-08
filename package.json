@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack --mode development --progress",
-    "watch": "cross-env NODE_ENV=development webpack --mode development --watch --progress",
+    "watch": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack --mode development --watch --progress",
     "prod": "cross-env NODE_ENV=production webpack --mode production",
     "production": "yarn prod",
     "lint": "node_modules/.bin/eslint ."

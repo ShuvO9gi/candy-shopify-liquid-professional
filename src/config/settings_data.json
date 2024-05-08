@@ -1324,20 +1324,21 @@
           "35323219-acc8-4e84-91c1-171ee1cf345a-collection-1"
         ],
         "custom_css": [
-          "h1 {text-align: center; color: Black;}"
+
         ],
         "settings": {
-          "bgimage": "shopify:\/\/shop_images\/Paske_02.png",
-          "checkbgimagelarge": true,
+          "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
+          "checkbgimagelarge": false,
           "bgimagelarge": "shopify:\/\/shop_images\/light2.png",
-          "headline": "<p>Klar til fejring?<br\/>Vi har den perfekte gaveidé!<br\/><br\/>En champagneflaske fyldt med lækkert slik.<br\/><\/p>",
+          "headline": "<p>Se alle vores gaveidéer <br\/>til <strong>mors dag <\/strong><br\/><\/p>",
           "subheadline": "",
-          "order_before": "",
+          "order_before": "Vi sender næste gang om:",
           "weekendtext": "",
           "holidaytext": "",
-          "button_text": "Køb her",
-          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
-          "image": "shopify:\/\/shop_images\/Konfirmation_Kampagne_670_530_280be448-6f0c-4248-aec8-9a57b4bd66ca.png"
+          "button_text": "Se flere gaver her",
+          "button_destination": "shopify:\/\/products\/mors-dags-gave",
+          "image": "shopify:\/\/shop_images\/Hjertebland_selv_slik_2_670-min.png",
+          "textright": false
         }
       },
       "b49b16e9-60a4-43d9-a436-88b189708dc1": {

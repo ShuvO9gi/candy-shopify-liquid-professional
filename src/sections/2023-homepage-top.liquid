@@ -1,28 +1,32 @@
 <style>
-  .cus_banner--text{
+ #shopify-section-{{section.id}} .cus_banner--text{
     width: 50% !important;
+    justify-content: flex-start !important;
   }
-  .cus_banner--img{
+#shopify-section-{{section.id}}  .cus_banner--img{
     width: 50% !important;
     padding: 50px 100px;
   }
-  .cus_banner--img img{
+ #shopify-section-{{section.id}} .cus_banner--img img{
     border-radius: 30px;
   }
-  .bannerbtn{
-    margin: 0 auto;
+ #shopify-section-{{section.id}} .bannerbtn{
+    margin-left: 20px;
   }
-  .bannerbtn .orangeButton {
+ #shopify-section-{{section.id}} .bannerbtn .orangeButton {
     padding: 12px 100px !important;
 }
-  .backgroundWallpaper h1{
+ #shopify-section-{{section.id}} .backgroundWallpaper h1{
+    padding: 0 20px;
+  }
+  #shopify-section-{{section.id}} .announcement-link-text{
     padding: 0 20px;
   }
   @media only screen and (max-width: 767px) {
-     .cus_banner--text{
+   #shopify-section-{{section.id}}  .cus_banner--text{
     width: 100% !important;
   }
-  .cus_banner--img{
+ #shopify-section-{{section.id}} .cus_banner--img{
     width: 100% !important;
     padding: 0 !important;
   }
@@ -51,7 +55,8 @@
   </div>
 {% endcapture %}
 
-<div class="section-container backgroundWallpaper twb-flex twb-flex-col-reverse md:twb-flex-row" style="{% if section.settings.checkbgimagelarge %}background-image: url({{ section.settings.bgimagelarge | img_url: 'master' }});background-size: cover; background-repeat: no-repeat; background-position: center;{% else %}background-image: url({{ section.settings.bgimage | img_url: 'master' }});{% endif %}">
+<div class="section-container backgroundWallpaper twb-flex twb-flex-col-reverse md:twb-flex-row" style="{% if section.settings.textright %}flex-direction: row-reverse !important;{% endif %} {% if section.settings.checkbgimagelarge %}background-image: url({{ section.settings.bgimagelarge | img_url: 'master' }});background-size: cover; background-repeat: no-repeat; background-position: center;{% else %}background-image: url({{ section.settings.bgimage | img_url: 'master' }});{% endif %}">
+  <div class="page-container twb-flex twb-flex-col-reverse md:twb-flex-row">
   <div class="twb-block md:twb-hidden">
     {% render '2023-homepage-usp-mobile' %}
   </div>
@@ -83,10 +88,10 @@
     }}
   </div>
 </div>
-
+</div>
 {% schema %}
   {
-    "name": "2023 - top",
+    "name": "Hero-1 product-change bg",
     "tag": "section",
     "class": "shopadjust-top",
     "settings": [
@@ -148,6 +153,11 @@
         "id": "image",
         "label": "Billede",
         "info": "Recommended size 670x530"
+      },
+      {
+        "type": "checkbox",
+        "id": "textright",
+        "label": "Show texts in right side"
       }
     ],
     "blocks": [
@@ -170,7 +180,7 @@
     ],
     "presets": [
       {
-        "name": "2023 - top",
+        "name": "Hero-1 product-change bg",
         "blocks": [
           {
             "type": "collection"

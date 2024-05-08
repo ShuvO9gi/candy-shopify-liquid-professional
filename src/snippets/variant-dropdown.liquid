@@ -19,7 +19,7 @@
         name="{{ option.name }}"
         class="variant-input"
         data-index="option{{ forloop.index }}">
-        {{ value }}
+        {{ value }} - {{ product.variants[forloop.index0].price | money }}
       </option>
     {%- endfor -%}
   </select>

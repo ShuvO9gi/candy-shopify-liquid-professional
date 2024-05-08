@@ -674,9 +674,10 @@ h1.normalPage {
 }
 
 .page-container {
-  max-width: 1130px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
 }
 
 h1 {
@@ -760,9 +761,9 @@ h2 {
 h2 b {
   font-weight: var(--fontWeight700);
 }
-
-.topMenu {
-  height: 76px;
+.topMenuMain{
+  justify-content: space-between;
+  align-items: center;
 }
 
 .topbannerContent h1 {
@@ -849,9 +850,6 @@ h2 b {
   margin: auto;
 }
 
-.menuContainer {
-  height: 76px;
-}
 
 .menuItem {
   padding-left: 20px;
@@ -2280,7 +2278,6 @@ a.border-button {
 .logo__menu {
   position: relative;
   bottom: -20px;
-  left: -90px;
 }
 
 .logo__menu .logo__menu__item {
@@ -2302,11 +2299,6 @@ header {
   left: 0;
 }
 
-.desktopMenu {
-  top: 27px;
-  position: relative;
-  left: 60px;
-}
 
 .mobile-logo {
   max-width: 100%;
@@ -2401,6 +2393,9 @@ span.announcement-link-text {
 
 .top-cart-link {
   display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 8px;
 }
 
 .top-cart-link .menuItem {
@@ -2973,7 +2968,7 @@ ul.submenu {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  top: 40%;
+  top: 80%;
   list-style: none;
   margin: 0;
   padding: 0;

@@ -528,6 +528,15 @@
               <div class="col-12">
                 <h2 class="candyHeadline type-style-h2-regular">{{ s.title }}</h2>
                 {% render 'cl-usp-list' %}
+
+                <div class="flex pb-8" style="padding-bottom: 32px;">
+                  {%- for b in section.blocks -%}
+                    <script>
+                      console.log("b", b);
+                    </script>
+                  {%- endfor -%}
+                </div>
+
               </div>
             </div>
           {%- endif -%}

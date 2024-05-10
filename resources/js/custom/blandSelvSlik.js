@@ -1088,7 +1088,11 @@ export default component((node, ctx) => {
 
       console.log("filteredProducts", filteredProducts);
 
-      productListElem.innerHTML = renderProducts(unique);
+      //productListElem.innerHTML = renderProducts(unique);
+
+      productListElem.innerHTML = `
+            <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${filteredProducts}</h2>
+                    `;
 
       addToCardEventListeners();
     });

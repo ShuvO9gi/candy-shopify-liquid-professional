@@ -1084,6 +1084,8 @@ export default component((node, ctx) => {
 
       ctx.emit("products:ready", { renderThese: unique });
 
+      const filteredProducts = allFilters[0].activeTypes[0];
+
       productListElem.innerHTML = renderProducts(unique);
 
       addToCardEventListeners();

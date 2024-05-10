@@ -1069,6 +1069,7 @@ export default component((node, ctx) => {
     ctx.on("products:filtered", (state) => {
       let renderThese = [];
       const { allFilters } = state;
+      console.log("allFilters", allFilters);
 
       allFilters.forEach((filter) => {
         const { filteredItems } = filter;

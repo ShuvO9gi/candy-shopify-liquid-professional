@@ -1115,6 +1115,12 @@ export default component((node, ctx) => {
       "foam",
       "licoricemix",
       "foammix",
+      "sour",
+      "withsugar",
+      "fudge",
+      "sticks",
+      "wrapped",
+      "pastil",
     ];
 
     if (state.hasFilters) ctx.emit("filter:start");

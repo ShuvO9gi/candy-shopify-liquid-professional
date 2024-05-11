@@ -1111,6 +1111,10 @@ export default component((node, ctx) => {
       "winegum",
       "licorice",
       "chocolate",
+      "caramel",
+      "foam",
+      "licoricemix",
+      "foammix",
     ];
 
     if (state.hasFilters) ctx.emit("filter:start");

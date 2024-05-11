@@ -1121,6 +1121,9 @@ export default component((node, ctx) => {
       "sticks",
       "wrapped",
       "pastil",
+      "candy",
+      "lollipop",
+      "hardcandy",
     ];
 
     if (state.hasFilters) ctx.emit("filter:start");

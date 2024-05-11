@@ -1105,6 +1105,14 @@ export default component((node, ctx) => {
       });
     });
 
+    const categoryList = [
+      "selected",
+      "new",
+      "winegum",
+      "licorice",
+      "chocolate",
+    ];
+
     if (state.hasFilters) ctx.emit("filter:start");
     else productListElem.innerHTML = renderProducts(state.allProducts);
 

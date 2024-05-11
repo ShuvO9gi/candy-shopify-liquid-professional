@@ -1128,8 +1128,18 @@ export default component((node, ctx) => {
 
     console.log("state", state);
 
-    if (state.hasFilters) ctx.emit("filter:start");
-    else productListElem.innerHTML = renderProducts(state.allProducts);
+    // if (state.hasFilters) ctx.emit("filter:start");
+    // else productListElem.innerHTML = renderProducts(state.allProducts);
+
+    const categorizedProducts = (products) => {
+      let categorizedHTML = "";
+
+      categoryList.forEach((category) => {
+        const filteredProducts = products.filter((product) =>
+          product.tags.includes(category)
+        );
+
+      });
 
     addToCardEventListeners();
 

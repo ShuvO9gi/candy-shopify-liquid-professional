@@ -1126,6 +1126,8 @@ export default component((node, ctx) => {
       "hardcandy",
     ];
 
+    console.log("state", state);
+
     if (state.hasFilters) ctx.emit("filter:start");
     else productListElem.innerHTML = renderProducts(state.allProducts);
 

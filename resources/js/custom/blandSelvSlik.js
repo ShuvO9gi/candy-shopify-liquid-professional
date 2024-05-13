@@ -1158,6 +1158,9 @@ export default component((node, ctx) => {
     `;
       }
 
+      return categorizedHTML;
+    };
+
     addToCardEventListeners();
 
     loadMoreBtn.addEventListener("click", (e) => {

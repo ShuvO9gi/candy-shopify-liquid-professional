@@ -1151,6 +1151,13 @@ export default component((node, ctx) => {
         (product) => !product.tags.some((tag) => categoryList.includes(tag))
       );
 
+      if (uncategorizedProducts.length > 0) {
+        categorizedHTML += `
+      <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">Other</h2>
+      
+    `;
+      }
+
     addToCardEventListeners();
 
     loadMoreBtn.addEventListener("click", (e) => {

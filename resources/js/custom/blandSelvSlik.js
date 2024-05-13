@@ -1147,6 +1147,10 @@ export default component((node, ctx) => {
         }
       });
 
+      const uncategorizedProducts = products.filter(
+        (product) => !product.tags.some((tag) => categoryList.includes(tag))
+      );
+
     addToCardEventListeners();
 
     loadMoreBtn.addEventListener("click", (e) => {

@@ -61,10 +61,6 @@ export default component((node, ctx) => {
 
   const loops = Math.ceil(totalProducts / 1000);
   const productListElem = node.querySelector("[data-product-list]");
-
-  const productCategoryElem = node.querySelector("[data-category-list]");
-  console.log(productCategoryElem);
-
   const loadMoreBtn = node.querySelector("[data-load-more]");
   const visualBagElem = node.querySelector("[data-visual-bag]");
   const visualBagToggleBtns = node.querySelectorAll("[data-toggle-visual-bag]");

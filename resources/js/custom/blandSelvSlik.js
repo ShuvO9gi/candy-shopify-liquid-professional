@@ -1162,6 +1162,7 @@ export default component((node, ctx) => {
     };
 
     if (state.hasFilters) ctx.emit("filter:start");
+    else productListElem.innerHTML = categorizedProducts(state.allProducts);
 
     addToCardEventListeners();
 

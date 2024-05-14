@@ -1161,6 +1161,8 @@ export default component((node, ctx) => {
       return categorizedHTML;
     };
 
+    if (state.hasFilters) ctx.emit("filter:start");
+
     addToCardEventListeners();
 
     loadMoreBtn.addEventListener("click", (e) => {

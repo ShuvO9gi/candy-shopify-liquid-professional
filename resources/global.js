@@ -101,18 +101,18 @@ function changeSingleLineItem(obj) {
 
 document.addEventListener("DOMContentLoaded", function () {
   var cookies = document.cookie;
-  console.log({ cookies });
 
   var prevTime = localStorage.getItem("bagLastUpdated")
     ? new Date(localStorage.getItem("bagLastUpdated"))
     : new Date();
   var currentTime = new Date();
   var timeDifference = currentTime - prevTime;
-  console.log({ timeDifference });
+  console.log({ timeDifference: timeDifference / 1000 / 60 });
 
-  //if time difference is greater than 3 hours
-  if (timeDifference > 3 * 60 * 60 * 1000) {
+  //if time difference is greater than 30 mins
+  if (timeDifference > 5 * 60 * 1000) {
     localStorage.removeItem("cart");
+    sessionStorage.removeItem("cart");
 
     fetch("/cart.js", {
       method: "GET",

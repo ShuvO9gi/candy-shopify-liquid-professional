@@ -54,14 +54,14 @@
     {%- endif -%}
     {%- endfor -%}
   </select>
-  
+
     <!-- properties added for pre-mix product -->
     {% if product.metafields.custom.bag_type != blank  %}
       {% unless product.variants.size > 1 %}
        <input type="hidden" name="properties[_image_url]" value="https:{{ product.featured_image.src | img_url: 'medium' }}">
       {% endunless %}
     {% endif %}
-  
+
   {%- if settings.quantity_enable -%}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
       <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
@@ -238,6 +238,8 @@
   
   //GTM dataLayer event
   function gtmAddToCartPush() {
+    console.log('gtmAddToCartPush')
+    localStorage.setItem('bagLastUpdated', new Date().toISOString());
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: 'add_to_cart_stape',

@@ -1086,7 +1086,7 @@ export default component((node, ctx) => {
 
       const filteredProducts = allFilters[0].activeTypes[0];
 
-      console.log("filteredProducts", filteredProducts);
+      //console.log("filteredProducts", filteredProducts);
 
       //productListElem.innerHTML = renderProducts(unique);
 

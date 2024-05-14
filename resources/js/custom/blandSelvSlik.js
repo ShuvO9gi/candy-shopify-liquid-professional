@@ -1097,6 +1097,8 @@ export default component((node, ctx) => {
         })
         .join("");
 
+      productListElem.innerHTML = filteredProducts;
+
       addToCardEventListeners();
     });
 

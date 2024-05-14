@@ -2038,7 +2038,6 @@
         "block_order": [
           "collection_TreET7"
         ],
-        "disabled": true,
         "settings": {
           "checkbgimagelarge": true,
           "bgimagelarge": "shopify:\/\/shop_images\/Screenshot_1.png",
@@ -2104,6 +2103,7 @@
         "block_order": [
           "collection_k3j9Xe"
         ],
+        "disabled": true,
         "settings": {
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,

@@ -1080,16 +1080,16 @@ export default component((node, ctx) => {
 
       ctx.emit("products:ready", { renderThese: unique });
 
-      const filteredProducts = allFilters[0].activeTypes[0];
+      const filteredProducts = allFilters[0]?.activeTypes
+        .map((title) => {
+          let filteredProductsHTML = "";
+          const filteredItems = unique.filter((item) =>
+            item.tags.includes(title)
+          );
 
-      //console.log("filteredProducts", filteredProducts);
-
-      //productListElem.innerHTML = renderProducts(unique);
-
-      productListElem.innerHTML = `
-            <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${filteredProducts}</h2>
-            <div class="candyItems">${renderProducts(unique)}</div>
-        `;
+          return filteredProductsHTML;
+        })
+        .join("");
 
       addToCardEventListeners();
     });

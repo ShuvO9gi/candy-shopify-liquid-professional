@@ -11,10 +11,7 @@
 }
 .champagneflaske_christmas .topContentProduct {
   justify-content: space-between;
-}
-     .productBoxContent{
-           background: #FFF3DA;
-     }     
+}    
   .productBoxContent-items {
     max-width: 1130px;
     margin: 0 auto;
@@ -23,8 +20,6 @@
   .productBoxContentHeadline{
     max-width: 1130px;
     margin: 0 auto;
-  }.productBoxContent{
-    padding: 80px 0; 
   }
   .se_img-box {
       display: flex;
@@ -146,7 +141,18 @@
   .champagneflaske_christmas .sticky #AddToCartText-custom{
     font-size: 14px !important;
   }
- 
+ .champagneflaske_christmas .product{
+      width: 100%;
+    }
+    .champagneflaske_christmas .product-card__btn-wrapper{
+      width: 50%;
+    }
+    .champagneflaske_christmas .product-detail .submit-wrapper{
+      width: 50%;
+    }
+  .productContent .productDescription{
+      margin-top: 30px;
+  }
 .champagneflaske_christmas .productLabel{
     color: #fdac2b;
     font-weight: 700;
@@ -276,9 +282,6 @@
 
 </style>
 {%- assign current_variant = product.selected_or_first_available_variant %}
-{% if product.title != 'Mors dags gaver' %}
-    <img class="christmas_top_img" src="{{ section.settings.image | img_url: 'master' }}">
-{% endif %}
 <div class="section-container champagneflaske_christmas">
   <div class="page-container">
     <div class="topContentProduct flex" style="margin-top: 4rem;">
@@ -323,14 +326,73 @@
             <p class="se_title-bottom">Pakket med handsker og hårnet</p>
           </div>
         </div>
+        {% if section.settings.show_desc %}
+        <div class="productDescription type-style-p-regular">
+          {{ product.description }}
+        </div>
+        {% endif %}
+        {% if product.metafields.mix.contents_label != blank %}
+          <div class="productLabel">
+            {{ product.metafields.mix.contents_label }}
+          </div>
+        {% endif%}
+
+        {% assign hasBox = false %}
+    
+        {% capture productBoxesHTML %}
+
+          {% assign productMixs = product.metafields.my_fields %}
+
+          {% for mix in productMixs %}
+            {% assign thekey = mix[0] %}
+            {% assign thevalue = mix[1] %}
+      
+            {% comment %}reference : https://shopify.dev/api/liquid/objects/metafield#metafield-type{% endcomment %}
+      
+            {% if thevalue.type == 'product_reference' %}
+
+              {% assign hasBox = true %}
+              {% if thevalue.value != blank %}   
+                <a href="{{thevalue.value.handle}}" target="_blank">        
+                  <div class="productPartMix">
+                    <div class="productPartMixImage">
+                      {% if thevalue.value != blank %}
+                        <img src="{{ thevalue.value | image_url: width: 150 }}">    
+                      {% endif%}
+                    </div>
+                    <div class="productPartMixContent">
+                      <div class="productPartMixTitle type-style-card-h">
+                          {{ thevalue.value.title }}
+                      </div>
+                      <div class="productPartMixVendor type-style-card-h-subhead">
+                        {{ thevalue.value.vendor }}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              {% endif%}
+              {% comment %} https://shopify.dev/api/liquid/objects/product {% endcomment %}
+            {% endif %}
+          {% endfor %}
+          <div class="clear"></div>
+        {% endcapture%}
+    
+        {% if hasBox == true %}
+        <div class="productBoxContent">
+          <div class="productBoxContentHeadline type-style-h3-bold">Blandingen består af:-</div>
+            {{ productBoxesHTML }}
+          </div>
+        {% endif %}
       </div>
       <div class="clear"></div>
     </div>
     <div class="se_prod-description">
       <div class="video-with-text">
-        <div class="productDescription type-style-p-regular">
-          {{ product.description }}
-        </div>
+        {% unless section.settings.show_desc %}
+          <div class="productDescription type-style-p-regular">
+            {{ product.description }}
+          </div>
+        {% endunless %}
           {% if section.settings.addvideo %}
            {% assign video_url = product.metafields.custom.video_url %}
             <div class="video-se_content">
@@ -341,11 +403,6 @@
             </div>
           {% endif %}
        </div>
-      {% if product.metafields.mix.contents_label != blank %}
-        <div class="productLabel">
-          {{ product.metafields.mix.contents_label }}
-        </div>
-      {% endif %}
 
 {% assign hasBox = false %}
     {% capture productBoxesHTML %}
@@ -447,6 +504,11 @@
   "tag": "section",
   "class": "shopadjust-top",
   "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_desc",
+        "label": "Show description under USP"
+      },
       {
         "type": "image_picker",
         "id": "image",

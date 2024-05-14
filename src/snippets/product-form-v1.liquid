@@ -1,4 +1,16 @@
 {{ 'new-custom.css' | asset_url | stylesheet_tag }}
+<style>
+  .v_description ul li{
+    display: flex;
+    gap: 6px;
+  }
+  .product-detail{
+    max-width: 100% !Important;
+  }
+  @media only screen and (max-width: 767px) {
+  
+  }
+</style>
 {% assign section_id = "custom" %}
 {%- capture form_id -%}AddToCartForm-{{ section_id }}{%- endcapture -%}
 {%- form 'product', product, id: form_id, class: 'product-single__form' -%}
@@ -18,18 +30,18 @@
           endif
         endif
       -%}
-      <!-- properties added for pre-mix product -->
-      {% if product.metafields.custom.bag_type != blank %}
-        <input type="hidden" id="allergies" name="properties[_bag_type]" value="other_product">
-      {%- endif -%}
-      {% if product.metafields.custom.bag_type != blank  %}
-        <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.variants.first.image.src | img_url: 'medium' }}">
-      {% endif %}
-
+    <div class="v_description">
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point1">{{ product.variants[forloop.index0].metafields.custom.selling_point_1 }}</span></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point2">{{ product.variants[forloop.index0].metafields.custom.selling_point_2 }}</span></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point3">{{ product.variants[forloop.index0].metafields.custom.selling_point_3 }}</span></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point4">{{ product.variants[forloop.index0].metafields.custom.selling_point_4 }}</span></li>
+      </ul>
+    </div>  
 	<div class="product-detail">
       <div class="product-card__title type-style-h3-bold"> Vælg variant </div>
 
-        {%- render 'variant-dropdown',
+        {%- render 'pp_variants_v1',
           section_id: section_id,
           option: option,
           forloop: forloop
@@ -54,13 +66,9 @@
     {%- endif -%}
     {%- endfor -%}
   </select>
-
-    <!-- properties added for pre-mix product -->
-    {% if product.metafields.custom.bag_type != blank  %}
-      {% unless product.variants.size > 1 %}
-       <input type="hidden" name="properties[_image_url]" value="https:{{ product.featured_image.src | img_url: 'medium' }}">
-      {% endunless %}
-    {% endif %}
+  {% if product.metafields.custom.bag_type != blank %}
+    <input type="hidden" id="allergies" name="properties[_bag_type]" value="other_product">
+  {%- endif -%}
 
   {%- if settings.quantity_enable -%}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
@@ -139,7 +147,7 @@
         assign button_text = 'products.product.sold_out' | t
       endunless
     -%}
-      <div class="product-detail" id="productDetail">
+      <div class="product-detail sticky" id="productDetail">
         <div class="product-card__title type-style-h3-bold"> Vælg antal </div>
         <div class="product block-flex">
           <div class="product-card__btn-wrapper relative mt-auto">
@@ -195,7 +203,6 @@
 {%- endform -%}
 
 
-
 <script>
   document.querySelector('.jss-qty__adjust--minus').addEventListener('click', function(event) {
     event.preventDefault();
@@ -238,8 +245,6 @@
   
   //GTM dataLayer event
   function gtmAddToCartPush() {
-    console.log('gtmAddToCartPush')
-    localStorage.setItem('bagLastUpdated', new Date().toISOString());
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: 'add_to_cart_stape',

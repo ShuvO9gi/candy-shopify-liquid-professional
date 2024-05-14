@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Demo styles -->
+<style>
+ .p_slider{
+   position: relative;
+   padding: 0 60px;
+ }
+  .swiper-button-next {
+    margin-top: 0px;
+    position: absolute;
+    top: 55%;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #ffad05;
+  }
+  .swiper-button-prev {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    transform: translateY(-50%);
+    margin-top: 0px;
+    border-radius: 50%;
+    background: #ffad05;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff !important;
+}
+  .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  .p_slider .candyBox {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    cursor: pointer;
+}
+  .p_slider .candyBoxImage {
+    height: 185px;
+    display: flex;
+}
+   .p_slider .candyBoxImage img{
+    height: auto;
+    object-fit: cover;
+ }
+  .p_slider .candyBoxBuySection {
+    padding-bottom: 24px;
+}
+  .candyboxprodprice{
+    margin-top: 5px;
+    font-weight: 600;
+    color: #a175ae;
+  }
+  .p_slider h2{
+    margin-bottom: 10px !important;
+  }
+  .ps_text1{
+    font-size: 20px !important;
+  }
+  .productSwiperSlider {
+    margin-top: 20px;
+  }
+  @media only screen and (max-width: 767px){
+  .p_slider {
+    padding: 0 30px !important;
+}
+  .p_slider .candyBoxBuySection {
+    max-width: 300px;
+    margin: -46px auto 0;
+}
+  }
+</style>
+
+<section class="page-container p_slider">
+    <h2 class="type-style-h2-bold twb-my-8">{{ section.settings.title }}</h2>
+    <p class="ps_text1">{{ section.settings.text1 }}</p>
+    <p class="ps_text2">{{ section.settings.text2 }}</p>
+  <div class="swiper productSwiperSlider">
+    <div class="swiper-wrapper">
+      {% for product in section.settings.products.products %}
+        <div
+          class="swiper-slide candyBox relative twb-select-none "
+          data-product-id="{{ product.id }}"
+          data-product-title="{{ product.title }}" data-product-url="{{ product.url }}"
+        >
+          <div class="candyBox_wrapper">
+            <div>
+              <div class="candyBoxImage cursor-pointer">
+                {{ product.images[0] | image_url: width: 300 | image_tag }}
+              </div>
+            </div>
+          <div class="candyBoxBuySection">
+            <div class="candyBoxBuySectionContent">
+              <div class="candyBoxName type-style-card-h">{{ product.title }}</div>
+              <div class="candyBoxBrand type-style-card-h-subhead">
+                fra
+                <span>{{ product.vendor }}</span>
+              </div>
+              <a href="{{ product.url }}" class="candyBoxBuyButton type-style-button-text">Se produkt</a>
+              <p class="candyboxprodprice">{{ product.price | money_with_currency }}</p>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</section>
+
+{% schema %}
+{
+  "name": "product-slider",
+  "tag": "section",
+  "class": "shopadjust-top",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Homepage Products"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Text"
+    },
+     {
+      "type": "text",
+      "id": "text2",
+      "label": "Subtext"
+    },
+    {
+      "type": "collection",
+      "id": "products",
+      "label": "Products",
+      "info": "Select products to display on homepage"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product-slider"
+    }
+  ]
+}
+{% endschema %}

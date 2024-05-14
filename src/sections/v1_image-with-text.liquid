@@ -1,0 +1,352 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<style>
+ #shopify-section-{{section.id}} .cus_banner--text{
+    width: 50% !important;
+    justify-content: flex-start !important;
+  }
+#shopify-section-{{section.id}}  .cus_banner--img{
+    width: 50% !important;
+    padding: 50px 100px;
+  }
+ #shopify-section-{{section.id}} .cus_banner--img img{
+    border-radius: 30px;
+  }
+ #shopify-section-{{section.id}} .bannerbtn{
+    margin-left: 20px;
+  }
+ #shopify-section-{{section.id}} .bannerbtn .orangeButton {
+    padding: 12px 100px !important;
+}
+ #shopify-section-{{section.id}} .backgroundWallpaper h1{
+    padding: 0 20px;
+  }
+  #shopify-section-{{section.id}} .announcement-link-text{
+    padding: 0 20px;
+  }
+  .hero_productSwiperSlider{
+    margin-top: -200px;
+  }
+  .hero_productSwiperSlider .swiper-wrapper {
+    justify-content: center;
+    align-items: flex-end;
+}
+  .pListHeader{
+    color: #fff;
+    font-weight: 700;
+    padding: 0 20px;
+  }
+  .hero_productSwiperSlider .candyBoxBuySection {
+    background-color: #FFF3DA !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+  .hero_productSlickSlider .slick-track{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .hero_productSlickSlider select{
+    display: none;
+  }
+  .hero_productSlickSlider .atcButton{
+    height: auto !important;
+    margin-top: 10px;
+    padding: 8px 20px !important;
+    font-size: 18px !important;
+  }
+  @media only screen and (max-width: 767px) {
+   #shopify-section-{{section.id}}  .cus_banner--text{
+    width: 100% !important;
+  }
+ #shopify-section-{{section.id}} .cus_banner--img{
+    width: 100% !important;
+    padding: 0 !important;
+  }
+ .hero_productSlickSlider .candyBox{
+    padding-bottom: 50px;
+  }
+  .hero_productSlickSlider .candyBoxBuySection{
+    max-width: 300px !important;
+    margin: -47.5px auto !important;
+    padding-bottom: 20px;
+  }
+
+  .slick-dots {
+    text-align: center;
+  }
+  .slick-dots li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px;
+  }
+  .slick-dots li button {
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 0 transparent;
+    vertical-align: middle;
+    color: #6E4695;
+    background-color: #6E4695;
+    transition: all 0.3s ease;
+    opacity: 0.4;
+    font-size: 0;
+  }
+  .slick-dots li button:focus {
+    outline: none;
+  }
+  .slick-dots li button:hover {
+    opacity: 1;
+  }
+  .slick-dots li.slick-active button {
+    border-color: #2d3042;
+    box-shadow: 0 0 0 2px #fff;
+    opacity: 1;
+  }
+  }
+  @media only screen and (min-width: 768px){
+  .hero_productSwiperSlider .candyBox {
+    width: 300px !important;
+  }
+  }
+</style>
+
+{% assign today_day = 'now' | date: '%a' %}
+{% assign time_hour = 'now' | date: '%H' %}
+
+{% capture timer %}
+  <div class="x announcement-link-text type-style-p-regular twb-flex twb-flex-col twb-items-center md:twb-items-start">
+    {% if section.settings.holidaytext != blank %}
+      <span class="twb-text-white">{{ section.settings.holidaytext }}</span>
+    {% elsif today_day == 'Fri' and time_hour >= '14' %}
+      <span class="twb-text-white">{{ section.settings.weekendtext }}</span>
+    {% elsif today_day == 'Sat' %}
+      <span class="twb-text-white">{{ section.settings.weekendtext }}</span>
+    {% elsif today_day == 'Sun' and time_hour < '14' %}
+      <span class="twb-text-white">{{ section.settings.weekendtext }}</span>
+    {% elsif section.settings.order_before != blank %}
+      <div>
+        <span class="twb-text-white">{{ section.settings.order_before }}</span>
+        <span class="time-countdown twb-text-brand-green" data-time></span>
+      </div>
+    {% endif %}
+  </div>
+{% endcapture %}
+<div class="section-container backgroundWallpaper" style="padding-top: {{section.settings.paddingtop}}px !important; padding-bottom: {{section.settings.paddingbottom}}px !important; {% if section.settings.checkbgimagelarge %}background-image: url({{ section.settings.bgimagelarge | img_url: 'master' }});background-size: cover; background-repeat: no-repeat; background-position: center;{% else %}background-image: url({{ section.settings.bgimage | img_url: 'master' }});{% endif %}">
+  <div class="page-container twb-flex twb-flex-col-reverse md:twb-flex-row" style="{% if section.settings.textright %}flex-direction: row-reverse !important;{% endif %}">
+    <div class="twb-w-full md:twb-w-400 twb-flex twb-justify-center twb-items-center twb-mb-8 md:twb-mb-0 cus_banner--text">
+      <div class="twb-flex twb-flex-col twb-items-center md:twb-items-start">
+        <h1 class="twb-text-white type-style-h1-regular twb-flex twb-flex-col twb-items-center md:twb-items-start twb-text-center md:twb-text-left">
+          {{ section.settings.headline }}
+        </h1>
+        <div class="type-style-h4-regular twb-my-4 md:twb-my-8">
+          {{ timer }}
+        </div>
+        <a
+          href="{{ section.settings.button_destination }}"
+          class="normalLink bannerbtn"
+          style="position: relative;">
+          <div class="orangeButton type-style-button-text">
+            {{ section.settings.button_text }}
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="twb-w-full md:twb-w-auto twb-flex twb-justify-center md:twb-justify-end cus_banner--img">
+      {{
+        section.settings.image
+        | image_url: width: 668, height: 533, crop: 'center'
+        | image_tag:
+          alt: 'hero section image',
+          class: 'twb-rounded-3xl md:twb-rounded-none twb-w-4/5 md:twb-w-full twb-my-8 md:twb-my-0'
+      }}
+    </div>
+</div>
+ 
+</div>
+ <!-- product list -->
+    <div class="page-container swiper hero_productSwiperSlider">
+      <h2 class="pListHeader">{{ section.settings.pListHeader }}</h2>
+      <div class="hero_productSlickSlider">
+        {% for product in section.settings.cart_Products %}
+        {% assign featured_variant = product.selected_or_first_available_variant %}
+          <div
+            class="candyBox relative twb-select-none "
+            data-product-id="{{ product.id }}"
+            data-product-title="{{ product.title }}" data-product-url="{{ product.url }}"
+          >
+            <div class="candyBox_wrapper">
+              <div>
+                <div class="candyBoxImage cursor-pointer">
+                  {{ product.images[0] | image_url: width: 300 | image_tag }}
+                </div>
+              </div>
+            <div class="candyBoxBuySection">
+              <div class="candyBoxBuySectionContent">
+                <div class="candyBoxName type-style-card-h">{{ product.title }}</div>
+                <p class="candyboxprodprice">{{ product.price | money_with_currency }}</p>
+                {%- unless product.empty? -%}
+                  {%- render 'product-form',
+                    section_id: section.id,
+                    product: product,
+                    current_variant: featured_variant
+                  -%}
+                {%- endunless -%}
+              </div>
+            </div>
+  
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  <!-- product list end -->
+{% schema %}
+  {
+    "name": "v1_image-with-text",
+    "tag": "section",
+    "class": "shopadjust-top",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bgimage",
+        "label": "Background image",
+        "info": "Image size 115x93 (for repeated candy image)"
+      },
+      {
+        "type": "checkbox",
+        "id": "checkbgimagelarge",
+        "label": "Enable Large image size"
+      },
+      {
+        "type": "image_picker",
+        "id": "bgimagelarge",
+        "label": "Add large size Background image",
+        "info": "Image size 1980x1000"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "richtext",
+        "id": "headline",
+        "label": "Overskrift"
+      },
+      {
+        "type": "richtext",
+        "id": "subheadline",
+        "label": "Subheadline"
+      },
+      {
+        "type": "text",
+        "id": "order_before",
+        "label": "Before timer text",
+        "default": "Bestil indenfor"
+      },
+      {
+        "type": "richtext",
+        "id": "weekendtext",
+        "label": "Weekend text"
+      },
+      {
+        "type": "richtext",
+        "id": "holidaytext",
+        "label": "Holiday text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Tekst på knap"
+      },
+      {
+        "type": "url",
+        "id": "button_destination",
+        "label": "Side link"
+      },
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Billede",
+        "info": "Recommended size 670x530"
+      },
+      {
+        "type": "checkbox",
+        "id": "textright",
+        "label": "Show texts in right side"
+      },
+      {
+        "type": "range",
+        "id": "paddingtop",
+        "min": 20,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "label": "Section padding top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "paddingbottom",
+        "min": 20,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "label": "Section padding bottom",
+        "default": 30
+      },
+      {
+        "type": "header",
+        "content": "Bottom products section"
+      },
+      {
+        "type":"product_list",
+        "id":"cart_Products",
+        "label":"Bottom Products"
+      },
+      {
+        "type": "text",
+        "id": "pListHeader",
+        "label": "Header for bottom products section"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Bullets",
+        "settings": [
+          {
+            "type": "text",
+            "id": "headline",
+            "label": "Overskrift"
+          },
+          {
+            "type": "text",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "v1_image-with-text",
+        "blocks": [
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1323,6 +1323,7 @@
         "block_order": [
           "35323219-acc8-4e84-91c1-171ee1cf345a-collection-1"
         ],
+        "disabled": true,
         "custom_css": [
 
         ],
@@ -1330,14 +1331,14 @@
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,
           "bgimagelarge": "shopify:\/\/shop_images\/light2.png",
-          "headline": "<p>Se alle vores gaveidéer <br\/>til <strong>mors dag <\/strong><br\/><\/p>",
+          "headline": "<p>Den bedste gaveidé<br\/>til <strong>en der har fået hue på <\/strong><br\/><\/p>",
           "subheadline": "",
           "order_before": "Vi sender næste gang om:",
           "weekendtext": "",
           "holidaytext": "",
-          "button_text": "Se flere gaver her",
-          "button_destination": "shopify:\/\/products\/mors-dags-gave",
-          "image": "shopify:\/\/shop_images\/Hjertebland_selv_slik_2_670-min.png",
+          "button_text": "Køb flasken her",
+          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
+          "image": "shopify:\/\/shop_images\/1000000454.jpg",
           "textright": false
         }
       },
@@ -1677,26 +1678,10 @@
       "champagneflaske_christmas": {
         "type": "champagneflaske_christmas",
         "settings": {
+          "show_desc": true,
           "image": "shopify:\/\/shop_images\/Design_uden_navn_21.png",
+          "addvideo": false,
           "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8083c7f227b4e95a8246d60dc0f585a.mp4"
-        }
-      },
-      "champ_christmas-prodSlider": {
-        "type": "champ_christmas-prodSlider",
-        "settings": {
-          "title": "Her kan du se andre sjove gaveidéer",
-          "text1": "Hvis du bestiller igennem vores app, kan du selv vælge det slik der kommer i",
-          "text2": "Finder du ikke, hvad du søger, er du mere en velkommen til at kontakte os.",
-          "products": "mandelgaver"
-        }
-      },
-      "9cb687c2-936b-4ee2-bbdc-e1648c03a43e": {
-        "type": "champ_christmas-prodSlider",
-        "settings": {
-          "title": "Mangler du en sød gave til en du har kær?",
-          "text1": "Vi har masser af gode gaveidéer, der går lige i hjertet.",
-          "text2": "Bestil nemt her eller find dem i vores app, hvor du også selv kan vælge, hvilket slik der skal i!",
-          "products": "mandelgaver"
         }
       },
       "new_template_with_mixing": {
@@ -1717,47 +1702,6 @@
           "width_item": 275,
           "autoload": "automaticly",
           "accordion_title": "Klik for slik info"
-        }
-      },
-      "test_champagneflaske_christmas": {
-        "type": "test_champagneflaske_christmas",
-        "settings": {
-          "image": "shopify:\/\/shop_images\/christmas.png",
-          "video": ""
-        }
-      },
-      "2022-test_pickNmix-template": {
-        "type": "2022-test_pickNmix-template",
-        "blocks": {
-          "09f2262b-a716-40d7-8d52-00b00619b842": {
-            "type": "filter_type",
-            "settings": {
-              "category": "kategori",
-              "type": "type",
-              "filter_id": "",
-              "filter_name": ""
-            }
-          },
-          "1b19495d-c6d5-4574-9865-e8547513d9f1": {
-            "type": "filter_type",
-            "settings": {
-              "category": "kategori",
-              "type": "type",
-              "filter_id": "",
-              "filter_name": ""
-            }
-          }
-        },
-        "block_order": [
-          "09f2262b-a716-40d7-8d52-00b00619b842",
-          "1b19495d-c6d5-4574-9865-e8547513d9f1"
-        ],
-        "settings": {
-          "title": "",
-          "paginate": 24,
-          "price_limit": 25,
-          "width_item": 275,
-          "autoload": "automaticly"
         }
       },
       "sec_404": {
@@ -2069,14 +2013,129 @@
           "msgoncardtext": "Besked på kortet",
           "messageoncard": "shopify:\/\/shop_images\/Positive_Quote_Minimal_Card_Instagram_Post2_1.png"
         }
+      },
+      "product_slider_LBEyXc": {
+        "type": "product-slider",
+        "disabled": true,
+        "settings": {
+          "title": "Mangler du en sød gave til en du har kær?",
+          "text1": "Vi har masser af gode gaveidéer, der går lige i hjertet.",
+          "text2": "Bestil nemt her eller find dem i vores app, hvor du også selv kan vælge, hvilket slik der skal i!",
+          "products": "mandelgaver"
+        }
+      },
+      "2023_homepage_top_tKTDjq": {
+        "type": "2023-homepage-top",
+        "blocks": {
+          "collection_TreET7": {
+            "type": "collection",
+            "settings": {
+              "headline": "",
+              "content": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection_TreET7"
+        ],
+        "disabled": true,
+        "settings": {
+          "checkbgimagelarge": true,
+          "bgimagelarge": "shopify:\/\/shop_images\/Screenshot_1.png",
+          "headline": "<p>Den bedste gave ide<br\/>til <strong>en der har fået hue på <\/strong><\/p><p>sendt med ekspressfart<\/p>",
+          "subheadline": "<p>Test<\/p>",
+          "order_before": "Bestil indenfor",
+          "weekendtext": "",
+          "holidaytext": "",
+          "button_text": "Se flere gaver her",
+          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
+          "image": "shopify:\/\/shop_images\/image.png",
+          "textright": false
+        }
+      },
+      "big_image_with_text_cLyJck": {
+        "type": "big-image-with-text",
+        "blocks": {
+          "collection_zLtJdr": {
+            "type": "collection",
+            "settings": {
+              "headline": "",
+              "content": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection_zLtJdr"
+        ],
+        "disabled": true,
+        "settings": {
+          "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
+          "checkbgimagelarge": false,
+          "headline": "<p>Kæmpe udvalg af <br\/><strong>Bland Selv Slik<\/strong> - leveret <\/p><p>med ekspressfart<\/p>",
+          "subheadline": "",
+          "order_before": "Bestil indenfor",
+          "weekendtext": "",
+          "holidaytext": "",
+          "button_text": "Se gaven her",
+          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
+          "image": "shopify:\/\/shop_images\/hue.png"
+        }
+      },
+      "product-slider": {
+        "type": "product-slider",
+        "settings": {
+          "title": "Mangler du en sød gave til en du har kær?",
+          "text1": "Vi har masser af gode gaveidéer, der går lige i hjertet.",
+          "text2": "Bestil nemt her eller find dem i vores app, hvor du også selv kan vælge, hvilket slik der skal i!",
+          "products": "mandelgaver"
+        }
+      },
+      "v1_image_with_text_GLPtGm": {
+        "type": "v1_image-with-text",
+        "blocks": {
+          "collection_k3j9Xe": {
+            "type": "collection",
+            "settings": {
+              "headline": "",
+              "content": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection_k3j9Xe"
+        ],
+        "settings": {
+          "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
+          "checkbgimagelarge": false,
+          "headline": "<p>Den bedste gave ide<br\/>til <strong>en der har fået hue på <\/strong><\/p><p>sendt med ekspressfart<\/p>",
+          "subheadline": "",
+          "order_before": "Bestil indenfor",
+          "weekendtext": "",
+          "holidaytext": "",
+          "button_text": "Se flere gaver her",
+          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
+          "image": "shopify:\/\/shop_images\/image.png",
+          "textright": false,
+          "paddingtop": 30,
+          "paddingbottom": 200,
+          "cart_Products": [
+            "champagneflaske-med-bland-selv-slik-perfekt-gave",
+            "hjerteaeske-med-bland-selv-slik",
+            "mors-dags-tilbud"
+          ],
+          "pListHeader": "Mest populære fars dags gaver:"
+        }
       }
     },
     "content_for_index": [
+      "v1_image_with_text_GLPtGm",
       "35323219-acc8-4e84-91c1-171ee1cf345a",
+      "big_image_with_text_cLyJck",
+      "2023_homepage_top_tKTDjq",
       "439ba202-119f-4640-928d-ea2e819b4154",
       "a5bbe61a-b751-4641-9586-f5734594be1b",
       "5c9f7e04-0d80-4ab7-b38d-13d3a972e96a",
-      "9cb687c2-936b-4ee2-bbdc-e1648c03a43e",
+      "product_slider_LBEyXc",
       "63cf6648-7c60-4010-bade-6293a85cfa8f",
       "16628039319fc373d3",
       "b49b16e9-60a4-43d9-a436-88b189708dc1",

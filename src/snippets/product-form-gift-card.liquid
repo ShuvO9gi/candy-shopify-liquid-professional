@@ -230,8 +230,6 @@
   
   //GTM dataLayer event
   function gtmAddToCartPush() {
-    console.log('gtmAddToCartPush3')
-    localStorage.setItem('bagLastUpdated', new Date().toISOString());
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: 'add_to_cart_stape',

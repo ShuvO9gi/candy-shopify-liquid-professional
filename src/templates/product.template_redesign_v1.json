@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-intro",
+      "disabled": true,
+      "settings": {
+        "contents": "{{ product.metafields.mix.contents_label.value }}"
+      }
+    },
+    "pp_v1_sec_top_t6z4kn": {
+      "type": "pp_v1_sec_top",
+      "settings": {
+        "addtopimage": false,
+        "addvideo": false,
+        "video": "",
+        "order_before": "Bestil indenfor",
+        "weekendtext": "",
+        "holidaytext": ""
+      }
+    },
+    "2023_homepage_usp_iaKfqy": {
+      "type": "2023-homepage-usp",
+      "settings": {
+      }
+    },
+    "2022_subcontent_yw3kqR": {
+      "type": "2022-subcontent",
+      "disabled": true,
+      "settings": {
+        "headline": "Lorem Ipsum is simply dummy",
+        "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>"
+      }
+    },
+    "2022_text_left_right_Ww6WrE": {
+      "type": "2022-textLeftRight",
+      "blocks": {
+        "collection_qtBM7Q": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Where does it come from?",
+            "headline": "Lorem Ipsum is simply dummy",
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "button_text": "",
+            "button_destination": "",
+            "image": "shopify:\/\/shop_images\/champagne.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_qtBM7Q"
+      ],
+      "settings": {
+        "page_header": ""
+      }
+    },
+    "product_slider_NK46Y4": {
+      "type": "product-slider",
+      "settings": {
+        "title": "Mangler du en sød gave til en du har kær?",
+        "text1": "Vi har masser af gode gaveidéer, der går lige i hjertet.",
+        "text2": "Bestil nemt her eller find dem i vores app, hvor du også selv kan vælge, hvilket slik der skal i!",
+        "products": "mandelgaver"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "pp_v1_sec_top_t6z4kn",
+    "2023_homepage_usp_iaKfqy",
+    "2022_subcontent_yw3kqR",
+    "2022_text_left_right_Ww6WrE",
+    "product_slider_NK46Y4"
+  ]
+}

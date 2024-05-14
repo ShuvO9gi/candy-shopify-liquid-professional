@@ -54,9 +54,7 @@
 .champagneflaske_christmas .topContentProduct {
   justify-content: space-between;
 }
-     .productBoxContent{
-           background: #FFF3DA;
-     }     
+
   .productBoxContent-items {
     max-width: 1130px;
     margin: 0 auto;
@@ -65,8 +63,6 @@
   .productBoxContentHeadline{
     max-width: 1130px;
     margin: 0 auto;
-  }.productBoxContent{
-    padding: 80px 0; 
   }
   .se_img-box {
       display: flex;
@@ -266,11 +262,8 @@
     width: 100% !important;
       margin-top: 0 !important;
 }
-    .champagneflaske_christmas .page-container {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-}
-      .champagneflaske_christmas .productBoxContent-items{
+
+   .champagneflaske_christmas .productBoxContent-items{
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     text-align: center;

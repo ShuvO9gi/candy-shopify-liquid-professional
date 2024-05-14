@@ -136,6 +136,11 @@
   {%- endif -%}
 
   {%- comment -%} Grafikr scripts {%- endcomment -%}
+    <!-- Swiper JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+  <script src="{{ 'all_sliders.js' | asset_url }}" defer></script>
   <script src="{{ 'polyfills.js' | asset_url }}" defer></script>
   <script src="{{ 'shared.js' | asset_url }}" defer></script>
   <script src="{{ 'app.js' | asset_url }}" defer></script>
@@ -198,9 +203,9 @@ src="https://www.facebook.com/tr?id=149710380516068&ev=PageView&noscript=1"
 </script>
 
 
-{% include 'pagefly-app-header' %}
+
   {% render 'shogun-head' %}
-</head>
+{% include 'pagefly-app-header' %}</head>
 
 <body id="{{ page_title | handleize }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{ settings.type_body_align_text }}" data-button_style="{{ settings.button_style }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_headers_align_text="{{ settings.type_headers_align_text }}" data-type_product_capitalize="{{ settings.type_product_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
   <div id="PageContainer">
@@ -270,14 +275,11 @@ src="https://www.facebook.com/tr?id=149710380516068&ev=PageView&noscript=1"
   {%- render 'gtm-dataLayer' -%}
 
   {% render 'klaviyo-add-to-cart' %}
-
-
 <script>
-
-  window.addEventListener('scroll', function() {
+     window.addEventListener('scroll', function() {
     var productDetail = document.getElementById('productDetail');
     var windowHeight = window.innerHeight; // Height of the viewport
-    var twentyPercent = windowHeight * 0.2; // 20% of the viewport height
+    var twentyPercent = windowHeight * 0; // 20% of the viewport height
 
     if (window.scrollY >= twentyPercent) {
       productDetail.classList.add('sticky');
@@ -285,8 +287,6 @@ src="https://www.facebook.com/tr?id=149710380516068&ev=PageView&noscript=1"
       productDetail.classList.remove('sticky');
     }
   });
-  
-  
 </script>
 
 </body>

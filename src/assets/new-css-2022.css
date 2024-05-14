@@ -1428,7 +1428,6 @@ a.border-button {
 
 .productBoxContent {
   margin-top: 50px;
-  margin-bottom: 175px;
 }
 
 .productBoxContentHeadline {
@@ -1592,9 +1591,8 @@ a.border-button {
   }
 
   .page-container {
-    max-width: 415px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .candySection .page-container {

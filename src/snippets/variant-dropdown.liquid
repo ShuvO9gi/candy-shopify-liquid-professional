@@ -14,6 +14,7 @@
       <option
         value="{{ value | escape }}"
         data-price="{{ product.variants[forloop.index0].price | money }}"
+        data-image-url="https:{{ product.variants[forloop.index0].image.src | img_url: 'small' }}"
         {% if option.selected_value == value %} selected="selected"{% endif %}
         {% unless variant_label_state %} disabled="disabled"{% endunless %}
         name="{{ option.name }}"
@@ -27,12 +28,19 @@
 
 <script>
   var variantDropdowns = document.querySelectorAll('.variant__input-{{ section_id }}');
+  var productImageInput = document.getElementById('vImgUrl');
 
   variantDropdowns.forEach(function(dropdown) {
     dropdown.addEventListener('change', function() {
       var selectedOption = this.options[this.selectedIndex];
       var selectedPrice = selectedOption.getAttribute('data-price');
+      var selectedImageUrl = selectedOption.getAttribute('data-image-url');
+
+      // Update product price
       document.getElementById('productPrice').textContent = selectedPrice;
+
+      // Update product image URL
+      productImageInput.value = selectedImageUrl;
     });
   });
 </script>

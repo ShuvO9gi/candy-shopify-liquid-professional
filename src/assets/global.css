@@ -3742,6 +3742,9 @@ section.bland-selv-slik__sticky__left .rounded {
   background: rgba(0, 0, 0, 0.4);
   pointer-events: auto;
 }
+#gift .mobile-navigation {
+    z-index: 99999999;
+}
 
 .mobile-navigation__wrapper {
   position: relative;

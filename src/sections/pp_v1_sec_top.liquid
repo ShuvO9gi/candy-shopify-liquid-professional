@@ -300,7 +300,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #dfe3e8;
+      background-color: {{section.settings.bgcolor}};
       border-radius: 10px;
     }
   @media screen and (max-width: 767px){
@@ -322,14 +322,26 @@
   	}
 
   }
-  @media (max-width: 991px) and (min-width: 768px){
-
+  @media only screen and (min-width: 991px) and (max-width: 1599px)  {
+  .pp_redesign_v1 .productContent {
+    height: 500px !important;
   }
-  @media (max-width: 1199px) and (min-width: 992px){
-
+  .pp_redesign_v1 .productImage img {
+    max-height: 350px !important;
+    margin-bottom: 50px;
   }
-  @media (min-width: 1200px){
-
+  .pp_redesign_v1 .productImage {
+    max-height: 500px;
+  }
+   .pp_redesign_v1 .type-style-h2-bold {
+    font-size: 26px !important;
+}
+  .re-variant-option-content h2 {
+    font-size: 14px !important;
+}
+  .re-variant-option-content p {
+    font-size: 18px !important;
+}
   }
   @media screen and (width: 767.2px){
   	span.var__title__ship{
@@ -589,64 +601,7 @@
       </div>
       <div class="clear"></div>
     </div>
-    {% comment %}
-          <div class="se_prod-description">
-            <div class="video-with-text">
-              <div class="productDescription type-style-p-regular">
-                {{ product.description }}
-              </div>
-                {% if section.settings.addvideo %}
-                 {% assign video_url = product.metafields.custom.video_url %}
-                  <div class="video-se_content">
-                      <video src="{{ video_url }}" id="se_myVideo" class="se_video" autoplay loop muted playsinline></video>
-                      <button class="se_play-button" onclick="playPause()">
-                          <i class="fas fa-pause"></i>
-                      </button>
-                  </div>
-                {% endif %}
-             </div>
-            {% if product.metafields.mix.contents_label != blank %}
-              <div class="productLabel">
-                {{ product.metafields.mix.contents_label }}
-              </div>
-            {% endif %}
-
-      {% assign hasBox = false %}
-          {% capture productBoxesHTML %}
-            {% assign productMixs = product.metafields.custom.allProductMixs.value %}
-            {% for mix in productMixs %}
-              {% assign hasBox = true %}
-              {% if mix != blank %}
-                <a href="{{ mix.url }}" target="_blank">
-                  <div class="productPartMix">
-                    <div class="productPartMixImage">
-                      <img src="{{ mix | image_url: width: 150 }}">
-                    </div>
-                    <div class="productPartMixContent">
-                      <div class="productPartMixTitle type-style-card-h">
-                          {{ mix.title }}
-                      </div>
-                      <div class="productPartMixVendor type-style-card-h-subhead">
-                        {{ mix.vendor }}
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              {% endif%}
-            {% endfor %}
-            <div class="clear"></div>
-          {% endcapture%}
-
-            {% comment %}
-                {{ product.metafields.my_fields.productMix_12 }}
-
-                {% assign recommended_product_1 =  product.metafields.my_fields.productMix_12.value %}
-              {{ recommended_product_1.title }}
-
-              <img src="{{ recommended_product_1 | image_url: width: 300 }}">
-            {% endcomment %}
-          </div>
-    {% endcomment %}
+   
   </div>
   {% if hasBox == true %}
     <div class="productBoxContent">
@@ -722,14 +677,9 @@
         "label": "Image top"
       },
       {
-        "type": "checkbox",
-        "id": "addvideo",
-        "label": "Add video"
-      },
-      {
-        "type": "text",
-        "id": "video",
-        "label": "Video URL"
+          "type": "color",
+          "id": "bgcolor",
+          "label": "Main product background color"
       },
       {
         "type": "header",

@@ -11,8 +11,7 @@
       "type": "pp_v1_sec_top",
       "settings": {
         "addtopimage": false,
-        "addvideo": false,
-        "video": "",
+        "bgcolor": "#ffffff",
         "order_before": "Bestil indenfor",
         "weekendtext": "",
         "holidaytext": ""

@@ -6,6 +6,11 @@
   #shopify-section-{{ section.id }} .textLeftRight-smallPageHeadline {
     margin-top: 0 !important;
 }
+   @media only screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .rowReverseMobile {
+      row-gap: 20px !important;
+ }
+   }
 </style>
 <div class="section-container textLeftRight" style="background-color: {{section.settings.bgcolor}}; margin-top: {{section.settings.margintop}}px !important; margin-bottom: {{section.settings.marginbottom}}px !important;">
 	<div class="page-container">

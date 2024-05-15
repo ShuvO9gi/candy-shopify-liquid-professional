@@ -143,6 +143,11 @@ This file can be re-written at any time.
   {%- endif -%}
 
   {%- comment -%} Grafikr scripts {%- endcomment -%}
+    <!-- Swiper JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+  <script src="{{ 'all_sliders.js' | asset_url }}" defer></script>
   <script src="{{ 'polyfills.js' | asset_url }}" defer></script>
   <script src="{{ 'shared.js' | asset_url }}" defer></script>
   <script src="{{ 'app.js' | asset_url }}" defer></script>
@@ -218,10 +223,11 @@ src="https://www.facebook.com/tr?id=149710380516068&ev=PageView&noscript=1"
   {{ content_for_layout }}
   
   <script>
-     window.addEventListener('scroll', function() {
+
+  window.addEventListener('scroll', function() {
     var productDetail = document.getElementById('productDetail');
     var windowHeight = window.innerHeight; // Height of the viewport
-    var twentyPercent = windowHeight * 0.2; // 20% of the viewport height
+    var twentyPercent = windowHeight * 0; // 20% of the viewport height
 
     if (window.scrollY >= twentyPercent) {
       productDetail.classList.add('sticky');
@@ -229,6 +235,8 @@ src="https://www.facebook.com/tr?id=149710380516068&ev=PageView&noscript=1"
       productDetail.classList.remove('sticky');
     }
   });
+  
+  
 </script>
   <style type="text/css">
     body, html {
@@ -240,4 +248,3 @@ src="https://www.facebook.com/tr?id=149710380516068&ev=PageView&noscript=1"
 </body>
 
 </html>
-

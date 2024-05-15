@@ -11,8 +11,7 @@
       "type": "pp_v1_sec_top",
       "settings": {
         "addtopimage": false,
-        "addvideo": false,
-        "video": "",
+        "bgcolor": "#ffffff",
         "order_before": "Bestil indenfor",
         "weekendtext": "",
         "holidaytext": ""
@@ -27,7 +26,7 @@
       "type": "2022-subcontent",
       "disabled": true,
       "settings": {
-        "headline": "Lorem Ipsum is simply dummy",
+        "headline": "Skal din far forkæles?",
         "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>"
       }
     },
@@ -37,12 +36,14 @@
         "collection_qtBM7Q": {
           "type": "collection",
           "settings": {
-            "small-headline": "Where does it come from?",
-            "headline": "Lorem Ipsum is simply dummy",
-            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
-            "button_text": "",
-            "button_destination": "",
-            "image": "shopify:\/\/shop_images\/champagne.png"
+            "small-headline": "Prøv vores nye gave mikse funktion",
+            "headline": "Bland din fars yndlingsslik",
+            "content": "<p>Fra vores nye gaveflow kan du:<\/p><ul><li> - Vælge den gave du vil sende<\/li><li>- Vælge det slik der skal i gaven<\/li><li>- Lave et håndskrevet kort<\/li><\/ul><p><\/p><p><\/p>",
+            "button_text": "Start gaveflowet her",
+            "button_destination": "shopify:\/\/collections\/gift",
+            "image": "shopify:\/\/shop_images\/Category.png",
+            "paddingtop": 60,
+            "paddingbottom": 60
           }
         }
       },
@@ -50,16 +51,19 @@
         "collection_qtBM7Q"
       ],
       "settings": {
-        "page_header": ""
+        "page_header": "",
+        "bgcolor": "#f0f0f0",
+        "margintop": 55,
+        "marginbottom": 55
       }
     },
     "product_slider_NK46Y4": {
       "type": "product-slider",
       "settings": {
-        "title": "Mangler du en sød gave til en du har kær?",
-        "text1": "Vi har masser af gode gaveidéer, der går lige i hjertet.",
-        "text2": "Bestil nemt her eller find dem i vores app, hvor du også selv kan vælge, hvilket slik der skal i!",
-        "products": "mandelgaver"
+        "title": "Sjove champagneflasker med labels",
+        "text1": "Se vores udvalg af de populære champagneflasker",
+        "text2": "Hver flaske er fyldt med 720 gram af vores mest populære mix.",
+        "products": "champagneflasker-1"
       }
     }
   },

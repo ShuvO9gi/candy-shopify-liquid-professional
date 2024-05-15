@@ -679,7 +679,11 @@ h1.normalPage {
   margin-right: auto;
   padding: 0 20px;
 }
-
+  @media only screen and (min-width: 991px) and (max-width: 1599px)  {
+   .page-container {
+      padding: 0 60px !important;
+  }
+  }
 h1 {
   font-size: 40px;
   line-height: 48px;

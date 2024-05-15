@@ -194,10 +194,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding: 30px 0;
+        column-gap: 20px;
   }
   .giftproduct-card_img {
-        width: 300px;
-        height: 300px;
+        width: 90%;
+        height: auto;
         background: #FFF1D4;
         padding: 20px;
         object-fit: contain;
@@ -916,6 +917,7 @@
                 </div>
                 
               <div class="rightSideBar" style="width: 100%;">
+              <input type="hidden" value="gift" id="GiftChecker">
               {%- comment -%}<button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>{%- endcomment -%}
                 <div class="nextPage">
                   <div class="progressbar"><progress class="progress progress1" max="100" value="33"></progress><span></span>Trin 1 af 3</div>
@@ -938,6 +940,8 @@
                   </div>
                 </div>
               </div>
+
+              
     
             <div class="col-12 hideOnDesktop cus_stickybarmob">
               <div class="bottomBar valignMiddle">
@@ -1089,7 +1093,7 @@
   {%- endcomment -%}<div class="{{ class }}__success-modal fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-success-modal>
     <div class="{{ class }}__success-modal__inner relative p-9 rounded-md bg-white shadow-custom">
       <p class="max-w-xs mb-1 font-body font-semibold text-2xl">{{ 'bland_selv.general.success' | t }}</p>
-      <p class="mb-5 font-body">Din pose er nu lagt i kurven</p>
+      <p class="mb-5 font-body">Din gave er nu lagt i kurven</p>
       <div class="flex-button items-center justify-center">
         <a
           data-component="cleanPose"
@@ -1412,7 +1416,7 @@ if (window.history.replaceState) {
         $(".page3Btn").css('display', 'flex');
         $(".page2Btn").css('display', 'none');
         $(".nextPage").css('display', 'none');
-        $('[data-submit-button]').text('LÆG I KURV');
+        $('[data-submit-button]').text('Put gaven i kurven');
         var dataId = $('.autofillbtn').data('id');
           var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
           if (candyButton.length > 0) {
@@ -1484,6 +1488,11 @@ if (window.history.replaceState) {
       $(".page2Btn").css('display', 'flex');
       $(".page3Btn").css('display', 'none');
       $(".page3").css('display', 'none');
+
+      var dataId = $('.autofillbtn').data('id');
+      $('[data-qty-id="' + dataId + '"]').each(function() {
+          $(this).click();
+      });
     }
 
   function nextPage3() {

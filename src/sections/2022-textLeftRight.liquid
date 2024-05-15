@@ -1,10 +1,26 @@
-<div class="section-container textLeftRight"">
+<style>
+  #shopify-section-{{ section.id }} .rowReverseMobile {
+    grid-gap: 0 !important;
+    justify-items: center !important;
+ }
+  #shopify-section-{{ section.id }} .textLeftRight-smallPageHeadline {
+    margin-top: 0 !important;
+}
+   @media only screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .rowReverseMobile {
+      row-gap: 20px !important;
+ }
+   }
+</style>
+<div class="section-container textLeftRight" style="background-color: {{section.settings.bgcolor}}; margin-top: {{section.settings.margintop}}px !important; margin-bottom: {{section.settings.marginbottom}}px !important;">
 	<div class="page-container">
+      {% if section.settings.page_header != blank %}
       <div class="row">
     	<div class="col-12 ">
     		<h1 class="normalPage type-style-h1-bold">{{ section.settings.page_header }}</h1>
 		</div>
       </div>
+      {% endif %}
       {% assign img = 'left' %}
       
       {%- for block in section.blocks -%}
@@ -23,7 +39,7 @@
           {% assign img = 'left' %}
         {% endif %}
 
-        <div class="row {{ rowExtra }}">
+        <div class="row {{ rowExtra }}" style="padding-top: {{block.settings.paddingtop}}px !important; padding-bottom: {{block.settings.paddingbottom}}px !important;">
 			<div class="col-6 ">
 				<div class="{{ colPaddingFirstRight }}">
 					<div class="textLeftRight-smallPageHeadline type-style-h-subhead">{{ block.settings.small-headline }}</div>
@@ -59,7 +75,32 @@
           "type": "text",
           "id": "page_header",
           "label": "Page header text"
-      }
+      },
+       {
+          "type": "color",
+          "id": "bgcolor",
+          "label": "Background color"
+      },
+      {
+          "type": "range",
+          "id": "margintop",
+          "min": 20,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Section margin top",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "marginbottom",
+          "min": 20,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Section margin bottom",
+          "default": 30
+        }
     ],
   	"blocks": [
       {
@@ -95,7 +136,27 @@
                 "type": "image_picker",
                 "id": "image",
                 "label": "Billede"
-            }      
+            },
+            {
+                "type": "range",
+                "id": "paddingtop",
+                "min": 20,
+                "max": 200,
+                "step": 5,
+                "unit": "px",
+                "label": "Inner section padding top",
+                "default": 30
+              },
+              {
+                "type": "range",
+                "id": "paddingbottom",
+                "min": 20,
+                "max": 200,
+                "step": 5,
+                "unit": "px",
+                "label": "Inner section padding bottom",
+                "default": 30
+              }
         ]
       }
 	],

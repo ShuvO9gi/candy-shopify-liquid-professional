@@ -2038,7 +2038,6 @@
         "block_order": [
           "collection_TreET7"
         ],
-        "disabled": true,
         "settings": {
           "checkbgimagelarge": true,
           "bgimagelarge": "shopify:\/\/shop_images\/Screenshot_1.png",
@@ -2104,26 +2103,27 @@
         "block_order": [
           "collection_k3j9Xe"
         ],
+        "disabled": true,
         "settings": {
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,
-          "headline": "<p>Den bedste gave ide<br\/>til <strong>en der har fået hue på <\/strong><\/p><p>sendt med ekspressfart<\/p>",
+          "headline": "<p>Se vores 6 GENIALE <\/p><p>gaver til <strong>Fars dag <\/strong><\/p><p>- Sendt direkte til din far<\/p>",
           "subheadline": "",
-          "order_before": "Bestil indenfor",
+          "order_before": "Vi sender næste gang om",
           "weekendtext": "",
           "holidaytext": "",
-          "button_text": "Se flere gaver her",
-          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
-          "image": "shopify:\/\/shop_images\/image.png",
+          "button_text": "Se alle 6 gaver her",
+          "button_destination": "shopify:\/\/products\/gaver-til-fars-dag",
+          "image": "shopify:\/\/shop_images\/Hjertebland_selv_slik_2_670.png",
           "textright": false,
           "paddingtop": 30,
           "paddingbottom": 200,
           "cart_Products": [
-            "champagneflaske-med-bland-selv-slik-perfekt-gave",
             "hjerteaeske-med-bland-selv-slik",
-            "mors-dags-tilbud"
+            "verdens-bedste-far-champagneflaske",
+            "jumbo-botte-slik"
           ],
-          "pListHeader": "Mest populære fars dags gaver:"
+          "pListHeader": "Top 3 mest populære gaver:"
         }
       }
     },

@@ -133,15 +133,11 @@ const decodeHtml = (html)  => {
     const totalCount = 0;
 
     let fromLocalStorage = JSON.parse(window.localStorage.getItem('candybag'));
-    //console.log('fromLocalStorage', fromLocalStorage)
-    //console.log('candyBag', candyBag)
-    // If localeStorage is not empty, update the amount selected
     if (fromLocalStorage !== null) {
       const idArray = fromLocalStorage.map((storageItem) => storageItem.id);
       const qtyIdArray = qtyWrappers.map((qtyWrapper) => Number(qtyWrapper.dataset.qtyId));
 
       candyBag = fromLocalStorage;
-
       if (candyBag.length > 0) {
         submitBtns.forEach(submitBtn => {
           submitBtn.innerHTML = theme.strings.blandSelv.buyMore;
@@ -208,7 +204,6 @@ const decodeHtml = (html)  => {
       itemInners[i]?.classList.add('is--selected');
       amountContainers[i]?.classList.remove('hidden');
       productCardBubbles[i].classList.remove('opacity-0');
-
       if (candyBag.length <= 1) {
         submitBtns.forEach(submitBtn => {
           submitBtn.innerHTML = theme.strings.blandSelv.buyMore;
@@ -437,7 +432,6 @@ const decodeHtml = (html)  => {
      */
     infoIcons.forEach((icon, index) => {
       icon.addEventListener('click', () => {
-        console.log(productCardItems)
         const { description, image } = productCardItems[index].dataset;
         const infoTitle = description.split('---')[0];
         const infoDescription = description.split('---')[1];
@@ -630,7 +624,6 @@ const decodeHtml = (html)  => {
         filter.filteredItems = activeItems.length > 0 ? filter.allProducts.filter((product) => {
 
           activeTypes.forEach((type) => {
-            // console.log('product filtet type', product[filter.type]);
           })
           if (activeTypes.filter((type) => product[filter.type].includes(type)).length > 0) return product;
         }) : filter.allProducts;

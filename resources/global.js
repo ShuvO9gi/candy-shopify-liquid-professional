@@ -109,8 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var timeDifference = currentTime - prevTime;
   console.log({ timeDifference: timeDifference / 1000 / 60 });
 
-  //if time difference is greater than 30 mins
-  if (timeDifference > 5 * 60 * 1000) {
+  //if time difference is greater than 2 weeks
+  if (timeDifference > 1000 * 60 * 60 * 24 * 14) {
     localStorage.removeItem("cart");
     sessionStorage.removeItem("cart");
 

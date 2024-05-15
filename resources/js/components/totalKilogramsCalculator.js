@@ -1,12 +1,21 @@
-import { formatMoney } from '../utils/currency';
+import { formatMoney } from "../utils/currency";
 
-export default function totalKilogramsCalculator(candyBag, itemCount, totalCount, priceLimit, submitBtns) {
-  let amountElems = document.querySelectorAll('[data-buy-more-amount]');
-  const gramElemMobile = document.querySelector('[data-gram-elem-mobile]');
-  const gramElem = document.querySelector('[data-gram-elem]');
-  const totalPriceElem = document.querySelector('[data-total-price-elem]');
-  const totalPriceElemMobile = document.querySelector('[data-total-price-elem-mobile]');
-  const speechBubbles = document.querySelectorAll('[data-price-speech-bubble]');
+export default function totalKilogramsCalculator(
+  candyBag,
+  itemCount,
+  totalCount,
+  priceLimit,
+  submitBtns,
+  isGift = false
+) {
+  let amountElems = document.querySelectorAll("[data-buy-more-amount]");
+  const gramElemMobile = document.querySelector("[data-gram-elem-mobile]");
+  const gramElem = document.querySelector("[data-gram-elem]");
+  const totalPriceElem = document.querySelector("[data-total-price-elem]");
+  const totalPriceElemMobile = document.querySelector(
+    "[data-total-price-elem-mobile]"
+  );
+  const speechBubbles = document.querySelectorAll("[data-price-speech-bubble]");
   let itemPrice;
   let totalPrice;
   let weightArr;
@@ -47,29 +56,37 @@ export default function totalKilogramsCalculator(candyBag, itemCount, totalCount
   gramElem.innerHTML = `${totalWeight} g`;
   gramElemMobile.innerHTML = `${totalWeight} g`;
 
-  if ((totalPrice / 100) < priceLimit) {
-    submitBtns.forEach(submitBtn => {
+  if (totalPrice / 100 < priceLimit) {
+    submitBtns.forEach((submitBtn) => {
       submitBtn.innerHTML = theme.strings.blandSelv.buyMore;
       submitBtn.disabled = true;
-    })
-    
-    document.querySelectorAll('[data-buy-more-amount]').forEach(amountElem => {
-      amountElem.innerHTML = `&nbsp;${priceLimit - Math.ceil((totalPrice / 100))}&nbsp;`;
-    })
+    });
+
+    document
+      .querySelectorAll("[data-buy-more-amount]")
+      .forEach((amountElem) => {
+        amountElem.innerHTML = `&nbsp;${
+          priceLimit - Math.ceil(totalPrice / 100)
+        }&nbsp;`;
+      });
 
     setTimeout(() => {
       speechBubbles.forEach((speechBubble) => {
-        speechBubble.classList.remove('opacity-0');
+        speechBubble.classList.remove("opacity-0");
       });
     }, 1000);
   } else {
-    submitBtns.forEach(submitBtn => {
-      submitBtn.innerHTML = theme.strings.blandSelv.closeBag;
+    submitBtns.forEach((submitBtn) => {
+      if (isGift) {
+        submitBtn.innerHTML = "Put gaven i kurven";
+      } else {
+        submitBtn.innerHTML = theme.strings.blandSelv.closeBag;
+      }
       submitBtn.disabled = false;
-    })
-    
+    });
+
     speechBubbles.forEach((speechBubble) => {
-      speechBubble.classList.add('opacity-0');
+      speechBubble.classList.add("opacity-0");
     });
   }
 }

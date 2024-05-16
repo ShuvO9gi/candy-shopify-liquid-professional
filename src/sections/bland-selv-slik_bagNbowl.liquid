@@ -433,7 +433,10 @@
     display: none; /* Hides scrollbar for a cleaner look */
   }
   
-  
+  .filter-items-wrapper {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    
+  }
 </style>
 {%- assign class = 'bland-selv-slik' -%}
 {%- assign s = section.settings -%}

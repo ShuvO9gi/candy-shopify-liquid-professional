@@ -117,7 +117,10 @@
             "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
             "button_text": "Installer vores app her",
             "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
-            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg"
+            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
           }
         },
         "a8171c46-c319-4bd8-aa37-fd2fd8e73825": {
@@ -128,7 +131,10 @@
             "content": "<p>Vi har blandet nogle af favoritterne ned i en flot hjerteæske. Gør din partner kisteglad med denne flotte gave<\/p>",
             "button_text": "Køb her",
             "button_destination": "shopify:\/\/products\/mors-dags-tilbud",
-            "image": "shopify:\/\/shop_images\/landing-page-img_hjerteaeske.png"
+            "image": "shopify:\/\/shop_images\/landing-page-img_hjerteaeske.png",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
           }
         },
         "835b850a-cc1d-4489-9c94-232b12d00d42": {
@@ -139,7 +145,10 @@
             "content": "<p>Dette er den perfekte gave som kan bruges i alle anledninger. Du kan selv vælge hvilket label der skal på flasken <\/p>",
             "button_text": "Køb her",
             "button_destination": "shopify:\/\/products\/champagneflaske",
-            "image": "shopify:\/\/shop_images\/landing-page-img_3Flasker.png"
+            "image": "shopify:\/\/shop_images\/landing-page-img_3Flasker.png",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
           }
         },
         "54a3ea27-9748-44ea-9659-5fa6b12d6a21": {
@@ -150,7 +159,10 @@
             "content": "<p>Fra vores bland selv slik side kan du blande lige det miks du gerne vil give som gave<\/p>",
             "button_text": "Start med at blande her",
             "button_destination": "shopify:\/\/collections\/bland-selv-slik",
-            "image": "shopify:\/\/shop_images\/landing-page-img_pose.png"
+            "image": "shopify:\/\/shop_images\/landing-page-img_pose.png",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
           }
         },
         "952a8235-5979-47a1-a0cd-2e0800ad4893": {
@@ -161,7 +173,10 @@
             "content": "<p>Giv en sjov og lækker oplevelse som gavekort. Se vores gavekort <\/p>",
             "button_text": "Køb gavekort",
             "button_destination": "shopify:\/\/products\/slikekspressen-gavekort",
-            "image": "shopify:\/\/shop_images\/landing-page-img_gavekort_e34b5302-f394-4453-977e-1e17cf62be25.png"
+            "image": "shopify:\/\/shop_images\/landing-page-img_gavekort_e34b5302-f394-4453-977e-1e17cf62be25.png",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
           }
         },
         "545c08b6-5e65-4688-b4be-475b5f75c78f": {
@@ -172,7 +187,10 @@
             "content": "<p>Tag kontakt til os og lad os komme med et bud til at løse jeres virksomhedsbehov. Vores erhvervs afdeling sidder klar til at skræddersy den bedste og billigste løsning<\/p>",
             "button_text": "Skriv til os her",
             "button_destination": "shopify:\/\/pages\/kontakt-os",
-            "image": "shopify:\/\/shop_images\/landing-page-img_kurv_m_slik.png"
+            "image": "shopify:\/\/shop_images\/landing-page-img_kurv_m_slik.png",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
           }
         }
       },
@@ -185,6 +203,10 @@
         "545c08b6-5e65-4688-b4be-475b5f75c78f"
       ],
       "settings": {
+        "page_header": "",
+        "bgcolor": "",
+        "margintop": 60,
+        "marginbottom": 30
       }
     },
     "166290812500d3fec5": {

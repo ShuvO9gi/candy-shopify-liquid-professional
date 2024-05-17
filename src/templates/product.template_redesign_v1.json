@@ -43,7 +43,8 @@
             "button_destination": "shopify:\/\/collections\/gift",
             "image": "shopify:\/\/shop_images\/Category.png",
             "paddingtop": 60,
-            "paddingbottom": 60
+            "paddingbottom": 60,
+            "columngap": 0
           }
         }
       },
@@ -62,7 +63,7 @@
       "settings": {
         "title": "Sjove champagneflasker med labels",
         "text1": "Se vores udvalg af de populære champagneflasker",
-        "text2": "Hver flaske er fyldt med 720 gram af vores mest populære mix.",
+        "text2": "Hver flaske er fyldt med 720 gram af vores mest populære slik.",
         "products": "champagneflasker-1"
       }
     }

@@ -1,6 +1,5 @@
 <style>
   #shopify-section-{{ section.id }} .rowReverseMobile {
-    grid-gap: 0 !important;
     justify-items: center !important;
  }
   #shopify-section-{{ section.id }} .textLeftRight-smallPageHeadline {
@@ -39,7 +38,7 @@
           {% assign img = 'left' %}
         {% endif %}
 
-        <div class="row {{ rowExtra }}" style="padding-top: {{block.settings.paddingtop}}px !important; padding-bottom: {{block.settings.paddingbottom}}px !important;">
+        <div class="row {{ rowExtra }}" style="padding-top: {{block.settings.paddingtop}}px !important; padding-bottom: {{block.settings.paddingbottom}}px !important; grid-gap: {{block.settings.columngap}}px !important;">
 			<div class="col-6 ">
 				<div class="{{ colPaddingFirstRight }}">
 					<div class="textLeftRight-smallPageHeadline type-style-h-subhead">{{ block.settings.small-headline }}</div>
@@ -145,7 +144,7 @@
                 "step": 5,
                 "unit": "px",
                 "label": "Inner section padding top",
-                "default": 30
+                "default": 60
               },
               {
                 "type": "range",
@@ -155,7 +154,17 @@
                 "step": 5,
                 "unit": "px",
                 "label": "Inner section padding bottom",
-                "default": 30
+                "default": 60
+              },
+              {
+                "type": "range",
+                "id": "columngap",
+                "min": 0,
+                "max": 200,
+                "step": 5,
+                "unit": "px",
+                "label": "Column gap",
+                "default": 60
               }
         ]
       }

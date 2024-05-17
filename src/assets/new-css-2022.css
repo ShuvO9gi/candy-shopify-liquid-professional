@@ -664,8 +664,7 @@ a {
 }
 
 h1.normalPage {
-  margin-top: 109px;
-  margin-bottom: 58px;
+  margin-bottom: 40px;
   color: var(--brandBlack);
 }
 
@@ -1514,10 +1513,6 @@ a.border-button {
 
 .textLeftRight-img {
   border-radius: 20px;
-}
-
-.textLeftRight>.page-container>.row {
-  margin-bottom: 120px;
 }
 
 .textLeftRight>.page-container>.row:first-child {

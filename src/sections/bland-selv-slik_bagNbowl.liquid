@@ -541,36 +541,7 @@
             <div class="row">
               <div class="col-12">
                 <h2 class="candyHeadline type-style-h2-regular">{{ s.title }}</h2>
-                {% render 'cl-usp-list' %}
-
-                <div class="flex pb-8" style="padding-bottom: 32px;">
-                  {%- for b in section.blocks -%}
-                    <script>
-                      console.log("b", b);
-                    </script>
-                    {%- case b.type -%}
-                    {%- when 'filter_type' -%}
-                      {%- assign bs = b.settings -%}
-                      {%- assign filter_cat = bs.category -%}
-                      {%- assign filter_name = bs.filter_name -%}
-                      {%- assign filter_id = bs.filter_id -%}
-                      {%- assign filter_type = bs.type -%}
-  
-                      {%- if filter_cat == "kategori" -%}
-                        <script>
-                          console.log("filter_cat", filter_cat);
-                        </script>
-                        <div
-                          class="flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md type-style-p-small-bold cursor-pointer"
-                          data-filter-item
-                          data-filter-type="{{ filter_type }}"
-                          data-filter-id="{{ filter_id }}">
-                          {{ filter_id | capitalize }}
-                        </div>
-                      {%- endif -%}
-                    {%- endcase -%}
-                  {%- endfor -%}
-                </div>
+                
 
               </div>
             </div>

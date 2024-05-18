@@ -544,6 +544,24 @@
                 
               {% comment %} {% render 'cl-usp-list' %} {% endcomment %}
                 
+              <div class="filter-container sticky top- bg-white z-10" style="z-index: 10000;">
+                <div class="filter-items-wrapper overflow-x-auto whitespace-nowrap">
+                  <div class="flex space-x-4">
+                  {%- for b in section.blocks -%}
+                    {%- case b.type -%}
+                      {%- when 'filter_type' -%}
+                      {%- assign bs = b.settings -%}
+                      {%- assign filter_cat = bs.category -%}
+                      {%- assign filter_name = bs.filter_name -%}
+                      {%- assign filter_id = bs.filter_id -%}
+                      {%- assign filter_type = bs.type -%}
+
+                      
+                    {%- endcase -%}
+                  {%- endfor -%}
+                </div>
+                </div>
+              </div> 
 
               </div>
             </div>

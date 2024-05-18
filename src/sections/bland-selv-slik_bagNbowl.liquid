@@ -544,7 +544,7 @@
                 
               {% comment %} {% render 'cl-usp-list' %} {% endcomment %}
                 
-              <div class="filter-container sticky top- bg-white z-10" style="z-index: 10000;">
+              {% comment %} <div class="filter-container sticky top- bg-white z-10" style="z-index: 10000;">
                 <div class="filter-items-wrapper overflow-x-auto whitespace-nowrap">
                   <div class="flex space-x-4">
                   {%- for b in section.blocks -%}
@@ -569,7 +569,7 @@
                   {%- endfor -%}
                 </div>
                 </div>
-              </div> 
+              </div>  {% endcomment %}
               
               </div>
             </div>

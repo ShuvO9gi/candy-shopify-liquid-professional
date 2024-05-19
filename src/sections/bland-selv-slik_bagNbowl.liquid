@@ -587,7 +587,12 @@
                   {%- assign filter_id = bs.filter_id -%}
                   {%- assign filter_type = bs.type -%}
 
-                  
+                  {%- if filter_cat == "kategori" -%}
+                    <div
+                      >
+                      {{ filter_id | capitalize }}
+                    </div>
+                  {%- endif -%}
                 {%- endcase -%}
               {%- endfor -%}
             </div>

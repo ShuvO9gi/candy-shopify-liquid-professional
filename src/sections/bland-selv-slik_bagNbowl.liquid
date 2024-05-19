@@ -591,7 +591,8 @@
                     <div
                       class="flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md type-style-p-small-bold cursor-pointer"
                       data-filter-item
-                      >
+                      data-filter-type="{{ filter_type }}"
+                      data-filter-id="{{ filter_id }}">
                       {{ filter_id | capitalize }}
                     </div>
                   {%- endif -%}

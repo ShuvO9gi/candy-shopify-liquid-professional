@@ -524,22 +524,7 @@
     <!-- /page-width -->
   </div>
 
-  {%- comment -%}
-  Name prompt modal
-  {%- endcomment -%}{%- comment -%}
   <div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
-  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
-  <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
-  {%- render 'icon' with 'close' -%}
-  </div>
-  <p class="mb-3 font-body font-semibold text-2xl">{{ 'bland_selv.name_prompt.write_name' | t }}</p>
-  <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
-  <button class="btn" type="button" onclick="addPushEvent()" data-final-submit>
-  {{ 'bland_selv.name_prompt.submit' | t }}
-  </button>
-  </div>
-  </div>
-  {%- endcomment -%}<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
     <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
       <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
         {%- render 'icon' with 'close' -%}

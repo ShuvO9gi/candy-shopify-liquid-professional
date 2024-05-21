@@ -159,7 +159,7 @@ export default component((node, ctx) => {
       );
 
       candyBag = fromLocalStorage;
-      console.log("candyBag", candyBag);
+
       if (candyBag.length > 0) {
         submitBtns.forEach((submitBtn) => {
           submitBtn.innerHTML = theme.strings.blandSelv.buyMore;

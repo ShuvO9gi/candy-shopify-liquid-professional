@@ -6,18 +6,55 @@
       "settings": {
       }
     },
+    "v1_image_with_text_PraUwm": {
+      "type": "v1_image-with-text",
+      "blocks": {
+        "collection_ApVFJU": {
+          "type": "collection",
+          "settings": {
+            "headline": "",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_ApVFJU"
+      ],
+      "disabled": true,
+      "settings": {
+        "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
+        "checkbgimagelarge": false,
+        "headline": "<p>Her på denne side kan du se vores forskellige produkter <\/p>",
+        "subheadline": "<p>Her på denne side kan duu se <\/p>",
+        "order_before": "Bestil indenfor",
+        "weekendtext": "",
+        "holidaytext": "",
+        "button_text": "",
+        "button_destination": "",
+        "image": "shopify:\/\/shop_images\/botte_94b319c3-c7f5-4fb9-8327-39842bfea939.png",
+        "textright": false,
+        "paddingtop": 30,
+        "paddingbottom": 30,
+        "cart_Products": [
+          "1-kilo-blandet-slik-2",
+          "2-kilo-blandet-slik",
+          "1-kg-gelatinefri-mix"
+        ],
+        "pListHeader": ""
+      }
+    },
     "1662904099a7f7b3c1": {
       "type": "2022-textLeftRight",
       "blocks": {
         "1ca7ee01-59ec-42b9-b566-e078a29d1c46": {
           "type": "collection",
           "settings": {
-            "small-headline": "Send en gave til en der fortjener det",
-            "headline": "Brug vores app",
-            "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
-            "button_text": "Installer vores app her",
-            "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
-            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg",
+            "small-headline": "1 kilo blandet slik",
+            "headline": "Lidt af det bedste",
+            "content": "<p>Oplev glæden ved vores 1 kg. slikpose, fyldt med et spændende miks af farverigt og smagfuldt slik. Hver bid bringer en ny oplevelse, og vores nøje udvalgte sortiment sikrer, at der er noget for enhver smag. Fra frugtige favoritter til lakridser og syrlige godter - denne pose har det hele!<\/p><p>Perfekt til enhver lejlighed, om det er fest, filmaften, eller bare en hyggestund. Vores slikpose er skabt for at sprede glæde og bringe smil på læberne hos både store og små.<br\/><\/p><p><\/p><p><\/p>",
+            "button_text": "Se produktet her",
+            "button_destination": "shopify:\/\/products\/1-kilo-blandet-slik-2",
+            "image": "shopify:\/\/shop_images\/1_Kilo_2.png",
             "paddingtop": 60,
             "paddingbottom": 60,
             "columngap": 60
@@ -26,12 +63,12 @@
         "a8171c46-c319-4bd8-aa37-fd2fd8e73825": {
           "type": "collection",
           "settings": {
-            "small-headline": "Hjerteæske med Bland Selv Slik",
-            "headline": "Det bedste af det bedste",
-            "content": "<p>Vi har blandet nogle af favoritterne ned i en flot hjerteæske. Gør din partner kisteglad med denne flotte gave<\/p>",
-            "button_text": "Køb her",
-            "button_destination": "shopify:\/\/products\/mors-dags-tilbud",
-            "image": "shopify:\/\/shop_images\/landing-page-img_hjerteaeske.png",
+            "small-headline": "2 kilo blandet slik",
+            "headline": "Dobbelt op på smag og sjov!",
+            "content": "<p>Gør dig klar til en ekstraordinær oplevelse med vores 2 kg. slikpose, som er fyldt med en farverig og smagfuld blanding af lækkerier. Denne store pose er pakket med en bred vifte af slik, der tilfredsstiller enhver slikmund - fra søde frugtsmage til skønne lakridser og syrlige overraskelser.<\/p><p>Uanset om det er til en stor fest, en hyggelig aften med vennerne, eller en særlig fejring, er denne 2 kg. slikpose det perfekte valg. Del den med familie og venner, og lad hver eneste bid bringe smil og glæde.<\/p><p><\/p>",
+            "button_text": "Se produktet her",
+            "button_destination": "shopify:\/\/products\/2-kilo-blandet-slik",
+            "image": "shopify:\/\/shop_images\/2kilo_version-bred.png",
             "paddingtop": 60,
             "paddingbottom": 60,
             "columngap": 60
@@ -40,54 +77,12 @@
         "835b850a-cc1d-4489-9c94-232b12d00d42": {
           "type": "collection",
           "settings": {
-            "small-headline": "Champagneflaske",
-            "headline": "Til alle anledninger",
-            "content": "<p>Dette er den perfekte gave som kan bruges i alle anledninger. Du kan selv vælge hvilket label der skal på flasken <\/p>",
-            "button_text": "Køb her",
-            "button_destination": "shopify:\/\/products\/champagneflaske",
-            "image": "shopify:\/\/shop_images\/landing-page-img_3Flasker.png",
-            "paddingtop": 60,
-            "paddingbottom": 60,
-            "columngap": 60
-          }
-        },
-        "54a3ea27-9748-44ea-9659-5fa6b12d6a21": {
-          "type": "collection",
-          "settings": {
-            "small-headline": "Det kan du lige blande på",
-            "headline": "Lav dit eget miks",
-            "content": "<p>Fra vores bland selv slik side kan du blande lige det miks du gerne vil give som gave<\/p>",
-            "button_text": "Start med at blande her",
-            "button_destination": "shopify:\/\/collections\/bland-selv-slik",
-            "image": "shopify:\/\/shop_images\/landing-page-img_pose.png",
-            "paddingtop": 60,
-            "paddingbottom": 60,
-            "columngap": 60
-          }
-        },
-        "952a8235-5979-47a1-a0cd-2e0800ad4893": {
-          "type": "collection",
-          "settings": {
-            "small-headline": "Giv et gavekort",
-            "headline": "Gør alle glade",
-            "content": "<p>Giv en sjov og lækker oplevelse som gavekort. Se vores gavekort <\/p>",
-            "button_text": "Køb gavekort",
-            "button_destination": "shopify:\/\/products\/slikekspressen-gavekort",
-            "image": "shopify:\/\/shop_images\/landing-page-img_gavekort_e34b5302-f394-4453-977e-1e17cf62be25.png",
-            "paddingtop": 60,
-            "paddingbottom": 60,
-            "columngap": 60
-          }
-        },
-        "545c08b6-5e65-4688-b4be-475b5f75c78f": {
-          "type": "collection",
-          "settings": {
-            "small-headline": "Firma og erhvervsgaver",
-            "headline": "Vi tilpasser løsninger til jeres behov",
-            "content": "<p>Tag kontakt til os og lad os komme med et bud til at løse jeres virksomhedsbehov. Vores erhvervs afdeling sidder klar til at skræddersy den bedste og billigste løsning<\/p>",
-            "button_text": "Skriv til os her",
-            "button_destination": "shopify:\/\/pages\/kontakt-os",
-            "image": "shopify:\/\/shop_images\/landing-page-img_kurv_m_slik.png",
+            "small-headline": "1 kilo gelatinefri mix",
+            "headline": "Ren nydelse - del glæden",
+            "content": "<p>Oplev en verden af smagsoplevelser med vores 1 kg. gelatinefri slikpose. Denne pose er fyldt med et alsidigt udvalg af farverigt og velsmagende slik, der er 100% fri for gelatine. Uanset om du er til sødt, surt eller lakrids, finder du noget at elske i denne pose.<\/p><p>Perfekt til alle situationer - fra festlige sammenkomster til en stille aften derhjemme. Del glæden med dem omkring dig eller nyd den selv med god samvittighed. Vores gelatinefri slikpose gør det nemt at forkæle dig selv og andre.<\/p>",
+            "button_text": "Se produktet her",
+            "button_destination": "shopify:\/\/products\/1-kg-gelatinefri-mix",
+            "image": "shopify:\/\/shop_images\/gelantine_bred.png",
             "paddingtop": 60,
             "paddingbottom": 60,
             "columngap": 60
@@ -97,13 +92,10 @@
       "block_order": [
         "1ca7ee01-59ec-42b9-b566-e078a29d1c46",
         "a8171c46-c319-4bd8-aa37-fd2fd8e73825",
-        "835b850a-cc1d-4489-9c94-232b12d00d42",
-        "54a3ea27-9748-44ea-9659-5fa6b12d6a21",
-        "952a8235-5979-47a1-a0cd-2e0800ad4893",
-        "545c08b6-5e65-4688-b4be-475b5f75c78f"
+        "835b850a-cc1d-4489-9c94-232b12d00d42"
       ],
       "settings": {
-        "page_header": "Her ser du forskellige produkter",
+        "page_header": "Farverig forkælelse til enhver smag!",
         "bgcolor": "",
         "margintop": 80,
         "marginbottom": 30
@@ -176,6 +168,7 @@
   },
   "order": [
     "main",
+    "v1_image_with_text_PraUwm",
     "1662904099a7f7b3c1",
     "166290812500d3fec5",
     "166291565275d9be4d",

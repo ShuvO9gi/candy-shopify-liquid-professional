@@ -2125,6 +2125,16 @@
           ],
           "pListHeader": "Top 3 mest populære gaver:"
         }
+      },
+      "bland-selv-slik_bagNbowl": {
+        "type": "bland-selv-slik_bagNbowl",
+        "settings": {
+          "title": "<p><strong>Bland i dag <\/strong>— Få det bragt med ekspresfart.<\/p>",
+          "paginate": 600,
+          "price_limit": 25,
+          "width_item": 275,
+          "autoload": "automaticly"
+        }
       }
     },
     "content_for_index": [

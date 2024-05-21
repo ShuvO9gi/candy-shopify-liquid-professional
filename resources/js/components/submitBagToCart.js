@@ -46,8 +46,12 @@ async function checkItemsExist(items) {
   return { exists, unAvailableProducts };
 }
 
-export default function submitBagToCart(items, callback, namePromptModal) {
-  // Check if items exist
+export default function submitBagToCart(
+  items,
+  callback,
+  namePromptModal,
+  expiredItemsPromptModal
+) {
   checkItemsExist(items).then(({ exists, unAvailableProducts }) => {
     // If items id exists in unAvailableProducts, remove from items
     if (unAvailableProducts.length > 0) {
@@ -71,20 +75,44 @@ export default function submitBagToCart(items, callback, namePromptModal) {
       },
       body: JSON.stringify({ items }),
     })
-      .then((response) => {
-        const data = response.json();
-        console.log({ data });
-        return data;
-      })
+      .then((response) => response.json())
       .then((response) => {
         if (response.items && response.items.length > 0) {
           if (unAvailableProducts.length > 0) {
-            alert(
-              "We have removed one or more items that were not available at this moment. You can now proceed to checkout"
+            const candyBag = JSON.parse(
+              window.localStorage.getItem("candybag")
             );
+
+            document.getElementById("expired-items-list").innerHTML =
+              unAvailableProducts
+                .map((p) => {
+                  const itemName = candyBag.find((item) => item.id === p).title;
+                  return `<li><b>${itemName}</b></li>`;
+                })
+                .concat("");
+
+            document
+              .getElementById("data-expired-items-prompt")
+              .classList.remove("hidden");
+
+            // const expiredItemsHTML = unAvailableProducts.map((p) => {
+            //   const itemName = candyBag.find((item) => item.id === p).name;
+            //   return `<li>${itemName}</li>`;
+            // });
+            // document.getElementById("expired-items-list").innerHTML =
+            //   expiredItemsHTML;
+
+            document
+              .querySelector("[data-name-prompt-skip]")
+              .addEventListener("click", () => {
+                expiredItemsPromptModal.classList.add("hidden");
+              });
+
+            callback(expiredItemsPromptModal);
+          } else {
+            callback(namePromptModal);
           }
           window.localStorage.removeItem("candyBag");
-          callback(namePromptModal);
         } else {
           alert(response.description);
         }

@@ -1066,6 +1066,10 @@ export default component((node, ctx) => {
 
     console.log(filterJson);
 
+    const categoryName = [];
+    const categoryId = [];
+    const categoryMap = {};
+
     ctx.on("products:filtered", (state) => {
       let renderThese = [];
       const { allFilters } = state;

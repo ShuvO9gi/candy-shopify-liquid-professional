@@ -247,7 +247,7 @@ export default component((node, ctx) => {
       itemInners[i]?.classList.add("is--selected");
       amountContainers[i]?.classList.remove("hidden");
       productCardBubbles[i].classList.remove("opacity-0");
-      console.log("heeee");
+
       if (candyBag.length <= 1) {
         submitBtns.forEach((submitBtn) => {
           submitBtn.innerHTML = theme.strings.blandSelv.buyMore;
@@ -573,7 +573,6 @@ export default component((node, ctx) => {
      */
     infoIcons.forEach((icon, index) => {
       icon.addEventListener("click", () => {
-        console.log(productCardItems);
         const { description, image } = productCardItems[index].dataset;
         const infoTitle = description.split("---")[0];
         const infoDescription = description.split("---")[1];

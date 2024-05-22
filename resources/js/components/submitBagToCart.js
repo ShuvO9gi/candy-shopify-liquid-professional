@@ -95,13 +95,6 @@ export default function submitBagToCart(
               .getElementById("data-expired-items-prompt")
               .classList.remove("hidden");
 
-            // const expiredItemsHTML = unAvailableProducts.map((p) => {
-            //   const itemName = candyBag.find((item) => item.id === p).name;
-            //   return `<li>${itemName}</li>`;
-            // });
-            // document.getElementById("expired-items-list").innerHTML =
-            //   expiredItemsHTML;
-
             document
               .querySelector("[data-name-prompt-skip]")
               .addEventListener("click", () => {

@@ -6,6 +6,7 @@ export default function createItemsArray(
   note2,
   note3
 ) {
+  console.log('candyBag: ', {candyBag});
   const items = candyBag.map((item) => {
     const lineItem = {
       quantity: item.count,

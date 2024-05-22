@@ -1070,6 +1070,11 @@ export default component((node, ctx) => {
     const categoryId = [];
     const categoryMap = {};
 
+    filterJson.forEach((item) => {
+      const filterName = item.dataset.filterName;
+      const filterId = item.dataset.filterId;
+    });
+
     ctx.on("products:filtered", (state) => {
       let renderThese = [];
       const { allFilters } = state;

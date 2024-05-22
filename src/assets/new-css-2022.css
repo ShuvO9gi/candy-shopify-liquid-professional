@@ -3258,6 +3258,9 @@ display: -webkit-box;
 .hidden_hidesecdrawerbtn .dataBagnamepostfix{
   display: none;
 }
+#standard-miks .submit-wrapper{
+  display: none;
+}
 @media (max-width: 1129px) and (min-width: 768px){
   .usp-list {
     grid-template-columns: repeat(2, 1fr) !important;

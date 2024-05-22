@@ -1062,6 +1062,10 @@ export default component((node, ctx) => {
       });
     });
 
+    const filterJson = document.querySelectorAll("[data-filter-json]");
+
+    console.log(filterJson);
+
     ctx.on("products:filtered", (state) => {
       let renderThese = [];
       const { allFilters } = state;

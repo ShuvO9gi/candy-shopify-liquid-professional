@@ -394,6 +394,9 @@ export default component((node, ctx) => {
         // Prompt to add name
         candyBag = JSON.parse(window.localStorage.getItem("candybag"));
         const namePromptModal = node.querySelector("[data-name-prompt]");
+        const expiredPromptModal = node.querySelector(
+          "[data-expired-items-prompt]"
+        );
         const namePromptClose = node.querySelector("[data-name-prompt-close]");
         const namePromptInput = node.querySelector("[data-name-prompt-input]");
         const finalSubmit = node.querySelector("[data-final-submit]");
@@ -404,7 +407,12 @@ export default component((node, ctx) => {
           // namePromptInput.value = bag.bagName;
           if (items.length > 0) {
             // Submit the list to the cart
-            submitBagToCart(items, successPopup, namePromptModal);
+            submitBagToCart(
+              items,
+              successPopup,
+              namePromptModal,
+              expiredPromptModal
+            );
             namePromptModal.classList.remove("is--visible");
             namePromptInput.value = "";
 
@@ -498,7 +506,12 @@ export default component((node, ctx) => {
                   );
                   if (items.length > 0) {
                     // Submit the list to the cart
-                    submitBagToCart(items, successPopup, namePromptModal);
+                    submitBagToCart(
+                      items,
+                      successPopup,
+                      namePromptModal,
+                      submitBagToCart
+                    );
                     namePromptModal.classList.remove("is--visible");
                     namePromptInput.value = "";
 
@@ -537,7 +550,12 @@ export default component((node, ctx) => {
             );
             if (items.length > 0) {
               // Submit the list to the cart
-              submitBagToCart(items, successPopup, namePromptModal);
+              submitBagToCart(
+                items,
+                successPopup,
+                namePromptModal,
+                submitBagToCart
+              );
               namePromptModal.classList.remove("is--visible");
               namePromptInput.value = "";
 
@@ -553,7 +571,6 @@ export default component((node, ctx) => {
      */
     infoIcons.forEach((icon, index) => {
       icon.addEventListener("click", () => {
-        console.log(productCardItems);
         const { description, image } = productCardItems[index].dataset;
         const infoTitle = description.split("---")[0];
         const infoDescription = description.split("---")[1];

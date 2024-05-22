@@ -2038,6 +2038,7 @@
         "block_order": [
           "collection_TreET7"
         ],
+        "disabled": true,
         "settings": {
           "checkbgimagelarge": true,
           "bgimagelarge": "shopify:\/\/shop_images\/Screenshot_1.png",
@@ -2103,16 +2104,15 @@
         "block_order": [
           "collection_k3j9Xe"
         ],
-        "disabled": true,
         "settings": {
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,
-          "headline": "<p>Se vores 6 GENIALE <\/p><p>gaver til <strong>Fars dag <\/strong><\/p><p>- Sendt direkte til din far<\/p>",
+          "headline": "<p>Se vores geniale <\/p><p>gaver til <strong>fars dag <\/strong><\/p>",
           "subheadline": "",
           "order_before": "Vi sender næste gang om",
           "weekendtext": "",
           "holidaytext": "",
-          "button_text": "Se alle 6 gaver her",
+          "button_text": "Se alle gaver her",
           "button_destination": "shopify:\/\/products\/gaver-til-fars-dag",
           "image": "shopify:\/\/shop_images\/Hjertebland_selv_slik_2_670.png",
           "textright": false,

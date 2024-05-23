@@ -1100,6 +1100,7 @@ export default component((node, ctx) => {
 
       const filteredProducts = allFilters[0]?.activeTypes
         .map((title) => {
+          const showTitle = categoryMap[title];
           let filteredProductsHTML = "";
           const filteredItems = unique.filter((item) =>
             item.tags.includes(title)

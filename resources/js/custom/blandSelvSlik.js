@@ -1178,6 +1178,8 @@ export default component((node, ctx) => {
       let categorizedHTML = "";
 
       categoryId.forEach((category) => {
+        const showCategory = categoryMap[category];
+
         const filteredProducts = products.filter((product) =>
           product.tags.includes(category)
         );

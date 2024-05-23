@@ -1177,7 +1177,7 @@ export default component((node, ctx) => {
     const categorizedProducts = (products) => {
       let categorizedHTML = "";
 
-      categoryList.forEach((category) => {
+      categoryId.forEach((category) => {
         const filteredProducts = products.filter((product) =>
           product.tags.includes(category)
         );

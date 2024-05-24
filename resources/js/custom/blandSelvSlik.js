@@ -1193,7 +1193,7 @@ export default component((node, ctx) => {
       });
 
       const uncategorizedProducts = products.filter(
-        (product) => !product.tags.some((tag) => categoryList.includes(tag))
+        (product) => !product.tags.some((tag) => categoryId.includes(tag))
       );
 
       if (uncategorizedProducts.length > 0) {

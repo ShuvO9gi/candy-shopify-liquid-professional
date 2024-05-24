@@ -1135,7 +1135,7 @@ export default component((node, ctx) => {
       });
     });
 
-    const filterJSON = document.getElementById("filter_json");
+    // const filterJSON = document.getElementById("filter_json");
 
     // if (filterJSON) {
     //   const category = filterJSON.dataset.filterCat;

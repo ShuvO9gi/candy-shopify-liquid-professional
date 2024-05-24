@@ -2007,9 +2007,9 @@
           "step2_randombtntext": "....eller fyld resten op med favoritmiks",
           "step2_removebtntext": "Fjern favoritmiks",
           "step2_nextbtntext": "NÆSTE - TILFØJ KORT",
-          "step3_nohandwrittentext": "Intet kort",
+          "step3_nohandwrittentext": "Nej tak til kort",
           "step3_nohandwrittenprice": "Gratis",
-          "step3_handwrittentext": "Håndskrevet kort",
+          "step3_handwrittentext": "Personligt kort",
           "msgoncardtext": "Besked på kortet",
           "messageoncard": "shopify:\/\/shop_images\/Positive_Quote_Minimal_Card_Instagram_Post2_1.png"
         }
@@ -2107,7 +2107,7 @@
         "settings": {
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,
-          "headline": "<p>Se vores geniale <\/p><p>gaver til <strong>fars dag <\/strong><\/p>",
+          "headline": "<p>Oplev vores <strong>unikke<\/strong> og<strong> eksklusive<\/strong> gaver til <strong>fars dag! <\/strong><\/p>",
           "subheadline": "",
           "order_before": "Vi sender næste gang om",
           "weekendtext": "",

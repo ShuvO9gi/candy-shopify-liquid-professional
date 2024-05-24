@@ -109,27 +109,13 @@
     "1662904099a7f7b3c1": {
       "type": "2022-textLeftRight",
       "blocks": {
-        "1ca7ee01-59ec-42b9-b566-e078a29d1c46": {
-          "type": "collection",
-          "settings": {
-            "small-headline": "Send en gave til en der fortjener det",
-            "headline": "Brug vores app",
-            "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
-            "button_text": "Installer vores app her",
-            "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
-            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg",
-            "paddingtop": 60,
-            "paddingbottom": 60,
-            "columngap": 60
-          }
-        },
         "a8171c46-c319-4bd8-aa37-fd2fd8e73825": {
           "type": "collection",
           "settings": {
             "small-headline": "Hjerteæske med Bland Selv Slik",
             "headline": "Det bedste af det bedste",
-            "content": "<p>Vi har blandet nogle af favoritterne ned i en flot hjerteæske. Gør din partner kisteglad med denne flotte gave<\/p>",
-            "button_text": "Køb her",
+            "content": "<p>Overrask dine kære med en ekstra sød gave - vores hjerteæske med Bland Selv Slik er den perfekte måde at vise din kærlighed på og sætte smil på alles læber!<\/p>",
+            "button_text": "Se mere",
             "button_destination": "shopify:\/\/products\/mors-dags-tilbud",
             "image": "shopify:\/\/shop_images\/landing-page-img_hjerteaeske.png",
             "paddingtop": 60,
@@ -140,26 +126,12 @@
         "835b850a-cc1d-4489-9c94-232b12d00d42": {
           "type": "collection",
           "settings": {
-            "small-headline": "Champagneflaske",
+            "small-headline": "Festlige champagneflasker",
             "headline": "Til alle anledninger",
-            "content": "<p>Dette er den perfekte gave som kan bruges i alle anledninger. Du kan selv vælge hvilket label der skal på flasken <\/p>",
-            "button_text": "Køb her",
+            "content": "<p>Skal du fejre en særlig begivenhed eller ønsker du at forkæle en af dine kære? Vores champagneflaske med Bland Selv Slik er den perfekte måde at tilføje en ekstra sjov og sød stemning til enhver anledning!<\/p>",
+            "button_text": "Se mere",
             "button_destination": "shopify:\/\/products\/champagneflaske",
             "image": "shopify:\/\/shop_images\/landing-page-img_3Flasker.png",
-            "paddingtop": 60,
-            "paddingbottom": 60,
-            "columngap": 60
-          }
-        },
-        "54a3ea27-9748-44ea-9659-5fa6b12d6a21": {
-          "type": "collection",
-          "settings": {
-            "small-headline": "Det kan du lige blande på",
-            "headline": "Lav dit eget miks",
-            "content": "<p>Fra vores bland selv slik side kan du blande lige det miks du gerne vil give som gave<\/p>",
-            "button_text": "Start med at blande her",
-            "button_destination": "shopify:\/\/collections\/bland-selv-slik",
-            "image": "shopify:\/\/shop_images\/landing-page-img_pose.png",
             "paddingtop": 60,
             "paddingbottom": 60,
             "columngap": 60
@@ -171,9 +143,37 @@
             "small-headline": "Giv et gavekort",
             "headline": "Gør alle glade",
             "content": "<p>Giv en sjov og lækker oplevelse som gavekort. Se vores gavekort <\/p>",
-            "button_text": "Køb gavekort",
+            "button_text": "Se mere",
             "button_destination": "shopify:\/\/products\/slikekspressen-gavekort",
             "image": "shopify:\/\/shop_images\/landing-page-img_gavekort_e34b5302-f394-4453-977e-1e17cf62be25.png",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
+          }
+        },
+        "1ca7ee01-59ec-42b9-b566-e078a29d1c46": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Send en gave til en der fortjener det",
+            "headline": "Brug vores app",
+            "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
+            "button_text": "Installer vores app",
+            "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
+            "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg",
+            "paddingtop": 60,
+            "paddingbottom": 60,
+            "columngap": 60
+          }
+        },
+        "54a3ea27-9748-44ea-9659-5fa6b12d6a21": {
+          "type": "collection",
+          "settings": {
+            "small-headline": "Det kan du lige blande på",
+            "headline": "Lav dit eget miks",
+            "content": "<p>Fra vores bland selv slik side kan du blande lige det miks du gerne vil give som gave<\/p>",
+            "button_text": "Se mere",
+            "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+            "image": "shopify:\/\/shop_images\/landing-page-img_pose.png",
             "paddingtop": 60,
             "paddingbottom": 60,
             "columngap": 60
@@ -195,11 +195,11 @@
         }
       },
       "block_order": [
-        "1ca7ee01-59ec-42b9-b566-e078a29d1c46",
         "a8171c46-c319-4bd8-aa37-fd2fd8e73825",
         "835b850a-cc1d-4489-9c94-232b12d00d42",
-        "54a3ea27-9748-44ea-9659-5fa6b12d6a21",
         "952a8235-5979-47a1-a0cd-2e0800ad4893",
+        "1ca7ee01-59ec-42b9-b566-e078a29d1c46",
+        "54a3ea27-9748-44ea-9659-5fa6b12d6a21",
         "545c08b6-5e65-4688-b4be-475b5f75c78f"
       ],
       "settings": {
@@ -217,7 +217,7 @@
           "settings": {
             "headline": "Hjerteæsken",
             "content": "Her kan du se og købe vores flotte hjerteæske fyldt med bland selv slik.",
-            "button_text": "Køb her",
+            "button_text": "Se mere",
             "button_destination": "shopify:\/\/products\/hjertekasse-med-bland-selv-slik"
           }
         },
@@ -226,7 +226,7 @@
           "settings": {
             "headline": "Champagneflaskerne",
             "content": "Du kan selv vælge label til denne flotte flaske fyldt med Bland Selv Slik",
-            "button_text": "Køb her",
+            "button_text": "Se mere",
             "button_destination": "shopify:\/\/products\/champagneflaske"
           }
         },

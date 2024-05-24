@@ -1137,16 +1137,16 @@ export default component((node, ctx) => {
 
     const filterJSON = document.getElementById("filter_json");
 
-    if (filterJSON) {
-      const category = filterJSON.dataset.filterCat;
-      const type = filterJSON.dataset.filterType;
-      const filterId = filterJSON.dataset.filterId;
-      const filterName = filterJSON.dataset.filterName;
+    // if (filterJSON) {
+    //   const category = filterJSON.dataset.filterCat;
+    //   const type = filterJSON.dataset.filterType;
+    //   const filterId = filterJSON.dataset.filterId;
+    //   const filterName = filterJSON.dataset.filterName;
 
-      console.log(
-        `Category: ${category}, Type: ${type}, Filter ID: ${filterId}, Filter Name: ${filterName}`
-      );
-    }
+    //   console.log(
+    //     `Category: ${category}, Type: ${type}, Filter ID: ${filterId}, Filter Name: ${filterName}`
+    //   );
+    // }
 
     // const categoryList = [
     //   "selected",

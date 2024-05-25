@@ -333,7 +333,7 @@
           {%- if s.title != blank -%}
             <div class="row">
               <div class="col-12">
-                <h2 class="candyHeadline type-style-h2-regular">{{ s.title }}</h2>
+                <h2 class="candyHeadline type-style-h2-regular">Hello{{ s.title }}</h2>
                 {% render 'cl-usp-list' %}
               </div>
             </div>
@@ -524,22 +524,7 @@
     <!-- /page-width -->
   </div>
 
-  {%- comment -%}
-  Name prompt modal
-  {%- endcomment -%}{%- comment -%}
   <div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
-  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
-  <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
-  {%- render 'icon' with 'close' -%}
-  </div>
-  <p class="mb-3 font-body font-semibold text-2xl">{{ 'bland_selv.name_prompt.write_name' | t }}</p>
-  <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
-  <button class="btn" type="button" onclick="addPushEvent()" data-final-submit>
-  {{ 'bland_selv.name_prompt.submit' | t }}
-  </button>
-  </div>
-  </div>
-  {%- endcomment -%}<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
     <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
       <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close>
         {%- render 'icon' with 'close' -%}
@@ -569,6 +554,31 @@
           href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a>
       </p>
 
+
+    </div>
+  </div>
+
+  <div class="{{ class }}__expired-items-prompt hidden fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" id= "data-expired-items-prompt">
+    <div class="{{ class }}__expired-items-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center type-style-h3-bold">Attention!</h3>
+        <p class="mb-3 text-center type-style-p-regular">We have removed some candy that were sold out from your bag!</p>
+        <ol id="expired-items-list"></ol>
+      </div>
+      
+      <div class="btn-groups mt-3">
+        <button
+          class="btn type-style-button-text"
+          type="button"
+          onclick="goBack()">Go Back and Mix</button>
+
+        <button
+          class="btn type-style-button-text"
+          type="button"
+          onclick="removeExpireModal()">
+          Continue
+        </button>
+      </div>
 
     </div>
   </div>
@@ -650,6 +660,18 @@ document.body.appendChild(jq);
 	});
 </script>
 <script>
+    function goBack() {
+        window.location.reload();
+    }
+
+    function removeExpireModal(){
+        document.getElementById('data-expired-items-prompt').classList.add('hidden');
+        const successModal = document.querySelector('[data-success-modal]')
+        successModal.classList.add('is--visible')
+
+        window.localStorage.removeItem('candyBag');
+    }
+
       function applyDiscount() {
         // Use JavaScript to make an asynchronous request
         var xhr = new XMLHttpRequest();

@@ -1102,8 +1102,6 @@ export default component((node, ctx) => {
         (filter) => filter.activeTypes.length > 0
       );
 
-      productListElem.innerHTML = filteredProducts;
-
       // const filteredProducts = allFilters[0].activeTypes[0];
 
       // productListElem.innerHTML = `

@@ -1102,24 +1102,6 @@ export default component((node, ctx) => {
         (filter) => filter.activeTypes.length > 0
       );
 
-      const filteredProducts = allFilters[0]?.activeTypes
-        .map((title) => {
-          const showTitle = categoryMap[title];
-          let filteredProductsHTML = "";
-          const filteredItems = unique.filter((item) =>
-            item.tags.includes(title)
-          );
-          if (filteredItems.length > 0) {
-            filteredProductsHTML += `
-          <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${showTitle}</h2>
-          <div class="candyItems">${renderProducts(filteredItems)}</div>
-      `;
-          }
-
-          return filteredProductsHTML;
-        })
-        .join("");
-
       productListElem.innerHTML = filteredProducts;
 
       // const filteredProducts = allFilters[0].activeTypes[0];

@@ -108,7 +108,7 @@ export default component((node, ctx) => {
                 const found = carts.items.find(item => {
                     return product.variants.find(variant => item.id == variant.id);
                 });
-    
+                
                 if (found) {
                     first = false;
                     item.classList.add('selected');
@@ -204,6 +204,26 @@ export default component((node, ctx) => {
 
         return addToCart;
     }
+
+    // Add this code inside your component function, before the event listeners
+
+ctx.on("*", state => {
+    // Check if any item in the cart is a gift
+    const isGift = state.cart.items.some(item => item.properties._is_gift);
+
+    // If there's a gift, uncheck all radio buttons
+    if (isGift) {
+        const radioButtons = document.querySelectorAll('[type="radio"]');
+        radioButtons.forEach(button => {
+            button.checked = false;
+        });
+    }
+
+    // Rest of your existing code...
+    cart = state.cart;
+    updateCart(cart);
+});
+
 
     const _delete = async (found) => {
         let obj = {};

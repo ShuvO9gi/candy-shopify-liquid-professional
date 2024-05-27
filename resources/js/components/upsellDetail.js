@@ -85,7 +85,6 @@ export default component((node, ctx) => {
             const found = carts.items.find(item => {
                 return product.variants.find(variant => item.id == variant.id);
             });
-
             if (found && product.id == _product.id) {
                 addToCart = false;
             }

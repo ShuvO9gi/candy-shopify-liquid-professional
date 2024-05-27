@@ -55,21 +55,22 @@ export default function beforeCheckout(cart_data, next = false) {
     if(next && !has_cross_sell) return go_to_checkout();
 
     const found = cart_data.items.find(cart => {
-        if (cart.properties?.hasOwnProperty('ID') && cart.properties?.hasOwnProperty('Name')) {
+        if (cart.properties?.hasOwnProperty('ID') && cart.properties?.hasOwnProperty('Name') && cart.properties._is_gift != "true") {
             return cart
         }
 
         return false;
     });
-
-    if (found && has_pkg) {
+   
+    if (found && has_pkg ) {
         //show package
-        //console.log('show pkg')
+        console.log('show pkg');
         show_package();
     }
     else if (!found && has_cross_sell) {
-        console.log('show cross')
+        console.log('show cross');
         show_cross_sell();
+        document.querySelector('.drawer-cart-inner').setAttribute('hide', true);
     }
     else {
         console.log('go to checkout')

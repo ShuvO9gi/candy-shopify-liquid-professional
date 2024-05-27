@@ -253,7 +253,7 @@ export default component((node, ctx) => {
         });
       }
 
-      var isGift = document.getElementById("GiftChecker").value;
+      var isGift = document.getElementById("GiftChecker")?.value;
 
       totalKilogramsCalculator(
         candyBag,

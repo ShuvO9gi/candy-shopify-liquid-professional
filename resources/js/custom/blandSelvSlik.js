@@ -1117,7 +1117,7 @@ export default component((node, ctx) => {
               filteredProductsHTML += `
           <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${showTitle}</h2>
           <div class="candyItems">${renderProducts(filteredItems)}</div>
-      `;
+            `;
             }
 
             return filteredProductsHTML;

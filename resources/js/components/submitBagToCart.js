@@ -28,7 +28,7 @@ async function getAllProducts() {
 }
 
 // Function to check if items exist
-async function checkItemsExist(items) {
+export async function checkItemsExist(items) {
   let exists = true;
   let unAvailableProducts = [];
   const allProducts = await getAllProducts();
@@ -78,33 +78,33 @@ export default function submitBagToCart(
       .then((response) => response.json())
       .then((response) => {
         if (response.items && response.items.length > 0) {
-          if (unAvailableProducts.length > 0) {
-            const candyBag = JSON.parse(
-              window.localStorage.getItem("candybag")
-            );
+          // if (unAvailableProducts.length > 0) {
+          //   const candyBag = JSON.parse(
+          //     window.localStorage.getItem("candybag")
+          //   );
 
-            document.getElementById("expired-items-list").innerHTML =
-              unAvailableProducts
-                .map((p) => {
-                  const itemName = candyBag.find((item) => item.id === p).title;
-                  return `<li><b>${itemName}</b></li>`;
-                })
-                .concat("");
+          //   document.getElementById("expired-items-list").innerHTML =
+          //     unAvailableProducts
+          //       .map((p) => {
+          //         const itemName = candyBag.find((item) => item.id === p).title;
+          //         return `<li><b>${itemName}</b></li>`;
+          //       })
+          //       .concat("");
 
-            document
-              .getElementById("data-expired-items-prompt")
-              .classList.remove("hidden");
+          //   document
+          //     .getElementById("data-expired-items-prompt")
+          //     .classList.remove("hidden");
 
-            document
-              .querySelector("[data-name-prompt-skip]")
-              .addEventListener("click", () => {
-                expiredItemsPromptModal.classList.add("hidden");
-              });
+          //   document
+          //     .querySelector("[data-name-prompt-skip]")
+          //     .addEventListener("click", () => {
+          //       expiredItemsPromptModal.classList.add("hidden");
+          //     });
 
-            callback(expiredItemsPromptModal);
-          } else {
-            callback(namePromptModal);
-          }
+          //   callback(expiredItemsPromptModal);
+          // } else {
+          callback(namePromptModal);
+          // }
           window.localStorage.removeItem("candyBag");
         } else {
           alert(response.description);

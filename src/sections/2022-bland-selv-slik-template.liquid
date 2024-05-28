@@ -665,11 +665,17 @@ document.body.appendChild(jq);
     }
 
     function removeExpireModal(){
-        document.getElementById('data-expired-items-prompt').classList.add('hidden');
-        const successModal = document.querySelector('[data-success-modal]')
-        successModal.classList.add('is--visible')
+      console.log("Inside Remove Expired Modal!");
 
-        window.localStorage.removeItem('candyBag');
+        document.getElementById('data-expired-items-prompt').classList.add('hidden');
+
+        const namePromptModal = document.querySelector("[data-name-prompt]");
+        namePromptModal.classList.add("is--visible");
+
+        {% comment %} const successModal = document.querySelector('[data-success-modal]')
+        successModal.classList.add('is--visible') {% endcomment %}
+
+        {% comment %} window.localStorage.removeItem('candyBag'); {% endcomment %}
     }
 
       function applyDiscount() {

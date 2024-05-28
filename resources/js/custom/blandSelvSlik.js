@@ -1126,7 +1126,9 @@ export default component((node, ctx) => {
 
         productListElem.innerHTML = filteredProducts;
       } else {
-        const categorizedProducts = (products) => {};
+        const categorizedProducts = (products) => {
+          let categorizedHTML = "";
+        };
         productListElem.innerHTML = categorizedProducts(state.allProducts);
       }
 

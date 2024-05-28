@@ -1128,6 +1128,16 @@ export default component((node, ctx) => {
       } else {
         const categorizedProducts = (products) => {
           let categorizedHTML = "";
+
+          categoryId.forEach((category) => {
+            const showCategory = categoryMap[category];
+
+            const filteredProducts = products.filter((product) =>
+              product.tags.includes(category)
+            );
+          });
+
+          return categorizedHTML;
         };
         productListElem.innerHTML = categorizedProducts(state.allProducts);
       }

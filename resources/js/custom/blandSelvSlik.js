@@ -1150,6 +1150,13 @@ export default component((node, ctx) => {
 
           console.log(uncategorizedProducts);
 
+          if (uncategorizedProducts.length > 0) {
+            categorizedHTML += `
+          <h2 class="font-bold text-3xl pl-4 capitalize" >Other</h2>
+          
+        `;
+          }
+
           return categorizedHTML;
         };
         productListElem.innerHTML = categorizedProducts(state.allProducts);

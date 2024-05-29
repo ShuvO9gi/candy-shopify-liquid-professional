@@ -1148,6 +1148,8 @@ export default component((node, ctx) => {
             (product) => !product.tags.some((tag) => categoryId.includes(tag))
           );
 
+          console.log(uncategorizedProducts);
+
           return categorizedHTML;
         };
         productListElem.innerHTML = categorizedProducts(state.allProducts);

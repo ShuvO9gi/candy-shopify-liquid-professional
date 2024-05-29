@@ -418,23 +418,19 @@ export default component((node, ctx) => {
               items
             );
             if (!unAvailableProducts.length) {
-              console.log("Name prompt modal shown!");
-              namePromptModal.classList.add("is--visible");
-              namePromptClose.addEventListener("click", () => {
-                namePromptModal.classList.remove("is--visible");
-              });
+              submitBagToCart(items, successPopup, namePromptModal);
+              namePromptModal.classList.remove("is--visible");
+              namePromptInput.value = "";
 
-              document
-                .querySelector("[data-name-prompt-skip]")
-                .addEventListener("click", () => {
-                  namePromptModal.classList.remove("is--visible");
-                });
+              ctx.emit("cart:changed");
             } else {
               console.log("Expired prompt modal shown!");
               console.log(bag);
+              console.log(unAvailableProducts);
               document.getElementById("expired-items-list").innerHTML =
                 unAvailableProducts
                   .map((p) => {
+                    console.log(itemName);
                     const itemName = candyBag.find(
                       (item) => item.id === p
                     ).title;
@@ -445,17 +441,218 @@ export default component((node, ctx) => {
               // expiredPromptModal.classList.remove("hidden");
               expiredItemsPromptModal.classList.remove("hidden");
 
-              namePromptClose.addEventListener("click", () => {
-                namePromptModal.classList.remove("is--visible");
-              });
-
               document
-                .querySelector("[data-name-prompt-skip]")
+                .getElementById("data-expired-items-prompt-go-back")
                 .addEventListener("click", () => {
-                  namePromptModal.classList.remove("is--visible");
+                  console.log("go back");
+                  window.localStorage.removeItem("candyBag");
                 });
 
-              finalSubmit.addEventListener("click", async (e) => {
+              // namePromptClose.addEventListener("click", () => {
+              //   namePromptModal.classList.remove("is--visible");
+              // });
+
+              // document
+              //   .querySelector("[data-name-prompt-skip]")
+              //   .addEventListener("click", () => {
+              //     namePromptModal.classList.remove("is--visible");
+              //   });
+
+              // finalSubmit.addEventListener("click", async (e) => {
+              //   e.preventDefault();
+              //   console.log("Inside Final Submit");
+              //   const name = namePromptInput.value;
+              //   const identifier = createUniqueId();
+              //   const note =
+              //     document.getElementById("CartNoteDrawer")?.value || "";
+              //   const note2 =
+              //     document.getElementById("CartNoteDrawer2")?.value || "";
+              //   const note3 =
+              //     document.getElementById("CartNoteDrawer3")?.value || "";
+              //   const { cart: activeCarts } = ctx.getState();
+
+              //   const found = activeCarts.items.find(
+              //     (cart) =>
+              //       cart.properties?.hasOwnProperty("ID") &&
+              //       cart.properties["Name"] === name
+              //   );
+
+              //   if (found) {
+              //     //show modal to replace name
+              //     const strings = theme.strings.blandSelv.rename;
+              //     node.querySelector("[data-ask-rename-headline]").innerHTML =
+              //       decodeHtml(strings.title);
+              //     node.querySelector(
+              //       "[data-ask-rename-description]"
+              //     ).innerHTML = decodeHtml(strings.description);
+              //     node.querySelector("[data-ask-rename-submit]").innerHTML =
+              //       decodeHtml(strings.accept);
+              //     node.querySelector("[data-ask-rename-decline]").innerHTML =
+              //       decodeHtml(strings.decline);
+
+              //     setTimeout(() => {
+              //       namePromptModal.classList.remove("is--visible");
+              //     }, 600);
+
+              //     setTimeout(() => {
+              //       const renamePromptModal = node.querySelector(
+              //         "[data-ask-rename-prompt]"
+              //       );
+              //       node
+              //         .querySelectorAll("[data-ask-rename-title]")
+              //         .forEach((item) => {
+              //           item.innerHTML = `"${name}"`;
+              //         });
+
+              //       renamePromptModal.classList.add("is--visible");
+
+              //       node
+              //         .querySelector("[data-ask-rename-prompt-close]")
+              //         .addEventListener("click", () => {
+              //           renamePromptModal.classList.remove("is--visible");
+              //         });
+
+              //       node
+              //         .querySelector("[data-ask-rename-submit]")
+              //         .addEventListener("click", async () => {
+              //           renamePromptModal.classList.remove("is--visible");
+              //           // add to cart  with same name
+              //           const items = createItemsArray(
+              //             candyBag,
+              //             name,
+              //             found.properties["ID"],
+              //             note,
+              //             note2,
+              //             note3
+              //           );
+              //           if (items.length > 0) {
+              //             console.log("All selected products are available 2!");
+              //             // namePromptModal.classList.add("is--visible");
+
+              //             // Submit the list to the cart
+              //             submitBagToCart(
+              //               items,
+              //               successPopup,
+              //               namePromptModal,
+              //               submitBagToCart
+              //             );
+              //             namePromptModal.classList.remove("is--visible");
+              //             namePromptInput.value = "";
+              //             ctx.emit("cart:changed");
+              //           }
+              //           return;
+              //         });
+
+              //       node
+              //         .querySelector("[data-ask-rename-decline]")
+              //         .addEventListener("click", () => {
+              //           renamePromptModal.classList.remove("is--visible");
+              //           namePromptModal.classList.remove("is--visible");
+              //           // show prompt name
+              //           namePromptModal.classList.add("is--visible");
+              //           return;
+              //         });
+              //     }, 500);
+              //     return;
+              //   }
+
+              //   // check in name input is blank
+              //   // if it is, show message that says the user needs to type ind his/her name
+              //   if (name === "") {
+              //     console.log("Du skal indtaste dit navn");
+              //   } else {
+              //     // else create array with items incl. the name as a property
+              //     const items = createItemsArray(
+              //       candyBag,
+              //       name,
+              //       identifier,
+              //       note,
+              //       note2,
+              //       note3
+              //     );
+              //     if (items.length > 0) {
+              //       console.log("All selected products are available 3!");
+              //       // namePromptModal.classList.add("is--visible");
+
+              //       // Submit the list to the cart
+              //       submitBagToCart(
+              //         items,
+              //         successPopup,
+              //         namePromptModal,
+              //         submitBagToCart
+              //       );
+              //       namePromptModal.classList.remove("is--visible");
+              //       namePromptInput.value = "";
+              //       ctx.emit("cart:changed");
+              //     }
+              //   }
+              // });
+            }
+          }
+          return;
+        } else {
+          console.log("Bag is not available!");
+          console.log(candyBag);
+          // if (candyBag.length > 0) {
+          const { exists, unAvailableProducts } = await checkItemsExist(
+            candyBag
+          );
+
+          if (!unAvailableProducts.length) {
+            console.log("Name prompt modal shown!");
+            namePromptModal.classList.add("is--visible");
+            namePromptClose.addEventListener("click", () => {
+              namePromptModal.classList.remove("is--visible");
+            });
+
+            document
+              .querySelector("[data-name-prompt-skip]")
+              .addEventListener("click", () => {
+                namePromptModal.classList.remove("is--visible");
+              });
+          } else {
+            console.log("Expired prompt modal shown!");
+            console.log(bag);
+
+            document.getElementById("expired-items-list").innerHTML =
+              unAvailableProducts
+                .map((p) => {
+                  const itemName = candyBag.find((item) => item.id === p).title;
+                  return `<li><b>${itemName}</b></li>`;
+                })
+                .join("");
+
+            // expiredPromptModal.classList.remove("hidden");
+            expiredItemsPromptModal.classList.remove("hidden");
+
+            document
+              .getElementById("data-expired-items-prompt-go-back")
+              .addEventListener("click", () => {
+                console.log("go back");
+                candyBag = candyBag.filter(
+                  (item) => !unAvailableProducts.includes(item.id)
+                );
+                // Update localStorage with the new candyBag
+                window.localStorage.setItem(
+                  "candybag",
+                  JSON.stringify(candyBag)
+                );
+
+                // Optional: Reload the page or perform any other necessary actions
+                window.location.reload();
+              });
+
+            // namePromptClose.addEventListener("click", () => {
+            //   namePromptModal.classList.remove("is--visible");
+            // });
+
+            // document
+            //   .querySelector("[data-name-prompt-skip]")
+            //   .addEventListener("click", () => {
+            //     namePromptModal.classList.remove("is--visible");
+            //   });
+
+            /* finalSubmit.addEventListener("click", async (e) => {
                 e.preventDefault();
                 console.log("Inside Final Submit");
                 const name = namePromptInput.value;
@@ -531,7 +728,6 @@ export default component((node, ctx) => {
                             items,
                             successPopup,
                             namePromptModal,
-                            // expiredPromptModal,
                             submitBagToCart
                           );
                           namePromptModal.classList.remove("is--visible");
@@ -577,7 +773,6 @@ export default component((node, ctx) => {
                       items,
                       successPopup,
                       namePromptModal,
-                      // expiredPromptModal,
                       submitBagToCart
                     );
                     namePromptModal.classList.remove("is--visible");
@@ -585,183 +780,7 @@ export default component((node, ctx) => {
                     ctx.emit("cart:changed");
                   }
                 }
-              });
-            }
-          }
-          return;
-        } else {
-          console.log("Bag is not available!");
-          console.log(candyBag);
-          const { exists, unAvailableProducts } = await checkItemsExist(
-            candyBag
-          );
-
-          if (!unAvailableProducts.length) {
-            console.log("Name prompt modal shown!");
-            namePromptModal.classList.add("is--visible");
-            namePromptClose.addEventListener("click", () => {
-              namePromptModal.classList.remove("is--visible");
-            });
-
-            document
-              .querySelector("[data-name-prompt-skip]")
-              .addEventListener("click", () => {
-                namePromptModal.classList.remove("is--visible");
-              });
-          } else {
-            console.log("Expired prompt modal shown!");
-            console.log(bag);
-            document.getElementById("expired-items-list").innerHTML =
-              unAvailableProducts
-                .map((p) => {
-                  const itemName = candyBag.find((item) => item.id === p).title;
-                  return `<li><b>${itemName}</b></li>`;
-                })
-                .join("");
-
-            // expiredPromptModal.classList.remove("hidden");
-            expiredItemsPromptModal.classList.remove("hidden");
-
-            namePromptClose.addEventListener("click", () => {
-              namePromptModal.classList.remove("is--visible");
-            });
-
-            document
-              .querySelector("[data-name-prompt-skip]")
-              .addEventListener("click", () => {
-                namePromptModal.classList.remove("is--visible");
-              });
-
-            finalSubmit.addEventListener("click", async (e) => {
-              e.preventDefault();
-              console.log("Inside Final Submit");
-              const name = namePromptInput.value;
-              const identifier = createUniqueId();
-              const note =
-                document.getElementById("CartNoteDrawer")?.value || "";
-              const note2 =
-                document.getElementById("CartNoteDrawer2")?.value || "";
-              const note3 =
-                document.getElementById("CartNoteDrawer3")?.value || "";
-              const { cart: activeCarts } = ctx.getState();
-
-              const found = activeCarts.items.find(
-                (cart) =>
-                  cart.properties?.hasOwnProperty("ID") &&
-                  cart.properties["Name"] === name
-              );
-
-              if (found) {
-                //show modal to replace name
-                const strings = theme.strings.blandSelv.rename;
-                node.querySelector("[data-ask-rename-headline]").innerHTML =
-                  decodeHtml(strings.title);
-                node.querySelector("[data-ask-rename-description]").innerHTML =
-                  decodeHtml(strings.description);
-                node.querySelector("[data-ask-rename-submit]").innerHTML =
-                  decodeHtml(strings.accept);
-                node.querySelector("[data-ask-rename-decline]").innerHTML =
-                  decodeHtml(strings.decline);
-
-                setTimeout(() => {
-                  namePromptModal.classList.remove("is--visible");
-                }, 600);
-
-                setTimeout(() => {
-                  const renamePromptModal = node.querySelector(
-                    "[data-ask-rename-prompt]"
-                  );
-                  node
-                    .querySelectorAll("[data-ask-rename-title]")
-                    .forEach((item) => {
-                      item.innerHTML = `"${name}"`;
-                    });
-
-                  renamePromptModal.classList.add("is--visible");
-
-                  node
-                    .querySelector("[data-ask-rename-prompt-close]")
-                    .addEventListener("click", () => {
-                      renamePromptModal.classList.remove("is--visible");
-                    });
-
-                  node
-                    .querySelector("[data-ask-rename-submit]")
-                    .addEventListener("click", async () => {
-                      renamePromptModal.classList.remove("is--visible");
-                      // add to cart  with same name
-                      const items = createItemsArray(
-                        candyBag,
-                        name,
-                        found.properties["ID"],
-                        note,
-                        note2,
-                        note3
-                      );
-                      if (items.length > 0) {
-                        console.log("All selected products are available 2!");
-                        // namePromptModal.classList.add("is--visible");
-
-                        // Submit the list to the cart
-                        submitBagToCart(
-                          items,
-                          successPopup,
-                          namePromptModal,
-                          // expiredPromptModal,
-                          submitBagToCart
-                        );
-                        namePromptModal.classList.remove("is--visible");
-                        namePromptInput.value = "";
-                        ctx.emit("cart:changed");
-                      }
-                      return;
-                    });
-
-                  node
-                    .querySelector("[data-ask-rename-decline]")
-                    .addEventListener("click", () => {
-                      renamePromptModal.classList.remove("is--visible");
-                      namePromptModal.classList.remove("is--visible");
-                      // show prompt name
-                      namePromptModal.classList.add("is--visible");
-                      return;
-                    });
-                }, 500);
-                return;
-              }
-
-              // check in name input is blank
-              // if it is, show message that says the user needs to type ind his/her name
-              if (name === "") {
-                console.log("Du skal indtaste dit navn");
-              } else {
-                // else create array with items incl. the name as a property
-                const items = createItemsArray(
-                  candyBag,
-                  name,
-                  identifier,
-                  note,
-                  note2,
-                  note3
-                );
-                if (items.length > 0) {
-                  console.log("All selected products are available 3!");
-                  // namePromptModal.classList.add("is--visible");
-
-                  // Submit the list to the cart
-                  submitBagToCart(
-                    items,
-                    successPopup,
-                    namePromptModal,
-                    // expiredPromptModal,
-                    submitBagToCart
-                  );
-                  namePromptModal.classList.remove("is--visible");
-                  namePromptInput.value = "";
-                  ctx.emit("cart:changed");
-                }
-              }
-            });
+              }); */
 
             // Remove unavailable products from candyBag
             candyBag = candyBag.filter(
@@ -781,19 +800,20 @@ export default component((node, ctx) => {
 
             // successPopup(namePromptModal);
           }
+          // }
         }
 
         //handle name prompt modal
 
-        // namePromptClose.addEventListener("click", () => {
-        //   namePromptModal.classList.remove("is--visible");
-        // });
+        namePromptClose.addEventListener("click", () => {
+          namePromptModal.classList.remove("is--visible");
+        });
 
-        // document
-        //   .querySelector("[data-name-prompt-skip]")
-        //   .addEventListener("click", () => {
-        //     namePromptModal.classList.remove("is--visible");
-        //   });
+        document
+          .querySelector("[data-name-prompt-skip]")
+          .addEventListener("click", () => {
+            namePromptModal.classList.remove("is--visible");
+          });
 
         // Add eventlistener to finalSubmit
         finalSubmit.addEventListener("click", async (e) => {
@@ -867,7 +887,6 @@ export default component((node, ctx) => {
                       items,
                       successPopup,
                       namePromptModal,
-                      // expiredPromptModal,
                       submitBagToCart
                     );
                     namePromptModal.classList.remove("is--visible");
@@ -913,7 +932,6 @@ export default component((node, ctx) => {
                 items,
                 successPopup,
                 namePromptModal,
-                // expiredPromptModal,
                 submitBagToCart
               );
               namePromptModal.classList.remove("is--visible");

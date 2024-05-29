@@ -49,14 +49,16 @@ export async function checkItemsExist(items) {
 export default function submitBagToCart(
   items,
   callback,
-  namePromptModal,
-  expiredItemsPromptModal
+  namePromptModal
+  // expiredItemsPromptModal
 ) {
   checkItemsExist(items).then(({ exists, unAvailableProducts }) => {
     // If items id exists in unAvailableProducts, remove from items
     if (unAvailableProducts.length > 0) {
       items = items.filter((item) => !unAvailableProducts.includes(item.id));
+      // window.localStorage.setItem("candyBag", items);
     }
+    console.log(items);
 
     if (!items.length) {
       alert(
@@ -105,7 +107,7 @@ export default function submitBagToCart(
           // } else {
           callback(namePromptModal);
           // }
-          window.localStorage.removeItem("candyBag");
+          window.localStorage.removeItem("candybag");
         } else {
           alert(response.description);
         }

@@ -559,18 +559,18 @@
   </div>
 
   <div class="{{ class }}__expired-items-prompt hidden fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" id= "data-expired-items-prompt">
-    <div class="{{ class }}__expired-items-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+    <div class="{{ class }}__expired-items-prompt__inner flex flex-col justify-center relative p-9 rounded-md bg-white shadow-custom">
       <div class="max-w-xs">
         <h3 class="mb-3 text-center type-style-h3-bold">Attention!</h3>
         <p class="mb-3 text-center type-style-p-regular">We have removed some candy that were sold out from your bag!</p>
         <ol id="expired-items-list"></ol>
       </div>
       
-      <div class="btn-groups mt-3">
+      <div class="btn-groups mt-3 flex" style="justify-content: space-evenly;">
         <button
           class="btn type-style-button-text"
           type="button"
-          onclick="goBack()">Go Back and Mix</button>
+          onclick="goBack()" id= "data-expired-items-prompt-go-back">Go Back and Mix</button>
 
         <button
           class="btn type-style-button-text"
@@ -661,7 +661,9 @@ document.body.appendChild(jq);
 </script>
 <script>
     function goBack() {
-        window.location.reload();
+  
+      // Reload the current page
+      {% comment %} window.location.reload(); {% endcomment %}
     }
 
     function removeExpireModal(){

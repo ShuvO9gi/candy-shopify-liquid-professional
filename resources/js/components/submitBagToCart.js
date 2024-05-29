@@ -46,19 +46,12 @@ export async function checkItemsExist(items) {
   return { exists, unAvailableProducts };
 }
 
-export default function submitBagToCart(
-  items,
-  callback,
-  namePromptModal
-  // expiredItemsPromptModal
-) {
+export default function submitBagToCart(items, callback, namePromptModal) {
   checkItemsExist(items).then(({ exists, unAvailableProducts }) => {
     // If items id exists in unAvailableProducts, remove from items
     if (unAvailableProducts.length > 0) {
       items = items.filter((item) => !unAvailableProducts.includes(item.id));
-      // window.localStorage.setItem("candyBag", items);
     }
-    console.log(items);
 
     if (!items.length) {
       alert(
@@ -80,33 +73,9 @@ export default function submitBagToCart(
       .then((response) => response.json())
       .then((response) => {
         if (response.items && response.items.length > 0) {
-          // if (unAvailableProducts.length > 0) {
-          //   const candyBag = JSON.parse(
-          //     window.localStorage.getItem("candybag")
-          //   );
-
-          //   document.getElementById("expired-items-list").innerHTML =
-          //     unAvailableProducts
-          //       .map((p) => {
-          //         const itemName = candyBag.find((item) => item.id === p).title;
-          //         return `<li><b>${itemName}</b></li>`;
-          //       })
-          //       .concat("");
-
-          //   document
-          //     .getElementById("data-expired-items-prompt")
-          //     .classList.remove("hidden");
-
-          //   document
-          //     .querySelector("[data-name-prompt-skip]")
-          //     .addEventListener("click", () => {
-          //       expiredItemsPromptModal.classList.add("hidden");
-          //     });
-
-          //   callback(expiredItemsPromptModal);
-          // } else {
           callback(namePromptModal);
-          // }
+
+          //remove selected items from localstorage
           window.localStorage.removeItem("candybag");
         } else {
           alert(response.description);

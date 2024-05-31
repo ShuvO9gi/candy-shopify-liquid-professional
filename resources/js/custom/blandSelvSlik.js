@@ -1148,8 +1148,6 @@ export default component((node, ctx) => {
             (product) => !product.tags.some((tag) => categoryId.includes(tag))
           );
 
-          console.log(uncategorizedProducts);
-
           if (uncategorizedProducts.length > 0) {
             categorizedHTML += `
           <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">Other</h2>

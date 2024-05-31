@@ -76,7 +76,7 @@ export default function submitBagToCart(items, callback, namePromptModal) {
           callback(namePromptModal);
 
           //remove selected items from localstorage
-          window.localStorage.removeItem("candybag");
+          // window.localStorage.removeItem("candybag");
         } else {
           alert(response.description);
         }

@@ -455,48 +455,52 @@ export default component((node, ctx) => {
           }
           return;
         } else {
-          const { exists, unAvailableProducts } = await checkItemsExist(
-            candyBag
-          );
+          if (candyBag.length > 0) {
+            const { exists, unAvailableProducts } = await checkItemsExist(
+              candyBag
+            );
 
-          if (!unAvailableProducts.length) {
-            namePromptModal.classList.add("is--visible");
-            namePromptClose.addEventListener("click", () => {
-              namePromptModal.classList.remove("is--visible");
-            });
-
-            document
-              .querySelector("[data-name-prompt-skip]")
-              .addEventListener("click", () => {
+            if (!unAvailableProducts.length) {
+              namePromptModal.classList.add("is--visible");
+              namePromptClose.addEventListener("click", () => {
                 namePromptModal.classList.remove("is--visible");
               });
-          } else {
-            document.getElementById("expired-items-list").innerHTML =
-              unAvailableProducts
-                .map((p) => {
-                  const itemName = candyBag.find((item) => item.id === p).title;
-                  return `<li><b>${itemName}</b></li>`;
-                })
-                .join("");
 
-            expiredItemsPromptModal.classList.remove("hidden");
+              document
+                .querySelector("[data-name-prompt-skip]")
+                .addEventListener("click", () => {
+                  namePromptModal.classList.remove("is--visible");
+                });
+            } else {
+              document.getElementById("expired-items-list").innerHTML =
+                unAvailableProducts
+                  .map((p) => {
+                    const itemName = candyBag.find(
+                      (item) => item.id === p
+                    ).title;
+                    return `<li><b>${itemName}</b></li>`;
+                  })
+                  .join("");
 
-            //go back event listener
-            document
-              .getElementById("data-expired-items-prompt-go-back")
-              .addEventListener("click", () => {
-                candyBag = candyBag.filter(
-                  (item) => !unAvailableProducts.includes(item.id)
-                );
+              expiredItemsPromptModal.classList.remove("hidden");
 
-                // Update localStorage with the new candyBag
-                window.localStorage.setItem(
-                  "candybag",
-                  JSON.stringify(candyBag)
-                );
+              //go back event listener
+              document
+                .getElementById("data-expired-items-prompt-go-back")
+                .addEventListener("click", () => {
+                  candyBag = candyBag.filter(
+                    (item) => !unAvailableProducts.includes(item.id)
+                  );
 
-                window.location.reload();
-              });
+                  // Update localStorage with the new candyBag
+                  window.localStorage.setItem(
+                    "candybag",
+                    JSON.stringify(candyBag)
+                  );
+
+                  window.location.reload();
+                });
+            }
           }
         }
 

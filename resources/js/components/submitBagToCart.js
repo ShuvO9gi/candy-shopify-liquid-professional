@@ -1,5 +1,6 @@
 //Both Memory & localStorage Caching is efficient but it can't track update of shopify
 //product store, we have to use webhook with server setup using express or node.js
+
 //Product In-Memory Caching
 // const productCache = {};
 

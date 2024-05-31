@@ -393,7 +393,7 @@ export default component((node, ctx) => {
       submitBtn.addEventListener("click", async (e) => {
         e.preventDefault();
         // Prompt to add name
-        let candyBag = JSON.parse(window.localStorage.getItem("candybag"));
+        candyBag = JSON.parse(window.localStorage.getItem("candybag"));
         const namePromptModal = node.querySelector("[data-name-prompt]");
         const expiredPromptModal = node.querySelector(
           "[data-expired-items-prompt]"

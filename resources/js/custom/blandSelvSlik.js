@@ -1102,8 +1102,6 @@ export default component((node, ctx) => {
         (filter) => filter.activeTypes.length > 0
       );
 
-      console.log(isAnyFilterActive);
-
       if (isAnyFilterActive) {
         const filteredProducts = allFilters[0]?.activeTypes
           .map((title) => {

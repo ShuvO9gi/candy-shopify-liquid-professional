@@ -1,3 +1,62 @@
+//Both Memory & localStorage Caching is efficient but it can't track update of shopify
+//product store, we have to use webhook with server setup using express or node.js
+//Product In-Memory Caching
+// const productCache = {};
+
+// async function fetchProducts(pageNumber) {
+//   if (productCache[pageNumber]) {
+//     return productCache[pageNumber];
+//   }
+
+//   const response = await fetch(`/products.json?limit=250&page=${pageNumber}`, {
+//     method: "GET",
+//     credentials: "include",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "X-Requested-With": "XMLHttpRequest",
+//     },
+//   });
+
+//   const data = await response.json();
+//   productCache[pageNumber] = data;
+//   return data;
+// }
+
+//LocalStorage Caching
+// const productCacheKey = "productCache";
+
+// function saveToLocalStorage(key, value) {
+//   localStorage.setItem(key, JSON.stringify(value));
+// }
+
+// function getFromLocalStorage(key) {
+//   const value = localStorage.getItem(key);
+//   return value ? JSON.parse(value) : null;
+// }
+
+// async function fetchProducts(pageNumber) {
+//   const cachedProducts = getFromLocalStorage(productCacheKey);
+//   if (cachedProducts && cachedProducts[pageNumber]) {
+//     return cachedProducts[pageNumber];
+//   }
+
+//   const response = await fetch(`/products.json?limit=250&page=${pageNumber}`, {
+//     method: "GET",
+//     credentials: "include",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "X-Requested-With": "XMLHttpRequest",
+//     },
+//   });
+
+//   const data = await response.json();
+//   const updatedCache = cachedProducts
+//     ? { ...cachedProducts, [pageNumber]: data }
+//     : { [pageNumber]: data };
+//   saveToLocalStorage(productCacheKey, updatedCache);
+//   return data;
+// }
+
 function fetchProducts(pageNumber) {
   return fetch(`/products.json?limit=250&page=${pageNumber}`, {
     method: "GET",
@@ -9,7 +68,6 @@ function fetchProducts(pageNumber) {
   }).then((response) => response.json());
 }
 
-// Function to fetch all products
 async function getAllProducts() {
   let allProducts = [];
   let pageNumber = 1;

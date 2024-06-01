@@ -1064,8 +1064,6 @@ export default component((node, ctx) => {
 
     const filterJson = document.querySelectorAll("[data-filter-json]");
 
-    console.log(filterJson);
-
     const categoryName = [];
     const categoryId = [];
     const categoryMap = {};

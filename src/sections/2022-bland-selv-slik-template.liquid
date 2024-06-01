@@ -560,10 +560,10 @@
 
   <div class="{{ class }}__expired-items-prompt hidden fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" id= "data-expired-items-prompt">
     <div class="{{ class }}__expired-items-prompt__inner flex flex-col justify-center relative p-9 rounded-md bg-white shadow-custom">
-      <div class="max-w-xs">
+      <div class="max-w-xs flex flex-col align-center">
         <h3 class="mb-3 text-center type-style-h3-bold">Attention!</h3>
         <p class="mb-3 text-center type-style-p-regular">We have removed some candy that were sold out from your bag!</p>
-        <ol id="expired-items-list"></ol>
+        <ol id="expired-items-list list-decimal font-bold" style="list-style-type: decimal; font-weight: bold; "></ol>
       </div>
       
       <div class="btn-groups mt-3 flex" style="justify-content: space-evenly;">

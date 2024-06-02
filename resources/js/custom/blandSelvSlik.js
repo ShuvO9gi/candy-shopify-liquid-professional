@@ -1305,13 +1305,6 @@ export default component((node, ctx) => {
         productListElem.innerHTML = categorizedProducts(state.allProducts);
       }
 
-      // const filteredProducts = allFilters[0].activeTypes[0];
-
-      // productListElem.innerHTML = `
-      //       <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${filteredProducts}</h2>
-      //       <div class="candyItems">${renderProducts(unique)}</div>
-      //   `;
-
       initializeSwipers();
       addToCardEventListeners();
     });

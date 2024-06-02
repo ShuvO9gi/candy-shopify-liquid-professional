@@ -935,6 +935,7 @@ export default component((node, ctx) => {
   const filterWrapper = document.querySelector(".filter-items-wrapper");
   const filterItems = document.querySelector(".filter-items");
   const leftScroll = document.querySelector(".left-scroll");
+  const rightScroll = document.querySelector(".right-scroll");
 
   const renderProducts = (products) => {
     console.log("renderProducts", products);

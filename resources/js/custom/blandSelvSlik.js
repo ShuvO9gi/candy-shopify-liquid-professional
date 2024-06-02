@@ -931,6 +931,9 @@ export default component((node, ctx) => {
     return modifiedProductName;
   }
 
+  // Scroll method
+  const filterWrapper = document.querySelector(".filter-items-wrapper");
+
   const renderProducts = (products) => {
     console.log("renderProducts", products);
     const url = new URL(window.location.href);

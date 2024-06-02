@@ -1062,6 +1062,7 @@ export default component((node, ctx) => {
       });
     });
 
+    // import json data
     const filterJson = document.querySelectorAll("[data-filter-json]");
 
     const categoryName = [];

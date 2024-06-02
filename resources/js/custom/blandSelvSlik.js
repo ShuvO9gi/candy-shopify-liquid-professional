@@ -933,6 +933,7 @@ export default component((node, ctx) => {
 
   // Scroll method
   const filterWrapper = document.querySelector(".filter-items-wrapper");
+  const filterItems = document.querySelector(".filter-items");
 
   const renderProducts = (products) => {
     console.log("renderProducts", products);

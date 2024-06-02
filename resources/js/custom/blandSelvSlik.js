@@ -1174,27 +1174,6 @@ export default component((node, ctx) => {
       });
     });
 
-    // const categoryList = [
-    //   "selected",
-    //   "new",
-    //   "winegum",
-    //   "licorice",
-    //   "chocolate",
-    //   "caramel",
-    //   "foam",
-    //   "licoricemix",
-    //   "foammix",
-    //   "sour",
-    //   "withsugar",
-    //   "fudge",
-    //   "sticks",
-    //   "wrapped",
-    //   "pastil",
-    //   "candy",
-    //   "lollipop",
-    //   "hardcandy",
-    // ];
-
     console.log("state", state);
 
     // if (state.hasFilters) ctx.emit("filter:start");

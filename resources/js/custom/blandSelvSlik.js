@@ -943,6 +943,7 @@ export default component((node, ctx) => {
     } else {
       leftScroll.classList.add("hidden");
     }
+
     if (filterWrapper.scrollLeft < maxScrollLeft) {
       rightScroll.classList.remove("hidden");
     } else {

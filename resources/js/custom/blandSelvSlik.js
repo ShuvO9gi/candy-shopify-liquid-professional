@@ -936,6 +936,7 @@ export default component((node, ctx) => {
   const filterItems = document.querySelector(".filter-items");
   const leftScroll = document.querySelector(".left-scroll");
 
+  // Show/Hide Scroll Icons based on scroll position
   const updateScrollIcons = () => {
     const maxScrollLeft = filterItems.scrollWidth - filterWrapper.clientWidth;
     if (filterWrapper.scrollLeft > 0) {

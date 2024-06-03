@@ -938,6 +938,14 @@ export default component((node, ctx) => {
 
   const updateScrollIcons = () => {
     const maxScrollLeft = filterItems.scrollWidth - filterWrapper.clientWidth;
+    if (filterWrapper.scrollLeft > 0) {
+      leftScroll.classList.remove("hidden");
+    } else {
+      leftScroll.classList.add("hidden");
+    }
+    if (filterWrapper.scrollLeft < maxScrollLeft) {
+      rightScroll.classList.remove("hidden");
+    }
   };
 
   const renderProducts = (products) => {

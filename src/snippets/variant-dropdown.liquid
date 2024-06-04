@@ -28,6 +28,7 @@
 
 <script>
   var variantDropdowns = document.querySelectorAll('.variant__input-{{ section_id }}');
+  var properties_pName = document.getElementById('p_pName');
   var productImageInput = document.getElementById('vImgUrl');
 
   variantDropdowns.forEach(function(dropdown) {
@@ -35,11 +36,13 @@
       var selectedOption = this.options[this.selectedIndex];
       var selectedPrice = selectedOption.getAttribute('data-price');
       var selectedImageUrl = selectedOption.getAttribute('data-image-url');
+      var selectedVname = selectedOption.getAttribute('value');
 
       // Update product price
       document.getElementById('productPrice').textContent = selectedPrice;
 
       // Update product image URL
+      properties_pName.value = selectedVname;
       productImageInput.value = selectedImageUrl;
     });
   });

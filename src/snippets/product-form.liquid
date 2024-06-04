@@ -42,6 +42,14 @@
               {% endcomment %}
 
   {% comment %} The following select element is for product variant selection {% endcomment %}
+
+    {% if product.metafields.custom.bag_type != blank  %}
+        <input type="hidden" id="p_bagType" name="properties[_bag_type]" value="other_product">
+        <input type="hidden" id="p_pName" name="properties[Name]" value="{{product.title}}">
+        <input type="hidden" id="p_id" name="properties[ID ]" value="">
+        <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.featured_image.src | img_url: 'medium' }}">
+      {% endif %}
+
   <select
     name="id"
     id="ProductSelect-{{ section_id }}"
@@ -64,7 +72,6 @@
       {%- endif -%}
     {%- endfor -%}
   </select>
-
   {%- if settings.quantity_enable -%}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
       <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>

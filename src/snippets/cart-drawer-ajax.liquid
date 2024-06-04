@@ -4,7 +4,7 @@
 	{% if items.size > 0 %}
 		<div>
 			{% for item in items %}
-				<div data-line-items data-bag="{{bag_id}}" data-quantity="{{item.quantity}}" data-line="{{item.key}}" class="drawer_2_content_product_shopAdjust {% if item.properties._is_gift == 'true' %}giftitembtnhide{%endif%}">
+				<div data-line-items data-item-name="{{item.title}}" data-bag="{{bag_id}}" data-quantity="{{item.quantity}}" data-line="{{item.key}}" class="drawer_2_content_product_shopAdjust {% if item.properties._is_gift == 'true' %}giftitembtnhide{%endif%}">
 					<div class="floatLeft drawer_2_content_product_delete_shopAdjust">
 						<button type="button" data-remove-cart-line data-bag="{{bag_id}}">
 							<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">

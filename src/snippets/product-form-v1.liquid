@@ -67,7 +67,11 @@
     {%- endfor -%}
   </select>
   {% if product.metafields.custom.bag_type != blank %}
-    <input type="hidden" id="allergies" name="properties[_bag_type]" value="other_product">
+    <input type="hidden" id="p_bagType" name="properties[_bag_type]" value="other_product">
+    <input type="hidden" id="p_pName" name="properties[Name]" value="{{product.title}}">
+    <input type="hidden" id="p_pId" name="properties[ID]" value="">
+    {% comment %} <input type="hidden" id="product-amount" name="properties[Amount]" value="1"> {% endcomment %}
+    <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.variants.first.image.src | img_url: 'medium' }}">
   {%- endif -%}
 
   {%- if settings.quantity_enable -%}
@@ -245,6 +249,8 @@
   
   //GTM dataLayer event
   function gtmAddToCartPush() {
+    console.log('gtmAddToCartPush')
+    localStorage.setItem('bagLastUpdated', new Date().toISOString());
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: 'add_to_cart_stape',
@@ -267,4 +273,5 @@
             }
         });
   }
+
 </script>

@@ -1183,6 +1183,8 @@ a.border-button {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 45px;
+}
+#bland-selv-slik-online-slikekspressen .candyBox {
   max-width: 283px;
 }
 
@@ -1581,6 +1583,10 @@ a.border-button {
   .textLeftRight-img {
     border-radius: 20px;
   }
+  [data-cart-count] {
+    margin-left: 10px !important;
+    right: unset !important;
+}
 }
 
 @media only screen and (max-width: 767px) {
@@ -3257,6 +3263,18 @@ display: -webkit-box;
   display: none;
 }
 .hidden_hidesecdrawerbtn .dataBagnamepostfix{
+  display: none;
+}
+[data-item-name="pack in bowl"] .drawer_2_content_product_minusOne_shopAdjust{
+  display: none;
+}
+[data-item-name="pack in bag"] .drawer_2_content_product_minusOne_shopAdjust{
+  display: none;
+}
+[data-item-name="pack in bowl"] .drawer_2_content_product_plusOne_shopAdjust{
+  display: none;
+}
+[data-item-name="pack in bag"] .drawer_2_content_product_plusOne_shopAdjust{
   display: none;
 }
 @media (max-width: 1129px) and (min-width: 768px){

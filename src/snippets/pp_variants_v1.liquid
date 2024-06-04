@@ -78,6 +78,11 @@
     max-height: 70px;
 }
   }
+  @media only screen and (max-width: 400px) {
+    .re-variant-option .variant-option-label {
+        width: 100px !important;
+    }
+}
 </style>
 <div class="variant-wrapper variant-wrapper--{{ settings.variant_type }} js">
   {% for option in product.options_with_values %}
@@ -106,6 +111,8 @@
  document.addEventListener("DOMContentLoaded", function() {
   var variantOptionInputs = document.querySelectorAll('.variant-wrapper input[type="radio"]');
   var productPrice = document.getElementById('productPrice');
+  var properties_pName = document.getElementById('p_pName');
+  var productImageInput = document.getElementById('vImgUrl');
 
   variantOptionInputs.forEach(function(input) {
     input.addEventListener('change', function() {
@@ -124,6 +131,8 @@
         var sellingPoint2 = this.getAttribute('data-selling2');
         var sellingPoint3 = this.getAttribute('data-selling3');
         var sellingPoint4 = this.getAttribute('data-selling4');
+        var selectedVname = this.getAttribute('value');
+        var selectedImageUrl = this.getAttribute('data-image-url');
         
         productPrice.textContent = selectedPrice;
         document.getElementById('selectedProductImage').src = selectedimg;
@@ -132,6 +141,8 @@
         document.getElementById('selling_point3').textContent = sellingPoint3;
         document.getElementById('selling_point4').textContent = sellingPoint4;
         document.getElementById('ProductSelect-custom').value = selectedVariantId;
+        properties_pName.value = selectedVname;
+        productImageInput.value = selectedImageUrl;
       }
     });
   });

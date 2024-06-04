@@ -3985,13 +3985,11 @@ section.bland-selv-slik__sticky__left .rounded {
   pointer-events: none;
   transition: opacity .2s ease-out;
 }
-
-.bland-selv-slik__name-prompt.is--visible {
+.is--visible[data-ask-rename-prompt]{
   opacity: 1;
   pointer-events: auto;
   z-index: 999;
 }
-
 .bland-selv-slik__name-prompt__inner {
   max-width: 88vw;
   margin: 25px;

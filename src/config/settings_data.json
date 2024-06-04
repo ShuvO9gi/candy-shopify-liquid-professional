@@ -125,7 +125,7 @@
           "link": "",
           "order_before": "Vi sender dit slik om",
           "weekendtext": "<p>Vi sender slik på mandag<\/p>",
-          "holidaytext": "",
+          "holidaytext": "<p>Vi sender slik igen på torsdag!<\/p>",
           "show_countdown": true,
           "limitHrs": 14,
           "main_menu_link_list": "main-menu",
@@ -2067,18 +2067,17 @@
         "block_order": [
           "collection_zLtJdr"
         ],
-        "disabled": true,
         "settings": {
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,
-          "headline": "<p>Kæmpe udvalg af <br\/><strong>Bland Selv Slik<\/strong> - leveret <\/p><p>med ekspressfart<\/p>",
+          "headline": "<p>Kæmpe udvalg af <br\/><strong>Bland Selv Slik<\/strong> - leveret <\/p><p>med ekspresfart<\/p>",
           "subheadline": "",
           "order_before": "Bestil indenfor",
           "weekendtext": "",
-          "holidaytext": "",
-          "button_text": "Se gaven her",
-          "button_destination": "shopify:\/\/products\/champagneflaske-med-bland-selv-slik-perfekt-gave",
-          "image": "shopify:\/\/shop_images\/hue.png"
+          "holidaytext": "<p>Vi sender slik igen på torsdag!<\/p>",
+          "button_text": "Bland selv slik",
+          "button_destination": "shopify:\/\/collections\/bland-selv-slik",
+          "image": "shopify:\/\/shop_images\/botte_94b319c3-c7f5-4fb9-8327-39842bfea939.png"
         }
       },
       "product-slider": {
@@ -2104,6 +2103,7 @@
         "block_order": [
           "collection_k3j9Xe"
         ],
+        "disabled": true,
         "settings": {
           "bgimage": "shopify:\/\/shop_images\/baggroundRepport.webp",
           "checkbgimagelarge": false,

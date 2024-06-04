@@ -29,7 +29,9 @@
   border-radius: 20px;      
   border: 3px solid #f2f0f2;  
 }
-
+#gift .product-card__info.is--visible {
+    z-index: 9999999 !important;
+}
   
 .filterScroll{
   overflow: scroll;
@@ -1428,6 +1430,8 @@ if (window.history.replaceState) {
         $(".page2Btn").css('display', 'none');
         $(".nextPage").css('display', 'none');
         $('[data-submit-button]').text('Put gaven i kurven');
+        const cus_modal = document.querySelector(".cus_modal");
+        cus_modal.classList.remove("cus_modal-active");
         var dataId = $('.autofillbtn').data('id');
           var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
           if (candyButton.length > 0) {

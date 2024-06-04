@@ -187,6 +187,8 @@ export default component((node, ctx) => {
                             product : product['variants'][0].id,
                             quantity: 1,
                             properties : {
+                                Name: `${product.title}`, // Product title
+                                ID: "",
                                 name: 'hot-deals', 
                                 value: true 
                             }
@@ -229,5 +231,4 @@ export default component((node, ctx) => {
             })
         });  
     })
-        
 });

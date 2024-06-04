@@ -65,7 +65,8 @@ export default function beforeCheckout(cart_data, next = false) {
     if (found && has_pkg ) {
         //show package
         console.log('show pkg');
-        show_package();
+        show_cross_sell();
+        document.querySelector('.drawer-cart-inner').setAttribute('hide', true);
     }
     else if (!found && has_cross_sell) {
         console.log('show cross');

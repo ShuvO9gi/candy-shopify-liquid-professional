@@ -18,14 +18,7 @@
           endif
         endif
       -%}
-      <!-- properties added for pre-mix product -->
-      {% if product.metafields.custom.bag_type != blank %}
-        <input type="hidden" id="allergies" name="properties[_bag_type]" value="other_product">
-      {%- endif -%}
-      {% if product.metafields.custom.bag_type != blank  %}
-        <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.variants.first.image.src | img_url: 'medium' }}">
-      {% endif %}
-
+  
 	<div class="product-detail">
       <div class="product-card__title type-style-h3-bold"> Vælg variant </div>
 
@@ -38,7 +31,15 @@
 	</div>
     {%- endfor -%}
   {%- endunless -%}
- 
+     <!-- properties added for pre-mix product -->
+      {% if product.metafields.custom.bag_type != blank  %}
+        <input type="hidden" id="p_bagType" name="properties[_bag_type]" value="other_product">
+        <input type="hidden" id="p_pName" name="properties[Name]" value="{{product.title}}">
+        <input type="hidden" id="p_pId" name="properties[ID]" value="">
+        {% comment %} <input type="hidden" id="product-amount" name="properties[Amount]" value="1"> {% endcomment %}
+        <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.variants.first.image.src | img_url: 'medium' }}">
+      {% endif %}
+
   <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js" data-variant-select>
     {%- for variant in product.variants -%}
     {%- if variant.available -%}
@@ -262,4 +263,5 @@
             }
         });
   }
+
 </script>

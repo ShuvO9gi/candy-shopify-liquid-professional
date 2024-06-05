@@ -952,6 +952,7 @@ export default component((node, ctx) => {
     }
   };
 
+  // Scroll left and right
   leftScroll.addEventListener("click", () => {
     filterWrapper.scrollBy({ left: -200, behavior: "smooth" });
   });

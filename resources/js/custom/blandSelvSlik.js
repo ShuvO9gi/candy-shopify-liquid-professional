@@ -952,6 +952,10 @@ export default component((node, ctx) => {
     }
   };
 
+  leftScroll.addEventListener("click", () => {
+    filterWrapper.scrollBy({ left: -200, behavior: "smooth" });
+  });
+
   const renderProducts = (products) => {
     console.log("renderProducts", products);
     const url = new URL(window.location.href);

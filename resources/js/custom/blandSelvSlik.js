@@ -957,7 +957,7 @@ export default component((node, ctx) => {
   });
 
   rightScroll.addEventListener("click", () => {
-    filterWrapper.scrollBy({ left: 400 });
+    filterWrapper.scrollBy({ left: 400, behavior: "smooth" });
   });
 
   const renderProducts = (products) => {

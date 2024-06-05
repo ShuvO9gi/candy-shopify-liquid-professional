@@ -1,0 +1,13 @@
+{
+  "name": "Special Section",
+  "type": "custom.special",
+  "sections": {
+    "main": {
+      "type": "custom-section",
+      "settings": {
+        "text": "Hard Render"
+      }
+    }
+  },
+  "order": ["main"]
+}

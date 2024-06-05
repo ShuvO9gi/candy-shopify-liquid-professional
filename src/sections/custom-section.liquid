@@ -1,0 +1,208 @@
+{% comment %} <p>{{ 'text' | t }}</p> {% endcomment %}
+
+{% for block in section.blocks %}
+  {% if block.type == 'paragraph' %}
+    <p>{{ block.settings.text }}</p>
+  {% elsif block.type == '@app' %}
+    {% render block %}
+  {% endif %}
+{% endfor %}
+
+<h1 style="color: {{ section.settings.color }}">{{ section.settings.text }}</h1>
+
+{% for block in section.blocks %}
+  {% if block.type == 'social' %}
+    <a href="{{ block.settings.url }}">{{ block.settings.text }}</a>
+  {% endif %}
+{% endfor %}
+
+{% stylesheet %}
+  .custom-section {
+    background: gray;
+    padding: 60px 0;
+  }
+{% endstylesheet %}
+
+{% comment %} {% javascript %}
+    alert("Hello");
+{% endjavascript %} {% endcomment %}
+
+<script>
+    const a = document.querySelector('#shopify-section-{{ section.id }}');
+    console.log(a);
+</script>
+
+{% schema %}
+{
+    "name": "Custom Section",
+    "settings": [
+        {
+            "type": "text", 
+            "id": "text", 
+            "label": "Text"
+        },
+        {
+            "type": "color", 
+            "id": "color", 
+            "label": "Text Color",
+            "default": "#000000"
+        }
+    ],
+    
+    "tag": "section",
+    "class": "custom-section",
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "name": "Social Link",
+            "type": "social",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "URL"
+                }
+            ]
+        },
+        {
+            "name": "Paragraph",
+            "type": "paragraph",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "default": {
+        "settings": {
+            "text": "Default Hard coded sections"
+        },
+        "blocks": [
+            {
+                "type": "social"
+            },
+            {
+                "type": "color"
+            },
+            {
+                "type": "paragraph",
+                "settings": {
+                    "text": "This is the textarea!"
+                }
+            }
+        ]
+    },
+    "max_blocks": 4,
+    "locales": {
+        "en": {
+            "text": "Hello"
+        },
+        "es": {
+            "text": "Hola"
+        }
+    }
+    
+}
+{% endschema %}
+
+{% comment %} {% schema %}
+{
+    "name": "Custom Section",
+    "settings": [
+        {
+            "type": "text", 
+            "id": "text", 
+            "label": "Text"
+        },
+        {
+            "type": "color", 
+            "id": "color", 
+            "label": "Text Color",
+            "default": "#000000"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Default Custom Section Presets",
+            "settings": {
+                "text": "Default Text Area"
+            },
+            "blocks": [
+                {
+                    "type": "paragraph"
+                },
+                {
+                    "type": "social",
+                    "settings": {
+                        "url": "https://twitter.com",
+                        "text": "Twitter"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Modified Custom Section",
+            "settings": {
+                "text": "Modified Text"
+            }
+        }
+    ],
+    "tag": "section",
+    "class": "custom-section",
+    "limit": 2,
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "name": "Social Link",
+            "type": "social",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "URL"
+                }
+            ]
+        },
+        {
+            "name": "Paragraph",
+            "type": "paragraph",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 4,
+    "locales": {
+        "en": {
+            "text": "Hello"
+        },
+        "es": {
+            "text": "Hola"
+        }
+    },
+    "disabled_on": {
+        "templates": ["page"]
+    }
+}
+{% endschema %} {% endcomment %}

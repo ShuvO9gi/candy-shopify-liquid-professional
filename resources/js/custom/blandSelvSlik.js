@@ -956,6 +956,10 @@ export default component((node, ctx) => {
     filterWrapper.scrollBy({ left: -200, behavior: "smooth" });
   });
 
+  rightScroll.addEventListener("click", () => {
+    filterWrapper.scrollBy({ left: 400 });
+  });
+
   const renderProducts = (products) => {
     console.log("renderProducts", products);
     const url = new URL(window.location.href);

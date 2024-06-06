@@ -25,7 +25,7 @@ const show_cross_sell = () => {
     document.querySelector('[data-drawer-cart--upsell]').setAttribute('opened', true);
     // document.querySelector('[data-drawer-upsell]').innerHTML = 'gå til betaling';
     document.querySelector('[data-drawer-upsell]').querySelector('.btn-text').innerHTML = 'gå til betaling';
-    document.querySelector('[data-drawer-back]').setAttribute('data-step', 2);
+    document.querySelector('[data-drawer-back]').setAttribute('data-step', 0);
     document.querySelector('.sa-upsell-offer').setAttribute('opened', "false");
     document.querySelector('.sa-upsell-offer__detail').setAttribute('opened', "true");
 

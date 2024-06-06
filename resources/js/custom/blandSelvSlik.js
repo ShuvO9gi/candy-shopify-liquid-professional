@@ -222,7 +222,6 @@ export default component((node, ctx) => {
     const addToBag = (elem, i) => {
       const { id, price, weight, amount, title, image } = elem.dataset;
       const candy = {};
-
       candy.title = title;
       candy.id = Number(id);
       candy.price = Number(price);
@@ -232,6 +231,13 @@ export default component((node, ctx) => {
       candy.amount = Number(amount);
       candy.count = 1;
       candy.img = image;
+      
+      // const { cart: activeCarts } = ctx.getState();
+      // console.log({activeCarts});
+      // const itemTitles= activeCarts.items.map((item) => item.title);
+      // if(["pack in bag", "pack in bowl"].includes(title) && (itemTitles.includes("pack in bag") || itemTitles.includes("pack in bowl"))){
+      //   return ;
+      // }
 
       // Make sure you can't add additional candy by clicking on image again
       const identicalCandy = candyBag.find(
@@ -240,7 +246,6 @@ export default component((node, ctx) => {
       if (identicalCandy !== undefined) {
         return;
       }
-
       candyBag.push(candy);
 
       qtyWrappers[i].classList.add("is--visible");
@@ -504,6 +509,7 @@ export default component((node, ctx) => {
                     note2,
                     note3
                   );
+                  console.log('items', {items});
                   if (items.length > 0) {
                     // Submit the list to the cart
                     submitBagToCart(

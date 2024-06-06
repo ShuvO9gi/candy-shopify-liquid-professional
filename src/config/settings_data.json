@@ -2128,6 +2128,313 @@
       },
       "bland-selv-slik_bagNbowl": {
         "type": "bland-selv-slik_bagNbowl",
+        "blocks": {
+          "filter_type_T7gR6y": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "selected",
+              "filter_name": "Tilbud"
+            }
+          },
+          "filter_type_TfTGiR": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "new",
+              "filter_name": "Nyheder"
+            }
+          },
+          "filter_type_ETiYM7": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "easter",
+              "filter_name": "Påske"
+            }
+          },
+          "filter_type_77wVa6": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "christmas",
+              "filter_name": "Jul"
+            }
+          },
+          "filter_type_he7WYK": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "winegum",
+              "filter_name": "Vingummi"
+            }
+          },
+          "filter_type_dY8AiF": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licorice",
+              "filter_name": "Lakrids"
+            }
+          },
+          "filter_type_ndwbeE": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "chocolate",
+              "filter_name": "Chokolade"
+            }
+          },
+          "filter_type_rVdiHb": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "caramel",
+              "filter_name": "caramel"
+            }
+          },
+          "filter_type_jDiDkV": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foam",
+              "filter_name": "Skum"
+            }
+          },
+          "filter_type_TxJHwX": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "licoricemix",
+              "filter_name": "Lakrids Kombi"
+            }
+          },
+          "filter_type_GVT7e7": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "foammix",
+              "filter_name": "Skum Kombi"
+            }
+          },
+          "filter_type_9iF7AM": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sour",
+              "filter_name": "Surt slik"
+            }
+          },
+          "filter_type_M3d4kc": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "withsugar",
+              "filter_name": "Med sukker"
+            }
+          },
+          "filter_type_DnBFji": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "fudge",
+              "filter_name": "Fudge"
+            }
+          },
+          "filter_type_7RhmJY": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "sticks",
+              "filter_name": "Stænger"
+            }
+          },
+          "filter_type_Ldz9Tr": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "wrapped",
+              "filter_name": "Indpakket slik"
+            }
+          },
+          "filter_type_hfEG7a": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "pastil",
+              "filter_name": "Pastiller"
+            }
+          },
+          "filter_type_zC99XD": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "lollipop",
+              "filter_name": "Slikkepinde"
+            }
+          },
+          "filter_type_JhbaHe": {
+            "type": "filter_type",
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "candy",
+              "filter_name": "Bolsjer"
+            }
+          },
+          "filter_type_cWfwrg": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "sugarfree",
+              "filter_name": "Sukkerfrit"
+            }
+          },
+          "filter_type_qdQLyL": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "Palmeoliefri",
+              "filter_name": "Fri for Palmeolie"
+            }
+          },
+          "filter_type_NNgn4J": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "naturlige_farver",
+              "filter_name": "Fri for kunstige farvestoffer"
+            }
+          },
+          "filter_type_PJTmn4": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "naturlig_smag",
+              "filter_name": "Fri for kunstige smagstoffer"
+            }
+          },
+          "filter_type_TbUyac": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "allergenfree",
+              "filter_name": "Fri for Gluten og andre allergener"
+            }
+          },
+          "filter_type_hBncwd": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "vegan",
+              "filter_name": "Vegansk slik"
+            }
+          },
+          "filter_type_rXqhWJ": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "kids",
+              "filter_name": "Mest til børn"
+            }
+          },
+          "filter_type_bJYKDU": {
+            "type": "filter_type",
+            "settings": {
+              "category": "favoritter",
+              "type": "tags",
+              "filter_id": "adults",
+              "filter_name": "Mest til voksne"
+            }
+          },
+          "filter_type_DHRTwh": {
+            "type": "filter_type",
+            "settings": {
+              "category": "indhold",
+              "type": "tags",
+              "filter_id": "gelatinfree",
+              "filter_name": "Gelatinefrit"
+            }
+          },
+          "filter_type_ePAyyz": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "fudge",
+              "filter_name": "Fudge"
+            }
+          },
+          "filter_type_Xf9H7w": {
+            "type": "filter_type",
+            "disabled": true,
+            "settings": {
+              "category": "kategori",
+              "type": "tags",
+              "filter_id": "halloween",
+              "filter_name": "Halloween"
+            }
+          }
+        },
+        "block_order": [
+          "filter_type_T7gR6y",
+          "filter_type_TfTGiR",
+          "filter_type_ETiYM7",
+          "filter_type_77wVa6",
+          "filter_type_he7WYK",
+          "filter_type_dY8AiF",
+          "filter_type_ndwbeE",
+          "filter_type_rVdiHb",
+          "filter_type_jDiDkV",
+          "filter_type_TxJHwX",
+          "filter_type_GVT7e7",
+          "filter_type_9iF7AM",
+          "filter_type_M3d4kc",
+          "filter_type_DnBFji",
+          "filter_type_7RhmJY",
+          "filter_type_Ldz9Tr",
+          "filter_type_hfEG7a",
+          "filter_type_zC99XD",
+          "filter_type_JhbaHe",
+          "filter_type_cWfwrg",
+          "filter_type_qdQLyL",
+          "filter_type_NNgn4J",
+          "filter_type_PJTmn4",
+          "filter_type_TbUyac",
+          "filter_type_hBncwd",
+          "filter_type_rXqhWJ",
+          "filter_type_bJYKDU",
+          "filter_type_DHRTwh",
+          "filter_type_ePAyyz",
+          "filter_type_Xf9H7w"
+        ],
         "settings": {
           "title": "<p><strong>Bland i dag <\/strong>— Få det bragt med ekspresfart.<\/p>",
           "paginate": 600,

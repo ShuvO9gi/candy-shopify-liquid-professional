@@ -3266,16 +3266,40 @@ display: -webkit-box;
   display: none;
 }
 [data-item-name="pack in bowl"] .drawer_2_content_product_minusOne_shopAdjust{
-  display: none;
+  visibility: hidden;
 }
 [data-item-name="pack in bag"] .drawer_2_content_product_minusOne_shopAdjust{
-  display: none;
+  visibility: hidden;
 }
 [data-item-name="pack in bowl"] .drawer_2_content_product_plusOne_shopAdjust{
-  display: none;
+  visibility: hidden;
 }
 [data-item-name="pack in bag"] .drawer_2_content_product_plusOne_shopAdjust{
-  display: none;
+  visibility: hidden;
+}
+[data-item-name="pack in bag"] .drawer_2_content_product_delete_shopAdjust{
+  visibility: hidden;
+}
+[data-item-name="pack in bowl"] .drawer_2_content_product_delete_shopAdjust{
+  visibility: hidden;
+}
+[data-qty-id="47811321463115"] .drawer_2_content_product_plusOne_shopAdjust{
+  visibility: hidden;
+}
+[data-qty-id="47811321463115"] .drawer_2_content_product_minusOne_shopAdjust{
+  visibility: hidden;
+}
+[data-qty-id="47811321463115"] .drawer_2_content_product_delete_shopAdjust{
+  visibility: hidden;
+}
+[data-qty-id="47814435930443"] .drawer_2_content_product_plusOne_shopAdjust{
+  visibility: hidden;
+}
+[data-qty-id="47814435930443"] .drawer_2_content_product_minusOne_shopAdjust{
+  visibility: hidden;
+}
+[data-qty-id="47814435930443"] .drawer_2_content_product_delete_shopAdjust{
+  visibility: hidden;
 }
 @media (max-width: 1129px) and (min-width: 768px){
   .usp-list {

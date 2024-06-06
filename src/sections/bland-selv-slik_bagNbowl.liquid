@@ -1,17 +1,17 @@
 <style>
-  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper{
+  .bland-selv-slik .filter__item__wrapper{
     overflow: scroll !important;
   }
-  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul{
+  .bland-selv-slik .filter__item__wrapper ul{
     overflow: scroll;
     max-height: 250px;
     overflow-x: hidden;
   }
-  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper::-webkit-scrollbar {
+  .bland-selv-slik .filter__item__wrapper::-webkit-scrollbar {
     display: none;
 }
   
-  #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul::-webkit-scrollbar {
+  .bland-selv-slik .filter__item__wrapper ul::-webkit-scrollbar {
   width: 12px;               
 }
 
@@ -24,7 +24,7 @@
   .pickNmix_rowFirst20 .candyItems .candyBox:nth-child(-n+40) {
     display: block !important;
 }
-#shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul::-webkit-scrollbar-thumb {
+.bland-selv-slik .filter__item__wrapper ul::-webkit-scrollbar-thumb {
   background-color: #ffad05;    
   border-radius: 20px;      
   border: 3px solid #f2f0f2;  
@@ -197,27 +197,26 @@
  /* pak selection */
   #pak_ipose{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    border: 1px solid #959595;
+    border: 1px solid #ebebeb;
     border-radius: 4px 4px 0 0;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 8px 30px;
+    margin-top: 10px;
     cursor: pointer;
   }
   .pak_selection-box-label{
     display: flex;
     align-items: center;
     gap: 16px;
-    color: #fff;
   }
    #pak_ibox{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    border: 1px solid #959595;
+    border: 1px solid #ebebeb;
     border-radius:  0 0 4px 4px;
-    padding: 10px;
+    padding: 8px 30px;
     cursor: pointer;
   }
   #pak_ibox .pak_selection-box-label label{
@@ -227,24 +226,34 @@
   .pak_selection-box-label label{
     cursor: pointer;
   }
-  .bland-selv-slik____bagbowl__inner{
-    background-color: rgb(110 70 149);
-  }
   .bland-selv-slik____bagbowl__close{
     right: 15px;
     top: 15px;
   }
+  .bland-selv-slik____bagbowl__inner{
+    width: 400px;
+  }
   .bland-selv-slik____bagbowl__inner h3{
-    color: #fff;
+    font-size: 30px !important;
+    margin-bottom: 6px !important;
   }
   .bland-selv-slik____bagbowl__inner p{
-    color: #fff;
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
   }
+  .pak_selection-box-button{
+    display: flex;
+    gap: 10px;
+  }
+  .pak_selection-box-label label {
+    font-size: 16px !important;
+}
   .bland-selv-slik____bagbowl__inner .selected .pak_selection-checkmark{
     background: #6e4695;
   }
   .bland-selv-slik____bagbowl__inner .selected {
-    border: 1px solid #fff !important;
+    border: 1px solid #6e4695 !important;
+    background-color: #f6f6f6;
 }
   .bland-selv-slik____bagbowl__inner .pak_selection-checkmark{
     width: 5px;
@@ -253,7 +262,7 @@
     background: #fff;
     border-radius: 50%;
     padding: 5px;
-    border: 3px solid #fff;
+    border: 2px solid #6e4695;
 }
   .bland-selv-slik__bagbowl{
     display: none;
@@ -281,7 +290,7 @@
   #addbagName{
     opacity: 0.7;
     pointer-events: none;
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .opened .drawer_overlay, html.drawer_locked .drawer_overlay {
     opacity: .8;
@@ -307,14 +316,14 @@
   pointer-events: auto;
   z-index: 999;
 }
-  /* [data-product-item-id="44794776453358"]{
+  [data-product-item-id="47811321463115"]{
     visibility: hidden;
   }
-  [data-product-item-id="44794776322286"]{
+  [data-product-item-id="47814435930443"]{
     visibility: hidden;
-  } */
+  } 
     @media only screen and (max-width: 1300px){
-       #shopify-section-2022-bland-selv-slik-template .filter__item__wrapper ul{
+       .bland-selv-slik .filter__item__wrapper ul{
     max-height: 116px !important;
   }
     }
@@ -344,6 +353,28 @@
     #filter-iconAllProdBtn2 svg circle{
       stroke: #000 !important;
     }
+  .bland-selv-slik____bagbowl__inner {
+    width: 100%;
+    margin: 0 25px;
+}
+.pak_selection-box-label label {
+    font-size: 12px !important;
+}
+.pak_selection-box-label img{
+  max-width: 60px !important;
+}
+#pak_ipose {
+    padding: 8px 16px !important;
+}
+#pak_ibox {
+    padding: 8px 16px !important;
+  }
+    .bland-selv-slik____bagbowl__inner h3{
+    font-size: 20px !important;
+  }
+  .bland-selv-slik____bagbowl__inner p{
+    font-size: 14px !important;
+  }
   }
   body{
   height: 100vh !important;
@@ -604,7 +635,7 @@
                 <div class="flex" style="width: 100%;">
                   <button class="barSeeBagButton cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
                   <button
-                    class="barColoseBagButton cursor-pointer"
+                    class="barColoseBagButton cursor-pointer" id="LeftbarColoseBagButtonMb" 
                     disabled
                     data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
                 </div>
@@ -698,8 +729,8 @@
       </div>
 
       <div class="max-w-xs">
-        <h3 class="mb-3 text-center type-style-h3-bold">Choose packaging</h3>
-        <p class="mb-3 text-center type-style-p-regular">How should we pack your order?</p>
+        <h3 class="mb-3 text-center type-style-h3-bold">Vælg indpakning</h3>
+        <p class="mb-3 text-center type-style-p-regular">Hvordan skal dette slikmiks pakkes?</p>
       </div>
 
       <div data-id="47811321463115" id="pak_ipose" class="pak_selection-upsell-item first-item" onclick="pak_ipose()">
@@ -707,12 +738,11 @@
               <label class="pak_selection-radio-container">
                   <span class="pak_selection-checkmark"></span>
               </label>
+              <label class="type-style-card-desc-bold">Pak i pose</label>
           </div>
           <div class="pak_selection-box-label">
-              <label class="type-style-card-desc-bold">Pak in bag</label>
-              <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/products/indpakning_pose.png?v=1655992431" style="max-width: 100px;">
+              <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/73fd3a59-eecf-42b9-9b50-8da0c2904713.png?v=1717052550" style="max-width: 80px;">
           </div>
-          <div class="pak_selection-box-image"><p>{{section.settings.step3_nohandwrittenprice}}</p></div>
       </div>
       
       <div data-id="47814435930443" id="pak_ibox" class="pak_selection-upsell-item first-item" onclick="pak_ibox()">
@@ -720,12 +750,11 @@
               <label class="pak_selection-radio-container">
                   <span class="pak_selection-checkmark"></span>
               </label>
+              <label class="type-style-card-desc-bold">Pak i bøtte <span>(+10 kr.)</span></label>
           </div>
           <div class="pak_selection-box-label">
-              <label class="type-style-card-desc-bold">Pack in box <span>(+5 kr.)</span></label>
-              <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/products/indpakning_boette.png?v=1655992456" style="max-width: 100px;">
+              <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/products/indpakning_boette.png?v=1655992456" style="max-width: 80px;">
           </div>
-          <div class="pak_selection-box-image"><p>{{section.settings.step3_nohandwrittenprice}}</p></div>
       </div>
 
       <button
@@ -756,7 +785,7 @@
       <div class="btn-groups mt-3">
         <button
           class="btn type-style-button-text"
-          type="button"
+          type="button" disabled style="opacity: 0.5"
           data-ask-rename-submit>{{ "bland_selv.rename_prompt.accept" | t | strip_html }}</button>
 
         <button
@@ -803,6 +832,13 @@
         });
         
         $('#LeftbarColoseBagButton').click(function(){
+          $('body').addClass('openbagNbowl');
+          $('#pak_ibox').removeClass('selected');
+          $('#pak_ipose').removeClass('selected');
+          $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
+          $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+        });
+        $('#LeftbarColoseBagButtonMb').click(function(){
           $('body').addClass('openbagNbowl');
           $('#pak_ibox').removeClass('selected');
           $('#pak_ipose').removeClass('selected');
@@ -991,7 +1027,6 @@ Array.from(triggers).forEach((trigger) => {
           var filterSearchIconElement4 = document.getElementById('close-cus_modal');
     if (filterSearchIconElement4) {
         filterSearchIconElement4.addEventListener('click', handleFilterSearchIconClick);
-        console.log('clicked on 4');
     }
 
   
@@ -1123,6 +1158,7 @@ if (window.history.replaceState) {
         if (ulElement && ulElement.querySelectorAll('li').length === 0) {
             btnElement.classList.add('is--hidden');
           document.getElementById("LeftbarColoseBagButton").innerHTML = "DIN POSE ER TOM";
+          document.getElementById("LeftbarColoseBagButtonMb").innerHTML = "DIN POSE ER TOM";
         } else {
             btnElement.classList.remove('is--hidden');
         }
@@ -1154,6 +1190,11 @@ if (window.history.replaceState) {
       maskModal.classList.remove("active");
       cus_modal.classList.remove("cus_modal-active");
     }
+
+    $("#filter-iconAllProdBtn3").on("click", function() {
+      const cus_modal = document.querySelector(".cus_modal");
+      cus_modal.classList.remove("cus_modal-active");
+  });
 
     showBtn.addEventListener("click", openModal);
     showBtn2.addEventListener("click", openModal);

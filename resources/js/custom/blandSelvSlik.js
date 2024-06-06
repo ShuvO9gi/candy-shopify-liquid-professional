@@ -965,6 +965,11 @@ export default component((node, ctx) => {
   let startX;
   let scrollLeft;
 
+  filterWrapper.addEventListener("mousedown", (e) => {
+    isDown = true;
+    filterWrapper.classList.add("active");
+  });
+
   // Initialize scroll icons visibility
   updateScrollIcons();
 

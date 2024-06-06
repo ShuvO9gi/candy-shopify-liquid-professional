@@ -968,6 +968,8 @@ export default component((node, ctx) => {
   filterWrapper.addEventListener("mousedown", (e) => {
     isDown = true;
     filterWrapper.classList.add("active");
+    startX = e.pageX - filterWrapper.offsetLeft;
+    scrollLeft = filterWrapper.scrollLeft;
   });
 
   // Initialize scroll icons visibility

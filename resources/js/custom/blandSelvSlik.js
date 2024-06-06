@@ -962,6 +962,8 @@ export default component((node, ctx) => {
   });
 
   let isDown = false;
+  let startX;
+  let scrollLeft;
 
   // Initialize scroll icons visibility
   updateScrollIcons();

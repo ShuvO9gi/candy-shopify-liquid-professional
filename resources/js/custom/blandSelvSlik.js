@@ -961,6 +961,8 @@ export default component((node, ctx) => {
     filterWrapper.scrollBy({ left: 200, behavior: "smooth" });
   });
 
+  let isDown = false;
+
   // Initialize scroll icons visibility
   updateScrollIcons();
 

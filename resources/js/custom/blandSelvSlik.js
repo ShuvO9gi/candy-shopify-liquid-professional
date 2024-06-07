@@ -987,6 +987,7 @@ export default component((node, ctx) => {
     e.preventDefault();
     const x = e.pageX - filterWrapper.offsetLeft;
     const walk = (x - startX) * 3; // Increase scroll speed
+    filterWrapper.scrollLeft = scrollLeft - walk;
   });
 
   // Initialize scroll icons visibility

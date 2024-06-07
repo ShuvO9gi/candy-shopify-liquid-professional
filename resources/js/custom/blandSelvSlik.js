@@ -982,6 +982,8 @@ export default component((node, ctx) => {
     filterWrapper.classList.remove("active");
   });
 
+  filterWrapper.addEventListener("mousemove", (e) => {});
+
   // Initialize scroll icons visibility
   updateScrollIcons();
 

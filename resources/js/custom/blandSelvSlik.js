@@ -984,6 +984,7 @@ export default component((node, ctx) => {
 
   filterWrapper.addEventListener("mousemove", (e) => {
     if (!isDown) return;
+    e.preventDefault();
   });
 
   // Initialize scroll icons visibility

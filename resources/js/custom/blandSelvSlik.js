@@ -977,7 +977,9 @@ export default component((node, ctx) => {
     filterWrapper.classList.remove("active");
   });
 
-  filterWrapper.addEventListener("mouseup", () => {});
+  filterWrapper.addEventListener("mouseup", () => {
+    isDown = false;
+  });
 
   // Initialize scroll icons visibility
   updateScrollIcons();

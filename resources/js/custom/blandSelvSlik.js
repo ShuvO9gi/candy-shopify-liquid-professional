@@ -985,6 +985,8 @@ export default component((node, ctx) => {
   filterWrapper.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
+    const x = e.pageX - filterWrapper.offsetLeft;
+    const walk = (x - startX) * 3; // Increase scroll speed
   });
 
   // Initialize scroll icons visibility

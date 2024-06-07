@@ -972,6 +972,10 @@ export default component((node, ctx) => {
     scrollLeft = filterWrapper.scrollLeft;
   });
 
+  filterWrapper.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
+
   // Initialize scroll icons visibility
   updateScrollIcons();
 

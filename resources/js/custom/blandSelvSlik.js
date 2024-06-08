@@ -961,6 +961,7 @@ export default component((node, ctx) => {
     filterWrapper.scrollBy({ left: 200, behavior: "smooth" });
   });
 
+  // Detect swipe gestures for touch devices
   let isDown = false;
   let startX;
   let scrollLeft;

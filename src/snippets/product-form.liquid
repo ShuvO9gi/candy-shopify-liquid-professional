@@ -43,12 +43,16 @@
 
   {% comment %} The following select element is for product variant selection {% endcomment %}
 
-    {% if product.metafields.custom.bag_type != blank  %}
-        <input type="hidden" id="p_bagType" name="properties[_bag_type]" value="other_product">
-        <input type="hidden" id="p_pName" name="properties[Name]" value="{{product.title}}">
+    {% if product.metafields.custom.bag_type != blank %}
+    {% assign bag_type = "other_product" %}
+    {% if product.metafields.custom.bag_type == "gift_card" %}
+        {% assign bag_type = "gift_card" %}
+    {% endif %}
+        <input type="hidden" id="p_bagType" name="properties[_bag_type]" value="{{ bag_type }}">
+        <input type="hidden" id="p_pName" name="properties[Name]" value="{{ product.title }}">
         <input type="hidden" id="p_id" name="properties[ID ]" value="">
         <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.featured_image.src | img_url: 'medium' }}">
-      {% endif %}
+    {% endif %}
 
   <select
     name="id"

@@ -35,7 +35,7 @@
       {% if product.metafields.custom.bag_type != blank  %}
         <input type="hidden" id="p_bagType" name="properties[_bag_type]" value="other_product">
         <input type="hidden" id="p_pName" name="properties[Name]" value="{{product.title}}">
-        <input type="hidden" id="p_pId" name="properties[ID]" value="">
+        <input type="hidden" id="p_pId" name="properties[ID ]" value="">
         {% comment %} <input type="hidden" id="product-amount" name="properties[Amount]" value="1"> {% endcomment %}
         <input type="hidden" id="vImgUrl" name="properties[_image_url]" value="https:{{ product.variants.first.image.src | img_url: 'medium' }}">
       {% endif %}

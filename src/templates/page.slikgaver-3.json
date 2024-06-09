@@ -125,6 +125,7 @@
         },
         "835b850a-cc1d-4489-9c94-232b12d00d42": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "small-headline": "Festlige champagneflasker",
             "headline": "Til alle anledninger",

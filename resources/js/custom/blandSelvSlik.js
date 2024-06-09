@@ -375,7 +375,7 @@ export default component((node, ctx) => {
         }
       });
     });
-
+    
     // Toggle visual bag
     visualBagToggleBtns.forEach((visualBagToggleBtn) => {
       visualBagToggleBtn.addEventListener("click", (e) => {

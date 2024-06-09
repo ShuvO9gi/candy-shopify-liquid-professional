@@ -3301,6 +3301,18 @@ display: -webkit-box;
 [data-qty-id="47814435930443"] .drawer_2_content_product_delete_shopAdjust{
   visibility: hidden;
 }
+.drawer_price_amount_shopAdjust .sl-cart-original-total font{
+  display: block !important;
+}
+.drawer_price_amount_shopAdjust .sl-cart-total-shipping font{
+  display: block !important;
+}
+.drawer_price_amount_shopAdjust .sl-cart-total-final font{
+  display: block !important;
+}
+.drawer_price_amount_shopAdjust font{
+  display: none;
+}
 @media (max-width: 1129px) and (min-width: 768px){
   .usp-list {
     grid-template-columns: repeat(2, 1fr) !important;

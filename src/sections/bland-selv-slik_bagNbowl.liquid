@@ -126,7 +126,12 @@
     z-index: 111;
     bottom: 0 !important;
   }
-
+  html.drawer_locked3 .bland-selv-slik__sticky {
+    z-index: 99999 !important;
+  }
+  html.drawer_locked3 .bland-selv-slik__visual-bag{
+    z-index: 9999 !important;
+  }
   /* filter button in sticky bar */
    #filter_icon-sticky .filters{
     display: flex;
@@ -296,6 +301,21 @@
     opacity: .8;
     z-index: 999;
 }
+.drawer_locked3 .body_overlay{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    will-change: opacity;
+    transition: opacity .5s ease;
+    opacity: 0.8;
+    background: #3c3442;
+}
+.drawer_locked3 body{
+  overflow: hidden;
+}
   .enableopenNameprompt #addbagName{
     opacity: 1 !important;
     pointer-events: auto !important;
@@ -322,11 +342,22 @@
   [data-product-item-id="47814435930443"]{
     visibility: hidden;
   } 
-    @media only screen and (max-width: 1300px){
-       .bland-selv-slik .filter__item__wrapper ul{
+  @media only screen and (max-width: 1300px){
+  .bland-selv-slik .filter__item__wrapper ul{
     max-height: 116px !important;
+   }
   }
+  @media only screen and (min-width: 991px){
+    html.drawer_locked3 .bland-selv-slik__visual-bag{
+      top: -2% !important;
     }
+    #visual-bag__close_cus{
+      max-height: 55vh !important;
+    }
+    .bland-selv-slik__visual-bag__list{
+      max-height: 46vh !important;
+    }
+  } 
   @media only screen and (max-width: 767px){
     .filter-list_search_mb{
     display: block !important;
@@ -714,7 +745,7 @@
 
       <p class="text-center type-style-p-small-regular">
         <a
-          data-name-prompt-skip
+          data-name-prompt-skip style="opacity: 0; pointer-events: none;"
           class="underline underline-offset-1"
           href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a>
       </p>
@@ -818,7 +849,6 @@
   </div>
 
 {% endpaginate %}
-
 <script>
     var jqmsg = document.createElement('script');
     jqmsg.src = "https://code.jquery.com/jquery-3.6.4.min.js";
@@ -1180,10 +1210,12 @@ if (window.history.replaceState) {
     const maskModal = document.querySelector(".mask-cus_modal");
     const cus_modal = document.querySelector(".cus_modal");
     const closeBtn = document.querySelector(".close-cus_modal");
+    const filter_close = document.querySelector(".filter----product");
 
     function openModal() {
       maskModal.classList.add("active");
       cus_modal.classList.add("cus_modal-active");
+      filter_close.classList.add("-translate-x-full");
     }
 
     function closeModal() {

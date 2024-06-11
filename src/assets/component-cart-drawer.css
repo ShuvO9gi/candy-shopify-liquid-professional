@@ -1324,7 +1324,12 @@ span.class-icon {
 	content: "";
 	height: 100%;
 }
-
+@media only screen and (max-height: 800px) and (min-width: 900px){
+.sa-cross_sell-wrapper{
+	overflow: scroll;
+    height: 350px;
+}
+}
 @media (max-width: 480px) {
 	.sa-upsell-offer__detail .sa-detail___item---detail:after {
 		left: 50%

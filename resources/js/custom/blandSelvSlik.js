@@ -215,7 +215,8 @@ export default component((node, ctx) => {
         visualBagToggleBtns,
         candyBag,
         priceLimit,
-        fromLocalStorage
+        fromLocalStorage,
+        ctx
       );
     }
 
@@ -275,7 +276,8 @@ export default component((node, ctx) => {
         visualBagToggleBtns,
         candyBag,
         priceLimit,
-        fromLocalStorage
+        fromLocalStorage,
+        ctx
       );
     };
 
@@ -327,7 +329,8 @@ export default component((node, ctx) => {
           visualBagToggleBtns,
           candyBag,
           priceLimit,
-          fromLocalStorage
+          fromLocalStorage,
+          ctx
         );
         totalKilogramsCalculator(
           candyBag,
@@ -362,7 +365,8 @@ export default component((node, ctx) => {
           visualBagToggleBtns,
           candyBag,
           priceLimit,
-          fromLocalStorage
+          fromLocalStorage,
+          ctx
         );
         if (candyBag.length > 0) {
           totalKilogramsCalculator(
@@ -568,6 +572,13 @@ export default component((node, ctx) => {
               ctx.emit("cart:changed");
             }
           }
+          node.querySelector("[data-gram-elem]").innerHTML = "";
+          node.querySelector("[data-gram-elem-mobile]").innerHTML = "";
+          node.querySelector("[data-total-price-elem]").innerHTML = "";
+          node.querySelector("[data-total-price-elem-mobile]").innerHTML = "";
+          node
+            .querySelector("[data-submit-button]")
+            .setAttribute("disabled", true);
         });
       });
     });
@@ -640,7 +651,7 @@ export default component((node, ctx) => {
               <div class="candyBoxBrand type-style-card-h-subhead">${
                 theme.strings.blandSelv.from
               } <span>${vendor.toLowerCase()}</span></div>
-              <button class="candyBoxBuyButton type-style-button-text" data-add-to-bag data-id="${id}" data-amount="${amount}" data-price="${price}" data-weight="${weight}" data-title="${title}" data-image="${imgUrl}"> ${
+              <button class="candyBoxBuyButton candyBoxBuyButtonPnM type-style-button-text" data-add-to-bag data-id="${id}" data-amount="${amount}" data-price="${price}" data-weight="${weight}" data-title="${title}" data-image="${imgUrl}"> ${
       theme.strings.blandSelv.addToBag
     } </button>
             </div>

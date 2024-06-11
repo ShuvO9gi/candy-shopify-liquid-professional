@@ -30,7 +30,8 @@ export default function visualCandyBag(
   visualBagToggleBtns,
   candyBag,
   priceLimit,
-  fromLocalStorage
+  fromLocalStorage,
+  ctx
 ) {
   const stickyFilterBtnElem = document.querySelector(
     "[data-sticky-filter-btn]"
@@ -328,6 +329,7 @@ export default function visualCandyBag(
         priceLimit,
         submitBtns
       );
+      ctx.emit("products:refetch");
     });
   });
 

@@ -330,6 +330,12 @@
       productDetail.classList.remove('sticky');
           }
         });
+
+        $(document).ready(function() {
+            $('[data-submit-button]').click(function() {
+                $('html').addClass('drawer_locked2');
+            });
+        });
     </script>
 
   </body>

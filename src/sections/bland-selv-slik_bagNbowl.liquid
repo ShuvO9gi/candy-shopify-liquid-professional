@@ -342,11 +342,14 @@
   [data-product-item-id="47814435930443"]{
     visibility: hidden;
   } 
-  @media only screen and (max-width: 1300px){
-  .bland-selv-slik .filter__item__wrapper ul{
-    max-height: 116px !important;
-   }
+  .openbagNbowl .bland-selv-slik__sticky{
+   z-index: 11 !important;
   }
+    @media only screen and (max-width: 1300px){
+       .bland-selv-slik .filter__item__wrapper ul{
+    max-height: 116px !important;
+  }
+    }
   @media only screen and (min-width: 991px){
     html.drawer_locked3 .bland-selv-slik__visual-bag{
       top: -2% !important;
@@ -849,6 +852,7 @@
   </div>
 
 {% endpaginate %}
+
 <script>
     var jqmsg = document.createElement('script');
     jqmsg.src = "https://code.jquery.com/jquery-3.6.4.min.js";
@@ -867,6 +871,7 @@
           $('#pak_ipose').removeClass('selected');
           $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('html').removeClass('drawer_locked3');
         });
         $('#LeftbarColoseBagButtonMb').click(function(){
           $('body').addClass('openbagNbowl');

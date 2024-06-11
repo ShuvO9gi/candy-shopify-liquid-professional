@@ -252,6 +252,150 @@
   .pickNmix_row .bland-selv-slik__visual-bag .drawer_2_content_product_content_shopAdjust{
     width: 130px;
   }
+
+   /* pak selection */
+  #pak_ipose{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ebebeb;
+    border-radius: 4px 4px 0 0;
+    padding: 8px 30px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .pak_selection-box-label{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+   #pak_ibox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ebebeb;
+    border-radius:  0 0 4px 4px;
+    padding: 8px 30px;
+    cursor: pointer;
+  }
+  #pak_ibox .pak_selection-box-label label{
+    display: flex;
+    flex-direction: column;
+  }
+  .pak_selection-box-label label{
+    cursor: pointer;
+  }
+  .bland-selv-slik____bagbowl__close{
+    right: 15px;
+    top: 15px;
+  }
+  .bland-selv-slik____bagbowl__inner{
+    width: 400px;
+  }
+  .bland-selv-slik____bagbowl__inner h3{
+    font-size: 30px !important;
+    margin-bottom: 6px !important;
+  }
+  .bland-selv-slik____bagbowl__inner p{
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+  }
+  .pak_selection-box-button{
+    display: flex;
+    gap: 10px;
+  }
+  .pak_selection-box-label label {
+    font-size: 16px !important;
+}
+  .bland-selv-slik____bagbowl__inner .selected .pak_selection-checkmark{
+    background: #6e4695;
+  }
+  .bland-selv-slik____bagbowl__inner .selected {
+    border: 1px solid #6e4695 !important;
+    background-color: #f6f6f6;
+}
+  .bland-selv-slik____bagbowl__inner .pak_selection-checkmark{
+    width: 5px;
+    height: 5px;
+    display: block;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #6e4695;
+}
+  .bland-selv-slik__bagbowl{
+    display: none;
+    opacity: 0.8;
+    transition: opacity .2s ease-out;
+  }
+  .openbagNbowl .bland-selv-slik__bagbowl{
+    display: flex !important;
+    opacity: 1;
+    background: #0000004d;
+  }
+  .bland-selv-slik____bagbowl__close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    background: var(--brandOrange);
+    color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  #addbagName{
+    opacity: 0.7;
+    pointer-events: none;
+    margin-top: 16px;
+  }
+  .opened .drawer_overlay, html.drawer_locked .drawer_overlay {
+    opacity: .8;
+    z-index: 999;
+}
+.drawer_locked3 .body_overlay{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    will-change: opacity;
+    transition: opacity .5s ease;
+    opacity: 0.8;
+    background: #3c3442;
+}
+.drawer_locked3 body{
+  overflow: hidden;
+}
+  .enableopenNameprompt #addbagName{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .openbagNbowl .bland-selv-slik__name-prompt.is--visible {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.openNameprompt .bland-selv-slik__name-prompt.is--visible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 999;
+}
+.openreNameprompt .bland-selv-slik__name-prompt.is--visible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 999;
+}
+  [data-product-item-id="47811321463115"]{
+    visibility: hidden;
+  }
+  [data-product-item-id="47814435930443"]{
+    visibility: hidden;
+  }
   @media only screen and (min-width: 768px){
     #shopify-section-pick_n_mix_temp1 .barSeeBagButton{
       display: none;
@@ -350,6 +494,29 @@
    .pickNnix_topProd [data-item-inner].is--selected .candyBoxBuySection-clicked.is--visible{
     width: 90%;
  }
+/* with bagNbowl */
+   .bland-selv-slik____bagbowl__inner {
+    width: 100%;
+    margin: 0 25px;
+}
+.pak_selection-box-label label {
+    font-size: 12px !important;
+}
+.pak_selection-box-label img{
+  max-width: 60px !important;
+}
+#pak_ipose {
+    padding: 8px 16px !important;
+}
+#pak_ibox {
+    padding: 8px 16px !important;
+  }
+    .bland-selv-slik____bagbowl__inner h3{
+    font-size: 20px !important;
+  }
+  .bland-selv-slik____bagbowl__inner p{
+    font-size: 14px !important;
+  }
 }
  
 </style>
@@ -599,7 +766,7 @@
                   <button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
                   <button
                     class="barColoseBagButton type-style-button-text cursor-pointer"
-                    disabled
+                    disabled id="LeftbarColoseBagButtonPnM"
                     data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
                 </div>
               </div>
@@ -681,15 +848,58 @@
 
       <p class="text-center type-style-p-small-regular">
         <a
-          data-name-prompt-skip
+          data-name-prompt-skip style="opacity: 0; pointer-events: none;"
           class="underline underline-offset-1"
           href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a>
       </p>
-
-
     </div>
   </div>
 
+    <!-- bag n bowl selection -->
+    <div class="{{ class }}__bagbowl fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50">
+    <div class="{{ class }}____bagbowl__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div class="{{ class }}____bagbowl__close absolute" id="bagNbowlclose">
+        {%- render 'icon' with 'close' -%}
+      </div>
+
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center type-style-h3-bold">Vælg indpakning</h3>
+        <p class="mb-3 text-center type-style-p-regular">Hvordan skal dette slikmiks pakkes?</p>
+      </div>
+
+      <div data-id="47811321463115" id="pak_ipose" class="pak_selection-upsell-item first-item" onclick="pak_ipose()">
+          <div class="pak_selection-box-button">
+              <label class="pak_selection-radio-container">
+                  <span class="pak_selection-checkmark"></span>
+              </label>
+              <label class="type-style-card-desc-bold">Pak i pose</label>
+          </div>
+          <div class="pak_selection-box-label">
+              <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/73fd3a59-eecf-42b9-9b50-8da0c2904713.png?v=1717052550" style="max-width: 80px;">
+          </div>
+      </div>
+      
+      <div data-id="47814435930443" id="pak_ibox" class="pak_selection-upsell-item first-item" onclick="pak_ibox()">
+          <div class="pak_selection-box-button">
+              <label class="pak_selection-radio-container">
+                  <span class="pak_selection-checkmark"></span>
+              </label>
+              <label class="type-style-card-desc-bold">Pak i bøtte <span>(+10 kr.)</span></label>
+          </div>
+          <div class="pak_selection-box-label">
+              <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/products/indpakning_boette.png?v=1655992456" style="max-width: 80px;">
+          </div>
+      </div>
+
+      <button
+        class="btn type-style-button-text" data-submit-button
+        type="button" id="addbagName">
+        Add bag name
+      </button>
+    </div>
+  </div>
+<!-- bag n bowl selection end  -->
+    
   {%- comment -%}
   Re Name prompt modal
   {%- endcomment -%}<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-ask-rename-prompt>
@@ -709,7 +919,7 @@
       <div class="btn-groups mt-3">
         <button
           class="btn type-style-button-text"
-          type="button"
+          type="button" disabled style="opacity: 0.5"
           data-ask-rename-submit>{{ "bland_selv.rename_prompt.accept" | t | strip_html }}</button>
 
         <button
@@ -730,7 +940,7 @@
       <p class="max-w-xs mb-1 font-body font-semibold text-2xl">{{ 'bland_selv.general.success' | t }}</p>
       <p class="mb-5 font-body">{{ 'bland_selv.general.what_now' | t }}</p>
       <div class="flex-button items-center justify-center">
-        <a href="https://www.slikekspressen.dk/collections/bland-selv-slik" class="btn btn-full-width mx-0 mb-2 type-style-button-text">{{ 'bland_selv.general.mix_again' | t }}</a>
+        <a href="/collections/{{ collection.handle }}" class="btn btn-full-width mx-0 mb-2 type-style-button-text" id="mixAgain">{{ 'bland_selv.general.mix_again' | t }}</a>
         <a
           data-component="cleanPose"
           href="/cart"
@@ -745,7 +955,89 @@
 
 {% render 'bland-selv-snippet' %}
 
+<script>
+    var jqmsg = document.createElement('script');
+    jqmsg.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+    jqmsg.onload = function() {
+      jQuery.noConflict();
+      jQuery(document).ready(function($) {
+        
+       
+        $('body').on('click', function() {
+          $('body').removeClass('drawer_locked3');
+        });
+        
+        $('#LeftbarColoseBagButton').click(function(){
+          $('body').addClass('openbagNbowl');
+          $('#pak_ibox').removeClass('selected');
+          $('#pak_ipose').removeClass('selected');
+          $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
+          $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+        });
+        $('#LeftbarColoseBagButtonPnM').click(function(){
+          $('body').addClass('openbagNbowl');
+          $('#pak_ibox').removeClass('selected');
+          $('#pak_ipose').removeClass('selected');
+          $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
+          $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+        });
+        $('#LeftbarColoseBagButtonMb').click(function(){
+          $('body').addClass('openbagNbowl');
+          $('#pak_ibox').removeClass('selected');
+          $('#pak_ipose').removeClass('selected');
+          $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
+          $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+        });
+        $('#bagNbowlclose').click(function(){
+          $('body').removeClass('openbagNbowl');
+        });
+        
+        $('[data-final-submit]').click(function(){
+          $('body').removeClass('openNameprompt');
+          $('body').removeClass('openreNameprompt');
+          $('body').removeClass('enableopenNameprompt');
+          $('#pak_ibox').removeClass('selected');
+          $('#pak_ipose').removeClass('selected');
+        });
+        $('[data-ask-rename-decline]').click(function(){
+          $('body').addClass('openreNameprompt');
+        });
+        $('[data-name-prompt-close]').click(function(){
+          $('body').removeClass('openNameprompt');
+          $('body').removeClass('enableopenNameprompt');
+        });
+        let selectedDataId = '';
 
+        window.pak_ipose = function() {
+          $('#pak_ibox').removeClass('selected');
+          $('#pak_ipose').addClass('selected');
+          $('body').addClass('enableopenNameprompt');
+          selectedDataId = '47811321463115';
+        };
+    
+        window.pak_ibox = function() {
+          $('#pak_ipose').removeClass('selected');
+          $('#pak_ibox').addClass('selected');
+          $('body').addClass('enableopenNameprompt');
+          selectedDataId = '47814435930443';
+        };
+
+        $('#addbagName').click(function(){
+          $('body').removeClass('openbagNbowl');
+          $('body').addClass('openNameprompt');
+          $(`[data-add-to-bag][data-id="${selectedDataId}"]`).click();
+          console.log(`${selectedDataId} clicked`);
+        });
+
+        $('#mixAgain').click(function(){
+          $(`[data-visual-bag] [data-remove]`).click();
+        });
+    
+      });
+    };
+
+    document.body.appendChild(jqmsg);
+</script> 
 <script>
 <!--remove sticky button when no products into the bag-->
       

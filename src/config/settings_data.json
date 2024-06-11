@@ -125,7 +125,7 @@
           "link": "",
           "order_before": "Vi sender dit slik om",
           "weekendtext": "<p>Vi sender slik på mandag<\/p>",
-          "holidaytext": "<p>Vi sender slik igen på torsdag!<\/p>",
+          "holidaytext": "",
           "show_countdown": true,
           "limitHrs": 14,
           "main_menu_link_list": "main-menu",
@@ -2074,10 +2074,10 @@
           "subheadline": "",
           "order_before": "Bestil indenfor",
           "weekendtext": "",
-          "holidaytext": "<p>Vi sender slik igen på torsdag!<\/p>",
+          "holidaytext": "",
           "button_text": "Bland selv slik",
           "button_destination": "shopify:\/\/collections\/bland-selv-slik",
-          "image": "shopify:\/\/shop_images\/Slikekspressen_11.png"
+          "image": "shopify:\/\/shop_images\/Untitled-1_6b34bf84-b681-4aa3-b024-8da07ddadc05.png"
         }
       },
       "product-slider": {

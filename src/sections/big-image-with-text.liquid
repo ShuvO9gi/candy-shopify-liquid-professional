@@ -1,10 +1,11 @@
 <style>
   .cus_banner--text{
     width: 50% !important;
+    justify-content: flex-start;
   }
   .cus_banner--img{
     width: 50% !important;
-    padding: 50px 100px;
+    padding: 50px 0px !important;
   }
   .cus_banner--img img{
     border-radius: 30px;
@@ -13,6 +14,7 @@
   @media only screen and (max-width: 767px) {
      .cus_banner--text{
     width: 100% !important;
+    justify-content: center !important;
   }
   .cus_banner--img{
     width: 100% !important;
@@ -41,12 +43,12 @@
     {% endif %}
   </div>
 {% endcapture %}
-
-<div class="section-container backgroundWallpaper twb-flex twb-flex-col-reverse md:twb-flex-row" style=" {% if section.settings.checkbgimagelarge %}background-image: url({{ section.settings.bgimagelarge | img_url: 'master' }});background-size: cover; background-repeat: no-repeat; background-position: center;{% else %}background-image: url({{ section.settings.bgimage | img_url: 'master' }});{% endif %}">
+<div class="section-container backgroundWallpaper">
+<div class="twb-container twb-flex twb-flex-col-reverse md:twb-flex-row" style="margin: 0 auto; {% if section.settings.checkbgimagelarge %}background-image: url({{ section.settings.bgimagelarge | img_url: 'master' }});background-size: cover; background-repeat: no-repeat; background-position: center;{% else %}background-image: url({{ section.settings.bgimage | img_url: 'master' }});{% endif %}">
   <div class="twb-block md:twb-hidden">
     {% render '2023-homepage-usp-mobile' %}
   </div>
-  <div class="twb-w-full md:twb-w-400 twb-flex twb-justify-center twb-items-center twb-mb-8 md:twb-mb-0 cus_banner--text">
+  <div class="twb-w-full md:twb-w-400 twb-flex twb-items-center twb-mb-8 md:twb-mb-0 cus_banner--text">
     <div class="twb-flex twb-flex-col twb-items-center md:twb-items-start">
       <h1 class="twb-text-white type-style-h1-regular twb-flex twb-flex-col twb-items-center md:twb-items-start twb-text-center md:twb-text-left">
         {{ section.settings.headline }}
@@ -73,6 +75,7 @@
         class: 'twb-rounded-3xl md:twb-rounded-none twb-w-4/5 md:twb-w-full twb-my-8 md:twb-my-0'
     }}
   </div>
+</div>
 </div>
 
 {% schema %}

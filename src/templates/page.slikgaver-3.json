@@ -159,7 +159,7 @@
             "headline": "Brug vores app",
             "content": "<p>Igennem vores app kan du vælge imellem mange forskellige gaveindpakninger og du kan vælge præcis det slik som modtageren er vild med. Vi sender også et håndskrevet kort med gaven<\/p>",
             "button_text": "Installer vores app",
-            "button_destination": "https:\/\/candyexpressb2c.page.link\/welcome",
+            "button_destination": "shopify:\/\/pages\/app-til-bland-selv",
             "image": "shopify:\/\/shop_images\/landing-page-img_app-gift.jpg",
             "paddingtop": 60,
             "paddingbottom": 60,

@@ -31,17 +31,17 @@ async function getAllProducts() {
 async function checkItemsExist(items) {
   let exists = true;
   let unAvailableProducts = [];
-  const allProducts = await getAllProducts();
+  // const allProducts = await getAllProducts();
 
-  items.forEach((item) => {
-    const product = allProducts.find((p) =>
-      p.variants.map((v) => v.id).includes(item.id)
-    );
-    if (!product) {
-      exists = false;
-      unAvailableProducts.push(item.id);
-    }
-  });
+  // items.forEach((item) => {
+  //   const product = allProducts.find((p) =>
+  //     p.variants.map((v) => v.id).includes(item.id)
+  //   );
+  //   if (!product) {
+  //     exists = false;
+  //     unAvailableProducts.push(item.id);
+  //   }
+  // });
 
   return { exists, unAvailableProducts };
 }

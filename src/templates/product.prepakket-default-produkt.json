@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-intro",
+      "settings": {
+        "contents": "{{ product.metafields.mix.contents_label.value }}"
+      }
+    },
+    "product_slider_7GVPab": {
+      "type": "product-slider",
+      "settings": {
+        "title": "Her er andre ideer",
+        "text1": "Gode ideer til andre produkter",
+        "text2": "",
+        "products": "mandelgaver"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_slider_7GVPab"
+  ]
+}

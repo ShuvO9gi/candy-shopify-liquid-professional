@@ -41,7 +41,7 @@ async function checkItemsExist(items) {
   //     exists = false;
   //     unAvailableProducts.push(item.id);
   //   }
-  // });
+  // }); 
 
   return { exists, unAvailableProducts };
 }

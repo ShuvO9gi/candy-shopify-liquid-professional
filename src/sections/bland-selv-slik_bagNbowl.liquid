@@ -742,7 +742,7 @@
         class="btn type-style-button-text"
         type="button"
         onclick="addPushEvent()"
-        data-final-submit>
+        data-final-submit disabled>
         {{ 'bland_selv.name_prompt.submit' | t }}
       </button>
 
@@ -872,6 +872,8 @@
           $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
           $('html').removeClass('drawer_locked3');
+          $(`[data-close-visual-bag]`).click();
+          $('[data-final-submit]').prop('disabled', true);
         });
         $('#LeftbarColoseBagButtonMb').click(function(){
           $('body').addClass('openbagNbowl');
@@ -879,6 +881,8 @@
           $('#pak_ipose').removeClass('selected');
           $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $(`[data-close-visual-bag]`).click();
+          $('[data-final-submit]').prop('disabled', true);
         });
         $('#bagNbowlclose').click(function(){
           $('body').removeClass('openbagNbowl');
@@ -923,6 +927,14 @@
 
         $('#mixAgain').click(function(){
           $(`[data-visual-bag] [data-remove]`).click();
+        });
+
+        $('[data-name-prompt-input]').on('input', function() {
+            if ($(this).val().trim() !== '') {
+                $('[data-final-submit]').prop('disabled', false);
+            } else {
+                $('[data-final-submit]').prop('disabled', true);
+            }
         });
     
       });

@@ -142,10 +142,6 @@ export default component((node, ctx) => {
       document.querySelectorAll("[data-submit-cart]").forEach((btn) => {
         btn.querySelector(".btn-text").innerHTML = "Gå til kurv";
       });
-
-      document.querySelectorAll("[data-submit-cart]").forEach((btn) => {
-        btn.querySelector(".btn-text").innerHTML = "Gå til kurv";
-      });
     }
   });
 

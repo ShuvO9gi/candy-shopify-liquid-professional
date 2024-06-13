@@ -250,7 +250,8 @@
   }
   .nextPageBtn{
     background: #C7F0BD;
-    max-width: fit-content;
+    max-width: 100%;
+    width: -webkit-fill-available;
     margin: 0 auto;
     padding: 12px 30px;
     border-radius: 8px;
@@ -263,6 +264,7 @@
     pointer-events: none;
     opacity: 0.8;
     align-items: center;
+    justify-content: center;
   }
   .giftprodselectedbody .nextPageBtn{
     pointer-events: auto !important;
@@ -273,7 +275,8 @@
   }
   .nextPageBtn3{
     background: #C7F0BD;
-    max-width: fit-content;
+    max-width: 100%;
+    width: -webkit-fill-available;
     margin: 0 auto;
     padding: 12px 30px;
     border-radius: 8px;
@@ -286,6 +289,7 @@
     align-items: center;
     pointer-events: none;
     opacity: 0.8;
+    justify-content: center;
   }
   .msgcarselected .nextPageBtn3{
     pointer-events: auto !important;
@@ -293,7 +297,8 @@
   }
   .nextPage2Btn{
     background: #C7F0BD;
-    max-width: fit-content;
+    max-width: 100%;
+    width: -webkit-fill-available;
     padding: 12px 30px;
     border-radius: 8px;
     font-size: 14px;
@@ -304,6 +309,7 @@
     transition: 0.3s ease-in-out;
     pointer-events: none;
     opacity: 0.8;
+    justify-content: center;
   }
   .candy-over .nextPage2Btn{
     pointer-events: auto !important;
@@ -318,6 +324,9 @@
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    height: 20px;
+    display: flex;
+    justify-content: center;
   }
   .prevPage2Btn{
     background: #fff;
@@ -328,6 +337,9 @@
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    height: 20px;
+    display: flex;
+    justify-content: center;
   }
   .nextPageBtn:hover{
     background: #fff;
@@ -341,6 +353,7 @@
   .page2Btn{
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   .page2Btn-inside{
     display: flex;
@@ -410,6 +423,8 @@
   }
   .rightSideBar {
     justify-content: center !important;
+    width: 340px !important;
+
 }
   .giftproduct-card{
     cursor: pointer;
@@ -445,6 +460,7 @@
   display: none;
 }
   .page3Btn{
+    width: 100%;
     display: none;
     flex-direction: column;
   }
@@ -463,16 +479,16 @@
     flex-direction: column;
   }
  .progress {
-  width: 100%;
+  width: 70%;
   -webkit-appearance: none;
   appearance: none;
   border: none;
   border-radius: 10px;
   height: 5px;
-  max-width: 200px;
+  max-width: 100%;
 }
   .page3Btn .progress {
-    max-width: 150px !important;
+    max-width: 100% !important;
 }
   .progressbar{
     display: flex;

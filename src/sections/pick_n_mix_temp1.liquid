@@ -396,7 +396,7 @@
   [data-product-item-id="47814435930443"]{
     visibility: hidden;
   }
-  @media only screen and (min-width: 768px){
+  @media only screen and (min-width: 767px){
     #shopify-section-pick_n_mix_temp1 .barSeeBagButton{
       display: none;
     }
@@ -407,8 +407,11 @@
 #shopify-section-pick_n_mix_temp1 .bland-selv-slik__visual-bag-desktop{
     z-index: 11 !important;
     position: sticky;
-    top: 125px;
+    top: 150px;
 } 
+#shopify-section-pick_n_mix_temp1 .drawer_2_content_product_minus span, .drawer_2_content_product_plus span {
+    transform: unset !important;
+}
   #shopify-section-pick_n_mix_temp1 .candyItems {
     grid-template-columns: 1fr 1fr 1fr !important;
 }
@@ -688,7 +691,7 @@
                         <div class="{{ class }}__visual-bag__closeBtn">
                            <button id="LeftbarColoseBagButton" class="barColoseBagButton type-style-button-text cursor-pointer" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
                       </div>
-                        <div class="custom-scrollbar" data-custom-scrollbar></div>'
+                        <div class="custom-scrollbar" data-custom-scrollbar></div>
                       </div>
                     </div>
                   </div>
@@ -842,7 +845,7 @@
         class="btn type-style-button-text"
         type="button"
         onclick="addPushEvent()"
-        data-final-submit>
+        data-final-submit disabled>
         {{ 'bland_selv.name_prompt.submit' | t }}
       </button>
 
@@ -973,6 +976,7 @@
           $('#pak_ipose').removeClass('selected');
           $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('[data-final-submit]').prop('disabled', true);
         });
         $('#LeftbarColoseBagButtonPnM').click(function(){
           $('body').addClass('openbagNbowl');
@@ -980,6 +984,7 @@
           $('#pak_ipose').removeClass('selected');
           $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('[data-final-submit]').prop('disabled', true);
         });
         $('#LeftbarColoseBagButtonMb').click(function(){
           $('body').addClass('openbagNbowl');
@@ -987,6 +992,7 @@
           $('#pak_ipose').removeClass('selected');
           $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('[data-final-submit]').prop('disabled', true);
         });
         $('#bagNbowlclose').click(function(){
           $('body').removeClass('openbagNbowl');
@@ -1031,6 +1037,14 @@
 
         $('#mixAgain').click(function(){
           $(`[data-visual-bag] [data-remove]`).click();
+        });
+
+        $('[data-name-prompt-input]').on('input', function() {
+            if ($(this).val().trim() !== '') {
+                $('[data-final-submit]').prop('disabled', false);
+            } else {
+                $('[data-final-submit]').prop('disabled', true);
+            }
         });
     
       });

@@ -75,41 +75,6 @@ export default function visualCandyBag(
 
       console.log(candy);
 
-      //   return `
-      // <li class="mb-4 last:mb-0 pb-5 sm:pb-0 sm:last:pb-0 border-b sm:border-b-0 border-lightPink last:border-b-0" data-bag-item>
-      // 	<div class="flex flex-wrap items-center">
-      // 		<div class="flex items-center justify-center sm:justify-start w-full sm:w-1/3 mb-5 sm:mb-0 bag-item-left">
-      // 			<img class="block w-[90px] mr-[10px]" src="${img}" alt="${title}">
-
-      // 			<div>
-      // 				<p class="text-purple font-heading font-bold text-sm">${title}</p>
-      // 				<p class="text-pink font-heading font-bold text-sm">Ca. <span data-item-count-elem>${amount * count}</span> ${theme.strings.blandSelv.stks}</p>
-      // 			</div>
-      // 		</div>
-
-      // 		<div class="w-full sm:w-1/2 px-2 sm:border-l sm:border-lightPink">
-      // 			<div class="flex items-center justify-between relative">
-      // 				<div class="pr-2 cursor-pointer" data-info-icon>${infoIcon()}</div>
-
-      // 				<div class="bag-candyBoxBuyButtonClicked candyBoxBuyButtonClicked" data-qty-wrapper data-qty-id="${id}">
-      // 					<div data-qty-minus="" class="buttonMinusPlus cursor-pointer">
-      // 						<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="13" fill="#FFAD05"/><rect x="7" y="14" width="2" height="12" rx="0.5" transform="rotate(-90 7 14)" fill="white"/></svg>
-      // 					</div>
-      // 					<div class="candySizes" tracking-wide="">
-      // 						<div class="candySizesAmount type-style-card-desc-bold" data-amount-container="">For <span data-qty-amount data-init-price="${initPrice}" data-init-weight="${initWeight}"> ${weight} </span>${theme.strings.blandSelv.gram}.</div>
-      // 					</div>
-      // 					<div data-qty-plus="" class="buttonMinusPlus cursor-pointer">
-      // 						<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="13" transform="matrix(-1 0 0 1 26 0)" fill="#FFAD05"/><rect x="12" y="7" width="2" height="12" rx="0.5" fill="white"/><rect x="7" y="14" width="2" height="12" rx="0.5" transform="rotate(-90 7 14)" fill="white"/></svg>
-      // 					</div>
-      // 				</div>
-
-      // 				<div class="bland-selv-slik__visual-bag__close pl-2 cursor-pointer" data-remove>${closeIcon()}</div>
-      // 			</div>
-      // 		</div>
-      // 	</div>
-      // </li>
-      //   `;
-
       return `
 	<li class="mb-4 last:mb-0 sm:pb-0 sm:last:pb-0 sm:border-b-0 border-lightPink last:border-b-0" data-bag-item>
     <div class="drawer_2_content_product_shopAdjust" data-qty-wrapper data-qty-id="${id}">
@@ -329,6 +294,12 @@ export default function visualCandyBag(
         priceLimit,
         submitBtns
       );
+
+      if (candyBag.length === 0) {
+        document
+          .querySelector("[data-submit-button]")
+          .setAttribute("disabled", true);
+      }
       ctx.emit("products:refetch");
     });
   });

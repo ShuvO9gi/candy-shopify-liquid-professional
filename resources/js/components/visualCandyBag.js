@@ -246,6 +246,12 @@ export default function visualCandyBag(
         priceLimit,
         submitBtns
       );
+      if (candyBag.length === 0) {
+        document
+          .querySelector("[data-submit-button]")
+          .setAttribute("disabled", true);
+          ctx.emit("products:refetch");
+      }
     });
   });
 

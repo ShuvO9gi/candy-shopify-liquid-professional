@@ -377,6 +377,12 @@ export default component((node, ctx) => {
             submitBtns
           );
         }
+        else {
+          node
+            .querySelector("[data-submit-button]")
+            .setAttribute("disabled", true);
+            ctx.emit("products:refetch");
+        }
       });
     });
     

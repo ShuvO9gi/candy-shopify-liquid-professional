@@ -381,8 +381,8 @@ export default component((node, ctx) => {
           node
             .querySelector("[data-submit-button]")
             .setAttribute("disabled", true);
-            ctx.emit("products:refetch");
         }
+        ctx.emit("products:fetched", ctx.getState());
       });
     });
     

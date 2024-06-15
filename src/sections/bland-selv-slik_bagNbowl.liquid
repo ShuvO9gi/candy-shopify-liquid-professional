@@ -581,7 +581,7 @@
             </div>
           {%- endif -%}
 
-          <div class="filter-container sticky top-[150px] bg-white z-10" style="z-index: 12; position: sticky; top: 150px; width: max-content; margin-bottom: 36px;">
+          {% comment %} <div class="filter-container sticky top-[150px] bg-white z-10" style="z-index: 12; position: sticky; top: 150px; width: max-content; margin-bottom: 36px;">
             <div class="filter-items-wrapper overflow-x-auto whitespace-nowrap">
               <div class="flex space-x-4" style="gap: 8px;">
               {%- for b in section.blocks -%}
@@ -609,6 +609,13 @@
                 {%- endcase -%}
               {%- endfor -%}
             </div>
+            </div> {% endcomment %}
+
+            <div class="filter-container sticky top-[150px] bg-white z-10" style="z-index: 12; position: sticky; top: 150px; width: max-content; margin-bottom: 36px;">
+              <div class="scroll-icon left-scroll hidden absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer p-2">
+                &#10094;
+              </div>
+              
             </div>
           </div>
 

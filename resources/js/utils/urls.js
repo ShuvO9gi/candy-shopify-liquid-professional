@@ -8,6 +8,9 @@ export function setUrlParams(parameters) {
   });
 
   //window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`)
+
+  // If no parameters are left, remove the '?'
+  const newSearch = params.toString();
 }
 
 export function deleteUrlParams(paramName) {

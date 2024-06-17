@@ -1153,6 +1153,13 @@ export default component((node, ctx) => {
         const filteredProducts = products.filter((product) =>
           product.tags.includes(category)
         );
+
+        if (filteredProducts.length > 0) {
+          categorizedHTML += `
+          <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${showCategory}</h2>
+          <div class="candyItems">${renderProducts(filteredProducts)}</div>
+      `;
+        }
       });
 
       return categorizedHTML;

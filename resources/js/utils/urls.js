@@ -33,5 +33,7 @@ export function deleteUrlParams(paramName) {
   const newSearch = params.toString();
   if (newSearch) {
     window.history.replaceState({}, "", `${url.pathname}?${newSearch}`);
+  } else {
+    window.history.replaceState({}, "", url.pathname);
   }
 }

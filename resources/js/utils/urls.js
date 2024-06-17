@@ -12,6 +12,11 @@ export function setUrlParams(parameters) {
   // If no parameters are left, remove the '?'
   const newSearch = params.toString();
   if (newSearch) {
+    window.history.replaceState(
+      {},
+      "",
+      `${window.location.pathname}?${newSearch}`
+    );
   }
 }
 

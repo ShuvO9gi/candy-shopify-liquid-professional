@@ -1162,6 +1162,10 @@ export default component((node, ctx) => {
         }
       });
 
+      const uncategorizedProducts = products.filter(
+        (product) => !product.tags.some((tag) => categoryId.includes(tag))
+      );
+
       return categorizedHTML;
     };
 

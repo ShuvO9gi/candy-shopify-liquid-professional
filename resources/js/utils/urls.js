@@ -17,6 +17,8 @@ export function setUrlParams(parameters) {
       "",
       `${window.location.pathname}?${newSearch}`
     );
+  } else {
+    window.history.replaceState({}, "", url.pathname);
   }
 }
 

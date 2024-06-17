@@ -27,6 +27,6 @@ export function deleteUrlParams(paramName) {
   const params = new URLSearchParams(url.search);
 
   params.delete(paramName);
-  url.search = params.toString();
-  window.history.replaceState(null, null, url.href);
+  // url.search = params.toString();
+  // window.history.replaceState(null, null, url.href);
 }

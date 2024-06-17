@@ -30,6 +30,7 @@ export function deleteUrlParams(paramName) {
   // url.search = params.toString();
   // window.history.replaceState(null, null, url.href);
 
+  // If no parameters are left, remove the '?'
   const newSearch = params.toString();
   if (newSearch) {
     window.history.replaceState({}, "", `${url.pathname}?${newSearch}`);

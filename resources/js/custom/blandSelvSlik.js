@@ -1278,38 +1278,6 @@ export default component((node, ctx) => {
     // if (state.hasFilters) ctx.emit("filter:start");
     // else productListElem.innerHTML = renderProducts(state.allProducts);
 
-    const categorizedProducts = (products) => {
-      let categorizedHTML = "";
-
-      categoryId.forEach((category) => {
-        const showCategory = categoryMap[category];
-
-        const filteredProducts = products.filter((product) =>
-          product.tags.includes(category)
-        );
-
-        if (filteredProducts.length > 0) {
-          categorizedHTML += `
-          <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">${showCategory}</h2>
-          <div class="candyItems">${renderProducts(filteredProducts)}</div>
-      `;
-        }
-      });
-
-      const uncategorizedProducts = products.filter(
-        (product) => !product.tags.some((tag) => categoryId.includes(tag))
-      );
-
-      if (uncategorizedProducts.length > 0) {
-        categorizedHTML += `
-      <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px;">Other</h2>
-      <div class="candyItems">${renderProducts(uncategorizedProducts)}</div>
-    `;
-      }
-
-      return categorizedHTML;
-    };
-
     if (state.hasFilters) ctx.emit("filter:start");
     else productListElem.innerHTML = categorizedProducts(state.allProducts);
 

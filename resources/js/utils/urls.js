@@ -11,6 +11,8 @@ export function setUrlParams(parameters) {
 
   // If no parameters are left, remove the '?'
   const newSearch = params.toString();
+  if (newSearch) {
+  }
 }
 
 export function deleteUrlParams(paramName) {

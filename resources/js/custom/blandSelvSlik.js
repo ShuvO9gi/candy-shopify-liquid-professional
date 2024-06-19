@@ -1147,6 +1147,10 @@ export default component((node, ctx) => {
       categoryMap[filterId] = filterName;
     });
 
+    const categoryMapAll = {};
+
+    filterNameAll.forEach((item) => {});
+
     //Categorized filtering
     const categorizedProducts = (products) => {
       let categorizedHTML = "";

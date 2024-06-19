@@ -1212,7 +1212,7 @@ export default component((node, ctx) => {
       if (isAnyFilterActive) {
         const filteredProducts = allFilters[0]?.activeTypes
           .map((title) => {
-            const showTitle = categoryMap[title];
+            const showTitle = categoryMapAll[title];
 
             let filteredProductsHTML = "";
             const filteredItems = unique.filter((item) =>

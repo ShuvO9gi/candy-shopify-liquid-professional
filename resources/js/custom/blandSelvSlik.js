@@ -1151,6 +1151,8 @@ export default component((node, ctx) => {
 
     filterNameAll.forEach((item) => {
       const filterName = item.dataset.filterName;
+      const filterId = item.dataset.filterId;
+      categoryMapAll[filterId] = filterName;
     });
 
     //Categorized filtering

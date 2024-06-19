@@ -1129,6 +1129,9 @@ export default component((node, ctx) => {
 
     // import json data
     const filterJson = document.querySelectorAll("[data-filter-json-name]");
+    const filterNameAll = document.querySelectorAll(
+      "[data-filter-json-name-all]"
+    );
 
     const categoryName = [];
     const categoryId = [];

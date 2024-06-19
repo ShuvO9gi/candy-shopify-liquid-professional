@@ -1149,7 +1149,9 @@ export default component((node, ctx) => {
 
     const categoryMapAll = {};
 
-    filterNameAll.forEach((item) => {});
+    filterNameAll.forEach((item) => {
+      const filterName = item.dataset.filterName;
+    });
 
     //Categorized filtering
     const categorizedProducts = (products) => {

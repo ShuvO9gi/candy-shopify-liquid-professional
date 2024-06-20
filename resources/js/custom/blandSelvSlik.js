@@ -64,6 +64,7 @@ export default component((node, ctx) => {
   const loadMoreBtn = node.querySelector("[data-load-more]");
   const visualBagElem = node.querySelector("[data-visual-bag]");
   const visualBagToggleBtns = node.querySelectorAll("[data-toggle-visual-bag]");
+  const mixAgainButton = document.getElementById("mixAgain");
   const visualBagWrapper = node.querySelector("[data-visual-bag-wrapper]");
   const visualBagInner = node.querySelector("[data-visual-bag-inner]");
   const closeVisualBagBtn = node.querySelector("[data-close-visual-bag]");
@@ -93,7 +94,7 @@ export default component((node, ctx) => {
 
   ctx.on("products:reload", (state) => {
     window.localStorage.removeItem("candybag");
-    fromLocalStorage = JSON.parse(window.localStorage.getItem("candybag"));
+
     const itemInners = node.querySelectorAll("[data-item-inner]");
     itemInners.forEach((wrapper, i) => {
       wrapper.classList.remove("is--selected");
@@ -232,7 +233,7 @@ export default component((node, ctx) => {
       candy.amount = Number(amount);
       candy.count = 1;
       candy.img = image;
-      
+
       // const { cart: activeCarts } = ctx.getState();
       // console.log({activeCarts});
       // const itemTitles= activeCarts.items.map((item) => item.title);
@@ -309,6 +310,15 @@ export default component((node, ctx) => {
 
     selectProduct();
 
+    mixAgainButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.localStorage.removeItem("candybag");
+      ctx.emit("products:refetch");
+      const successModal = document.querySelector("[data-success-modal]");
+
+      successModal.classList.remove("is--visible");
+    });
+
     // Add amount to bag
     plusBtns.forEach((plusBtn, i) => {
       plusBtn.addEventListener("click", (e) => {
@@ -376,8 +386,7 @@ export default component((node, ctx) => {
             priceLimit,
             submitBtns
           );
-        }
-        else {
+        } else {
           node
             .querySelector("[data-submit-button]")
             .setAttribute("disabled", true);
@@ -385,7 +394,7 @@ export default component((node, ctx) => {
         ctx.emit("products:fetched", ctx.getState());
       });
     });
-    
+
     // Toggle visual bag
     visualBagToggleBtns.forEach((visualBagToggleBtn) => {
       visualBagToggleBtn.addEventListener("click", (e) => {
@@ -519,7 +528,7 @@ export default component((node, ctx) => {
                     note2,
                     note3
                   );
-                  console.log('items', {items});
+                  console.log("items", { items });
                   if (items.length > 0) {
                     // Submit the list to the cart
                     submitBagToCart(

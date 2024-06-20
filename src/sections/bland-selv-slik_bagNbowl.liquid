@@ -337,10 +337,10 @@
   z-index: 999;
 }
   [data-product-item-id="47811321463115"]{
-    visibility: hidden;
+    display: none !important;
   }
   [data-product-item-id="47814435930443"]{
-    visibility: hidden;
+    display: none !important;
   } 
   .openbagNbowl .bland-selv-slik__sticky{
    z-index: 11 !important;
@@ -840,7 +840,7 @@
       <p class="max-w-xs mb-1 font-body font-semibold text-2xl">{{ 'bland_selv.general.success' | t }}</p>
       <p class="mb-5 font-body">{{ 'bland_selv.general.what_now' | t }}</p>
       <div class="flex-button items-center justify-center">
-        <a class="btn btn-full-width mx-0 mb-2 type-style-button-text" id="mixAgain">{{ 'bland_selv.general.mix_again' | t }}</a>
+        <a href="/collections/{{ collection.handle }}" class="btn btn-full-width mx-0 mb-2 type-style-button-text" id="mixAgain">{{ 'bland_selv.general.mix_again' | t }}</a>
         <a
           data-component="cleanPose"
           href="/cart"
@@ -925,10 +925,9 @@
           console.log(`${selectedDataId} clicked`);
         });
 
-        // $('#mixAgain').click(function(){
-        //   $(`[data-visual-bag] [data-remove]`).click();
-        //   window.location.reload();
-        // });
+        $('#mixAgain').click(function(){
+          $(`[data-visual-bag] [data-remove]`).click();
+        });
 
         $('[data-name-prompt-input]').on('input', function() {
             if ($(this).val().trim() !== '') {

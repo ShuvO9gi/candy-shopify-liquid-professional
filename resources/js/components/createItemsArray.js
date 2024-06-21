@@ -6,20 +6,18 @@ export default function createItemsArray(
   note2,
   note3
 ) {
-  console.log('candyBag: ', {candyBag});
-  const items = candyBag.map((item) => { 
-    console.log({item});
-    if (["pack in bag", "pack in bowl"].includes(item.title)){
+  const items = candyBag.map((item) => {
+    if (["pack in bag", "pack in bowl"].includes(item.title)) {
       return {
         quantity: item.count,
         id: item.id,
         properties: {
-          _bag_type: 'pick_and_mix',
+          _bag_type: "pick_and_mix",
           Name: `${name}`,
           ID: `${identifier}`,
           Amount: `${item.amount}`,
-          name: 'Pak', 
-          value: true
+          name: "Pak",
+          value: true,
         },
       };
     }
@@ -27,7 +25,7 @@ export default function createItemsArray(
       quantity: item.count,
       id: item.id,
       properties: {
-        _bag_type: note3 ? 'gift' : 'pick_and_mix',
+        _bag_type: note3 ? "gift" : "pick_and_mix",
         Name: `${name}`,
         ID: `${identifier}`,
         Amount: `${item.amount}`,

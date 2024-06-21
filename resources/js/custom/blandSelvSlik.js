@@ -310,13 +310,18 @@ export default component((node, ctx) => {
 
     selectProduct();
 
-    mixAgainButton.addEventListener("click", (e) => {
+    mixAgainButton?.addEventListener("click", (e) => {
       e.preventDefault();
       window.localStorage.removeItem("candybag");
       ctx.emit("products:refetch");
       const successModal = document.querySelector("[data-success-modal]");
 
       successModal.classList.remove("is--visible");
+      document.querySelector("[data-gram-elem]").innerHTML = "";
+      document.querySelector("[data-gram-elem-mobile]").innerHTML = "";
+      document.querySelector("[data-total-price-elem]").innerHTML = "";
+      document.querySelector("[data-total-price-elem-mobile]").innerHTML = "";
+      document.querySelector("[data-visual-bag]").innerHTML = "";
     });
 
     // Add amount to bag
@@ -573,8 +578,21 @@ export default component((node, ctx) => {
               note2,
               note3
             );
+
             if (items.length > 0) {
               // Submit the list to the cart
+              const isPickNMix = items.find((item) =>
+                item.properties._bag_type.includes("pick_and_mix")
+              );
+              if (isPickNMix) {
+                const bagNBowlItem = items.find(
+                  (item) => item.properties.name === "Pak"
+                );
+                if (!bagNBowlItem) {
+                  document.body.classList.add("openbagNbowl");
+                  return;
+                }
+              }
               submitBagToCart(
                 items,
                 successPopup,

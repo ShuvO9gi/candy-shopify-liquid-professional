@@ -689,8 +689,8 @@
               <div class="scroll-icon right-scroll hidden right-0 top-1/2 transform -translate-y-1/2 p-2">
                 &#10095;
               </div>
-              <div class="relative filter-items-wrapper overflow-x-auto whitespace-nowrap mr-8 ml-8" style="margin-left: 32px; margin-right: 32px;">
-                <div class="flex space-x-4 filter-items" style="gap: 8px; white-space: nowrap;">
+              <div class="relative filter-items-wrapper">
+                <div class="flex filter-items">
                   {%- for b in section.blocks -%}
                     {%- case b.type -%}
                       {%- when 'filter_type' -%}

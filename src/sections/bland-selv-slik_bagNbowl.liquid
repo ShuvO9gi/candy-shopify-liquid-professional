@@ -711,7 +711,10 @@
                           data-filter-id="{{ filter_id }}"
                           data-filter-name="{{ filter_name }}">
                           <span class="selected-item-header">{{ filter_name | capitalize }}</span>
-                          
+                          <div class="selected-item-img">
+                            <img src="{{ 'chocolate.svg' | asset_url }}" alt="Chocolate" loading="eager">
+                            
+                          </div>
                         </div>
                       {%- endif -%}
                     {%- endcase -%}

@@ -4,7 +4,7 @@ import closeIcon from "./closeIcon";
 import infoIcon from "./infoIcon";
 
 const deleteCandyItem = (item, candyBag, candyId, correspondingItem) => {
-  item.parentNode.removeChild(item);
+  item.parentNode?.removeChild(item);
   const index = candyBag.indexOf(candyBag.find((bag) => bag.id === candyId));
   candyBag.splice(index, 1);
   correspondingItem !== undefined

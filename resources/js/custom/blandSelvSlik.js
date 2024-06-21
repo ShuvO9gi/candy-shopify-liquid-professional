@@ -310,13 +310,18 @@ export default component((node, ctx) => {
 
     selectProduct();
 
-    mixAgainButton.addEventListener("click", (e) => {
+    mixAgainButton?.addEventListener("click", (e) => {
       e.preventDefault();
       window.localStorage.removeItem("candybag");
       ctx.emit("products:refetch");
       const successModal = document.querySelector("[data-success-modal]");
 
       successModal.classList.remove("is--visible");
+      document.querySelector("[data-gram-elem]").innerHTML = "";
+      document.querySelector("[data-gram-elem-mobile]").innerHTML = "";
+      document.querySelector("[data-total-price-elem]").innerHTML = "";
+      document.querySelector("[data-total-price-elem-mobile]").innerHTML = "";
+      document.querySelector("[data-visual-bag]").innerHTML = "";
     });
 
     // Add amount to bag

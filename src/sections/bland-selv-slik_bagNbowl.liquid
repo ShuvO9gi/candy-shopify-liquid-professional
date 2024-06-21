@@ -710,7 +710,8 @@
                           data-filter-type="{{ filter_type }}"
                           data-filter-id="{{ filter_id }}"
                           data-filter-name="{{ filter_name }}">
-                          {{ filter_name | capitalize }}
+                          <span class="selected-item-header">{{ filter_name | capitalize }}</span>
+                          
                         </div>
                       {%- endif -%}
                     {%- endcase -%}

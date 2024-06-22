@@ -1000,7 +1000,9 @@ export default component((node, ctx) => {
     const selectedItems = document.querySelectorAll(".selected-item");
 
     selectedItems.forEach((item) => {
-      item.addEventListener("click", () => {});
+      item.addEventListener("click", () => {
+        item.classList.toggle("selected");
+      });
     });
   });
 

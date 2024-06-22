@@ -999,7 +999,9 @@ export default component((node, ctx) => {
   document.addEventListener("DOMContentLoaded", () => {
     const selectedItems = document.querySelectorAll(".selected-item");
 
-    selectedItems.forEach((item) => {});
+    selectedItems.forEach((item) => {
+      item.addEventListener("click", () => {});
+    });
   });
 
   const renderProducts = (products) => {

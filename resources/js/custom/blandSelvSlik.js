@@ -996,6 +996,10 @@ export default component((node, ctx) => {
   // Initialize scroll icons visibility
   updateScrollIcons();
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const selectedItems = document.querySelectorAll(".selected-item");
+  });
+
   const renderProducts = (products) => {
     console.log("renderProducts", products);
     const url = new URL(window.location.href);

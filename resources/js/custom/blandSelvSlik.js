@@ -996,6 +996,7 @@ export default component((node, ctx) => {
   // Initialize scroll icons visibility
   updateScrollIcons();
 
+  //Toggle style for selected item
   document.addEventListener("DOMContentLoaded", () => {
     const selectedItems = document.querySelectorAll(".selected-item");
 

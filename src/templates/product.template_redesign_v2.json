@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-intro",
+      "settings": {
+        "contents": "{{ product.metafields.mix.contents_label.value }}"
+      }
+    },
+    "2023_number_bullets_DRMcrc": {
+      "type": "2023-number-bullets",
+      "blocks": {
+        "collection_QeMdE7": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>EM Bøtte fyldt med frisk og lækkert slik<\/p>"
+          }
+        },
+        "collection_bLjd6J": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Danmark solbriller<\/p>"
+          }
+        },
+        "collection_mfbNJE": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Danmark kappe<\/p>"
+          }
+        },
+        "collection_683phY": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Oppustelige klappere<\/p>"
+          }
+        },
+        "collection_iEimeG": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>En stift med rød og hvid ansigtsmaling<\/p>"
+          }
+        },
+        "collection_QKgt84": {
+          "type": "collection",
+          "settings": {
+            "content": "<p>Danmark paryk<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_QeMdE7",
+        "collection_bLjd6J",
+        "collection_mfbNJE",
+        "collection_683phY",
+        "collection_iEimeG",
+        "collection_QKgt84"
+      ],
+      "settings": {
+        "headline": "<p>Fodboldpakken indeholder:<\/p>",
+        "button_text": "",
+        "button_destination": "",
+        "image": "shopify:\/\/shop_images\/PRODUKTBILLEDE_04.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2023_number_bullets_DRMcrc"
+  ]
+}

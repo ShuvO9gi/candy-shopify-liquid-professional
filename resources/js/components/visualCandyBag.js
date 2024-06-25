@@ -262,6 +262,10 @@ export default function visualCandyBag(
         document
           .querySelector("[data-submit-button]")
           .setAttribute("disabled", true);
+
+        document
+          .getElementById("LeftbarColoseBagButtonMb")
+          .setAttribute("disabled", true);
       }
       ctx.emit("products:fetched", ctx.getState());
     });
@@ -330,6 +334,11 @@ export default function visualCandyBag(
         document
           .querySelector("[data-submit-button]")
           .setAttribute("disabled", true);
+
+        document
+          .getElementById("LeftbarColoseBagButtonMb")
+          .setAttribute("disabled", true);
+
       }
     });
   });

@@ -1,4 +1,11 @@
 {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+<style>
+@media (max-width: 399px){
+.sa-upsell-offer__detail__items{
+   max-height: 360px;
+}
+}
+</style>
 <script id="sl-CartTemplate-items" type="text/template">
 	{% raw %}
 	{% if items.size > 0 %}

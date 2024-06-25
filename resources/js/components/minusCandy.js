@@ -9,7 +9,6 @@ export default function minusCandy(
   submitBtns,
   i
 ) {
-  console.log("here!!!");
   const gramElem = document.querySelector("[data-gram-elem]");
   const gramElemMobile = document.querySelector("[data-gram-elem-mobile]");
   const totalPriceElem = document.querySelector("[data-total-price-elem]");

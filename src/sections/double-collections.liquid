@@ -947,7 +947,7 @@
                 
               <div class="rightSideBar" style="width: 100%;">
               <input type="hidden" value="gift" id="GiftChecker">
-              {%- comment -%}<button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>{%- endcomment -%}
+              {% comment %} <button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button> {% endcomment %}
                 <div class="nextPage">
                   <div class="progressbar"><progress class="progress progress1" max="100" value="33"></progress><span></span>Trin 1 af 3</div>
                   <div class="nextPageBtn" onclick="nextPage();">{{section.settings.step1btn_title}} <span><img class="nextPageBtnImg" src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"></span></div>
@@ -957,7 +957,7 @@
                   <div class="progressbar"><progress class="progress progress2" max="100" value="66"></progress><span></span>Trin 2 af 3</div>
                   <div class="page2Btn-inside">
                      <div class="prevPageBtn" onclick="prevPage();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
-                     <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn"  onclick="nextPage2();" >{{section.settings.step2_nextbtntext}}</button>
+                     <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn" >{{section.settings.step2_nextbtntext}}</button>
                   </div> 
                 </div>
     
@@ -1449,12 +1449,16 @@ if (window.history.replaceState) {
         const cus_modal = document.querySelector(".cus_modal");
         cus_modal.classList.remove("cus_modal-active");
         var dataId = $('.autofillbtn').data('id');
+        
           var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
+          
           if (candyButton.length > 0) {
+            
               candyButton.click();
           } else {
               console.error("Button not found with data-id:", dataId);
           }
+          
         }
 
         $('.giftproduct-card').each(function() {
@@ -1527,13 +1531,23 @@ if (window.history.replaceState) {
     }
 
   function nextPage3() {
-    $('[data-remove]').each(function() {
-        var qtyId = $(this).attr('data-qty-id');
-        var dataId = $('.autofillbtn').data('id');
-        if (qtyId != dataId && qtyId != "47473208525131" && qtyId != "47473245585739") {
-            $(this).click();
-        }
-    });
+    let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
+    var dataId = $('.autofillbtn').data('id');
+    const dataArray= [dataId, 47473208525131, 47473245585739];
+    
+    // $('[data-remove]').each(function() {
+    //     var qtyId = $(this).attr('data-qty-id');
+        
+        
+    //     if (qtyId != dataId && qtyId != "47473208525131" && qtyId != "47473245585739" && candyBag && candyBag.length > 0) {
+    //         candyBag.filter(item => item.id != qtyId);
+    //     }
+    // });
+  
+    if(candyBag && candyBag.length > 0){
+        candyBag=candyBag.filter(item => dataArray.includes(item.id));
+    }
+    window.localStorage.setItem('candybag', JSON.stringify(candyBag));
     setTimeout(function() {
         $('[data-final-submit]').click();
     }, 100);

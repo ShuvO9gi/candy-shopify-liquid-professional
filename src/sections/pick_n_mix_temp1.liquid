@@ -530,6 +530,12 @@
   .bland-selv-slik____bagbowl__inner p{
     font-size: 14px !important;
   }
+  html.drawer_locked3 .bland-selv-slik__sticky {
+    z-index: 99999 !important;
+  }
+  html.drawer_locked3 .bland-selv-slik__visual-bag{
+    z-index: 9999 !important;
+  }
 }
  
 </style>
@@ -808,7 +814,7 @@
                   <button class="barSeeBagButton cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
                   <button
                     class="barColoseBagButton cursor-pointer"
-                    disabled
+                    disabled id="LeftbarColoseBagButtonMb"
                     data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
                 </div>
               </div>
@@ -986,6 +992,8 @@
           $('#pak_ipose').removeClass('selected');
           // $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           // $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('html').removeClass('drawer_locked3');
+          $(`[data-close-visual-bag]`).click();
           $('[data-final-submit]').prop('disabled', true);
         });
         $('#LeftbarColoseBagButtonPnM').click(function(){
@@ -994,6 +1002,8 @@
           $('#pak_ipose').removeClass('selected');
           // $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           // $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('html').removeClass('drawer_locked3');
+          $(`[data-close-visual-bag]`).click();
           $('[data-final-submit]').prop('disabled', true);
         });
         $('#LeftbarColoseBagButtonMb').click(function(){
@@ -1002,6 +1012,8 @@
           $('#pak_ipose').removeClass('selected');
           // $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
           // $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          $('html').removeClass('drawer_locked3');
+          $(`[data-close-visual-bag]`).click();
           $('[data-final-submit]').prop('disabled', true);
         });
         $('#bagNbowlclose').click(function(){

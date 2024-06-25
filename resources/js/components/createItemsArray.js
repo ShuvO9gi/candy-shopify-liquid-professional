@@ -6,6 +6,7 @@ export default function createItemsArray(
   note2,
   note3
 ) {
+  if (!candyBag || !candyBag.length) return [];
   const items = candyBag.map((item) => {
     if (["pack in bag", "pack in bowl"].includes(item.title)) {
       return {

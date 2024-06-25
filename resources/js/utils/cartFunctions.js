@@ -109,7 +109,6 @@ export function updateDrawerLineItem(obj) {
 }
 
 export function updateLineItem(obj) {
-  console.log(obj);
   return fetch("/cart/update.js", {
     method: "POST",
     credentials: "include",

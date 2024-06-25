@@ -73,8 +73,6 @@ export default function visualCandyBag(
         weight,
       } = candy;
 
-      console.log(candy);
-
       return `
 	<li class="mb-4 last:mb-0 sm:pb-0 sm:last:pb-0 sm:border-b-0 border-lightPink last:border-b-0" data-bag-item>
     <div class="drawer_2_content_product_shopAdjust" data-qty-wrapper data-qty-id="${id}">
@@ -202,7 +200,7 @@ export default function visualCandyBag(
         (item) => Number(item.dataset.productItemId) == candyId
       );
 
-      if (candyBag.find((bag) => bag.id === candyId).count > 1) {
+      if (candyBag.find((bag) => bag.id === candyId)?.count > 1) {
         candyBag.find((bag) => bag.id === candyId).count -= 1;
         candyBag.find((bag) => bag.id === candyId).price =
           initPrice * candyBag.find((bag) => bag.id === candyId).count;
@@ -251,17 +249,32 @@ export default function visualCandyBag(
       );
 
       if (bagNBowlItems?.length && bagNBowlItems?.length === candyBag.length) {
-        document
-          .querySelector(`[data-qty-id="47811321463115"] [data-qty-minus]`)
-          .click();
-        document
-          .querySelector(`[data-qty-id="47814435930443"] [data-qty-minus]`)
-          .click();
+        const bagItem = document.querySelector(
+          `[data-qty-id="47811321463115"] [data-qty-minus]`
+        );
+
+        if (bagItem) {
+          bagItem.click();
+        }
+        const bowlItem = document.querySelector(
+          `[data-qty-id="47814435930443"] [data-qty-minus]`
+        );
+        if (bowlItem) {
+          bowlItem.click();
+        }
       }
       if (candyBag.length === 0) {
-        document
-          .querySelector("[data-submit-button]")
-          .setAttribute("disabled", true);
+        document.querySelector("[data-submit-button]")
+          ? document
+              .querySelector("[data-submit-button]")
+              .setAttribute("disabled", true)
+          : "";
+
+        document.getElementById("LeftbarColoseBagButtonMb")
+          ? document
+              .getElementById("LeftbarColoseBagButtonMb")
+              .setAttribute("disabled", true)
+          : "";
       }
       ctx.emit("products:fetched", ctx.getState());
     });
@@ -278,30 +291,30 @@ export default function visualCandyBag(
       const correspondingItem = allProductItems.find(
         (item) => Number(item.dataset.productItemId) == candyId
       );
+      if (candyBag.find((bag) => bag.id === candyId)?.count > 1) {
+        candyBag.find((bag) => bag.id === candyId).count = 1;
+        candyBag.find((bag) => bag.id === candyId).price =
+          initPrice * candyBag.find((bag) => bag.id === candyId)?.count;
+        candyBag.find((bag) => bag.id === candyId).weight =
+          initWeight * candyBag.find((bag) => bag.id === candyId).count;
 
-      candyBag.find((bag) => bag.id === candyId).count = 1;
-      candyBag.find((bag) => bag.id === candyId).price =
-        initPrice * candyBag.find((bag) => bag.id === candyId).count;
-      candyBag.find((bag) => bag.id === candyId).weight =
-        initWeight * candyBag.find((bag) => bag.id === candyId).count;
+        itemCountElems[i].innerHTML =
+          candyBag.find((bag) => bag.id === candyId).count *
+          candyBag.find((bag) => bag.id === candyId).amount;
+        qtyCountElems[i].innerHTML = candyBag.find(
+          (bag) => bag.id === candyId
+        ).weight;
 
-      itemCountElems[i].innerHTML =
-        candyBag.find((bag) => bag.id === candyId).count *
-        candyBag.find((bag) => bag.id === candyId).amount;
-      qtyCountElems[i].innerHTML = candyBag.find(
-        (bag) => bag.id === candyId
-      ).weight;
-
-      correspondingItem !== undefined
-        ? (correspondingItem.querySelector("[data-qty-amount]").innerHTML =
-            candyBag.find((bag) => bag.id === candyId).weight)
-        : "";
-      correspondingItem !== undefined
-        ? (correspondingItem.querySelector("[data-amount-elem]").innerHTML =
-            candyBag.find((bag) => bag.id === candyId).count *
-            candyBag.find((bag) => bag.id === candyId).amount)
-        : "";
-
+        correspondingItem !== undefined
+          ? (correspondingItem.querySelector("[data-qty-amount]").innerHTML =
+              candyBag.find((bag) => bag.id === candyId).weight)
+          : "";
+        correspondingItem !== undefined
+          ? (correspondingItem.querySelector("[data-amount-elem]").innerHTML =
+              candyBag.find((bag) => bag.id === candyId).count *
+              candyBag.find((bag) => bag.id === candyId).amount)
+          : "";
+      }
       // correspondingItem !== undefined ? correspondingItem.querySelector('[data-product-card-bubble]').classList.add('opacity-0') : '';
       deleteCandyItem(bagItems[i], candyBag, candyId, correspondingItem);
       setToLocalStorage(fromLocalStorage, candyBag);
@@ -317,19 +330,32 @@ export default function visualCandyBag(
       );
 
       if (bagNBowlItems?.length && bagNBowlItems?.length === candyBag.length) {
-        document
-          .querySelector(`[data-qty-id="47811321463115"] [data-qty-minus]`)
-          .click();
-        document
-          .querySelector(`[data-qty-id="47814435930443"] [data-qty-minus]`)
-          .click();
+        const bagItem = document.querySelector(
+          `[data-qty-id="47811321463115"] [data-qty-minus]`
+        );
+        if (bagItem) {
+          bagItem.click();
+        }
+        const bowlItem = document.querySelector(
+          `[data-qty-id="47814435930443"] [data-qty-minus]`
+        );
+        if (bowlItem) {
+          bowlItem.click();
+        }
       }
 
       ctx.emit("products:fetched", ctx.getState());
       if (candyBag.length === 0) {
-        document
-          .querySelector("[data-submit-button]")
-          .setAttribute("disabled", true);
+        const submitBttn = document.querySelector("[data-submit-button]");
+        const leftBarCloseBtn = document.getElementById(
+          "LeftbarColoseBagButtonMb"
+        );
+        if (submitBttn) {
+          submitBttn.setAttribute("disabled", true);
+        }
+        if (leftBarCloseBtn) {
+          leftBarCloseBtn.setAttribute("disabled", true);
+        }
       }
     });
   });

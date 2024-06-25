@@ -222,7 +222,7 @@ export default component((node, ctx) => {
     }
 
     const addToBag = (elem, i) => {
-      console.log({ i });
+      console.log(elem.dataset);
       const { id, price, weight, amount, title, image } = elem.dataset;
       const candy = {};
       candy.title = title;
@@ -249,6 +249,8 @@ export default component((node, ctx) => {
         );
       }
 
+      var isGift = document.getElementById("GiftChecker")?.value;
+
       // Make sure you can't add additional candy by clicking on image again
       const identicalCandy = candyBag.find(
         (candyItem) => candyItem.title === title
@@ -261,16 +263,27 @@ export default component((node, ctx) => {
         (item) => item.title === "pack in bag" || item.title === "pack in bowl"
       );
 
-      if (
-        candyBag &&
-        candyBag.length &&
-        !bagNBowlItem &&
-        window.localStorage.getItem("bagNBowlData")
-      ) {
-        candyBag.push(JSON.parse(window.localStorage.getItem("bagNBowlData")));
-      }
+      if (!isGift && candyBag && candyBag.length && !bagNBowlItem) {
+        let bagNBowlDataFromStorage = JSON.parse(
+          window.localStorage.getItem("bagNBowlData")
+        );
 
-      console.log({ candyBag });
+        if (!bagNBowlDataFromStorage) {
+          bagNBowlDataFromStorage = {
+            amount: 1,
+            initPrice: 0,
+            initWeight: 20,
+            price: 0,
+            title: "pack in bag",
+            weight: 20,
+            count: 1,
+            id: 47811321463115,
+            img: "//www.slikekspressen.dk/cdn/shop/files/73fd3a59-eecf-42b9-9b50-8da0c2904713.png?v=1717052550",
+          };
+        }
+
+        candyBag.push(bagNBowlDataFromStorage);
+      }
 
       qtyWrappers[i].classList.add("is--visible");
       itemInners[i]?.classList.add("is--selected");
@@ -281,8 +294,6 @@ export default component((node, ctx) => {
           submitBtn.innerHTML = theme.strings.blandSelv.buyMore;
         });
       }
-
-      var isGift = document.getElementById("GiftChecker")?.value;
 
       totalKilogramsCalculator(
         candyBag,
@@ -308,7 +319,6 @@ export default component((node, ctx) => {
     addToBagBtns.forEach((btn, i) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
-
         addToBag(btn, i);
       });
     });
@@ -451,7 +461,7 @@ export default component((node, ctx) => {
         const namePromptClose = node.querySelector("[data-name-prompt-close]");
         const namePromptInput = node.querySelector("[data-name-prompt-input]");
         const finalSubmit = node.querySelector("[data-final-submit]");
-        const bag = candyBag.find((bag) => bag?.bagName);
+        const bag = candyBag?.find((bag) => bag?.bagName);
         if (bag) {
           const identifier = bag.bag_id;
           const items = createItemsArray(candyBag, bag.bagName, identifier);
@@ -555,7 +565,6 @@ export default component((node, ctx) => {
                     note2,
                     note3
                   );
-                  console.log("items", { items });
                   if (items.length > 0) {
                     // Submit the list to the cart
                     submitBagToCart(
@@ -961,5 +970,6 @@ export default component((node, ctx) => {
     }
   });
 
-  filterSearchIcon.addEventListener("click", performSearch);
+  if (filterSearchIcon)
+    filterSearchIcon.addEventListener("click", performSearch);
 });

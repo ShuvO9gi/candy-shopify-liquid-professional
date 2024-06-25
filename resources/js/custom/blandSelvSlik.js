@@ -222,6 +222,7 @@ export default component((node, ctx) => {
     }
 
     const addToBag = (elem, i) => {
+      console.log({ i });
       const { id, price, weight, amount, title, image } = elem.dataset;
       const candy = {};
       candy.title = title;
@@ -241,6 +242,13 @@ export default component((node, ctx) => {
       //   return ;
       // }
 
+      if (title === "pack in bag" || title === "pack in bowl") {
+        candyBag = candyBag.filter(
+          (item) =>
+            item.title !== "pack in bag" && item.title !== "pack in bowl"
+        );
+      }
+
       // Make sure you can't add additional candy by clicking on image again
       const identicalCandy = candyBag.find(
         (candyItem) => candyItem.title === title
@@ -249,6 +257,20 @@ export default component((node, ctx) => {
         return;
       }
       candyBag.push(candy);
+      const bagNBowlItem = candyBag.find(
+        (item) => item.title === "pack in bag" || item.title === "pack in bowl"
+      );
+
+      if (
+        candyBag &&
+        candyBag.length &&
+        !bagNBowlItem &&
+        window.localStorage.getItem("bagNBowlData")
+      ) {
+        candyBag.push(JSON.parse(window.localStorage.getItem("bagNBowlData")));
+      }
+
+      console.log({ candyBag });
 
       qtyWrappers[i].classList.add("is--visible");
       itemInners[i]?.classList.add("is--selected");

@@ -39,8 +39,8 @@
   {%- render 'font-face' -%}
 
     {% comment %} 
-            {{ 'theme.css' | asset_url | stylesheet_tag }} 
-        {% endcomment %}
+                                                            {{ 'theme.css' | asset_url | stylesheet_tag }} 
+                                        {% endcomment %}
 
     {%- render 'css-variables' -%}
 
@@ -140,8 +140,8 @@
       <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
     {%- endif -%}
     {%- comment -%} 
-            <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> 
-        {%- endcomment -%}
+                                                            <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> 
+                                        {%- endcomment -%}
     {%- if request.page_type contains 'customers/' -%}
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -161,11 +161,11 @@
 
     {%- comment -%}<link rel="stylesheet" href="{{ 'app.css' | asset_url }}"> {%- endcomment -%}
     {% comment %} 
-        {% endcomment %}
+                                        {% endcomment %}
     <link rel="stylesheet" href="{{ 'output-tailwind.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'global.css' | asset_url }}">
       {%- comment -%}<link rel="stylesheet" href="{{ 'custom.css' | asset_url }}"> 
-              <link rel="stylesheet" href="{{ 'custom_2.css' | asset_url }}">{%- endcomment -%}
+                                                              <link rel="stylesheet" href="{{ 'custom_2.css' | asset_url }}">{%- endcomment -%}
     <link rel="stylesheet" href="{{ 'new-css-2022.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -306,7 +306,7 @@
         <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
       </button>
     </div>
-<div class="body_overlay"></div>
+    <div class="body_overlay"></div>
     {%- liquid
       render 'video-modal'
       render 'photoswipe-template'
@@ -321,16 +321,18 @@
       
         window.addEventListener('scroll', function() {
           var productDetail = document.getElementById('productDetail');
-          var windowHeight = window.innerHeight; // Height of the viewport
+          var windowHeight = 0; // Height of the viewport
           var twentyPercent = windowHeight * 0; // 20% of the viewport height
       
-          if (window.scrollY >= twentyPercent) {
-      productDetail.classList.add('sticky');
-          } else {
-      productDetail.classList.remove('sticky');
+          if(productDetail){
+              if (window.scrollY >= twentyPercent) {
+                  productDetail.classList.add('sticky');
+              } else {
+                  productDetail.classList.remove('sticky');
+              }
           }
         });
-
+      
         $(document).ready(function() {
             $('[data-submit-button]').click(function() {
                 $('html').addClass('drawer_locked2');

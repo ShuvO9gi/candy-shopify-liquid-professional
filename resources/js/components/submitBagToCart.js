@@ -41,7 +41,7 @@ async function checkItemsExist(items) {
   //     exists = false;
   //     unAvailableProducts.push(item.id);
   //   }
-  // }); 
+  // });
 
   return { exists, unAvailableProducts };
 }
@@ -106,6 +106,7 @@ export default function submitBagToCart(
             callback(namePromptModal);
           }
           window.localStorage.removeItem("candyBag");
+          window.localStorage.removeItem("bagNBowlData");
         } else {
           alert(response.description);
         }

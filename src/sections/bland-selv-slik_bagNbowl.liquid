@@ -879,8 +879,8 @@
           $('body').addClass('openbagNbowl');
           $('#pak_ibox').removeClass('selected');
           $('#pak_ipose').removeClass('selected');
-          $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
-          $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          // $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
+          // $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
           $('html').removeClass('drawer_locked3');
           $(`[data-close-visual-bag]`).click();
           $('[data-final-submit]').prop('disabled', true);
@@ -889,8 +889,8 @@
           $('body').addClass('openbagNbowl');
           $('#pak_ibox').removeClass('selected');
           $('#pak_ipose').removeClass('selected');
-          $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
-          $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
+          // $(`[data-qty-id="47811321463115"] [data-qty-minus]`).click();
+          // $(`[data-qty-id="47814435930443"] [data-qty-minus]`).click();
           $('html').removeClass('drawer_locked3');
           $(`[data-close-visual-bag]`).click();
           $('[data-final-submit]').prop('disabled', true);
@@ -920,6 +920,17 @@
           $('#pak_ipose').addClass('selected');
           $('body').addClass('enableopenNameprompt');
           selectedDataId = '47811321463115';
+          window.localStorage.setItem('bagNBowlData', JSON.stringify({
+            amount:1,
+            initPrice:0,
+            initWeight:20,
+            price:0,
+            title:"pack in bag",
+            weight: 20,
+            count:1,
+            id:47811321463115,
+            img:"//www.slikekspressen.dk/cdn/shop/files/73fd3a59-eecf-42b9-9b50-8da0c2904713.png?v=1717052550"})
+          );
         };
     
         window.pak_ibox = function() {
@@ -927,13 +938,23 @@
           $('#pak_ibox').addClass('selected');
           $('body').addClass('enableopenNameprompt');
           selectedDataId = '47814435930443';
+          window.localStorage.setItem('bagNBowlData', JSON.stringify({
+            amount:1,
+            initPrice:1000,
+            initWeight:20,
+            price:1000,
+            title:"pack in bowl",
+            weight: 20,
+            count:1,
+            id:47814435930443,
+            img:"//www.slikekspressen.dk/cdn/shop/files/indpakning_boette_1.png?v=1716256556"})
+          );
         };
 
         $('#addbagName').click(function(){
           $('body').removeClass('openbagNbowl');
           $('body').addClass('openNameprompt');
           $(`[data-add-to-bag][data-id="${selectedDataId}"]`).click();
-          console.log(`${selectedDataId} clicked`);
         });
 
         $('#mixAgain').click(function(){

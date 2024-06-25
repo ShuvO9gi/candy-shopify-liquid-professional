@@ -1172,8 +1172,7 @@ document.getElementById('nextPage2Btn').addEventListener('click', async function
     var inputField2 = document.getElementById('CartNoteDrawer2');
     var title = $('.giftprodselected .giftproduct-title').text();
     inputField.value = title + " " + inputField.value;
-    inputField2.value = formattedItems; // Assigning JSON string to the input field
-
+    inputField2.value = formattedItems; 
     fetch(`${window.location.origin}/cart.js`)
         .then(res => res.clone().json().then(data => {
             var cart = {
@@ -1184,8 +1183,7 @@ document.getElementById('nextPage2Btn').addEventListener('click', async function
                 items: data.items
             }
             const selectedValueCounts = data.items.filter(item => item.product_type === "app_gift_package" && item.product_title === title);
-            const finalCount = selectedValueCounts.length? (selectedValueCounts.length +1):'';
-
+            const finalCount = selectedValueCounts.length? (selectedValueCounts.length +1):data.items.length+1;
             inputField.value =  inputField.value + " " + finalCount;
             inputField.setAttribute('value', inputField.value);
 

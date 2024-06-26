@@ -1180,6 +1180,14 @@ export default component((node, ctx) => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           },
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
         });
       });
     };

@@ -1171,6 +1171,11 @@ export default component((node, ctx) => {
         new Swiper(container, {
           slidesPerView: "5",
           spaceBetween: 10,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
         });
       });
     };

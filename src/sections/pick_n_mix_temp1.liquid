@@ -409,6 +409,15 @@
   #shopify-section-pick_n_mix_temp1 .bland-selv-slik__visual-bag{
         pointer-events: auto !important;
   }
+    .pickNmix_rowAllproducts .candyItems .candyBox{
+    display: none;
+  }
+  .pickNmix_rowAllproducts .candyItems .candyBox:nth-child(-n+40) {
+    display: block;
+}
+  .pickNmix_rowFirst20 .candyItems .candyBox:nth-child(-n+40) {
+    display: block !important;
+}
   @media only screen and (min-width: 767px){
     #shopify-section-pick_n_mix_temp1 .barSeeBagButton{
       display: none;
@@ -672,7 +681,7 @@
             </div>
           {%- endif -%}
 
-          <div class="row pickNmix_row" id="pickNmix_row">
+          <div class="row pickNmix_row pickNmix_rowAllproducts" id="pickNmix_row">
             <div class="col-9">
 
               {%- comment -%}
@@ -1150,41 +1159,77 @@
 <!--pagination-->
         
   function handleCandyItems() {
-    var itemsPerPage = 20;
-    var currentPage = 0;
-    var loadedFirst = false;
+  var itemsPerPage = 30;
+  var currentPage = 3;
+  var allowPagination = true;
 
-    function showMoreItems() {
-      var from = currentPage * itemsPerPage;
-      var to = from + itemsPerPage;
+  function showMoreItems() {
+    var from = currentPage * itemsPerPage;
+    var to = from + itemsPerPage;
 
-      $('.candyItems .candyBox').slice(from, to).fadeIn();
-      currentPage++;
-    }
+    $('.candyItems .candyBox').slice(from, to).fadeIn();
+    currentPage++;
+  }
 
-    $(window).scroll(function() {
+  function loadInitialItems() {
+    showMoreItems();
+    allowPagination = true;
+  }
+
+  window.onload = function() {
+    setTimeout(function() {
+      loadInitialItems();
+
+      var event = new MouseEvent('mousemove', {
+        bubbles: true,
+        cancelable: true,
+        clientX: window.innerWidth / 2,
+        clientY: window.innerHeight / 2
+      });
+      document.dispatchEvent(event);
+    }, 1000);
+  };
+
+  $(window).scroll(function() {
+    if (allowPagination) {
       var scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
-
-      if (!loadedFirst && $(window).scrollTop() > 10) {
-        showMoreItems();
-        loadedFirst = true;
-      }
 
       if (scrollPercent > 80) {
         showMoreItems();
       }
-    });
-  }
+    }
+  });
 
-  var jq = document.createElement('script');
-  jq.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-  jq.onload = function() {
-    $(document).ready(function() {
-      handleCandyItems();
-    });
-  };
+  $("#filter-search").on("input", function() {
+    allowPagination = false;
+  });
 
-  document.body.appendChild(jq);
+ // Add event listener for closing the modal
+  $(".close-cus_modal").on("click", function() {
+    allowPagination = true;
+    loadInitialItems();
+    $("#filter-search").val("");
+    $("#pickNmix_row").addClass("pickNmix_rowFirst20");
+  });
+
+   $("#filter-iconAllProdBtn").on("click", function() {
+    $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
+  });
+$("#filter-iconAllProdBtn2").on("click", function() {
+    $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
+  });
+
+}
+
+var jq = document.createElement('script');
+jq.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+jq.onload = function() {
+  $(document).ready(function() {
+    handleCandyItems();
+  });
+};
+
+document.body.appendChild(jq);
 </script>
 
 <!--//GTM dataLayer add_to_cart event-->

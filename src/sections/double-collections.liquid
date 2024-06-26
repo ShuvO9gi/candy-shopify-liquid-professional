@@ -1175,15 +1175,8 @@ document.getElementById('nextPage2Btn').addEventListener('click', async function
     inputField2.value = formattedItems; 
     fetch(`${window.location.origin}/cart.js`)
         .then(res => res.clone().json().then(data => {
-            var cart = {
-                total_price: data.total_price / 100,
-                $value: data.total_price / 100,
-                total_discount: data.total_discount,
-                original_total_price: data.original_total_price / 100,
-                items: data.items
-            }
-            const selectedValueCounts = data.items.filter(item => item.product_type === "app_gift_package" && item.product_title === title);
-            const finalCount = selectedValueCounts.length? (selectedValueCounts.length +1):data.items.length+1;
+            const selectedValueCounts = data.items?.filter(item => item.product_type && item.product_type === "app_gift_package" && item.product_title === title)||[];
+            const finalCount = selectedValueCounts.length? (selectedValueCounts.length +1):Math.floor(Math.random() * 1000) + 1;
             inputField.value =  inputField.value + " " + finalCount;
             inputField.setAttribute('value', inputField.value);
 

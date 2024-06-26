@@ -3259,6 +3259,9 @@ display: -webkit-box;
 .giftitembtnhide .drawer_2_content_product_minusOne_shopAdjust{
   display: none;
 }
+.giftitembtnhide .drawer_2_content_product_delete_shopAdjust{
+  display: none;
+}
 .hidden_hidesecdrawerbtn .drawer_2_content_button_shopAdjust{
   display: none;
 }

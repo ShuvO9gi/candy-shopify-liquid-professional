@@ -1278,6 +1278,7 @@ export default component((node, ctx) => {
       //       <div class="candyItems">${renderProducts(unique)}</div>
       //   `;
 
+      initializeSwipers();
       addToCardEventListeners();
     });
 

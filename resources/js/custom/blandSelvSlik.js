@@ -1298,6 +1298,7 @@ export default component((node, ctx) => {
       ctx.emit("filter:start");
     } else {
       productListElem.innerHTML = categorizedProducts(state.allProducts);
+      initializeSwipers();
     }
 
     addToCardEventListeners();

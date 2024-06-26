@@ -1170,6 +1170,7 @@ export default component((node, ctx) => {
       document.querySelectorAll(".swiper-container").forEach((container) => {
         new Swiper(container, {
           slidesPerView: "5",
+          spaceBetween: 10,
         });
       });
     };

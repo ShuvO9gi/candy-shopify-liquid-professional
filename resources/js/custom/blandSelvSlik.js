@@ -1166,6 +1166,14 @@ export default component((node, ctx) => {
       categoryMapAll[filterId] = filterName;
     });
 
+    const initializeSwipers = () => {
+      document.querySelectorAll(".swiper-container").forEach((container) => {
+        new Swiper(container, {
+          slidesPerView: "5",
+        });
+      });
+    };
+
     //Categorized filtering
     const categorizedProducts = (products) => {
       let categorizedHTML = "";

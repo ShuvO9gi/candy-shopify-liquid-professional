@@ -1214,12 +1214,12 @@ export default component((node, ctx) => {
                 <div class="swiper-slide">
                   ${renderProducts([product])}
                 </div>
-              `
+               `
                 )
                 .join("")}
             </div>
           </div>
-      `;
+          `;
         }
       });
 

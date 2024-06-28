@@ -1232,7 +1232,15 @@ export default component((node, ctx) => {
       <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">Other</h2>
       <div class="swiper-container candyItems">
         <div class="swiper-wrapper">
-          
+          ${uncategorizedProducts
+            .map(
+              (product) => `
+            <div class="swiper-slide">
+              
+            </div>
+          `
+            )
+            .join("")}
         </div>
       </div>
       `;

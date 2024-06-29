@@ -1296,7 +1296,6 @@ export default component((node, ctx) => {
                 </div>
               `;
             }
-
             return filteredProductsHTML;
           })
           .join("");

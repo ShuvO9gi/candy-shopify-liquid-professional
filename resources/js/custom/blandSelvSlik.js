@@ -1287,7 +1287,7 @@ export default component((node, ctx) => {
               .map(
                 (product) => `
               <div class="swiper-slide">
-                
+                ${renderProducts([product])}
               </div>
             `
               )

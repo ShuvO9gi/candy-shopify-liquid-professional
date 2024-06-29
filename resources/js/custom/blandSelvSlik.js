@@ -1294,7 +1294,7 @@ export default component((node, ctx) => {
                     .join("")}
                   </div>
                 </div>
-          `;
+              `;
             }
 
             return filteredProductsHTML;

@@ -276,7 +276,7 @@ export default function visualCandyBag(
               .setAttribute("disabled", true)
           : "";
       }
-      ctx.emit("products:fetched", ctx.getState());
+      // ctx.emit("products:fetched", ctx.getState());
     });
   });
 
@@ -344,7 +344,7 @@ export default function visualCandyBag(
         }
       }
 
-      ctx.emit("products:fetched", ctx.getState());
+      // ctx.emit("products:fetched", ctx.getState());
       if (candyBag.length === 0) {
         const submitBttn = document.querySelector("[data-submit-button]");
         const leftBarCloseBtn = document.getElementById(

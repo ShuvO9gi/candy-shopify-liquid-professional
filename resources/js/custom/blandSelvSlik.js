@@ -428,7 +428,7 @@ export default component((node, ctx) => {
             .querySelector("[data-submit-button]")
             .setAttribute("disabled", true);
         }
-        ctx.emit("products:fetched", ctx.getState());
+        // ctx.emit("products:fetched", ctx.getState());
       });
     });
 
@@ -453,7 +453,7 @@ export default component((node, ctx) => {
       submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
         // Prompt to add name
-        candyBag = JSON.parse(window.localStorage.getItem("candybag"));
+        // candyBag = JSON.parse(window.localStorage.getItem("candybag"));
         const namePromptModal = node.querySelector("[data-name-prompt]");
         const expiredPromptModal = node.querySelector(
           "[data-expired-items-prompt]"

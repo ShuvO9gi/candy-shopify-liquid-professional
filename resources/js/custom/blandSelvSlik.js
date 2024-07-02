@@ -497,6 +497,7 @@ export default component((node, ctx) => {
         // Add eventlistener to finalSubmit
         finalSubmit.addEventListener("click", (e) => {
           e.preventDefault();
+          var candyBag = JSON.parse(window.localStorage.getItem("candybag"));
           const name = namePromptInput.value;
           const identifier = createUniqueId();
           const note = document.getElementById("CartNoteDrawer")?.value || "";

@@ -3,7 +3,7 @@ const localforage = require("localforage");
 
 const saveStorage = (jsonData) => {
   let data = jsonData;
-  console.log(data);
+  console.log("check metafield data", data);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

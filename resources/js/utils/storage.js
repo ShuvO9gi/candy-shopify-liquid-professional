@@ -7,7 +7,7 @@ const saveStorage = (jsonData) => {
   const nonNullMetafields = data
     .filter((p) => p.metafields.candysizesweight !== "null")
     .map((p) => p);
-
+  console.log(nonNullMetafields);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

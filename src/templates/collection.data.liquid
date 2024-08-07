@@ -28,9 +28,7 @@
             "type":"{{ p.type }}",
             "vendor":"{{ p.vendor }}",
             "published_at": "{{ p.published_at }}",
-            "metafields": {
-                "candysizesweight": "{{ p.metafields.custom.candysizesweight | json }}"
-            }
+
         }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}]
 {%- endpaginate -%}

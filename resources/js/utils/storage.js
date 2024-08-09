@@ -11,7 +11,7 @@ const saveStorage = (jsonData) => {
   const subtitle = data
     .filter((p) => p.metafields.subtitle !== "null")
     .map((p) => p);
-  console.log("nonNullMetafields", subtitle);
+  console.log("subtitle", subtitle);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

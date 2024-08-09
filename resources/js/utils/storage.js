@@ -4,10 +4,10 @@ const localforage = require("localforage");
 const saveStorage = (jsonData) => {
   let data = jsonData;
   console.log("check metafield data", data);
-  const nonNullMetafields = data
-    .filter((p) => p.metafields.candysizesweight !== "null")
-    .map((p) => p);
-  console.log("nonNullMetafields", nonNullMetafields);
+  //   const nonNullMetafields = data
+  //     .filter((p) => p.metafields.candysizesweight !== "null")
+  //     .map((p) => p);
+  //   console.log("nonNullMetafields", nonNullMetafields);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

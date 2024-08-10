@@ -12,6 +12,10 @@ const saveStorage = (jsonData) => {
     .filter((p) => p.metafields.subtitle !== "null")
     .map((p) => p);
   console.log("subtitle", subtitle);
+  const ingrediensHTML = data
+    .filter((p) => p.metafields.custom.ingrediens_test !== "null")
+    .map((p) => p);
+  console.log("ingrediensHTML", ingrediensHTML);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

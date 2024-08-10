@@ -29,6 +29,7 @@
             "vendor":"{{ p.vendor }}",
             "published_at": "{{ p.published_at }}",
             "metafields": {
+                "candysizesweight": "{{ p.metafields.custom.candysizesweight | json }}",
                 "subtitle": {{ p.metafields.custom.subtitle | json }},
                 "ingredients": {{ p.metafields.custom.ingredients | json }},
                 "ingrediensHTML": "{{ p.metafields.custom.ingrediens_test | escape | replace: '\n', '' }}"

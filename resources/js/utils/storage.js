@@ -16,6 +16,10 @@ const saveStorage = (jsonData) => {
     .filter((p) => p.metafields.custom.ingrediens_test !== "null")
     .map((p) => p);
   console.log("ingrediensHTML", ingrediensHTML);
+  const energy_kj_100g = data
+    .filter((p) => p.metafields.custom.energy_kj_100g !== "null")
+    .map((p) => p);
+  console.log("energy_kj_100g", energy_kj_100g);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

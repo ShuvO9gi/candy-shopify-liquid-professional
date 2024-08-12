@@ -38,6 +38,7 @@
                 "fat_g": {{ p.metafields.custom.fat_g | json }},
                 "of_which_saturates_g": {{ p.metafields.custom.of_which_saturates_g | json }},
                 "carbohydrate_g_100g": {{ p.metafields.custom.carbohydrate_g_100g | json }}
+                "of_which_sugars_g": {{ p.metafields.custom.of_which_sugars_g | json }},
             }
         }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}]

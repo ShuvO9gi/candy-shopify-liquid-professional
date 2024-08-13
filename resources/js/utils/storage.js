@@ -20,6 +20,10 @@ const saveStorage = (jsonData) => {
     .filter((p) => p.metafields.custom.energy_kj_100g !== "null")
     .map((p) => p);
   console.log("energy_kj_100g", energy_kj_100g);
+  const salt_g_100g = data
+    .filter((p) => p.metafields.custom.salt_g_100g !== "null")
+    .map((p) => p);
+  console.log("salt_g_100g", salt_g_100g);
   try {
     data = new TextEncoder().encode(JSON.stringify(data));
     data = pako.deflate(data, { level: 6 });

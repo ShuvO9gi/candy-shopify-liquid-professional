@@ -40,6 +40,7 @@
                 "carbohydrate_g_100g": {{ p.metafields.custom.carbohydrate_g_100g | json }},
                 "of_which_sugars_g": {{ p.metafields.custom.of_which_sugars_g | json }},
                 "protein_g_100g": {{ p.metafields.custom.protein_g_100g | json }}
+                "salt_g_100g": {{ p.metafields.custom.salt_g_100g | json }}
             }
         }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}]

@@ -697,7 +697,7 @@ export default component((node, ctx) => {
       tags,
       metafields,
     } = product;
-    console.log("metafields", product);
+    console.log("metafields", metafields);
 
     const imgUrl = images[0];
     const { id } = variants[0];

@@ -686,6 +686,7 @@ export default component((node, ctx) => {
    * Create productc item
    */
   const createCollectionItem = (product) => {
+    console.log("createCollectionItem", product);
     const { title, images, variants, price, description, vendor, tags } =
       product;
 

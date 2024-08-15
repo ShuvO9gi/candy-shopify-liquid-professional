@@ -775,6 +775,7 @@ export default component((node, ctx) => {
   }
 
   const renderProducts = (products) => {
+    console.log("renderProducts", products);
     const url = new URL(window.location.href);
     const searchParams = new URLSearchParams(url.search);
     let productName = searchParams.get("product");

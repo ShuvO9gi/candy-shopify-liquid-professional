@@ -689,6 +689,7 @@ export default component((node, ctx) => {
     console.log("createCollectionItem", product);
     const { title, images, variants, price, description, vendor, tags } =
       product;
+    console.log("metafields", product);
 
     const imgUrl = images[0];
     const { id } = variants[0];

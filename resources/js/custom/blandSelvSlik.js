@@ -662,7 +662,7 @@ export default component((node, ctx) => {
         infoModalImage.setAttribute("src", image);
         infoModalTitle.innerHTML = infoTitle;
         // infoModalDescription.innerHTML = infoDescription;
-        infoModalDescription.innerHTML = productMetafields;
+        infoModalDescription.innerHTML = productMetafields.ingrediensHTML;
         infoModal.classList.add("is--visible");
       });
     });

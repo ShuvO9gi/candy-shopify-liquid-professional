@@ -656,7 +656,7 @@ export default component((node, ctx) => {
         const { description, image, productMetafields } =
           productCardItems[index].dataset;
         console.log("productMetafields", productMetafields);
-        const infoTitle = description.split("---")[0];
+        // const infoTitle = description.split("---")[0];
         // const infoDescription = description.split("---")[1];
 
         infoModalImage.setAttribute("src", image);

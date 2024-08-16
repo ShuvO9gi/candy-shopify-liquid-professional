@@ -660,7 +660,8 @@ export default component((node, ctx) => {
         // const infoDescription = description.split("---")[1];
 
         infoModalImage.setAttribute("src", image);
-        infoModalTitle.innerHTML = infoTitle;
+        // infoModalTitle.innerHTML = infoTitle;
+        infoModalTitle.innerHTML = productMetafields.subtitle;
         // infoModalDescription.innerHTML = infoDescription;
         infoModalDescription.innerHTML = productMetafields.ingrediensHTML;
         infoModal.classList.add("is--visible");

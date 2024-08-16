@@ -653,7 +653,9 @@ export default component((node, ctx) => {
      */
     infoIcons.forEach((icon, index) => {
       icon.addEventListener("click", () => {
-        const { description, image } = productCardItems[index].dataset;
+        const { description, image, productMetafields } =
+          productCardItems[index].dataset;
+        console.log("productMetafields", productMetafields);
         const infoTitle = description.split("---")[0];
         const infoDescription = description.split("---")[1];
 

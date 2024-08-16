@@ -657,11 +657,12 @@ export default component((node, ctx) => {
           productCardItems[index].dataset;
         console.log("productMetafields", productMetafields);
         const infoTitle = description.split("---")[0];
-        const infoDescription = description.split("---")[1];
+        // const infoDescription = description.split("---")[1];
 
         infoModalImage.setAttribute("src", image);
         infoModalTitle.innerHTML = infoTitle;
-        infoModalDescription.innerHTML = infoDescription;
+        // infoModalDescription.innerHTML = infoDescription;
+        infoModalDescription.innerHTML = productMetafields;
         infoModal.classList.add("is--visible");
       });
     });

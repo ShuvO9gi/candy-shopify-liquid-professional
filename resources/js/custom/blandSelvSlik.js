@@ -663,7 +663,29 @@ export default component((node, ctx) => {
         // infoModalTitle.innerHTML = infoTitle;
         infoModalTitle.innerHTML = productMetafields.subtitle;
         // infoModalDescription.innerHTML = infoDescription;
-        infoModalDescription.innerHTML = productMetafields.ingrediensHTML;
+        infoModalDescription.innerHTML = `
+        <p></p>
+            <h5>Indhold</h5>
+            <p id="data-a" data-mce-fragment="1">${renderRichText(
+              ingredientsData
+            )}</p>
+            <div>
+                <br><br>
+                <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>
+                hvis du vil se mere om hvordan vi håndterer allergener
+                <br><br>
+            </div>
+            <h5>Næringsværdi <small data-mce-fragment="1">pr. 100g</small></h5>
+            <div>
+                
+                <br>
+                <h5 data-mce-fragment="1">Slikbeskrivelse</h5>
+                <div class="naerring" data-mce-fragment="1" style="text-align:"justify";">
+                    ${metafields.ingredients}
+                </div>
+                <p>&nbsp;</p>
+            </div>
+        `;
         infoModal.classList.add("is--visible");
       });
     });

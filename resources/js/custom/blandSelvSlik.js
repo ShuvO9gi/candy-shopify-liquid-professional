@@ -666,7 +666,7 @@ export default component((node, ctx) => {
         infoModalDescription.innerHTML = `
         <p></p>
             <h5>Indhold</h5>
-            <p id="data-a" data-mce-fragment="1">product details</p>
+            <p id="data-a" data-mce-fragment="1">${productMetafields.ingredientsHTML}</p>
             <div>
                 <br><br>
                 <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>

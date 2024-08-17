@@ -666,9 +666,7 @@ export default component((node, ctx) => {
         infoModalDescription.innerHTML = `
         <p></p>
             <h5>Indhold</h5>
-            <p id="data-a" data-mce-fragment="1">${renderRichText(
-              ingredientsData
-            )}</p>
+            <p id="data-a" data-mce-fragment="1">product details</p>
             <div>
                 <br><br>
                 <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>
@@ -681,7 +679,7 @@ export default component((node, ctx) => {
                 <br>
                 <h5 data-mce-fragment="1">Slikbeskrivelse</h5>
                 <div class="naerring" data-mce-fragment="1" style="text-align:"justify";">
-                    ${metafields.ingredients}
+                    product description
                 </div>
                 <p>&nbsp;</p>
             </div>

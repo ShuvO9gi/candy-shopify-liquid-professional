@@ -675,7 +675,40 @@ export default component((node, ctx) => {
             </div>
             <h5>Næringsværdi <small data-mce-fragment="1">pr. 100g</small></h5>
             <div>
-                
+                <table style="width:80%;">
+                    <tbody>
+                        <tr>
+                            <td><strong>Energi</strong></td>
+                            <td>
+                            <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fedt</strong></td>
+                            <td><span>&nbsp;g</span></td>
+                        </tr>
+                        <tr>
+                            <td>- Heraf mættet</td>
+                            <td><span>&nbsp;g</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kulhydrat</strong></td>
+                            <td><span>&nbsp;g</span></td>
+                        </tr>
+                        <tr>
+                            <td>- Heraf sukkerarter</td>
+                            <td><span>&nbsp;g</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Protein</strong></td>
+                            <td><span>&nbsp;g</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Salt</strong></td>
+                            <td><span>&nbsp;g</span></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <br>
                 <h5 data-mce-fragment="1">Slikbeskrivelse</h5>
                 <div class="naerring" data-mce-fragment="1" style="text-align:"justify";">

@@ -691,7 +691,9 @@ export default component((node, ctx) => {
                         </tr>
                         <tr>
                             <td>- Heraf mættet</td>
-                            <td><span>&nbsp;g</span></td>
+                            <td><span>${
+                              metafields.of_which_saturates_g || "0.0"
+                            }&nbsp;g</span></td>
                         </tr>
                         <tr>
                             <td><strong>Kulhydrat</strong></td>

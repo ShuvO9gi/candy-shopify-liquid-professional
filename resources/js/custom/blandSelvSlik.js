@@ -666,7 +666,9 @@ export default component((node, ctx) => {
         infoModalDescription.innerHTML = `
         <p></p>
             <h5>Indhold</h5>
-            <p id="data-a" data-mce-fragment="1">${productMetafields.ingredientsHTML}</p>
+            <p id="data-a" data-mce-fragment="1">${
+              productMetafields.ingredientsHTML
+            }</p>
             <div>
                 <br><br>
                 <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>
@@ -705,7 +707,9 @@ export default component((node, ctx) => {
                         </tr>
                         <tr>
                             <td><strong>Salt</strong></td>
-                            <td><span>&nbsp;g</span></td>
+                            <td><span>${
+                              metafields.salt_g_100g || "0.0"
+                            }&nbsp;g</span></td>
                         </tr>
                     </tbody>
                 </table>

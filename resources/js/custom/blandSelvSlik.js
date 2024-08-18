@@ -703,7 +703,9 @@ export default component((node, ctx) => {
                         </tr>
                         <tr>
                             <td><strong>Protein</strong></td>
-                            <td><span>&nbsp;g</span></td>
+                            <td><span>${
+                              metafields.protein_g_100g || "0.0"
+                            }&nbsp;g</span></td>
                         </tr>
                         <tr>
                             <td><strong>Salt</strong></td>

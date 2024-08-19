@@ -687,7 +687,9 @@ export default component((node, ctx) => {
                         </tr>
                         <tr>
                             <td><strong>Fedt</strong></td>
-                            <td><span>&nbsp;g</span></td>
+                            <td><span>${
+                              metafields.fat_g || "0.0"
+                            }&nbsp;g</span></td>
                         </tr>
                         <tr>
                             <td>- Heraf mættet</td>

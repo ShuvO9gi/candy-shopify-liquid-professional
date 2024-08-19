@@ -670,7 +670,7 @@ export default component((node, ctx) => {
         <p></p>
             <h5>Indhold</h5>
             <p id="data-a" data-mce-fragment="1">${
-              productMetafields.ingredientsHTML
+              metafields.ingredientsHTML
             }</p>
             <div>
                 <br><br>

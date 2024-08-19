@@ -731,7 +731,7 @@ export default component((node, ctx) => {
                 <br>
                 <h5 data-mce-fragment="1">Slikbeskrivelse</h5>
                 <div class="naerring" data-mce-fragment="1" style="text-align:"justify";">
-                    ${productMetafields.ingredients}
+                    ${metafields.ingredients}
                 </div>
                 <p>&nbsp;</p>
             </div>

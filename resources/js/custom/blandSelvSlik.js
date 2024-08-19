@@ -664,7 +664,7 @@ export default component((node, ctx) => {
 
         infoModalImage.setAttribute("src", image);
         // infoModalTitle.innerHTML = infoTitle;
-        infoModalTitle.innerHTML = productMetafields.subtitle;
+        infoModalTitle.innerHTML = metafields.subtitle;
         // infoModalDescription.innerHTML = infoDescription;
         infoModalDescription.innerHTML = `
         <p></p>

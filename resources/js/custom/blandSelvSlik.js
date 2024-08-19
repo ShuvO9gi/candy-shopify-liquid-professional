@@ -659,6 +659,9 @@ export default component((node, ctx) => {
         // const infoTitle = description.split("---")[0];
         // const infoDescription = description.split("---")[1];
 
+        const metafields = JSON.parse(productMetafields);
+        console.log("Parsed metafields:", metafields);
+
         infoModalImage.setAttribute("src", image);
         // infoModalTitle.innerHTML = infoTitle;
         infoModalTitle.innerHTML = productMetafields.subtitle;
@@ -682,7 +685,9 @@ export default component((node, ctx) => {
                         <tr>
                             <td><strong>Energi</strong></td>
                             <td>
-                            <span></span>
+                            <span>${metafields.energy_kj_100g || "0.0"} kj / ${
+          metafields.energy_kcal_100g || "0.0"
+        } kcal</span>
                             </td>
                         </tr>
                         <tr>

@@ -663,6 +663,13 @@ export default component((node, ctx) => {
         const metafields = JSON.parse(decodedMetafieldsString);
         console.log("Parsed metafields:", metafields);
 
+        // Function to decode HTML entities
+        function decodeHTMLEntities(text) {
+          const txt = document.createElement("textarea");
+          txt.innerHTML = text;
+          return txt.value;
+        }
+
         // Decode and parse the ingredients_HTML
         const ingredientsHTMLString = decodeHTMLEntities(
           metafields.ingrediensHTML

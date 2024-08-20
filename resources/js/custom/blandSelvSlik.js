@@ -659,7 +659,8 @@ export default component((node, ctx) => {
         // const infoTitle = description.split("---")[0];
         // const infoDescription = description.split("---")[1];
 
-        const metafields = JSON.parse(productMetafields);
+        const decodedMetafieldsString = decodeURIComponent(productMetafields);
+        const metafields = JSON.parse(decodedMetafieldsString);
         console.log("Parsed metafields:", metafields);
 
         infoModalImage.setAttribute("src", image);

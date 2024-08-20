@@ -785,7 +785,9 @@ export default component((node, ctx) => {
       weightTag === undefined ? 20 : Number(weightTag.replace("weight__", "")); // If no tag is found, set the default amount to 20
 
     return ` 
-      <div class="candyBox relative twb-select-none" data-product-card-item data-product-item-id="${id}" data-description='${description}' data-image="${imgUrl}" data-product-metafields='${metafields}'>
+      <div class="candyBox relative twb-select-none" data-product-card-item data-product-item-id="${id}" data-description='${description}' data-image="${imgUrl}" data-product-metafields='${encodeURIComponent(
+      JSON.stringify(metafields)
+    )}'>
         <div class="" data-item-inner>
           <div class="absolute top-0 twb-right-4 text-pink cursor-pointer z-10" data-info-icon>${infoIcon()}</div>
           <div data-product-card-bubble>

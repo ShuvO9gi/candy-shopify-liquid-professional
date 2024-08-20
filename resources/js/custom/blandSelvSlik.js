@@ -676,6 +676,14 @@ export default component((node, ctx) => {
         );
         console.log("ingredientshtmlstring", ingredientsHTMLString);
 
+        let ingredientsData;
+
+        try {
+          ingredientsData = JSON.parse(ingredientsHTMLString);
+        } catch (error) {
+          console.error("Error parsing ingredients HTML:", error);
+        }
+
         infoModalImage.setAttribute("src", image);
         // infoModalTitle.innerHTML = infoTitle;
         infoModalTitle.innerHTML = `${

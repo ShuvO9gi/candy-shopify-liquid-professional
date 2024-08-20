@@ -663,6 +663,12 @@ export default component((node, ctx) => {
         const metafields = JSON.parse(decodedMetafieldsString);
         console.log("Parsed metafields:", metafields);
 
+        // Decode and parse the ingredients_HTML
+        const ingredientsHTMLString = decodeHTMLEntities(
+          metafields.ingrediensHTML
+        );
+        console.log("ingredientshtmlstring", ingredientsHTMLString);
+
         infoModalImage.setAttribute("src", image);
         // infoModalTitle.innerHTML = infoTitle;
         infoModalTitle.innerHTML = `${

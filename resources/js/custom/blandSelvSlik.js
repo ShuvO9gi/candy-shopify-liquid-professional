@@ -686,10 +686,41 @@ export default component((node, ctx) => {
 
         infoModalImage.setAttribute("src", image);
         // infoModalTitle.innerHTML = infoTitle;
+        // infoModalDescription.innerHTML = infoDescription;
         infoModalTitle.innerHTML = `${
           metafields.subtitle || "No Title Available"
         }`;
-        // infoModalDescription.innerHTML = infoDescription;
+
+        // Rich Text Rendering Function
+        function renderRichText(richText) {
+          const container = document.createElement("div");
+
+          // Iterate over children in the rich text structure
+          richText.children.forEach((child, childIndex) => {
+            if (child.type === "paragraph") {
+              const p = document.createElement("p");
+
+              if (Array.isArray(child.children)) {
+                child.children.forEach((subChild) => {
+                  if (subChild.type === "text") {
+                    const textNode = document.createTextNode(subChild.value);
+                    if (subChild.bold) {
+                      const boldText = document.createElement("strong");
+                      boldText.appendChild(textNode);
+                      p.appendChild(boldText);
+                    } else {
+                      p.appendChild(textNode);
+                    }
+                  }
+                });
+              }
+              container.appendChild(p);
+            }
+          });
+
+          return container.innerHTML; // Return the generated HTML
+        }
+
         infoModalDescription.innerHTML = `
         <p></p>
             <h5>Indhold</h5>

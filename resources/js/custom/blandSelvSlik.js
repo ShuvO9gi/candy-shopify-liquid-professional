@@ -746,9 +746,9 @@ export default component((node, ctx) => {
         infoModalDescription.innerHTML = `
         <p></p>
             <h5>Indhold</h5>
-            <p id="data-a" data-mce-fragment="1">${
-              metafields.ingredientsHTML
-            }</p>
+            <p id="data-a" data-mce-fragment="1">${renderRichText(
+              ingredientsData
+            )}</p>
             <div>
                 <br><br>
                 <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>

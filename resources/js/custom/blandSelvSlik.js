@@ -743,6 +743,7 @@ export default component((node, ctx) => {
           return container.innerHTML; // Return the generated HTML
         }
 
+        // Render the ingredients in the modal description
         infoModalDescription.innerHTML = `
         <p></p>
             <h5>Indhold</h5>

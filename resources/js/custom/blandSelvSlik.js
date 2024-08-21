@@ -718,6 +718,12 @@ export default component((node, ctx) => {
                     } else {
                       p.appendChild(textNode);
                     }
+                  } else if (subChild.type === "link") {
+                    const link = document.createElement("a");
+                    link.href = subChild.url || "#";
+                    link.target = subChild.target || "_self";
+                    link.textContent = subChild.children[0]?.value || "Link";
+                    p.appendChild(link);
                   }
                 });
               }

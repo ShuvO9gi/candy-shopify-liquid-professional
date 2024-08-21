@@ -699,6 +699,11 @@ export default component((node, ctx) => {
           richText.children.forEach((child, childIndex) => {
             if (child.type === "paragraph") {
               const p = document.createElement("p");
+              p.style.textAlign = "justify";
+
+              if (childIndex === 2) {
+                p.style.marginTop = "10px";
+              }
 
               if (Array.isArray(child.children)) {
                 child.children.forEach((subChild) => {

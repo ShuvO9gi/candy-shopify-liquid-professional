@@ -663,6 +663,13 @@ export default component((node, ctx) => {
         const metafields = JSON.parse(decodedMetafieldsString);
         console.log("Parsed metafields:", metafields);
 
+        infoModalImage.setAttribute("src", image);
+        // infoModalTitle.innerHTML = infoTitle;
+        // infoModalDescription.innerHTML = infoDescription;
+        infoModalTitle.innerHTML = `${
+          metafields.subtitle || "No Title Available"
+        }`;
+
         // Function to decode HTML entities
         function decodeHTMLEntities(text) {
           const txt = document.createElement("textarea");
@@ -683,13 +690,6 @@ export default component((node, ctx) => {
         } catch (error) {
           console.error("Error parsing ingredients HTML:", error);
         }
-
-        infoModalImage.setAttribute("src", image);
-        // infoModalTitle.innerHTML = infoTitle;
-        // infoModalDescription.innerHTML = infoDescription;
-        infoModalTitle.innerHTML = `${
-          metafields.subtitle || "No Title Available"
-        }`;
 
         // Rich Text Rendering Function
         function renderRichText(richText) {

@@ -695,6 +695,15 @@ export default component((node, ctx) => {
         function renderRichText(richText) {
           const container = document.createElement("div");
 
+          // Ensure richText is properly structured
+          if (!richText || !Array.isArray(richText.children)) {
+            console.error(
+              "Rich text data is missing or has an incorrect format:",
+              richText
+            );
+            return "";
+          }
+
           // Iterate over children in the rich text structure
           richText.children.forEach((child, childIndex) => {
             if (child.type === "paragraph") {

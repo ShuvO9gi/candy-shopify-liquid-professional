@@ -708,7 +708,9 @@ export default component((node, ctx) => {
               if (Array.isArray(child.children)) {
                 child.children.forEach((subChild) => {
                   if (subChild.type === "text") {
-                    const textNode = document.createTextNode(subChild.value);
+                    const textNode = document.createTextNode(
+                      subChild.value || ""
+                    );
                     if (subChild.bold) {
                       const boldText = document.createElement("strong");
                       boldText.appendChild(textNode);

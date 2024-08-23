@@ -809,7 +809,8 @@ export default component((node, ctx) => {
                 <br>
                 <h5 data-mce-fragment="1">Slikbeskrivelse</h5>
                 <div class="naerring" data-mce-fragment="1" style="text-align:"justify";">
-                    ${description}
+                  This space for candy description
+                    <!-- ${description} -->
                 </div>
                 <p>&nbsp;</p>
             </div>

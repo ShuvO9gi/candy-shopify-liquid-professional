@@ -750,12 +750,12 @@ export default component((node, ctx) => {
             <p id="data-a" data-mce-fragment="1">${renderRichText(
               ingredientsData
             )}</p>
-            <div>
-                <br><br>
+            <!-- <div>
+                <br>
                 <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>
                 hvis du vil se mere om hvordan vi håndterer allergener
                 <br><br>
-            </div>
+            </div> -->
             <h5>Næringsværdi <small data-mce-fragment="1">pr. 100g</small></h5>
             <div>
                 <table style="width:80%;">

@@ -108,7 +108,13 @@
               data-image="{{ product.featured_image.src | img_url: 'master' }}"
               style="width: 100%"
               sizes="185px"
-              srcset="{{ product.featured_image.src | img_url: 'master' }}"> </div>
+              srcset="{{ product.featured_image.src | img_url: 'master' }}"> 
+              
+              <div>
+                <p style="color: white;">Candy Description</p>
+                
+              </div>
+            </div>
           </div>
   <div class="candyBoxContent">
            <div class="candyBoxBuySection-clicked" data-qty-wrapper="" data-qty-id="{{ product.id }}">

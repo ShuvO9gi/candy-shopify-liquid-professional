@@ -169,7 +169,7 @@
                   <div class="the-content">
                     <div class="descrip">
                         <h5>Indhold</h5>
-                        <p id="data-a">{{ ingrediensHTML }}</p>
+                        <p id="data-a"></p>
                     </div>
                     <div class="naerring">
                         <h5>Næringsværdi <small>pr. 100g</small></h5>
@@ -206,7 +206,6 @@
                         </tbody>
                     </table>
                     </div>
-            
                 </div>
                     </div>
                   </div>
@@ -215,3 +214,31 @@
         </div>
       </div>
   </div>
+
+  <script>
+    var ingrediensData = {{ ingrediensHTML }};
+  
+    function renderRichText(data) {
+      let content = '';
+  
+      data.children.forEach(paragraph => {
+        if (paragraph.type === 'paragraph') {
+          content += '<p>';
+          
+          paragraph.children.forEach(textNode => {
+            if (textNode.type === 'text') {
+              content += textNode.bold ? `<strong>${textNode.value}</strong>` : textNode.value;
+            } 
+          });
+  
+          content += '</p>';
+        }
+      });
+  
+      return content;
+    }
+  
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("data-a").innerHTML = renderRichText(ingrediensData);
+    });
+  </script>

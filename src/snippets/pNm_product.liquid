@@ -160,63 +160,61 @@
               
             </div>
           </div>
-  <div class="collapsible">
-                  <button type="button" class="collapsible__button">{{ section.settings.accordion_title }}</button>
-            
-                  <div class="collapsible__content">
-                    <div class="specs w-full type-style-p-regular">
-                    <!-- {{ product.description }} -->
-                  <div class="the-content">
-                    <div class="descrip">
-                        <h5>Indhold</h5>
-                        <p id="data-a"></p>
-                        <!-- <div>
-                          <br>
-                          <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>
-                          hvis du vil se mere om hvordan vi håndterer allergener
-                          <br>
-                        </div> -->
-                    </div>
-                    <div class="naerring">
-                        <h5>Næringsværdi <small>pr. 100g</small></h5>
-                    <table>
-                        <tbody>
-                          <tr>
-                            <td><strong>Energi</strong></td>
-                            <td><span id="data-b">{{ energy_kj | default: '0.0' }} KJ / {{ energy_kcal | default: '0.0' }}</span> kcal</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Fedt</strong></td>
-                            <td><span id="data-c">{{ fat | default: '0.0' }}</span> g</td>
-                          </tr>
-                          <tr>
-                            <td>- Heraf mættet</td>
-                            <td><span id="data-d">{{ of_which_saturates | default: '0.0' }}</span> g</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Kulhydrat</strong></td>
-                            <td><span id="data-e">{{ carbohydrates | default: '0.0' }}</span> g</td>
-                          </tr>
-                          <tr>
-                            <td>- Heraf sukkerarter</td>
-                            <td><span id="data-f">{{ of_which_sugars | default: '0.0' }}</span> g</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Protein</strong></td>
-                            <td><span id="data-g">{{ protein | default: '0.0' }}</span> g</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Salt</strong></td>
-                            <td><span id="data-h">{{ salt | default: '0.0' }}</span> g</td>
-                          </tr>
-                        </tbody>
-                    </table>
-                    </div>
+          <div class="collapsible">
+            <button type="button" class="collapsible__button">{{ section.settings.accordion_title }}</button>
+              <div class="collapsible__content">
+                <div class="specs w-full type-style-p-regular">
+                <!-- {{ product.description }} -->
+              <div class="the-content">
+                <div class="descrip">
+                    <h5>Indhold</h5>
+                    <p id="data-a"></p>
+                    <!-- <div>
+                      <br>
+                      <a href="https://www.slikekspressen.dk/pages/info-om-allergener" target="_blank">Tryk her</a>
+                      hvis du vil se mere om hvordan vi håndterer allergener
+                      <br>
+                    </div> -->
                 </div>
-                    </div>
-                  </div>
+                <div class="naerring">
+                  <h5>Næringsværdi <small>pr. 100g</small></h5>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td><strong>Energi</strong></td>
+                        <td><span id="data-b">{{ energy_kj | default: '0.0' }} KJ / {{ energy_kcal | default: '0.0' }}</span> kcal</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Fedt</strong></td>
+                        <td><span id="data-c">{{ fat | default: '0.0' }}</span> g</td>
+                      </tr>
+                      <tr>
+                        <td>- Heraf mættet</td>
+                        <td><span id="data-d">{{ of_which_saturates | default: '0.0' }}</span> g</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Kulhydrat</strong></td>
+                        <td><span id="data-e">{{ carbohydrates | default: '0.0' }}</span> g</td>
+                      </tr>
+                      <tr>
+                        <td>- Heraf sukkerarter</td>
+                        <td><span id="data-f">{{ of_which_sugars | default: '0.0' }}</span> g</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Protein</strong></td>
+                        <td><span id="data-g">{{ protein | default: '0.0' }}</span> g</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Salt</strong></td>
+                        <td><span id="data-h">{{ salt | default: '0.0' }}</span> g</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-
+              </div>
+             </div>
+           </div>
+          </div>
         </div>
       </div>
   </div>

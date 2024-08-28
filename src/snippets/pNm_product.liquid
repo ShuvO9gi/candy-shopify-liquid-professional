@@ -177,31 +177,31 @@
                         <tbody>
                           <tr>
                             <td><strong>Energi</strong></td>
-                            <td><span id="data-b">{{ energy_kj }} KJ / {{ energy_kcal }}</span> kcal</td>
+                            <td><span id="data-b">{{ energy_kj | default: '0.0' }} KJ / {{ energy_kcal | default: '0.0' }}</span> kcal</td>
                           </tr>
                           <tr>
                             <td><strong>Fedt</strong></td>
-                            <td><span id="data-c">{{ fat }}</span> g</td>
+                            <td><span id="data-c">{{ fat | default: '0.0' }}</span> g</td>
                           </tr>
                           <tr>
                             <td>- Heraf mættet</td>
-                            <td><span id="data-d">{{ of_which_saturates }}</span> g</td>
+                            <td><span id="data-d">{{ of_which_saturates | default: '0.0' }}</span> g</td>
                           </tr>
                           <tr>
                             <td><strong>Kulhydrat</strong></td>
-                            <td><span id="data-e">{{ carbohydrates }}</span> g</td>
+                            <td><span id="data-e">{{ carbohydrates | default: '0.0' }}</span> g</td>
                           </tr>
                           <tr>
                             <td>- Heraf sukkerarter</td>
-                            <td><span id="data-f">{{ of_which_sugars }}</span> g</td>
+                            <td><span id="data-f">{{ of_which_sugars | default: '0.0' }}</span> g</td>
                           </tr>
                           <tr>
                             <td><strong>Protein</strong></td>
-                            <td><span id="data-g">{{ protein }}</span> g</td>
+                            <td><span id="data-g">{{ protein | default: '0.0' }}</span> g</td>
                           </tr>
                           <tr>
                             <td><strong>Salt</strong></td>
-                            <td><span id="data-h">{{ salt }}</span> g</td>
+                            <td><span id="data-h">{{ salt | default: '0.0' }}</span> g</td>
                           </tr>
                         </tbody>
                     </table>

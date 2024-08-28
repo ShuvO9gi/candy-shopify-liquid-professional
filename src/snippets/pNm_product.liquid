@@ -228,7 +228,9 @@
           paragraph.children.forEach(textNode => {
             if (textNode.type === 'text') {
               content += textNode.bold ? `<strong>${textNode.value}</strong>` : textNode.value;
-            } 
+            } else if(textNode.type === 'link') {
+              content += `<a href=${textNode.url || '#'} target=${textNode.target || "_self"}>${textNode.children[0]?.value}</a>`;
+            }
           });
   
           content += '</p>';

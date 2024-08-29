@@ -1422,7 +1422,9 @@ if (window.history.replaceState) {
       var candyWeightNumber = candyWeightText.match(/\d+/);
       var candyWeightValue = parseInt(candyWeightNumber, 10);
       candyWeightVariable = candyWeightValue;
-      var dataIdValue = $('.giftproduct-card').data('id');
+      //var dataIdValue = $('.giftproduct-card').data('id');
+      var dataIdValue = $('.giftprodselected').data('id');
+      
       //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
       //$('#autofillbtn').attr('onclick', dynamicClassName + '();');
       var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);

@@ -1538,6 +1538,7 @@ if (window.history.replaceState) {
       });
 
       // Update the URL with page number and product ID
+      var dataIdValue = $('.giftprodselected').data('id');
       var newUrl = window.location.origin + window.location.pathname + "?page=2&product=" + dataIdValue;
       window.history.pushState({ path: newUrl }, '', newUrl);
     }

@@ -1502,7 +1502,7 @@ if (window.history.replaceState) {
     function prevPage() {
       $('#page1').slideDown();
       $("main").addClass('cus_giftflow');
-      $("main").removeClass('cus_giftflowpage2');
+      $("body").removeClass('cus_giftflowpage2');
       $("#pickNmix_row").css('display', 'none');
       $("#page1").css('display', 'block');
       $("#autofillbtn").css("display", "block");
@@ -1519,7 +1519,7 @@ if (window.history.replaceState) {
       $('[data-remove]').each(function() {
         var qtyId = $(this).attr('data-qty-id');
         var dataId = $('.autofillbtn').data('id');
-        if (qtyId = dataId ) {
+        if (qtyId === dataId ) {
             $(this).click();
         }
     });

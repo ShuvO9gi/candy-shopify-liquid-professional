@@ -1596,10 +1596,13 @@ if (window.history.replaceState) {
           }
       });
 
+      // Store the selected product ID in localStorage
+      localStorage.setItem('selectedProductId', dataIdValue);
+
       // Construct the new URL with page number (assuming it's page 1) and selected product ID
       var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
       console.log("url", newUrl);
-      
+
       // Update the browser's URL without reloading the page
       window.history.pushState({ path: newUrl }, '', newUrl);
     }

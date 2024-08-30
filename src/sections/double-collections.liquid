@@ -1586,15 +1586,21 @@ if (window.history.replaceState) {
         } else {
             $(this).attr('data-id', dataIdValue); // Add data-id attribute
         }
-    });
-    $('#autofillbtn').each(function() {
-        var existingDataId = $(this).data('id');
-        if (existingDataId) {
-            $(this).data('id', dataIdValue); // Update data-id attribute
-        } else {
-            $(this).attr('data-id', dataIdValue); // Add data-id attribute
-        }
-    });
+      });
+      $('#autofillbtn').each(function() {
+          var existingDataId = $(this).data('id');
+          if (existingDataId) {
+              $(this).data('id', dataIdValue); // Update data-id attribute
+          } else {
+              $(this).attr('data-id', dataIdValue); // Add data-id attribute
+          }
+      });
+
+      // Construct the new URL with page number (assuming it's page 1) and selected product ID
+      var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
+      
+      // Update the browser's URL without reloading the page
+      window.history.pushState({ path: newUrl }, '', newUrl);
     }
 
  

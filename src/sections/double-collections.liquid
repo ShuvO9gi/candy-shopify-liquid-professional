@@ -1555,6 +1555,9 @@ if (window.history.replaceState) {
     // Find the selected product and remove the selection class
     $('.giftproduct-card').removeClass('giftprodselected');
 
+    // Clear other custom product-related classes or selections if needed
+    $('body').removeClass('giftprodselectedbody');
+
     let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
     var dataId = $('.autofillbtn').data('id');
     const dataArray= [dataId, 47473208525131, 47473245585739];

@@ -1549,6 +1549,7 @@ if (window.history.replaceState) {
     //Reset url to its original state
     var originalUrl = window.location.origin + window.location.pathname;
     console.log("original url", orginalUrl);
+    window.history.replaceState({path: originalUrl}, '', originalUrl);
 
     let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
     var dataId = $('.autofillbtn').data('id');

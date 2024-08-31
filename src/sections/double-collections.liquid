@@ -1552,6 +1552,9 @@ if (window.history.replaceState) {
     console.log("original url", orginalUrl);
     window.history.replaceState({path: originalUrl}, '', originalUrl);
 
+    // Find the selected product and remove the selection class
+    $('.giftproduct-card').removeClass('giftprodselected');
+
     let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
     var dataId = $('.autofillbtn').data('id');
     const dataArray= [dataId, 47473208525131, 47473245585739];

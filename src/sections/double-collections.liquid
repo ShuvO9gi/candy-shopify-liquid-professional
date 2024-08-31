@@ -1549,7 +1549,6 @@ if (window.history.replaceState) {
 
     //Reset url to its original state
     var originalUrl = window.location.origin + window.location.pathname;
-    console.log("original url", orginalUrl);
     window.history.replaceState({path: originalUrl}, '', originalUrl);
 
     // Find the selected product and remove the selection class

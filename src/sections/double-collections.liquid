@@ -1639,6 +1639,11 @@ if (window.history.replaceState) {
               // Add a class to the body for any relevant styling
               $('body').addClass("giftprodselectedbody");
 
+              // Also update the data-id for nextPage2Btn and autofillbtn
+              $('#nextPage2Btn').attr('data-id', productId);
+              $('#autofillbtn').attr('data-id', productId);
+
+
           }
       }
     }

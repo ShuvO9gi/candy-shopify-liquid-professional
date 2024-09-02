@@ -1608,10 +1608,10 @@ if (window.history.replaceState) {
           }
       });
 
-      // Store the selected product ID in localStorage
+      // Store the selected product
       localStorage.setItem('selectedProductId', dataIdValue);
 
-      // Construct the new URL with page number (assuming it's page 1) and selected product ID
+      // Construct the new URL
       var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
       console.log("url", newUrl);
 

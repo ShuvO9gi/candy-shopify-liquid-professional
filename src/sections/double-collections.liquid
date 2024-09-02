@@ -1551,10 +1551,8 @@ if (window.history.replaceState) {
     var originalUrl = window.location.origin + window.location.pathname;
     window.history.replaceState({path: originalUrl}, '', originalUrl);
 
-    // Find the selected product and remove the selection class
     $('.giftproduct-card').removeClass('giftprodselected');
 
-    // Clear other custom product-related classes or selections if needed
     $('body').removeClass('giftprodselectedbody');
 
     let candyBag= JSON.parse(window.localStorage.getItem('candybag'));

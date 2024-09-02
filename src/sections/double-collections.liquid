@@ -1625,7 +1625,7 @@ if (window.history.replaceState) {
     function checkUrlForSelectedProduct() {
       var urlParams = new URLSearchParams(window.location.search);
 
-      var productId = urlParams.get('product') 
+      var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
 
 
       // If a product is specified in the URL, select the product automatically

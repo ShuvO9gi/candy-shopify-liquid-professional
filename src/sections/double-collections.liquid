@@ -1656,6 +1656,11 @@ if (window.history.replaceState) {
       // Call the function to check URL parameters when the page loads
       checkUrlForSelectedProduct();
 
+      // Add an event listener to preserve the URL on page reload
+      window.addEventListener('popstate', function(event) {
+          // When the browser history state changes, reapply the selected product based on URL
+          checkUrlForSelectedProduct();
+      });
     });
 
     // Optional: You can use this if you want to trigger URL changes even when going back/forward in the browser history

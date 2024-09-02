@@ -1574,6 +1574,7 @@ if (window.history.replaceState) {
         candyBag=candyBag.filter(item => dataArray.includes(item.id));
     }
     window.localStorage.setItem('candybag', JSON.stringify(candyBag));
+
     setTimeout(function() {
         $('[data-final-submit]').click();
     }, 100);
@@ -1583,7 +1584,7 @@ if (window.history.replaceState) {
     $(".nextPage").css('display', 'flex');
     $(".page3Btn").css('display', 'none');
     }, 500);
-}
+  }
 
 
   <!-- gift product click -->
@@ -1620,7 +1621,40 @@ if (window.history.replaceState) {
       window.history.pushState({ path: newUrl }, '', newUrl);
     }
 
- 
+    // Function to check URL parameters and pre-select a product on page load
+    function checkUrlForSelectedProduct() {
+      var urlParams = new URLSearchParams(window.location.search);
+
+      var productId = urlParams.get('product') 
+
+
+      // If a product is specified in the URL, select the product automatically
+      if (productId) {
+          var selectedProduct = $('.giftproduct-card[data-id="' + productId + '"]');
+
+          if (selectedProduct.length > 0) {
+              // Add 'giftprodselected' class to the product
+              selectedProduct.addClass("giftprodselected");
+
+              // Add a class to the body for any relevant styling
+              $('body').addClass("giftprodselectedbody");
+
+          }
+      }
+    }
+
+    // Ensure the product selection is maintained on page reload
+    $(document).ready(function() {
+      console.log("page reloaded");
+      // Call the function to check URL parameters when the page loads
+      checkUrlForSelectedProduct();
+
+    });
+
+    // Optional: You can use this if you want to trigger URL changes even when going back/forward in the browser history
+    window.onpopstate = function(event) {
+      checkUrlForSelectedProduct();
+    };
 
 //  function giftprodselectedbody_400() {
 //    $('[data-id="47496972796235"]').click();

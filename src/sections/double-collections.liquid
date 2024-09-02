@@ -1643,7 +1643,9 @@ if (window.history.replaceState) {
               $('#nextPage2Btn').attr('data-id', productId);
               $('#autofillbtn').attr('data-id', productId);
 
-
+              // Update the URL to reflect the selected product using replaceState to avoid adding to history
+              var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + productId;
+              window.history.replaceState({ path: newUrl }, '', newUrl);
           }
       }
     }

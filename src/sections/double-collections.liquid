@@ -1622,9 +1622,7 @@ if (window.history.replaceState) {
     // Function to check URL parameters and pre-select a product on page load
     function checkUrlForSelectedProduct() {
       var urlParams = new URLSearchParams(window.location.search);
-      console.log("after page reload", urlParams);
       var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
-      console.log("after page reload selectedproduct", productId);
 
       // If a product is specified in the URL, select the product automatically
       if (productId) {

@@ -1613,8 +1613,6 @@ if (window.history.replaceState) {
 
       // Construct the new URL
       var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
-      console.log("url", newUrl);
-
       // Update the browser's URL without reloading the page
       window.history.pushState({ path: newUrl }, '', newUrl);
     }
@@ -1648,7 +1646,6 @@ if (window.history.replaceState) {
 
     // Ensure the product selection is maintained on page reload
     $(document).ready(function() {
-      console.log("page reloaded");
       // Call the function to check URL parameters when the page loads
       checkUrlForSelectedProduct();
 

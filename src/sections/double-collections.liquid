@@ -1623,6 +1623,14 @@ if (window.history.replaceState) {
       var currentPage = urlParams.get('page') || 1;
       var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
 
+      if (currentPage === '1') {
+        // Show Page 1
+        $("#page1").css('display', 'block');
+        $("#pickNmix_row").css('display', 'none');
+        $(".page2Btn").css('display', 'none');
+        $(".nextPage").css('display', 'flex');
+    } 
+
       // If a product is specified in the URL, select the product automatically
       if (productId) {
           var selectedProduct = $('.giftproduct-card[data-id="' + productId + '"]');

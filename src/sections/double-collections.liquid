@@ -1620,6 +1620,7 @@ if (window.history.replaceState) {
     // Function to check URL parameters and pre-select a product on page load
     function checkUrlForSelectedProduct() {
       var urlParams = new URLSearchParams(window.location.search);
+      var currentPage = urlParams.get('page') || 1;
       var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
 
       // If a product is specified in the URL, select the product automatically

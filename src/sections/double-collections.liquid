@@ -1629,39 +1629,34 @@ if (window.history.replaceState) {
         $("#pickNmix_row").css('display', 'none');
         $(".page2Btn").css('display', 'none');
         $(".nextPage").css('display', 'flex');
-    } else if (currentPage === '2') {
-        // Show Page 2
-        $('#pickNmix_row').slideDown();
-        $("#pickNmix_row").css('display', 'flex');
-        $("#page1").css('display', 'none');
-        $("body").addClass('cus_giftflowpage2');
-        $(".page2Btn").css('display', 'flex');
-        $(".nextPage").css('display', 'none');
-    } else if (currentPage === '3') {
-        // Show Page 3
-        $('.page3').slideDown();
-        $("#pickNmix_row").css('display', 'none');
-        $("#page1").css('display', 'none');
-        $(".page3").css('display', 'block');
-        $("body").removeClass('cus_giftflowpage2');
-        $(".page3Btn").css('display', 'flex');
-        $(".page2Btn").css('display', 'none');
-        $(".nextPage").css('display', 'none');
-        $('[data-submit-button]').text('Put gaven i kurven');
-    }
+      } else if (currentPage === '2') {
+          // Show Page 2
+          $('#pickNmix_row').slideDown();
+          $("#pickNmix_row").css('display', 'flex');
+          $("#page1").css('display', 'none');
+          $("body").addClass('cus_giftflowpage2');
+          $(".page2Btn").css('display', 'flex');
+          $(".nextPage").css('display', 'none');
+      } else if (currentPage === '3') {
+          // Show Page 3
+          $('.page3').slideDown();
+          $("#pickNmix_row").css('display', 'none');
+          $("#page1").css('display', 'none');
+          $(".page3").css('display', 'block');
+          $("body").removeClass('cus_giftflowpage2');
+          $(".page3Btn").css('display', 'flex');
+          $(".page2Btn").css('display', 'none');
+          $(".nextPage").css('display', 'none');
+          $('[data-submit-button]').text('Put gaven i kurven');
+      }
 
       // If a product is specified in the URL, select the product automatically
       if (productId) {
           var selectedProduct = $('.giftproduct-card[data-id="' + productId + '"]');
 
           if (selectedProduct.length > 0) {
-              // Add 'giftprodselected' class to the product
               selectedProduct.addClass("giftprodselected");
-
-              // Add a class to the body for any relevant styling
               $('body').addClass("giftprodselectedbody");
-
-              // Also update the data-id for nextPage2Btn and autofillbtn
               $('#nextPage2Btn').attr('data-id', productId);
               $('#autofillbtn').attr('data-id', productId);
 

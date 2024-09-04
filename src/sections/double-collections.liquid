@@ -1392,9 +1392,9 @@ jq.onload = function() {
 
 document.body.appendChild(jq);
 
-if (window.history.replaceState) {
+{% comment %} if (window.history.replaceState) {
   window.history.replaceState(null, null, window.location.pathname);
-}
+} {% endcomment %}
 
 <!-- giftflow page1,page2 hide show -->
     function nextPage() {

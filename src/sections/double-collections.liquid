@@ -1669,9 +1669,12 @@ document.body.appendChild(jq);
               window.history.replaceState({ path: newUrl }, '', newUrl);
 
               // Re-apply the nextPage2 button functionality based on product weight
-              var weightText = selectedProduct.find('.giftproduct-weight').text();
-              var weightAmount = parseFloat(weightText);
-              var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
+            var weightText = selectedProduct.find('.giftproduct-weight').text();
+            var weightAmount = parseFloat(weightText);
+            var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
+
+            // Reassign the onclick function dynamically
+            $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
 
             
           }

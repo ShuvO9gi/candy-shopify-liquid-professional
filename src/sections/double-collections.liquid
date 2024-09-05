@@ -1667,6 +1667,13 @@ document.body.appendChild(jq);
 
               var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + productId;
               window.history.replaceState({ path: newUrl }, '', newUrl);
+
+              // Re-apply the nextPage2 button functionality based on product weight
+              var weightText = selectedProduct.find('.giftproduct-weight').text();
+              var weightAmount = parseFloat(weightText);
+              var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
+
+            
           }
       }
     }

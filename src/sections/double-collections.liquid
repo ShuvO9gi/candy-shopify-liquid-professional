@@ -1687,6 +1687,10 @@ document.body.appendChild(jq);
                 $(".nextPage").css('display', 'none');
                 $('[data-submit-button]').text('Put gaven i kurven');
 
+                // Update the URL with page number and selected product ID
+                var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + productId;
+                window.history.pushState({ path: newUrl }, '', newUrl);
+
                 
             }
           }

@@ -1676,7 +1676,19 @@ document.body.appendChild(jq);
             // Reassign the onclick function dynamically
             $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
 
-            
+            // Ensure the dynamically generated function is set on page reload
+            window[dynamicClassnextPage2] = function() {
+                $('.page3').slideDown();
+                $("#pickNmix_row").css('display', 'none');
+                $(".page3").css('display', 'block');
+                $("body").removeClass('cus_giftflowpage2');
+                $(".page3Btn").css('display', 'flex');
+                $(".page2Btn").css('display', 'none');
+                $(".nextPage").css('display', 'none');
+                $('[data-submit-button]').text('Put gaven i kurven');
+
+                
+            }
           }
       }
     }

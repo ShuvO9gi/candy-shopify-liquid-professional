@@ -1628,9 +1628,10 @@ document.body.appendChild(jq);
 
       // Get the original URL without any query parameters
       var originalUrl = window.location.origin + window.location.pathname;
-      
+
       var urlParams = new URLSearchParams(window.location.search);
       var currentPage = urlParams.get('page') || 1;
+      var pageParam = urlParams.get('page');
       var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
 
       if (currentPage === '1') {

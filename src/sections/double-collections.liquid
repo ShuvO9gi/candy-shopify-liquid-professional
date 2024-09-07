@@ -1623,6 +1623,11 @@ document.body.appendChild(jq);
 
     // Function to check URL parameters and pre-select a product on page load
     function checkUrlForSelectedProduct() {
+      // Get the current URL
+      var currentUrl = window.location.href;
+
+      // Get the original URL without any query parameters
+      var originalUrl = window.location.origin + window.location.pathname;
       
       var urlParams = new URLSearchParams(window.location.search);
       var currentPage = urlParams.get('page') || 1;

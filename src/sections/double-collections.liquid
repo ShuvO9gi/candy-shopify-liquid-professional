@@ -1699,7 +1699,11 @@ document.body.appendChild(jq);
 
                 var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
 
-                
+                if (candyButton.length > 0) {
+                    candyButton.click();
+                } else {
+                    console.error("Button not found with data-id:", dataId);
+                }
             }
           }
       }

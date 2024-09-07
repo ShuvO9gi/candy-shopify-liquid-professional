@@ -237,6 +237,7 @@
         font-weight: 600;
     }
   #page1{
+    display: none;
     transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   }
    #pickNmix_row{
@@ -1622,6 +1623,7 @@ document.body.appendChild(jq);
 
     // Function to check URL parameters and pre-select a product on page load
     function checkUrlForSelectedProduct() {
+      
       var urlParams = new URLSearchParams(window.location.search);
       var currentPage = urlParams.get('page') || 1;
       var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');

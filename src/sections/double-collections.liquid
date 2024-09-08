@@ -1703,8 +1703,6 @@ document.body.appendChild(jq);
                 var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + productId;
                 window.history.pushState({ path: newUrl }, '', newUrl);
 
-                console.log("page 3");
-
                 const cus_modal = document.querySelector(".cus_modal");
                 cus_modal.classList.remove("cus_modal-active");
                 var dataId = $('.autofillbtn').data('id');

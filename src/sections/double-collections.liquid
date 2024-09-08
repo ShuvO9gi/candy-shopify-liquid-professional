@@ -1634,9 +1634,6 @@ document.body.appendChild(jq);
       var pageParam = urlParams.get('page');
       var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
 
-      console.log("pageParam", pageParam);
-      console.log("currentUrl", currentUrl);
-      console.log("originalUrl", originalUrl);
       // Logic to display or hide #page1
       if (currentUrl === originalUrl || pageParam === '1') {
         $("#page1").css('display', 'block');

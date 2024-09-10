@@ -1010,7 +1010,29 @@
             </div>
             <!-- /filter-list -->
           </div>
-
+          <!-- gift product select -->
+          <!-- Step 1 -->
+          <div class="row" id="page1">
+            <h2 class="addcandytitle1">{{ section.settings.step1_title }}</h2>
+            <div class="col-12 giftproduct"> 
+                {% for product in collections.test_step1.products %}
+                    {% assign selected_productId = product.variants.first.id %}
+                    <div class="giftproduct-card" onclick="giftprodclick(this);" data-id="{{ selected_productId }}"
+                          data-title="{{ product.title }}"
+                          data-image="{{ product.featured_image | img_url: '600x600' }}"
+                          data-price="{{ product.price | money }}"
+                          data-weight="{{ product.variants.first.weight }}"
+                          data-description="Your product description here">
+                        
+                        <!-- Product Title and Image -->
+                        <h2 class="giftproduct-title">{{ product.title }}</h2> 
+                        <img class="giftproduct-card_img" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
+                        
+                        <!-- Product Weight and Price -->
+                        <p class="giftproduct-weight">{{ product.variants.first.weight }}g Bland Selv Slik</p>
+                        <p class="giftproduct_price">
+                            <span class="giftproduct-price">{{ product.price | money_without_currency }}</span> kr
+                        </p>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

@@ -1033,6 +1033,18 @@
                         <p class="giftproduct_price">
                             <span class="giftproduct-price">{{ product.price | money_without_currency }}</span> kr
                         </p>
+                        <!-- Hidden Variant Information -->
+                        {% for variant in product.variants %}
+                          <div class="giftproduct-card-variant" data-id="{{ variant.id }}" 
+                               data-title="{{ variant.title }}" 
+                               data-price="{{ variant.price | money }}" 
+                               data-image="{{ variant.image | img_url: '600x600' }}">
+                          </div>
+                      {% endfor %}
+                  </div> 
+              {% endfor %} 
+          </div>
+      </div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

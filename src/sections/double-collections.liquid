@@ -1045,6 +1045,83 @@
               {% endfor %} 
           </div>
       </div>
+
+      <!-- Step 2 -->
+      <div class="section-container pp_redesign_v1 page2" id="productDetailSection" style="display: none;">
+        <div class="page-container re_v1_container">
+          <div class="topContentProduct flex" style="margin-top: 20px;">
+            <div class="productImage">
+              <img id="selectedProductImage" src="" alt="Product Image" />
+            </div>
+            <div class="productContent">
+              <h1 class="productContentHeadline type-style-h2-bold" id="productTitle">
+                <!-- Will be updated dynamically -->
+              </h1>
+              <div class="re-delivery-info">
+                <div class="x announcement-link-text type-style-p-regular twb-flex twb-flex-col twb-items-center md:twb-items-start">
+                  <div>
+                    <span class="twb-text-white">Bestil indenfor</span>
+                    <span class="time-countdown twb-text-brand-green" data-time="">2 timer og 34 min</span>
+                  </div>
+                </div>
+              </div>
+              <div class="productPriceContent">
+                <span class="productPrice type-style-h2-bold" id="productPrice">
+                  <!-- Will be updated dynamically -->
+                </span>
+              </div>
+              <link href="//www.slikekspressen.dk/cdn/shop/t/86/assets/new-custom.css?v=1202703708877382591717508676" rel="stylesheet" type="text/css" media="all">
+              
+                <input type="hidden" name="form_type" value="product">
+                <input type="hidden" name="utf8" value="✓">
+                <div class="v_description">
+                  <ul>
+                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point1">Perfekt til "slik eller ballade" – Imponer store og små monstre!</span></li>
+                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point2">Oplagt til fester – fyld spanden med (u)hyggelige godter.</span></li>
+                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point3">1 kilo slik – en (u)hyggelig blanding med noget for enhver smag!</span></li>
+                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point4">Alt samlet i én pakke – nemt og bekvemt til Halloween.</span></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="product-detail">
+                  <div class="product-card__title type-style-h3-bold">Vælg variant</div>
+                  <div class="variant-wrapper variant-wrapper--button js">
+                    <div class="variant-option re-variant-option">
+                      {% for variant in product.variants %}
+                        <label class="variant-option-label {% if forloop.first %}selected{% endif %}">
+                          <input type="radio" name="variant_option_0" value="{{ variant.title }}" data-selling1="{{ variant.selling_point1 }}" data-selling2="{{ variant.selling_point2 }}" data-selling3="{{ variant.selling_point3 }}" data-selling4="{{ variant.selling_point4 }}" data-image-url="{{ variant.image | img_url: '600x' }}" data-price="{{ variant.price | money }}" data-variant-id="{{ variant.id }}" {% if forloop.first %}checked{% endif %}>
+                          {% if variant.image %}
+                            <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">
+                          {% endif %}
+                          <div class="re-variant-option-content">
+                            <h2>{{ variant.title }}</h2>
+                            <p>{{ variant.price | money }}</p>
+                          </div>
+                        </label>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="row pickNmix_row pickNmix_rowAllproducts page3" id="pickNmix_row">
+        <div class="w-full stickytop">
+          <div class="stickytop-inner">
+            <h2 class="addcandytitle">{{section.settings.step2_title}}</h2>
+            <div class="addcandybar">
+              <p class="addcandybarPara">{{section.settings.step2_targetfirsttext}} <span id="targeycandyweight" data-gram-elem></span> <span id="targeycandyweightvisible"></span>{{section.settings.step2_targetlasttext}}</p>
+              <p class="progressbartop">
+                <progress class="progress progresstargetcandy" max="100" value="33"></progress><span></span> </p> <a class="autofillbtn" id="autofillbtn" onclick="autofillbtn();">{{section.settings.step2_randombtntext}}</a> <a class="autofillbtn" id="removeautofillbtn" onclick="removeautofillbtn();">{{section.settings.step2_removebtntext}}</a> </div>
+            <div id="filter-search-icon5" class="show-cus_modalfirst " aria-haspopup="true"><span id="filter-iconAllProdBtn5">{%- render 'icon' with 'search-light' -%}</span></div>
+          </div>
+        </div>
+        <div class="col-12"> {%- comment -%}
+          <ul class="{{ class }}__products-wrapper flex flex-wrap -mt-8 -ml-2" data-product-list> {%- for product in collection.products -%} Products are loaded with javascript /js/custom/blandSelvSlik.js {%- endfor -%} </ul> {%- endcomment -%}
+          <div class="candyItems " data-product-list></div>
+        </div>
+      </div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

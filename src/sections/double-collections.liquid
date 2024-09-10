@@ -979,7 +979,37 @@
     }
 </style>
 
-
+{%- assign class = 'bland-selv-slik' -%} {%- assign s = section.settings -%} {%- assign paginateBy = s.paginate -%} {%- assign delivery_text = 'bland_selv.speech_bubbles.delivery' | t -%} {%- assign price_limit_text = 'bland_selv.speech_bubbles.price_limit' | t -%} {% paginate collection.products by paginateBy %} {%- capture config -%} { "handle": "{{ collection.handle }}", "totalProducts": {{ collection.all_products_count }}, "paginate": {{ paginateBy | json }}, "currentPage": {{ paginate.current_page | json }}, "priceLimit": {{ s.price_limit | json }}, "itemWidth": {{ s.width_item | json }}, "plusIcon": "{{ 'plus.png' | asset_url }}", "minusIcon": "{{ 'minus.png' | asset_url }}" } {%- endcapture -%}
+  <div>{% for product in collection.products %}
+    <p class="allproductlist" style="display: none;">{{ product.title }}-{{ product.price }}</p>{% endfor %}</div>
+  <div class="{{ class }}" data-config='{{ config }}' data-component="speechBubble">
+    <section class="{{ class }}__products">
+      <div class="section-container candySection">
+        <div class="page-container">
+          <div class="filter----product filter fixed top-0  left-0 transform -translate-x-full  transition-transform duration-300 ease-in-out h-full pt-6 lg:pt-10  bg-white shadow-custom z-20" data-filter-drawer data-component="filterSidebar">
+            <div></div>
+            <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold" data-filter-close> <span class="close-cus_filter">{%- render 'icon' with 'close-dark' -%}</span> </div>
+            <div></div>
+            <div class="filterScroll">
+              <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold"> <span>{{ 'bland_selv.general.filter_title' | t }}</span> </div>
+              <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto"> {%- assign filter_cat_arr = blank -%} {%- for b in section.blocks -%} {%- case b.type -%} {%- when 'filter_type' -%} {%- assign bs = b.settings -%} {%- assign filter_cat_arr = filter_cat_arr | append: bs.category | append: ',' -%} {%- endcase -%} {%- endfor -%} {%- assign filter_cat_arr = filter_cat_arr | split: ',' | uniq -%}
+                <ul> {%- for cat in filter_cat_arr -%}
+                  <li class="mb-3 last:mb-0">
+                    <div class="rounded-md shadow-filterItem">
+                      <div class="filter__item__toggle flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md cursor-pointer" data-filter-toggle> <span class="type-style-p-small-bold">{{ cat | capitalize }}</span> <span class="flex items-center justify-center w-5 h-5 transition-transform duration-200 ease-in-out" data-filter-icon>{%- render 'icon' with 'chevron-down' -%}</span> </div>
+                      <div class="filter__item__wrapper transition-maxHeight duration-300 ease-in-out overflow-hidden" data-filter-wrapper>
+                        <ul class=""> {%- for b in section.blocks -%} {%- case b.type -%} {%- when 'filter_type' -%} {%- assign bs = b.settings -%} {%- assign filter_cat = bs.category -%} {%- assign filter_name = bs.filter_name -%} {%- assign filter_id = bs.filter_id -%} {%- assign filter_type = bs.type -%} {%- if filter_cat == cat -%}
+                          <li class="filter__item flex items-center justify-between px-3 py-[10px] first:pt-5 last:pb-5 cursor-pointer" data-filter-item data-filter-type="{{ filter_type }}" data-filter-id="{{ filter_id }}">
+                            <p class="transition-color duration-100 ease-out type-style-p-small-regular">{{ filter_name }}</p>
+                            <div class="filter__item__dot w-2 h-2 ml-5 border-2 border-orange rounded-full transition-color duration-100 ease-out"></div>
+                          </li> {%- endif -%} {%- endcase -%} {%- endfor -%} </ul>
+                      </div>
+                    </div>
+                  </li> {%- endfor -%} </ul>
+              </div>
+            </div>
+            <!-- /filter-list -->
+          </div>
 
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {

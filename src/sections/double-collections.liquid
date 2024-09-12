@@ -1142,6 +1142,16 @@
       </div>
     </div>
   </div>
+  <div class="product-card__info fixed top-0 left-0 w-full h-screen flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 ease-out z-100" data-info-modal>
+    <div class="overlay relative max-w-[90%] rounded-md">
+      <div class="product-card__info__inner relative max-w-xl max-h-[75vh] !rounded-md bg-white text-xs sm:text-base shadow-custom">
+        <div class="product-card__info__header flex items-center justify-between px-4 py-2 bg-lightPink rounded-t-md">
+          <div class="flex items-center justify-center"> <img class="block w-12 h-12 mr-4 md:mr-7" src="" alt="" data-info-modal-image> <span class="max-w-[80%] text-purple font-bold" data-info-modal-title></span> </div> <span class="cursor-pointer" data-close-info>{%- render 'icon' with 'close' -%}</span> </div>
+        <div class="product-card__info__wrapper max-h-[60vh] p-4 text-purple overflow-auto" data-info-modal-description>{%- comment -%} Info content is inserted via js {%- endcomment -%} </div>
+      </div>
+    </div>
+  </div>
+</section>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

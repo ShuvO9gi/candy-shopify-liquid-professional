@@ -1124,6 +1124,15 @@
       </div>
       <!-- Step 4 -->
       <div class="page4"> {% render 'giftflow_message-card' %} </div>
+      <!-- modal search -->
+      <div class="mask-cus_modal" role="dialog"></div>
+      <div class="cus_modal" role="alert">
+        <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto">
+          <input placeholder="Søg efter slik her" type="text" id="filter-search" class="flex px-3 py-[10px] border border-filterBorder rounded-md"></input>
+        </div>
+        <button class="close-cus_modal" id="close-cus_modal" role="button">X</button>
+      </div>
+      <!-- end modal search -->
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

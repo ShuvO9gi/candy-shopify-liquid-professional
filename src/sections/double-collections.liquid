@@ -1159,6 +1159,34 @@
       <div id="filter-search-icon2" class="show-cus_modal2 " aria-haspopup="true"><span id="filter-iconAllProdBtn2">{%- render 'icon' with 'search-light' -%}</span></div>
     </div>
   </div>
+  <div style="background-color: var(--brandDarkPurple);">
+    <div class="page-container" id="cus_sticky-total-btn" data-sticky-total-btn>
+      <div class="row">
+        <div class="col-12 cus_stickybar">
+          <div class="bottomBar valignMiddle">
+            <div class="leftSideBar" style="visibility: hidden; position: absolute;">
+              <div class="barGramText type-style-p-small-regular"> {{ 'bland_selv.general.grams' | t }} <span data-gram-elem></span>. </div>
+              <div class="barPriceText type-style-p-bold"> <span>
+                    {{ 'bland_selv.general.price' | t }}
+                  </span> <span data-total-price-elem></span>. </div>
+            </div>
+            <div class="rightSideBar" style="width: 100%;">
+              <input type="hidden" value="gift" id="GiftChecker"> {% comment %}
+              <button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button> {% endcomment %}
+              <div class="nextPage">
+                <div class="progressbar">
+                  <progress class="progress progress1" max="100" value="25"></progress><span></span>Trin 1 af 4</div>
+                <div class="nextPageBtn" onclick="nextPage();">{{section.settings.step1btn_title}} <span><img class="nextPageBtnImg" src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"></span></div>
+              </div>
+
+                            <div class="step2Btn">
+                <div class="progressbar">
+                  <progress class="progress newstepprogress" max="100" value="50"></progress><span></span>Trin 2 af 4</div>
+                <div class="Step2Btn-inside">
+                  <div class="prevStepBtn" onclick="prevStep();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                  <button class=" type-style-button-text cursor-pointer nextStepBtn" onclick="nextStep();">{{section.settings.step2_nextbtntext}}</button>
+                </div>
+              </div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

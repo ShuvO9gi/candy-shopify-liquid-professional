@@ -1152,6 +1152,13 @@
     </div>
   </div>
 </section>
+<section class="{{ class }}__sticky fixed left-0 transform transition-transform duration-300 ease-out z-50 w-full" data-sticky-bar>
+  <div class="{{ class }}__sticky__filter-button flex justify-start" data-sticky-filter-btn>
+    <div class="max767">
+      <button class="buttonCorners flex items-center justify-center w-full h-[46px] font-bold text-2xs uppercase rounded-md" data-filter-button> <span class="mr-[6px]">{%- render 'icon' with 'filter' -%}</span> </button>
+      <div id="filter-search-icon2" class="show-cus_modal2 " aria-haspopup="true"><span id="filter-iconAllProdBtn2">{%- render 'icon' with 'search-light' -%}</span></div>
+    </div>
+  </div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

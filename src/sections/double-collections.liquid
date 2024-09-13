@@ -1232,6 +1232,20 @@
       </div>
 </section>
 </div>
+
+{%- comment -%} Visual bag {%- endcomment -%}
+<div class="{{ class }}__visual-bag fixed top-0 left-0 w-full h-full pointer-events-none z-[46]" data-component="visualBag" data-visual-bag-wrapper>
+  <div class="page-width relative h-full">
+    <div id="visual-bag__close_cus" class="{{ class }}__visual-bag__inner absolute right-0 sm:right-[17px] md:right-[40px] left-0 sm:left-[unset] bottom-[80px] sm:bottom-[80px] max-h-[55vh] lg:max-h-[50vh] max-w-full sm:min-w-[500px] rounded-tl-md rounded-tr-md bg-white transition-transform ease-out duration-300 transform translate-y-[200%] shadow-subtle" data-visual-bag-inner>
+      <div class="relative pb-10">
+        <div class="flex items-center justify-between px-[35px] py-[15px] rounded-tl-md rounded-tr-md popup-header">
+          <p class="font-body font-bold text-[30px] leading-[1] type-style-card-h">{{ 'bland_selv.general.your_bag' | t }}</p>
+          <div id="visual-bag__close_cusBtn" class="{{ class }}__visual-bag__close flex items-center cursor-pointer" data-close-visual-bag> <span class="mr-[10px] font-heading font-bold text-sm type-style-card-h">{{ 'bland_selv.general.hide' | t }}</span> {%- render 'icon' with 'close-dark' -%} </div>
+        </div>
+        <ul id="visual-bag__close_cusList" class="{{ class }}__visual-bag__list h-[45vh] lg:h-[43vh] pt-4 pb-[70px] lg:pb-3 px-[15px] overflow-auto" data-visual-bag></ul>
+        <div class="custom-scrollbar" data-custom-scrollbar></div>' </div>
+    </div>
+  </div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

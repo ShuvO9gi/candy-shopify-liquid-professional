@@ -1196,6 +1196,16 @@
                   <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn">{{section.settings.step2_nextbtntext}}</button>
                 </div>
               </div>
+
+              <div class="page3Btn">
+                <div class="progressbar">
+                  <progress class="progress progress3" max="100" value="100"></progress><span></span>Trin 4 af 4</div>
+                <div class="page3Btn-inside">
+                  <div class="prevPage2Btn" onclick="prevPage2();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                  <button class=" type-style-button-text cursor-pointer nextPageBtn3" id="LeftbarColoseBagButton" onclick="nextPage3();" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+                </div>
+              </div>
+            </div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

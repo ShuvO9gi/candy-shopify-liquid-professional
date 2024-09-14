@@ -1269,7 +1269,20 @@
     <p class="text-center type-style-p-small-regular"> <a data-name-prompt-skip class="underline underline-offset-1" href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a> </p>
   </div>
 </div>
-
+{%- comment -%} Re Name prompt modal {%- endcomment -%}
+<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-ask-rename-prompt>
+  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+    <div class="{{ class }}__name-prompt__close absolute" data-ask-rename-prompt-close style="display: none;"> {%- render 'icon' with 'close' -%} </div>
+    <div class="max-w-xs">
+      <h3 class="mb-3 text-center type-style-h3-bold" data-ask-rename-headline>{{ "bland_selv.rename_prompt.title" | t | strip_html }}</h3>
+      <p class="mb-3 text-center type-style-p-regular" data-ask-rename-description>{{ "bland_selv.rename_prompt.description" | t | strip_html }}</p>
+    </div>
+    <div class="btn-groups mt-3">
+      <button class="btn type-style-button-text" type="button" data-ask-rename-submit>{{ "bland_selv.rename_prompt.accept" | t | strip_html }}</button>
+      <button class="btn type-style-button-text" type="button" onclick="addrename();" data-ask-rename-decline> {{ 'bland_selv.rename_prompt.decline' | t | strip_html }} </button>
+    </div>
+  </div>
+</div>
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

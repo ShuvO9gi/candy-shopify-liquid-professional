@@ -1283,6 +1283,14 @@
     </div>
   </div>
 </div>
+{%- comment -%} Success modal {%- endcomment -%}
+<div class="{{ class }}__success-modal fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-success-modal>
+  <div class="{{ class }}__success-modal__inner relative p-9 rounded-md bg-white shadow-custom">
+    <p class="max-w-xs mb-1 font-body font-semibold text-2xl">{{ 'bland_selv.general.success' | t }}</p>
+    <p class="mb-5 font-body">Din gave er nu lagt i kurven</p>
+    <div class="flex-button items-center justify-center"> <a data-component="cleanPose" href="/cart" class="btn bg-purple btn-full-width mx-0 type-style-button-text" id="go-to-cart">{{ 'bland_selv.general.go_to_cart' | t }}</a> </div>
+  </div>
+</div> {% endpaginate %}
 <script>
 document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 

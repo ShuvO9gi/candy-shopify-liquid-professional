@@ -1152,86 +1152,86 @@
     </div>
   </div>
 </section>
-<section class="{{ class }}__sticky fixed left-0 transform transition-transform duration-300 ease-out z-50 w-full" data-sticky-bar>
-  <div class="{{ class }}__sticky__filter-button flex justify-start" data-sticky-filter-btn>
-    <div class="max767">
-      <button class="buttonCorners flex items-center justify-center w-full h-[46px] font-bold text-2xs uppercase rounded-md" data-filter-button> <span class="mr-[6px]">{%- render 'icon' with 'filter' -%}</span> </button>
-      <div id="filter-search-icon2" class="show-cus_modal2 " aria-haspopup="true"><span id="filter-iconAllProdBtn2">{%- render 'icon' with 'search-light' -%}</span></div>
-    </div>
-  </div>
-  <div style="background-color: var(--brandDarkPurple);">
-    <div class="page-container" id="cus_sticky-total-btn" data-sticky-total-btn>
-      <div class="row">
-        <div class="col-12 cus_stickybar">
-          <div class="bottomBar valignMiddle">
-            <div class="leftSideBar" style="visibility: hidden; position: absolute;">
-              <div class="barGramText type-style-p-small-regular"> {{ 'bland_selv.general.grams' | t }} <span data-gram-elem></span>. </div>
-              <div class="barPriceText type-style-p-bold"> <span>
-                    {{ 'bland_selv.general.price' | t }}
-                  </span> <span data-total-price-elem></span>. </div>
-            </div>
-            <div class="rightSideBar" style="width: 100%;">
-              <input type="hidden" value="gift" id="GiftChecker"> {% comment %}
-              <button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button> {% endcomment %}
-              <div class="nextPage">
-                <div class="progressbar">
-                  <progress class="progress progress1" max="100" value="25"></progress><span></span>Trin 1 af 4</div>
-                <div class="nextPageBtn" onclick="nextPage();">{{section.settings.step1btn_title}} <span><img class="nextPageBtnImg" src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"></span></div>
-              </div>
-
-                            <div class="step2Btn">
-                <div class="progressbar">
-                  <progress class="progress newstepprogress" max="100" value="50"></progress><span></span>Trin 2 af 4</div>
-                <div class="Step2Btn-inside">
-                  <div class="prevStepBtn" onclick="prevStep();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
-                  <button class=" type-style-button-text cursor-pointer nextStepBtn" onclick="nextStep();">{{section.settings.step2_nextbtntext}}</button>
-                </div>
-              </div>
-
-              <div class="page2Btn">
-                <div class="progressbar">
-                  <progress class="progress progress2" max="100" value="75"></progress><span></span>Trin 3 af 4</div>
-                <div class="page2Btn-inside">
-                  <div class="prevPageBtn" onclick="prevPage();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
-                  <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn">{{section.settings.step2_nextbtntext}}</button>
-                </div>
-              </div>
-
-              <div class="page3Btn">
-                <div class="progressbar">
-                  <progress class="progress progress3" max="100" value="100"></progress><span></span>Trin 4 af 4</div>
-                <div class="page3Btn-inside">
-                  <div class="prevPage2Btn" onclick="prevPage2();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
-                  <button class=" type-style-button-text cursor-pointer nextPageBtn3" id="LeftbarColoseBagButton" onclick="nextPage3();" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 hideOnDesktop cus_stickybarmob">
+    <section class="{{ class }}__sticky fixed left-0 transform transition-transform duration-300 ease-out z-50 w-full" data-sticky-bar>
+      <div class="{{ class }}__sticky__filter-button flex justify-start" data-sticky-filter-btn>
+        <div class="max767">
+          <button class="buttonCorners flex items-center justify-center w-full h-[46px] font-bold text-2xs uppercase rounded-md" data-filter-button> <span class="mr-[6px]">{%- render 'icon' with 'filter' -%}</span> </button>
+          <div id="filter-search-icon2" class="show-cus_modal2 " aria-haspopup="true"><span id="filter-iconAllProdBtn2">{%- render 'icon' with 'search-light' -%}</span></div>
+        </div>
+      </div>
+      <div style="background-color: var(--brandDarkPurple);">
+        <div class="page-container" id="cus_sticky-total-btn" data-sticky-total-btn>
+          <div class="row">
+            <div class="col-12 cus_stickybar">
               <div class="bottomBar valignMiddle">
-                <div class="flex" style="width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    align-content: center;
-                    justify-content: space-between;
-                    align-items: center;">
-                  <div class="barGramText type-style-p-small-regular"> <span>{{ 'bland_selv.general.grams' | t }}</span> <span data-gram-elem-mobile></span>. </div>
+                <div class="leftSideBar" style="visibility: hidden; position: absolute;">
+                  <div class="barGramText type-style-p-small-regular"> {{ 'bland_selv.general.grams' | t }} <span data-gram-elem></span>. </div>
                   <div class="barPriceText type-style-p-bold"> <span>
-                    {{ 'bland_selv.general.price' | t }}
-                  </span> <span data-total-price-elem-mobile></span>. </div>
+                        {{ 'bland_selv.general.price' | t }}
+                      </span> <span data-total-price-elem></span>. </div>
                 </div>
-                <div class="flex" style="width: 100%;">
-                  <button class="barSeeBagButton cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
-                  <button class="barColoseBagButton cursor-pointer" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+                <div class="rightSideBar" style="width: 100%;">
+                  <input type="hidden" value="gift" id="GiftChecker"> {% comment %}
+                  <button class="barSeeBagButton type-style-button-text cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button> {% endcomment %}
+                  <div class="nextPage">
+                    <div class="progressbar">
+                      <progress class="progress progress1" max="100" value="25"></progress><span></span>Trin 1 af 4</div>
+                    <div class="nextPageBtn" onclick="nextPage();">{{section.settings.step1btn_title}} <span><img class="nextPageBtnImg" src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"></span></div>
+                  </div>
+
+                                <div class="step2Btn">
+                    <div class="progressbar">
+                      <progress class="progress newstepprogress" max="100" value="50"></progress><span></span>Trin 2 af 4</div>
+                    <div class="Step2Btn-inside">
+                      <div class="prevStepBtn" onclick="prevStep();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                      <button class=" type-style-button-text cursor-pointer nextStepBtn" onclick="nextStep();">{{section.settings.step2_nextbtntext}}</button>
+                    </div>
+                  </div>
+
+                  <div class="page2Btn">
+                    <div class="progressbar">
+                      <progress class="progress progress2" max="100" value="75"></progress><span></span>Trin 3 af 4</div>
+                    <div class="page2Btn-inside">
+                      <div class="prevPageBtn" onclick="prevPage();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                      <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn">{{section.settings.step2_nextbtntext}}</button>
+                    </div>
+                  </div>
+
+                  <div class="page3Btn">
+                    <div class="progressbar">
+                      <progress class="progress progress3" max="100" value="100"></progress><span></span>Trin 4 af 4</div>
+                    <div class="page3Btn-inside">
+                      <div class="prevPage2Btn" onclick="prevPage2();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
+                      <button class=" type-style-button-text cursor-pointer nextPageBtn3" id="LeftbarColoseBagButton" onclick="nextPage3();" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 hideOnDesktop cus_stickybarmob">
+                  <div class="bottomBar valignMiddle">
+                    <div class="flex" style="width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        align-content: center;
+                        justify-content: space-between;
+                        align-items: center;">
+                      <div class="barGramText type-style-p-small-regular"> <span>{{ 'bland_selv.general.grams' | t }}</span> <span data-gram-elem-mobile></span>. </div>
+                      <div class="barPriceText type-style-p-bold"> <span>
+                        {{ 'bland_selv.general.price' | t }}
+                      </span> <span data-total-price-elem-mobile></span>. </div>
+                    </div>
+                    <div class="flex" style="width: 100%;">
+                      <button class="barSeeBagButton cursor-pointer" data-toggle-visual-bag>{{ 'bland_selv.general.see_bag' | t }}</button>
+                      <button class="barColoseBagButton cursor-pointer" disabled data-submit-button>{{ 'bland_selv.general.bag_empty' | t }}</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-</section>
-</div>
+    </section>
+  </div>
 
   {%- comment -%} Visual bag {%- endcomment -%}
   <div class="{{ class }}__visual-bag fixed top-0 left-0 w-full h-full pointer-events-none z-[46]" data-component="visualBag" data-visual-bag-wrapper>

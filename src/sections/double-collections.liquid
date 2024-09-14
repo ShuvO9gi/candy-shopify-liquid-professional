@@ -1248,41 +1248,41 @@
   </div>
 <!-- /page-width -->
 </div> 
-{%- comment -%} Name prompt modal {%- endcomment -%}{%- comment -%}
-<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
-  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
-    <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close> {%- render 'icon' with 'close' -%} </div>
-    <p class="mb-3 font-body font-semibold text-2xl">{{ 'bland_selv.name_prompt.write_name' | t }}</p>
-    <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
-    <button class="btn" type="button" onclick="addPushEvent()" data-final-submit> {{ 'bland_selv.name_prompt.submit' | t }} </button>
-  </div>
-</div> {%- endcomment -%}
-<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
-  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
-    <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close> {%- render 'icon' with 'close' -%} </div>
-    <div class="max-w-xs">
-      <h3 class="mb-3 text-center type-style-h3-bold">{{ 'bland_selv.name_prompt.write_name' | t }}</h3>
-      <p class="mb-3 text-center type-style-p-regular">{{ 'bland_selv.name_prompt.write_description' | t }}</p>
+  {%- comment -%} Name prompt modal {%- endcomment -%}{%- comment -%}
+  <div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
+    <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close> {%- render 'icon' with 'close' -%} </div>
+      <p class="mb-3 font-body font-semibold text-2xl">{{ 'bland_selv.name_prompt.write_name' | t }}</p>
+      <input class="mb-5" type="text" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input>
+      <button class="btn" type="button" onclick="addPushEvent()" data-final-submit> {{ 'bland_selv.name_prompt.submit' | t }} </button>
     </div>
-    <input class="mb-5" type="hidden" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input value="" id="name-input">
-    <button class="btn type-style-button-text" type="button" onclick="addPushEvent()" data-final-submit> {{ 'bland_selv.name_prompt.submit' | t }} </button>
-    <p class="text-center type-style-p-small-regular"> <a data-name-prompt-skip class="underline underline-offset-1" href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a> </p>
-  </div>
-</div>
-{%- comment -%} Re Name prompt modal {%- endcomment -%}
-<div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-ask-rename-prompt>
-  <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
-    <div class="{{ class }}__name-prompt__close absolute" data-ask-rename-prompt-close style="display: none;"> {%- render 'icon' with 'close' -%} </div>
-    <div class="max-w-xs">
-      <h3 class="mb-3 text-center type-style-h3-bold" data-ask-rename-headline>{{ "bland_selv.rename_prompt.title" | t | strip_html }}</h3>
-      <p class="mb-3 text-center type-style-p-regular" data-ask-rename-description>{{ "bland_selv.rename_prompt.description" | t | strip_html }}</p>
-    </div>
-    <div class="btn-groups mt-3">
-      <button class="btn type-style-button-text" type="button" data-ask-rename-submit>{{ "bland_selv.rename_prompt.accept" | t | strip_html }}</button>
-      <button class="btn type-style-button-text" type="button" onclick="addrename();" data-ask-rename-decline> {{ 'bland_selv.rename_prompt.decline' | t | strip_html }} </button>
+  </div> {%- endcomment -%}
+  <div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-name-prompt>
+    <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div class="{{ class }}__name-prompt__close absolute" data-name-prompt-close> {%- render 'icon' with 'close' -%} </div>
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center type-style-h3-bold">{{ 'bland_selv.name_prompt.write_name' | t }}</h3>
+        <p class="mb-3 text-center type-style-p-regular">{{ 'bland_selv.name_prompt.write_description' | t }}</p>
+      </div>
+      <input class="mb-5" type="hidden" placeholder="{{ 'bland_selv.name_prompt.name_placeholder' | t }}" data-name-prompt-input value="" id="name-input">
+      <button class="btn type-style-button-text" type="button" onclick="addPushEvent()" data-final-submit> {{ 'bland_selv.name_prompt.submit' | t }} </button>
+      <p class="text-center type-style-p-small-regular"> <a data-name-prompt-skip class="underline underline-offset-1" href="javascript:void(0);">{{ 'bland_selv.name_prompt.skip' | t }}</a> </p>
     </div>
   </div>
-</div>
+  {%- comment -%} Re Name prompt modal {%- endcomment -%}
+  <div class="{{ class }}__name-prompt fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-ask-rename-prompt>
+    <div class="{{ class }}__name-prompt__inner flex flex-col relative p-9 rounded-md bg-white shadow-custom">
+      <div class="{{ class }}__name-prompt__close absolute" data-ask-rename-prompt-close style="display: none;"> {%- render 'icon' with 'close' -%} </div>
+      <div class="max-w-xs">
+        <h3 class="mb-3 text-center type-style-h3-bold" data-ask-rename-headline>{{ "bland_selv.rename_prompt.title" | t | strip_html }}</h3>
+        <p class="mb-3 text-center type-style-p-regular" data-ask-rename-description>{{ "bland_selv.rename_prompt.description" | t | strip_html }}</p>
+      </div>
+      <div class="btn-groups mt-3">
+        <button class="btn type-style-button-text" type="button" data-ask-rename-submit>{{ "bland_selv.rename_prompt.accept" | t | strip_html }}</button>
+        <button class="btn type-style-button-text" type="button" onclick="addrename();" data-ask-rename-decline> {{ 'bland_selv.rename_prompt.decline' | t | strip_html }} </button>
+      </div>
+    </div>
+  </div>
   {%- comment -%} Success modal {%- endcomment -%}
   <div class="{{ class }}__success-modal fixed top-0 left-0 w-full h-screen flex items-center justify-center z-50" data-success-modal>
     <div class="{{ class }}__success-modal__inner relative p-9 rounded-md bg-white shadow-custom">

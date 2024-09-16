@@ -981,177 +981,178 @@
 
 {%- assign class = 'bland-selv-slik' -%} {%- assign s = section.settings -%} {%- assign paginateBy = s.paginate -%} {%- assign delivery_text = 'bland_selv.speech_bubbles.delivery' | t -%} {%- assign price_limit_text = 'bland_selv.speech_bubbles.price_limit' | t -%} {% paginate collection.products by paginateBy %} {%- capture config -%} { "handle": "{{ collection.handle }}", "totalProducts": {{ collection.all_products_count }}, "paginate": {{ paginateBy | json }}, "currentPage": {{ paginate.current_page | json }}, "priceLimit": {{ s.price_limit | json }}, "itemWidth": {{ s.width_item | json }}, "plusIcon": "{{ 'plus.png' | asset_url }}", "minusIcon": "{{ 'minus.png' | asset_url }}" } {%- endcapture -%}
   <div>{% for product in collection.products %}
-    <p class="allproductlist" style="display: none;">{{ product.title }}-{{ product.price }}</p>{% endfor %}</div>
+  <p class="allproductlist" style="display: none;">{{ product.title }}-{{ product.price }}</p>{% endfor %}</div>
   <div class="{{ class }}" data-config='{{ config }}' data-component="speechBubble">
-    <section class="{{ class }}__products">
-      <div class="section-container candySection">
-        <div class="page-container">
-          <div class="filter----product filter fixed top-0  left-0 transform -translate-x-full  transition-transform duration-300 ease-in-out h-full pt-6 lg:pt-10  bg-white shadow-custom z-20" data-filter-drawer data-component="filterSidebar">
-            <div></div>
-            <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold" data-filter-close> <span class="close-cus_filter">{%- render 'icon' with 'close-dark' -%}</span> </div>
-            <div></div>
-            <div class="filterScroll">
-              <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold"> <span>{{ 'bland_selv.general.filter_title' | t }}</span> </div>
-              <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto"> {%- assign filter_cat_arr = blank -%} {%- for b in section.blocks -%} {%- case b.type -%} {%- when 'filter_type' -%} {%- assign bs = b.settings -%} {%- assign filter_cat_arr = filter_cat_arr | append: bs.category | append: ',' -%} {%- endcase -%} {%- endfor -%} {%- assign filter_cat_arr = filter_cat_arr | split: ',' | uniq -%}
-                <ul> {%- for cat in filter_cat_arr -%}
-                  <li class="mb-3 last:mb-0">
-                    <div class="rounded-md shadow-filterItem">
-                      <div class="filter__item__toggle flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md cursor-pointer" data-filter-toggle> <span class="type-style-p-small-bold">{{ cat | capitalize }}</span> <span class="flex items-center justify-center w-5 h-5 transition-transform duration-200 ease-in-out" data-filter-icon>{%- render 'icon' with 'chevron-down' -%}</span> </div>
-                      <div class="filter__item__wrapper transition-maxHeight duration-300 ease-in-out overflow-hidden" data-filter-wrapper>
-                        <ul class=""> {%- for b in section.blocks -%} {%- case b.type -%} {%- when 'filter_type' -%} {%- assign bs = b.settings -%} {%- assign filter_cat = bs.category -%} {%- assign filter_name = bs.filter_name -%} {%- assign filter_id = bs.filter_id -%} {%- assign filter_type = bs.type -%} {%- if filter_cat == cat -%}
-                          <li class="filter__item flex items-center justify-between px-3 py-[10px] first:pt-5 last:pb-5 cursor-pointer" data-filter-item data-filter-type="{{ filter_type }}" data-filter-id="{{ filter_id }}">
-                            <p class="transition-color duration-100 ease-out type-style-p-small-regular">{{ filter_name }}</p>
-                            <div class="filter__item__dot w-2 h-2 ml-5 border-2 border-orange rounded-full transition-color duration-100 ease-out"></div>
-                          </li> {%- endif -%} {%- endcase -%} {%- endfor -%} </ul>
+        <section class="{{ class }}__products">
+          <div class="section-container candySection">
+            <div class="page-container">
+              <div class="filter----product filter fixed top-0  left-0 transform -translate-x-full  transition-transform duration-300 ease-in-out h-full pt-6 lg:pt-10  bg-white shadow-custom z-20" data-filter-drawer data-component="filterSidebar">
+                <div></div>
+                <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold" data-filter-close> <span class="close-cus_filter">{%- render 'icon' with 'close-dark' -%}</span> </div>
+                <div></div>
+                <div class="filterScroll">
+                  <div class="flex items-center justify-between mt-[20px] mb-4 px-5 lg:pl-[10px] type-style-p-small-bold"> <span>{{ 'bland_selv.general.filter_title' | t }}</span> </div>
+                  <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto"> {%- assign filter_cat_arr = blank -%} {%- for b in section.blocks -%} {%- case b.type -%} {%- when 'filter_type' -%} {%- assign bs = b.settings -%} {%- assign filter_cat_arr = filter_cat_arr | append: bs.category | append: ',' -%} {%- endcase -%} {%- endfor -%} {%- assign filter_cat_arr = filter_cat_arr | split: ',' | uniq -%}
+                    <ul> {%- for cat in filter_cat_arr -%}
+                      <li class="mb-3 last:mb-0">
+                        <div class="rounded-md shadow-filterItem">
+                          <div class="filter__item__toggle flex items-center justify-between px-3 py-[10px] border border-filterBorder rounded-md cursor-pointer" data-filter-toggle> <span class="type-style-p-small-bold">{{ cat | capitalize }}</span> <span class="flex items-center justify-center w-5 h-5 transition-transform duration-200 ease-in-out" data-filter-icon>{%- render 'icon' with 'chevron-down' -%}</span> </div>
+                          <div class="filter__item__wrapper transition-maxHeight duration-300 ease-in-out overflow-hidden" data-filter-wrapper>
+                            <ul class=""> {%- for b in section.blocks -%} {%- case b.type -%} {%- when 'filter_type' -%} {%- assign bs = b.settings -%} {%- assign filter_cat = bs.category -%} {%- assign filter_name = bs.filter_name -%} {%- assign filter_id = bs.filter_id -%} {%- assign filter_type = bs.type -%} {%- if filter_cat == cat -%}
+                              <li class="filter__item flex items-center justify-between px-3 py-[10px] first:pt-5 last:pb-5 cursor-pointer" data-filter-item data-filter-type="{{ filter_type }}" data-filter-id="{{ filter_id }}">
+                                <p class="transition-color duration-100 ease-out type-style-p-small-regular">{{ filter_name }}</p>
+                                <div class="filter__item__dot w-2 h-2 ml-5 border-2 border-orange rounded-full transition-color duration-100 ease-out"></div>
+                              </li> {%- endif -%} {%- endcase -%} {%- endfor -%} </ul>
+                          </div>
+                        </div>
+                      </li> {%- endfor -%} </ul>
+                  </div>
+                </div>
+                <!-- /filter-list -->
+              </div>
+              
+              <!-- gift product select -->
+              <!-- Step 1 -->
+              <div class="row" id="page1">
+                <h2 class="addcandytitle1">{{ section.settings.step1_title }}</h2>
+                <div class="col-12 giftproduct"> 
+                    {% for product in collections.test_step1.products %}
+                        {% assign selected_productId = product.variants.first.id %}
+                        <div class="giftproduct-card" onclick="giftprodclick(this);" data-id="{{ selected_productId }}"
+                              data-title="{{ product.title }}"
+                              data-image="{{ product.featured_image | img_url: '600x600' }}"
+                              data-price="{{ product.price | money }}"
+                              data-weight="{{ product.variants.first.weight }}"
+                              data-description="Your product description here">
+                            
+                            <!-- Product Title and Image -->
+                            <h2 class="giftproduct-title">{{ product.title }}</h2> 
+                            <img class="giftproduct-card_img" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
+                            
+                            <!-- Product Weight and Price -->
+                            <p class="giftproduct-weight">{{ product.variants.first.weight }}g Bland Selv Slik</p>
+                            <p class="giftproduct_price">
+                                <span class="giftproduct-price">{{ product.price | money_without_currency }}</span> kr
+                            </p>
+                            <!-- Hidden Variant Information -->
+                            {% for variant in product.variants %}
+                              <div class="giftproduct-card-variant" data-id="{{ variant.id }}" 
+                                  data-title="{{ variant.title }}" 
+                                  data-price="{{ variant.price | money }}" 
+                                  data-image="{{ variant.image | img_url: '600x600' }}">
+                              </div>
+                          {% endfor %}
+                      </div> 
+                  {% endfor %} 
+              </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="section-container pp_redesign_v1 page2" id="productDetailSection" style="display: none;">
+            <div class="page-container re_v1_container">
+              <div class="topContentProduct flex" style="margin-top: 20px;">
+                <div class="productImage">
+                  <img id="selectedProductImage" src="" alt="Product Image" />
+                </div>
+                <div class="productContent">
+                  <h1 class="productContentHeadline type-style-h2-bold" id="productTitle">
+                    <!-- Will be updated dynamically -->
+                  </h1>
+                  <div class="re-delivery-info">
+                    <div class="x announcement-link-text type-style-p-regular twb-flex twb-flex-col twb-items-center md:twb-items-start">
+                      <div>
+                        <span class="twb-text-white">Bestil indenfor</span>
+                        <span class="time-countdown twb-text-brand-green" data-time="">2 timer og 34 min</span>
                       </div>
                     </div>
-                  </li> {%- endfor -%} </ul>
-              </div>
-            </div>
-            <!-- /filter-list -->
-          </div>
-          <!-- gift product select -->
-          <!-- Step 1 -->
-          <div class="row" id="page1">
-            <h2 class="addcandytitle1">{{ section.settings.step1_title }}</h2>
-            <div class="col-12 giftproduct"> 
-                {% for product in collections.test_step1.products %}
-                    {% assign selected_productId = product.variants.first.id %}
-                    <div class="giftproduct-card" onclick="giftprodclick(this);" data-id="{{ selected_productId }}"
-                          data-title="{{ product.title }}"
-                          data-image="{{ product.featured_image | img_url: '600x600' }}"
-                          data-price="{{ product.price | money }}"
-                          data-weight="{{ product.variants.first.weight }}"
-                          data-description="Your product description here">
-                        
-                        <!-- Product Title and Image -->
-                        <h2 class="giftproduct-title">{{ product.title }}</h2> 
-                        <img class="giftproduct-card_img" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
-                        
-                        <!-- Product Weight and Price -->
-                        <p class="giftproduct-weight">{{ product.variants.first.weight }}g Bland Selv Slik</p>
-                        <p class="giftproduct_price">
-                            <span class="giftproduct-price">{{ product.price | money_without_currency }}</span> kr
-                        </p>
-                        <!-- Hidden Variant Information -->
-                        {% for variant in product.variants %}
-                          <div class="giftproduct-card-variant" data-id="{{ variant.id }}" 
-                               data-title="{{ variant.title }}" 
-                               data-price="{{ variant.price | money }}" 
-                               data-image="{{ variant.image | img_url: '600x600' }}">
-                          </div>
-                      {% endfor %}
-                  </div> 
-              {% endfor %} 
-          </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="section-container pp_redesign_v1 page2" id="productDetailSection" style="display: none;">
-        <div class="page-container re_v1_container">
-          <div class="topContentProduct flex" style="margin-top: 20px;">
-            <div class="productImage">
-              <img id="selectedProductImage" src="" alt="Product Image" />
-            </div>
-            <div class="productContent">
-              <h1 class="productContentHeadline type-style-h2-bold" id="productTitle">
-                <!-- Will be updated dynamically -->
-              </h1>
-              <div class="re-delivery-info">
-                <div class="x announcement-link-text type-style-p-regular twb-flex twb-flex-col twb-items-center md:twb-items-start">
-                  <div>
-                    <span class="twb-text-white">Bestil indenfor</span>
-                    <span class="time-countdown twb-text-brand-green" data-time="">2 timer og 34 min</span>
                   </div>
-                </div>
-              </div>
-              <div class="productPriceContent">
-                <span class="productPrice type-style-h2-bold" id="productPrice">
-                  <!-- Will be updated dynamically -->
-                </span>
-              </div>
-              <link href="//www.slikekspressen.dk/cdn/shop/t/86/assets/new-custom.css?v=1202703708877382591717508676" rel="stylesheet" type="text/css" media="all">
-              
-                <input type="hidden" name="form_type" value="product">
-                <input type="hidden" name="utf8" value="✓">
-                <div class="v_description">
-                  <ul>
-                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point1">Perfekt til "slik eller ballade" – Imponer store og små monstre!</span></li>
-                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point2">Oplagt til fester – fyld spanden med (u)hyggelige godter.</span></li>
-                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point3">1 kilo slik – en (u)hyggelig blanding med noget for enhver smag!</span></li>
-                    <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point4">Alt samlet i én pakke – nemt og bekvemt til Halloween.</span></li>
-                  </ul>
-                </div>
-            </div>
-          </div>
-          <div class="product-detail">
-                  <div class="product-card__title type-style-h3-bold">Vælg variant</div>
-                  <div class="variant-wrapper variant-wrapper--button js">
-                    <div class="variant-option re-variant-option">
-                      {% for variant in product.variants %}
-                        <label class="variant-option-label {% if forloop.first %}selected{% endif %}">
-                          <input type="radio" name="variant_option_0" value="{{ variant.title }}" data-selling1="{{ variant.selling_point1 }}" data-selling2="{{ variant.selling_point2 }}" data-selling3="{{ variant.selling_point3 }}" data-selling4="{{ variant.selling_point4 }}" data-image-url="{{ variant.image | img_url: '600x' }}" data-price="{{ variant.price | money }}" data-variant-id="{{ variant.id }}" {% if forloop.first %}checked{% endif %}>
-                          {% if variant.image %}
-                            <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">
-                          {% endif %}
-                          <div class="re-variant-option-content">
-                            <h2>{{ variant.title }}</h2>
-                            <p>{{ variant.price | money }}</p>
-                          </div>
-                        </label>
-                      {% endfor %}
+                  <div class="productPriceContent">
+                    <span class="productPrice type-style-h2-bold" id="productPrice">
+                      <!-- Will be updated dynamically -->
+                    </span>
+                  </div>
+                  <link href="//www.slikekspressen.dk/cdn/shop/t/86/assets/new-custom.css?v=1202703708877382591717508676" rel="stylesheet" type="text/css" media="all">
+                  
+                    <input type="hidden" name="form_type" value="product">
+                    <input type="hidden" name="utf8" value="✓">
+                    <div class="v_description">
+                      <ul>
+                        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point1">Perfekt til "slik eller ballade" – Imponer store og små monstre!</span></li>
+                        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point2">Oplagt til fester – fyld spanden med (u)hyggelige godter.</span></li>
+                        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point3">1 kilo slik – en (u)hyggelig blanding med noget for enhver smag!</span></li>
+                        <li><img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/typcn_tick.png?v=1715073235" alt=""><span id="selling_point4">Alt samlet i én pakke – nemt og bekvemt til Halloween.</span></li>
+                      </ul>
                     </div>
-                  </div>
                 </div>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="row pickNmix_row pickNmix_rowAllproducts page3" id="pickNmix_row">
-        <div class="w-full stickytop">
-          <div class="stickytop-inner">
-            <h2 class="addcandytitle">{{section.settings.step2_title}}</h2>
-            <div class="addcandybar">
-              <p class="addcandybarPara">{{section.settings.step2_targetfirsttext}} <span id="targeycandyweight" data-gram-elem></span> <span id="targeycandyweightvisible"></span>{{section.settings.step2_targetlasttext}}</p>
-              <p class="progressbartop">
-                <progress class="progress progresstargetcandy" max="100" value="33"></progress><span></span> </p> <a class="autofillbtn" id="autofillbtn" onclick="autofillbtn();">{{section.settings.step2_randombtntext}}</a> <a class="autofillbtn" id="removeautofillbtn" onclick="removeautofillbtn();">{{section.settings.step2_removebtntext}}</a> </div>
-            <div id="filter-search-icon5" class="show-cus_modalfirst " aria-haspopup="true"><span id="filter-iconAllProdBtn5">{%- render 'icon' with 'search-light' -%}</span></div>
+              </div>
+              <div class="product-detail">
+                      <div class="product-card__title type-style-h3-bold">Vælg variant</div>
+                      <div class="variant-wrapper variant-wrapper--button js">
+                        <div class="variant-option re-variant-option">
+                          {% for variant in product.variants %}
+                            <label class="variant-option-label {% if forloop.first %}selected{% endif %}">
+                              <input type="radio" name="variant_option_0" value="{{ variant.title }}" data-selling1="{{ variant.selling_point1 }}" data-selling2="{{ variant.selling_point2 }}" data-selling3="{{ variant.selling_point3 }}" data-selling4="{{ variant.selling_point4 }}" data-image-url="{{ variant.image | img_url: '600x' }}" data-price="{{ variant.price | money }}" data-variant-id="{{ variant.id }}" {% if forloop.first %}checked{% endif %}>
+                              {% if variant.image %}
+                                <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">
+                              {% endif %}
+                              <div class="re-variant-option-content">
+                                <h2>{{ variant.title }}</h2>
+                                <p>{{ variant.price | money }}</p>
+                              </div>
+                            </label>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="row pickNmix_row pickNmix_rowAllproducts page3" id="pickNmix_row">
+            <div class="w-full stickytop">
+              <div class="stickytop-inner">
+                <h2 class="addcandytitle">{{section.settings.step2_title}}</h2>
+                <div class="addcandybar">
+                  <p class="addcandybarPara">{{section.settings.step2_targetfirsttext}} <span id="targeycandyweight" data-gram-elem></span> <span id="targeycandyweightvisible"></span>{{section.settings.step2_targetlasttext}}</p>
+                  <p class="progressbartop">
+                    <progress class="progress progresstargetcandy" max="100" value="33"></progress><span></span> </p> <a class="autofillbtn" id="autofillbtn" onclick="autofillbtn();">{{section.settings.step2_randombtntext}}</a> <a class="autofillbtn" id="removeautofillbtn" onclick="removeautofillbtn();">{{section.settings.step2_removebtntext}}</a> </div>
+                <div id="filter-search-icon5" class="show-cus_modalfirst " aria-haspopup="true"><span id="filter-iconAllProdBtn5">{%- render 'icon' with 'search-light' -%}</span></div>
+              </div>
+            </div>
+            <div class="col-12"> {%- comment -%}
+              <ul class="{{ class }}__products-wrapper flex flex-wrap -mt-8 -ml-2" data-product-list> {%- for product in collection.products -%} Products are loaded with javascript /js/custom/blandSelvSlik.js {%- endfor -%} </ul> {%- endcomment -%}
+              <div class="candyItems " data-product-list></div>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="page4"> {% render 'giftflow_message-card' %} </div>
+          <!-- modal search -->
+          <div class="mask-cus_modal" role="dialog"></div>
+          <div class="cus_modal" role="alert">
+            <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto">
+              <input placeholder="Søg efter slik her" type="text" id="filter-search" class="flex px-3 py-[10px] border border-filterBorder rounded-md"></input>
+            </div>
+            <button class="close-cus_modal" id="close-cus_modal" role="button">X</button>
+          </div>
+          <!-- end modal search -->
+          <div class="row">
+            <div class="col-12">
+              <div class="flex justify-center load-more-holder">
+                <button data-load-more> </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-12"> {%- comment -%}
-          <ul class="{{ class }}__products-wrapper flex flex-wrap -mt-8 -ml-2" data-product-list> {%- for product in collection.products -%} Products are loaded with javascript /js/custom/blandSelvSlik.js {%- endfor -%} </ul> {%- endcomment -%}
-          <div class="candyItems " data-product-list></div>
-        </div>
       </div>
-      <!-- Step 4 -->
-      <div class="page4"> {% render 'giftflow_message-card' %} </div>
-      <!-- modal search -->
-      <div class="mask-cus_modal" role="dialog"></div>
-      <div class="cus_modal" role="alert">
-        <div class="filter-list h-full px-5 lg:pl-[10px] lg:pr-[30px] sm:pb-0 overflow-auto">
-          <input placeholder="Søg efter slik her" type="text" id="filter-search" class="flex px-3 py-[10px] border border-filterBorder rounded-md"></input>
-        </div>
-        <button class="close-cus_modal" id="close-cus_modal" role="button">X</button>
-      </div>
-      <!-- end modal search -->
-      <div class="row">
-        <div class="col-12">
-          <div class="flex justify-center load-more-holder">
-            <button data-load-more> </button>
+      <div class="product-card__info fixed top-0 left-0 w-full h-screen flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 ease-out z-100" data-info-modal>
+        <div class="overlay relative max-w-[90%] rounded-md">
+          <div class="product-card__info__inner relative max-w-xl max-h-[75vh] !rounded-md bg-white text-xs sm:text-base shadow-custom">
+            <div class="product-card__info__header flex items-center justify-between px-4 py-2 bg-lightPink rounded-t-md">
+              <div class="flex items-center justify-center"> <img class="block w-12 h-12 mr-4 md:mr-7" src="" alt="" data-info-modal-image> <span class="max-w-[80%] text-purple font-bold" data-info-modal-title></span> </div> <span class="cursor-pointer" data-close-info>{%- render 'icon' with 'close' -%}</span> </div>
+            <div class="product-card__info__wrapper max-h-[60vh] p-4 text-purple overflow-auto" data-info-modal-description>{%- comment -%} Info content is inserted via js {%- endcomment -%} </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="product-card__info fixed top-0 left-0 w-full h-screen flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 ease-out z-100" data-info-modal>
-    <div class="overlay relative max-w-[90%] rounded-md">
-      <div class="product-card__info__inner relative max-w-xl max-h-[75vh] !rounded-md bg-white text-xs sm:text-base shadow-custom">
-        <div class="product-card__info__header flex items-center justify-between px-4 py-2 bg-lightPink rounded-t-md">
-          <div class="flex items-center justify-center"> <img class="block w-12 h-12 mr-4 md:mr-7" src="" alt="" data-info-modal-image> <span class="max-w-[80%] text-purple font-bold" data-info-modal-title></span> </div> <span class="cursor-pointer" data-close-info>{%- render 'icon' with 'close' -%}</span> </div>
-        <div class="product-card__info__wrapper max-h-[60vh] p-4 text-purple overflow-auto" data-info-modal-description>{%- comment -%} Info content is inserted via js {%- endcomment -%} </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
     <section class="{{ class }}__sticky fixed left-0 transform transition-transform duration-300 ease-out z-50 w-full" data-sticky-bar>
       <div class="{{ class }}__sticky__filter-button flex justify-start" data-sticky-filter-btn>
         <div class="max767">

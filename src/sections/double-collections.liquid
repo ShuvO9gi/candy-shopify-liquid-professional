@@ -985,7 +985,8 @@
 {%- assign delivery_text = 'bland_selv.speech_bubbles.delivery' | t -%} 
 {%- assign price_limit_text = 'bland_selv.speech_bubbles.price_limit' | t -%} 
 
-{% paginate collection.products by paginateBy %} {%- capture config -%} { "handle": "{{ collection.handle }}", "totalProducts": {{ collection.all_products_count }}, "paginate": {{ paginateBy | json }}, "currentPage": {{ paginate.current_page | json }}, "priceLimit": {{ s.price_limit | json }}, "itemWidth": {{ s.width_item | json }}, "plusIcon": "{{ 'plus.png' | asset_url }}", "minusIcon": "{{ 'minus.png' | asset_url }}" } {%- endcapture -%}
+{% paginate collection.products by paginateBy %} 
+  {%- capture config -%} { "handle": "{{ collection.handle }}", "totalProducts": {{ collection.all_products_count }}, "paginate": {{ paginateBy | json }}, "currentPage": {{ paginate.current_page | json }}, "priceLimit": {{ s.price_limit | json }}, "itemWidth": {{ s.width_item | json }}, "plusIcon": "{{ 'plus.png' | asset_url }}", "minusIcon": "{{ 'minus.png' | asset_url }}" } {%- endcapture -%}
   <div>{% for product in collection.products %}
   <p class="allproductlist" style="display: none;">{{ product.title }}-{{ product.price }}</p>{% endfor %}</div>
   <div class="{{ class }}" data-config='{{ config }}' data-component="speechBubble">

@@ -1553,7 +1553,13 @@
     var candyWeightNumber = candyWeightText.match(/\d+/);
     var candyWeightValue = parseInt(candyWeightNumber, 10);
     candyWeightVariable = candyWeightValue;
-    var dataIdValue = $('.giftproduct-card').data('id');
+    //var dataIdValue = $('.giftproduct-card').data('id');
+    var dataIdValue = $('.giftprodselected').data('id');
+
+    // Update the URL with page number and selected product ID
+    var newUrl = window.location.origin + window.location.pathname + '?page=2&product=' + dataIdValue;
+
+    window.history.pushState({ path: newUrl }, '', newUrl);
 
     //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
     //$('#autofillbtn').attr('onclick', dynamicClassName + '();');

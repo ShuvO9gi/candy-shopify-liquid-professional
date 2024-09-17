@@ -1312,674 +1312,512 @@
     </div>
   </div> 
 {% endpaginate %}
-<script>
-document.getElementById('nextPage2Btn').addEventListener('click', async function() {
 
+<script>
+  document.getElementById('nextPage2Btn').addEventListener('click', async function() {
     var lis = document.querySelectorAll('.mb-4[data-bag-item]'); // Selecting all list items with the specified class and data attribute
     var result = []; // Array to store the results
     var giftVarIds = [];
-  await fetch(
-        `/collections/GiftflowStep1?page=0&view=data`
-      ).then(res => res.clone().json().then(data => {
-        if (data && data.length){
-          for(const gift of data){
-            if(gift.tags && gift.tags.find(t => t == "standardMix")) continue;
-            giftVarIds.push(...gift.variants.map(v=> v.id))
-          }
+    await fetch(`/collections/GiftflowStep1?page=0&view=data`).then(res => res.clone().json().then(data => {
+      if(data && data.length) {
+        for(const gift of data) {
+          if(gift.tags && gift.tags.find(t => t == "standardMix")) continue;
+          giftVarIds.push(...gift.variants.map(v => v.id))
         }
-      }));
+      }
+    }));
     lis.forEach(function(li) {
-        var titleElement = li.querySelector('.drawer_2_content_product_name_shopAdjust');
-        var qtyId = li.querySelector('.drawer_2_content_product_shopAdjust').getAttribute('data-qty-id'); // Selecting the data-qty-id attribute
-        var amountElement = li.querySelector('#customDataAmount'); // Selecting the amount element
-        var weightElement = li.querySelector('#customDataWeight'); // Selecting the weight element
-      
-        if ( qtyId && !giftVarIds.find(vid => vid == qtyId) && titleElement && weightElement && amountElement) {
-            var title = titleElement.textContent.trim();
-            var weight = parseInt(weightElement.textContent.trim());
-            var amount = parseInt(amountElement.textContent.trim());
-            result.push({"name": title, "id": parseInt(qtyId), "weight": parseInt(weight), "quantity": amount}); // Pushing the formatted data into the result array
-        }
-        
+      var titleElement = li.querySelector('.drawer_2_content_product_name_shopAdjust');
+      var qtyId = li.querySelector('.drawer_2_content_product_shopAdjust').getAttribute('data-qty-id'); // Selecting the data-qty-id attribute
+      var amountElement = li.querySelector('#customDataAmount'); // Selecting the amount element
+      var weightElement = li.querySelector('#customDataWeight'); // Selecting the weight element
+      if(qtyId && !giftVarIds.find(vid => vid == qtyId) && titleElement && weightElement && amountElement) {
+        var title = titleElement.textContent.trim();
+        var weight = parseInt(weightElement.textContent.trim());
+        var amount = parseInt(amountElement.textContent.trim());
+        result.push({
+          "name": title,
+          "id": parseInt(qtyId),
+          "weight": parseInt(weight),
+          "quantity": amount
+        }); // Pushing the formatted data into the result array
+      }
     });
-
-    var formattedItems = JSON.stringify({"Gift_LineItems": result}); // Convert the array of objects to JSON string with the key "Gift_LineItems"
+    var formattedItems = JSON.stringify({
+      "Gift_LineItems": result
+    }); // Convert the array of objects to JSON string with the key "Gift_LineItems"
     var inputField = document.getElementById('name-input');
     var inputField2 = document.getElementById('CartNoteDrawer2');
     var title = $('.giftprodselected .giftproduct-title').text();
     inputField.value = title + " " + inputField.value;
-    inputField2.value = formattedItems; 
-    fetch(`${window.location.origin}/cart.js`)
-        .then(res => res.clone().json().then(data => {
-            const selectedValueCounts = data.items?.filter(item => item.product_type && item.product_type === "app_gift_package" && item.product_title === title)||[];
-            const finalCount = selectedValueCounts.length? (selectedValueCounts.length +1):Math.floor(Math.random() * 1000) + 1;
-            inputField.value =  inputField.value + " " + finalCount;
-            inputField.setAttribute('value', inputField.value);
-
-            inputField2.setAttribute('value', inputField2.value);
-        }))
-});
-
-</script>
-<script>
+    inputField2.value = formattedItems;
+    fetch(`${window.location.origin}/cart.js`).then(res => res.clone().json().then(data => {
+      const selectedValueCounts = data.items ? .filter(item => item.product_type && item.product_type === "app_gift_package" && item.product_title === title) || [];
+      const finalCount = selectedValueCounts.length ? (selectedValueCounts.length + 1) : Math.floor(Math.random() * 1000) + 1;
+      inputField.value = inputField.value + " " + finalCount;
+      inputField.setAttribute('value', inputField.value);
+      inputField2.setAttribute('value', inputField2.value);
+    }))
+  });
+  </script>
+  <script>
   var jq = document.createElement('script');
-jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
-jq.onload = function() {
-  jQuery.noConflict();
-  jQuery(document).ready(function($) {
-
+  jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+  jq.onload = function() {
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
       // step1 gift selection
       var weightText = $('.giftprodselected .giftproduct-weight').text();
       var weightAmount = parseFloat(weightText);
       var candyWeightText = $('#targeycandyweight').text();
+
       function extractWeightAmount() {
-          var weightText = $('.giftprodselected .giftproduct-weight').text();
-          var weightAmount = parseFloat(weightText);
-          $('#targeycandyweightvisible').text(weightAmount);
-        }
-      var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
-      function giftprodclick(element) {
-          $('#autofillbtn').addClass(dynamicClassName);
+        var weightText = $('.giftprodselected .giftproduct-weight').text();
+        var weightAmount = parseFloat(weightText);
+        $('#targeycandyweightvisible').text(weightAmount);
       }
+      var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
 
-        extractWeightAmount();
-        var observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if ($(mutation.target).hasClass('giftprodselected')) {
-              extractWeightAmount();
-            }
-          });
+      function giftprodclick(element) {
+        $('#autofillbtn').addClass(dynamicClassName);
+      }
+      extractWeightAmount();
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if($(mutation.target).hasClass('giftprodselected')) {
+            extractWeightAmount();
+          }
         });
-        var targetNode = document.body;
-        var config = { attributes: true, subtree: true };
-        observer.observe(targetNode, config);
+      });
+      var targetNode = document.body;
+      var config = {
+        attributes: true,
+        subtree: true
+      };
+      observer.observe(targetNode, config);
+      // step2 candy selection
+      function updateCandyWeight() {
+        var weightText = $('.giftprodselected .giftproduct-weight').text();
+        var weightAmount = parseFloat(weightText);
+        var candyWeightText = $('#targeycandyweight').text();
+        var candyWeightValue = parseInt(candyWeightText, 10);
+        // Calculate percentage completion
+        var percentage = (candyWeightValue / weightAmount) * 100;
+        // Update progress bar value and max attributes
+        $('.progresstargetcandy').attr('value', percentage);
+        $('.progresstargetcandy').attr('max', 100);
+        // Extract the number from the text using regular expression
+        var candyWeightNumber = candyWeightText.match(/\d+/);
+        // Check if candyWeightNumber is not null before conversion
+        var candyWeightValue = candyWeightNumber ? parseInt(candyWeightNumber, 10) : 0;
+        // Subtract candyWeightValue from weightAmount
+        var newWeightAmount = Math.max(0, weightAmount - candyWeightValue);
+        // Update the content of targeycandyweightvisible with the new amount
+        $('#targeycandyweightvisible').text(newWeightAmount);
+        // Check if candyWeightValue is over weightAmount and add a class to the body tag
+        if(candyWeightValue >= weightAmount) {
+          $('body').addClass('candy-over');
+        } else {
+          $('body').removeClass('candy-over');
+        }
+      }
+      // Initial call to set the variable when the page loads
+      updateCandyWeight();
+      // Event listener for changes in the candy weight input field
+      $('#candyWeightInput').on('input', function() {
+        // Update candy weight variable when the input changes
+        updateCandyWeight();
+      });
+      // Use MutationObserver to watch for changes in the target element
+      var observer = new MutationObserver(function(mutations) {
+        // Update candy weight variable when the target element changes
+        updateCandyWeight();
+      });
+      // Define the target node (the element to be observed)
+      var targetNode = document.getElementById('targeycandyweight');
+      // Define the type of mutations to observe
+      var config = {
+        childList: true,
+        subtree: true
+      };
+      // Start observing the target node for configured mutations
+      observer.observe(targetNode, config);
+    });
+  };
+  document.body.appendChild(jq);
+  </script>
+  <!--search filter-->
+  <script>
+  <!-- click search icon and show all the products -->
+  function handleFilterSearchIconClick() {
+    var pickNmixRowElement = document.getElementById('pickNmix_row');
+    if(pickNmixRowElement) {
+      pickNmixRowElement.classList.remove('pickNmix_rowAllproducts');
+    }
+  }
+  var filterSearchIconElement4 = document.getElementById('close-cus_modal');
+  if(filterSearchIconElement4) {
+    filterSearchIconElement4.addEventListener('click', handleFilterSearchIconClick);
+  }
+  var filterSearchIconElement5 = document.getElementById('filter-iconAllProdBtn5');
+  if(filterSearchIconElement5) {
+    filterSearchIconElement5.addEventListener('click', handleFilterSearchIconClick);
+  }
+  var filterSearchIconElement2 = document.getElementById('filter-iconAllProdBtn2');
+  if(filterSearchIconElement2) {
+    filterSearchIconElement2.addEventListener('click', handleFilterSearchIconClick);
+  }
+  var filterSearchIconElement3 = document.getElementById('filter-iconAllProdBtn3');
+  if(filterSearchIconElement3) {
+    filterSearchIconElement3.addEventListener('click', handleFilterSearchIconClick);
+  }
 
-    // step2 candy selection
- function updateCandyWeight() {
+  function handleCandyItems() {
+    var itemsPerPage = 30;
+    var currentPage = 3;
+    var allowPagination = true;
+
+    function showMoreItems() {
+      var from = currentPage * itemsPerPage;
+      var to = from + itemsPerPage;
+      $('.candyItems .candyBox').slice(from, to).fadeIn();
+      currentPage++;
+    }
+
+    function loadInitialItems() {
+      showMoreItems();
+      allowPagination = true;
+    }
+    window.onload = function() {
+      setTimeout(function() {
+        loadInitialItems();
+        var event = new MouseEvent('mousemove', {
+          bubbles: true,
+          cancelable: true,
+          clientX: window.innerWidth / 2,
+          clientY: window.innerHeight / 2
+        });
+        document.dispatchEvent(event);
+      }, 1000);
+    };
+    $(window).scroll(function() {
+      if(allowPagination) {
+        var scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
+        if(scrollPercent > 80) {
+          showMoreItems();
+        }
+      }
+    });
+    $("#filter-search").on("input", function() {
+      allowPagination = false;
+    });
+    // Add event listener for closing the modal
+    $(".close-cus_modal").on("click", function() {
+      allowPagination = true;
+      loadInitialItems();
+      $("#filter-search").val("");
+      $("#pickNmix_row").addClass("pickNmix_rowFirst20");
+    });
+    $("#filter-iconAllProdBtn5").on("click", function() {
+      $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
+    });
+    $("#filter-iconAllProdBtn2").on("click", function() {
+      $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
+    });
+  }
+  var jq = document.createElement('script');
+  jq.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+  jq.onload = function() {
+    $(document).ready(function() {
+      handleCandyItems();
+    });
+  };
+  document.body.appendChild(jq);
+
+  /*if(window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.pathname);
+  }*/
+  
+  <!-- giftflow page1,page2 hide show -->
+  function nextPage() {
+    $("#page1").css('display', 'none');
+        $(".page2").css('display', 'block');
+    $("main").removeClass('cus_giftflow');
+    $("body").addClass('cus_giftflowpage2');
+    $('[data-remove]').click();
+    $(".step2Btn").css('display', 'flex');
+    $(".nextPage").css('display', 'none');
     var weightText = $('.giftprodselected .giftproduct-weight').text();
     var weightAmount = parseFloat(weightText);
     var candyWeightText = $('#targeycandyweight').text();
-    var candyWeightValue = parseInt(candyWeightText, 10);
-
-    // Calculate percentage completion
-    var percentage = (candyWeightValue / weightAmount) * 100;
-
-    // Update progress bar value and max attributes
-    $('.progresstargetcandy').attr('value', percentage);
-    $('.progresstargetcandy').attr('max', 100);
-    // Extract the number from the text using regular expression
     var candyWeightNumber = candyWeightText.match(/\d+/);
+    var candyWeightValue = parseInt(candyWeightNumber, 10);
+    candyWeightVariable = candyWeightValue;
+    var dataIdValue = $('.giftproduct-card').data('id');
 
-    // Check if candyWeightNumber is not null before conversion
-    var candyWeightValue = candyWeightNumber ? parseInt(candyWeightNumber, 10) : 0;
-
-    // Subtract candyWeightValue from weightAmount
-    var newWeightAmount = Math.max(0, weightAmount - candyWeightValue);
-
-    // Update the content of targeycandyweightvisible with the new amount
-    $('#targeycandyweightvisible').text(newWeightAmount);
-
-    // Check if candyWeightValue is over weightAmount and add a class to the body tag
-    if (candyWeightValue >= weightAmount) {
-        $('body').addClass('candy-over');
-    } else {
-        $('body').removeClass('candy-over');
-    }
-}
-
-
-
-// Initial call to set the variable when the page loads
-updateCandyWeight();
-
-// Event listener for changes in the candy weight input field
-$('#candyWeightInput').on('input', function() {
-    // Update candy weight variable when the input changes
-    updateCandyWeight();
-});
-
-// Use MutationObserver to watch for changes in the target element
-var observer = new MutationObserver(function(mutations) {
-    // Update candy weight variable when the target element changes
-    updateCandyWeight();
-});
-
-// Define the target node (the element to be observed)
-var targetNode = document.getElementById('targeycandyweight');
-
-// Define the type of mutations to observe
-var config = { childList: true, subtree: true };
-
-// Start observing the target node for configured mutations
-observer.observe(targetNode, config);
-
-    });
-};
-
-document.body.appendChild(jq);
-</script>
-
-                 
-<!--search filter-->
-<script>
-
-   <!-- click search icon and show all the products -->
-        function handleFilterSearchIconClick() {
-        var pickNmixRowElement = document.getElementById('pickNmix_row');
-
-        if (pickNmixRowElement) {
-            pickNmixRowElement.classList.remove('pickNmix_rowAllproducts');
-        }
-    }
+    //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
+    //$('#autofillbtn').attr('onclick', dynamicClassName + '();');
+    var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
+    $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
+    window[dynamicClassnextPage2] = function() {
+      $('.page4').slideDown();
+      $(".page4").css('display', 'block');
+            $("#pickNmix_row").css('display', 'none');
+      $("body").removeClass('cus_giftflowpage2');
+      $(".page3Btn").css('display', 'flex');
+      $(".page2Btn").css('display', 'none');
+      $(".nextPage").css('display', 'none');
+      $('[data-submit-button]').text('Put gaven i kurven');
 
 
-          var filterSearchIconElement4 = document.getElementById('close-cus_modal');
-    if (filterSearchIconElement4) {
-        filterSearchIconElement4.addEventListener('click', handleFilterSearchIconClick);
-    }
 
-  
-    var filterSearchIconElement5 = document.getElementById('filter-iconAllProdBtn5');
-    if (filterSearchIconElement5) {
-        filterSearchIconElement5.addEventListener('click', handleFilterSearchIconClick);
-    }
-
-var filterSearchIconElement2 = document.getElementById('filter-iconAllProdBtn2');
-    if (filterSearchIconElement2) {
-        filterSearchIconElement2.addEventListener('click', handleFilterSearchIconClick);
-    }
-var filterSearchIconElement3 = document.getElementById('filter-iconAllProdBtn3');
-    if (filterSearchIconElement3) {
-        filterSearchIconElement3.addEventListener('click', handleFilterSearchIconClick);
-    }
-
-  
-function handleCandyItems() {
-  var itemsPerPage = 30;
-  var currentPage = 3;
-  var allowPagination = true;
-
-  function showMoreItems() {
-    var from = currentPage * itemsPerPage;
-    var to = from + itemsPerPage;
-
-    $('.candyItems .candyBox').slice(from, to).fadeIn();
-    currentPage++;
-  }
-
-  function loadInitialItems() {
-    showMoreItems();
-    allowPagination = true;
-  }
-
-  window.onload = function() {
-    setTimeout(function() {
-      loadInitialItems();
-
-      var event = new MouseEvent('mousemove', {
-        bubbles: true,
-        cancelable: true,
-        clientX: window.innerWidth / 2,
-        clientY: window.innerHeight / 2
-      });
-      document.dispatchEvent(event);
-    }, 1000);
-  };
-
-  $(window).scroll(function() {
-    if (allowPagination) {
-      var scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
-
-      if (scrollPercent > 80) {
-        showMoreItems();
+      const cus_modal = document.querySelector(".cus_modal");
+      cus_modal.classList.remove("cus_modal-active");
+      var dataId = $('.autofillbtn').data('id');
+      var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
+      if(candyButton.length > 0) {
+        candyButton.click();
+      } else {
+        console.error("Button not found with data-id:", dataId);
       }
     }
-  });
+    $('.giftproduct-card').each(function() {
+      var dataId = $(this).data('id');
+      $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
+    });
+  }
 
-  $("#filter-search").on("input", function() {
-    allowPagination = false;
-  });
+    function nextStep(){
+    $('#pickNmix_row').slideDown();
+    $("#pickNmix_row").css('display', 'flex');
+        $(".page2Btn").css('display', 'flex');
+        $(".page2").css('display', 'none');
+        $(".step2Btn").css('display', 'none');
+    $("#autofillbtn").css("display", "block");
+    $("#removeautofillbtn").css("display", "none");
+    $('body').removeClass('candy-over');
+    $('#handleRadioClick').removeClass('selected');
+    $('#removeordernote').removeClass('selected');
+    $('#ordernote').removeClass('ordernote');
+    $('#CartNoteDrawer').val('');
+    $("body").removeClass('msgcarselected');
+    $('.progresstargetcandy').attr('value', 0);
 
- // Add event listener for closing the modal
-  $(".close-cus_modal").on("click", function() {
-    allowPagination = true;
-    loadInitialItems();
-    $("#filter-search").val("");
-    $("#pickNmix_row").addClass("pickNmix_rowFirst20");
-  });
-
-   $("#filter-iconAllProdBtn5").on("click", function() {
-    $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
-  });
-$("#filter-iconAllProdBtn2").on("click", function() {
-    $("#pickNmix_row").removeClass("pickNmix_rowFirst20");
-  });
-
-}
-
-var jq = document.createElement('script');
-jq.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-jq.onload = function() {
-  $(document).ready(function() {
-    handleCandyItems();
-
-  });
-};
-
-document.body.appendChild(jq);
-
-{% comment %} if (window.history.replaceState) {
-  window.history.replaceState(null, null, window.location.pathname);
-} {% endcomment %}
-
-<!-- giftflow page1,page2 hide show -->
-    function nextPage() {
-      $('#pickNmix_row').slideDown();
-      $("#pickNmix_row").css('display', 'flex');
-      $("#page1").css('display', 'none');
-      $("main").removeClass('cus_giftflow');
-      $("main").addClass('cus_giftflowpage2');
-      $('[data-remove]').click();
-      $(".page2Btn").css('display', 'flex');
-      $(".nextPage").css('display', 'none');
-      $("#autofillbtn").css("display", "block");
-      $("#removeautofillbtn").css("display", "none");
-      $('body').removeClass('candy-over');
-      $('#handleRadioClick').removeClass('selected');
-      $('#removeordernote').removeClass('selected');
-      $('#ordernote').removeClass('ordernote');
-      $('#CartNoteDrawer').val('');
-      $("body").removeClass('msgcarselected');
-      $('.progresstargetcandy').attr('value', 0);
-
-      var weightText = $('.giftprodselected .giftproduct-weight').text();
-      var weightAmount = parseFloat(weightText);
-      var candyWeightText = $('#targeycandyweight').text();
-      var candyWeightNumber = candyWeightText.match(/\d+/);
-      var candyWeightValue = parseInt(candyWeightNumber, 10);
-      candyWeightVariable = candyWeightValue;
-      //var dataIdValue = $('.giftproduct-card').data('id');
-      var dataIdValue = $('.giftprodselected').data('id');
-
-      // Update the URL with page number and selected product ID
-      var newUrl = window.location.origin + window.location.pathname + "?page=2&product=" + dataIdValue;
-      window.history.pushState({ path: newUrl }, '', newUrl);
-
-      //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
-      //$('#autofillbtn').attr('onclick', dynamicClassName + '();');
-      var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
-      $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
-
-      window[dynamicClassnextPage2] = function() {
-        $('.page3').slideDown();
-        $("#pickNmix_row").css('display', 'none');
-        $(".page3").css('display', 'block');
-        $("main").removeClass('cus_giftflowpage2');
-        $(".page3Btn").css('display', 'flex');
-        $(".page2Btn").css('display', 'none');
-        $(".nextPage").css('display', 'none');
-        $('[data-submit-button]').text('Put gaven i kurven');
-
-        // Update the URL with page number and selected product ID
-        var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
-        window.history.pushState({ path: newUrl }, '', newUrl);
-
-        const cus_modal = document.querySelector(".cus_modal");
-        cus_modal.classList.remove("cus_modal-active");
-        var dataId = $('.autofillbtn').data('id');
-        
-          var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
-          
-          if (candyButton.length > 0) {
-            
-              candyButton.click();
-          } else {
-              console.error("Button not found with data-id:", dataId);
-          }
-          
-        }
-
-        $('.giftproduct-card').each(function() {
-            var dataId = $(this).data('id');
-            $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
-        });
 
     }
-       <!-- Or click here to fill with random candy -->
-        
-          function autofillbtn() {
-          $("#autofillbtn").css("display", "none");
-          $("#removeautofillbtn").css("display", "block");
-          $('body').addClass('candy-over');
-
-          var dataId = $('.autofillbtn').data('id');
-          var candyButton1 = $('[data-add-to-bag][data-id="' + dataId + '"]');
-          var candyButton2 = $('[data-add-to-bag][data-id="47068579856715"]');
-           if (candyButton1.length > 0 && candyButton2.length > 0) {
-              candyButton1.click();
-              candyButton2.click();
-          } else {
-              console.error("Button not found with data-id:", dataId);
-          }
-
+  <!-- Or click here to fill with random candy -->
+  function autofillbtn() {
+    $("#autofillbtn").css("display", "none");
+    $("#removeautofillbtn").css("display", "block");
+    $('body').addClass('candy-over');
+    var dataId = $('.autofillbtn').data('id');
+    var candyButton1 = $('[data-add-to-bag][data-id="' + dataId + '"]');
+    var candyButton2 = $('[data-add-to-bag][data-id="47068579856715"]');
+    if(candyButton1.length > 0 && candyButton2.length > 0) {
+      candyButton1.click();
+      candyButton2.click();
+    } else {
+      console.error("Button not found with data-id:", dataId);
     }
 
-   //function nextPage2_400() {
-    //$('.page3').slideDown();
-    //$("#pickNmix_row").css('display', 'none');
-    //$(".page3").css('display', 'block');
-    //$("main").removeClass('cus_giftflowpage2');
-    //$(".page3Btn").css('display', 'flex');
-    //$(".page2Btn").css('display', 'none');
-    //$(".nextPage").css('display', 'none');
-    //$('[data-id="47496972796235"]').click();
-    //}
-
-    function prevPage() {
+      let currentValue = 0;
+      let targetValue = 100;
+      let increment = 1; // Amount to increment each step
+      let intervalTime = 5; // Time (in ms) between each increment
+  
+      let interval = setInterval(function() {
+          if (currentValue < targetValue) {
+              currentValue += increment;
+              $('.progresstargetcandy').attr('value', currentValue);
+          } else {
+              clearInterval(interval); // Stop the interval when target is reached
+          }
+      }, intervalTime);
+  }
+  //function nextPage2_400() {
+  //$('.page3').slideDown();
+  //$("#pickNmix_row").css('display', 'none');
+  //$(".page3").css('display', 'block');
+  //$("body").removeClass('cus_giftflowpage2');
+  //$(".page3Btn").css('display', 'flex');
+  //$(".page2Btn").css('display', 'none');
+  //$(".nextPage").css('display', 'none');
+  //$('[data-id="47496972796235"]').click();
+  //}
+    function prevStep() {
       $('#page1').slideDown();
       $("main").addClass('cus_giftflow');
       $("body").removeClass('cus_giftflowpage2');
-      $("#pickNmix_row").css('display', 'none');
+      $(".page2").css('display', 'none');
       $("#page1").css('display', 'block');
-      $("#autofillbtn").css("display", "block");
-      $("#removeautofillbtn").css("display", "none");
-      $(".page2Btn").css('display', 'none');
       $(".nextPage").css('display', 'flex');
-      $('#autofillbtn').removeAttr('data-id');
+      $(".step2Btn").css('display', 'none');
 
-      // Update the URL with page number and product ID
-      var dataIdValue = $('.giftprodselected').data('id');
-      var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
-      window.history.pushState({ path: newUrl }, '', newUrl);
+  }
+      
+  function prevPage() {
+    $('.page2').slideDown();
+        $(".page2").css('display', 'block');
+        $(".step2Btn").css('display', 'block');
+    $("#pickNmix_row").css('display', 'none');
+    $("#autofillbtn").css("display", "block");
+    $("#removeautofillbtn").css("display", "none");
+    $(".page2Btn").css('display', 'none');
 
-      $('[data-remove]').each(function() {
-        var qtyId = $(this).attr('data-qty-id');
-        var dataId = $('.autofillbtn').data('id');
-        if (qtyId === dataId ) {
-            $(this).click();
-        }
-    });
-    }
-  function prevPage2() {
-      $('#pickNmix_row').slideDown();
-      $("body").addClass('cus_giftflowpage2');
-      $("#pickNmix_row").css('display', 'flex');
-      $(".page2Btn").css('display', 'flex');
-      $(".page3Btn").css('display', 'none');
-      $(".page3").css('display', 'none');
 
+    $('#autofillbtn').removeAttr('data-id');
+    $('[data-remove]').each(function() {
+      var qtyId = $(this).attr('data-qty-id');
       var dataId = $('.autofillbtn').data('id');
-      $('[data-qty-id="' + dataId + '"]').each(function() {
-          $(this).click();
-      });
+      if(qtyId = dataId) {
+        $(this).click();
+      }
+    });
+  }
 
-      // Update the URL with page number and product ID
-      var dataIdValue = $('.giftprodselected').data('id');
-      var newUrl = window.location.origin + window.location.pathname + "?page=2&product=" + dataIdValue;
-      window.history.pushState({ path: newUrl }, '', newUrl);
-    }
+  function prevPage2() {
+    $('#pickNmix_row').slideDown();
+    $("body").addClass('cus_giftflowpage2');
+    $("#pickNmix_row").css('display', 'flex');
+    $(".page2Btn").css('display', 'flex');
+    $(".page3Btn").css('display', 'none');
+    $(".page4").css('display', 'none');
+    var dataId = $('.autofillbtn').data('id');
+    $('[data-qty-id="' + dataId + '"]').each(function() {
+      $(this).click();
+    });
+
+  }
 
   function nextPage3() {
-    // Clear the selectedProductId from localStorage
-    window.localStorage.removeItem('selectedProductId');
 
-    //Reset url to its original state
-    var originalUrl = window.location.origin + window.location.pathname;
-    window.history.replaceState({path: originalUrl}, '', originalUrl);
-
-    $('.giftproduct-card').removeClass('giftprodselected');
-
-    $('body').removeClass('giftprodselectedbody');
-
-    let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
+    let candyBag = JSON.parse(window.localStorage.getItem('candybag'));
     var dataId = $('.autofillbtn').data('id');
-    const dataArray= [dataId, 47473208525131, 47473245585739];
-    
+    const dataArray = [dataId, 47473208525131, 47473245585739];
     // $('[data-remove]').each(function() {
     //     var qtyId = $(this).attr('data-qty-id');
-        
-        
     //     if (qtyId != dataId && qtyId != "47473208525131" && qtyId != "47473245585739" && candyBag && candyBag.length > 0) {
     //         candyBag.filter(item => item.id != qtyId);
     //     }
     // });
-  
-    if(candyBag && candyBag.length > 0){
-        candyBag=candyBag.filter(item => dataArray.includes(item.id));
+    if(candyBag && candyBag.length > 0) {
+      candyBag = candyBag.filter(item => dataArray.includes(item.id));
     }
     window.localStorage.setItem('candybag', JSON.stringify(candyBag));
-
     setTimeout(function() {
-        $('[data-final-submit]').click();
+      $('[data-final-submit]').click();
     }, 100);
     setTimeout(function() {
-    $("#page1").css('display', 'block');
-    $(".page3").css('display', 'none');
-    $(".nextPage").css('display', 'flex');
-    $(".page3Btn").css('display', 'none');
+      $("#page1").css('display', 'block');
+      $(".page3").css('display', 'none');
+      $(".nextPage").css('display', 'flex');
+      $(".page3Btn").css('display', 'none');
     }, 500);
   }
-
-
   <!-- gift product click -->
-     function giftprodclick(element) {
-        $('.giftproduct-card').removeClass("giftprodselected");
-        $(element).addClass("giftprodselected");
-        $(body).addClass("giftprodselectedbody");
-        var dataIdValue = $(element).data('id');
-         $('#nextPage2Btn').each(function() {
-        var existingDataId = $(this).data('id');
-        if (existingDataId) {
-            $(this).data('id', dataIdValue); // Update data-id attribute
-        } else {
-            $(this).attr('data-id', dataIdValue); // Add data-id attribute
-        }
-      });
-      $('#autofillbtn').each(function() {
-          var existingDataId = $(this).data('id');
-          if (existingDataId) {
-              $(this).data('id', dataIdValue); // Update data-id attribute
-          } else {
-              $(this).attr('data-id', dataIdValue); // Add data-id attribute
-          }
-      });
-
-      // Store the selected product
-      localStorage.setItem('selectedProductId', dataIdValue);
-
-      // Construct the new URL
-      var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
-      // Update the browser's URL without reloading the page
-      window.history.pushState({ path: newUrl }, '', newUrl);
-    }
-
-    // Function to check URL parameters and pre-select a product on page load
-    function checkUrlForSelectedProduct() {
-      // Get the current URL
-      var currentUrl = window.location.href;
-
-      // Get the original URL without any query parameters
-      var originalUrl = window.location.origin + window.location.pathname;
-
-      var urlParams = new URLSearchParams(window.location.search);
-      var currentPage = urlParams.get('page') || 1;
-      var pageParam = urlParams.get('page');
-      var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
-
-      // Logic to display or hide #page1
-      if (currentUrl === originalUrl || pageParam === '1') {
-        $("#page1").css('display', 'block');
+  function giftprodclick(element) {
+    $('.giftproduct-card').removeClass("giftprodselected");
+    $(element).addClass("giftprodselected");
+    $(body).addClass("giftprodselectedbody");
+    var dataIdValue = $(element).data('id');
+    $('#nextPage2Btn').each(function() {
+      var existingDataId = $(this).data('id');
+      if(existingDataId) {
+        $(this).data('id', dataIdValue); // Update data-id attribute
       } else {
-        $("#page1").css('display', 'none');
+        $(this).attr('data-id', dataIdValue); // Add data-id attribute
       }
-
-      if (currentPage === '1') {
-        // Show Page 1
-        $("#page1").css('display', 'block');
-        $("#pickNmix_row").css('display', 'none');
-        $(".page2Btn").css('display', 'none');
-        $(".nextPage").css('display', 'flex');
-      } else if (currentPage === '2') {
-        console.log("reload page 2");
-          // Show Page 2
-          $('#pickNmix_row').slideDown();
-          $("#pickNmix_row").css('display', 'flex');
-          $("#page1").css('display', 'none');
-          $("body").addClass('cus_giftflowpage2');
-          $(".page2Btn").css('display', 'flex');
-          $(".nextPage").css('display', 'none');
-      } else if (currentPage === '3') {
-          // Show Page 3
-          $('.page3').slideDown();
-          $("#pickNmix_row").css('display', 'none');
-          $("#page1").css('display', 'none');
-          $(".page3").css('display', 'block');
-          $("body").removeClass('cus_giftflowpage2');
-          $(".page3Btn").css('display', 'flex');
-          $(".page2Btn").css('display', 'none');
-          $(".nextPage").css('display', 'none');
-          $('[data-submit-button]').text('Put gaven i kurven');
-      }
-
-      // If a product is specified in the URL, select the product automatically
-      if (productId) {
-          var selectedProduct = $('.giftproduct-card[data-id="' + productId + '"]');
-
-          if (selectedProduct.length > 0) {
-              selectedProduct.addClass("giftprodselected");
-              $('body').addClass("giftprodselectedbody");
-              $('#nextPage2Btn').attr('data-id', productId);
-              $('#autofillbtn').attr('data-id', productId);
-
-              var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + productId;
-              window.history.replaceState({ path: newUrl }, '', newUrl);
-
-              // Re-apply the nextPage2 button functionality based on product weight
-            var weightText = selectedProduct.find('.giftproduct-weight').text();
-            var weightAmount = parseFloat(weightText);
-            var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
-
-            // Reassign the onclick function dynamically
-            $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
-
-            // Ensure the dynamically generated function is set on page reload
-            window[dynamicClassnextPage2] = function() {
-                $('.page3').slideDown();
-                $("#pickNmix_row").css('display', 'none');
-                $(".page3").css('display', 'block');
-                $("body").removeClass('cus_giftflowpage2');
-                $(".page3Btn").css('display', 'flex');
-                $(".page2Btn").css('display', 'none');
-                $(".nextPage").css('display', 'none');
-                $('[data-submit-button]').text('Put gaven i kurven');
-
-                // Update the URL with page number and selected product ID
-                var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + productId;
-                window.history.pushState({ path: newUrl }, '', newUrl);
-
-                const cus_modal = document.querySelector(".cus_modal");
-                cus_modal.classList.remove("cus_modal-active");
-                var dataId = $('.autofillbtn').data('id');
-
-                var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
-
-                if (candyButton.length > 0) {
-                    candyButton.click();
-                } else {
-                    console.error("Button not found with data-id:", dataId);
-                }
-            }
-          }
-      }
-    }
-
-    // Ensure the product selection is maintained on page reload
-    $(document).ready(function() {
-      checkUrlForSelectedProduct();
-
-      // Add an event listener to preserve the URL on page reload
-      window.addEventListener('popstate', function(event) {
-          // When the browser history state changes, reapply the selected product based on URL
-          checkUrlForSelectedProduct();
-      });
     });
+    $('#autofillbtn').each(function() {
+      var existingDataId = $(this).data('id');
+      if(existingDataId) {
+        $(this).data('id', dataIdValue); // Update data-id attribute
+      } else {
+        $(this).attr('data-id', dataIdValue); // Add data-id attribute
+      }
+    });
+  }
 
-    // Optional: You can use this if you want to trigger URL changes even when going back/forward in the browser history
-    window.onpopstate = function(event) {
-      checkUrlForSelectedProduct();
-    };
-
-//  function giftprodselectedbody_400() {
-//    $('[data-id="47496972796235"]').click();
-//    $("#autofillbtn").css("display", "none");
-//    $("#removeautofillbtn").css("display", "block");
-//    $('body').addClass('candy-over');
-//  }
-    function removeautofillbtn() {
+  
+  //  function giftprodselectedbody_400() {
+  //    $('[data-id="47496972796235"]').click();
+  //    $("#autofillbtn").css("display", "none");
+  //    $("#removeautofillbtn").css("display", "block");
+  //    $('body').addClass('candy-over');
+  //  }
+  function removeautofillbtn() {
     $("#autofillbtn").css("display", "block");
     $("#removeautofillbtn").css("display", "none");
     $('body').removeClass('candy-over');
     $('[data-remove]').each(function() {
-        var qtyId = $(this).attr('data-qty-id');
-        var dataId = $('.autofillbtn').data('id');
-        if (qtyId = dataId) {
-            $(this).click();
-        }
+      var qtyId = $(this).attr('data-qty-id');
+      var dataId = $('.autofillbtn').data('id');
+      if(qtyId = dataId) {
+        $(this).click();
+      }
     });
+
+        let currentValue = 100;
+        let targetValue = 0;
+        let increment = -1; // Decrease the value
+        let intervalTime = 10; // Time (in ms) between each decrement
     
+        let interval = setInterval(function() {
+            if (currentValue > targetValue) {
+                currentValue += increment;
+                $('.progresstargetcandy').attr('value', currentValue);
+            } else {
+                clearInterval(interval); // Stop the interval when target is reached
+            }
+        }, intervalTime);
   }
-
-
-     <!-- overlay -->
-        function checkListAndUpdateButton() {
-        var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
-          var cusdrawerElement = document.querySelector('html');
-
-        if (ulElement && ulElement.querySelectorAll('li').length === 0) {
-          cusdrawerElement.classList.remove('drawer_locked3');
-
-          var buttoncloseElement = document.getElementById('visual-bag__close_cusBtn'); // Replace 'yourButtonId' with the actual ID of your button
-         if (buttoncloseElement) {
-            buttoncloseElement.click(); 
-         }
-        } else {
-            btnElement.classList.remove('is--hidden');
-        }
-    }
-
-    checkListAndUpdateButton();
-    var observer = new MutationObserver(function () {
-        checkListAndUpdateButton();
-    });
-    var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
-    var config = { childList: true, subtree: true };
-    observer.observe(targetNode, config);
-
-
-<!--remove sticky button when no products into the bag-->
+  <!-- overlay -->
   function checkListAndUpdateButton() {
-        var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
-        var btnElement = document.getElementById('cus_sticky-total-btn');
-
-        if (ulElement && ulElement.querySelectorAll('li').length === 0) {
-            btnElement.classList.add('is--hidden');
-          document.getElementById("LeftbarColoseBagButton").innerHTML = "DIN POSE ER TOM";
-        } else {
-            btnElement.classList.remove('is--hidden');
-        }
+    var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
+    var cusdrawerElement = document.querySelector('html');
+    if(ulElement && ulElement.querySelectorAll('li').length === 0) {
+      cusdrawerElement.classList.remove('drawer_locked3');
+      var buttoncloseElement = document.getElementById('visual-bag__close_cusBtn'); // Replace 'yourButtonId' with the actual ID of your button
+      if(buttoncloseElement) {
+        buttoncloseElement.click();
+      }
+    } else {
+      btnElement.classList.remove('is--hidden');
     }
-
+  }
+  checkListAndUpdateButton();
+  var observer = new MutationObserver(function() {
     checkListAndUpdateButton();
-    var observer = new MutationObserver(function () {
-        checkListAndUpdateButton();
-    });
-    var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
-    var config = { childList: true, subtree: true };
-    observer.observe(targetNode, config);
-  
-<!-- modal search -->
-
-  document.addEventListener("DOMContentLoaded", function () {
+  });
+  var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
+  var config = {
+    childList: true,
+    subtree: true
+  };
+  observer.observe(targetNode, config);
+  <!--remove sticky button when no products into the bag-->
+  function checkListAndUpdateButton() {
+    var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
+    var btnElement = document.getElementById('cus_sticky-total-btn');
+    if(ulElement && ulElement.querySelectorAll('li').length === 0) {
+      btnElement.classList.add('is--hidden');
+      document.getElementById("LeftbarColoseBagButton").innerHTML = "DIN POSE ER TOM";
+    } else {
+      btnElement.classList.remove('is--hidden');
+    }
+  }
+  checkListAndUpdateButton();
+  var observer = new MutationObserver(function() {
+    checkListAndUpdateButton();
+  });
+  var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
+  var config = {
+    childList: true,
+    subtree: true
+  };
+  observer.observe(targetNode, config);
+  <!-- modal search -->
+  document.addEventListener("DOMContentLoaded", function() {
     const showBtn5 = document.querySelector(".show-cus_modalfirst");
     const showBtn2 = document.querySelector(".show-cus_modal2");
     const maskModal = document.querySelector(".mask-cus_modal");
@@ -1995,132 +1833,102 @@ document.body.appendChild(jq);
       maskModal.classList.remove("active");
       cus_modal.classList.remove("cus_modal-active");
     }
-
     showBtn5.addEventListener("click", openModal);
     showBtn2.addEventListener("click", openModal);
     closeBtn.addEventListener("click", closeModal);
     maskModal.addEventListener("click", closeModal);
-
-    document.addEventListener("keyup", function (e) {
-      if (e.key === "Escape") closeModal();
+    document.addEventListener("keyup", function(e) {
+      if(e.key === "Escape") closeModal();
     });
   });
-
-<!-- end modal search -->
-
-
-
+  <!-- end modal search -->
   <!-- search -->
-const input = document.getElementById('filter-search');
-
-input.addEventListener('keyup', () => {
-  const filter = input.value.toUpperCase();
-  const ulp = document.querySelector('.candyItems'); // Changed querySelectorAll to querySelector
-  const lip = ulp.querySelectorAll('.candyBox');
-
-  for (let i = 0; i < lip.length; i++) {
-    const ap = lip[i].querySelector('.candyBoxName'); // Changed querySelectorAll to querySelector
-    const textValue = ap.textContent || ap.innerText;
-    const textUpperCase = textValue.toUpperCase();
-    if (textUpperCase.includes(filter)) {
-      lip[i].style.display = ''; // Show the candy box
-    } else {
-      lip[i].style.display = 'none'; // Hide the candy box
+  const input = document.getElementById('filter-search');
+  input.addEventListener('keyup', () => {
+    const filter = input.value.toUpperCase();
+    const ulp = document.querySelector('.candyItems'); // Changed querySelectorAll to querySelector
+    const lip = ulp.querySelectorAll('.candyBox');
+    for(let i = 0; i < lip.length; i++) {
+      const ap = lip[i].querySelector('.candyBoxName'); // Changed querySelectorAll to querySelector
+      const textValue = ap.textContent || ap.innerText;
+      const textUpperCase = textValue.toUpperCase();
+      if(textUpperCase.includes(filter)) {
+        lip[i].style.display = ''; // Show the candy box
+      } else {
+        lip[i].style.display = 'none'; // Hide the candy box
+      }
     }
-  }
-});
-
-
-<!-- search result disappear issue -->
-    // Get the input element
-    var filterInput = document.getElementById('filter-search');
-
-    // Get all candy boxes
-    var candyBoxes = document.querySelectorAll('.candybox');
-
-    // Add input event listener
-    filterInput.addEventListener('input', function() {
-      // Get the user input value
-      var filterValue = filterInput.value.toLowerCase();
-
-      // Loop through each candy box
-      candyBoxes.forEach(function(candyBox) {
-        // Check if the candy box text contains the filter value
-        if (candyBox.textContent.toLowerCase().includes(filterValue)) {
-          // If it does, set display to "block"
-          candyBox.style.display = 'block';
-        } else {
-          // If it doesn't, hide the candy box
-          candyBox.style.display = 'none';
-        }
-      });
+  });
+  <!-- search result disappear issue -->
+  // Get the input element
+  var filterInput = document.getElementById('filter-search');
+  // Get all candy boxes
+  var candyBoxes = document.querySelectorAll('.candybox');
+  // Add input event listener
+  filterInput.addEventListener('input', function() {
+    // Get the user input value
+    var filterValue = filterInput.value.toLowerCase();
+    // Loop through each candy box
+    candyBoxes.forEach(function(candyBox) {
+      // Check if the candy box text contains the filter value
+      if(candyBox.textContent.toLowerCase().includes(filterValue)) {
+        // If it does, set display to "block"
+        candyBox.style.display = 'block';
+      } else {
+        // If it doesn't, hide the candy box
+        candyBox.style.display = 'none';
+      }
     });
-
-
+  });
   //add to cart overlay effect
-
   var jq = document.createElement('script');
-    jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
-    jq.onload = function() {
-
-      $('#go-to-cart').click(function(){
-            $('#bland-selv-slik-online-slikekspressen').addClass('drawer_locked3');
-        });
-
-      $("#go-to-cart").click(function() {
-           $(".cart-link").click();
-        
-        //when user click on go-to-cart id,remove disable from [data-submit-cart] element
-              setTimeout(function() {
-                $('[data-submit-cart]').prop('disabled', false);
-            }, 500); 
-        
-            });
-      
-      $('[data-drawer-back]').click(function(){
-            setTimeout(function() {
-                $('[data-submit-cart]').prop('disabled', false);
-            }, 1000); 
-        });
-      
-    };
-    document.head.appendChild(jq);
-</script>
-
-<!--//GTM dataLayer add_to_cart event-->
-<script>
+  jq.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+  jq.onload = function() {
+    $('#go-to-cart').click(function() {
+      $('#bland-selv-slik-online-slikekspressen').addClass('drawer_locked3');
+    });
+    $("#go-to-cart").click(function() {
+      $(".cart-link").click();
+      //when user click on go-to-cart id,remove disable from [data-submit-cart] element
+      setTimeout(function() {
+        $('[data-submit-cart]').prop('disabled', false);
+      }, 500);
+    });
+    $('[data-drawer-back]').click(function() {
+      setTimeout(function() {
+        $('[data-submit-cart]').prop('disabled', false);
+      }, 1000);
+    });
+  };
+  document.head.appendChild(jq);
+  </script>
+  <!--//GTM dataLayer add_to_cart event-->
+  <script>
   function addPushEvent() {
-    
-    fetch(`${window.location.origin}/cart.js`)
-      .then(res => res.clone().json().then(data => {
-        var cart = {
-          total_price: data.total_price/100,
-          $value: data.total_price/100,
-          total_discount: data.total_discount,
-          original_total_price: data.original_total_price/100,
-          items: data.items
-        }
-        _learnq.push(['track', 'Added to Cart', cart]);
-      }))
-    
+    fetch(`${window.location.origin}/cart.js`).then(res => res.clone().json().then(data => {
+      var cart = {
+        total_price: data.total_price / 100,
+        $value: data.total_price / 100,
+        total_discount: data.total_discount,
+        original_total_price: data.original_total_price / 100,
+        items: data.items
+      }
+      _learnq.push(['track', 'Added to Cart', cart]);
+    }))
     setTimeout(() => {
       var idsStrArray = [];
       var a = document.querySelectorAll('div.product-card__qty-wrapper.is--visible');
-      for (var j in a) 
-        if (a.hasOwnProperty(j)) {
+      for(var j in a)
+        if(a.hasOwnProperty(j)) {
           idsStrArray.push(a[j].getAttribute('data-qty-id'));
         }
-      
-
-
-
       var idsNumArray = idsStrArray.map(Number);
       var cartContents = fetch(window.Shopify.routes.root + 'cart.js').then(response => response.json()).then(data => {
         var contents = [];
         var lineproducts = data.items;
         idsNumArray.forEach(item => {
-          for (let i = 0; i < lineproducts.length; i++) {
-            if (item == lineproducts[i]['id']) {
+          for(let i = 0; i < lineproducts.length; i++) {
+            if(item == lineproducts[i]['id']) {
               contents.push({
                 'item_name': lineproducts[i]['title'],
                 'item_id': lineproducts[i]['product_id'],
@@ -2135,7 +1943,9 @@ input.addEventListener('keyup', () => {
             }
           }
         });
-        dataLayer.push({ecommerce: null});
+        dataLayer.push({
+          ecommerce: null
+        });
         dataLayer.push({
           'event': 'add_to_cart_stape',
           'ecommerce': {
@@ -2146,9 +1956,8 @@ input.addEventListener('keyup', () => {
       });
     }, "500")
   }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("go-to-cart").addEventListener("click", function () {
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("go-to-cart").addEventListener("click", function() {
       let url = new URL(window.location.href);
       if(url.searchParams.has("select-product")) {
         url.searchParams.delete("select-product");
@@ -2156,9 +1965,77 @@ input.addEventListener('keyup', () => {
       }
     });
   });
-</script>
 
 
+      // new step 2
+        $(document).ready(function() {
+    // Handle click on a product card in Step 1
+    $('.giftproduct-card').on('click', function() {
+        // Get product details from the clicked card
+        var selectedId = $(this).data('id');
+        var selectedTitle = $(this).data('title');
+        var selectedImage = $(this).data('image');
+        var selectedPrice = $(this).data('price');
+        var selectedWeight = $(this).data('weight');
+        var selectedDescription = $(this).data('description');
+
+        // Update the product details in the detail section
+        $('#selectedProductImage').attr('src', selectedImage);
+        $('#productPrice').text(selectedPrice);
+        $('#productTitle').text(selectedTitle);
+
+        // Get product variants for the selected product
+        var variants = $(this).find('.giftproduct-card-variant'); // Ensure each card contains hidden variant info
+
+        // Clear existing variant options
+        $('.variant-wrapper--button .variant-option').empty();
+
+        // Loop through the variants and update variant options
+        variants.each(function() {
+            var variantTitle = $(this).data('title');
+            var variantPrice = $(this).data('price');
+            var variantImage = $(this).data('image');
+            var variantId = $(this).data('id');
+
+            // Append variant options dynamically
+            $('.variant-wrapper--button .variant-option').append(`
+                <label class="variant-option-label">
+                    <input type="radio" name="variant_option_0" value="${variantTitle}" data-image-url="${variantImage}" data-price="${variantPrice}" data-variant-id="${variantId}">
+                    <img src="${variantImage}" alt="${variantTitle}">
+                    <div class="re-variant-option-content">
+                        <h2>${variantTitle}</h2>
+                        <p>${variantPrice}</p>
+                    </div>
+                </label>
+            `);
+        });
+    });
+
+    // Handle variant selection
+    $(document).on('change', 'input[name="variant_option_0"]', function() {
+        var selectedVariantId = $(this).data('variant-id');
+        var selectedVariantPrice = $(this).data('price');
+        var selectedVariantImage = $(this).data('image-url');
+        var selectedVariantTitle = $(this).val(); // The variant title is the input value
+
+        // Update the displayed product information for the selected variant
+        $('#selectedProductImage').attr('src', selectedVariantImage);
+        $('#productPrice').text(selectedVariantPrice);
+
+        // Set the variant ID and title to hidden input fields
+        $('#variantId').val(selectedVariantId);
+        $('#variantTitle').val(selectedVariantTitle);
+
+        // Add the 'selectedVariant' class to the selected label and remove it from others
+        $('.variant-option-label').removeClass('selectedVariant');
+        $(this).closest('.variant-option-label').addClass('selectedVariant');
+
+        $('.step2Btn').addClass('showStep2Btn');
+    });
+});
+
+
+  </script>
 {% schema %}
   {
     "name": "Bland-selv-slik settings",

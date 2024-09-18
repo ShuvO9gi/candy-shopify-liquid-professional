@@ -1771,6 +1771,11 @@
         $(this).attr('data-id', dataIdValue); // Add data-id attribute
       }
     });
+
+    // Store the selected product
+    localStorage.setItem('selectedProductId', dataIdValue);
+
+
   }
 
   

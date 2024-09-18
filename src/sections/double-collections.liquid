@@ -1775,6 +1775,8 @@
     // Store the selected product
     localStorage.setItem('selectedProductId', dataIdValue);
 
+    //Construct the new url
+    var newUrl = window.location.origin + window.location.pathname + '?page=1&product=' + dataIdValue;
 
   }
 

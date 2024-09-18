@@ -1778,6 +1778,8 @@
     //Construct the new url
     var newUrl = window.location.origin + window.location.pathname + '?page=1&product=' + dataIdValue;
 
+    // Update the browser's URL
+    window.history.pushState({ path: newUrl }, '', newUrl);
   }
 
   

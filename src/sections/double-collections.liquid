@@ -1782,6 +1782,26 @@
     window.history.pushState({ path: newUrl }, '', newUrl);
   }
 
+  // Function to check URL parameters and display the correct page on reload
+  function checkUrlForSelectedPage() {
+    {% comment %} // Get the current URL
+    var currentUrl = window.location.href;
+
+    // Get the original URL without any query parameters
+    var originalUrl = window.location.origin + window.location.pathname; {% endcomment %}
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var currentPage = urlParams.get('page') || 1;
+    //var pageParam = urlParams.get('page');
+    var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
+    
+  }
+
+  // Ensure the page and product selection is maintained on page reload
+  document.addEventListener('DOMContentLoaded', function() {
+    checkUrlForSelectedPage();
+  });
+
   
   //  function giftprodselectedbody_400() {
   //    $('[data-id="47496972796235"]').click();
@@ -2011,8 +2031,8 @@
   });
 
 
-      // new step 2
-        $(document).ready(function() {
+  // new step 2
+    $(document).ready(function() {
     // Handle click on a product card in Step 1
     $('.giftproduct-card').on('click', function() {
         // Get product details from the clicked card

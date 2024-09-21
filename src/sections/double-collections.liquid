@@ -1810,6 +1810,16 @@
         $("#pickNmix_row").css('display', 'none');
         $(".page2Btn").css('display', 'none');
         $(".nextPage").css('display', 'flex');
+    } else if (currentPage === '2') {
+        // Show Page 2
+        $("#page1").css('display', 'none');
+        $(".page2").css('display', 'block');
+        $("main").removeClass('cus_giftflow');
+        $("body").addClass('cus_giftflowpage2');
+        $('[data-remove]').click();
+        $(".step2Btn").css('display', 'flex');
+        $(".nextPage").css('display', 'none');
+
     } 
   }
 

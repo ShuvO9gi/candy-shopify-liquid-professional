@@ -1820,6 +1820,25 @@
         $(".step2Btn").css('display', 'flex');
         $(".nextPage").css('display', 'none');
 
+    } else if (currentPage === '3') {
+        // Show Page 3
+        $('#pickNmix_row').slideDown();
+        $("#pickNmix_row").css('display', 'flex');
+        $(".page2Btn").css('display', 'flex');
+        $("#page1").css('display', 'none');
+        $(".page2").css('display', 'none');
+        $(".step2Btn").css('display', 'none');
+        $(".nextPage").css('display', 'none');
+        $("#autofillbtn").css("display", "block");
+        $("#removeautofillbtn").css("display", "none");
+        $('body').removeClass('candy-over');
+        $('#handleRadioClick').removeClass('selected');
+        $('#removeordernote').removeClass('selected');
+        $('#ordernote').removeClass('ordernote');
+        $('#CartNoteDrawer').val('');
+        $("body").removeClass('msgcarselected');
+        $('.progresstargetcandy').attr('value', 0);
+
     } 
   }
 

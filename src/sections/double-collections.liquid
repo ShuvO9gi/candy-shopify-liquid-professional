@@ -1862,6 +1862,14 @@
             $('#nextPage2Btn').attr('data-id', productId);
             $('#autofillbtn').attr('data-id', productId);
 
+            // Get product details from the clicked card
+            var selectedId = selectedProduct.data('id');
+            var selectedTitle = selectedProduct.data('title');
+            var selectedImage = selectedProduct.data('image');
+            var selectedPrice = selectedProduct.data('price');
+            var selectedWeight = selectedProduct.data('weight');
+            var selectedDescription = selectedProduct.data('description');
+    
             
         }
     }

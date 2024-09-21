@@ -1794,7 +1794,23 @@
     var currentPage = urlParams.get('page') || 1;
     //var pageParam = urlParams.get('page');
     var productId = urlParams.get('product') || localStorage.getItem('selectedProductId');
-    
+    {% comment %}
+    // Logic to display or hide #page1
+    if (currentUrl === originalUrl || pageParam === '1') {
+      $("#page1").css('display', 'block');
+    } else {
+      $("#page1").css('display', 'none');
+    } {% endcomment %}
+
+
+    // Show the corresponding page based on the URL parameter
+    if (currentPage === '1') {
+        // Show Page 1
+        $("#page1").css('display', 'block');
+        $("#pickNmix_row").css('display', 'none');
+        $(".page2Btn").css('display', 'none');
+        $(".nextPage").css('display', 'flex');
+    } 
   }
 
   // Ensure the page and product selection is maintained on page reload

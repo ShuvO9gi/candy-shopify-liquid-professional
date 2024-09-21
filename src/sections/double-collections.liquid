@@ -1881,6 +1881,16 @@
             // Clear existing variant options
             $('.variant-wrapper--button .variant-option').empty();
     
+            // Loop through the variants and update variant options
+            variants.each(function() {
+                var variantTitle = $(this).data('title');
+                var variantPrice = $(this).data('price');
+                var variantImage = $(this).data('image');
+                var variantId = $(this).data('id');
+    
+                
+            });
+        
             
         }
     }

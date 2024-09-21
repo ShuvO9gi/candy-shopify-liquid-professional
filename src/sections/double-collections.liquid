@@ -1853,7 +1853,18 @@
         $('[data-submit-button]').text('Put gaven i kurven');
     }
 
-    
+    // If a product ID is specified, select the product automatically
+    if (productId) {
+        var selectedProduct = $('.giftproduct-card[data-id="' + productId + '"]');
+        if (selectedProduct.length > 0) {
+            selectedProduct.addClass("giftprodselected");
+            $('body').addClass("giftprodselectedbody");
+            $('#nextPage2Btn').attr('data-id', productId);
+            $('#autofillbtn').attr('data-id', productId);
+
+            
+        }
+    }
   }
 
   // Ensure the page and product selection is maintained on page reload

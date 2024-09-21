@@ -1875,6 +1875,9 @@
             $('#productPrice').text(selectedPrice);
             $('#productTitle').text(selectedTitle);
     
+            // Get product variants for the selected product
+            var variants = selectedProduct.find('.giftproduct-card-variant'); // Ensure each card contains hidden variant info
+    
             
         }
     }

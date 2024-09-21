@@ -1870,6 +1870,11 @@
             var selectedWeight = selectedProduct.data('weight');
             var selectedDescription = selectedProduct.data('description');
     
+            // Update the product details in the detail section
+            $('#selectedProductImage').attr('src', selectedImage);
+            $('#productPrice').text(selectedPrice);
+            $('#productTitle').text(selectedTitle);
+    
             
         }
     }

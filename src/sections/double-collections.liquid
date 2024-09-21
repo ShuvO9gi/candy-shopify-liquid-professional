@@ -1839,7 +1839,21 @@
         $("body").removeClass('msgcarselected');
         $('.progresstargetcandy').attr('value', 0);
 
-    } 
+    } else if (currentPage === '4') {
+        // Show Page 4
+        $('.page4').slideDown();
+        $("#pickNmix_row").css('display', 'none');
+        $("#page1").css('display', 'none');
+        $(".page3").css('display', 'none');
+        $(".page4").css('display', 'block');
+        $("body").removeClass('cus_giftflowpage2');
+        $(".page3Btn").css('display', 'flex');
+        $(".page2Btn").css('display', 'none');
+        $(".nextPage").css('display', 'none');
+        $('[data-submit-button]').text('Put gaven i kurven');
+    }
+
+    
   }
 
   // Ensure the page and product selection is maintained on page reload

@@ -1927,6 +1927,8 @@
           var weightText = selectedProduct.find('.giftproduct-weight').text();
           var weightAmount = parseFloat(weightText);
 
+          var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
+          $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
           
         }
     }

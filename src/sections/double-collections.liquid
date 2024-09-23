@@ -1916,7 +1916,11 @@
               $('#variantId').val(selectedVariantId);
               $('#variantTitle').val(selectedVariantTitle);
       
-              
+              // Add the 'selectedVariant' class to the selected label and remove it from others
+              $('.variant-option-label').removeClass('selectedVariant');
+              $(this).closest('.variant-option-label').addClass('selectedVariant');
+      
+              $('.step2Btn').addClass('showStep2Btn');
           });
 
           

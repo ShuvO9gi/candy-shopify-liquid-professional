@@ -1888,7 +1888,17 @@
                 var variantImage = $(this).data('image');
                 var variantId = $(this).data('id');
     
-                
+                // Append variant options dynamically
+                $('.variant-wrapper--button .variant-option').append(`
+                    <label class="variant-option-label">
+                        <input type="radio" name="variant_option_0" value="${variantTitle}" data-image-url="${variantImage}" data-price="${variantPrice}" data-variant-id="${variantId}">
+                        <img src="${variantImage}" alt="${variantTitle}">
+                        <div class="re-variant-option-content">
+                            <h2>${variantTitle}</h2>
+                            <p>${variantPrice}</p>
+                        </div>
+                    </label>
+                `);
             });
         
             

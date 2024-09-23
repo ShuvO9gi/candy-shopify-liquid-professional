@@ -1901,7 +1901,17 @@
                 `);
             });
         
-            
+            // Handle variant selection
+            $(document).on('change', 'input[name="variant_option_0"]', function() {
+              var selectedVariantId = $(this).data('variant-id');
+              var selectedVariantPrice = $(this).data('price');
+              var selectedVariantImage = $(this).data('image-url');
+              var selectedVariantTitle = $(this).val(); // The variant title is the input value
+      
+              
+          });
+
+          
         }
     }
   }

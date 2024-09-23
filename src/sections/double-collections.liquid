@@ -1944,7 +1944,15 @@
             var newUrl = window.location.origin + window.location.pathname + "?page=4&product=" + dataIdValue;
             window.history.pushState({ path: newUrl }, '', newUrl);
 
-            
+            const cus_modal = document.querySelector(".cus_modal");
+            cus_modal.classList.remove("cus_modal-active");
+            var dataId = $('.autofillbtn').data('id');
+            var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
+            if(candyButton.length > 0) {
+              candyButton.click();
+            } else {
+              console.error("Button not found with data-id:", dataId);
+            }
           }
         }
     }

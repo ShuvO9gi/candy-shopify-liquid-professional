@@ -1923,6 +1923,10 @@
               $('.step2Btn').addClass('showStep2Btn');
           });
 
+          // Re-apply the nextPage2 button functionality based on product weight
+          var weightText = selectedProduct.find('.giftproduct-weight').text();
+          var weightAmount = parseFloat(weightText);
+
           
         }
     }

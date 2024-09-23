@@ -1908,6 +1908,10 @@
               var selectedVariantImage = $(this).data('image-url');
               var selectedVariantTitle = $(this).val(); // The variant title is the input value
       
+              // Update the displayed product information for the selected variant
+              $('#selectedProductImage').attr('src', selectedVariantImage);
+              $('#productPrice').text(selectedVariantPrice);
+      
               
           });
 

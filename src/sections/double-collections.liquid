@@ -1799,7 +1799,9 @@
     // Logic to display or hide #page1
     if (currentUrl === originalUrl || pageParam === '1') {
       $("#page1").css('display', 'block');
-    } 
+    } else {
+      $("#page1").css('display', 'none');
+    }
 
 
     // Show the corresponding page based on the URL parameter

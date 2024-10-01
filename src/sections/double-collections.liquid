@@ -1360,6 +1360,7 @@
                       <div class="prevStepBtn" onclick="prevStep();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
                       <button class=" type-style-button-text cursor-pointer nextStepBtn" onclick="nextStep();">{{section.settings.step2_nextbtntext}}</button>
                     </div>
+
                   </div>
 
                   <div class="page2Btn">
@@ -1369,6 +1370,13 @@
                       <div class="prevPageBtn" onclick="prevPage();"> <img src="{{ 'back_arrow_icon.svg' | asset_url }}" alt="Tilbage"> </div>
                       <button class=" type-style-button-text cursor-pointer nextPage2Btn" id="nextPage2Btn">{{section.settings.step2_nextbtntext}}</button>
                     </div>
+                  </div>
+
+                  <div class="cardpageBtn">
+                    <div class="progressbar">
+                      <progress class="progress cardPageProgress" max="100" value="80"></progress><span></span>Trin 4 af 5
+                    </div>
+                    
                   </div>
 
                   <div class="page3Btn">

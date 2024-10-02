@@ -1517,7 +1517,7 @@
     inputField.value = title + " " + inputField.value;
     inputField2.value = formattedItems;
     fetch(`${window.location.origin}/cart.js`).then(res => res.clone().json().then(data => {
-      const selectedValueCounts = data.items ? .filter(item => item.product_type && item.product_type === "app_gift_package" && item.product_title === title) || [];
+      const selectedValueCounts = data.items ?.filter(item => item.product_type && item.product_type === "Gift Items" && item.product_title === title) || [];
       const finalCount = selectedValueCounts.length ? (selectedValueCounts.length + 1) : Math.floor(Math.random() * 1000) + 1;
       inputField.value = inputField.value + " " + finalCount;
       inputField.setAttribute('value', inputField.value);

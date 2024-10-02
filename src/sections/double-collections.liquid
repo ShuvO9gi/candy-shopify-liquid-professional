@@ -1767,7 +1767,15 @@
         // Log the full response
         console.log("API Response: ", response);
   
-        
+        // Check if the response contains an image and required fields
+        if (response && response.image && response.title) {
+          let imageHtml = `
+            <div class="card-option" data-title="${response.title}">
+              <img src="${response.image}" alt="${response.title}" />
+              <p>${response.price}kr</p>
+            </div>
+          `;
+  
     });
   }
 

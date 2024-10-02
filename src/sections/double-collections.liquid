@@ -1758,6 +1758,17 @@
       var dataId = $(this).data('id');
       $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
     });
+
+    // gift card fetch
+    $.ajax({
+      url: 'https://api.candyexpress.com/api/v1/message-card-image/all?country_code=dk',
+      type: 'GET',
+      success: function(response) {
+        // Log the full response
+        console.log("API Response: ", response);
+  
+        
+    });
   }
 
     function nextStep(){

@@ -1892,21 +1892,11 @@
   }
 
   function prevPage2() {
-    $('#pickNmix_row').slideDown();
-    $("body").addClass('cus_giftflowpage2');
-    $("#pickNmix_row").css('display', 'flex');
-    $(".page2Btn").css('display', 'flex');
+    $('.page4').slideDown();
+    $(".page4").css('display', 'block');
+    $(".cardpageBtn").css('display', 'flex');
     $(".page3Btn").css('display', 'none');
-    $(".page4").css('display', 'none');
-    var dataId = $('.autofillbtn').data('id');
-    $('[data-qty-id="' + dataId + '"]').each(function() {
-      $(this).click();
-    });
-
-    // Update the URL with page number and product ID
-    var dataIdValue = $('.giftprodselected').data('id');
-    var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    $(".page5").css('display', 'none');
   }
 
   function nextPage3() {

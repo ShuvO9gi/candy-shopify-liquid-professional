@@ -1792,25 +1792,25 @@
   }
 
     function nextStep(){
-    $('#pickNmix_row').slideDown();
-    $("#pickNmix_row").css('display', 'flex');
-    $(".page2Btn").css('display', 'flex');
-    $(".page2").css('display', 'none');
-    $(".step2Btn").css('display', 'none');
-    $("#autofillbtn").css("display", "block");
-    $("#removeautofillbtn").css("display", "none");
-    $('body').removeClass('candy-over');
-    $('#handleRadioClick').removeClass('selected');
-    $('#removeordernote').removeClass('selected');
-    $('#ordernote').removeClass('ordernote');
-    $('#CartNoteDrawer').val('');
-    $("body").removeClass('msgcarselected');
-    $('.progresstargetcandy').attr('value', 0);
+      $('#pickNmix_row').slideDown();
+      $("#pickNmix_row").css('display', 'flex');
+      $(".page2Btn").css('display', 'flex');
+      $(".page2").css('display', 'none');
+      $(".step2Btn").css('display', 'none');
+      $("#autofillbtn").css("display", "block");
+      $("#removeautofillbtn").css("display", "none");
+      $('body').removeClass('candy-over');
+      $('#handleRadioClick').removeClass('selected');
+      $('#removeordernote').removeClass('selected');
+      $('#ordernote').removeClass('ordernote');
+      $('#CartNoteDrawer').val('');
+      $("body").removeClass('msgcarselected');
+      $('.progresstargetcandy').attr('value', 0);
 
-    var dataIdValue = $('.giftprodselected').data('id');
-    // Update the URL with page number and selected product ID
-    var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+      var dataIdValue = $('.giftprodselected').data('id');
+      // Update the URL with page number and selected product ID
+      var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
+      window.history.pushState({ path: newUrl }, '', newUrl);
     }
   <!-- Or click here to fill with random candy -->
   function autofillbtn() {
@@ -1823,6 +1823,7 @@
     if(candyButton1.length > 0 && candyButton2.length > 0) {
       candyButton1.click();
       candyButton2.click();
+      console.log('candyButton1 and 2 clicked');
     } else {
       console.error("Button not found with data-id:", dataId);
     }

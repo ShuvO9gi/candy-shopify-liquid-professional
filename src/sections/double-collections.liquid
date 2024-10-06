@@ -1745,9 +1745,9 @@
       $(".nextPage").css('display', 'none');
       $('[data-submit-button]').text('Put gaven i kurven');
 
-      // Update the URL with page number and selected product ID
+      {% comment %} // Update the URL with page number and selected product ID
       var newUrl = window.location.origin + window.location.pathname + "?page=4&product=" + dataIdValue;
-      window.history.pushState({ path: newUrl }, '', newUrl);
+      window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
 
       const cus_modal = document.querySelector(".cus_modal");
       cus_modal.classList.remove("cus_modal-active");

@@ -1721,10 +1721,10 @@
     //var dataIdValue = $('.giftproduct-card').data('id');
     var dataIdValue = $('.giftprodselected').data('id');
 
-    // Update the URL with page number and selected product ID
+    {% comment %} // Update the URL with page number and selected product ID
     var newUrl = window.location.origin + window.location.pathname + '?page=2&product=' + dataIdValue;
 
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
 
     //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
     //$('#autofillbtn').attr('onclick', dynamicClassName + '();');

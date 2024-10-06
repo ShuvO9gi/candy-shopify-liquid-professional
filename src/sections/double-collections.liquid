@@ -1726,6 +1726,11 @@
 
     window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
 
+    // Update the URL with page number 2
+    var currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('page', '2');
+    window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
+
     //var dynamicClassName = 'giftprodselectedbody_' + Math.round(weightAmount);
     //$('#autofillbtn').attr('onclick', dynamicClassName + '();');
     var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);

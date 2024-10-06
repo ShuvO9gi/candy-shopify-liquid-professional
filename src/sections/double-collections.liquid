@@ -1748,6 +1748,10 @@
       {% comment %} // Update the URL with page number and selected product ID
       var newUrl = window.location.origin + window.location.pathname + "?page=4&product=" + dataIdValue;
       window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
+      // Update the URL with page number 4
+      var currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('page', '4');
+      window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
 
       const cus_modal = document.querySelector(".cus_modal");
       cus_modal.classList.remove("cus_modal-active");

@@ -1908,6 +1908,11 @@
         $(this).click();
       }
     });
+
+    // Update the URL with page number 2
+    var currentUrl = new URL(window.location.href); // Get the current URL
+    currentUrl.searchParams.set('page', '2');
+    window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
   }
 
   function prevPage2() {

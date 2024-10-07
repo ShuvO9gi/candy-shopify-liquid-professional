@@ -1816,10 +1816,10 @@
       $("body").removeClass('msgcarselected');
       $('.progresstargetcandy').attr('value', 0);
 
-      var dataIdValue = $('.giftprodselected').data('id');
+      {% comment %} var dataIdValue = $('.giftprodselected').data('id');
       // Update the URL with page number and selected product ID
       var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
-      window.history.pushState({ path: newUrl }, '', newUrl);
+      window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
     }
   <!-- Or click here to fill with random candy -->
   function autofillbtn() {

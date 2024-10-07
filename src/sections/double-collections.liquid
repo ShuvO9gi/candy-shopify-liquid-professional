@@ -1820,6 +1820,11 @@
       // Update the URL with page number and selected product ID
       var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
       window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
+      
+      // Update the URL with page number 3
+      var currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('page', '3');
+      window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
     }
   <!-- Or click here to fill with random candy -->
   function autofillbtn() {

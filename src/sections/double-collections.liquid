@@ -1923,9 +1923,9 @@
     $(".page5").css('display', 'none');
 
     // Update the URL with page number 2
-    var currentUrl = new URL(window.location.href); // Get the current URL
-    currentUrl.searchParams.set('page', '3'); // Set or update the 'page' parameter to 2
-    window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString()); // Update the URL
+    var currentUrl = new URL(window.location.href); 
+    currentUrl.searchParams.set('page', '3'); 
+    window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
   }
 
   function card_prevPage(){

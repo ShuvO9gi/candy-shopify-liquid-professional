@@ -1820,7 +1820,7 @@
       // Update the URL with page number and selected product ID
       var newUrl = window.location.origin + window.location.pathname + "?page=3&product=" + dataIdValue;
       window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
-      
+
       // Update the URL with page number 3
       var currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('page', '3');
@@ -1875,10 +1875,10 @@
       $(".nextPage").css('display', 'flex');
       $(".step2Btn").css('display', 'none');
 
-      // Update the URL with page number and product ID
+      {% comment %} // Update the URL with page number and product ID
       var dataIdValue = $('.giftprodselected').data('id');
       var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
-      window.history.pushState({ path: newUrl }, '', newUrl);
+      window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
   }
       
   function prevPage() {

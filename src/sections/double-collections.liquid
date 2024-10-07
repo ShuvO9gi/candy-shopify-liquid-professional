@@ -1801,7 +1801,20 @@
   }
 
     function nextStep(){
-      
+      $('#pickNmix_row').slideDown();
+      $("#pickNmix_row").css('display', 'flex');
+      $(".page2Btn").css('display', 'flex');
+      $(".page2").css('display', 'none');
+      $(".step2Btn").css('display', 'none');
+      $("#autofillbtn").css("display", "block");
+      $("#removeautofillbtn").css("display", "none");
+      $('body').removeClass('candy-over');
+      $('#handleRadioClick').removeClass('selected');
+      $('#removeordernote').removeClass('selected');
+      $('#ordernote').removeClass('ordernote');
+      $('#CartNoteDrawer').val('');
+      $("body").removeClass('msgcarselected');
+      $('.progresstargetcandy').attr('value', 0);
 
       var dataIdValue = $('.giftprodselected').data('id');
       // Update the URL with page number and selected product ID

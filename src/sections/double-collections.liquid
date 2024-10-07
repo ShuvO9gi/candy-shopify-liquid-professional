@@ -1879,6 +1879,11 @@
       var dataIdValue = $('.giftprodselected').data('id');
       var newUrl = window.location.origin + window.location.pathname + "?page=1&product=" + dataIdValue;
       window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
+
+      // Update the URL with page number 1
+      var currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('page', '1');
+      window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
   }
       
   function prevPage() {

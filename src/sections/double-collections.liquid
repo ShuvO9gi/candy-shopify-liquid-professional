@@ -2150,6 +2150,10 @@
                       variantInput.prop('checked', true).trigger('change'); // Check the variant and trigger change
                       variantInput.closest('.variant-option-label').addClass('selectedVariant'); // Add the class
 
+                      // Update the image and price for the matching variant
+                      $('#selectedProductImage').attr('src', variantImage);
+                      $('#productPrice').text(variantPrice);
+                      
                   }
                 }
             });

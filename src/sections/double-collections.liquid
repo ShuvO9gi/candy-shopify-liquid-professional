@@ -2141,6 +2141,13 @@
                         </div>
                     </label>
                 `);
+
+                // If the variant ID matches the one from the URL, select it
+                if (variantId == urlVariantId) {
+                  var variantInput = $('input[name="variant_option_0"][data-variant-id="' + variantId + '"]');
+                  console.log('variantInput', variantInput);
+                  
+                }
             });
         
             // Handle variant selection

@@ -2503,7 +2503,10 @@
         var currentUrl = new URL(window.location.href);
         var urlVariantId = currentUrl.searchParams.get('variant');
 
-       
+        // If the variant ID exists in the URL, select the corresponding variant
+        if (urlVariantId) {
+            $('input[name="variant_option_0"][data-variant-id="' + urlVariantId + '"]').prop('checked', true).trigger('change');
+        }
     });
 
     // Handle variant selection

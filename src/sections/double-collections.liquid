@@ -2180,6 +2180,11 @@
               $(this).closest('.variant-option-label').addClass('selectedVariant');
       
               $('.step2Btn').addClass('showStep2Btn');
+
+              // Update the URL with the selected variant ID
+              var currentUrl = new URL(window.location.href);
+              currentUrl.searchParams.set('variant', selectedVariantId);
+              window.history.replaceState(null, '', currentUrl.toString());
           });
 
           // Re-apply the nextPage2 button functionality based on product weight

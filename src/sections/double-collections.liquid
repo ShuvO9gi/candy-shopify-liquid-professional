@@ -2531,7 +2531,7 @@
         $('.step2Btn').addClass('showStep2Btn');
 
         // Reflect variant ID in the URL
-        var currentUrl = new URL(window.location.href); // Get the current URL as a URL object
+        var currentUrl = new URL(window.location.href);
         currentUrl.searchParams.set('variant', selectedVariantId); 
 
         // Update the URL without reloading the page

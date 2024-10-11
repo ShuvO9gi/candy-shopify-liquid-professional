@@ -2529,6 +2529,12 @@
         $(this).closest('.variant-option-label').addClass('selectedVariant');
 
         $('.step2Btn').addClass('showStep2Btn');
+
+        // Reflect variant ID in the URL
+        var currentUrl = new URL(window.location.href); // Get the current URL as a URL object
+        currentUrl.searchParams.set('variant', selectedVariantId); // Add or update the variant parameter
+
+        
     });
 });
 

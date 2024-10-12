@@ -1721,11 +1721,6 @@
     //var dataIdValue = $('.giftproduct-card').data('id');
     var dataIdValue = $('.giftprodselected').data('id');
 
-    {% comment %} // Update the URL with page number and selected product ID
-    var newUrl = window.location.origin + window.location.pathname + '?page=2&product=' + dataIdValue;
-
-    window.history.pushState({ path: newUrl }, '', newUrl); {% endcomment %}
-
     // Update the URL with page number 2
     var currentUrl = new URL(window.location.href);
     currentUrl.searchParams.set('page', '2');

@@ -1884,6 +1884,10 @@
       // Update the URL with page number 1
       var currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('page', '1');
+
+      // Remove 'variant'
+      //currentUrl.searchParams.delete('variant');
+      
       window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
   }
       

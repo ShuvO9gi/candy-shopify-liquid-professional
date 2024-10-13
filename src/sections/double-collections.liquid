@@ -1862,6 +1862,25 @@
       $(".nextPage").css('display', 'flex');
       $(".step2Btn").css('display', 'none');
 
+      {% comment %} 
+      // Remove selected variant
+      $('input[name="variant_option_0"]').prop('checked', false);
+      $('.variant-option-label').removeClass('selectedVariant');
+
+      // Update the product details in the detail section
+      // Get the URL parameters
+      var urlParams = new URLSearchParams(window.location.search);
+      var productId = urlParams.get('product');
+      var selectedProduct = $('.giftproduct-card[data-id="' + productId + '"]');
+      var selectedImage = selectedProduct.data('image');
+      var selectedTitle = selectedProduct.data('title');
+      var selectedPrice = selectedProduct.data('price');
+      $('#selectedProductImage').attr('src', selectedImage);
+      $('#productPrice').text(selectedPrice);
+      $('#productTitle').text(selectedTitle); 
+      {% endcomment %}
+
+
       // Update the URL with page number 1
       var currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('page', '1');
@@ -2118,7 +2137,7 @@
                 // If the variant ID matches the one from the URL, select it
                 if (variantId == urlVariantId) {
                   var variantInput = $('input[name="variant_option_0"][data-variant-id="' + variantId + '"]');
-                  
+
                   if (variantInput.length > 0) {
                       variantInput.prop('checked', true).trigger('change'); // Check the variant and trigger change
                       variantInput.closest('.variant-option-label').addClass('selectedVariant'); // Add the class

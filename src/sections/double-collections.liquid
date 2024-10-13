@@ -1889,6 +1889,7 @@
       // Remove 'variant'
       //currentUrl.searchParams.delete('variant');
 
+      // Push the updated URL to the browser's history
       window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
   }
       

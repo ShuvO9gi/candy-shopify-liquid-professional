@@ -1284,24 +1284,23 @@
           <div class="page4"> 
              <div class="card-selection">
               <h3 class="addcandytitle1">Which card would you like to add?</h3>
-              <div class="cards-wrapper">
+              <div class="cards-wrapper" id="image-gallery">
                 <!-- Default selected card -->
-                <div class="card-option selected">
+                <div class="card-option">
                   <p>Continue without card</p>
                 </div>
                 
                 <!-- Upload from gallery card -->
-                <div class="card-option upload-option">
+                <div class="card-option upload-option handleRadioClick">
                   <label for="upload">
+                    <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/teenyicons_upload-solid.svg?v=1729055180">
                     <p>Upload from your gallery</p>
                   </label>
                   <input type="file" id="upload" style="display:none;" />
-                </div>
-                <!-- Image cards -->
-                <div class="card-option">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/95f8e39e2a9ec25c7e8817cf84c22818.png?v=1728972526" alt="Card 1" />
                   <span>30kr</span>
                 </div>
+                <!-- Image cards -->
+              </div>
                 <div class="card-option">
                   <img src="https://cdn.shopify.com/s/files/1/0555/3461/6756/files/95f8e39e2a9ec25c7e8817cf84c22818.png?v=1728972526" alt="Card 1" />
                   <span>30kr</span>

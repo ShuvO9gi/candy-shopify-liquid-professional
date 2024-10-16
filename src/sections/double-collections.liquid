@@ -1771,36 +1771,6 @@
       $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
     });
 
-    {% comment %} // gift card fetch
-    $.ajax({
-      url: 'https://api.candyexpress.com/api/v1/message-card-image/all?country_code=dk',
-      type: 'GET',
-      success: function(response) {
-        // Log the full response
-        console.log("API Response: ", response);
-  
-        // Check if the response contains an image and required fields
-        if (response && response.image && response.title) {
-          let imageHtml = `
-            <div class="card-option" data-title="${response.title}">
-              <img src="${response.image}" alt="${response.title}" />
-              <p>${response.price}kr</p>
-            </div>
-          `;
-  
-          // Append the image HTML to the cards-wrapper div
-          $('.cards-wrapper').html(imageHtml);
-  
-          // Log the final HTML after update
-          console.log("HTML Content Updated: ", $('.cards-wrapper').html());
-        } else {
-          console.log("No valid image data found in the response");
-        }
-      },
-      error: function(error) {
-        console.error("Error fetching images: ", error);
-      }
-    }); {% endcomment %}
   }
 
     function nextStep(){

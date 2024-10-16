@@ -2543,7 +2543,18 @@ fetch('https://api.candyexpress.com/api/v1/message-card-image/all?country_code=d
                 // Set the image as the background (without modifying the original URL)
                 cardDiv.style.backgroundImage = `url(${imageUrl})`;
 
+                // Add data-image-url attribute with 'https:' prefixed
+                const secureUrl = imageUrl.startsWith('https:') ? imageUrl : `https:${imageUrl}`;
+                cardDiv.setAttribute('data-image-url', secureUrl);
 
+                const priceElement = document.createElement('span');
+                priceElement.textContent = item.price + 'kr';  // Display the price
+
+                // Append the price element to the card div
+                cardDiv.appendChild(priceElement);
+
+                // Append the card div to the image gallery
+                imageGallery.appendChild(cardDiv);
             }
         });
     })

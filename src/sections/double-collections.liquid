@@ -2519,8 +2519,35 @@
     });
 });
 
+// new step 4 card selection
+      
+      // Gift card fetch
+// Gift card fetch
+fetch('https://api.candyexpress.com/api/v1/message-card-image/all?country_code=dk')
+    .then(response => response.json())  // Convert response to JSON
+    .then(data => {
+        // Access the 'data' array from the response object
+        const items = data.data;
 
-  </script>
+        const imageGallery = document.getElementById('image-gallery');
+
+        // Loop through the array and add image elements as background images
+        items.forEach(item => {
+            if (item.is_active) {  // Check if the item is active
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add('card-option', 'handleRadioClick');  // Add 'card-option' and 'handleRadioClick' class to the div
+
+
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
+
+
+</script>
 {% schema %}
   {
     "name": "Bland-selv-slik settings",

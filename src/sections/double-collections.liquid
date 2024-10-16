@@ -2525,41 +2525,41 @@
   fetch('https://api.candyexpress.com/api/v1/message-card-image/all?country_code=dk')
     .then(response => response.json())  // Convert response to JSON
     .then(data => {
-        // Access the 'data' array from the response object
-        const items = data.data;
+      // Access the 'data' array from the response object
+      const items = data.data;
 
-        const imageGallery = document.getElementById('image-gallery');
+      const imageGallery = document.getElementById('image-gallery');
 
-        // Loop through the array and add image elements as background images
-        items.forEach(item => {
-            if (item.is_active) {  // Check if the item is active
-                const cardDiv = document.createElement('div');
-                cardDiv.classList.add('card-option', 'handleRadioClick');  // Add 'card-option' and 'handleRadioClick' class to the div
+      // Loop through the array and add image elements as background images
+      items.forEach(item => {
+          if (item.is_active) {  // Check if the item is active
+              const cardDiv = document.createElement('div');
+              cardDiv.classList.add('card-option', 'handleRadioClick');  // Add 'card-option' and 'handleRadioClick' class to the div
 
-                // Original image URL
-                const imageUrl = item.image;
+              // Original image URL
+              const imageUrl = item.image;
 
-                // Set the image as the background (without modifying the original URL)
-                cardDiv.style.backgroundImage = `url(${imageUrl})`;
+              // Set the image as the background (without modifying the original URL)
+              cardDiv.style.backgroundImage = `url(${imageUrl})`;
 
-                // Add data-image-url attribute with 'https:' prefixed
-                const secureUrl = imageUrl.startsWith('https:') ? imageUrl : `https:${imageUrl}`;
-                cardDiv.setAttribute('data-image-url', secureUrl);
+              // Add data-image-url attribute with 'https:' prefixed
+              const secureUrl = imageUrl.startsWith('https:') ? imageUrl : `https:${imageUrl}`;
+              cardDiv.setAttribute('data-image-url', secureUrl);
 
-                const priceElement = document.createElement('span');
-                priceElement.textContent = item.price + 'kr';  // Display the price
+              const priceElement = document.createElement('span');
+              priceElement.textContent = item.price + 'kr';  // Display the price
 
-                // Append the price element to the card div
-                cardDiv.appendChild(priceElement);
+              // Append the price element to the card div
+              cardDiv.appendChild(priceElement);
 
-                // Append the card div to the image gallery
-                imageGallery.appendChild(cardDiv);
-            }
-        });
+              // Append the card div to the image gallery
+              imageGallery.appendChild(cardDiv);
+          }
+      });
     })
     .catch(error => {
         console.error('Error fetching data:', error);
-    });
+  });
 
 
 

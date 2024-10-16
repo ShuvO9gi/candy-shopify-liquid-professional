@@ -2537,6 +2537,12 @@ fetch('https://api.candyexpress.com/api/v1/message-card-image/all?country_code=d
                 const cardDiv = document.createElement('div');
                 cardDiv.classList.add('card-option', 'handleRadioClick');  // Add 'card-option' and 'handleRadioClick' class to the div
 
+                // Original image URL
+                const imageUrl = item.image;
+
+                // Set the image as the background (without modifying the original URL)
+                cardDiv.style.backgroundImage = `url(${imageUrl})`;
+
 
             }
         });

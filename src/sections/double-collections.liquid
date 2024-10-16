@@ -1308,6 +1308,7 @@
           <!-- Step 5 -->
           <div class="page5"> {% render 'giftflow_message-card' %} </div>
         </div>
+
           <!-- modal search -->
           <div class="mask-cus_modal" role="dialog"></div>
           <div class="cus_modal" role="alert">
@@ -1770,7 +1771,7 @@
       $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
     });
 
-    // gift card fetch
+    {% comment %} // gift card fetch
     $.ajax({
       url: 'https://api.candyexpress.com/api/v1/message-card-image/all?country_code=dk',
       type: 'GET',
@@ -1799,7 +1800,7 @@
       error: function(error) {
         console.error("Error fetching images: ", error);
       }
-    });
+    }); {% endcomment %}
   }
 
     function nextStep(){

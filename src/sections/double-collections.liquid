@@ -2568,7 +2568,10 @@
         handleRadioClick();
     });
 
-
+    $('#image-gallery').on('click', '.card-option:not(.handleRadioClick)', function() {
+        // Call the removeordernote function for non-api cards (like "Continue without card")
+        removeordernote();
+    });
 
   
 });

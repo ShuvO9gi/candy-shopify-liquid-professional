@@ -2561,6 +2561,18 @@
         console.error('Error fetching data:', error);
   });
 
+  $(document).ready(function() {
+    // Use event delegation for dynamically created .card-option elements
+    $('#image-gallery').on('click', '.handleRadioClick', function() {
+        // Call the handleRadioClick function for the dynamically added cards
+        handleRadioClick();
+    });
+
+
+
+  
+});
+
 
 
 </script>

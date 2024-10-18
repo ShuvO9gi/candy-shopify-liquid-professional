@@ -2624,6 +2624,12 @@
         // Remove 'selected' class from all .card-option elements
         $('.card-option').removeClass('selected');
         
+        // Add 'selected' class to the clicked .card-option
+        $(this).addClass('selected');
+
+        // Add 'card-selected' class to the body
+        $('body').addClass('card-selected');
+
         
     });
   });

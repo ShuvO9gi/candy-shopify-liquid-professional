@@ -2581,7 +2581,7 @@
     $('#no_card').prop('checked', false);
     $('#removeordernote').removeClass('selected'); 
     $('.handleRadioClick').addClass('selected');  // Add class to selected card
-    
+
     let candyBag = JSON.parse(window.localStorage.getItem('candybag')) || [];
     console.log('candyBag', candyBag);
     candyBag = candyBag.filter(item => item.id !== 47473245585739);
@@ -2601,7 +2601,17 @@
     $("body").addClass('msgcarselected');
   };
 
+window.removeordernote = function() {
+      $('#ordernote').removeClass('ordernote');
+      $('#no_card').prop('checked', true);
+      $('#yes_card').prop('checked', false);
+      $('.handleRadioClick').removeClass('selected'); 
+      $('#removeordernote').addClass('selected');
 
+  };
+
+
+     
 </script>
 {% schema %}
   {

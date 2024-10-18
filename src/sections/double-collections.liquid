@@ -2618,7 +2618,15 @@
     $("body").addClass('msgcarselected');
   };
 
-
+  // Use event delegation for dynamically created .card-option elements
+  $(document).ready(function() {
+    $('#image-gallery').on('click', '.card-option', function() {
+        // Remove 'selected' class from all .card-option elements
+        $('.card-option').removeClass('selected');
+        
+        
+    });
+  });
      
 </script>
 {% schema %}

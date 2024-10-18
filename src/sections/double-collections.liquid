@@ -2611,6 +2611,9 @@ window.removeordernote = function() {
       let candyBag = JSON.parse(window.localStorage.getItem('candybag')) || [];
       candyBag = candyBag.filter(item => item.id !== 47473208525131);
       window.localStorage.setItem('candybag', JSON.stringify(candyBag));
+    
+      // Add the specific candy item to the cart by triggering the button click
+      $(`[data-add-to-bag][data-id="47473245585739"]`).click();
 
   };
 

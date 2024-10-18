@@ -2574,31 +2574,32 @@
     });
   });
 
-// Reference functions
-window.handleRadioClick = function() {
-  $('#ordernote').addClass('ordernote');
-  $('#yes_card').prop('checked', true);
-  $('#no_card').prop('checked', false);
-  $('#removeordernote').removeClass('selected'); 
-  $('.handleRadioClick').addClass('selected');  // Add class to selected card
-  let candyBag = JSON.parse(window.localStorage.getItem('candybag')) || [];
-  console.log('candyBag', candyBag);
-  candyBag = candyBag.filter(item => item.id !== 47473245585739);
+  // Reference functions
+  window.handleRadioClick = function() {
+    $('#ordernote').addClass('ordernote');
+    $('#yes_card').prop('checked', true);
+    $('#no_card').prop('checked', false);
+    $('#removeordernote').removeClass('selected'); 
+    $('.handleRadioClick').addClass('selected');  // Add class to selected card
+    
+    let candyBag = JSON.parse(window.localStorage.getItem('candybag')) || [];
+    console.log('candyBag', candyBag);
+    candyBag = candyBag.filter(item => item.id !== 47473245585739);
 
-  if (!candyBag.find(item => item.id === 47473208525131)) {
-      candyBag.push({
-          id: 47473208525131,
-          amount: 1,
-          price: 2500,
-          weight: 20,
-          title: "Personligt kort",
-          image: "//www.slikekspressen.dk/cdn/shop/files/kort_93310139-97d0-49b1-a009-dd521676ba30.png?v=1713243474"
-      });
-  }
-  
-  window.localStorage.setItem('candybag', JSON.stringify(candyBag));
-  $("body").addClass('msgcarselected');
-};
+    if (!candyBag.find(item => item.id === 47473208525131)) {
+        candyBag.push({
+            id: 47473208525131,
+            amount: 1,
+            price: 2500,
+            weight: 20,
+            title: "Personligt kort",
+            image: "//www.slikekspressen.dk/cdn/shop/files/kort_93310139-97d0-49b1-a009-dd521676ba30.png?v=1713243474"
+        });
+    }
+    
+    window.localStorage.setItem('candybag', JSON.stringify(candyBag));
+    $("body").addClass('msgcarselected');
+  };
 
 
 </script>

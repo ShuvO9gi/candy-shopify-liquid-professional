@@ -2574,6 +2574,15 @@
     });
   });
 
+// Reference functions
+window.handleRadioClick = function() {
+  $('#ordernote').addClass('ordernote');
+  $('#yes_card').prop('checked', true);
+  $('#no_card').prop('checked', false);
+  $('#removeordernote').removeClass('selected'); 
+  $('.handleRadioClick').addClass('selected');  // Add class to selected card
+  
+};
 
 
 </script>

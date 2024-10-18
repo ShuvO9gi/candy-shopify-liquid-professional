@@ -2601,21 +2601,21 @@
     $("body").addClass('msgcarselected');
   };
 
-window.removeordernote = function() {
-      $('#ordernote').removeClass('ordernote');
-      $('#no_card').prop('checked', true);
-      $('#yes_card').prop('checked', false);
-      $('.handleRadioClick').removeClass('selected'); 
-      $('#removeordernote').addClass('selected');
-    
-      let candyBag = JSON.parse(window.localStorage.getItem('candybag')) || [];
-      candyBag = candyBag.filter(item => item.id !== 47473208525131);
-      window.localStorage.setItem('candybag', JSON.stringify(candyBag));
-    
-      // Add the specific candy item to the cart by triggering the button click
-      $(`[data-add-to-bag][data-id="47473245585739"]`).click();
-    
-      $("body").addClass('msgcarselected');
+  window.removeordernote = function() {
+    $('#ordernote').removeClass('ordernote');
+    $('#no_card').prop('checked', true);
+    $('#yes_card').prop('checked', false);
+    $('.handleRadioClick').removeClass('selected'); 
+    $('#removeordernote').addClass('selected');
+  
+    let candyBag = JSON.parse(window.localStorage.getItem('candybag')) || [];
+    candyBag = candyBag.filter(item => item.id !== 47473208525131);
+    window.localStorage.setItem('candybag', JSON.stringify(candyBag));
+  
+    // Add the specific candy item to the cart by triggering the button click
+    $(`[data-add-to-bag][data-id="47473245585739"]`).click();
+  
+    $("body").addClass('msgcarselected');
   };
 
 

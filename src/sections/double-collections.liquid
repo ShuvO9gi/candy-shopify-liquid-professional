@@ -2633,7 +2633,10 @@
         // Get the data-image-url attribute from the clicked card
         const imageUrl = $(this).attr('data-image-url');
 
-        
+        // Update the src of the selectedCard image with the card's image URL
+        if (imageUrl) {
+            $('#selectedCard').attr('src', imageUrl);
+        }
     });
   });
      

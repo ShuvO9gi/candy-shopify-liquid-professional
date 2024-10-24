@@ -284,5 +284,33 @@
 </div>
 
 <script>
-    
+    // Load jQuery
+  var jqmsg = document.createElement('script');
+  jqmsg.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+  jqmsg.onload = function() {
+    jQuery.noConflict();
+    jQuery(document).ready(function($) {
+      
+      // Check if the Quill editor element exists before initializing Quill
+      if ($('#quill-editor').length > 0) {
+
+        // Initialize Quill editor
+        var quill = new Quill('#quill-editor', {
+          theme: 'snow',
+          placeholder: 'Skriv den hilsen der skal på kortet',
+          modules: {
+            toolbar: [
+              ['bold', 'italic', 'underline'],
+              [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+              [{ 'emoji': true }]
+            ],
+            'emoji-toolbar': true,
+            'emoji-textarea': false,
+            'emoji-shortname': true
+          }
+        });
+
+        
+  };
+  document.body.appendChild(jqmsg);
 </script>

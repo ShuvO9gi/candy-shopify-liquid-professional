@@ -285,36 +285,4 @@
 
 <script>
     
-            
-          window.localStorage.setItem('candybag', JSON.stringify(candyBag));
-          $("body").addClass('msgcarselected');          
-        };
-  
-        window.removeordernote = function() {
-          $('#ordernote').removeClass('ordernote');
-          $('#no_card').prop('checked', true);
-          $('#yes_card').prop('checked', false);
-          $('#handleRadioClick').removeClass('selected'); 
-          $('#removeordernote').addClass('selected');
-          
-          let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
-          if(candyBag && candyBag.length > 0){
-            candyBag=candyBag.filter((item) => item.id!== 47473208525131);
-          }
-          window.localStorage.setItem('candybag', JSON.stringify(candyBag));
-          
-          
-          $(`[data-add-to-bag][data-id="47473245585739"]`).click();
-             
-          $("body").addClass('msgcarselected');         
-        };
-        
-        $('#CartNoteDrawer').on('input', function() {
-        var characterCount = $(this).val().length;
-        $('#characterCount').text(characterCount + ' of 100 characters');
-    });
-      });
-    };
-  
-    document.body.appendChild(jqmsg);
 </script>

@@ -310,7 +310,20 @@
           }
         });
 
-        
+        // Character count and textarea sync
+        quill.on('text-change', function() {
+          var plainText = quill.getText().trim(); // Get plain text (without HTML)
+          var characterCount = plainText.length;
+          $('#characterCount').text(characterCount + ' af 500 tegn');
+
+          // Limit text to 500 characters
+          if (characterCount > 500) {
+            var truncatedText = plainText.slice(0, 500);
+            quill.setText(truncatedText); // Truncate the Quill editor content
+            $('#characterCount').text('500 af 500 tegn');
+          }
+
+          
   };
   document.body.appendChild(jqmsg);
 </script>

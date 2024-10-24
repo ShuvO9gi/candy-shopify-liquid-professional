@@ -281,38 +281,10 @@
       </div>
     </div>
   </div>
-
-
 </div>
+
 <script>
-    var jqmsg = document.createElement('script');
-    jqmsg.src = "https://code.jquery.com/jquery-3.6.4.min.js";
-    jqmsg.onload = function() {
-      jQuery.noConflict();
-      jQuery(document).ready(function($) {
-       
-        window.handleRadioClick = function() {
-          $('#ordernote').addClass('ordernote');
-          $('#yes_card').prop('checked', true);
-          $('#no_card').prop('checked', false);
-          $('#removeordernote').removeClass('selected'); 
-          $('#handleRadioClick').addClass('selected');
-          let candyBag= JSON.parse(window.localStorage.getItem('candybag'));
-          
-          if(candyBag && candyBag.length > 0){
-            candyBag=candyBag.filter((item) => item.id!== 47473245585739);
-          }
-  
-          if(candyBag && candyBag.length > 0 && !candyBag.find((item) => item.id === 47473208525131)){
-            candyBag.push({
-            "id": 47473208525131,
-            "amount": 1,
-            "price": 2500,
-            "weight": 20,
-            "title": "Personligt kort",
-            "image": "//www.slikekspressen.dk/cdn/shop/files/kort_93310139-97d0-49b1-a009-dd521676ba30.png?v=1713243474"
-          });
-          }
+    
             
           window.localStorage.setItem('candybag', JSON.stringify(candyBag));
           $("body").addClass('msgcarselected');          

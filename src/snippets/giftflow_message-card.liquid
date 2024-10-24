@@ -327,7 +327,14 @@
           $('#CartNoteDrawer').val(quill.root.innerHTML);
         });
 
-        
+        // Sync Quill content before form submission
+        $('form').on('submit', function() {
+          var formattedMessage = quill.root.innerHTML;
+          $('#CartNoteDrawer').val(formattedMessage); // Set the textarea value
+        });
+      } 
+
+    });
   };
   document.body.appendChild(jqmsg);
 </script>

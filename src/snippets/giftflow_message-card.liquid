@@ -323,7 +323,11 @@
             $('#characterCount').text('500 af 500 tegn');
           }
 
-          
+          // Sync the Quill content (as HTML) with the textarea
+          $('#CartNoteDrawer').val(quill.root.innerHTML);
+        });
+
+        
   };
   document.body.appendChild(jqmsg);
 </script>

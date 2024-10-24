@@ -332,7 +332,9 @@
           var formattedMessage = quill.root.innerHTML;
           $('#CartNoteDrawer').val(formattedMessage); // Set the textarea value
         });
-      } 
+      } else {
+        console.error('Quill editor container not found: #quill-editor');
+      }
 
     });
   };

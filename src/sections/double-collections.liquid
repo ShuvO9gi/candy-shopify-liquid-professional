@@ -1850,7 +1850,14 @@
     $('[data-remove]').click();
     $(".step2Btn").css('display', 'none');
     $(".nextPage").css('display', 'none');
-   
+    var weightText = $('.giftprodselected .giftproduct-weight').text();
+    var weightAmount = parseFloat(weightText);
+    var candyWeightText = $('#targeycandyweight').text();
+    var candyWeightNumber = candyWeightText.match(/\d+/);
+    var candyWeightValue = parseInt(candyWeightNumber, 10);
+    candyWeightVariable = candyWeightValue;
+    var dataIdValue = $('.giftproduct-card').data('id');
+    
   
 }
 

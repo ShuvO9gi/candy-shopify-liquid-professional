@@ -1880,7 +1880,10 @@
         console.error("Button not found with data-id:", dataId);
       }
     }
-    
+    $('.giftproduct-card').each(function() {
+      var dataId = $(this).data('id');
+      $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
+    });
   
 }
 

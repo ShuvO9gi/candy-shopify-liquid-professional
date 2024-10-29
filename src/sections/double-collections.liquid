@@ -1843,7 +1843,14 @@
     $('.progresstargetcandy').attr('value', 0);
 
   
-    
+    $("#page1").css('display', 'none');
+    $(".page2").css('display', 'none');
+    $("main").removeClass('cus_giftflow');
+    $("body").addClass('cus_giftflowpage2');
+    $('[data-remove]').click();
+    $(".step2Btn").css('display', 'none');
+    $(".nextPage").css('display', 'none');
+   
   
 }
 

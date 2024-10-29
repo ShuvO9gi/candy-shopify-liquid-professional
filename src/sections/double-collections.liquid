@@ -1294,7 +1294,9 @@
                   <div class="variant-option re-variant-option">
                     {% for variant in product.variants %}
                       <label class="variant-option-label {% if forloop.first %}selected{% endif %}">
-                        
+                        <input type="radio" name="variant_option_0" value="{{ variant.title }}" 
+                                
+                               {% if forloop.first %}checked{% endif %}>
                         {% if variant.image %}
                           <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">
                         {% endif %}

@@ -1288,25 +1288,7 @@
                     </div>
                 </div>
               </div>
-              <div class="product-detail">
-                <div class="product-card__title type-style-h3-bold">Vælg variant</div>
-                <div class="variant-wrapper variant-wrapper--button js">
-                  <div class="variant-option re-variant-option">
-                    {% for variant in product.variants %}
-                      <label class="variant-option-label {% if forloop.first %}selected{% endif %}">
-                        <input type="radio" name="variant_option_0" value="{{ variant.title }}" data-selling1="{{ variant.selling_point1 }}" data-selling2="{{ variant.selling_point2 }}" data-selling3="{{ variant.selling_point3 }}" data-selling4="{{ variant.selling_point4 }}" data-image-url="{{ variant.image | img_url: '600x' }}" data-price="{{ variant.price | money }}" data-variant-id="{{ variant.id }}" {% if forloop.first %}checked{% endif %}>
-                        {% if variant.image %}
-                          <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">
-                        {% endif %}
-                        <div class="re-variant-option-content">
-                          <h2>{{ variant.title }}</h2>
-                          <p>{{ variant.price | money }}</p>
-                        </div>
-                      </label>
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
           <!-- Step 3 -->

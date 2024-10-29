@@ -1295,7 +1295,10 @@
                     {% for variant in product.variants %}
                       <label class="variant-option-label {% if forloop.first %}selected{% endif %}">
                         <input type="radio" name="variant_option_0" value="{{ variant.title }}" 
-                                
+                               data-selling1="1" 
+                               data-selling2="{{ variant.metafields.custom.selling_point2 }}" 
+                               data-selling3="{{ variant.metafields.custom.selling_point3 }}" 
+                               
                                {% if forloop.first %}checked{% endif %}>
                         {% if variant.image %}
                           <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">

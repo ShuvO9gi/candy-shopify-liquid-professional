@@ -1861,6 +1861,25 @@
     //$('#autofillbtn').attr('onclick', dynamicClassName + '();');
     var dynamicClassnextPage2 = 'nextPage2_' + Math.round(weightAmount);
     $('.nextPage2Btn').attr('onclick', dynamicClassnextPage2 + '();');
+    window[dynamicClassnextPage2] = function() {
+      $('.page4').slideDown();
+      $(".page4").css('display', 'block');
+      $("#pickNmix_row").css('display', 'none');
+      $("body").removeClass('cus_giftflowpage2');
+      $(".cardpageBtn").css('display', 'flex');
+      $(".page2Btn").css('display', 'none');
+      $(".nextPage").css('display', 'none');
+      $('[data-submit-button]').text('Put gaven i kurven');
+      const cus_modal = document.querySelector(".cus_modal");
+      cus_modal.classList.remove("cus_modal-active");
+      var dataId = $('.autofillbtn').data('id');
+      var candyButton = $('[data-add-to-bag][data-id="' + dataId + '"]');
+      if(candyButton.length > 0) {
+        candyButton.click();
+      } else {
+        console.error("Button not found with data-id:", dataId);
+      }
+    }
     
   
 }

@@ -1772,7 +1772,7 @@
   <!-- giftflow page1,page2 hide show -->
   function nextPage() {
     $("#page1").css('display', 'none');
-        $(".page2").css('display', 'block');
+    $(".page2").css('display', 'block');
     $("main").removeClass('cus_giftflow');
     $("body").addClass('cus_giftflowpage2');
     $('[data-remove]').click();
@@ -1828,27 +1828,46 @@
 
   }
 
-    function nextStep(){
-      $('#pickNmix_row').slideDown();
-      $("#pickNmix_row").css('display', 'flex');
-      $(".page2Btn").css('display', 'flex');
-      $(".page2").css('display', 'none');
-      $(".step2Btn").css('display', 'none');
-      $("#autofillbtn").css("display", "block");
-      $("#removeautofillbtn").css("display", "none");
-      $('body').removeClass('candy-over');
-      $('#handleRadioClick').removeClass('selected');
-      $('#removeordernote').removeClass('selected');
-      $('#ordernote').removeClass('ordernote');
-      $('#CartNoteDrawer').val('');
-      $("body").removeClass('msgcarselected');
-      $('.progresstargetcandy').attr('value', 0);
+  function skipPage2() {
+    $('#pickNmix_row').slideDown();
+    $("#pickNmix_row").css('display', 'flex');
+    $(".page2Btn").css('display', 'flex');
+    $("#autofillbtn").css("display", "block");
+    $("#removeautofillbtn").css("display", "none");
+    $('body').removeClass('candy-over');
+    $('#handleRadioClick').removeClass('selected');
+    $('#removeordernote').removeClass('selected');
+    $('#ordernote').removeClass('ordernote');
+    $('#CartNoteDrawer').val('');
+    $("body").removeClass('msgcarselected');
+    $('.progresstargetcandy').attr('value', 0);
 
-      // Update the URL with page number 3
-      var currentUrl = new URL(window.location.href);
-      currentUrl.searchParams.set('page', '3');
-      window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
-    }
+  
+    
+  
+}
+
+  function nextStep(){
+    $('#pickNmix_row').slideDown();
+    $("#pickNmix_row").css('display', 'flex');
+    $(".page2Btn").css('display', 'flex');
+    $(".page2").css('display', 'none');
+    $(".step2Btn").css('display', 'none');
+    $("#autofillbtn").css("display", "block");
+    $("#removeautofillbtn").css("display", "none");
+    $('body').removeClass('candy-over');
+    $('#handleRadioClick').removeClass('selected');
+    $('#removeordernote').removeClass('selected');
+    $('#ordernote').removeClass('ordernote');
+    $('#CartNoteDrawer').val('');
+    $("body").removeClass('msgcarselected');
+    $('.progresstargetcandy').attr('value', 0);
+
+    // Update the URL with page number 3
+    var currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('page', '3');
+    window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
+  }
   <!-- Or click here to fill with random candy -->
   function autofillbtn() {
     $("#autofillbtn").css("display", "none");

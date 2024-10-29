@@ -1298,7 +1298,10 @@
                                data-selling1="1" 
                                data-selling2="{{ variant.metafields.custom.selling_point2 }}" 
                                data-selling3="{{ variant.metafields.custom.selling_point3 }}" 
-                               
+                               data-selling4="{{ variant.metafields.custom.selling_point4 }}" 
+                               data-image-url="{{ variant.image | img_url: '600x' }}" 
+                               data-price="{{ variant.price | money }}" 
+                               data-variant-id="{{ variant.id }}" 
                                {% if forloop.first %}checked{% endif %}>
                         {% if variant.image %}
                           <img src="{{ variant.image | img_url: '600x' }}" alt="{{ variant.title }}">

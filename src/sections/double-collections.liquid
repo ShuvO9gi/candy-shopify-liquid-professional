@@ -1884,8 +1884,7 @@
       var dataId = $(this).data('id');
       $('[data-product-item-id="' + dataId + '"]').css('opacity', '0');
     });
-  
-}
+  }
 
   function nextStep(){
     $('#pickNmix_row').slideDown();
@@ -2009,6 +2008,18 @@
     var currentUrl = new URL(window.location.href); // Get the current URL
     currentUrl.searchParams.set('page', '2');
     window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
+  }
+
+  function skipPrevPage() {
+    $('#page1').slideDown();
+    $("main").addClass('cus_giftflow');
+    $("body").removeClass('cus_giftflowpage2');
+    $(".page2").css('display', 'none');
+    $("#page1").css('display', 'block');
+    $(".nextPage").css('display', 'flex');
+    $(".step2Btn").css('display', 'none');
+    
+    
   }
 
   function prevPage2() {

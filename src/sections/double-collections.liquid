@@ -2573,7 +2573,7 @@
 
 
   // new step 2
-    $(document).ready(function() {
+    {% comment %} $(document).ready(function() {
     // Handle click on a product card in Step 1
     $('.giftproduct-card').on('click', function() {
         // Get product details from the clicked card
@@ -2623,7 +2623,67 @@
         if (urlVariantId) {
             $('input[name="variant_option_0"][data-variant-id="' + urlVariantId + '"]').prop('checked', true).trigger('change');
         }
-    });
+    }); {% endcomment %}
+
+    // new step 2
+    $(document).ready(function() {
+      // Handle click on a product card in Step 1
+      $('.giftproduct-card').on('click', function() {
+          // Get product details from the clicked card
+          var selectedId = $(this).data('id');
+          var selectedTitle = $(this).data('title');
+          var selectedImage = $(this).data('image');
+          var selectedPrice = $(this).data('price');
+          var selectedWeight = $(this).data('weight');
+          var selectedDescription = $(this).data('description');
+  
+          // Update the product details in the detail section
+          $('#selectedProductImage').attr('src', selectedImage);
+          $('#productPrice').text(selectedPrice);
+          $('#productTitle').text(selectedTitle);
+  
+          // Get product variants for the selected product
+          var variants = $(this).find('.giftproduct-card-variant'); // Ensure each card contains hidden variant info
+  
+          // Clear existing variant options
+          $('.variant-wrapper--button .variant-option').empty();
+  
+          // Check if there are variants
+          if (variants.length > 1) {
+              // Add 'has_variant' class if variants are present
+              $('body').addClass('has_variant');
+  
+              $('.nextPageBtn').attr('onclick', 'nextPage();');
+              $('.prevPageBtn').attr('onclick', 'prevPage();');
+  
+              // Loop through the variants and update variant options
+              variants.each(function() {
+                  var variantTitle = $(this).data('title');
+                  var variantPrice = $(this).data('price');
+                  var variantImage = $(this).data('image');
+                  var variantId = $(this).data('id');
+  
+                  // Append variant options dynamically
+                  $('.variant-wrapper--button .variant-option').append(`
+                      <label class="variant-option-label">
+                          <input type="radio" name="variant_option_0" value="${variantTitle}" data-image-url="${variantImage}" data-price="${variantPrice}" data-variant-id="${variantId}">
+                          <img src="${variantImage}" alt="${variantTitle}">
+                          <div class="re-variant-option-content">
+                              <h2>${variantTitle}</h2>
+                              <p>${variantPrice}</p>
+                          </div>
+                      </label>
+                  `);
+              });
+          } else {
+              // Remove 'has_variant' class if no variants are present
+              $('body').removeClass('has_variant');
+  
+            // Update the nextPageBtn to call skipPage2() if variants exist
+              $('.nextPageBtn').attr('onclick', 'skipPage2();');
+              $('.prevPageBtn').attr('onclick', 'skipPrevPage();');
+          }
+      });
 
     // Handle variant selection
     $(document).on('change', 'input[name="variant_option_0"]', function() {

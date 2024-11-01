@@ -1181,7 +1181,7 @@ export default component((node, ctx) => {
             prevEl: ".swiper-button-prev",
           },
           breakpoints: {
-            768: {
+            426: {
               slidesPerView: 2,
             },
             1024: {

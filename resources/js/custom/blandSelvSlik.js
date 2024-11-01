@@ -1211,7 +1211,7 @@ export default component((node, ctx) => {
               ${filteredProducts
                 .map(
                   (product) => `
-                <div class="swiper-slide">
+                <div class="swiper-slide" style="width: auto;">
                   ${renderProducts([product])}
                 </div>
                `

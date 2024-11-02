@@ -1172,6 +1172,7 @@ export default component((node, ctx) => {
           slidesPerView: 2,
           spaceBetween: 10,
           loop: false,
+          speed: 100,
           pagination: {
             el: ".swiper-pagination",
             clickable: true,

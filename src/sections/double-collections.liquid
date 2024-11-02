@@ -1931,7 +1931,7 @@
     
     if(candyButton1.length > 0 && candyButton2.length > 0) {
       candyButton1.click();
-      candyButton2.click();
+      //candyButton2.click();
       console.log('candyButton1 and 2 clicked');
     } else {
       console.error("Button not found with data-id:", dataId);
@@ -1954,6 +1954,8 @@
               candyButton2.attr('data-weight', visibleWeight);
           } else {
               clearInterval(interval); // Stop the interval when target is reached
+              console.log('candyButton2 clicked with weight:', $('#targeycandyweightvisible').text());
+              candyButton2.click();
           }
       }, intervalTime);
   }

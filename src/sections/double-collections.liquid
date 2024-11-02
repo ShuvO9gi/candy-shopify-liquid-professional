@@ -1945,8 +1945,6 @@
       let interval = setInterval(function() {
           if (currentValue < targetValue) {
               currentValue += increment;
-              // Update visible weight and progress
-              $('#targeycandyweightvisible').text(currentValue); 
               $('.progresstargetcandy').attr('value', currentValue);
 
           } else {

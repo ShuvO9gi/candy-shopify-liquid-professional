@@ -1913,22 +1913,22 @@
     $("#removeautofillbtn").css("display", "block");
     $('body').addClass('candy-over');
     var dataId = $('.autofillbtn').data('id');
-    console.log("data id:", dataId);
+    {% comment %} console.log("data id:", dataId);
     
     const standardHandle = "standard-miks";
     fetch(`/products/${standardHandle}.js`)
       .then(res => res.json())
       .then(product => console.log("miks", product))
-      .catch(error => console.log("err", error))
+      .catch(error => console.log("err", error)) {% endcomment %}
     
-    console.log('targetcandyweight:', $('#targeycandyweightvisible').text());
-    
+    //console.log('targetcandyweight:', $('#targeycandyweightvisible').text());
+
     var candyButton1 = $('[data-add-to-bag][data-id="' + dataId + '"]');
     var candyButton2 = $('[data-add-to-bag][data-id="47068579856715"]');
     
     //Update standard miks weight
     var standardMiksNewWeight = $('#targeycandyweightvisible').text();
-    console.log("starMiksNewWeight", standardMiksNewWeight);
+    //console.log("starMiksNewWeight", standardMiksNewWeight);
     candyButton2.attr('data-weight', standardMiksNewWeight);
     
     if(candyButton1.length > 0 && candyButton2.length > 0) {

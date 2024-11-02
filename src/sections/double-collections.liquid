@@ -1945,7 +1945,13 @@
       let interval = setInterval(function() {
           if (currentValue < targetValue) {
               currentValue += increment;
+              // Update visible weight and progress
+              $('#targeycandyweightvisible').text(currentValue); 
               $('.progresstargetcandy').attr('value', currentValue);
+
+              // Update candyButton2's weight attribute to match visible weight
+              const visibleWeight = $('#targeycandyweightvisible').text();
+              candyButton2.attr('data-weight', visibleWeight);
           } else {
               clearInterval(interval); // Stop the interval when target is reached
           }

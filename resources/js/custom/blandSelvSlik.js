@@ -1198,6 +1198,8 @@ export default component((node, ctx) => {
     const categorizedProducts = (products) => {
       let categorizedHTML = "";
 
+      const isMobileView = window.innerWidth <= 768;
+
       categoryId.forEach((category) => {
         const showCategory = categoryMap[category];
 

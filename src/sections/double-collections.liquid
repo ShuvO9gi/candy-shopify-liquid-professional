@@ -1914,7 +1914,17 @@
     $('body').addClass('candy-over');
     var dataId = $('.autofillbtn').data('id');
     console.log("data id:", dataId);
-
+    
+    const standardHandle = "standard-miks";
+    fetch(`/products/${standardHandle}.js`)
+      .then(res => res.json())
+      .then(product => console.log("miks", product))
+      .catch(error => console.log("err", error))
+    
+   
+    var candyButton1 = $('[data-add-to-bag][data-id="' + dataId + '"]');
+    var candyButton2 = $('[data-add-to-bag][data-id="47068579856715"]');
+    
     
     
     if(candyButton1.length > 0 && candyButton2.length > 0) {

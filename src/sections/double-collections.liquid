@@ -1924,14 +1924,15 @@
     console.log('targetcandyweight:', $('#targeycandyweightvisible').text());
     var candyButton1 = $('[data-add-to-bag][data-id="' + dataId + '"]');
     var candyButton2 = $('[data-add-to-bag][data-id="47068579856715"]');
+    
+    //Update standard miks weight
     var standardMiksNewWeight = $('#targeycandyweightvisible').text();
     console.log("starMiksNewWeight", standardMiksNewWeight);
-
-    
+    candyButton2.attr('data-weight', standardMiksNewWeight);
     
     if(candyButton1.length > 0 && candyButton2.length > 0) {
       candyButton1.click();
-      //candyButton2.click();
+      candyButton2.click();
       console.log('candyButton1 and 2 clicked');
     } else {
       console.error("Button not found with data-id:", dataId);

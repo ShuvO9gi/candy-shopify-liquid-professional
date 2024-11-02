@@ -1208,6 +1208,9 @@ export default component((node, ctx) => {
         );
 
         if (filteredProducts.length > 0) {
+          if (!isMobileView) {
+          } else {
+          }
           categorizedHTML += `
           <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">${showCategory}</h2>
           <div class="swiper-container candyItems">

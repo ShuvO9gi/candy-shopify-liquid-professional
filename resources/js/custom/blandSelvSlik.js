@@ -1241,22 +1241,25 @@ export default component((node, ctx) => {
       );
 
       if (uncategorizedProducts.length > 0) {
-        categorizedHTML += `
-      <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">Other</h2>
-      <div class="swiper-container candyItems">
-        <div class="swiper-wrapper">
-          ${uncategorizedProducts
-            .map(
-              (product) => `
-            <div class="swiper-slide" style="width: auto;">
-              ${renderProducts([product])}
+        if (!isMobileView) {
+        } else {
+          categorizedHTML += `
+          <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">Other</h2>
+          <div class="swiper-container candyItems">
+            <div class="swiper-wrapper">
+              ${uncategorizedProducts
+                .map(
+                  (product) => `
+                <div class="swiper-slide" style="width: auto;">
+                  ${renderProducts([product])}
+                </div>
+              `
+                )
+                .join("")}
             </div>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-      `;
+          </div>
+          `;
+        }
       }
       return categorizedHTML;
     };

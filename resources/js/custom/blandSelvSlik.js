@@ -1291,6 +1291,8 @@ export default component((node, ctx) => {
         (filter) => filter.activeTypes.length > 0
       );
 
+      const isMobileView = window.innerWidth <= 480;
+
       if (isAnyFilterActive) {
         const filteredProducts = allFilters[0]?.activeTypes
           .map((title) => {

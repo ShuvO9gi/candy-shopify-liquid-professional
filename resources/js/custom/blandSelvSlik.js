@@ -1198,7 +1198,7 @@ export default component((node, ctx) => {
     const categorizedProducts = (products) => {
       let categorizedHTML = "";
 
-      const isMobileView = window.innerWidth <= 768;
+      const isMobileView = window.innerWidth <= 480;
 
       categoryId.forEach((category) => {
         const showCategory = categoryMap[category];

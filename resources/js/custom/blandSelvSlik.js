@@ -1337,6 +1337,7 @@ export default component((node, ctx) => {
       }
 
       initializeSwipers();
+      if (isMobileView) initializeSwipers();
       addToCardEventListeners();
     });
 

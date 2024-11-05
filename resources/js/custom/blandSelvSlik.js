@@ -1166,6 +1166,8 @@ export default component((node, ctx) => {
       categoryMapAll[filterId] = filterName;
     });
 
+    const isMobileView = window.innerWidth <= 480;
+
     const initializeSwipers = () => {
       document.querySelectorAll(".swiper-container").forEach((container) => {
         new Swiper(container, {

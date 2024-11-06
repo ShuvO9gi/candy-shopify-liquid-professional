@@ -568,7 +568,9 @@
 
   .swiper-wrapper {
     display: flex;
-    width: auto !important;
+    {% comment %} width: auto !important; {% endcomment %}
+    max-width: 100%;
+    transition: transform 0.3s ease; /* Smooth transition */
     
   }
 

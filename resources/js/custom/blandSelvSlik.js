@@ -1192,6 +1192,12 @@ export default component((node, ctx) => {
               slidesPerView: 3,
             },
           },
+          on: {
+            reachEnd: function () {
+              const wrapper = swiper.wrapperEl;
+              const transform = window.getComputedStyle(wrapper).transform;
+            },
+          },
         });
       });
     };

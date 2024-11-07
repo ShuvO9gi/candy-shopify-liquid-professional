@@ -1170,7 +1170,7 @@ export default component((node, ctx) => {
 
     const initializeSwipers = () => {
       document.querySelectorAll(".swiper-container").forEach((container) => {
-        new Swiper(container, {
+        const swiper = new Swiper(container, {
           slidesPerView: 2,
           spaceBetween: 10,
           loop: false,

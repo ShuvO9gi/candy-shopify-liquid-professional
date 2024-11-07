@@ -1196,6 +1196,11 @@ export default component((node, ctx) => {
             reachEnd: function () {
               const wrapper = swiper.wrapperEl;
               const transform = window.getComputedStyle(wrapper).transform;
+
+              if (transform !== "none") {
+                const matrix = new WebKitCSSMatrix(transform);
+                const translateX = matrix.m41; // Get the current translateX value
+              }
             },
           },
         });

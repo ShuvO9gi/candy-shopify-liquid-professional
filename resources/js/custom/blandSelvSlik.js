@@ -1224,6 +1224,10 @@ export default component((node, ctx) => {
                 wrapper.style.transform = `translate3d(${newTranslateX}px, 0, 0)`;
               }
             },
+            slideChange: function () {
+              let maxTranslate = this.maxTranslate();
+              let currentTranslate = this.translate;
+            },
           },
         });
       });

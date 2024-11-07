@@ -1231,6 +1231,8 @@ export default component((node, ctx) => {
               // Prevent swiper from moving too far
               if (currentTranslate < maxTranslate) {
                 this.setTranslate(maxTranslate);
+              } else if (currentTranslate > 0) {
+                this.setTranslate(0);
               }
             },
           },

@@ -1209,6 +1209,10 @@ export default component((node, ctx) => {
                 wrapper.style.transform = `translate3d(${newTranslateX}px, 0, 0)`;
               }
             },
+            reachBeginning: function () {
+              const wrapper = swiper.wrapperEl;
+              const transform = window.getComputedStyle(wrapper).transform;
+            },
           },
         });
       });

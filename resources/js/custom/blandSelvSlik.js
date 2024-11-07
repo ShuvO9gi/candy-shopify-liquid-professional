@@ -1227,6 +1227,11 @@ export default component((node, ctx) => {
             slideChange: function () {
               let maxTranslate = this.maxTranslate();
               let currentTranslate = this.translate;
+
+              // Prevent swiper from moving too far
+              if (currentTranslate < maxTranslate) {
+                this.setTranslate(maxTranslate);
+              }
             },
           },
         });

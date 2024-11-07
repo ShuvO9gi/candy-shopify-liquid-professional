@@ -1212,6 +1212,17 @@ export default component((node, ctx) => {
             reachBeginning: function () {
               const wrapper = swiper.wrapperEl;
               const transform = window.getComputedStyle(wrapper).transform;
+
+              if (transform !== "none") {
+                const matrix = new WebKitCSSMatrix(transform);
+                const translateX = matrix.m41; // Get the current translateX value
+
+                // Adjust to ensure the first slide is fully visible
+                const slideWidth = swiper.slides[0].offsetWidth;
+                const newTranslateX = translateX - (swiper.width - slideWidth);
+
+                wrapper.style.transform = `translate3d(${newTranslateX}px, 0, 0)`;
+              }
             },
           },
         });

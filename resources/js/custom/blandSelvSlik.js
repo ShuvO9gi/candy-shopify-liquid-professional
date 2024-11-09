@@ -1171,10 +1171,10 @@ export default component((node, ctx) => {
     const initializeSwipers = () => {
       document.querySelectorAll(".swiper-container").forEach((container) => {
         const swiper = new Swiper(container, {
-          slidesPerView: 2, // Adjust based on your needs
+          slidesPerView: 2,
           spaceBetween: 10,
           //centeredSlides: true,
-          loop: false, // Disable loop to ensure correct behavior
+          loop: false,
           speed: 500,
           pagination: {
             el: ".swiper-pagination",

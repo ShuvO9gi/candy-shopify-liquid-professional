@@ -1188,9 +1188,6 @@ export default component((node, ctx) => {
             426: {
               slidesPerView: 2,
             },
-            1024: {
-              slidesPerView: 3,
-            },
           },
           on: {
             reachEnd: function () {

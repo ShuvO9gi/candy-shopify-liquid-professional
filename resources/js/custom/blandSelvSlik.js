@@ -1176,6 +1176,8 @@ export default component((node, ctx) => {
           //centeredSlides: true,
           loop: false,
           speed: 100,
+          freeMode: true,
+
           pagination: {
             el: ".swiper-pagination",
             clickable: true,

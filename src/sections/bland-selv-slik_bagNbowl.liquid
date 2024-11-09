@@ -562,7 +562,7 @@
   } {% endcomment %}
 
   .swiper-container {
-    max-width: 100vw; /* Prevent overflow by setting max width to viewport width */
+    max-width: 100vw;
     overflow: hidden;
   }
 
@@ -570,15 +570,15 @@
     display: flex;
     {% comment %} width: auto !important; {% endcomment %}
     max-width: 100%;
-    transition: transform 0.3s ease; /* Smooth transition */
-    will-change: transform; /* Optimize animation performance */
+    transition: transform 0.3s ease;
+    will-change: transform;
   }
 
   .swiper-slide {
     flex-shrink: 0;
-    width: calc(100% / 3); /* Ensure each slide takes a portion of the width */
+    width: calc(100% / 3);
     box-sizing: border-box;
-    margin-right: 10px; /* Adjust for space between slides */
+    margin-right: 10px; 
   }
   
 </style>

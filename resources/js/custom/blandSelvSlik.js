@@ -1190,22 +1190,6 @@ export default component((node, ctx) => {
             },
           },
           on: {
-            reachEnd: function () {
-              const wrapper = swiper.wrapperEl;
-              const transform = window.getComputedStyle(wrapper).transform;
-
-              if (transform !== "none") {
-                const matrix = new WebKitCSSMatrix(transform);
-                const translateX = matrix.m41; // Get the current translateX value
-
-                // Calculate the new translateX value to make the last slide fully visible
-                const slideWidth =
-                  swiper.slides[swiper.slides.length - 1].offsetWidth;
-                const newTranslateX = translateX + (swiper.width - slideWidth);
-
-                wrapper.style.transform = `translate3d(${newTranslateX}px, 0, 0)`;
-              }
-            },
             reachBeginning: function () {
               const wrapper = swiper.wrapperEl;
               const transform = window.getComputedStyle(wrapper).transform;

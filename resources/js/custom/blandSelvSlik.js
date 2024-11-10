@@ -1173,7 +1173,6 @@ export default component((node, ctx) => {
         const swiper = new Swiper(container, {
           slidesPerView: 2,
           //spaceBetween: 10,
-          //centeredSlides: true,
           loop: false,
           //speed: 100,
           freeMode: true,

@@ -1175,7 +1175,7 @@ export default component((node, ctx) => {
           //spaceBetween: 10,
           //centeredSlides: true,
           loop: false,
-          speed: 100,
+          //speed: 100,
           freeMode: true,
           grabCursor: true,
           pagination: {

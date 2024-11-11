@@ -1174,7 +1174,7 @@ export default component((node, ctx) => {
           slidesPerView: 2,
           spaceBetween: 0,
           loop: false,
-          //speed: 100,
+          speed: 50, // Reduce speed to make transitions faster
           freeMode: true,
           //grabCursor: true,
           pagination: {

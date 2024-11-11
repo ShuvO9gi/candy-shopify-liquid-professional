@@ -1176,6 +1176,7 @@ export default component((node, ctx) => {
           loop: false,
           speed: 50, // Reduce speed to make transitions faster
           freeMode: true,
+          freeModeMomentumRatio: 0.5, // Increase momentum speed
           //grabCursor: true,
           pagination: {
             el: ".swiper-pagination",

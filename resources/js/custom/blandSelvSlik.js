@@ -953,20 +953,22 @@ export default component((node, ctx) => {
   };
 
   // Scroll left and right
-  leftScroll.addEventListener("click", () => {
-    filterWrapper.scrollBy({ left: -200, behavior: "smooth" });
-  });
+  if (leftScroll && rightScroll && filterWrapper) {
+    leftScroll.addEventListener("click", () => {
+      filterWrapper.scrollBy({ left: -200, behavior: "smooth" });
+    });
 
-  rightScroll.addEventListener("click", () => {
-    filterWrapper.scrollBy({ left: 200, behavior: "smooth" });
-  });
+    rightScroll.addEventListener("click", () => {
+      filterWrapper.scrollBy({ left: 200, behavior: "smooth" });
+    });
+  }
 
   // Detect swipe gestures for touch devices
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  filterWrapper.addEventListener("mousedown", (e) => {
+  filterWrapper?.addEventListener("mousedown", (e) => {
     isDown = true;
     filterWrapper.classList.add("active");
     startX = e.pageX - filterWrapper.offsetLeft;

@@ -991,7 +991,7 @@ export default component((node, ctx) => {
     filterWrapper.scrollLeft = scrollLeft - walk;
   });
 
-  filterWrapper.addEventListener("scroll", updateScrollIcons);
+  filterWrapper?.addEventListener("scroll", updateScrollIcons);
 
   // Initialize scroll icons visibility
   updateScrollIcons();

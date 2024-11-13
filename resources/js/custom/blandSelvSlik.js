@@ -983,7 +983,7 @@ export default component((node, ctx) => {
     filterWrapper.classList.remove("active");
   });
 
-  filterWrapper.addEventListener("mousemove", (e) => {
+  filterWrapper?.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - filterWrapper.offsetLeft;

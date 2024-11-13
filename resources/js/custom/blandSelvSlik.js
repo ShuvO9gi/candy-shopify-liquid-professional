@@ -973,7 +973,7 @@ export default component((node, ctx) => {
     scrollLeft = filterWrapper.scrollLeft;
   });
 
-  filterWrapper.addEventListener("mouseleave", () => {
+  filterWrapper?.addEventListener("mouseleave", () => {
     isDown = false;
     filterWrapper.classList.remove("active");
   });

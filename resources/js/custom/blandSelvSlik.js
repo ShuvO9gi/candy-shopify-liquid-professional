@@ -978,7 +978,7 @@ export default component((node, ctx) => {
     filterWrapper.classList.remove("active");
   });
 
-  filterWrapper.addEventListener("mouseup", () => {
+  filterWrapper?.addEventListener("mouseup", () => {
     isDown = false;
     filterWrapper.classList.remove("active");
   });

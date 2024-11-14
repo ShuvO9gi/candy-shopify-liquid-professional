@@ -938,7 +938,7 @@ export default component((node, ctx) => {
 
   // Show/Hide Scroll Icons based on scroll position
   const updateScrollIcons = () => {
-    const maxScrollLeft = filterItems.scrollWidth - filterWrapper.clientWidth;
+    const maxScrollLeft = filterItems.scrollWidth - filterWrapper?.clientWidth;
     if (filterWrapper.scrollLeft > 0) {
       leftScroll?.classList.remove("hidden");
     } else {

@@ -940,7 +940,7 @@ export default component((node, ctx) => {
   const updateScrollIcons = () => {
     const maxScrollLeft = filterItems.scrollWidth - filterWrapper.clientWidth;
     if (filterWrapper.scrollLeft > 0) {
-      leftScroll.classList.remove("hidden");
+      leftScroll?.classList.remove("hidden");
     } else {
       leftScroll.classList.add("hidden");
     }

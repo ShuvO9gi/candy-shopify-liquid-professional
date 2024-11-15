@@ -1373,8 +1373,8 @@ export default component((node, ctx) => {
     if (state.hasFilters) {
       ctx.emit("filter:start");
     } else {
-      productListElem.innerHTML = categorizedProducts(state.allProducts);
-      if (isMobileView) initializeSwipers();
+      // Check the current path
+      const currentPath = window.location.pathname;
     }
 
     addToCardEventListeners();

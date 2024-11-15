@@ -1378,6 +1378,8 @@ export default component((node, ctx) => {
 
       if (currentPath === "/collections/gift") {
         productListElem.innerHTML = renderProducts(state.allProducts);
+      } else {
+        productListElem.innerHTML = categorizedProducts(state.allProducts);
       }
     }
 

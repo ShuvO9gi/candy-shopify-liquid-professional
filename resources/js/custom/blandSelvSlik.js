@@ -1170,6 +1170,7 @@ export default component((node, ctx) => {
 
     const isMobileView = window.innerWidth <= 480;
 
+    //Swiper initializer
     const initializeSwipers = () => {
       document.querySelectorAll(".swiper-container").forEach((container) => {
         new Swiper(container, {

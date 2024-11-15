@@ -1380,6 +1380,7 @@ export default component((node, ctx) => {
         productListElem.innerHTML = renderProducts(state.allProducts);
       } else {
         productListElem.innerHTML = categorizedProducts(state.allProducts);
+        if (isMobileView) initializeSwipers();
       }
     }
 

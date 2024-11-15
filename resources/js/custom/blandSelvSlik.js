@@ -1140,36 +1140,6 @@ export default component((node, ctx) => {
       });
     });
 
-    // Import product tags name and id from json file
-    const filterJson = document.querySelectorAll("[data-filter-json-name]");
-    const filterNameAll = document.querySelectorAll(
-      "[data-filter-json-name-all]"
-    );
-
-    const categoryName = [];
-    const categoryId = [];
-    const categoryMap = {};
-
-    filterJson.forEach((item) => {
-      const filterName = item.dataset.filterName;
-      const filterId = item.dataset.filterId;
-
-      categoryName.push(filterName);
-      categoryId.push(filterId);
-
-      categoryMap[filterId] = filterName;
-    });
-
-    const categoryMapAll = {};
-
-    filterNameAll.forEach((item) => {
-      const filterName = item.dataset.filterName;
-      const filterId = item.dataset.filterId;
-      categoryMapAll[filterId] = filterName;
-    });
-
-    const isMobileView = window.innerWidth <= 480;
-
     //Swiper initializer
     const initializeSwipers = () => {
       document.querySelectorAll(".swiper-container").forEach((container) => {
@@ -1211,6 +1181,36 @@ export default component((node, ctx) => {
         });
       });
     };
+
+    // Import product tags name and id from json file
+    const filterJson = document.querySelectorAll("[data-filter-json-name]");
+    const filterNameAll = document.querySelectorAll(
+      "[data-filter-json-name-all]"
+    );
+
+    const categoryName = [];
+    const categoryId = [];
+    const categoryMap = {};
+
+    filterJson.forEach((item) => {
+      const filterName = item.dataset.filterName;
+      const filterId = item.dataset.filterId;
+
+      categoryName.push(filterName);
+      categoryId.push(filterId);
+
+      categoryMap[filterId] = filterName;
+    });
+
+    const categoryMapAll = {};
+
+    filterNameAll.forEach((item) => {
+      const filterName = item.dataset.filterName;
+      const filterId = item.dataset.filterId;
+      categoryMapAll[filterId] = filterName;
+    });
+
+    const isMobileView = window.innerWidth <= 480;
 
     //Categorized filtering
     const categorizedProducts = (products) => {

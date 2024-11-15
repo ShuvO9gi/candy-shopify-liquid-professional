@@ -1375,6 +1375,10 @@ export default component((node, ctx) => {
     } else {
       // Check the current path
       const currentPath = window.location.pathname;
+
+      if (currentPath === "/collections/gift") {
+        productListElem.innerHTML = renderProducts(state.allProducts);
+      }
     }
 
     addToCardEventListeners();

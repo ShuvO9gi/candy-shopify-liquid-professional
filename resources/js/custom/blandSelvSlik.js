@@ -1275,7 +1275,7 @@ export default component((node, ctx) => {
       });
 
       const uncategorizedProducts = products.filter(
-        (product) => !product.tags.some((tag) => categoryId.includes(tag))
+        (product) => !product.tags.some((tag) => categoryIds.includes(tag))
       );
 
       if (uncategorizedProducts.length > 0) {

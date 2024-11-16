@@ -1092,10 +1092,11 @@ export default component((node, ctx) => {
         ctx.hydrate({ hasFilters });
 
         paramArray.forEach((param) => {
-          if (param != "")
-            filter.items
-              .find((item) => item.dataset.filterId === param)
-              .classList.add("is--active");
+          if (param != "") {
+            const filterItem = filter.items.find(
+              (item) => item.dataset.filterId === param
+            );
+          }
         });
       };
 

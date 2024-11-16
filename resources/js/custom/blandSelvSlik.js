@@ -1218,6 +1218,7 @@ export default component((node, ctx) => {
       categoryName.push(filterName);
       categoryName = [...new Set(categoryName)];
       categoryIds.push(filterId);
+      categoryIds = [...new Set(categoryIds)];
 
       categoryMap[filterId] = filterName;
     });

@@ -1411,31 +1411,29 @@ if (window.history.replaceState) {
 
 
 
-     <!-- overlay -->
-        function checkListAndUpdateButton() {
-        var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
-          var cusdrawerElement = document.querySelector('html');
+<!-- overlay -->
+  function checkListAndUpdateButton() {
+  var ulElement = document.querySelector('.bland-selv-slik__visual-bag__list');
+    var cusdrawerElement = document.querySelector('html');
 
-        if (ulElement && ulElement.querySelectorAll('li').length === 0) {
-          cusdrawerElement.classList.remove('drawer_locked3');
-
-          var buttoncloseElement = document.getElementById('visual-bag__close_cusBtn'); // Replace 'yourButtonId' with the actual ID of your button
-   if (buttoncloseElement) {
+  if (ulElement && ulElement.querySelectorAll('li').length === 0) {
+    cusdrawerElement.classList.remove('drawer_locked3');
+    var buttoncloseElement = document.getElementById('visual-bag__close_cusBtn'); // Replace 'yourButtonId' with the actual ID of your button
+    if (buttoncloseElement) {
       buttoncloseElement.click(); 
-   }
-        } else {
-            btnElement.classList.remove('is--hidden');
-        }
+      }
+    } else {
+      btnElement.classList.remove('is--hidden');
     }
+  }
 
-    checkListAndUpdateButton();
-    var observer = new MutationObserver(function () {
-        checkListAndUpdateButton();
-    });
-    var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
-    var config = { childList: true, subtree: true };
-    observer.observe(targetNode, config);
-
+  checkListAndUpdateButton();
+  var observer = new MutationObserver(function () {
+      checkListAndUpdateButton();
+  });
+  var targetNode = document.querySelector('.bland-selv-slik__visual-bag__list');
+  var config = { childList: true, subtree: true };
+  observer.observe(targetNode, config);
 
 <!--remove sticky button when no products into the bag-->
   function checkListAndUpdateButton() {

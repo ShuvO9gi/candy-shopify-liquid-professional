@@ -1107,6 +1107,7 @@ export default component((node, ctx) => {
 
             categoryIds.push(param);
             categoryName.push(filterItem.dataset.filterName);
+            categoryMap[param] = filterItem.dataset.filterName;
           }
         });
       };

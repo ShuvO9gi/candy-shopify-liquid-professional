@@ -1133,6 +1133,8 @@ export default component((node, ctx) => {
         filter.activeTypes = activeTypes;
         filter.allProducts = state.allProducts;
 
+        console.log("length", filter.allProducts.length);
+
         filter.filteredItems =
           activeItems.length > 0
             ? filter.allProducts.filter((product) => {

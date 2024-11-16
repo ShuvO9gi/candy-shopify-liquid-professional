@@ -1237,6 +1237,7 @@ export default component((node, ctx) => {
     const categorizedProducts = (products) => {
       let categorizedHTML = "";
 
+      console.log({ categoryIds });
       categoryIds.forEach((category) => {
         const showCategory = categoryMap[category];
 

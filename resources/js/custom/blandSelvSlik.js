@@ -1216,7 +1216,6 @@ export default component((node, ctx) => {
       const filterId = item.dataset.filterId;
 
       categoryName.push(filterName);
-      categoryId.push(filterId);
 
       categoryMap[filterId] = filterName;
     });

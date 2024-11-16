@@ -1393,6 +1393,7 @@ export default component((node, ctx) => {
     // else productListElem.innerHTML = renderProducts(state.allProducts);
 
     if (state.hasFilters) {
+      console.log("has filters");
       ctx.emit("filter:start");
     } else {
       // Check the current path

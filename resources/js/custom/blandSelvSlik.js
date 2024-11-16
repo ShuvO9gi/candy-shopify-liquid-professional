@@ -1071,6 +1071,10 @@ export default component((node, ctx) => {
     const allFilters = [];
     let hasFilters = false;
 
+    let categoryIds = [];
+    let categoryName = [];
+    let categoryMap = {};
+
     filters.forEach((filter, i) => {
       const items = filterItems.filter(
         (item) => item.dataset.filterType === filter.type

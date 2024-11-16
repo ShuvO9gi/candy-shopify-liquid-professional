@@ -1396,6 +1396,7 @@ export default component((node, ctx) => {
       console.log("has filters");
       ctx.emit("filter:start");
     } else {
+      console.log("no filters");
       // Check the current path
       const currentPath = window.location.pathname;
 

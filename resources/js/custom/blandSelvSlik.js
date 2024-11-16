@@ -1098,6 +1098,12 @@ export default component((node, ctx) => {
             );
 
             filterItem.classList.add("is--active");
+
+            categoryTopBars.forEach((item) => {
+              if (item.dataset.filterId === param) {
+                item.click();
+              }
+            });
           }
         });
       };

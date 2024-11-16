@@ -1081,6 +1081,7 @@ export default component((node, ctx) => {
       );
 
       filter.items = items;
+      const categoryTopBars = [...node.querySelectorAll(".selected-item")];
 
       // find url parameters
       const findUrlFilterParams = (params) => {

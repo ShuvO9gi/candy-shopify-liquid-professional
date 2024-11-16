@@ -1211,10 +1211,6 @@ export default component((node, ctx) => {
       "[data-filter-json-name-all]"
     );
 
-    const categoryName = [];
-    const categoryId = [];
-    const categoryMap = {};
-
     filterJson.forEach((item) => {
       const filterName = item.dataset.filterName;
       const filterId = item.dataset.filterId;

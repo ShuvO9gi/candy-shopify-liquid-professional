@@ -1125,9 +1125,9 @@ export default component((node, ctx) => {
           item.classList.contains("is--active")
         );
 
-        const activeTypes = [
-          ...new Set(activeItems.map((i) => i.dataset.filterId)),
-        ];
+        // const activeTypes = [
+        //   ...new Set(activeItems.map((i) => i.dataset.filterId)),
+        // ];
 
         filter.activeItems = activeItems;
         filter.activeTypes = activeTypes;

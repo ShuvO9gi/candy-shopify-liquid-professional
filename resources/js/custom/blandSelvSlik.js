@@ -1128,6 +1128,7 @@ export default component((node, ctx) => {
         // const activeTypes = [
         //   ...new Set(activeItems.map((i) => i.dataset.filterId)),
         // ];
+        console.log("activeItems", activeItems);
 
         filter.activeItems = activeItems;
         filter.activeTypes = activeTypes;

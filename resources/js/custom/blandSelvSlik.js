@@ -1330,6 +1330,7 @@ export default component((node, ctx) => {
       );
 
       if (isAnyFilterActive) {
+        console.log("filter:start:filtered");
         const filteredProducts = allFilters[0]?.activeTypes
           .map((title) => {
             const showTitle = categoryMapAll[title];

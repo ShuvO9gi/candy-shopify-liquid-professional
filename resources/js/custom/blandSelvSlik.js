@@ -1373,7 +1373,7 @@ export default component((node, ctx) => {
         productListElem.innerHTML = filteredProducts;
         if (isMobileView) initializeSwipers();
       } else {
-        productListElem.innerHTML = categorizedProducts(state.allProducts);
+        console.log("filter:start:filtered:else");
       }
 
       initializeSwipers();

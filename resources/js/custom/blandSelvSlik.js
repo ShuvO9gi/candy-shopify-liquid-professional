@@ -334,6 +334,7 @@ export default component((node, ctx) => {
     const selectProduct = () => {
       const url = new URL(window.location.href);
       const searchParams = new URLSearchParams(url.search);
+      console.log("selectSearch", searchParams);
       const isSelectProduct = searchParams.get("select-product");
       if (isSelectProduct === "true") {
         addToBagBtns[0].click();

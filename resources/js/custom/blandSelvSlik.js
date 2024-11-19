@@ -1374,6 +1374,8 @@ export default component((node, ctx) => {
         if (isMobileView) initializeSwipers();
       } else {
         console.log("filter:start:filtered:else");
+        // Check the current path
+        const currentPath = window.location.pathname;
       }
 
       initializeSwipers();

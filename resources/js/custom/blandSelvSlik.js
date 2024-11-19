@@ -1376,6 +1376,10 @@ export default component((node, ctx) => {
         console.log("filter:start:filtered:else");
         // Check the current path
         const currentPath = window.location.pathname;
+
+        if (currentPath === "/collections/bland-selv-slik") {
+          productListElem.innerHTML = categorizedProducts(state.allProducts);
+        }
       }
 
       initializeSwipers();

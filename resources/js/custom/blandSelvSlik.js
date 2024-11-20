@@ -1411,7 +1411,7 @@ export default component((node, ctx) => {
       // Check the current path
       const currentPath = window.location.pathname;
 
-      if (currentPath === "/collections/gift") {
+      if (currentPath === "/collections/bland-selv-slik") {
         productListElem.innerHTML = renderProducts(state.allProducts);
       } else {
         productListElem.innerHTML = categorizedProducts(state.allProducts);

@@ -1405,6 +1405,7 @@ export default component((node, ctx) => {
     if (state.hasFilters) {
       console.log("has filters");
       ctx.emit("filter:start");
+      console.log("filter:start", state);
     } else {
       console.log("no filters");
       // Check the current path

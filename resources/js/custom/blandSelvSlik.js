@@ -1412,7 +1412,7 @@ export default component((node, ctx) => {
       const currentPath = window.location.pathname;
 
       if (currentPath === "/collections/bland-selv-slik") {
-        productListElem.innerHTML = renderProducts(state.allProducts);
+        productListElem.innerHTML = categorizedProducts(state.allProducts);
         if (isMobileView) initializeSwipers();
       } else {
         productListElem.innerHTML = categorizedProducts(state.allProducts);

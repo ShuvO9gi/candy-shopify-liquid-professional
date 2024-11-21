@@ -1323,63 +1323,14 @@ export default component((node, ctx) => {
 
       ctx.emit("products:ready", { renderThese: unique });
 
-      if (isAnyFilterActive) {
-        console.log("filter:start:filtered");
-        const filteredProducts = allFilters[0]?.activeTypes
-          .map((title) => {
-            const showTitle = categoryMapAll[title];
-
-            let filteredProductsHTML = "";
-            const filteredItems = unique.filter((item) =>
-              item.tags.includes(title)
-            );
-            if (filteredItems.length > 0) {
-              if (!isMobileView) {
-                filteredProductsHTML += `
-                  <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">${showTitle}</h2>
-                  <div class="candyItems">
-                  ${renderProducts(filteredItems)}
-                  </div>
-                `;
-              } else {
-                filteredProductsHTML += `
-                  <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">${showTitle}</h2>
-                  <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                    ${filteredItems
-                      .map(
-                        (product) => `
-                      <div class="swiper-slide">
-                        ${renderProducts([product])}
-                      </div>
-                    `
-                      )
-                      .join("")}
-                    </div>
-                  </div>
-                `;
-              }
-            }
-            return filteredProductsHTML;
-          })
-          .join("");
-
-        productListElem.innerHTML = filteredProducts;
-        if (isMobileView) initializeSwipers();
+      const currentPath = window.location.pathname;
+      if (currentPath === "/collections/bland-selv-slik") {
+        const isAnyFilterActive = allFilters.some(
+          (filter) => filter.activeTypes.length > 0
+        );
       } else {
-        console.log("filter:start:filtered:else");
-        // Check the current path
-        const currentPath = window.location.pathname;
-
-        if (currentPath === "/collections/bland-selv-slik") {
-          productListElem.innerHTML = categorizedProducts(state.allProducts);
-          if (isMobileView) initializeSwipers();
-        } else {
-          productListElem.innerHTML = renderProducts(state.allProducts);
-        }
+        productListElem.innerHTML = renderProducts(state.allProducts);
       }
-
-      initializeSwipers();
       if (isMobileView) initializeSwipers();
       addToCardEventListeners();
     });

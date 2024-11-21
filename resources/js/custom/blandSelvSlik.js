@@ -1013,7 +1013,6 @@ export default component((node, ctx) => {
     console.log("renderProducts", products);
     const url = new URL(window.location.href);
     const searchParams = new URLSearchParams(url.search);
-    console.log("renderSearch", searchParams);
     let productName = searchParams.get("product");
 
     if (productName) {

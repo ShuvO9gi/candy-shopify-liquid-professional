@@ -1372,6 +1372,9 @@ export default component((node, ctx) => {
 
           productListElem.innerHTML = filteredProducts;
           if (isMobileView) initializeSwipers();
+        } else {
+          productListElem.innerHTML = categorizedProducts(state.allProducts);
+          if (isMobileView) initializeSwipers();
         }
       } else {
         productListElem.innerHTML = renderProducts(state.allProducts);

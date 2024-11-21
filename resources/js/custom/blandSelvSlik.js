@@ -1328,6 +1328,51 @@ export default component((node, ctx) => {
         const isAnyFilterActive = allFilters.some(
           (filter) => filter.activeTypes.length > 0
         );
+
+        if (isAnyFilterActive) {
+          const filteredProducts = allFilters[0]?.activeTypes
+            .map((title) => {
+              const showTitle = categoryMapAll[title];
+
+              let filteredProductsHTML = "";
+              const filteredItems = unique.filter((item) =>
+                item.tags.includes(title)
+              );
+              if (filteredItems.length > 0) {
+                if (!isMobileView) {
+                  filteredProductsHTML += `
+                  <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">${showTitle}</h2>
+                  <div class="candyItems candyFiltered">
+                  ${renderProducts(filteredItems)}
+                  </div>
+                `;
+                } else {
+                  filteredProductsHTML += `
+                  <h2 class="font-bold text-3xl pl-4 capitalize" style="padding-bottom: 36px; text-wrap: nowrap;">${showTitle}</h2>
+                  <div class="candyFiltered swiper-container">
+                    <div class="swiper-wrapper">
+                    ${filteredItems
+                      .map(
+                        (product) => `
+                      <div class="swiper-slide">
+                        ${renderProducts([product])}
+                      </div>
+                    `
+                      )
+                      .join("")}
+                    </div>
+                  </div>
+                `;
+                }
+              }
+
+              return filteredProductsHTML;
+            })
+            .join("");
+
+          productListElem.innerHTML = filteredProducts;
+          if (isMobileView) initializeSwipers();
+        }
       } else {
         productListElem.innerHTML = renderProducts(state.allProducts);
       }

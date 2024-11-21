@@ -1379,7 +1379,8 @@ export default component((node, ctx) => {
       } else {
         productListElem.innerHTML = renderProducts(state.allProducts);
       }
-      if (isMobileView) initializeSwipers();
+
+      //if (isMobileView) initializeSwipers();
       addToCardEventListeners();
     });
 

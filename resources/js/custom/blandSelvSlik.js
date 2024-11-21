@@ -1323,10 +1323,6 @@ export default component((node, ctx) => {
 
       ctx.emit("products:ready", { renderThese: unique });
 
-      const isAnyFilterActive = allFilters.some(
-        (filter) => filter.activeTypes.length > 0
-      );
-
       if (isAnyFilterActive) {
         console.log("filter:start:filtered");
         const filteredProducts = allFilters[0]?.activeTypes

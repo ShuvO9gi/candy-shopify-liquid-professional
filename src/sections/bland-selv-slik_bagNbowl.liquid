@@ -1339,7 +1339,8 @@ function handleCandyItems() {
     var from = currentPage * itemsPerPage;
     var to = from + itemsPerPage;
 
-    $('.candyItems .candyBox').slice(from, to).fadeIn();
+    //$('.candyItems .candyBox').slice(from, to).fadeIn();
+    $('.candyItems .candyItemsCategorized .candyBox').slice(from, to).fadeIn();
     currentPage++;
   }
 

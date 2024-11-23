@@ -9,42 +9,40 @@
   }
   .bland-selv-slik .filter__item__wrapper::-webkit-scrollbar {
     display: none;
-}
+  }
   
   .bland-selv-slik .filter__item__wrapper ul::-webkit-scrollbar {
-  width: 12px;               
-}
+    width: 12px;               
+  }
 
-.pickNmix_rowAllproducts .candyItems .candyItemsCategorized .candyBox{
-  display: none;
-}
-.pickNmix_rowAllproducts .candyItems .candyItemsCategorized .candyBox:nth-child(-n+40) {
-  display: block;
-}
-.pickNmix_rowFirst20 .candyItems .candyItemsCategorized .candyBox:nth-child(-n+40) {
+  .pickNmix_rowAllproducts .candyItems .candyItemsCategorized .candyBox{
+    display: none;
+  }
+  .pickNmix_rowAllproducts .candyItems .candyItemsCategorized .candyBox:nth-child(-n+40) {
+    display: block;
+  }
+  .pickNmix_rowFirst20 .candyItems .candyItemsCategorized .candyBox:nth-child(-n+40) {
     display: block !important;
-}
-.bland-selv-slik .filter__item__wrapper ul::-webkit-scrollbar-thumb {
-  background-color: #ffad05;    
-  border-radius: 20px;      
-  border: 3px solid #f2f0f2;  
-}
-
-  
-.filterScroll{
-  overflow: scroll;
-  overflow-x: hidden;
-}
-.filterScroll::-webkit-scrollbar {
-  display: none;
-}
+  }
+  .bland-selv-slik .filter__item__wrapper ul::-webkit-scrollbar-thumb {
+    background-color: #ffad05;    
+    border-radius: 20px;      
+    border: 3px solid #f2f0f2;  
+  }  
+  .filterScroll{
+    overflow: scroll;
+    overflow-x: hidden;
+  }
   .filterScroll::-webkit-scrollbar {
-  width: 0px;               
-}
-.filterScroll::-webkit-scrollbar-thumb {
-  background-color: #f2f0f2;     
-  border: 0 !important;  
-}
+    display: none;
+  }
+    .filterScroll::-webkit-scrollbar {
+    width: 0px;               
+  }
+  .filterScroll::-webkit-scrollbar-thumb {
+    background-color: #f2f0f2;     
+    border: 0 !important;  
+  }
 
 
   <!-- modal search -->
@@ -752,7 +750,7 @@
               {%- endcomment -%}
               {% comment %} <div class="candyItems " data-product-list></div> {% endcomment %}
               {% comment %} <div class="flex " data-product-list></div> {% endcomment %}
-              <div class="grid" data-product-list>
+              <div class="grid candyItemsCategorized" data-product-list>
 
               </div>
 

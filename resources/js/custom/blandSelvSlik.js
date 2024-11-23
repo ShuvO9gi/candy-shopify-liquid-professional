@@ -1451,6 +1451,9 @@ export default component((node, ctx) => {
   }
 
   filterSearch.addEventListener("keydown", (e) => {
+    if (filterSearchError && filterSearchError.style) {
+      filterSearchError.style.padding = "0";
+    }
     if (e.key === "Enter") {
       performSearch();
     }

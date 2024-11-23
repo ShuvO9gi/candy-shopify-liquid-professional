@@ -1440,8 +1440,6 @@ export default component((node, ctx) => {
       allProducts.unshift(foundProduct);
       closeFilterButton.click();
     } else {
-      filterSearchError.style.padding = "10px";
-      filterSearchError.innerHTML = "Product not found!";
     }
 
     deleteUrlParams("product");

@@ -1442,6 +1442,7 @@ export default component((node, ctx) => {
     } else {
       if (filterSearchError && filterSearchError.style) {
         filterSearchError.style.padding = "10px";
+        filterSearchError.innerHTML = "Product not found!";
       }
     }
 

@@ -1560,7 +1560,8 @@ input.addEventListener('keyup', () => {
                 categoryHeaders[index].style.display = itemsAvailable ? 'block' : 'none';
             }
     
-            
+            // Hide the entire container if no items are available
+            candyItemsContainer.style.display = itemsAvailable ? '' : 'none';
         });
     });
     } 

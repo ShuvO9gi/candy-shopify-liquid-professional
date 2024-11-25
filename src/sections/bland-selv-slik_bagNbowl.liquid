@@ -1551,7 +1551,8 @@ input.addEventListener('keyup', () => {
                     }
                 });
     
-                
+                // Hide the swiper-slide if no candy boxes within it are visible
+                swiperSlide.style.display = slideHasVisibleItems ? '' : 'none';
             });
     
             

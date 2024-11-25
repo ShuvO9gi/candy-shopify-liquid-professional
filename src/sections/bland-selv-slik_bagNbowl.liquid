@@ -1537,6 +1537,20 @@ input.addEventListener('keyup', () => {
                 const candyBoxes = swiperSlide.querySelectorAll('.candyBox');
                 let slideHasVisibleItems = false;
     
+                candyBoxes.forEach((candyBox) => {
+                    const candyBoxName = candyBox.querySelector('.candyBoxName');
+                    const textValue = candyBoxName.textContent || candyBoxName.innerText;
+                    const textUpperCase = textValue.toUpperCase();
+    
+                    if (textUpperCase.includes(filter)) {
+                        candyBox.style.display = '';
+                        slideHasVisibleItems = true;
+                        itemsAvailable = true;
+                    } else {
+                        candyBox.style.display = 'none';
+                    }
+                });
+    
                 
             });
     

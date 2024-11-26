@@ -1584,7 +1584,12 @@ input.addEventListener('keyup', () => {
             const textValue = candyBoxName.textContent || candyBoxName.innerText;
             const textUpperCase = textValue.toUpperCase();
     
-            
+            if (textUpperCase.includes(filter)) {
+              candyBox.style.display = '';
+              itemsAvailable = true;
+            } else {
+              candyBox.style.display = 'none';
+            }
           });
     
           

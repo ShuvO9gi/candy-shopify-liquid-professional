@@ -1574,7 +1574,12 @@ input.addEventListener('keyup', () => {
         const categoryHeaders = ulp.querySelectorAll('h2');
         const candyItemsContainers = ulp.querySelectorAll('.candyFiltered');
         
-        
+        // Loop through each candy items container and its corresponding h2 header
+        candyItemsContainers.forEach((candyItemsContainer, index) => {
+          const candyBoxes = candyItemsContainer.querySelectorAll('.candyBox');
+          
+        });
+      });
     }
 
 <!-- search result disappear issue -->

@@ -1518,87 +1518,87 @@ input.addEventListener('keyup', () => {
 
   //Define mobile width
   const isMobileView = window.innerWidth <= 480;
-    if(isMobileView) {
-      input.addEventListener('keyup', () => {
-        const filter = input.value.toUpperCase();
-    
-        // Select the candy items container
-        const ulp = document.querySelector('.candyItemsCategorized');
-        
-        const categoryHeaders = ulp.querySelectorAll('h2');
-        const candyItemsContainers = ulp.querySelectorAll('.candyFiltered');
-        
-        // Loop through each candy items container and its corresponding h2 header
-        candyItemsContainers.forEach((candyItemsContainer, index) => {
-            const swiperSlides = candyItemsContainer.querySelectorAll('.swiper-slide');
-            let itemsAvailable = false;
-    
-            swiperSlides.forEach((swiperSlide) => {
-                const candyBoxes = swiperSlide.querySelectorAll('.candyBox');
-                let slideHasVisibleItems = false;
-    
-                candyBoxes.forEach((candyBox) => {
-                    const candyBoxName = candyBox.querySelector('.candyBoxName');
-                    const textValue = candyBoxName.textContent || candyBoxName.innerText;
-                    const textUpperCase = textValue.toUpperCase();
-    
-                    if (textUpperCase.includes(filter)) {
-                        candyBox.style.display = '';
-                        slideHasVisibleItems = true;
-                        itemsAvailable = true;
-                    } else {
-                        candyBox.style.display = 'none';
-                    }
-                });
-    
-                // Hide the swiper-slide if no candy boxes within it are visible
-                swiperSlide.style.display = slideHasVisibleItems ? '' : 'none';
-            });
-    
-            // Show or hide the category header based on the availability of items
-            if (categoryHeaders[index]) {
-                categoryHeaders[index].style.display = itemsAvailable ? 'block' : 'none';
-            }
-    
-            // Hide the entire container if no items are available
-            candyItemsContainer.style.display = itemsAvailable ? '' : 'none';
-        });
-    });
-    } else {
-      input.addEventListener('keyup', () => {
-        const filter = input.value.toUpperCase();
-    
-        // Select the candy items container
-        const ulp = document.querySelector('.candyItemsCategorized'); 
-        
-        const categoryHeaders = ulp.querySelectorAll('h2');
-        const candyItemsContainers = ulp.querySelectorAll('.candyFiltered');
-        
-        // Loop through each candy items container and its corresponding h2 header
-        candyItemsContainers.forEach((candyItemsContainer, index) => {
-          const candyBoxes = candyItemsContainer.querySelectorAll('.candyBox');
+  if(isMobileView) {
+    input.addEventListener('keyup', () => {
+      const filter = input.value.toUpperCase();
+  
+      // Select the candy items container
+      const ulp = document.querySelector('.candyItemsCategorized');
+      
+      const categoryHeaders = ulp.querySelectorAll('h2');
+      const candyItemsContainers = ulp.querySelectorAll('.candyFiltered');
+      
+      // Loop through each candy items container and its corresponding h2 header
+      candyItemsContainers.forEach((candyItemsContainer, index) => {
+          const swiperSlides = candyItemsContainer.querySelectorAll('.swiper-slide');
           let itemsAvailable = false;
-    
-          candyBoxes.forEach((candyBox) => {
-            const candyBoxName = candyBox.querySelector('.candyBoxName');
-            const textValue = candyBoxName.textContent || candyBoxName.innerText;
-            const textUpperCase = textValue.toUpperCase();
-    
-            if (textUpperCase.includes(filter)) {
-              candyBox.style.display = '';
-              itemsAvailable = true;
-            } else {
-              candyBox.style.display = 'none';
-            }
+  
+          swiperSlides.forEach((swiperSlide) => {
+              const candyBoxes = swiperSlide.querySelectorAll('.candyBox');
+              let slideHasVisibleItems = false;
+  
+              candyBoxes.forEach((candyBox) => {
+                  const candyBoxName = candyBox.querySelector('.candyBoxName');
+                  const textValue = candyBoxName.textContent || candyBoxName.innerText;
+                  const textUpperCase = textValue.toUpperCase();
+  
+                  if (textUpperCase.includes(filter)) {
+                      candyBox.style.display = '';
+                      slideHasVisibleItems = true;
+                      itemsAvailable = true;
+                  } else {
+                      candyBox.style.display = 'none';
+                  }
+              });
+  
+              // Hide the swiper-slide if no candy boxes within it are visible
+              swiperSlide.style.display = slideHasVisibleItems ? '' : 'none';
           });
-    
+  
           // Show or hide the category header based on the availability of items
           if (categoryHeaders[index]) {
-            categoryHeaders[index].style.display = itemsAvailable ? 'block' : 'none';
+              categoryHeaders[index].style.display = itemsAvailable ? 'block' : 'none';
+          }
+  
+          // Hide the entire container if no items are available
+          candyItemsContainer.style.display = itemsAvailable ? '' : 'none';
+      });
+    });
+  } else {
+    input.addEventListener('keyup', () => {
+      const filter = input.value.toUpperCase();
+  
+      // Select the candy items container
+      const ulp = document.querySelector('.candyItemsCategorized'); 
+      
+      const categoryHeaders = ulp.querySelectorAll('h2');
+      const candyItemsContainers = ulp.querySelectorAll('.candyFiltered');
+      
+      // Loop through each candy items container and its corresponding h2 header
+      candyItemsContainers.forEach((candyItemsContainer, index) => {
+        const candyBoxes = candyItemsContainer.querySelectorAll('.candyBox');
+        let itemsAvailable = false;
+  
+        candyBoxes.forEach((candyBox) => {
+          const candyBoxName = candyBox.querySelector('.candyBoxName');
+          const textValue = candyBoxName.textContent || candyBoxName.innerText;
+          const textUpperCase = textValue.toUpperCase();
+  
+          if (textUpperCase.includes(filter)) {
+            candyBox.style.display = '';
+            itemsAvailable = true;
+          } else {
+            candyBox.style.display = 'none';
           }
         });
+  
+        // Show or hide the category header based on the availability of items
+        if (categoryHeaders[index]) {
+          categoryHeaders[index].style.display = itemsAvailable ? 'block' : 'none';
+        }
       });
-    }
+    });
+  }
 
 <!-- search result disappear issue -->
     // Get the input element

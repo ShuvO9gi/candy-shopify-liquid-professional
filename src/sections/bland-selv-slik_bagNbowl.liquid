@@ -1592,7 +1592,10 @@ input.addEventListener('keyup', () => {
             }
           });
     
-          
+          // Show or hide the category header based on the availability of items
+          if (categoryHeaders[index]) {
+            categoryHeaders[index].style.display = itemsAvailable ? 'block' : 'none';
+          }
         });
       });
     }

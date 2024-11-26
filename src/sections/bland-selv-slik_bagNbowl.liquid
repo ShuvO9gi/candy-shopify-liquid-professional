@@ -1564,7 +1564,12 @@ input.addEventListener('keyup', () => {
             candyItemsContainer.style.display = itemsAvailable ? '' : 'none';
         });
     });
-    } 
+    } else {
+      input.addEventListener('keyup', () => {
+        const filter = input.value.toUpperCase();
+    
+       
+    }
 
 <!-- search result disappear issue -->
     // Get the input element

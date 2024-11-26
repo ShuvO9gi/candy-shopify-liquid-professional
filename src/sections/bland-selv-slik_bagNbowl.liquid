@@ -1577,6 +1577,16 @@ input.addEventListener('keyup', () => {
         // Loop through each candy items container and its corresponding h2 header
         candyItemsContainers.forEach((candyItemsContainer, index) => {
           const candyBoxes = candyItemsContainer.querySelectorAll('.candyBox');
+          let itemsAvailable = false;
+    
+          candyBoxes.forEach((candyBox) => {
+            const candyBoxName = candyBox.querySelector('.candyBoxName');
+            const textValue = candyBoxName.textContent || candyBoxName.innerText;
+            const textUpperCase = textValue.toUpperCase();
+    
+            
+          });
+    
           
         });
       });

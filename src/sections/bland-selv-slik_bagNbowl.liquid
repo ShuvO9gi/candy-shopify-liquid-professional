@@ -1502,7 +1502,7 @@ input.addEventListener('keyup', () => {
   const ulp = document.querySelector('.candyItems'); // Changed querySelectorAll to querySelector
   const lip = ulp?.querySelectorAll('.candyBox');
 
-  for (let i = 0; i < lip.length; i++) {
+  for (let i = 0; i < lip?.length; i++) {
     const ap = lip[i].querySelector('.candyBoxName'); // Changed querySelectorAll to querySelector
     const textValue = ap.textContent || ap.innerText;
     const textUpperCase = textValue.toUpperCase();

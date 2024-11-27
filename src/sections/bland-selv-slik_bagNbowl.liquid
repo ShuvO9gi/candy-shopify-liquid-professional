@@ -1620,6 +1620,18 @@ input.addEventListener('keyup', () => {
           candyItemsContainers.forEach((candyItemsContainer, index) => {
             const swiperSlides = candyItemsContainer.querySelectorAll('.swiper-slide');
     
+            swiperSlides.forEach((swiperSlide) => {
+                const candyBoxes = swiperSlide.querySelectorAll('.candyBox');
+    
+                candyBoxes.forEach((candyBox) => {
+                    // Show all candy boxes
+                    candyBox.style.display = '';
+                });
+    
+                // Show all swiper slides
+                swiperSlide.style.display = '';
+            });
+    
             
             
         });

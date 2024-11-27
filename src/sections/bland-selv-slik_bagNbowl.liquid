@@ -1606,7 +1606,19 @@ input.addEventListener('keyup', () => {
     const filterCloseSearch = document.getElementById("close-cus_modal");
   
 
-    
+    function resetFilter() {
+      if (input) {
+        input.value = '';
+        const filter = '';
+        
+        } 
+      }
+    }
+  
+    // Add event listener to the close button
+    if (filterCloseSearch) {
+      filterCloseSearch.addEventListener('click', resetFilter);
+    }
   });
 
 <!-- search result disappear issue -->

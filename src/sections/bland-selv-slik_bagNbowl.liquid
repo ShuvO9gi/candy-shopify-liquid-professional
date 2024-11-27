@@ -1616,7 +1616,13 @@ input.addEventListener('keyup', () => {
 
         const isMobileView = window.innerWidth <= 480;
   
-        
+        if(isMobileView) {
+          candyItemsContainers.forEach((candyItemsContainer, index) => {
+            const swiperSlides = candyItemsContainer.querySelectorAll('.swiper-slide');
+    
+            
+            
+        });
         } 
       }
     }

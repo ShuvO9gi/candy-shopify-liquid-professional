@@ -1500,7 +1500,7 @@ const input = document.getElementById('filter-search');
 input.addEventListener('keyup', () => {
   const filter = input.value.toUpperCase();
   const ulp = document.querySelector('.candyItems'); // Changed querySelectorAll to querySelector
-  const lip = ulp.querySelectorAll('.candyBox');
+  const lip = ulp?.querySelectorAll('.candyBox');
 
   for (let i = 0; i < lip.length; i++) {
     const ap = lip[i].querySelector('.candyBoxName'); // Changed querySelectorAll to querySelector

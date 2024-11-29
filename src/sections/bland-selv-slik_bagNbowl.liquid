@@ -1639,9 +1639,13 @@ input.addEventListener('keyup', () => {
     
             // Show the entire container
             candyItemsContainer.style.display = '';
-            
         });
-        } 
+        } else {
+          candyItemsContainers.forEach((candyItemsContainer, index) => {
+            const candyBoxes = candyItemsContainer.querySelectorAll('.candyBox');
+            
+          });
+        }
       }
     }
   

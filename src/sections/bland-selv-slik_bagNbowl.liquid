@@ -1645,6 +1645,12 @@ input.addEventListener('keyup', () => {
             const candyBoxes = candyItemsContainer.querySelectorAll('.candyBox');
             let itemsAvailable = false;
     
+            candyBoxes.forEach((candyBox) => {
+              const candyBoxName = candyBox.querySelector('.candyBoxName');
+              candyBox.style.display = ''; // Show all items
+              itemsAvailable = true; // Reset flag to true
+            });
+    
             
           });
         }

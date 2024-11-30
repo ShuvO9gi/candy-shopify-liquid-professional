@@ -1565,7 +1565,9 @@ input.addEventListener('keyup', () => {
 
           // Update the swiper instance after modifying slide visibility
           const swiperInstance = candyItemsContainer.swiper;
-          
+          if (swiperInstance) {
+              console.log(swiperInstance);
+          }
       });
     });
   } else {

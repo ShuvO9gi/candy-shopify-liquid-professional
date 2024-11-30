@@ -1647,7 +1647,9 @@ input.addEventListener('keyup', () => {
             candyItemsContainer.style.display = '';
 
             const swiperInstance = candyItemsContainer.swiper;
-              
+            if (swiperInstance) {
+                console.log(swiperInstance)
+            }
         });
         } else {
           candyItemsContainers.forEach((candyItemsContainer, index) => {

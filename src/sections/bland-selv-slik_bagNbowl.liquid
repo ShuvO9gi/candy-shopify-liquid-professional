@@ -1645,6 +1645,9 @@ input.addEventListener('keyup', () => {
     
             // Show the entire container
             candyItemsContainer.style.display = '';
+
+            const swiperInstance = candyItemsContainer.swiper;
+              
         });
         } else {
           candyItemsContainers.forEach((candyItemsContainer, index) => {

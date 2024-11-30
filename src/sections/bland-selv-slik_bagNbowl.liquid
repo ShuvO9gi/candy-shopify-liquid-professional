@@ -1562,6 +1562,10 @@ input.addEventListener('keyup', () => {
   
           // Hide the entire container if no items are available
           candyItemsContainer.style.display = itemsAvailable ? '' : 'none';
+
+          // Update the swiper instance after modifying slide visibility
+          const swiperInstance = candyItemsContainer.swiper;
+          
       });
     });
   } else {

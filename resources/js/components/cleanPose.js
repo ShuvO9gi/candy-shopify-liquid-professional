@@ -7,5 +7,7 @@ export default component((node, ctx) => {
     // console.log('click on me')
     setToLocalStorage(null, []);
     //ctx.emit("products:refetch");
+
+    const currentPath = window.location.pathname;
   });
 });

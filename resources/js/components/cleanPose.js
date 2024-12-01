@@ -6,6 +6,6 @@ export default component((node, ctx) => {
     // e.preventDefault();
     // console.log('click on me')
     setToLocalStorage(null, []);
-    ctx.emit("products:refetch");
+    //ctx.emit("products:refetch");
   });
 });

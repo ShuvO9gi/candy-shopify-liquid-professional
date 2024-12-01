@@ -9,9 +9,7 @@ export default component((node, ctx) => {
     //ctx.emit("products:refetch");
 
     const currentPath = window.location.pathname;
-    if (!(currentPath === "/collections/bland-selv-slik")) {
-      console.log(currentPath);
+    if (!(currentPath === "/collections/bland-selv-slik"))
       ctx.emit("products:refetch");
-    }
   });
 });

@@ -9,5 +9,9 @@ export default component((node, ctx) => {
     //ctx.emit("products:refetch");
 
     const currentPath = window.location.pathname;
+    if (!(currentPath === "/collections/bland-selv-slik")) {
+      console.log(currentPath);
+      ctx.emit("products:refetch");
+    }
   });
 });

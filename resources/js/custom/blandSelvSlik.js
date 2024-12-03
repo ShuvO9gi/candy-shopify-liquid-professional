@@ -121,6 +121,8 @@ export default component((node, ctx) => {
     return txt.value;
   };
 
+  const currentPath = window.location.pathname;
+
   const addToCardEventListeners = () => {
     const itemInners = node.querySelectorAll("[data-item-inner]");
     const addToBagBtns = node.querySelectorAll("[data-add-to-bag]");

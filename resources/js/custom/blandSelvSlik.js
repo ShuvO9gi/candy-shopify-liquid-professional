@@ -1456,16 +1456,15 @@ export default component((node, ctx) => {
     ctx.emit("filter:start", { allProducts: allProducts });
   }
 
-  filterSearch.addEventListener("keydown", (e) => {
-    if (filterSearchError && filterSearchError.style) {
-      filterSearchError.style.padding = "0";
-      filterSearchError.innerHTML = "";
-    }
-    if (e.key === "Enter") {
-      performSearch();
-    }
-  });
-
-  if (filterSearchIcon)
-    filterSearchIcon.addEventListener("click", performSearch);
+  if (!(currentPath === "/collections/bland-selv-slik")) {
+    filterSearch.addEventListener("keydown", (e) => {
+      if (filterSearchError && filterSearchError.style) {
+        filterSearchError.style.padding = "0";
+        filterSearchError.innerHTML = "";
+      }
+      if (e.key === "Enter") {
+        performSearch();
+      }
+    });
+  }
 });

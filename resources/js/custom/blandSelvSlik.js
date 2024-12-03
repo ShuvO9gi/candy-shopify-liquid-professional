@@ -121,6 +121,7 @@ export default component((node, ctx) => {
     return txt.value;
   };
 
+  //Define current pathname
   const currentPath = window.location.pathname;
 
   const addToCardEventListeners = () => {

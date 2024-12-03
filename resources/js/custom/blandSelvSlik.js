@@ -348,7 +348,7 @@ export default component((node, ctx) => {
     mixAgainButton?.addEventListener("click", (e) => {
       e.preventDefault();
       window.localStorage.removeItem("candybag");
-      ctx.emit("products:refetch");
+      //ctx.emit("products:refetch");
       const successModal = document.querySelector("[data-success-modal]");
 
       successModal.classList.remove("is--visible");

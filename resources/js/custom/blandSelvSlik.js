@@ -1466,5 +1466,8 @@ export default component((node, ctx) => {
         performSearch();
       }
     });
+
+    if (filterSearchIcon)
+      filterSearchIcon.addEventListener("click", performSearch);
   }
 });

@@ -349,6 +349,9 @@ export default component((node, ctx) => {
       e.preventDefault();
       window.localStorage.removeItem("candybag");
       //ctx.emit("products:refetch");
+      if (!(currentPath === "/collections/bland-selv-slik"))
+        ctx.emit("products:refetch");
+
       const successModal = document.querySelector("[data-success-modal]");
 
       successModal.classList.remove("is--visible");

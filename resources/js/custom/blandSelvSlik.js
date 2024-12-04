@@ -1068,6 +1068,10 @@ export default component((node, ctx) => {
     const existingValues = urlParams.get(name)?.split("|") || [];
 
     const newValues = existingValues.filter((val) => val !== value);
+
+    if (newValues.length > 0) {
+      urlParams.set(name, newValues.join("|"));
+    }
   };
 
   ctx.on("products:fetched", (state) => {

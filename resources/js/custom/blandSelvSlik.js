@@ -1058,6 +1058,7 @@ export default component((node, ctx) => {
     if (!existingValues.includes(value)) {
       existingValues.push(value);
       urlParams.set(name, existingValues.join("|"));
+      const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
     }
   };
 

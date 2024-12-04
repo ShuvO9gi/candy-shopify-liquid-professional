@@ -1406,6 +1406,7 @@ export default component((node, ctx) => {
       item.addEventListener("click", () => {
         const filterId = item.dataset.filterId;
         const filterType = item.dataset.filterType;
+        console.log(filterId);
         item.classList.toggle("is--active");
         ctx.emit("filter:start");
       });

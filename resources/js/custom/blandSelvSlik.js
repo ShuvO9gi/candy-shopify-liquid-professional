@@ -1074,6 +1074,8 @@ export default component((node, ctx) => {
     } else {
       urlParams.delete(name); // Ensure parameter is fully removed if empty
     }
+
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
   };
 
   ctx.on("products:fetched", (state) => {

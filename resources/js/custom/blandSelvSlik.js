@@ -1414,6 +1414,7 @@ export default component((node, ctx) => {
           updateUrlParams(filterType, filterId);
         } else {
           console.log(false);
+          removeUrlParam(filterType, filterId);
         }
 
         ctx.emit("filter:start");

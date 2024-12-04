@@ -1411,6 +1411,7 @@ export default component((node, ctx) => {
 
         if (item.classList.contains("is--active")) {
           console.log(true);
+          updateUrlParams(filterType, filterId);
         }
 
         ctx.emit("filter:start");

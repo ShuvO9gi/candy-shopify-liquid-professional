@@ -1065,6 +1065,7 @@ export default component((node, ctx) => {
 
   const removeUrlParam = (name, value) => {
     const urlParams = new URLSearchParams(window.location.search);
+    const existingValues = urlParams.get(name)?.split("|") || [];
   };
 
   ctx.on("products:fetched", (state) => {

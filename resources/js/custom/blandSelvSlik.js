@@ -1059,6 +1059,7 @@ export default component((node, ctx) => {
       existingValues.push(value);
       urlParams.set(name, existingValues.join("|"));
       const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+      window.history.replaceState(null, "", newUrl);
     }
   };
 

@@ -1063,6 +1063,10 @@ export default component((node, ctx) => {
     }
   };
 
+  const removeUrlParam = (name, value) => {
+    const urlParams = new URLSearchParams(window.location.search);
+  };
+
   ctx.on("products:fetched", (state) => {
     /**
      * Create filter objects for each filter (eg 'type' and 'tags')

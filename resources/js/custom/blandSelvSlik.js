@@ -1076,6 +1076,7 @@ export default component((node, ctx) => {
     }
 
     const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+    window.history.replaceState(null, "", newUrl);
   };
 
   ctx.on("products:fetched", (state) => {

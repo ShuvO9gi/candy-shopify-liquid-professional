@@ -1408,6 +1408,11 @@ export default component((node, ctx) => {
         const filterType = item.dataset.filterType;
         console.log(filterId);
         item.classList.toggle("is--active");
+
+        if (item.classList.contains("is--active")) {
+          console.log(true);
+        }
+
         ctx.emit("filter:start");
       });
     });

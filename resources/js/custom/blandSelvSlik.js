@@ -1072,7 +1072,7 @@ export default component((node, ctx) => {
     if (newValues.length > 0) {
       urlParams.set(name, newValues.join("|"));
     } else {
-      urlParams.delete(name); // Ensure parameter is fully removed if empty
+      urlParams.delete(name);
     }
 
     const newUrl = `${window.location.pathname}?${urlParams.toString()}`;

@@ -1133,6 +1133,12 @@ export default component((node, ctx) => {
 
             if (filterItem && !filterItem.classList.contains("is--active")) {
               filterItem.classList.add("is--active");
+
+              categoryTopBars.forEach((item) => {
+                if (item.dataset.filterId === param) {
+                  item.click();
+                }
+              });
             }
           }
         });

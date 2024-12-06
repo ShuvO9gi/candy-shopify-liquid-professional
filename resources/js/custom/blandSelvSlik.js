@@ -1132,16 +1132,6 @@ export default component((node, ctx) => {
             );
 
             filterItem.classList.add("is--active");
-
-            categoryTopBars.forEach((item) => {
-              if (item.dataset.filterId === param) {
-                item.click();
-              }
-            });
-
-            categoryIds.push(param);
-            categoryName.push(filterItem.dataset.filterName);
-            categoryMap[param] = filterItem.dataset.filterName;
           }
         });
       };

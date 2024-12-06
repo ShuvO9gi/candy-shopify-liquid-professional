@@ -1139,6 +1139,8 @@ export default component((node, ctx) => {
                   item.click();
                 }
               });
+
+              categoryIds.push(param);
             }
           }
         });

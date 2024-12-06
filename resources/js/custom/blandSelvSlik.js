@@ -1130,6 +1130,10 @@ export default component((node, ctx) => {
             const filterItem = filter.items.find(
               (item) => item.dataset.filterId === param
             );
+
+            if (filterItem && !filterItem.classList.contains("is--active")) {
+              filterItem.classList.add("is--active");
+            }
           }
         });
       };

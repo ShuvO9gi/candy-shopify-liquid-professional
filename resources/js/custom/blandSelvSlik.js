@@ -1348,10 +1348,10 @@ export default component((node, ctx) => {
 
       allFilters.forEach((filter) => {
         const { filteredItems } = filter;
-        renderThese = [...renderThese, ...filteredItems];
-        setUrlParams([
-          { name: filter.type, value: filter.activeTypes.join("|") },
-        ]);
+        // renderThese = [...renderThese, ...filteredItems];
+        // setUrlParams([
+        //   { name: filter.type, value: filter.activeTypes.join("|") },
+        // ]);
       });
 
       renderThese = getDuplicateProducts([...renderThese], allFilters.length);

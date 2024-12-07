@@ -1352,6 +1352,14 @@ export default component((node, ctx) => {
         // setUrlParams([
         //   { name: filter.type, value: filter.activeTypes.join("|") },
         // ]);
+
+        filteredItems.forEach((item) => {
+          if (
+            !renderThese.some((existingItem) => existingItem.id === item.id)
+          ) {
+            renderThese.push(item);
+          }
+        });
       });
 
       renderThese = getDuplicateProducts([...renderThese], allFilters.length);

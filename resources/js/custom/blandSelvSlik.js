@@ -1363,8 +1363,8 @@ export default component((node, ctx) => {
         });
       });
 
-      renderThese = getDuplicateProducts([...renderThese], allFilters.length);
-      const unique = [...new Set(renderThese)];
+      // renderThese = getDuplicateProducts([...renderThese], allFilters.length);
+      // const unique = [...new Set(renderThese)];
 
       ctx.emit("products:ready", { renderThese: unique });
 

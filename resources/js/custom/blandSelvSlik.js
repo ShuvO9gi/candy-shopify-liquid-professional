@@ -1367,7 +1367,7 @@ export default component((node, ctx) => {
       // const unique = [...new Set(renderThese)];
 
       const unique = [...new Set(renderThese.map((item) => item.id))].map(
-        (id) => renderThese.find((item) => console.log(item))
+        (id) => renderThese.find((item) => item.id === id)
       );
 
       ctx.emit("products:ready", { renderThese: unique });

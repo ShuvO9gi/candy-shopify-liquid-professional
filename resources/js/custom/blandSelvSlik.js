@@ -1366,6 +1366,10 @@ export default component((node, ctx) => {
       // renderThese = getDuplicateProducts([...renderThese], allFilters.length);
       // const unique = [...new Set(renderThese)];
 
+      const unique = [...new Set(renderThese.map((item) => item.id))].map(
+        (id) => renderThese.find((item) => console.log(item))
+      );
+
       ctx.emit("products:ready", { renderThese: unique });
 
       const currentPath = window.location.pathname;

@@ -1353,6 +1353,7 @@ export default component((node, ctx) => {
         //   { name: filter.type, value: filter.activeTypes.join("|") },
         // ]);
 
+        // Avoid duplicates by checking if an item is already in renderThese
         filteredItems.forEach((item) => {
           if (
             !renderThese.some((existingItem) => existingItem.id === item.id)

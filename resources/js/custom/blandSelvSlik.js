@@ -1366,6 +1366,7 @@ export default component((node, ctx) => {
       // renderThese = getDuplicateProducts([...renderThese], allFilters.length);
       // const unique = [...new Set(renderThese)];
 
+      // Ensure all items are unique
       const unique = [...new Set(renderThese.map((item) => item.id))].map(
         (id) => renderThese.find((item) => item.id === id)
       );
